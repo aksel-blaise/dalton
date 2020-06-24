@@ -14,7 +14,7 @@ Open Review is not just about catching typos. Rather, Open Review is designed to
 
 ### Can I see the annotations that others are making?
 
-Yes, all annotations are public. You can view them on right side of the each page, or you can read them in [stream form](https://hypothes.is/stream?q=aksel-blaise-garylin).
+Yes, all annotations are public. You can view them on right side of the each page.
 
 ### What are the benefits for readers?
 
