@@ -35,13 +35,22 @@ knitr::include_graphics('images/dalton.png')
 fig.cap="Identify horizontal tangent, insert reference point and reference plane (left). Use reference plane to cut spline at the location of the horizontal tangent (right). \\label{figlm1}"
 ```
 
-## Spline split at locations of LM2 - LM5
+## Spline split at locations of LM2 - LM3
 
-The point of highest curvature on either side of the basal edge was calculated using the `curvature function` in the Accuracy Analyser. This function displays the curvature flow as a continuous colour plot across the area of the curve. In this instance, _curvature_ is defined as the amount by which a geometric shape deviates from being flat or straight in the case of a line. The curvature is displayed in different colours according to the local radius, and is calculated in only one direction (U or V) along the curve. Using this tool, the two points of highest curvature were located between the basal and lateral edges on either side of each biface where the local radius measure was largest. The alignment and orientation of each biface was dictated by the _auto3dgm_ output (see Figure 7a in the manuscript), and the landmarking protocol follows the mesh orientation in that figure, where LM2 was always placed on the right side of the basal edge, and LM3 on the left.
+The point of highest curvature on either side of the basal edge was calculated using the `curvature function` in the Accuracy Analyser. This function displays the curvature flow as a continuous colour plot across the area of the curve. In this instance, _curvature_ is defined as the amount by which a geometric shape deviates from being flat or straight in the case of a line. The curvature is displayed in different colours according to the local radius, and is calculated in only one direction (U or V) along the curve. Using this tool, the two points of highest curvature were located between the basal and lateral edges on either side of each projectile where the local radius measure was largest. The alignment and orientation of each biface was dictated by the _auto3dgm_ output, and the landmarking protocol follows the mesh orientation, where LM2 was always placed on the right side of the basal edge, and LM3 on the left.
 
 ```{r figcurve}
 knitr::include_graphics('images/dalton.png')
 fig.cap="Identify points of hightest curvature (light blue) at left/right intersection of lateral and basal edges. \\label{figsplinesplitlr}"
+```
+
+## Spline split at locations of LM4 - LM5
+
+The point of highest curvature at the intersection of the blade and base was also calculated using the `curvature function` in the Accuracy Analyser. Using this tool, the two points of highest curvature were located between the blade and base on either side of each projectile where the local radius measure was largest. The alignment and orientation of each biface was dictated by the _auto3dgm_ output, and the landmarking protocol follows the mesh orientation in that figure, where LM4 was always placed on the right side of the basal edge, and LM5 on the left.
+
+```{r figcurve2}
+knitr::include_graphics('images/dalton.png')
+fig.cap="Identify points of hightest curvature (light blue) at left/right intersection of blade and base. \\label{figsplinesplitlr}"
 ```
 
 ## Spline split at location of LM6
@@ -78,8 +87,6 @@ knitr::include_graphics('images/dalton.png')
 fig.cap="Mesh for Gahagan biface 545 from Gahagan Mound with landmarks and equidistant semilandmarks applied. \\label{figbevlm}"
 ```
 
-## Acknowledgments
+### Acknowledgments
 
 I extend my gratitude to Christian S. Hoggard and David K. Thulman for their thoughtful comments and constructive criticisms on the draft of this landmarking protocol, which was originally developed for the study of [Gahagan bifaces](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md), and is extended here to an analysis of Dalton point morphology. This iteration of the landmarking protocol was developed using the [digit3DLand](https://github.com/morphOptics/digit3DLand) package in R (code available in Github repository); however, the capacity to populate a replicable suite of reference geometry across the sample in _Geomagic Design X_ made it a better option for the dynamic design process. Definitions of reference geometries and _Design X_ features described in this protocol are paraphrased from the reference manual.
-
-## References cited
