@@ -7,7 +7,7 @@ knitr::include_graphics('images/dalton.png')
 fig.cap="Dalton point KeilMangold13. \\label{figdalton}"
 ```
 
-The goal of this effort was to increase both the precision and rigour of the study by including the z-dimension to capture morphological characteristics associated with axial twisting introduced through the practice of knapping and beveling. While true that some landmarking protocols can be—and often are—recycled as new specimens are added, this particular research programme endeavours to achieve ever-greater accuracy and precision in each analytical iteration.
+The goal of this effort was to increase both the precision and rigour of the study by including the z-dimension to capture morphological characteristics associated with axial twisting introduced through the general practices of knapping and beveling. While true that some landmarking protocols can be—and often are—recycled as new specimens are added, this particular research programme endeavours to achieve ever-greater accuracy and precision in each analytical iteration.
 
 _This landmarking protocol was developed prior to running auto3dgm, and details the procedure for applying landmarks and equidistant semilandmarks; however, it may not reflect their actual placement on this specimen._
 
