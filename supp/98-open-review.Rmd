@@ -1,6 +1,6 @@
 # Open Review {#open}
 
-Open Review means that you can freely read this volume and easily help to make it better. You can offer suggestions by making annotations using [hypothes.is](https://hypothes.is/), an open source annotation system. This is a simple system for interacting with this volume. If you are familiar with GitHub or Git, you can also comment using [GitHub's issue tracker](https://github.com/aksel-blaise/incision/issues) for the volume, or make a pull request. In addition to these feedback options, this website for the book will be collecting your implicit feedback by tracking the readership and abandonment rate of each section.
+Open Review means that you can freely read this volume and easily help to make it better. You can offer suggestions by making annotations using [hypothes.is](https://hypothes.is/), an open source annotation system. This is a simple system for interacting with this volume. If you are familiar with GitHub or Git, you can also comment using [GitHub's issue tracker](https://github.com/aksel-blaise/dalton/issues) for the volume, or make a pull request. In addition to these feedback options, this website for the book will be collecting your implicit feedback by tracking the readership and abandonment rate of each section.
 
 Open Review takes place before and during the peer review process. The feedback from Open Review and peer review will be used to create a revised manuscript. The Open Review period will end when the final manuscript is submitted to the publisher. 
 
@@ -38,7 +38,7 @@ The AAUP recently published [a report](http://www.aaupnet.org/resources/for-memb
 
 ### Can I do this with my book?
 
-Absolutely. View the code for this website at <https://github.com/aksel-blaise/incision> for more about how we did it.
+Absolutely. View the code for this website at <https://github.com/aksel-blaise/dalton> for more about how we did it.
 
 ### I have a different question about Open Review. How can I get in touch?
 
@@ -88,4 +88,4 @@ I reserve the right to this privacy policy from time to time at my discretion. P
 
 ### Acknowledgments
 
-The bulk of the (modified) text above comes directly from [Ben Marwick's](https://github.com/benmarwick/bookdown-ort) excellent bookdown example that illustrates how each of the pieces of this volume function independently, and as a whole. Many thanks to Ben for making this available, and I encourage other archaeologists to make use of these tools.
+The bulk of the (modified) text above comes from [Ben Marwick's](https://github.com/benmarwick/bookdown-ort) bookdown example that illustrates how each of the pieces of this volume function independently, and as a whole. Many thanks to Ben for making this available, and I encourage other archaeologists to make use of these tools.

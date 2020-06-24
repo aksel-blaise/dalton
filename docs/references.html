@@ -64,6 +64,68 @@
 </script>
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -85,7 +147,10 @@
 <li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>0.1</b> Acknowledgments</a></li>
 <li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#funding"><i class="fa fa-check"></i><b>0.2</b> Funding</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="landmarking-protocol.html"><a href="landmarking-protocol.html"><i class="fa fa-check"></i><b>1</b> Landmarking Protocol</a></li>
+<li class="chapter" data-level="1" data-path="landmarking-protocol.html"><a href="landmarking-protocol.html"><i class="fa fa-check"></i><b>1</b> Landmarking Protocol</a><ul>
+<li class="chapter" data-level="1.1" data-path="landmarking-protocol.html"><a href="landmarking-protocol.html#generating-the-spline"><i class="fa fa-check"></i><b>1.1</b> Generating the spline</a></li>
+<li class="chapter" data-level="1.2" data-path="landmarking-protocol.html"><a href="landmarking-protocol.html#splitting-the-spline"><i class="fa fa-check"></i><b>1.2</b> Splitting the spline</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="open.html"><a href="open.html"><i class="fa fa-check"></i><b>2</b> Open Review</a><ul>
 <li class="chapter" data-level="2.1" data-path="open.html"><a href="open.html#faq-about-open-review"><i class="fa fa-check"></i><b>2.1</b> FAQ about open review</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="open.html"><a href="open.html#what-kind-of-feedback-are-you-looking-for"><i class="fa fa-check"></i><b>2.1.1</b> What kind of feedback are you looking for?</a></li>
@@ -140,6 +205,9 @@ This volume is in <b><a href="open.html#open">Open Review</a></b>. I want your f
 
 <div id="refs" class="references">
 <div>
+<p>Birkhoff, George D. 1933. <em>Aesthetic Measure</em>. Cambridge: Harvard University Press.</p>
+</div>
+<div>
 <p>Gandrud, Christopher. 2014. <em>Reproducible Research with R and Rstudio</em>. The R Series. London: CRC Press.</p>
 </div>
 <div>
@@ -164,7 +232,22 @@ This volume is in <b><a href="open.html#open">Open Review</a></b>. I want your f
 <p>Peng, Roger D. 2011. “Reproducible Research in Computational Science.” <em>Science</em> 334 (6060): 1226–7. <a href="https://doi.org/10.1126/science.1213847">https://doi.org/10.1126/science.1213847</a>.</p>
 </div>
 <div>
+<p>Selden Jr., Robert Z. 2018a. “A Preliminary Study of Smithport Plain Bottle Morphology in the Southern Caddo Area.” <em>Bulletin of the Texas Archeological Society</em> 89: 63–89.</p>
+</div>
+<div>
+<p>———. 2018b. “Ceramic Morphological Organisation in the Southern Caddo Area: Quiddity of Shape for Hickory Engraved Bottles.” <em>Journal of Archaeological Science: Reports</em> 21: 884–96. <a href="https://doi.org/10.1016/j.jasrep.2018.08.045">https://doi.org/10.1016/j.jasrep.2018.08.045</a>.</p>
+</div>
+<div>
+<p>———. 2019. “Ceramic Morphological Organisation in the Southern Caddo Area: The Clarence H. Webb Collections.” <em>Journal of Cultural Heritage</em> 35: 41–55. <a href="https://doi.org/https://doi.org/10.1016/j.culher.2018.07.002">https://doi.org/https://doi.org/10.1016/j.culher.2018.07.002</a>.</p>
+</div>
+<div>
+<p>———. 2020. “Louisiana Limitrophe: An Iterative Morphological Exegesis of Caddo Bottle and Biface Production.” In <em>Ancestral Caddo Ceramic Traditions</em>, edited by Duncan P. McKinnon, Jeffrey S. Girard, and Timothy K. Perttula, (in press). Baton Rouge: LSU Press.</p>
+</div>
+<div>
 <p>Selden Jr., Robert Z., John E. Dockall, and Morgane Dubied. 2020. “A Quantitative Assessment of Intraspecific Morphological Variation in Gahagan Bifaces from the Southern Caddo Area and Central Texas.” <em>Southeastern Archaeology</em> 39 (2): 125–45. <a href="https://doi.org/10.1080/0734578x.2020.1744416">https://doi.org/10.1080/0734578x.2020.1744416</a>.</p>
+</div>
+<div>
+<p>Selden Jr., Robert Z., John E. Dockall, and Harry J. Shafer. 2018. “Lithic Morphological Organisation: Gahagan Bifaces from the Southern Caddo Area.” <em>Digital Applications in Archaeology and Cultural Heritage</em> 10: e00080. <a href="https://doi.org/10.1016/j.daach.2018.e00080">https://doi.org/10.1016/j.daach.2018.e00080</a>.</p>
 </div>
 </div>
 </div>
