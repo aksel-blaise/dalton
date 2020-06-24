@@ -220,7 +220,7 @@ This volume is in <b><a href="open.html#open">Open Review</a></b>. I want your f
 <h2><span class="header-section-number">1.1</span> Generating the spline</h2>
 <p>This effort enlists a spline extracted from the surface geometry of the mesh using the <code>extract contour curves</code> command, which is used to detect and extract 3D contour curves from high-curvature areas of the mesh. In reverse-engineering, <code>extract contour curves</code> is regularly employed as the first step in building a <code>patch network</code> that is used to create a surface. The extracted feature curve is rendered as a spline, and follows the highest curvature contours around the periphery of the lateral and basal edges, following the highly variable sinuous edge morphology around the entirety of the projectile. The remainder of the landmarking protocol is based upon this spline, which was subsequently split at six mathematically-defined locations.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/extractspline.png&#39;</span>)</a></code></pre></div>
-<p><img src="images/extractspline.png" width="2106" /></p>
+<p><img src="images/extractspline.png" width="2240" /></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">fig.cap=<span class="st">&quot;Spline extracted along the highest contours of the Dalton point </span><span class="ch">\\</span><span class="st">label{figspline}&quot;</span></a></code></pre></div>
 </div>
 <div id="splitting-the-spline" class="section level2">
