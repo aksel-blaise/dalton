@@ -13,7 +13,7 @@ _This landmarking protocol was developed prior to running auto3dgm, and details 
 
 ## Generating the spline
 
-This effort enlists a spline extracted from the surface geometry of the mesh using the `extract contour curves` command, which is used to detect and extract 3D contour curves from high-curvature areas of the mesh. In reverse-engineering, `extract contour curves` is regularly employed as the first step in building a `patch network` that is used to create a surface. The extracted feature curve is rendered as a spline, and follows the highest curvature contours around the periphery of the lateral and basal edges, following the highly variable sinuous edge morphology around the entirety of the biface. The remainder of the landmarking protocol is based upon this spline, which was subsequently split at four mathematically-defined locations.
+This effort enlists a spline extracted from the surface geometry of the mesh using the `extract contour curves` command, which is used to detect and extract 3D contour curves from high-curvature areas of the mesh. In reverse-engineering, `extract contour curves` is regularly employed as the first step in building a `patch network` that is used to create a surface. The extracted feature curve is rendered as a spline, and follows the highest curvature contours around the periphery of the lateral and basal edges, following the highly variable sinuous edge morphology around the entirety of the biface. The remainder of the landmarking protocol is based upon this spline, which was subsequently split at six mathematically-defined locations.
 
 ```{r figspline}
 knitr::include_graphics('images/extractspline.png')
