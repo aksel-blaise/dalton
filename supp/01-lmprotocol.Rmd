@@ -49,7 +49,7 @@ fig.cap="Identify points of hightest curvature (light blue) at left/right inters
 The point of highest curvature at the intersection of the blade and base was also calculated using the `curvature function` in the Accuracy Analyser. Using this tool, the two points of highest curvature were located between the blade and base on either side of each projectile where the local radius measure was largest. The alignment and orientation of each biface was dictated by the _auto3dgm_ output, and the landmarking protocol follows the mesh orientation in that figure, where LM4 was always placed on the right side of the basal edge, and LM5 on the left.
 
 ```{r figcurve2}
-knitr::include_graphics('images/dalton.png')
+knitr::include_graphics('images/splinesplit2.png')
 fig.cap="Identify points of hightest curvature (light blue) at left/right intersection of blade and base. \\label{figsplinesplitlr}"
 ```
 
@@ -58,7 +58,7 @@ fig.cap="Identify points of hightest curvature (light blue) at left/right inters
 One additional landmark (LM6) was placed at the centre of the base. The location of this landmark was identified by calculating the linear distance between LM2 and LM3, and projecting a `reference point` (ctrl-div; below) equidistant between the two. A `reference plane` was added using the ctrl-div as the pick point, and the `Right plane` as the `normal axis`. The spline was then split at the intersection of the `reference plane` and the basal spline.
 
 ```{r figlm4}
-knitr::include_graphics('images/dalton.png')
+knitr::include_graphics('images/lm6.png')
 fig.cap="Calculate linear distance between LM2 and LM3, insert reference plane coplanar to Right plane equidistant between LM2 and LM3, and use the reference plane to cut the spline.  \\label{figlm6}"
 ```
 
@@ -67,8 +67,8 @@ fig.cap="Calculate linear distance between LM2 and LM3, insert reference plane c
 Through the preceding protocol, the initial spline was split into four discrete splines. These splines articulate with components of projectile morphology that can be compartmentalised in the subsequent analyses. The primary analytical gain achieved through this exercise is the requisite foundation needed to carry out replicable analyses of Dalton point morphology in three dimensions, further increasing the precision of the geometric morphometric analysis.
 
 ```{r figsplinesplit-frbl}
-knitr::include_graphics('images/dalton.png')
-fig.cap="Result of spline splits include four discrete splines, each articulating with a potential region of analytical interest. \\label{figsplinesplit-frbl}"
+knitr::include_graphics('images/splinesplit-frbl.png')
+fig.cap="Result of spline splits include six discrete splines, each articulating with a region of analytical interest. \\label{figsplinesplit-frbl}"
 ```
 
 ## Landmark and semilandmark placement
@@ -76,16 +76,11 @@ fig.cap="Result of spline splits include four discrete splines, each articulatin
 Landmarks 1-6 were placed at the location of each spline split (blue points, below). Equidistant semilandmarks were then added to each of the four splines; 10 between LM1 and LM4, three between LM4 and LM2, three between LM2 and LM6, three between LM6 and LM3, three between LM3 and LM5, and 10 between LM5 and LM1.
 
 ```{r figlmslm-all}
-knitr::include_graphics('images/dalton.png')
-fig.cap="3D spline with landmarks (blue) and equidistant semilandmarks (white) applied, with top, right, and front planes. Semilandmarks are renumbered in post.  \\label{figlmslm-all}"
+knitr::include_graphics('images/lmslm-all.png')
+fig.cap="Mesh with landmarks (blue) and equidistant semilandmarks (white) applied.  \\label{figlmslm-all}"
 ```
 
-The rigourous protocol used in the application of landmarks and semilandmarks aids in capturing morphological variation that articulates with differing patterns of reduction and axial twisting introduced by knappers through the practice of beveling. Thus, this constellation of landmarks and semilandmarks provides for greater precision in the geometric morphometric analysis, marking a substantive advancement in those analytical protocols used to achieve a more complete and holistic analysis of Gahagan biface morphology.
-
-```{r figbevlm}
-knitr::include_graphics('images/dalton.png')
-fig.cap="Mesh for Gahagan biface 545 from Gahagan Mound with landmarks and equidistant semilandmarks applied. \\label{figbevlm}"
-```
+The rigourous protocol used in the application of landmarks and semilandmarks aids in capturing morphological variation that articulates with differing patterns of reduction and axial twisting introduced by knappers through the general practice of knapping and beveling. Thus, this constellation of landmarks and semilandmarks provides for greater precision in the geometric morphometric analysis, marking a substantive advancement in those analytical protocols used to achieve a more complete and holistic analysis of Dalton point morphology.
 
 ### Acknowledgments
 
