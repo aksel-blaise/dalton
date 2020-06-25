@@ -24,7 +24,7 @@
 <meta name="author" content="Robert Z. Selden, Jr." />
 
 
-<meta name="date" content="2020-06-24" />
+<meta name="date" content="2020-06-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -231,8 +231,8 @@ This volume is in <b><a href="open.html#open">Open Review</a></b>. I want your f
 <div id="spline-split-at-location-of-lm1" class="section level2">
 <h2><span class="header-section-number">1.3</span> Spline split at location of LM1</h2>
 <p>The <code>horizontal tangent</code> is calculated by drawing a horizontal line above the tip of the biface using the tangent as a <code>common constraint</code>, and the horizontal as the <code>independent constraint</code>. To split the 3D spline at the location of the horizontal tangent, a <code>reference point</code> was inserted at the location of the <code>tangent</code> in the sketch (light blue point; below, left), followed by a <code>reference plane</code> (in white; below, left and right) using the <code>pick point and normal axis</code> function where the <code>reference point</code> (h-tangent) was used as the <code>pick point</code>, and the <code>Right plane</code> as the <code>normal axis</code> (below, left). The spline was then cut at the location where the <code>reference plane</code> intersected with the spline (below image, right).</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton.png&#39;</span>)</a></code></pre></div>
-<p><img src="images/dalton.png" width="2106" /></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/lm1.png&#39;</span>)</a></code></pre></div>
+<p><img src="images/lm1.png" width="1890" /></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">fig.cap=<span class="st">&quot;Identify horizontal tangent, insert reference point and reference plane (left). Use reference plane to cut spline at the location of the horizontal tangent (right). </span><span class="ch">\\</span><span class="st">label{figlm1}&quot;</span></a></code></pre></div>
 </div>
 <div id="spline-split-at-locations-of-lm2---lm3" class="section level2">
