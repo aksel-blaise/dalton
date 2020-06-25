@@ -82,6 +82,6 @@ fig.cap="Mesh with landmarks (blue) and equidistant semilandmarks (white) applie
 
 The rigourous protocol used in the application of landmarks and semilandmarks aids in capturing morphological variation that articulates with differing patterns of reduction and axial twisting introduced by knappers through the general practice of knapping and beveling. Thus, this constellation of landmarks and semilandmarks provides for greater precision in the geometric morphometric analysis, marking a substantive advancement in those analytical protocols used to achieve a more complete and holistic analysis of Dalton point morphology.
 
-### Acknowledgments
+## Acknowledgments
 
 I extend my gratitude to Christian S. Hoggard and David K. Thulman for their thoughtful comments and constructive criticisms on the draft of this landmarking protocol, which was originally developed for the study of [Gahagan bifaces](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md), and is extended here to an analysis of Dalton point morphology. This iteration of the landmarking protocol was developed using the [digit3DLand](https://github.com/morphOptics/digit3DLand) package in R (code available in Github repository); however, the capacity to populate a replicable suite of reference geometry across the sample in _Geomagic Design X_ made it a better option for the dynamic design process. Definitions of reference geometries and _Design X_ features described in this protocol are paraphrased from the reference manual.
