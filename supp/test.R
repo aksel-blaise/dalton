@@ -51,3 +51,30 @@ boxplot(csz~hreg,
         col = wes_palette("Moonrise2"),
 )
 fig.cap = "Boxplot of centroid size by Heartland region."
+
+# principal components analysis
+pca<-gm.prcomp(Y.gpa$coords)
+summary(pca)
+# set plot parameters to plot by Heartland in/out
+pch.gps.heart <- c(15,17)[as.factor(heart)]
+col.gps.heart <- wes_palette("Moonrise2")[as.factor(heart)]
+col.hull <- c("#798E87","#C27D38")
+# plot pca by incision profile
+pc.plot1 <- plot(pca, asp = 1,
+                 pch = pch.gps.heart,
+                 col = col.gps.heart)
+shapeHulls(pc.plot1, 
+           groups = heart,
+           group.cols = col.hull)
+
+# set plot parameters to plot by Heartland region
+pch.gps.hreg <- c(15,17,18)[as.factor(hreg)]
+col.gps.hreg <- wes_palette("Moonrise2")[as.factor(hreg)]
+col.hull.2 <- c("#798E87","#C27D38","#CCC591")
+# plot pca by incision profile (inc2)
+pc.plot2 <- plot(pca, asp = 1,
+                 pch = pch.gps.hreg,
+                 col = col.gps.hreg)
+shapeHulls(pc.plot2, 
+           groups = hreg,
+           group.cols = col.hull.2)
