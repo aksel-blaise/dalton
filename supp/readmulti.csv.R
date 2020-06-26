@@ -1,5 +1,5 @@
-#' Function to read multiple CSV files
-#' Format of input files is 4 columns: the first is a label for each landmark and the rest are the XYZ coordinates
+# function to read multiple CSV files
+# format of input files is 4 columns: the first is a label for each landmark and the rest are the XYZ coordinates
 readmulti.csv<-function(filelist){   
   n<-length(filelist)
   names<-gsub(".csv","",filelist, ignore.case=T)

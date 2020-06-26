@@ -1,0 +1,137 @@
+--- 
+title: "Supplementary materials for paper: Article title here"
+author: 
+    - Robert Z. Selden, Jr.^[Heritage Research Center, Stephen F. Austin State University; Virtual Curation Laboratory, Virginia Commonwealth University; and Cultural Heritage Department, Jean Monnet University, zselden@sfasu.edu]
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Morphological analysis of Dalton projectile points"
+---
+
+# Preface {-}
+
+Placeholder
+
+
+## Acknowledgments
+## Funding
+
+<!--chapter:end:index.Rmd-->
+
+
+# Landmarking Protocol
+
+Placeholder
+
+
+## Generating the spline
+## Splitting the spline
+## Spline split at location of LM1
+## Spline split at locations of LM2 - LM3
+## Spline split at locations of LM4 - LM5
+## Spline split at location of LM6
+## Final spline
+## Landmark and semilandmark placement
+## Acknowledgments
+
+<!--chapter:end:01-lmprotocol.Rmd-->
+
+# Analysis
+
+## Generalised Procrustes Analysis
+
+```{r gpa, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# library(devtools)
+# devtools::install_github("geomorphR/geomorph", ref = "Stable", build_vignettes = TRUE)
+library(geomorph)
+library(wesanderson)
+setwd(getwd())
+
+# read GM data
+source('readmulti.csv.R')
+
+# read .csv files
+setwd("./data")
+filelist <- list.files(pattern = ".csv")
+coords <- readmulti.csv(filelist)
+setwd("../")
+
+# read qualitative data
+qdata <- read.csv("qdata.csv",header=TRUE,row.names=1)
+qdata <- qdata[match(dimnames(coords)[[3]],rownames(qdata)),]
+qdata
+
+# gpa
+Y.gpa <- gpagen(coords, PrinAxes = TRUE, ProcD = TRUE, Proj = TRUE, print.progress = FALSE)
+
+# gpa plot
+# knitr::include_graphics('images/gpa3d.png')
+# fig.cap="Results of generalized Procrustes analysis."
+
+# geomorph data frame
+gdf <- geomorph.data.frame(shape = Y.gpa$coords, size = Y.gpa$Csize, heart = qdata$heart.out, hreg = qdata$heart.reg)
+
+# attributes for boxplots
+csz <- Y.gpa$Csize # centroid size
+heart <- qdata$heart.out # heartland in/out
+hreg <- qdata$heart.reg # heartland region
+
+# boxplot of incision (centroid) size by profile type (inc)
+boxplot(csz~heart,
+        names = c("H","N"),
+        xlab = "Heartland",
+        ylab = "Centroid Size",
+        col = wes_palette("Moonrise2"),
+        )
+fig.cap = "Boxplot of centroid size by Heartland (in/out)."
+
+# boxplot of incision (centroid) size by profile type (inc2)
+boxplot(csz~hreg,
+        names = c("H","I","P"),
+        xlab = "Heartland Region",
+        ylab = "Centroid Size",
+        col = wes_palette("Moonrise2"),
+        )
+fig.cap = "Boxplot of centroid size by Heartland region."
+```
+
+<!--chapter:end:02-analysis.Rmd-->
+
+
+# Open Review {#open}
+
+Placeholder
+
+
+## FAQ about open review
+### What kind of feedback are you looking for?
+### Can I see the annotations that others are making?
+### What are the benefits for readers?
+### What are the benefits for authors and publishers?
+### Has anyone ever done something like this before?
+### What kind of information are you collecting and how will that information be used?
+### How I can learn more about traditional peer review of academic books?
+### Can I do this with my book?
+### I have a different question about Open Review. How can I get in touch?
+## Privacy and Consent Policy
+### Overview
+### What information do we collect?
+### How do we use your information?
+### How do we protect your information?
+### Do we use cookies?
+### Your consent
+### Questions
+### Changes to our Privacy and Consent Policy
+### Acknowledgments
+
+<!--chapter:end:98-open-review.Rmd-->
+
+`r if (knitr::is_html_output()) '
+# References {-}
+'`
+
+<!--chapter:end:99-references.Rmd-->
+
