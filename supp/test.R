@@ -1,10 +1,5 @@
-# Analysis
-
-## Generalised Procrustes Analysis
-
-```{r gpa, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # library(devtools)
-# devtools::install_github("geomorphR/geomorph", ref = "Stable", build_vignettes = TRUE)
+devtools::install_github("geomorphR/geomorph", ref = "Stable", build_vignettes = TRUE)
 library(geomorph)
 library(wesanderson)
 setwd(getwd())
@@ -25,6 +20,7 @@ qdata
 
 # gpa
 Y.gpa <- gpagen(coords, PrinAxes = TRUE, ProcD = TRUE, Proj = TRUE, print.progress = FALSE)
+plot(Y.gpa)
 
 # gpa plot
 # knitr::include_graphics('images/gpa3d.png')
@@ -40,19 +36,18 @@ hreg <- qdata$heart.reg # heartland region
 
 # boxplot of Dalton point centroid size by in/out Heartland
 boxplot(csz~heart,
-        names = c("H","N"), # heartland (H), and not heartland (N)
-        xlab = "Heartland",
+        names = c("H","N"),
+        xlab = "Heartland (H) or not (N)",
         ylab = "Centroid Size",
         col = wes_palette("Moonrise2"),
-        )
+)
 fig.cap = "Boxplot of centroid size by Heartland (in/out)."
 
 # boxplot of Dalton point centroid size by Heartland Region
 boxplot(csz~hreg,
-        names = c("H","I","P"), # heartland (H), interior (I), and northern periphery (P)
+        names = c("H","I","P"),
         xlab = "Heartland Region",
         ylab = "Centroid Size",
         col = wes_palette("Moonrise2"),
-        )
+)
 fig.cap = "Boxplot of centroid size by Heartland region."
-```
