@@ -25,6 +25,8 @@ qdata
 
 # gpa
 Y.gpa <- gpagen(coords, PrinAxes = TRUE, ProcD = TRUE, Proj = TRUE, print.progress = FALSE)
+# plot consensus configuration
+plot(Y.gpa$consensus[,c("X", "Y")], asp = 1, pch = 20)
 
 # gpa plot
 # knitr::include_graphics('images/gpa3d.png')
@@ -92,31 +94,67 @@ pc.plot2 <- plot(pca, asp = 1,
 ## Define models
 
 ```{r define-models, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# allometry
+fit.size <- procD.lm(shape ~ size, data = gdf, print.progress = FALSE, iter = 9999)
+# allometry - common allometry, different means -> heart.out
+fit.sz.cheart <- procD.lm(shape ~ size + heart, data = gdf, print.progress = FALSE, iter = 9999)
+# allometry - unique allometries -> heart.out
+fit.sz.uheart <- procD.lm(shape ~ size * heart, data = gdf, print.progress = FALSE, iter = 9999)
+# allometry - common allometry, different means -> heart.reg
+fit.sz.chreg <- procD.lm(shape ~ size + hreg, data = gdf, print.progress = FALSE, iter = 9999)
+# allometry - unique allometries -> heart.reg
+fit.sz.uhreg <- procD.lm(shape ~ size * hreg, data = gdf, print.progress = FALSE, iter = 9999)
+
+# size as a function of group?
 fit.sizeheart <- procD.lm(size ~ heart, data = gdf, print.progress = FALSE, iter = 9999)
 fit.sizehreg <- procD.lm(size ~ hreg, data = gdf, print.progress = FALSE, iter = 9999)
+
+# shape as a function of group?
 fit.shapeheart <- procD.lm(shape ~ heart, data = gdf, print.progress = FALSE, iter = 9999)
 fit.shapehreg <- procD.lm(shape ~ hreg, data = gdf, print.progress = FALSE, iter = 9999)
 ```
 
-## Size/Shape ~ In/Out of Heartland?
+## Allometry
 
-```{r szshpinc, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# ANOVA: does Dalton point morphology differ in/out of Heartland?
-anova(fit.shapeheart)
-# ANOVA: does Dalton point size differ in/out of heartland?
-anova(fit.sizeheart)
+```{r allometry, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# allometry - does shape change with size?
+anova(fit.size)
+
+# heart.out
+anova(fit.sz.cheart)
+anova(fit.sz.uheart)
+anova(fit.sz.cheart, fit.sz.uheart, print.progress = FALSE)
+
+# heart.reg
+anova(fit.sz.chreg)
+anova(fit.sz.uhreg)
+anova(fit.sz.chreg, fit.sz.uhreg, print.progress = FALSE)
+
+# allometry plots
+# regscore (Drake and Klingenberg 2008)
+plot(fit.size, type = "regression", reg.type = "RegScore", predictor = log(gdf$size), pch = pch.gps.heart, col = col.gps.heart)
+plot(fit.size, type = "regression", reg.type = "RegScore", predictor = log(gdf$size), pch = pch.gps.hreg, col = col.gps.hreg)
+
+# common allometric component (Mitteroecker 2004)
+plotAllometry(fit.size, size = gdf$size, logsz = TRUE, method = "CAC", pch = pch.gps.heart, col = col.gps.heart)
+plotAllometry(fit.size, size = gdf$size, logsz = TRUE, method = "CAC", pch = pch.gps.hreg, col = col.gps.hreg)
+
+# size-shape pca (Mitteroecker 2004)
+plotAllometry(fit.size, size = gdf$size, logsz = TRUE, method = "size.shape", pch = pch.gps.heart, col = col.gps.heart)
+plotAllometry(fit.size, size = gdf$size, logsz = TRUE, method = "size.shape", pch = pch.gps.hreg, col = col.gps.hreg)
+
+# predline (Adams and Nistri 2010)
+plotAllometry(fit.sz.uheart, size = gdf$size, logsz = TRUE, method = "PredLine", pch = pch.gps.heart, col = col.gps.heart)
+plotAllometry(fit.sz.uhreg, size = gdf$size, logsz = TRUE, method = "PredLine", pch = pch.gps.hreg, col = col.gps.hreg)
 ```
 
-## Size/Shape ~ Heartland + Regions?
+## Size/Shape ~ Group?
 
-```{r szshpinc2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# ANOVA: does Dalton point morphology differ across heartland + regions?
-anova(fit.shapehreg)
-# pairwise comparison of LS means = which differ?
-sh.hreg <- pairwise(fit.shapehreg, groups = qdata$heart.reg)
-summary(sh.hreg, confidence = 0.95, test.type = "dist")
-# pairwise distance between variances = standardization?
-summary(sh.hreg, confidence = 0.95, test.type = "var")
+```{r szshpinc, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# ANOVA: does Dalton point size differ in/out of heartland?
+anova(fit.sizeheart)
+# ANOVA: does Dalton point morphology differ in/out of Heartland?
+anova(fit.shapeheart)
 
 # ANOVA: does Dalton point sizes differ across heartland regions?
 anova(fit.sizehreg)
@@ -125,22 +163,30 @@ sz.hreg <- pairwise(fit.sizehreg, groups = qdata$heart.reg)
 summary(sz.hreg, confidence = 0.95, test.type = "dist")
 # pairwise distance between variances = standardization?
 summary(sz.hreg, confidence = 0.95, test.type = "var")
+
+# ANOVA: does Dalton point morphology differ across heartland + regions?
+anova(fit.shapehreg)
+# pairwise comparison of LS means = which differ?
+sh.hreg <- pairwise(fit.shapehreg, groups = qdata$heart.reg)
+summary(sh.hreg, confidence = 0.95, test.type = "dist")
+# pairwise distance between variances = standardization?
+summary(sh.hreg, confidence = 0.95, test.type = "var")
 ```
 
 ## Morphological disparity
 
 ```{r m-disparity}
-# morphological disparity: does Dalton point morphology display greater shape variation among individuals?
-# in/out of heartland
-morphol.disparity(fit.shapeheart, groups = qdata$heart.out, data = gdf, print.progress = FALSE, iter = 9999)
-# heartland + regions
-morphol.disparity(fit.shapehreg, groups = qdata$heart.reg, data = gdf, print.progress = FALSE, iter = 9999)
-
 # morphological disparity: does Dalton point size display greater shape variation among individuals?
 # in/out of heartland
 morphol.disparity(fit.sizeheart, groups = qdata$heart.out, data = gdf, print.progress = FALSE, iter = 9999)
 # heartland + regions
 morphol.disparity(fit.sizehreg, groups = qdata$heart.reg, data = gdf, print.progress = FALSE, iter = 9999)
+
+# morphological disparity: does Dalton point morphology display greater shape variation among individuals?
+# in/out of heartland
+morphol.disparity(fit.shapeheart, groups = qdata$heart.out, data = gdf, print.progress = FALSE, iter = 9999)
+# heartland + regions
+morphol.disparity(fit.shapehreg, groups = qdata$heart.reg, data = gdf, print.progress = FALSE, iter = 9999)
 ```
 
 ## Mean shapes

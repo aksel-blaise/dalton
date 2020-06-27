@@ -24,7 +24,7 @@
 <meta name="author" content="Robert Z. Selden, Jr." />
 
 
-<meta name="date" content="2020-06-26" />
+<meta name="date" content="2020-06-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -160,6 +160,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i><b>2</b> Analysis</a><ul>
 <li class="chapter" data-level="2.1" data-path="analysis.html"><a href="analysis.html#generalised-procrustes-analysis"><i class="fa fa-check"></i><b>2.1</b> Generalised Procrustes Analysis</a></li>
+<li class="chapter" data-level="2.2" data-path="analysis.html"><a href="analysis.html#principal-components-analysis"><i class="fa fa-check"></i><b>2.2</b> Principal Components Analysis</a></li>
+<li class="chapter" data-level="2.3" data-path="analysis.html"><a href="analysis.html#define-models"><i class="fa fa-check"></i><b>2.3</b> Define models</a></li>
+<li class="chapter" data-level="2.4" data-path="analysis.html"><a href="analysis.html#allometry"><i class="fa fa-check"></i><b>2.4</b> Allometry</a></li>
+<li class="chapter" data-level="2.5" data-path="analysis.html"><a href="analysis.html#sizeshape-group"><i class="fa fa-check"></i><b>2.5</b> Size/Shape ~ Group?</a></li>
+<li class="chapter" data-level="2.6" data-path="analysis.html"><a href="analysis.html#morphological-disparity"><i class="fa fa-check"></i><b>2.6</b> Morphological disparity</a></li>
+<li class="chapter" data-level="2.7" data-path="analysis.html"><a href="analysis.html#mean-shapes"><i class="fa fa-check"></i><b>2.7</b> Mean shapes</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="open.html"><a href="open.html"><i class="fa fa-check"></i><b>3</b> Open Review</a><ul>
 <li class="chapter" data-level="3.1" data-path="open.html"><a href="open.html#faq-about-open-review"><i class="fa fa-check"></i><b>3.1</b> FAQ about open review</a><ul>
@@ -216,62 +222,573 @@ This volume is in <b><a href="open.html#open">Open Review</a></b>. I want your f
 <h2><span class="header-section-number">2.1</span> Generalised Procrustes Analysis</h2>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="co"># library(devtools)</span></a>
 <a class="sourceLine" id="cb17-2" title="2"><span class="co"># devtools::install_github(&quot;geomorphR/geomorph&quot;, ref = &quot;Stable&quot;, build_vignettes = TRUE)</span></a>
-<a class="sourceLine" id="cb17-3" title="3"><span class="kw">library</span>(geomorph)</a>
-<a class="sourceLine" id="cb17-4" title="4"><span class="kw">library</span>(wesanderson)</a>
-<a class="sourceLine" id="cb17-5" title="5"><span class="kw">setwd</span>(<span class="kw">getwd</span>())</a>
-<a class="sourceLine" id="cb17-6" title="6"></a>
-<a class="sourceLine" id="cb17-7" title="7"><span class="co"># read GM data</span></a>
-<a class="sourceLine" id="cb17-8" title="8"><span class="kw">source</span>(<span class="st">&#39;readmulti.csv.R&#39;</span>)</a>
-<a class="sourceLine" id="cb17-9" title="9"></a>
-<a class="sourceLine" id="cb17-10" title="10"><span class="co"># read .csv files</span></a>
-<a class="sourceLine" id="cb17-11" title="11"><span class="kw">setwd</span>(<span class="st">&quot;./data&quot;</span>)</a>
-<a class="sourceLine" id="cb17-12" title="12">filelist &lt;-<span class="st"> </span><span class="kw">list.files</span>(<span class="dt">pattern =</span> <span class="st">&quot;.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb17-13" title="13">coords &lt;-<span class="st"> </span><span class="kw">readmulti.csv</span>(filelist)</a>
-<a class="sourceLine" id="cb17-14" title="14"><span class="kw">setwd</span>(<span class="st">&quot;../&quot;</span>)</a>
-<a class="sourceLine" id="cb17-15" title="15"></a>
-<a class="sourceLine" id="cb17-16" title="16"><span class="co"># read qualitative data</span></a>
-<a class="sourceLine" id="cb17-17" title="17">qdata &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;qdata.csv&quot;</span>,<span class="dt">header=</span><span class="ot">TRUE</span>,<span class="dt">row.names=</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb17-18" title="18">qdata &lt;-<span class="st"> </span>qdata[<span class="kw">match</span>(<span class="kw">dimnames</span>(coords)[[<span class="dv">3</span>]],<span class="kw">rownames</span>(qdata)),]</a>
-<a class="sourceLine" id="cb17-19" title="19">qdata</a></code></pre></div>
+<a class="sourceLine" id="cb17-3" title="3"><span class="kw">library</span>(geomorph)</a></code></pre></div>
+<pre><code>## Loading required package: RRPP</code></pre>
+<pre><code>## Loading required package: rgl</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">library</span>(wesanderson)</a>
+<a class="sourceLine" id="cb20-2" title="2"><span class="kw">setwd</span>(<span class="kw">getwd</span>())</a>
+<a class="sourceLine" id="cb20-3" title="3"></a>
+<a class="sourceLine" id="cb20-4" title="4"><span class="co"># read GM data</span></a>
+<a class="sourceLine" id="cb20-5" title="5"><span class="kw">source</span>(<span class="st">&#39;readmulti.csv.R&#39;</span>)</a>
+<a class="sourceLine" id="cb20-6" title="6"></a>
+<a class="sourceLine" id="cb20-7" title="7"><span class="co"># read .csv files</span></a>
+<a class="sourceLine" id="cb20-8" title="8"><span class="kw">setwd</span>(<span class="st">&quot;./data&quot;</span>)</a>
+<a class="sourceLine" id="cb20-9" title="9">filelist &lt;-<span class="st"> </span><span class="kw">list.files</span>(<span class="dt">pattern =</span> <span class="st">&quot;.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb20-10" title="10">coords &lt;-<span class="st"> </span><span class="kw">readmulti.csv</span>(filelist)</a>
+<a class="sourceLine" id="cb20-11" title="11"><span class="kw">setwd</span>(<span class="st">&quot;../&quot;</span>)</a>
+<a class="sourceLine" id="cb20-12" title="12"></a>
+<a class="sourceLine" id="cb20-13" title="13"><span class="co"># read qualitative data</span></a>
+<a class="sourceLine" id="cb20-14" title="14">qdata &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;qdata.csv&quot;</span>,<span class="dt">header=</span><span class="ot">TRUE</span>,<span class="dt">row.names=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb20-15" title="15">qdata &lt;-<span class="st"> </span>qdata[<span class="kw">match</span>(<span class="kw">dimnames</span>(coords)[[<span class="dv">3</span>]],<span class="kw">rownames</span>(qdata)),]</a>
+<a class="sourceLine" id="cb20-16" title="16">qdata</a></code></pre></div>
 <pre><code>##               heart.out heart.reg
 ## 11AI225               H         H
 ## 11HE445               N         P
+## HK49_1462             N         I
 ## HK49_2                N         I
-## KeilMangold13         H         H</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="co"># gpa</span></a>
-<a class="sourceLine" id="cb19-2" title="2">Y.gpa &lt;-<span class="st"> </span><span class="kw">gpagen</span>(coords, <span class="dt">PrinAxes =</span> <span class="ot">TRUE</span>, <span class="dt">ProcD =</span> <span class="ot">TRUE</span>, <span class="dt">Proj =</span> <span class="ot">TRUE</span>, <span class="dt">print.progress =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb19-3" title="3"></a>
-<a class="sourceLine" id="cb19-4" title="4"><span class="co"># gpa plot</span></a>
-<a class="sourceLine" id="cb19-5" title="5"><span class="co"># knitr::include_graphics(&#39;images/gpa3d.png&#39;)</span></a>
-<a class="sourceLine" id="cb19-6" title="6"><span class="co"># fig.cap=&quot;Results of generalized Procrustes analysis.&quot;</span></a>
-<a class="sourceLine" id="cb19-7" title="7"></a>
-<a class="sourceLine" id="cb19-8" title="8"><span class="co"># geomorph data frame</span></a>
-<a class="sourceLine" id="cb19-9" title="9">gdf &lt;-<span class="st"> </span><span class="kw">geomorph.data.frame</span>(<span class="dt">shape =</span> Y.gpa<span class="op">$</span>coords, <span class="dt">size =</span> Y.gpa<span class="op">$</span>Csize, <span class="dt">heart =</span> qdata<span class="op">$</span>heart.out, <span class="dt">hreg =</span> qdata<span class="op">$</span>heart.reg)</a>
-<a class="sourceLine" id="cb19-10" title="10"></a>
-<a class="sourceLine" id="cb19-11" title="11"><span class="co"># attributes for boxplots</span></a>
-<a class="sourceLine" id="cb19-12" title="12">csz &lt;-<span class="st"> </span>Y.gpa<span class="op">$</span>Csize <span class="co"># centroid size</span></a>
-<a class="sourceLine" id="cb19-13" title="13">heart &lt;-<span class="st"> </span>qdata<span class="op">$</span>heart.out <span class="co"># heartland in/out</span></a>
-<a class="sourceLine" id="cb19-14" title="14">hreg &lt;-<span class="st"> </span>qdata<span class="op">$</span>heart.reg <span class="co"># heartland region</span></a>
-<a class="sourceLine" id="cb19-15" title="15"></a>
-<a class="sourceLine" id="cb19-16" title="16"><span class="co"># boxplot of Dalton point centroid size by in/out Heartland</span></a>
-<a class="sourceLine" id="cb19-17" title="17"><span class="kw">boxplot</span>(csz<span class="op">~</span>heart,</a>
-<a class="sourceLine" id="cb19-18" title="18">        <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">&quot;H&quot;</span>,<span class="st">&quot;N&quot;</span>), <span class="co"># heartland (H), and not heartland (N)</span></a>
-<a class="sourceLine" id="cb19-19" title="19">        <span class="dt">xlab =</span> <span class="st">&quot;Heartland&quot;</span>,</a>
-<a class="sourceLine" id="cb19-20" title="20">        <span class="dt">ylab =</span> <span class="st">&quot;Centroid Size&quot;</span>,</a>
-<a class="sourceLine" id="cb19-21" title="21">        <span class="dt">col =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>),</a>
-<a class="sourceLine" id="cb19-22" title="22">        )</a></code></pre></div>
+## HK49_4                N         I
+## HK49_7                N         I
+## KeilMangold13         H         H
+## KeilMangold3          H         H
+## KeilMangold8          H         H
+## Kinzer46              N         P
+## Kinzer49              N         P
+## Kinzer50              N         P</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="co"># gpa</span></a>
+<a class="sourceLine" id="cb22-2" title="2">Y.gpa &lt;-<span class="st"> </span><span class="kw">gpagen</span>(coords, <span class="dt">PrinAxes =</span> <span class="ot">TRUE</span>, <span class="dt">ProcD =</span> <span class="ot">TRUE</span>, <span class="dt">Proj =</span> <span class="ot">TRUE</span>, <span class="dt">print.progress =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb22-3" title="3"><span class="co"># plot consensus configuration</span></a>
+<a class="sourceLine" id="cb22-4" title="4"><span class="kw">plot</span>(Y.gpa<span class="op">$</span>consensus[,<span class="kw">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>)], <span class="dt">asp =</span> <span class="dv">1</span>, <span class="dt">pch =</span> <span class="dv">20</span>)</a></code></pre></div>
 <p><img src="dalton_files/figure-html/gpa-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1">fig.cap =<span class="st"> &quot;Boxplot of centroid size by Heartland (in/out).&quot;</span></a>
-<a class="sourceLine" id="cb20-2" title="2"></a>
-<a class="sourceLine" id="cb20-3" title="3"><span class="co"># boxplot of Dalton point centroid size by Heartland Region</span></a>
-<a class="sourceLine" id="cb20-4" title="4"><span class="kw">boxplot</span>(csz<span class="op">~</span>hreg,</a>
-<a class="sourceLine" id="cb20-5" title="5">        <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">&quot;H&quot;</span>,<span class="st">&quot;I&quot;</span>,<span class="st">&quot;P&quot;</span>), <span class="co"># heartland (H), interior (I), and northern periphery (P)</span></a>
-<a class="sourceLine" id="cb20-6" title="6">        <span class="dt">xlab =</span> <span class="st">&quot;Heartland Region&quot;</span>,</a>
-<a class="sourceLine" id="cb20-7" title="7">        <span class="dt">ylab =</span> <span class="st">&quot;Centroid Size&quot;</span>,</a>
-<a class="sourceLine" id="cb20-8" title="8">        <span class="dt">col =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>),</a>
-<a class="sourceLine" id="cb20-9" title="9">        )</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="co"># gpa plot</span></a>
+<a class="sourceLine" id="cb23-2" title="2"><span class="co"># knitr::include_graphics(&#39;images/gpa3d.png&#39;)</span></a>
+<a class="sourceLine" id="cb23-3" title="3"><span class="co"># fig.cap=&quot;Results of generalized Procrustes analysis.&quot;</span></a>
+<a class="sourceLine" id="cb23-4" title="4"></a>
+<a class="sourceLine" id="cb23-5" title="5"><span class="co"># geomorph data frame</span></a>
+<a class="sourceLine" id="cb23-6" title="6">gdf &lt;-<span class="st"> </span><span class="kw">geomorph.data.frame</span>(<span class="dt">shape =</span> Y.gpa<span class="op">$</span>coords, <span class="dt">size =</span> Y.gpa<span class="op">$</span>Csize, <span class="dt">heart =</span> qdata<span class="op">$</span>heart.out, <span class="dt">hreg =</span> qdata<span class="op">$</span>heart.reg)</a>
+<a class="sourceLine" id="cb23-7" title="7"></a>
+<a class="sourceLine" id="cb23-8" title="8"><span class="co"># attributes for boxplots</span></a>
+<a class="sourceLine" id="cb23-9" title="9">csz &lt;-<span class="st"> </span>Y.gpa<span class="op">$</span>Csize <span class="co"># centroid size</span></a>
+<a class="sourceLine" id="cb23-10" title="10">heart &lt;-<span class="st"> </span>qdata<span class="op">$</span>heart.out <span class="co"># heartland in/out</span></a>
+<a class="sourceLine" id="cb23-11" title="11">hreg &lt;-<span class="st"> </span>qdata<span class="op">$</span>heart.reg <span class="co"># heartland region</span></a>
+<a class="sourceLine" id="cb23-12" title="12"></a>
+<a class="sourceLine" id="cb23-13" title="13"><span class="co"># boxplot of Dalton point centroid size by in/out heartland</span></a>
+<a class="sourceLine" id="cb23-14" title="14"><span class="kw">boxplot</span>(csz<span class="op">~</span>heart,</a>
+<a class="sourceLine" id="cb23-15" title="15">        <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">&quot;H&quot;</span>,<span class="st">&quot;N&quot;</span>), <span class="co"># heartland (H), and not heartland (N)</span></a>
+<a class="sourceLine" id="cb23-16" title="16">        <span class="dt">xlab =</span> <span class="st">&quot;Heartland&quot;</span>,</a>
+<a class="sourceLine" id="cb23-17" title="17">        <span class="dt">ylab =</span> <span class="st">&quot;Centroid Size&quot;</span>,</a>
+<a class="sourceLine" id="cb23-18" title="18">        <span class="dt">col =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>),</a>
+<a class="sourceLine" id="cb23-19" title="19">        )</a></code></pre></div>
 <p><img src="dalton_files/figure-html/gpa-2.png" width="100%" /></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1">fig.cap =<span class="st"> &quot;Boxplot of centroid size by Heartland region.&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1">fig.cap =<span class="st"> &quot;Boxplot of centroid size by Heartland (in/out).&quot;</span></a>
+<a class="sourceLine" id="cb24-2" title="2"></a>
+<a class="sourceLine" id="cb24-3" title="3"><span class="co"># boxplot of Dalton point centroid size by heartland + regions</span></a>
+<a class="sourceLine" id="cb24-4" title="4"><span class="kw">boxplot</span>(csz<span class="op">~</span>hreg,</a>
+<a class="sourceLine" id="cb24-5" title="5">        <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">&quot;H&quot;</span>,<span class="st">&quot;I&quot;</span>,<span class="st">&quot;P&quot;</span>), <span class="co"># heartland (H), interior (I), and northern periphery (P)</span></a>
+<a class="sourceLine" id="cb24-6" title="6">        <span class="dt">xlab =</span> <span class="st">&quot;Heartland Region&quot;</span>,</a>
+<a class="sourceLine" id="cb24-7" title="7">        <span class="dt">ylab =</span> <span class="st">&quot;Centroid Size&quot;</span>,</a>
+<a class="sourceLine" id="cb24-8" title="8">        <span class="dt">col =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>),</a>
+<a class="sourceLine" id="cb24-9" title="9">        )</a></code></pre></div>
+<p><img src="dalton_files/figure-html/gpa-3.png" width="100%" /></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">fig.cap =<span class="st"> &quot;Boxplot of centroid size by Heartland region.&quot;</span></a></code></pre></div>
+</div>
+<div id="principal-components-analysis" class="section level2">
+<h2><span class="header-section-number">2.2</span> Principal Components Analysis</h2>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1"><span class="co"># principal components analysis</span></a>
+<a class="sourceLine" id="cb26-2" title="2">pca&lt;-<span class="kw">gm.prcomp</span>(Y.gpa<span class="op">$</span>coords)</a>
+<a class="sourceLine" id="cb26-3" title="3"><span class="kw">summary</span>(pca)</a></code></pre></div>
+<pre><code>## 
+## Ordination type: Principal Component Analysis 
+## Centering and projection: OLS 
+## Number of observations 12 
+## Number of vectors 12 
+## 
+## Importance of Components:
+##                              Comp1      Comp2        Comp3        Comp4        Comp5
+## Eigenvalues            0.009312475 0.00144648 0.0007429635 0.0006407519 0.0003773806
+## Proportion of Variance 0.696908125 0.10824876 0.0556004007 0.0479512917 0.0282416477
+## Cumulative Proportion  0.696908125 0.80515689 0.8607572868 0.9087085785 0.9369502262
+##                               Comp6        Comp7        Comp8        Comp9       Comp10
+## Eigenvalues            0.0002591519 0.0002263497 0.0001600805 7.788778e-05 6.264734e-05
+## Proportion of Variance 0.0193938872 0.0169391025 0.0119797820 5.828808e-03 4.688275e-03
+## Cumulative Proportion  0.9563441134 0.9732832159 0.9852629978 9.910918e-01 9.957801e-01
+##                              Comp11       Comp12
+## Eigenvalues            5.638891e-05 2.049974e-33
+## Proportion of Variance 4.219919e-03 1.534118e-31
+## Cumulative Proportion  1.000000e+00 1.000000e+00</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1"><span class="co"># set plot parameters to plot by heartland in (H) and out (N)</span></a>
+<a class="sourceLine" id="cb28-2" title="2">pch.gps.heart &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="kw">as.factor</span>(heart)]</a>
+<a class="sourceLine" id="cb28-3" title="3">col.gps.heart &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(heart)]</a>
+<a class="sourceLine" id="cb28-4" title="4">col.hull &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</a>
+<a class="sourceLine" id="cb28-5" title="5"><span class="co"># plot pca by heartland in (H) and out (N)</span></a>
+<a class="sourceLine" id="cb28-6" title="6">pc.plot1 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, <span class="dt">asp =</span> <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb28-7" title="7">                  <span class="dt">pch =</span> pch.gps.heart,</a>
+<a class="sourceLine" id="cb28-8" title="8">                  <span class="dt">col =</span> col.gps.heart)</a>
+<a class="sourceLine" id="cb28-9" title="9">                  <span class="kw">shapeHulls</span>(pc.plot1, </a>
+<a class="sourceLine" id="cb28-10" title="10">                             <span class="dt">groups =</span> heart,</a>
+<a class="sourceLine" id="cb28-11" title="11">                             <span class="dt">group.cols =</span> col.hull)</a></code></pre></div>
+<p><img src="dalton_files/figure-html/pca-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1"><span class="co"># set plot parameters to plot by heartland + regions</span></a>
+<a class="sourceLine" id="cb29-2" title="2">pch.gps.hreg &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="kw">as.factor</span>(hreg)]</a>
+<a class="sourceLine" id="cb29-3" title="3">col.gps.hreg &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(hreg)]</a>
+<a class="sourceLine" id="cb29-4" title="4">col.hull<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</a>
+<a class="sourceLine" id="cb29-5" title="5"><span class="co"># plot pca by heartland + regions</span></a>
+<a class="sourceLine" id="cb29-6" title="6">pc.plot2 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, <span class="dt">asp =</span> <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb29-7" title="7">                  <span class="dt">pch =</span> pch.gps.hreg,</a>
+<a class="sourceLine" id="cb29-8" title="8">                  <span class="dt">col =</span> col.gps.hreg)</a>
+<a class="sourceLine" id="cb29-9" title="9">                  <span class="kw">shapeHulls</span>(pc.plot2, </a>
+<a class="sourceLine" id="cb29-10" title="10">                             <span class="dt">groups =</span> hreg,</a>
+<a class="sourceLine" id="cb29-11" title="11">                             <span class="dt">group.cols =</span> col.hull<span class="fl">.2</span>)</a></code></pre></div>
+<p><img src="dalton_files/figure-html/pca-2.png" width="100%" /></p>
+</div>
+<div id="define-models" class="section level2">
+<h2><span class="header-section-number">2.3</span> Define models</h2>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1"><span class="co"># allometry</span></a>
+<a class="sourceLine" id="cb30-2" title="2">fit.size &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>size, <span class="dt">data =</span> gdf, <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, <span class="dt">iter =</span> <span class="dv">9999</span>)</a>
+<a class="sourceLine" id="cb30-3" title="3"><span class="co"># allometry - common allometry, different means -&gt; heart.out</span></a>
+<a class="sourceLine" id="cb30-4" title="4">fit.sz.cheart &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>size <span class="op">+</span><span class="st"> </span>heart, <span class="dt">data =</span> gdf, <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, <span class="dt">iter =</span> <span class="dv">9999</span>)</a>
+<a class="sourceLine" id="cb30-5" title="5"><span class="co"># allometry - unique allometries -&gt; heart.out</span></a>
+<a class="sourceLine" id="cb30-6" title="6">fit.sz.uheart &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>size <span class="op">*</span><span class="st"> </span>heart, <span class="dt">data =</span> gdf, <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, <span class="dt">iter =</span> <span class="dv">9999</span>)</a>
+<a class="sourceLine" id="cb30-7" title="7"><span class="co"># allometry - common allometry, different means -&gt; heart.reg</span></a>
+<a class="sourceLine" id="cb30-8" title="8">fit.sz.chreg &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>size <span class="op">+</span><span class="st"> </span>hreg, <span class="dt">data =</span> gdf, <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, <span class="dt">iter =</span> <span class="dv">9999</span>)</a>
+<a class="sourceLine" id="cb30-9" title="9"><span class="co"># allometry - unique allometries -&gt; heart.reg</span></a>
+<a class="sourceLine" id="cb30-10" title="10">fit.sz.uhreg &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>size <span class="op">*</span><span class="st"> </span>hreg, <span class="dt">data =</span> gdf, <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, <span class="dt">iter =</span> <span class="dv">9999</span>)</a>
+<a class="sourceLine" id="cb30-11" title="11"></a>
+<a class="sourceLine" id="cb30-12" title="12"><span class="co"># size as a function of group?</span></a>
+<a class="sourceLine" id="cb30-13" title="13">fit.sizeheart &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(size <span class="op">~</span><span class="st"> </span>heart, <span class="dt">data =</span> gdf, <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, <span class="dt">iter =</span> <span class="dv">9999</span>)</a>
+<a class="sourceLine" id="cb30-14" title="14">fit.sizehreg &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(size <span class="op">~</span><span class="st"> </span>hreg, <span class="dt">data =</span> gdf, <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, <span class="dt">iter =</span> <span class="dv">9999</span>)</a>
+<a class="sourceLine" id="cb30-15" title="15"></a>
+<a class="sourceLine" id="cb30-16" title="16"><span class="co"># shape as a function of group?</span></a>
+<a class="sourceLine" id="cb30-17" title="17">fit.shapeheart &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>heart, <span class="dt">data =</span> gdf, <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, <span class="dt">iter =</span> <span class="dv">9999</span>)</a>
+<a class="sourceLine" id="cb30-18" title="18">fit.shapehreg &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>hreg, <span class="dt">data =</span> gdf, <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, <span class="dt">iter =</span> <span class="dv">9999</span>)</a></code></pre></div>
+</div>
+<div id="allometry" class="section level2">
+<h2><span class="header-section-number">2.4</span> Allometry</h2>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1"><span class="co"># allometry - does shape change with size?</span></a>
+<a class="sourceLine" id="cb31-2" title="2"><span class="kw">anova</span>(fit.size)</a></code></pre></div>
+<pre><code>## 
+## Analysis of Variance, using Residual Randomization
+## Permutation procedure: Randomization of null model residuals 
+## Number of permutations: 10000 
+## Estimation method: Ordinary Least Squares 
+## Sums of Squares and Cross-products: Type I 
+## Effect sizes (Z) based on F distributions
+## 
+##           Df       SS       MS   Rsq      F      Z Pr(&gt;F)   
+## size       1 0.058354 0.058354 0.397 6.5837 2.6047 0.0056 **
+## Residuals 10 0.088634 0.008863 0.603                        
+## Total     11 0.146988                                       
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Call: procD.lm(f1 = shape ~ size, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1"><span class="co"># heart.out</span></a>
+<a class="sourceLine" id="cb33-2" title="2"><span class="kw">anova</span>(fit.sz.cheart)</a></code></pre></div>
+<pre><code>## 
+## Analysis of Variance, using Residual Randomization
+## Permutation procedure: Randomization of null model residuals 
+## Number of permutations: 10000 
+## Estimation method: Ordinary Least Squares 
+## Sums of Squares and Cross-products: Type I 
+## Effect sizes (Z) based on F distributions
+## 
+##           Df       SS       MS     Rsq      F      Z Pr(&gt;F)   
+## size       1 0.058354 0.058354 0.39700 7.3641 2.7129 0.0036 **
+## heart      1 0.017317 0.017317 0.11781 2.1854 1.3260 0.1107   
+## Residuals  9 0.071317 0.007924 0.48519                        
+## Total     11 0.146988                                         
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Call: procD.lm(f1 = shape ~ size + heart, iter = 9999, data = gdf,      print.progress = FALSE)</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1"><span class="kw">anova</span>(fit.sz.uheart)</a></code></pre></div>
+<pre><code>## 
+## Analysis of Variance, using Residual Randomization
+## Permutation procedure: Randomization of null model residuals 
+## Number of permutations: 10000 
+## Estimation method: Ordinary Least Squares 
+## Sums of Squares and Cross-products: Type I 
+## Effect sizes (Z) based on F distributions
+## 
+##            Df       SS       MS     Rsq      F      Z Pr(&gt;F)   
+## size        1 0.058354 0.058354 0.39700 8.1258 2.7877 0.0027 **
+## heart       1 0.017317 0.017317 0.11781 2.4114 1.4502 0.0930 . 
+## size:heart  1 0.013867 0.013867 0.09434 1.9310 1.1401 0.1419   
+## Residuals   8 0.057450 0.007181 0.39085                        
+## Total      11 0.146988                                         
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Call: procD.lm(f1 = shape ~ size * heart, iter = 9999, data = gdf,      print.progress = FALSE)</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1"><span class="kw">anova</span>(fit.sz.cheart, fit.sz.uheart, <span class="dt">print.progress =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<pre><code>## 
+## Analysis of Variance, using Residual Randomization
+## Permutation procedure: Randomization of null model residuals 
+## Number of permutations: 10000 
+## Estimation method: Ordinary Least Squares 
+## Effect sizes (Z) based on F distributions
+## 
+##                             ResDf Df      RSS       SS       MS     Rsq     F      Z
+## shape ~ size + heart (Null)     9  1 0.071317                   0.00000             
+## shape ~ size * heart            8  1 0.057450 0.013867 0.013867 0.09434 1.931 1.1401
+## Total                          11    0.146988                                       
+##                                  P Pr(&gt;F)
+## shape ~ size + heart (Null)              
+## shape ~ size * heart        0.1419       
+## Total</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" title="1"><span class="co"># heart.reg</span></a>
+<a class="sourceLine" id="cb39-2" title="2"><span class="kw">anova</span>(fit.sz.chreg)</a></code></pre></div>
+<pre><code>## 
+## Analysis of Variance, using Residual Randomization
+## Permutation procedure: Randomization of null model residuals 
+## Number of permutations: 10000 
+## Estimation method: Ordinary Least Squares 
+## Sums of Squares and Cross-products: Type I 
+## Effect sizes (Z) based on F distributions
+## 
+##           Df       SS       MS     Rsq      F       Z Pr(&gt;F)   
+## size       1 0.058354 0.058354 0.39700 7.0962 2.65162 0.0048 **
+## hreg       2 0.022849 0.011424 0.15544 1.3893 0.67602 0.2522   
+## Residuals  8 0.065786 0.008223 0.44756                         
+## Total     11 0.146988                                          
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Call: procD.lm(f1 = shape ~ size + hreg, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" title="1"><span class="kw">anova</span>(fit.sz.uhreg)</a></code></pre></div>
+<pre><code>## 
+## Analysis of Variance, using Residual Randomization
+## Permutation procedure: Randomization of null model residuals 
+## Number of permutations: 10000 
+## Estimation method: Ordinary Least Squares 
+## Sums of Squares and Cross-products: Type I 
+## Effect sizes (Z) based on F distributions
+## 
+##           Df       SS       MS     Rsq      F       Z Pr(&gt;F)   
+## size       1 0.058354 0.058354 0.39700 7.2700 2.58801 0.0058 **
+## hreg       2 0.022849 0.011424 0.15544 1.4233 0.68139 0.2490   
+## size:hreg  2 0.017626 0.008813 0.11991 1.0980 0.27407 0.3773   
+## Residuals  6 0.048160 0.008027 0.32764                         
+## Total     11 0.146988                                          
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Call: procD.lm(f1 = shape ~ size * hreg, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1"><span class="kw">anova</span>(fit.sz.chreg, fit.sz.uhreg, <span class="dt">print.progress =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<pre><code>## 
+## Analysis of Variance, using Residual Randomization
+## Permutation procedure: Randomization of null model residuals 
+## Number of permutations: 10000 
+## Estimation method: Ordinary Least Squares 
+## Effect sizes (Z) based on F distributions
+## 
+##                            ResDf Df      RSS       SS       MS     Rsq     F       Z
+## shape ~ size + hreg (Null)     8  1 0.065786                   0.00000              
+## shape ~ size * hreg            6  2 0.048160 0.017626 0.008813 0.11991 1.098 0.27407
+## Total                         11    0.146988                                        
+##                                 P Pr(&gt;F)
+## shape ~ size + hreg (Null)              
+## shape ~ size * hreg        0.3773       
+## Total</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" title="1"><span class="co"># allometry plots</span></a>
+<a class="sourceLine" id="cb45-2" title="2"><span class="co"># regscore (Drake and Klingenberg 2008)</span></a>
+<a class="sourceLine" id="cb45-3" title="3"><span class="kw">plot</span>(fit.size, <span class="dt">type =</span> <span class="st">&quot;regression&quot;</span>, <span class="dt">reg.type =</span> <span class="st">&quot;RegScore&quot;</span>, <span class="dt">predictor =</span> <span class="kw">log</span>(gdf<span class="op">$</span>size), <span class="dt">pch =</span> pch.gps.heart, <span class="dt">col =</span> col.gps.heart)</a></code></pre></div>
+<p><img src="dalton_files/figure-html/allometry-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">plot</span>(fit.size, <span class="dt">type =</span> <span class="st">&quot;regression&quot;</span>, <span class="dt">reg.type =</span> <span class="st">&quot;RegScore&quot;</span>, <span class="dt">predictor =</span> <span class="kw">log</span>(gdf<span class="op">$</span>size), <span class="dt">pch =</span> pch.gps.hreg, <span class="dt">col =</span> col.gps.hreg)</a></code></pre></div>
+<p><img src="dalton_files/figure-html/allometry-2.png" width="100%" /></p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" title="1"><span class="co"># common allometric component (Mitteroecker 2004)</span></a>
+<a class="sourceLine" id="cb47-2" title="2"><span class="kw">plotAllometry</span>(fit.size, <span class="dt">size =</span> gdf<span class="op">$</span>size, <span class="dt">logsz =</span> <span class="ot">TRUE</span>, <span class="dt">method =</span> <span class="st">&quot;CAC&quot;</span>, <span class="dt">pch =</span> pch.gps.heart, <span class="dt">col =</span> col.gps.heart)</a></code></pre></div>
+<p><img src="dalton_files/figure-html/allometry-3.png" width="100%" /></p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" title="1"><span class="kw">plotAllometry</span>(fit.size, <span class="dt">size =</span> gdf<span class="op">$</span>size, <span class="dt">logsz =</span> <span class="ot">TRUE</span>, <span class="dt">method =</span> <span class="st">&quot;CAC&quot;</span>, <span class="dt">pch =</span> pch.gps.hreg, <span class="dt">col =</span> col.gps.hreg)</a></code></pre></div>
+<p><img src="dalton_files/figure-html/allometry-4.png" width="100%" /></p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" title="1"><span class="co"># size-shape pca (Mitteroecker 2004)</span></a>
+<a class="sourceLine" id="cb49-2" title="2"><span class="kw">plotAllometry</span>(fit.size, <span class="dt">size =</span> gdf<span class="op">$</span>size, <span class="dt">logsz =</span> <span class="ot">TRUE</span>, <span class="dt">method =</span> <span class="st">&quot;size.shape&quot;</span>, <span class="dt">pch =</span> pch.gps.heart, <span class="dt">col =</span> col.gps.heart)</a></code></pre></div>
+<p><img src="dalton_files/figure-html/allometry-5.png" width="100%" /></p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" title="1"><span class="kw">plotAllometry</span>(fit.size, <span class="dt">size =</span> gdf<span class="op">$</span>size, <span class="dt">logsz =</span> <span class="ot">TRUE</span>, <span class="dt">method =</span> <span class="st">&quot;size.shape&quot;</span>, <span class="dt">pch =</span> pch.gps.hreg, <span class="dt">col =</span> col.gps.hreg)</a></code></pre></div>
+<p><img src="dalton_files/figure-html/allometry-6.png" width="100%" /></p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" title="1"><span class="co"># predline (Adams and Nistri 2010)</span></a>
+<a class="sourceLine" id="cb51-2" title="2"><span class="kw">plotAllometry</span>(fit.sz.uheart, <span class="dt">size =</span> gdf<span class="op">$</span>size, <span class="dt">logsz =</span> <span class="ot">TRUE</span>, <span class="dt">method =</span> <span class="st">&quot;PredLine&quot;</span>, <span class="dt">pch =</span> pch.gps.heart, <span class="dt">col =</span> col.gps.heart)</a></code></pre></div>
+<p><img src="dalton_files/figure-html/allometry-7.png" width="100%" /></p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" title="1"><span class="kw">plotAllometry</span>(fit.sz.uhreg, <span class="dt">size =</span> gdf<span class="op">$</span>size, <span class="dt">logsz =</span> <span class="ot">TRUE</span>, <span class="dt">method =</span> <span class="st">&quot;PredLine&quot;</span>, <span class="dt">pch =</span> pch.gps.hreg, <span class="dt">col =</span> col.gps.hreg)</a></code></pre></div>
+<p><img src="dalton_files/figure-html/allometry-8.png" width="100%" /></p>
+</div>
+<div id="sizeshape-group" class="section level2">
+<h2><span class="header-section-number">2.5</span> Size/Shape ~ Group?</h2>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" title="1"><span class="co"># ANOVA: does Dalton point size differ in/out of heartland?</span></a>
+<a class="sourceLine" id="cb53-2" title="2"><span class="kw">anova</span>(fit.sizeheart)</a></code></pre></div>
+<pre><code>## 
+## Analysis of Variance, using Residual Randomization
+## Permutation procedure: Randomization of null model residuals 
+## Number of permutations: 10000 
+## Estimation method: Ordinary Least Squares 
+## Sums of Squares and Cross-products: Type I 
+## Effect sizes (Z) based on F distributions
+## 
+##           Df     SS      MS     Rsq      F      Z  Pr(&gt;F)  
+## heart      1 1439.8 1439.75 0.24911 3.3175 1.0579 0.09605 .
+## Residuals 10 4339.9  433.99 0.75089                        
+## Total     11 5779.7                                        
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Call: procD.lm(f1 = size ~ heart, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" title="1"><span class="co"># ANOVA: does Dalton point morphology differ in/out of Heartland?</span></a>
+<a class="sourceLine" id="cb55-2" title="2"><span class="kw">anova</span>(fit.shapeheart)</a></code></pre></div>
+<pre><code>## 
+## Analysis of Variance, using Residual Randomization
+## Permutation procedure: Randomization of null model residuals 
+## Number of permutations: 10000 
+## Estimation method: Ordinary Least Squares 
+## Sums of Squares and Cross-products: Type I 
+## Effect sizes (Z) based on F distributions
+## 
+##           Df      SS       MS     Rsq      F      Z Pr(&gt;F)  
+## heart      1 0.04698 0.046980 0.31962 4.6977 2.1383 0.0213 *
+## Residuals 10 0.10001 0.010001 0.68038                       
+## Total     11 0.14699                                        
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Call: procD.lm(f1 = shape ~ heart, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" title="1"><span class="co"># ANOVA: does Dalton point sizes differ across heartland regions?</span></a>
+<a class="sourceLine" id="cb57-2" title="2"><span class="kw">anova</span>(fit.sizehreg)</a></code></pre></div>
+<pre><code>## 
+## Analysis of Variance, using Residual Randomization
+## Permutation procedure: Randomization of null model residuals 
+## Number of permutations: 10000 
+## Estimation method: Ordinary Least Squares 
+## Sums of Squares and Cross-products: Type I 
+## Effect sizes (Z) based on F distributions
+## 
+##           Df     SS     MS     Rsq      F       Z Pr(&gt;F)
+## hreg       2 1475.3 737.63 0.25525 1.5423 0.65995 0.2554
+## Residuals  9 4304.4 478.27 0.74475                      
+## Total     11 5779.7                                     
+## 
+## Call: procD.lm(f1 = size ~ hreg, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" title="1"><span class="co"># pairwise comparison of LS means = which differ?</span></a>
+<a class="sourceLine" id="cb59-2" title="2">sz.hreg &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.sizehreg, <span class="dt">groups =</span> qdata<span class="op">$</span>heart.reg)</a>
+<a class="sourceLine" id="cb59-3" title="3"><span class="kw">summary</span>(sz.hreg, <span class="dt">confidence =</span> <span class="fl">0.95</span>, <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</a></code></pre></div>
+<pre><code>## 
+## Pairwise comparisons
+## 
+## Groups: H I P 
+## 
+## RRPP: 10000 permutations
+## 
+## LS means:
+## Vectors hidden (use show.vectors = TRUE to view)
+## 
+## Pairwise distances between means, plus statistics
+##             d UCL (95%)          Z Pr &gt; d
+## H:I 21.129079  31.37133  0.8383642 0.2068
+## H:P 25.342765  31.14089  1.2981949 0.1210
+## I:P  4.213687  30.91455 -0.9357657 0.7977</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" title="1"><span class="co"># pairwise distance between variances = standardization?</span></a>
+<a class="sourceLine" id="cb61-2" title="2"><span class="kw">summary</span>(sz.hreg, <span class="dt">confidence =</span> <span class="fl">0.95</span>, <span class="dt">test.type =</span> <span class="st">&quot;var&quot;</span>)</a></code></pre></div>
+<pre><code>## 
+## Pairwise comparisons
+## 
+## Groups: H I P 
+## 
+## RRPP: 10000 permutations
+## 
+## 
+## Observed variances by group
+## 
+##        H        I        P 
+## 278.3626 338.1850 459.5544 
+## 
+## Pairwise distances between variances, plus statistics
+##             d UCL (95%)          Z Pr &gt; d
+## H:I  59.82237  539.7653 -1.0838680 0.8549
+## H:P 181.19176  537.6419 -0.3412214 0.5737
+## I:P 121.36939  536.7711 -0.7061467 0.7036</code></pre>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" title="1"><span class="co"># ANOVA: does Dalton point morphology differ across heartland + regions?</span></a>
+<a class="sourceLine" id="cb63-2" title="2"><span class="kw">anova</span>(fit.shapehreg)</a></code></pre></div>
+<pre><code>## 
+## Analysis of Variance, using Residual Randomization
+## Permutation procedure: Randomization of null model residuals 
+## Number of permutations: 10000 
+## Estimation method: Ordinary Least Squares 
+## Sums of Squares and Cross-products: Type I 
+## Effect sizes (Z) based on F distributions
+## 
+##           Df       SS       MS     Rsq     F      Z  Pr(&gt;F)  
+## hreg       2 0.052684 0.026342 0.35842 2.514 1.5203 0.07175 .
+## Residuals  9 0.094304 0.010478 0.64158                       
+## Total     11 0.146988                                        
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Call: procD.lm(f1 = shape ~ hreg, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" title="1"><span class="co"># pairwise comparison of LS means = which differ?</span></a>
+<a class="sourceLine" id="cb65-2" title="2">sh.hreg &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.shapehreg, <span class="dt">groups =</span> qdata<span class="op">$</span>heart.reg)</a>
+<a class="sourceLine" id="cb65-3" title="3"><span class="kw">summary</span>(sh.hreg, <span class="dt">confidence =</span> <span class="fl">0.95</span>, <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</a></code></pre></div>
+<pre><code>## 
+## Pairwise comparisons
+## 
+## Groups: H I P 
+## 
+## RRPP: 10000 permutations
+## 
+## LS means:
+## Vectors hidden (use show.vectors = TRUE to view)
+## 
+## Pairwise distances between means, plus statistics
+##              d UCL (95%)          Z Pr &gt; d
+## H:I 0.12340118 0.1390142  1.5238546 0.0951
+## H:P 0.14640107 0.1363220  2.3425328 0.0303
+## I:P 0.05340121 0.1368627 -0.7453086 0.7464</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" title="1"><span class="co"># pairwise distance between variances = standardization?</span></a>
+<a class="sourceLine" id="cb67-2" title="2"><span class="kw">summary</span>(sh.hreg, <span class="dt">confidence =</span> <span class="fl">0.95</span>, <span class="dt">test.type =</span> <span class="st">&quot;var&quot;</span>)</a></code></pre></div>
+<pre><code>## 
+## Pairwise comparisons
+## 
+## Groups: H I P 
+## 
+## RRPP: 10000 permutations
+## 
+## 
+## Observed variances by group
+## 
+##           H           I           P 
+## 0.013484388 0.003353103 0.006738604 
+## 
+## Pairwise distances between variances, plus statistics
+##               d  UCL (95%)          Z Pr &gt; d
+## H:I 0.010131285 0.01094240  1.6093311 0.0739
+## H:P 0.006745784 0.01093859  0.5395385 0.2904
+## I:P 0.003385501 0.01090853 -0.5006636 0.6352</code></pre>
+</div>
+<div id="morphological-disparity" class="section level2">
+<h2><span class="header-section-number">2.6</span> Morphological disparity</h2>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" title="1"><span class="co"># morphological disparity: does Dalton point size display greater shape variation among individuals?</span></a>
+<a class="sourceLine" id="cb69-2" title="2"><span class="co"># in/out of heartland</span></a>
+<a class="sourceLine" id="cb69-3" title="3"><span class="kw">morphol.disparity</span>(fit.sizeheart, <span class="dt">groups =</span> qdata<span class="op">$</span>heart.out, <span class="dt">data =</span> gdf, <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, <span class="dt">iter =</span> <span class="dv">9999</span>)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## morphol.disparity(f1 = fit.sizeheart, groups = qdata$heart.out,  
+##     iter = 9999, data = gdf, print.progress = FALSE) 
+## 
+## 
+## 
+## Randomized Residual Permutation Procedure Used
+## 10000 Permutations
+## 
+## Procrustes variances for defined groups
+##        H        N 
+## 278.3626 403.3085 
+## 
+## 
+## Pairwise absolute differences between variances
+##          H        N
+## H   0.0000 124.9459
+## N 124.9459   0.0000
+## 
+## 
+## P-Values
+##        H      N
+## H 1.0000 0.6021
+## N 0.6021 1.0000</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" title="1"><span class="co"># heartland + regions</span></a>
+<a class="sourceLine" id="cb71-2" title="2"><span class="kw">morphol.disparity</span>(fit.sizehreg, <span class="dt">groups =</span> qdata<span class="op">$</span>heart.reg, <span class="dt">data =</span> gdf, <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, <span class="dt">iter =</span> <span class="dv">9999</span>)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## morphol.disparity(f1 = fit.sizehreg, groups = qdata$heart.reg,  
+##     iter = 9999, data = gdf, print.progress = FALSE) 
+## 
+## 
+## 
+## Randomized Residual Permutation Procedure Used
+## 10000 Permutations
+## 
+## Procrustes variances for defined groups
+##        H        I        P 
+## 278.3626 338.1850 459.5544 
+## 
+## 
+## Pairwise absolute differences between variances
+##           H         I        P
+## H   0.00000  59.82237 181.1918
+## I  59.82237   0.00000 121.3694
+## P 181.19176 121.36939   0.0000
+## 
+## 
+## P-Values
+##        H      I      P
+## H 1.0000 0.8549 0.5737
+## I 0.8549 1.0000 0.7036
+## P 0.5737 0.7036 1.0000</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" title="1"><span class="co"># morphological disparity: does Dalton point morphology display greater shape variation among individuals?</span></a>
+<a class="sourceLine" id="cb73-2" title="2"><span class="co"># in/out of heartland</span></a>
+<a class="sourceLine" id="cb73-3" title="3"><span class="kw">morphol.disparity</span>(fit.shapeheart, <span class="dt">groups =</span> qdata<span class="op">$</span>heart.out, <span class="dt">data =</span> gdf, <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, <span class="dt">iter =</span> <span class="dv">9999</span>)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## morphol.disparity(f1 = fit.shapeheart, groups = qdata$heart.out,  
+##     iter = 9999, data = gdf, print.progress = FALSE) 
+## 
+## 
+## 
+## Randomized Residual Permutation Procedure Used
+## 10000 Permutations
+## 
+## Procrustes variances for defined groups
+##           H           N 
+## 0.013484388 0.005758776 
+## 
+## 
+## Pairwise absolute differences between variances
+##             H           N
+## H 0.000000000 0.007725612
+## N 0.007725612 0.000000000
+## 
+## 
+## P-Values
+##        H      N
+## H 1.0000 0.1013
+## N 0.1013 1.0000</code></pre>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" title="1"><span class="co"># heartland + regions</span></a>
+<a class="sourceLine" id="cb75-2" title="2"><span class="kw">morphol.disparity</span>(fit.shapehreg, <span class="dt">groups =</span> qdata<span class="op">$</span>heart.reg, <span class="dt">data =</span> gdf, <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, <span class="dt">iter =</span> <span class="dv">9999</span>)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## morphol.disparity(f1 = fit.shapehreg, groups = qdata$heart.reg,  
+##     iter = 9999, data = gdf, print.progress = FALSE) 
+## 
+## 
+## 
+## Randomized Residual Permutation Procedure Used
+## 10000 Permutations
+## 
+## Procrustes variances for defined groups
+##           H           I           P 
+## 0.013484388 0.003353103 0.006738604 
+## 
+## 
+## Pairwise absolute differences between variances
+##             H           I           P
+## H 0.000000000 0.010131285 0.006745784
+## I 0.010131285 0.000000000 0.003385501
+## P 0.006745784 0.003385501 0.000000000
+## 
+## 
+## P-Values
+##        H      I      P
+## H 1.0000 0.0739 0.2904
+## I 0.0739 1.0000 0.6352
+## P 0.2904 0.6352 1.0000</code></pre>
+</div>
+<div id="mean-shapes" class="section level2">
+<h2><span class="header-section-number">2.7</span> Mean shapes</h2>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" title="1"><span class="co"># subset landmark coordinates to produce mean shapes by site</span></a>
+<a class="sourceLine" id="cb77-2" title="2"><span class="co"># new.coords &lt;- coords.subset(A = Y.gpa$coords, group = qdata$heart)</span></a>
+<a class="sourceLine" id="cb77-3" title="3"><span class="co"># names(new.coords)</span></a>
+<a class="sourceLine" id="cb77-4" title="4"><span class="co"># group shape means</span></a>
+<a class="sourceLine" id="cb77-5" title="5"><span class="co"># mean &lt;- lapply(new.coords, mshape)</span></a>
+<a class="sourceLine" id="cb77-6" title="6"><span class="co"># plot(mean$vv)</span></a>
+<a class="sourceLine" id="cb77-7" title="7"><span class="co"># mean shapes</span></a>
+<a class="sourceLine" id="cb77-8" title="8"><span class="co">#knitr::include_graphics(&#39;images/dalton-mshape.png&#39;)</span></a>
+<a class="sourceLine" id="cb77-9" title="9"><span class="co">#fig.cap = &quot;Mean shapes for Dalton points by region&quot;</span></a>
+<a class="sourceLine" id="cb77-10" title="10"><span class="co"># end of code</span></a></code></pre></div>
 
 </div>
 </div>
