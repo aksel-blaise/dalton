@@ -242,7 +242,7 @@ This volume is in <b><a href="open.html#open">Open Review</a></b>. I want your f
 <span id="cb21-14"><a href="analysis.html#cb21-14"></a><span class="kw">setwd</span>(<span class="st">&quot;../&quot;</span>)</span>
 <span id="cb21-15"><a href="analysis.html#cb21-15"></a></span>
 <span id="cb21-16"><a href="analysis.html#cb21-16"></a><span class="co"># read qualitative data</span></span>
-<span id="cb21-17"><a href="analysis.html#cb21-17"></a>qdata &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;qdata.csv&quot;</span>,<span class="dt">header=</span><span class="ot">TRUE</span>,<span class="dt">row.names=</span><span class="dv">1</span>)</span>
+<span id="cb21-17"><a href="analysis.html#cb21-17"></a>qdata &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;qdata.csv&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">row.names =</span> <span class="dv">1</span>)</span>
 <span id="cb21-18"><a href="analysis.html#cb21-18"></a>qdata &lt;-<span class="st"> </span>qdata[<span class="kw">match</span>(<span class="kw">dimnames</span>(coords)[[<span class="dv">3</span>]],<span class="kw">rownames</span>(qdata)),]</span>
 <span id="cb21-19"><a href="analysis.html#cb21-19"></a>qdata</span></code></pre></div>
 <pre><code>##               heart.out heart.reg

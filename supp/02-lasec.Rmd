@@ -11,7 +11,7 @@ LaSEC conducts the following procedure [@RN28913, 4-5]:
 5. Repeat steps 2–5 for specified number of iterations (`iter` argument).
 6. Create sampling curves by plotting the trajectory of “fit” (1–PSS) against the number of landmarks sampled from each iteration for both shape and centroid size as gray lines. Then, plot the median fit value for each number of landmarks sampled on the same plot as a thick, dark line. Finally, output these sampling curves: `LaSEC_SamplingCurve_Shape.pdf`, `LaSEC_SamplingCurve_Size.pdf`.
 
-What follows is a critical retrospective regarding the 2D and 3D landmark configurations used in the previous two geometric morphometric studies [@RN11783;@RN21001]. This chapter concludes with the assessment of the landmark configuration for Gahagan bifaces that was outlined in the previous chapter.
+What follows is an assessment of the initial and current 3D landmark configurations used in the geometric morphometric study. This chapter concludes with the assessment of the landmark configuration for Dalton projectile points outlined in the previous chapter.
 
 ## Initial configuration
 

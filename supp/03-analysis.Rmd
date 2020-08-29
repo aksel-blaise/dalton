@@ -19,7 +19,7 @@ coords <- readmulti.csv(filelist)
 setwd("../")
 
 # read qualitative data
-qdata <- read.csv("qdata.csv",header=TRUE,row.names=1)
+qdata <- read.csv("qdata.csv", header = TRUE, row.names = 1)
 qdata <- qdata[match(dimnames(coords)[[3]],rownames(qdata)),]
 qdata
 
