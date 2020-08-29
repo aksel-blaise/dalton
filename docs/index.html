@@ -24,7 +24,7 @@
 <meta name="author" content="Robert Z. Selden, Jr." />
 
 
-<meta name="date" content="2020-06-27" />
+<meta name="date" content="2020-08-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +50,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <script async defer src="https://hypothes.is/embed.js"></script>
 
 <script>
@@ -65,9 +66,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -76,14 +77,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -92,9 +95,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -158,37 +161,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.8" data-path="landmarking-protocol.html"><a href="landmarking-protocol.html#landmark-and-semilandmark-placement"><i class="fa fa-check"></i><b>1.8</b> Landmark and semilandmark placement</a></li>
 <li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>1.9</b> Acknowledgments</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i><b>2</b> Analysis</a><ul>
-<li class="chapter" data-level="2.1" data-path="analysis.html"><a href="analysis.html#generalised-procrustes-analysis"><i class="fa fa-check"></i><b>2.1</b> Generalised Procrustes Analysis</a></li>
-<li class="chapter" data-level="2.2" data-path="analysis.html"><a href="analysis.html#principal-components-analysis"><i class="fa fa-check"></i><b>2.2</b> Principal Components Analysis</a></li>
-<li class="chapter" data-level="2.3" data-path="analysis.html"><a href="analysis.html#define-models"><i class="fa fa-check"></i><b>2.3</b> Define models</a></li>
-<li class="chapter" data-level="2.4" data-path="analysis.html"><a href="analysis.html#allometry"><i class="fa fa-check"></i><b>2.4</b> Allometry</a></li>
-<li class="chapter" data-level="2.5" data-path="analysis.html"><a href="analysis.html#sizeshape-group"><i class="fa fa-check"></i><b>2.5</b> Size/Shape ~ Group?</a></li>
-<li class="chapter" data-level="2.6" data-path="analysis.html"><a href="analysis.html#morphological-disparity"><i class="fa fa-check"></i><b>2.6</b> Morphological disparity</a></li>
-<li class="chapter" data-level="2.7" data-path="analysis.html"><a href="analysis.html#mean-shapes"><i class="fa fa-check"></i><b>2.7</b> Mean shapes</a></li>
+<li class="chapter" data-level="2" data-path="landmark-sampling-evaluation-curve.html"><a href="landmark-sampling-evaluation-curve.html"><i class="fa fa-check"></i><b>2</b> Landmark Sampling Evaluation Curve</a><ul>
+<li class="chapter" data-level="2.1" data-path="landmark-sampling-evaluation-curve.html"><a href="landmark-sampling-evaluation-curve.html#initial-configuration"><i class="fa fa-check"></i><b>2.1</b> Initial configuration</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="open.html"><a href="open.html"><i class="fa fa-check"></i><b>3</b> Open Review</a><ul>
-<li class="chapter" data-level="3.1" data-path="open.html"><a href="open.html#faq-about-open-review"><i class="fa fa-check"></i><b>3.1</b> FAQ about open review</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="open.html"><a href="open.html#what-kind-of-feedback-are-you-looking-for"><i class="fa fa-check"></i><b>3.1.1</b> What kind of feedback are you looking for?</a></li>
-<li class="chapter" data-level="3.1.2" data-path="open.html"><a href="open.html#can-i-see-the-annotations-that-others-are-making"><i class="fa fa-check"></i><b>3.1.2</b> Can I see the annotations that others are making?</a></li>
-<li class="chapter" data-level="3.1.3" data-path="open.html"><a href="open.html#what-are-the-benefits-for-readers"><i class="fa fa-check"></i><b>3.1.3</b> What are the benefits for readers?</a></li>
-<li class="chapter" data-level="3.1.4" data-path="open.html"><a href="open.html#what-are-the-benefits-for-authors-and-publishers"><i class="fa fa-check"></i><b>3.1.4</b> What are the benefits for authors and publishers?</a></li>
-<li class="chapter" data-level="3.1.5" data-path="open.html"><a href="open.html#has-anyone-ever-done-something-like-this-before"><i class="fa fa-check"></i><b>3.1.5</b> Has anyone ever done something like this before?</a></li>
-<li class="chapter" data-level="3.1.6" data-path="open.html"><a href="open.html#what-kind-of-information-are-you-collecting-and-how-will-that-information-be-used"><i class="fa fa-check"></i><b>3.1.6</b> What kind of information are you collecting and how will that information be used?</a></li>
-<li class="chapter" data-level="3.1.7" data-path="open.html"><a href="open.html#how-i-can-learn-more-about-traditional-peer-review-of-academic-books"><i class="fa fa-check"></i><b>3.1.7</b> How I can learn more about traditional peer review of academic books?</a></li>
-<li class="chapter" data-level="3.1.8" data-path="open.html"><a href="open.html#can-i-do-this-with-my-book"><i class="fa fa-check"></i><b>3.1.8</b> Can I do this with my book?</a></li>
-<li class="chapter" data-level="3.1.9" data-path="open.html"><a href="open.html#i-have-a-different-question-about-open-review.-how-can-i-get-in-touch"><i class="fa fa-check"></i><b>3.1.9</b> I have a different question about Open Review. How can I get in touch?</a></li>
+<li class="chapter" data-level="3" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i><b>3</b> Analysis</a><ul>
+<li class="chapter" data-level="3.1" data-path="analysis.html"><a href="analysis.html#generalised-procrustes-analysis"><i class="fa fa-check"></i><b>3.1</b> Generalised Procrustes Analysis</a></li>
+<li class="chapter" data-level="3.2" data-path="analysis.html"><a href="analysis.html#principal-components-analysis"><i class="fa fa-check"></i><b>3.2</b> Principal Components Analysis</a></li>
+<li class="chapter" data-level="3.3" data-path="analysis.html"><a href="analysis.html#define-models"><i class="fa fa-check"></i><b>3.3</b> Define models</a></li>
+<li class="chapter" data-level="3.4" data-path="analysis.html"><a href="analysis.html#allometry"><i class="fa fa-check"></i><b>3.4</b> Allometry</a></li>
+<li class="chapter" data-level="3.5" data-path="analysis.html"><a href="analysis.html#sizeshape-group"><i class="fa fa-check"></i><b>3.5</b> Size/Shape ~ Group?</a></li>
+<li class="chapter" data-level="3.6" data-path="analysis.html"><a href="analysis.html#morphological-disparity"><i class="fa fa-check"></i><b>3.6</b> Morphological disparity</a></li>
+<li class="chapter" data-level="3.7" data-path="analysis.html"><a href="analysis.html#mean-shapes"><i class="fa fa-check"></i><b>3.7</b> Mean shapes</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="open.html"><a href="open.html#privacy-and-consent-policy"><i class="fa fa-check"></i><b>3.2</b> Privacy and Consent Policy</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="open.html"><a href="open.html#overview"><i class="fa fa-check"></i><b>3.2.1</b> Overview</a></li>
-<li class="chapter" data-level="3.2.2" data-path="open.html"><a href="open.html#what-information-do-we-collect"><i class="fa fa-check"></i><b>3.2.2</b> What information do we collect?</a></li>
-<li class="chapter" data-level="3.2.3" data-path="open.html"><a href="open.html#how-do-we-use-your-information"><i class="fa fa-check"></i><b>3.2.3</b> How do we use your information?</a></li>
-<li class="chapter" data-level="3.2.4" data-path="open.html"><a href="open.html#how-do-we-protect-your-information"><i class="fa fa-check"></i><b>3.2.4</b> How do we protect your information?</a></li>
-<li class="chapter" data-level="3.2.5" data-path="open.html"><a href="open.html#do-we-use-cookies"><i class="fa fa-check"></i><b>3.2.5</b> Do we use cookies?</a></li>
-<li class="chapter" data-level="3.2.6" data-path="open.html"><a href="open.html#your-consent"><i class="fa fa-check"></i><b>3.2.6</b> Your consent</a></li>
-<li class="chapter" data-level="3.2.7" data-path="open.html"><a href="open.html#questions"><i class="fa fa-check"></i><b>3.2.7</b> Questions</a></li>
-<li class="chapter" data-level="3.2.8" data-path="open.html"><a href="open.html#changes-to-our-privacy-and-consent-policy"><i class="fa fa-check"></i><b>3.2.8</b> Changes to our Privacy and Consent Policy</a></li>
-<li class="chapter" data-level="3.2.9" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>3.2.9</b> Acknowledgments</a></li>
+<li class="chapter" data-level="4" data-path="open.html"><a href="open.html"><i class="fa fa-check"></i><b>4</b> Open Review</a><ul>
+<li class="chapter" data-level="4.1" data-path="open.html"><a href="open.html#faq-about-open-review"><i class="fa fa-check"></i><b>4.1</b> FAQ about open review</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="open.html"><a href="open.html#what-kind-of-feedback-are-you-looking-for"><i class="fa fa-check"></i><b>4.1.1</b> What kind of feedback are you looking for?</a></li>
+<li class="chapter" data-level="4.1.2" data-path="open.html"><a href="open.html#can-i-see-the-annotations-that-others-are-making"><i class="fa fa-check"></i><b>4.1.2</b> Can I see the annotations that others are making?</a></li>
+<li class="chapter" data-level="4.1.3" data-path="open.html"><a href="open.html#what-are-the-benefits-for-readers"><i class="fa fa-check"></i><b>4.1.3</b> What are the benefits for readers?</a></li>
+<li class="chapter" data-level="4.1.4" data-path="open.html"><a href="open.html#what-are-the-benefits-for-authors-and-publishers"><i class="fa fa-check"></i><b>4.1.4</b> What are the benefits for authors and publishers?</a></li>
+<li class="chapter" data-level="4.1.5" data-path="open.html"><a href="open.html#has-anyone-ever-done-something-like-this-before"><i class="fa fa-check"></i><b>4.1.5</b> Has anyone ever done something like this before?</a></li>
+<li class="chapter" data-level="4.1.6" data-path="open.html"><a href="open.html#what-kind-of-information-are-you-collecting-and-how-will-that-information-be-used"><i class="fa fa-check"></i><b>4.1.6</b> What kind of information are you collecting and how will that information be used?</a></li>
+<li class="chapter" data-level="4.1.7" data-path="open.html"><a href="open.html#how-i-can-learn-more-about-traditional-peer-review-of-academic-books"><i class="fa fa-check"></i><b>4.1.7</b> How I can learn more about traditional peer review of academic books?</a></li>
+<li class="chapter" data-level="4.1.8" data-path="open.html"><a href="open.html#can-i-do-this-with-my-book"><i class="fa fa-check"></i><b>4.1.8</b> Can I do this with my book?</a></li>
+<li class="chapter" data-level="4.1.9" data-path="open.html"><a href="open.html#i-have-a-different-question-about-open-review.-how-can-i-get-in-touch"><i class="fa fa-check"></i><b>4.1.9</b> I have a different question about Open Review. How can I get in touch?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="open.html"><a href="open.html#privacy-and-consent-policy"><i class="fa fa-check"></i><b>4.2</b> Privacy and Consent Policy</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="open.html"><a href="open.html#overview"><i class="fa fa-check"></i><b>4.2.1</b> Overview</a></li>
+<li class="chapter" data-level="4.2.2" data-path="open.html"><a href="open.html#what-information-do-we-collect"><i class="fa fa-check"></i><b>4.2.2</b> What information do we collect?</a></li>
+<li class="chapter" data-level="4.2.3" data-path="open.html"><a href="open.html#how-do-we-use-your-information"><i class="fa fa-check"></i><b>4.2.3</b> How do we use your information?</a></li>
+<li class="chapter" data-level="4.2.4" data-path="open.html"><a href="open.html#how-do-we-protect-your-information"><i class="fa fa-check"></i><b>4.2.4</b> How do we protect your information?</a></li>
+<li class="chapter" data-level="4.2.5" data-path="open.html"><a href="open.html#do-we-use-cookies"><i class="fa fa-check"></i><b>4.2.5</b> Do we use cookies?</a></li>
+<li class="chapter" data-level="4.2.6" data-path="open.html"><a href="open.html#your-consent"><i class="fa fa-check"></i><b>4.2.6</b> Your consent</a></li>
+<li class="chapter" data-level="4.2.7" data-path="open.html"><a href="open.html#questions"><i class="fa fa-check"></i><b>4.2.7</b> Questions</a></li>
+<li class="chapter" data-level="4.2.8" data-path="open.html"><a href="open.html#changes-to-our-privacy-and-consent-policy"><i class="fa fa-check"></i><b>4.2.8</b> Changes to our Privacy and Consent Policy</a></li>
+<li class="chapter" data-level="4.2.9" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>4.2.9</b> Acknowledgments</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -219,7 +225,7 @@ This volume is in <b><a href="open.html#open">Open Review</a></b>. I want your f
 <div id="header">
 <h1 class="title">Supplementary materials for paper: Article title here</h1>
 <p class="author"><em>Robert Z. Selden, Jr.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></em></p>
-<p class="date"><em>2020-06-27</em></p>
+<p class="date"><em>2020-08-29</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
@@ -273,7 +279,7 @@ This volume is in <b><a href="open.html#open">Open Review</a></b>. I want your f
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>Heritage Research Center, Stephen F. Austin State University; Virtual Curation Laboratory, Virginia Commonwealth University; and Cultural Heritage Department, Jean Monnet University, <a href="mailto:zselden@sfasu.edu" class="email">zselden@sfasu.edu</a><a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>Heritage Research Center, Stephen F. Austin State University; Virtual Curation Laboratory, Virginia Commonwealth University; and Cultural Heritage Department, Jean Monnet University, <a href="mailto:zselden@sfasu.edu" class="email">zselden@sfasu.edu</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
