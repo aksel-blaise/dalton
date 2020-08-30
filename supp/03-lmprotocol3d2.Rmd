@@ -1,2 +1,3 @@
 # Landmarking Protocol 3d2
 
+Landmarking protocol 3d2 (LM3d2) represents a natural evolution from LM3d1. All landmarks (LMs) from LM3d1 were retained; however, all semilandmarks (SLMs) were discarded.  
