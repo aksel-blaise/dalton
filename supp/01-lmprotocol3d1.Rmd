@@ -1,4 +1,4 @@
-# Landmarking Protocol
+# Landmarking Protocol 3d1
 
 This document includes supplemental materials for the article, "Article title here." The landmarking protocol outlined here was initially developed for an analysis of [Gahagan bifaces](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md) [@RN21001]. The goals of this study differ; however, the mechanics of the landmarking protocol are similar, and follow components of Dalton projectile morphology identified in previous studies (refs). Geomagic Design X _(Build Version 2020.0.1 [Build Number: 30])_ was used to generate a spline around the periphery of each biface, and to populate the landmarks and equidistant semilandmarks in a replicable manner using a suite of mathematically-defined criteria.
 
