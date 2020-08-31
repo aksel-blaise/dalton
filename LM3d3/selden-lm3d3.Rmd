@@ -34,7 +34,7 @@ knitr::include_graphics('images/extractspline.png')
 
 _`Reference geometries` are used in the assistance of creating other features. These include basic geometric entities, such as `planes`, `vectors`, `coordinates`, `points`, and `polygons`. A `reference point` is a virtual point and is used to mark a specific position on a model or in 3D space. A `reference plane` is a virtual plane that has a normal direction and an infinite size. A `reference plane` is not a surface body, and is used to create other features._ 
 
-The characteristic points and tangents developed for this landmarking protocol were inspired by the work of Birkhoff [-@RN11786], which has been gainfully employed within the context of both ceramic [@RN11801;@RN11782;@RN11716;@RN20697] and lithic analyses [@RN11783;@RN21001]. The first landmark (LM1) is placed at the horizontal tangent on the tip of each Dalton point. The second through fifth splits (LMs 02 - 05) occur at points of highest curvature, where LM 02 is always placed on the right side of the projectile when oriented in 3D space following the alignment output of _auto3dgm_. To place the final landmark (LM6), a linear measurement was used to project a reference point equidistant between LM 02 and LM 03. The location of that point was leveraged in placing the reference plane used to cut the spline at the location of LM6.
+The characteristic points and tangents developed for this landmarking protocol were inspired by the work of Birkhoff [-@RN11786], which has been gainfully employed within the context of both ceramic [@RN11801;@RN11782;@RN11716;@RN20697] and lithic analyses [@RN11783;@RN21001]. The first landmark (LM1) is placed at the horizontal tangent on the tip of each Dalton point. The second through fifth splits (LMs 02 - 05) occur at points of highest curvature, where LM 02 is always placed on the right side of the projectile when oriented in 3D space following the alignment output of _auto3dgm_. To place the final landmark (LM 06), a linear measurement was used to project a reference point equidistant between LM 02 and LM 03. The location of that point was leveraged in placing the reference plane used to cut the spline at the location of LM 06.
 
 ## Spline split at location of LM 01
 
@@ -46,7 +46,7 @@ knitr::include_graphics('images/lm1.png')
 
 ## Spline split at locations of LM 02 - LM 03
 
-The point of highest curvature on either side of the basal edge was calculated using the `curvature` function in the Accuracy Analyser. This function displays the curvature flow as a continuous colour plot across the area of the curve. In this instance, _curvature_ is defined as the amount by which a geometric shape deviates from being flat or straight in the case of a line. The curvature is displayed in different colours according to the local radius, and is calculated in only one direction (U or V) along the curve. Using this tool, the two points of highest curvature were located between the basal and lateral edges on either side of each projectile where the local radius measure was largest. The alignment and orientation of each biface was dictated by the _auto3dgm_ output, and the landmarking protocol follows the mesh orientation, where LM2 was always placed on the right side of the basal edge, and LM 03 on the left.
+The point of highest curvature on either side of the basal edge was calculated using the `curvature` function in the Accuracy Analyser. This function displays the curvature flow as a continuous colour plot across the area of the curve. In this instance, _curvature_ is defined as the amount by which a geometric shape deviates from being flat or straight in the case of a line. The curvature is displayed in different colours according to the local radius, and is calculated in only one direction (U or V) along the curve. Using this tool, the two points of highest curvature were located between the basal and lateral edges on either side of each projectile where the local radius measure was largest. The alignment and orientation of each biface was dictated by the _auto3dgm_ output, and the landmarking protocol follows the mesh orientation, where LM 02 was always placed on the right side of the basal edge, and LM 03 on the left.
 
 ```{r lm3d3.figcurve, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Identify points of hightest curvature (light blue) at left/right intersection of lateral and basal edges."}
 knitr::include_graphics('images/splinesplit1.png')
@@ -54,7 +54,7 @@ knitr::include_graphics('images/splinesplit1.png')
 
 ## Spline split at locations of LM04 - LM05
 
-The point of highest curvature at the intersection of the blade and base was also calculated using the `curvature function` in the Accuracy Analyser. Using this tool, the two points of highest curvature were located between the blade and base on either side of each projectile where the local radius measure was largest. The alignment and orientation of each biface was dictated by the _auto3dgm_ output, and the landmarking protocol follows the mesh orientation in that figure, where LM4 was always placed on the right side of the basal edge, and LM5 on the left.
+The point of highest curvature at the intersection of the blade and base was also calculated using the `curvature function` in the Accuracy Analyser. Using this tool, the two points of highest curvature were located between the blade and base on either side of each projectile where the local radius measure was largest. The alignment and orientation of each biface was dictated by the _auto3dgm_ output, and the landmarking protocol follows the mesh orientation in that figure, where LM 04 was always placed on the right side of the basal edge, and LM 05 on the left.
 
 ```{r lm3d3.figcurve2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Identify points of hightest curvature (light blue) at left/right intersection of blade and base."}
 knitr::include_graphics('images/splinesplit2.png')
@@ -62,9 +62,9 @@ knitr::include_graphics('images/splinesplit2.png')
 
 ## Spline split at location of LM 06
 
-One additional landmark (LM6) was placed at the centre of the base. The location of this landmark was identified by calculating the linear distance between LM 02 and LM 03, and projecting a `reference point` (ctrl-div; below) equidistant between the two. A `reference plane` was added using the ctrl-div as the pick point, and the `Right plane` as the `normal axis`. The spline was then split at the intersection of the `reference plane` and the basal spline.
+One additional landmark (LM 06) was placed at the centre of the base. The location of this landmark was identified by calculating the linear distance between LM 02 and LM 03, and projecting a `reference point` (ctrl-div; below) equidistant between the two. A `reference plane` was added using the ctrl-div as the pick point, and the `Right plane` as the `normal axis`. The spline was then split at the intersection of the `reference plane` and the basal spline.
 
-```{r lm3d3.figlm4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Calculate linear distance between LM2 and LM3, insert reference plane coplanar to Right plane equidistant between LM2 and LM3, and use the reference plane to cut the spline."}
+```{r lm3d3.figlm4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Calculate linear distance between LM 02 and LM 03, insert reference plane coplanar to Right plane equidistant between LM 02 and LM 03, and use the reference plane to cut the spline."}
 knitr::include_graphics('images/lm6.png')
 ```
 
