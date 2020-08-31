@@ -24,19 +24,23 @@ _**Note: this landmarking protocol was developed prior to running `auto3dgm`, an
 
 ## Hypotheses
 
-A suite of visual aids was created a means of visualising the various hypotheses that this landmarking protocol will be used to test. The visual representation of each hypothesis was for my own reference, and each was used to critically assess the utility of each landmark and semilandmark employed in the subsequent protocol.
+A suite of visual aids was created a means of visualising the various hypotheses that this landmarking protocol will be used to test. The visual representation of each hypothesis was for my own reference, and each was used to critically assess the utility of each landmark and semilandmark employed in the subsequent protocol. All hypotheses tested for this study enlist the same sample of Dalton projectile points.
 
 ### Hypothesis 1
 
 Hypothesis 1 will test whether there is a difference in morphology for Dalton points found in and out of the heartland.
 
-```{r lm3d3.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 1 considers whether Dalton points discovered in and out of the Heartland differ in shape."}
+```{r lm3d3.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 1 considers whether Dalton points discovered in and out of the Heartland differ in morphology."}
 knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
 ```
 
 ### Hypothesis 2
 
+Hypothesis 2 will test whether there is a difference in morphology for Dalton points found in the heartland, the interior, and the northern periphery.
 
+```{r lm3d3.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 2 considers whether Dalton points discovered in the heartland, interior, and northern periphery differ in morphology."}
+knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
+```
 
 ## Generating the peripheral (plan view) spline
 
