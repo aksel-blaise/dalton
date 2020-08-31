@@ -1,8 +1,8 @@
 ---
-title: "Landmarking Protocol 3d3"
+title: "Landmarking Protocol 3d3 + Hypothesis Viz"
 author: "Robert Z. Selden, Jr."
 date: "August 31, 2020"
-output: html_document
+output: github_document
 bibliography: book.bib  
 ---
 
@@ -10,13 +10,13 @@ bibliography: book.bib
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Landmarking protocol 3d3 (LM3d3) represents a significant advancement from LM3d1 [@RN21001] and [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html) protocols that were developed to analyse Gahagan bifaces, which evolved from a 2D study [@RN11783]. Like LM3d1 and LM3d2, LM3d3 uses the mesh topology as the foundation for additional components of `reference geometry`, further expanding upon the previous landmarking protocols. The result is a landmarking protocol that provides for the improved characterisation of whole-object morphology, which can also be subset to explore morphological variation in _plan_, _profile_, and _cross-section_ morphology. It also provides those data points needed to investigate questions of _directional asymmetry_, differences in front/back morphology, and morphological integration between blade and basal morphology.
+Landmarking protocol 3d3 (LM3d3) represents a significant advancement from LM3d1 [@RN21001] and was modified from the [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html) protocols developed to analyse Gahagan bifaces. The principal difference between LM3d2 and LM3d3 is that the projectiles analysed using LM3d2 are lanceolate bifaces, and that landmarking protocol was not designed to capture the variation in basal morphology exhibited by Dalton projectile points. Like LM3d1 and LM3d2, LM3d3 uses the mesh topology as the foundation for additional components of `reference geometry`, further expanding upon the previous landmarking protocols. The result is a landmarking protocol that provides for the improved characterisation of whole-object morphology, which can also be subset to explore morphological variation in _plan_, _profile_, and _cross-section_ morphology. It also provides those data points needed to investigate questions of _directional asymmetry_, differences in front/back morphology, morphological integration between blade and basal morphology, and the capacity to include incomplete (broken/fractured) specimens.
 
-```{r lm3d3.landmarks, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Landmarks from LM3d1 serve as the basis for LM3d3."}
+```{r lm3d3.landmarks, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Landmarks populated using the LM3d1 protocol serve as the basis for LM3d3."}
 knitr::include_graphics('images/landmarks.png')
 ```
 
-Like its' predecessors, LM3d3 was initially designed using the [`digit3DLand`]((https://github.com/morphOptics/digit3DLand)) package in R. When the draft protocol was complete, it shifted to Geomagic Design X _(Build Version 2020.0.1 [Build Number: 30])_, where the workflow was modified to include those elements of `reference geometry` that articulate with the specific design attributes of each point.
+Like its' predecessors, LM3d3 was initially designed using the [`digit3DLand`](https://github.com/morphOptics/digit3DLand) package in R. When the draft protocol was complete, the protocol was shifted to Geomagic Design X _(Build Version 2020.0.1 [Build Number: 30])_, where the workflow was modified to include elements of `reference geometry` that articulate with the specific design attributes of each point.
 
 The goal of this effort was to increase both the precision and rigour of the study by including the Z-dimension to capture morphological characteristics associated with axial twisting introduced by knappers through the practice of beveling (LM3d1) [@RN21001]. The addition of cross-sections was needed to better characterise whole-object morphology, providing for the possibility of subsampling the landmarks to explore the contribution of a specific cross-section or profile (LM3d2). LM3d3 includes an additional cross section at the blade/base transition, allowing for tests of morphological integration. While true that some landmarking protocols can be—--and often are—--recycled as new specimens are added, this particular research programme endeavours to achieve ever-greater accuracy and precision in each analytical iteration.
 
@@ -49,6 +49,8 @@ Hypothesis 3 will test whether there is a discernible difference in morphology f
 ```{r lm3d3.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 3 considers whether beveled Dalton points differ in morphology from those that are not beveled."}
 knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
 ```
+
+# Landmarking protocol 3d3
 
 ## Generating the peripheral (plan view) spline
 
@@ -174,13 +176,13 @@ Semilandmarks 07 - 20 were first applied around the lateral edges, and sLMs 13 a
 
 The result is a landmark configuration that can be subset in numerous ways (plan, profile, cross-section, front/back, left/right, blade/base, etc.), and was designed to achieve maximum utility for analysts of lithic morphology.
 
-```{r lm3d3.semi, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Landmarks (blue), semilandmarks (white), curves (orange), and splits (blue) used for LM3d2."}
+```{r lm3d3.semi, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Landmarks (blue), semilandmarks (white), curves (orange), and splits (blue) used for LM3d3."}
 knitr::include_graphics('images/lm3d3.semi.png')
 ```
 
 Based upon knowledge garnered from running `LaSEC` on LM3d1, this landmarking protocol is likely oversampled; however, it can be further modified or subsampled to include only those landmarks and semilandmarks needed to address the research question. 
 
-```{r lm3d3.slm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Landmarks (blue), semilandmarks (white), and `reference geometry` used for LM3d2."}
+```{r lm3d3.slm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Landmarks (blue), semilandmarks (white), and `reference geometry` used in LM3d3."}
 knitr::include_graphics('images/lm3d3.slm.png')
 ```
 
