@@ -24,7 +24,7 @@ _**Note: this landmarking protocol was developed prior to running `auto3dgm`, an
 
 ## Hypotheses
 
-A suite of visual aids was created a means of visualising the various hypotheses that this landmarking protocol will be used to test. The visual representation of each hypothesis was for my own reference, and each was used to critically assess the utility of each landmark and semilandmark employed in the subsequent protocol. All hypotheses tested for this study enlist the same sample of Dalton projectile points.
+A suite of visual aids was created a means of visualising the various hypotheses that this landmarking protocol will be used to test. The visual representation of the following hypotheses were produced for my own reference, and used to critically assess the utility of the semilandmarks employed in the landmarking protocol. All hypotheses tested for this study will enlist the same sample of Dalton projectile points.
 
 ### Hypothesis 1
 
@@ -40,6 +40,14 @@ Hypothesis 2 will test whether there is a difference in morphology for Dalton po
 
 ```{r lm3d3.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 2 considers whether Dalton points discovered in the heartland, interior, and northern periphery differ in morphology."}
 knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
+```
+
+### Hypothesis 3
+
+Hypothesis 3 will test whether there is a discernible difference in morphology for Dalton points that are beveled, or not beveled.
+
+```{r lm3d3.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 3 considers whether beveled Dalton points differ in morphology from those that are not beveled."}
+knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
 ```
 
 ## Generating the peripheral (plan view) spline
