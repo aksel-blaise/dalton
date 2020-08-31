@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Landmarking protocol 3d3 (LM3d3) represents a significant advancement from LM3d1 [@RN21001] and [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html) protocols that were developed to analyse Gahagan bifaces, which evolved from a 2D study [@RN11783]. Like LM3d1 and LM3d2, LM3d3 uses the mesh topology as the foundation for additional components of `reference geometry`, further expanding upon the previous landmarking protocols. The result is a landmarking protocol that provides for the improved characterisation of whole-object morphology, which can also be subset to explore morphological variation in _plan_, _profile_, and _cross-section_ morphology. It also provides those data points needed to investigate questions of _directional asymmetry_, differences in front/back morphology, morphological integration between blade and basal morphology.
 
-```{r lm3d3.landmarks, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Landmarks from LM3d1 serve as the basis for LM3d2."}
+```{r lm3d3.landmarks, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Landmarks from LM3d1 serve as the basis for LM3d3."}
 knitr::include_graphics('images/landmarks.png')
 ```
 
@@ -156,6 +156,6 @@ Based upon knowledge garnered from running `LaSEC` on LM3d1, this landmarking pr
 knitr::include_graphics('images/lm3d3.slm.png')
 ```
 
-## ## Acknowledgments
+## Acknowledgments
 
 I extend my gratitude to Christian S. Hoggard and David K. Thulman for their thoughtful comments and constructive criticisms on the draft of this landmarking protocol, which was originally developed for the study of [Gahagan bifaces](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md) [@RN21001], and is extended here for an analysis of Dalton point morphology. This iteration of the landmarking protocol was developed using the [`digit3DLand`](https://github.com/morphOptics/digit3DLand) package in R.
