@@ -1,6 +1,6 @@
 # Landmarking Protocol 3d1
 
-This document includes supplemental materials for the article, "Article title here." The landmarking protocol outlined here was initially developed for an analysis of [Gahagan bifaces](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md) [@RN21001]. The goals of this study differ; however, the mechanics of the landmarking protocol are similar, and follow components of Dalton projectile morphology identified in previous studies (refs). Geomagic Design X _(Build Version 2020.0.1 [Build Number: 30])_ was used to generate a spline around the periphery of each biface, and to populate the landmarks and equidistant semilandmarks in a replicable manner using a suite of mathematically-defined criteria.
+This document includes supplemental materials for the article, "Article title here." The landmarking protocol outlined here was initially developed for an analysis of [Gahagan bifaces](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md) [@RN21001]. The goals of this study differ; however, the mechanics of the landmarking protocol are similar, and follow components of Dalton projectile morphology identified in previous studies (refs?). Geomagic Design X _(Build Version 2020.0.1 [Build Number: 30])_ was used to generate a spline around the periphery of each biface, and to populate the landmarks and equidistant semilandmarks in a replicable manner using a suite of mathematically-defined criteria.
 
 ```{r figbev, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Dalton point KeilMangold13."}
 knitr::include_graphics('images/dalton.png')
@@ -56,7 +56,7 @@ One additional landmark (LM6) was placed at the centre of the base. The location
 knitr::include_graphics('images/lm6.png')
 ```
 
-## Final spline
+## Peripheral (plan view) spline
 
 Through the preceding protocol, the initial spline was split into six discrete splines. These splines articulate with components of projectile morphology that can be compartmentalised in the analyses. The primary analytical gain achieved through this exercise is the requisite foundation needed to carry out replicable analyses of Dalton point morphology in three dimensions, further increasing the precision of the geometric morphometric analysis.
 
