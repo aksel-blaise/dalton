@@ -2,7 +2,7 @@
 title: "Landmarking Protocol 3d3 + Hypothesis Viz"
 author: "Robert Z. Selden, Jr."
 date: "August 31, 2020"
-output: html_document
+output: github_document
 bibliography: book.bib  
 ---
 
