@@ -29,20 +29,20 @@ knitr::include_graphics('images/landmarks.png')
 
 <div class="figure">
 
-<img src="images/landmarks.png" alt="Landmarks populated using the LM3d1 protocol serve as the basis for LM3d3." width="100%" />
+<img src="images/landmarks.png" alt="_**Figure 1. Landmarks populated using the LM3d1 protocol serve as the basis for LM3d3.**_" width="100%" />
 
 <p class="caption">
 
-Landmarks populated using the LM3d1 protocol serve as the basis for
-LM3d3.
+***Figure 1. Landmarks populated using the LM3d1 protocol serve as the
+basis for LM3d3.***
 
 </p>
 
 </div>
 
 Like its’ predecessors, LM3d3 was initially designed using the
-[`digit3DLand`](\(https://github.com/morphOptics/digit3DLand\)) package
-in R. When the draft protocol was complete, the protocol was shifted to
+[`digit3DLand`](https://github.com/morphOptics/digit3DLand) package in
+R. When the draft protocol was complete, the protocol was shifted to
 Geomagic Design X *(Build Version 2020.0.1 \[Build Number: 30\])*, where
 the workflow was modified to include elements of `reference geometry`
 that articulate with the specific design attributes of each point.
@@ -87,12 +87,12 @@ knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
 
 <div class="figure">
 
-<img src="images/dalton-vizhypothesis1.jpg" alt="Hypothesis 1 considers whether Dalton points discovered in and out of the Heartland differ in morphology." width="100%" />
+<img src="images/dalton-vizhypothesis1.jpg" alt="_**Figure 2. Hypothesis 1 considers whether Dalton points discovered in and out of the Heartland differ in morphology.**_" width="100%" />
 
 <p class="caption">
 
-Hypothesis 1 considers whether Dalton points discovered in and out of
-the Heartland differ in morphology.
+***Figure 2. Hypothesis 1 considers whether Dalton points discovered in
+and out of the Heartland differ in morphology.***
 
 </p>
 
@@ -110,12 +110,12 @@ knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
 
 <div class="figure">
 
-<img src="images/dalton-vizhypothesis2.jpg" alt="Hypothesis 2 considers whether Dalton points discovered in the heartland, interior, and northern periphery differ in morphology." width="100%" />
+<img src="images/dalton-vizhypothesis2.jpg" alt="_**Figure 3. Hypothesis 2 considers whether Dalton points discovered in the heartland, interior, and northern periphery differ in morphology.**_" width="100%" />
 
 <p class="caption">
 
-Hypothesis 2 considers whether Dalton points discovered in the
-heartland, interior, and northern periphery differ in morphology.
+***Figure 3. Hypothesis 2 considers whether Dalton points discovered in
+the heartland, interior, and northern periphery differ in morphology.***
 
 </p>
 
@@ -132,12 +132,12 @@ knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
 
 <div class="figure">
 
-<img src="images/dalton-vizhypothesis3.jpg" alt="Hypothesis 3 considers whether beveled Dalton points differ in morphology from those that are not beveled." width="100%" />
+<img src="images/dalton-vizhypothesis3.jpg" alt="_**Figure 4. Hypothesis 3 considers whether beveled Dalton points differ in morphology from those that are not beveled.**_" width="100%" />
 
 <p class="caption">
 
-Hypothesis 3 considers whether beveled Dalton points differ in
-morphology from those that are not beveled.
+***Figure 4. Hypothesis 3 considers whether beveled Dalton points differ
+in morphology from those that are not beveled.***
 
 </p>
 
@@ -164,11 +164,12 @@ knitr::include_graphics('images/extractspline.png')
 
 <div class="figure">
 
-<img src="images/extractspline.png" alt="Spline extracted along the highest contours of the Dalton point." width="100%" />
+<img src="images/extractspline.png" alt="_**Figure 5. Spline extracted along the highest contours of the Dalton point.**_" width="100%" />
 
 <p class="caption">
 
-Spline extracted along the highest contours of the Dalton point.
+***Figure 5. Spline extracted along the highest contours of the Dalton
+point.***
 
 </p>
 
@@ -218,13 +219,13 @@ knitr::include_graphics('images/lm1.png')
 
 <div class="figure">
 
-<img src="images/lm1.png" alt="Identify horizontal tangent, insert reference point and reference plane (left). Use reference plane to cut spline at the location of the horizontal tangent (right)." width="100%" />
+<img src="images/lm1.png" alt="_**Figure 6. Identify horizontal tangent, insert reference point and reference plane (left). Use reference plane to cut spline at the location of the horizontal tangent (right).**_" width="100%" />
 
 <p class="caption">
 
-Identify horizontal tangent, insert reference point and reference plane
-(left). Use reference plane to cut spline at the location of the
-horizontal tangent (right).
+***Figure 6. Identify horizontal tangent, insert reference point and
+reference plane (left). Use reference plane to cut spline at the
+location of the horizontal tangent (right).***
 
 </p>
 
@@ -253,12 +254,12 @@ knitr::include_graphics('images/splinesplit1.png')
 
 <div class="figure">
 
-<img src="images/splinesplit1.png" alt="Identify points of hightest curvature (light blue) at left/right intersection of lateral and basal edges." width="100%" />
+<img src="images/splinesplit1.png" alt="_**Figure 7. Identify points of hightest curvature (light blue) at left/right intersection of lateral and basal edges.**_" width="100%" />
 
 <p class="caption">
 
-Identify points of hightest curvature (light blue) at left/right
-intersection of lateral and basal edges.
+***Figure 7. Identify points of hightest curvature (light blue) at
+left/right intersection of lateral and basal edges.***
 
 </p>
 
@@ -282,12 +283,12 @@ knitr::include_graphics('images/splinesplit2.png')
 
 <div class="figure">
 
-<img src="images/splinesplit2.png" alt="Identify points of hightest curvature (light blue) at left/right intersection of blade and base." width="100%" />
+<img src="images/splinesplit2.png" alt="_**Figure 8. Identify points of hightest curvature (light blue) at left/right intersection of blade and base.**_" width="100%" />
 
 <p class="caption">
 
-Identify points of hightest curvature (light blue) at left/right
-intersection of blade and base.
+***Figure 8. Identify points of hightest curvature (light blue) at
+left/right intersection of blade and base.***
 
 </p>
 
@@ -309,13 +310,13 @@ knitr::include_graphics('images/lm6.png')
 
 <div class="figure">
 
-<img src="images/lm6.png" alt="Calculate linear distance between LM 02 and LM 03, insert `reference plane` coplanar to Right plane equidistant between LM 02 and LM 03, and use the reference plane to cut the spline." width="100%" />
+<img src="images/lm6.png" alt="_**Figure 9. Calculate linear distance between LM 02 and LM 03, insert `reference plane` coplanar to Right plane equidistant between LM 02 and LM 03, and use the reference plane to cut the spline.**_" width="100%" />
 
 <p class="caption">
 
-Calculate linear distance between LM 02 and LM 03, insert `reference
-plane` coplanar to Right plane equidistant between LM 02 and LM 03, and
-use the reference plane to cut the spline.
+***Figure 9. Calculate linear distance between LM 02 and LM 03, insert
+`reference plane` coplanar to Right plane equidistant between LM 02 and
+LM 03, and use the reference plane to cut the spline.***
 
 </p>
 
@@ -337,12 +338,12 @@ knitr::include_graphics('images/splinesplit-frbl.png')
 
 <div class="figure">
 
-<img src="images/splinesplit-frbl.png" alt="Result of spline splits include six discrete splines, each articulating with a region of analytical interest." width="100%" />
+<img src="images/splinesplit-frbl.png" alt="_**Figure 10. Result of spline splits include six discrete splines, each articulating with a region of analytical interest.**_" width="100%" />
 
 <p class="caption">
 
-Result of spline splits include six discrete splines, each articulating
-with a region of analytical interest.
+***Figure 10. Result of spline splits include six discrete splines, each
+articulating with a region of analytical interest.***
 
 </p>
 
@@ -361,12 +362,12 @@ knitr::include_graphics('images/lm3d3.vectors.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.vectors.png" alt="Reference vectors placed between LMs 01 and 06 (left), and between LMs 04 and 05 (right)." width="100%" />
+<img src="images/lm3d3.vectors.png" alt="_**Figure 11. Reference vectors placed between LMs 01 and 06 (left), and between LMs 04 and 05 (right).**_" width="100%" />
 
 <p class="caption">
 
-Reference vectors placed between LMs 01 and 06 (left), and between LMs
-04 and 05 (right).
+***Figure 11. Reference vectors placed between LMs 01 and 06 (left), and
+between LMs 04 and 05 (right).***
 
 </p>
 
@@ -397,11 +398,11 @@ knitr::include_graphics('images/lm3d3.ref.pl.1.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.ref.pl.1.png" alt="Placement of ref.pl.1, and location of ref.pt.1." width="100%" />
+<img src="images/lm3d3.ref.pl.1.png" alt="_**Figure 12. Placement of ref.pl.1, and location of ref.pt.1.**_" width="100%" />
 
 <p class="caption">
 
-Placement of ref.pl.1, and location of ref.pt.1.
+***Figure 12. Placement of ref.pl.1, and location of ref.pt.1.***
 
 </p>
 
@@ -421,11 +422,11 @@ knitr::include_graphics('images/lm3d3.ref.pl.2.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.ref.pl.2.png" alt="Placement of ref.pl.2, and location of ref.pt.2." width="100%" />
+<img src="images/lm3d3.ref.pl.2.png" alt="_**Figure 13. Placement of ref.pl.2, and location of ref.pt.2.**_" width="100%" />
 
 <p class="caption">
 
-Placement of ref.pl.2, and location of ref.pt.2.
+***Figure 13. Placement of ref.pl.2, and location of ref.pt.2.***
 
 </p>
 
@@ -443,11 +444,11 @@ knitr::include_graphics('images/lm3d3.ref.pl.3-4.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.ref.pl.3-4.png" alt="Placement of ref.pl.3 (top) and ref.pl.4 (bottom)." width="100%" />
+<img src="images/lm3d3.ref.pl.3-4.png" alt="_**Figure 14. Placement of ref.pl.3 (top) and ref.pl.4 (bottom).**_" width="100%" />
 
 <p class="caption">
 
-Placement of ref.pl.3 (top) and ref.pl.4 (bottom).
+***Figure 14. Placement of ref.pl.3 (top) and ref.pl.4 (bottom).***
 
 </p>
 
@@ -474,11 +475,12 @@ knitr::include_graphics('images/lm3d3.section1.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.section1.png" alt="Placement of the first section, bisecting the mesh along ref.pl.2." width="100%" />
+<img src="images/lm3d3.section1.png" alt="_**Figure 15. Placement of the first section, bisecting the mesh along ref.pl.2.**_" width="100%" />
 
 <p class="caption">
 
-Placement of the first section, bisecting the mesh along ref.pl.2.
+***Figure 15. Placement of the first section, bisecting the mesh along
+ref.pl.2.***
 
 </p>
 
@@ -500,11 +502,12 @@ knitr::include_graphics('images/lm3d3.all.sections.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.all.sections.png" alt="Placement of the two equidistant sections between LM 06 and ref.pt.3." width="100%" />
+<img src="images/lm3d3.all.sections.png" alt="_**Figure 16. Placement of the two equidistant sections between LM 06 and ref.pt.3.**_" width="100%" />
 
 <p class="caption">
 
-Placement of the two equidistant sections between LM 06 and ref.pt.3.
+***Figure 16. Placement of the two equidistant sections between LM 06
+and ref.pt.3.***
 
 </p>
 
@@ -525,13 +528,13 @@ knitr::include_graphics('images/lm3d3.split.sections.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.split.sections.png" alt="Each section was split at the points of highest curvature along the lateral edges, then along the mid-line at the intersection of the curve and ref.pl.1." width="100%" />
+<img src="images/lm3d3.split.sections.png" alt="_**Figure 17. Each section was split at the points of highest curvature along the lateral edges, then along the mid-line at the intersection of the curve and ref.pl.1.**_" width="100%" />
 
 <p class="caption">
 
-Each section was split at the points of highest curvature along the
-lateral edges, then along the mid-line at the intersection of the curve
-and ref.pl.1.
+***Figure 17. Each section was split at the points of highest curvature
+along the lateral edges, then along the mid-line at the intersection of
+the curve and ref.pl.1.***
 
 </p>
 
@@ -556,12 +559,12 @@ knitr::include_graphics('images/lm3d3.semi.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.semi.png" alt="Landmarks (blue), semilandmarks (white), curves (orange), and splits (blue) used for LM3d3." width="100%" />
+<img src="images/lm3d3.semi.png" alt="_**Figure 18. Landmarks (blue), semilandmarks (white), curves (orange), and splits (blue) used for LM3d3.**_" width="100%" />
 
 <p class="caption">
 
-Landmarks (blue), semilandmarks (white), curves (orange), and splits
-(blue) used for LM3d3.
+***Figure 18. Landmarks (blue), semilandmarks (white), curves (orange),
+and splits (blue) used for LM3d3.***
 
 </p>
 
@@ -578,12 +581,12 @@ knitr::include_graphics('images/lm3d3.slm.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.slm.png" alt="Landmarks (blue), semilandmarks (white), and `reference geometry` used in LM3d3." width="100%" />
+<img src="images/lm3d3.slm.png" alt="_**Figure 19. Landmarks (blue), semilandmarks (white), and `reference geometry` used in LM3d3.**_" width="100%" />
 
 <p class="caption">
 
-Landmarks (blue), semilandmarks (white), and `reference geometry` used
-in LM3d3.
+***Figure 19. Landmarks (blue), semilandmarks (white), and `reference
+geometry` used in LM3d3.***
 
 </p>
 
