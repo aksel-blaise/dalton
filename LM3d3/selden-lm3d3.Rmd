@@ -167,7 +167,7 @@ knitr::include_graphics('images/lm3d3.section1.png')
 
 ### Sectioning the blade and base
 
-A single `reference point` (ref.pt.3) was placed equidistant along the `reference vector` between LMs 04 and 05. Six equidistant sections were placed between LM 01 and ref.pt.3, and the two sections at the locations of LM 01 and ref.pt.3 were deleted. Three equidistant sections were placed between LM 06 and ref.pt.3. The section intersecting with ref.pt.3 was deleted. Subsequent to placing the sections, ref.pt.3 was itself deleted.
+Six equidistant sections were placed between LM 01 and ref.pt.0, and the two sections at the locations of LM 01 and ref.pt.0 were deleted. Three equidistant sections were placed between LM 06 and ref.pt.0. The sections intersecting with ref.pt.0 and LM 06 was deleted. Subsequent to placing the sections, ref.pt.0 was itself deleted.
 
 ```{r lm3d3.section3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 17. Placement of the two equidistant sections between LM 06 and ref.pt.3.**_"}
 knitr::include_graphics('images/lm3d3.all.sections.png')
@@ -175,15 +175,15 @@ knitr::include_graphics('images/lm3d3.all.sections.png')
 
 ## Splitting the sections
 
-The `curvature` function was employed to split the spline at the location of highest curvature. This function was detailed in the application of LMs 02, 03, 04, and 05 in LM3d1. Each section was split at the point of highest curvature along the lateral margins. The `reference plane` ref.pl.1 was then used to cut each curve along the mid-line where it intersects with the curves.
+The `curvature` function was employed to split the spline at the location of highest curvature. This function was detailed in the application of LMs 02, 03, 04, and 05 in LM3d1. Each section was split at the point of highest curvature along the lateral margins of the projectile. A `reference plane` (ref.pl.1) was used to cut each of the four curves along the mid-line of the blade where it intersects with the curves. A second reference plane (ref.pl.2) was used to cut the single basal curve and the curve between LMs 04 and 05. Since ref.pt.0 was used to generate ref.pl.1 and ref.pl.2, either could be used to cut the curve between LMs 04 and 05 since both intersect the curve at the same point.
 
-```{r lm3d3.split, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 18. Each section was split at the points of highest curvature along the lateral edges, then along the mid-line at the intersection of the curve and ref.pl.1.**_"}
+```{r lm3d3.split, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 18. Each section was split at the points of highest curvature along the lateral edges, then along the mid-line at the intersection of the curve and ref.pl.1 (for the blade), and ref.pl.2 (for the base).**_"}
 knitr::include_graphics('images/lm3d3.split.sections.png')
 ```
 
 ## Applying the semilandmarks
 
-Semilandmarks 07 - 20 were first applied around the lateral edges, and sLMs 13 and 14 between LMs 02, 06, and 03 uses the curve constructed in LM3d1. Semilandmarks 21 - 32 articulate with the mid-line between LMs 01 and 06. Additional sLMs (33 - 57) were placed on each section equidistant between those sLMs defined by the splits described above.
+Semilandmarks 07 - 18 were first applied around the lateral edges, and sLMs 12 and 13 between LMs 02, 06, and 03 uses the curve constructed in LM3d1. Semilandmarks 19 - 30 articulate with the mid-line between LMs 01 and 06. Additional sLMs can be placed on each section equidistant between those sLMs defined by the splits described above to better characterise each cross section, if needed.
 
 The result is a landmark configuration that can be subset in numerous ways (plan, profile, cross-section, front/back, left/right, blade/base, etc.), and was designed to achieve maximum utility for analysts of lithic morphology.
 
@@ -191,7 +191,7 @@ The result is a landmark configuration that can be subset in numerous ways (plan
 knitr::include_graphics('images/lm3d3.semi.png')
 ```
 
-Based upon knowledge garnered from running `LaSEC` on LM3d1, this landmarking protocol is likely oversampled; however, it can be further modified or subsampled to include only those landmarks and semilandmarks needed to address the research question. 
+Based upon knowledge garnered from running `LaSEC` on LM3d1, this landmarking protocol would likely oversampled if it included additional landmarks on the cross-sections; however, it can be readily modified to include as many or as few landmarks and semilandmarks needed to address the research question. 
 
 ```{r lm3d3.slm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 20. Landmarks (blue), semilandmarks (white), and `reference geometry` used in LM3d3.**_"}
 knitr::include_graphics('images/lm3d3.slm.png')
