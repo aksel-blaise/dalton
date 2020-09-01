@@ -8,8 +8,8 @@ from
 [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md)
 (Selden Jr., Dockall, and Dubied 2020) and was modified from the
 [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html)
-protocols initially developed to analyse Gahagan bifaces. The principal
-difference between
+protocol that was developed for the analysis of Gahagan bifaces. The
+principal difference between
 [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html)
 and LM3d3 is that the projectiles analysed using
 [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html)
@@ -19,17 +19,13 @@ to capture the variation in basal morphology exhibited by stemmed
 [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md)
 and
 [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html),
-LM3d3 uses the topology of the mesh (prehistoric design) associated with
-each projectile to construct a suite of `reference geometry` used to
-apply semilandmarks in a replicable manner, and represents the logical
-evolution of
-[LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md)
-and
-[LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html).
-The result is a landmarking protocol that provides for the improved
-characterisation of whole-object morphology that can be subset to
-explore morphological variation in *plan*, *profile*, and
-*cross-section* morphology. It also provides those data points needed to
+LM3d3 uses the topology of the 3D mesh that articulates with the
+prehistoric design of each projectile point to construct a suite of
+`reference geometry` used to apply semilandmarks in a replicable manner.
+The result is a landmarking protocol that provides for an improved
+characterisation of whole-object morphology, which can be subset to
+explore morphological variation in specific *plan*, *profile*, and
+*cross-section* components. It also provides those data points needed to
 investigate questions of *directional asymmetry*, differences in
 front/back morphology, and morphological integration between blade and
 basal morphology.
