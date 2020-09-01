@@ -3,7 +3,7 @@ Landmarking Protocol 3d3 + Hypothesis Viz
 Robert Z. Selden, Jr.
 01 September, 2020
 
-Landmarking protocol 3d3 (LM3d3) represents a significant advancement
+Landmarking protocol 3d3 (LM3d3) represents a substantive advancement
 from
 [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md)
 (Selden Jr., Dockall, and Dubied 2020) and was modified from the
@@ -23,8 +23,8 @@ LM3d3 uses the topology of the 3D mesh that articulates with the
 prehistoric design of each projectile point to construct a suite of
 `reference geometry` used to apply semilandmarks in a replicable manner.
 The result is a landmarking protocol that provides for an improved
-characterisation of whole-object morphology, which can be subset to
-explore morphological variation in specific *plan*, *profile*, and
+characterisation of whole-object morphology, and can be subset to
+analyse variability associated with specific *plan*, *profile*, and
 *cross-section* components. It also provides those data points needed to
 investigate questions of *directional asymmetry*, differences in
 front/back morphology, and morphological integration between blade and
@@ -50,17 +50,16 @@ protocol serve as the basis for LM3d3.***
 
 Like its’ predecessors, LM3d3 was initially designed using the
 [`digit3DLand`](https://github.com/morphOptics/digit3DLand) package in
-R. When the draft protocol was complete, the design of the landmarking
+R. When the draft protocol was completed, design of the landmarking
 protocol shifted to [Geomagic Design
 X](https://www.3dsystems.com/software/geomagic-design-x) *(Build Version
 2020.0.1 \[Build Number: 30\])*, where the workflow was modified to
-include elements of `reference geometry` that articulate with the
-prehistoric design attributes of each projectile point included in the
-sample.
+include those elements of `reference geometry` that articulate with the
+prehistoric design attributes of each projectile point.
 
 The goal of this effort was to increase both the precision and rigour of
-the study by including the Z-dimension to capture those morphological
-characteristics associated with axial twisting introduced by knappers
+the study by including the Z-dimension to capture those shape
+characteristics associated with axial twisting, introduced by knappers
 through the practice of beveling
 ([LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md))
 (Selden Jr., Dockall, and Dubied 2020). The addition of cross-sections
@@ -73,86 +72,6 @@ allowing for tests of morphological integration. While true that some
 landmarking protocols can be—–and often are—–recycled as new specimens
 are added, this particular research programme endeavours to achieve
 ever-greater accuracy and precision in each analytical iteration.
-
-## Hypotheses
-
-A suite of visual aids were created a means of visualising the various
-hypotheses that this landmarking protocol will be used to test. The
-visual representation of the following hypotheses were produced for my
-own reference, and used to critically assess the utility of the
-semilandmarks employed in the landmarking protocol. All hypotheses
-tested for this study will enlist the same sample of Dalton projectile
-points.
-
-### Hypothesis 1
-
-Hypothesis 1 will test whether there is a difference in morphology for
-Dalton points found in and out of the heartland.
-
-``` r
-knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
-```
-
-<div class="figure">
-
-<img src="images/dalton-vizhypothesis1.jpg" alt="_**Figure 2. Hypothesis 1 considers whether Dalton points discovered in (left) and out (right) of the Heartland differ in morphology.**_" width="100%" />
-
-<p class="caption">
-
-***Figure 2. Hypothesis 1 considers whether Dalton points discovered in
-(left) and out (right) of the Heartland differ in morphology.***
-
-</p>
-
-</div>
-
-### Hypothesis 2
-
-Hypothesis 2 will test whether there is a difference in morphology for
-Dalton points found in the heartland, the interior, and the northern
-periphery.
-
-``` r
-knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
-```
-
-<div class="figure">
-
-<img src="images/dalton-vizhypothesis2.jpg" alt="_**Figure 3. Hypothesis 2 considers whether Dalton points discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology.**_" width="100%" />
-
-<p class="caption">
-
-***Figure 3. Hypothesis 2 considers whether Dalton points discovered in
-the heartland (left), interior (center), and northern periphery (right)
-differ in morphology.***
-
-</p>
-
-</div>
-
-### Hypothesis 3
-
-Hypothesis 3 will test whether there is a discernible difference in
-morphology for Dalton points that are beveled, or not beveled.
-
-``` r
-knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
-```
-
-<div class="figure">
-
-<img src="images/dalton-vizhypothesis3.jpg" alt="_**Figure 4. Hypothesis 3 considers whether beveled Dalton points (left) differ in morphology from those that are not beveled (right).**_" width="100%" />
-
-<p class="caption">
-
-***Figure 4. Hypothesis 3 considers whether beveled Dalton points (left)
-differ in morphology from those that are not beveled (right).***
-
-</p>
-
-</div>
-
-# Landmarking protocol 3d3
 
 ## Generating the peripheral (plan view) spline
 
@@ -173,11 +92,11 @@ knitr::include_graphics('images/extractspline.png')
 
 <div class="figure">
 
-<img src="images/extractspline.png" alt="_**Figure 5. Spline extracted along the highest contours of the Dalton point.**_" width="100%" />
+<img src="images/extractspline.png" alt="_**Figure 2. Spline extracted along the highest contours of the Dalton point.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 5. Spline extracted along the highest contours of the Dalton
+***Figure 2. Spline extracted along the highest contours of the Dalton
 point.***
 
 </p>
@@ -228,11 +147,11 @@ knitr::include_graphics('images/lm1.png')
 
 <div class="figure">
 
-<img src="images/lm1.png" alt="_**Figure 6. Identify horizontal tangent, insert `reference point` and `reference plane` (left). Use `reference plane` to cut spline at the location of the horizontal tangent (right).**_" width="100%" />
+<img src="images/lm1.png" alt="_**Figure 3. Identify horizontal tangent, insert `reference point` and `reference plane` (left). Use `reference plane` to cut spline at the location of the horizontal tangent (right).**_" width="100%" />
 
 <p class="caption">
 
-***Figure 6. Identify horizontal tangent, insert `reference point` and
+***Figure 3. Identify horizontal tangent, insert `reference point` and
 `reference plane` (left). Use `reference plane` to cut spline at the
 location of the horizontal tangent (right).***
 
@@ -263,11 +182,11 @@ knitr::include_graphics('images/splinesplit1.png')
 
 <div class="figure">
 
-<img src="images/splinesplit1.png" alt="_**Figure 7. Identify points of hightest curvature (light blue) at left/right intersection of lateral and basal edges.**_" width="100%" />
+<img src="images/splinesplit1.png" alt="_**Figure 4. Identify points of hightest curvature (light blue) at left/right intersection of lateral and basal edges.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 7. Identify points of hightest curvature (light blue) at
+***Figure 4. Identify points of hightest curvature (light blue) at
 left/right intersection of lateral and basal edges.***
 
 </p>
@@ -292,11 +211,11 @@ knitr::include_graphics('images/splinesplit2.png')
 
 <div class="figure">
 
-<img src="images/splinesplit2.png" alt="_**Figure 8. Identify points of hightest curvature (light blue) at left/right intersection of blade and base.**_" width="100%" />
+<img src="images/splinesplit2.png" alt="_**Figure 5. Identify points of hightest curvature (light blue) at left/right intersection of blade and base.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 8. Identify points of hightest curvature (light blue) at
+***Figure 5. Identify points of hightest curvature (light blue) at
 left/right intersection of blade and base.***
 
 </p>
@@ -319,11 +238,11 @@ knitr::include_graphics('images/lm6.png')
 
 <div class="figure">
 
-<img src="images/lm6.png" alt="_**Figure 9. Calculate linear distance between LM 02 and LM 03, insert `reference plane` coplanar to Right plane equidistant between LM 02 and LM 03, and use the `reference plane` to cut the spline.**_" width="100%" />
+<img src="images/lm6.png" alt="_**Figure 6. Calculate linear distance between LM 02 and LM 03, insert `reference plane` coplanar to Right plane equidistant between LM 02 and LM 03, and use the `reference plane` to cut the spline.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 9. Calculate linear distance between LM 02 and LM 03, insert
+***Figure 6. Calculate linear distance between LM 02 and LM 03, insert
 `reference plane` coplanar to Right plane equidistant between LM 02 and
 LM 03, and use the `reference plane` to cut the spline.***
 
@@ -347,11 +266,11 @@ knitr::include_graphics('images/splinesplit-frbl.png')
 
 <div class="figure">
 
-<img src="images/splinesplit-frbl.png" alt="_**Figure 10. Result of spline splits include six discrete splines, each articulating with a region of analytical interest. The coordinates of each spline split are known, and used to place the landmarks.**_" width="100%" />
+<img src="images/splinesplit-frbl.png" alt="_**Figure 7. Result of spline splits include six discrete splines, each articulating with a region of analytical interest. The coordinates of each spline split are known, and used to place the landmarks.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 10. Result of spline splits include six discrete splines, each
+***Figure 7. Result of spline splits include six discrete splines, each
 articulating with a region of analytical interest. The coordinates of
 each spline split are known, and used to place the landmarks.***
 
@@ -375,11 +294,11 @@ knitr::include_graphics('images/lm3d3.vectors.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.vectors.png" alt="_**Figure 11. `Reference vectors` placed between LMs 01 and ref.pt.0 (left), ref.pt.0 and LM 06 (center), and between LMs 04 and 05 (right).**_" width="100%" />
+<img src="images/lm3d3.vectors.png" alt="_**Figure 8. `Reference vectors` placed between LMs 01 and ref.pt.0 (left), ref.pt.0 and LM 06 (center), and between LMs 04 and 05 (right).**_" width="100%" />
 
 <p class="caption">
 
-***Figure 11. `Reference vectors` placed between LMs 01 and ref.pt.0
+***Figure 8. `Reference vectors` placed between LMs 01 and ref.pt.0
 (left), ref.pt.0 and LM 06 (center), and between LMs 04 and 05
 (right).***
 
@@ -434,11 +353,11 @@ knitr::include_graphics('images/lm3d3.ref.pl.1.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.ref.pl.1.png" alt="_**Figure 12. Placement of ref.pl.1, and temporary location of ref.pt.1 15mm from Vector 1, and equidistant between LM 01 and ref.pt.0 on the blade of the projectile.**_" width="100%" />
+<img src="images/lm3d3.ref.pl.1.png" alt="_**Figure 9. Placement of ref.pl.1, and temporary location of ref.pt.1 15mm from Vector 1, and equidistant between LM 01 and ref.pt.0 on the blade of the projectile.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 12. Placement of ref.pl.1, and temporary location of ref.pt.1
+***Figure 9. Placement of ref.pl.1, and temporary location of ref.pt.1
 15mm from Vector 1, and equidistant between LM 01 and ref.pt.0 on the
 blade of the projectile.***
 
@@ -460,11 +379,11 @@ knitr::include_graphics('images/lm3d3.ref.pl.2.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.ref.pl.2.png" alt="_**Figure 13. Placement of ref.pl.2, and temporary location of ref.pt.2 15 mm from Vector 2, and equidistant between ref.pt.0 and LM 06 on the base of the projectile.**_" width="100%" />
+<img src="images/lm3d3.ref.pl.2.png" alt="_**Figure 10. Placement of ref.pl.2, and temporary location of ref.pt.2 15 mm from Vector 2, and equidistant between ref.pt.0 and LM 06 on the base of the projectile.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 13. Placement of ref.pl.2, and temporary location of ref.pt.2
+***Figure 10. Placement of ref.pl.2, and temporary location of ref.pt.2
 15 mm from Vector 2, and equidistant between ref.pt.0 and LM 06 on the
 base of the projectile.***
 
@@ -486,11 +405,11 @@ knitr::include_graphics('images/lm3d3.ref.pl.3.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.ref.pl.3.png" alt="_**Figure 14. Placement of ref.pl.3, and temporary location of ref.pt.3 15 mm from Vector 3, and equidistant between LMs 04 and 05 at the intersection of the blade and base.**_" width="100%" />
+<img src="images/lm3d3.ref.pl.3.png" alt="_**Figure 11. Placement of ref.pl.3, and temporary location of ref.pt.3 15 mm from Vector 3, and equidistant between LMs 04 and 05 at the intersection of the blade and base.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 14. Placement of ref.pl.3, and temporary location of ref.pt.3
+***Figure 11. Placement of ref.pl.3, and temporary location of ref.pt.3
 15 mm from Vector 3, and equidistant between LMs 04 and 05 at the
 intersection of the blade and base.***
 
@@ -510,11 +429,11 @@ knitr::include_graphics('images/lm3d3.ref.pl.4-5.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.ref.pl.4-5.png" alt="_**Figure 15. Placement of ref.pl.4 (top) and ref.pl.5 (bottom).**_" width="100%" />
+<img src="images/lm3d3.ref.pl.4-5.png" alt="_**Figure 12. Placement of ref.pl.4 (top) and ref.pl.5 (bottom).**_" width="100%" />
 
 <p class="caption">
 
-***Figure 15. Placement of ref.pl.4 (top) and ref.pl.5 (bottom).***
+***Figure 12. Placement of ref.pl.4 (top) and ref.pl.5 (bottom).***
 
 </p>
 
@@ -541,11 +460,11 @@ knitr::include_graphics('images/lm3d3.section1.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.section1.png" alt="_**Figure 16. Placement of the first section, bisecting the mesh along ref.pl.2.**_" width="100%" />
+<img src="images/lm3d3.section1.png" alt="_**Figure 13. Placement of the first section, bisecting the mesh along ref.pl.2.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 16. Placement of the first section, bisecting the mesh along
+***Figure 13. Placement of the first section, bisecting the mesh along
 ref.pl.2.***
 
 </p>
@@ -566,11 +485,11 @@ knitr::include_graphics('images/lm3d3.all.sections.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.all.sections.png" alt="_**Figure 17. Placement of the two equidistant sections between LM 06 and ref.pt.3.**_" width="100%" />
+<img src="images/lm3d3.all.sections.png" alt="_**Figure 14. Placement of the two equidistant sections between LM 06 and ref.pt.3.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 17. Placement of the two equidistant sections between LM 06
+***Figure 14. Placement of the two equidistant sections between LM 06
 and ref.pt.3.***
 
 </p>
@@ -598,11 +517,11 @@ knitr::include_graphics('images/lm3d3.split.sections.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.split.sections.png" alt="_**Figure 18. Each section was split at the points of highest curvature along the lateral edges, then along the mid-line at the intersection of the curve and ref.pl.1 (for the blade), and ref.pl.2 (for the base).**_" width="100%" />
+<img src="images/lm3d3.split.sections.png" alt="_**Figure 15. Each section was split at the points of highest curvature along the lateral edges, then along the mid-line at the intersection of the curve and ref.pl.1 (for the blade), and ref.pl.2 (for the base).**_" width="100%" />
 
 <p class="caption">
 
-***Figure 18. Each section was split at the points of highest curvature
+***Figure 15. Each section was split at the points of highest curvature
 along the lateral edges, then along the mid-line at the intersection of
 the curve and ref.pl.1 (for the blade), and ref.pl.2 (for the base).***
 
@@ -631,11 +550,11 @@ knitr::include_graphics('images/lm3d3.semi.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.semi.png" alt="_**Figure 19. Landmarks (blue), semilandmarks (white), curves (orange), and splits (blue) used for LM3d3.**_" width="100%" />
+<img src="images/lm3d3.semi.png" alt="_**Figure 16. Landmarks (blue), semilandmarks (white), curves (orange), and splits (blue) used for LM3d3.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 19. Landmarks (blue), semilandmarks (white), curves (orange),
+***Figure 16. Landmarks (blue), semilandmarks (white), curves (orange),
 and splits (blue) used for LM3d3.***
 
 </p>
@@ -655,12 +574,90 @@ knitr::include_graphics('images/lm3d3.slm.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.slm.png" alt="_**Figure 20. Landmarks (blue), semilandmarks (white), and `reference geometry` used in LM3d3.**_" width="100%" />
+<img src="images/lm3d3.slm.png" alt="_**Figure 17. Landmarks (blue), semilandmarks (white), and `reference geometry` used in LM3d3.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 20. Landmarks (blue), semilandmarks (white), and `reference
+***Figure 17. Landmarks (blue), semilandmarks (white), and `reference
 geometry` used in LM3d3.***
+
+</p>
+
+</div>
+
+## Hypotheses
+
+A suite of visual aids were created a means of visualising the various
+hypotheses that this landmarking protocol will be used to test. The
+visual representation of the following hypotheses were produced for my
+own reference, and used to critically assess the utility of the
+semilandmarks employed in the landmarking protocol. All hypotheses
+tested for this study will enlist the same sample of Dalton projectile
+points.
+
+### Hypothesis 1
+
+Hypothesis 1 will test whether there is a difference in morphology for
+Dalton points found in and out of the heartland.
+
+``` r
+knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
+```
+
+<div class="figure">
+
+<img src="images/dalton-vizhypothesis1.jpg" alt="_**Figure 18. Hypothesis 1 considers whether Dalton points discovered in (left) and out (right) of the Heartland differ in morphology.**_" width="100%" />
+
+<p class="caption">
+
+***Figure 18. Hypothesis 1 considers whether Dalton points discovered in
+(left) and out (right) of the Heartland differ in morphology.***
+
+</p>
+
+</div>
+
+### Hypothesis 2
+
+Hypothesis 2 will test whether there is a difference in morphology for
+Dalton points found in the heartland, the interior, and the northern
+periphery.
+
+``` r
+knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
+```
+
+<div class="figure">
+
+<img src="images/dalton-vizhypothesis2.jpg" alt="_**Figure 19. Hypothesis 2 considers whether Dalton points discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology.**_" width="100%" />
+
+<p class="caption">
+
+***Figure 19. Hypothesis 2 considers whether Dalton points discovered in
+the heartland (left), interior (center), and northern periphery (right)
+differ in morphology.***
+
+</p>
+
+</div>
+
+### Hypothesis 3
+
+Hypothesis 3 will test whether there is a discernible difference in
+morphology for Dalton points that are beveled, or not beveled.
+
+``` r
+knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
+```
+
+<div class="figure">
+
+<img src="images/dalton-vizhypothesis3.jpg" alt="_**Figure 20. Hypothesis 3 considers whether beveled Dalton points (left) differ in morphology from those that are not beveled (right).**_" width="100%" />
+
+<p class="caption">
+
+***Figure 20. Hypothesis 3 considers whether beveled Dalton points
+(left) differ in morphology from those that are not beveled (right).***
 
 </p>
 
