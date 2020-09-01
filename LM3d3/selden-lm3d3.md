@@ -183,7 +183,7 @@ body, and is used to create other features.*
 The characteristic points and tangents developed for this landmarking
 protocol were inspired by the work of Birkhoff (1933), which has been
 gainfully employed within the context of both ceramic (Selden Jr. 2018a,
-2018b, 2019, 2020) and lithic analyses (Selden Jr., Dockall, and Shafer
+2018b, 2019, 2021) and lithic analyses (Selden Jr., Dockall, and Shafer
 2018; Selden Jr., Dockall, and Dubied 2020). The first landmark (LM1) is
 placed at the horizontal tangent on the tip of each Dalton point. The
 second through fifth splits (LMs 02 - 05) occur at points of highest
@@ -348,12 +348,12 @@ each spline split are known, and used to place the landmarks.***
 ## Reference vectors and ref.pt.0
 
 The fundamental components of `reference geometry` used to create LM3d3
-are three `reference vectors`, and a single `reference point`
-(ref.pt.0), which was placed equidistant between LM 04 and LM 05. The
-three `reference vectors` were subsequently placed between LMs 01 and
-ref.pt.0 (Vector 1), ref.pt.0 and LM 06 (Vector 2), and LMs 04 and 05
-(Vector 3). These three `reference vectors` serve as the foundation for
-the suite of `reference geometry` used to place the semilandmarks.
+consist of three `reference vectors`, and a single `reference point`
+(ref.pt.0), placed equidistant between LM 04 and LM 05. The three
+`reference vectors` were placed between LM 01 and ref.pt.0 (Vector 1),
+ref.pt.0 and LM 06 (Vector 2), and LMs 04 and 05 (Vector 3). These three
+`reference vectors` serve as the foundation for the suite of `reference
+geometry` used to place the semilandmarks.
 
 ``` r
 knitr::include_graphics('images/lm3d3.vectors.png')
@@ -373,16 +373,17 @@ knitr::include_graphics('images/lm3d3.vectors.png')
 
 </div>
 
-Measure of the angle between Vector 1 (blade) and Vector 2 (base) may
-have additional utility in lithic studies as an orthogonal metric
+The measure of the angle between Vector 1 (blade) and Vector 2 (base)
+may have additional utility in lithic studies as an orthogonal metric
 associated with knapper skill, where greater skill is represented by an
-arbitrary range of angles nearest 180 degrees. A second similar measure
-could be collected between Vectors 1 and 2 in comparison with Vector 3.
-Collection of these metrics from a 3D mesh in computer aided design
-(CAD) software adds an increased element of precision in comparison with
-a goniometer, and serves as an example of the added analytical value
-that can be extracted from this novel landmarking protocol that reaches
-beyond the application of landmarks and semilandmarks.
+arbitrary range of angles nearest—and furthest away from—180 degrees. A
+second similar measure could be collected between Vectors 1 and 2 in
+comparison with Vector 3. Collection of these metrics from a 3D mesh in
+computer aided design (CAD) software adds an increased element of
+precision in comparison with a goniometer, and serves as an example of
+the added analytical value that can be extracted from this novel
+landmarking protocol that reaches beyond the application of landmarks
+and semilandmarks.
 
 Prior to the addition of the `reference vectors`, the location of LMs 02
 through 05 are considered arbitrary. Previous iterations of this
@@ -403,16 +404,15 @@ will become clear in subsequent sections.
 
 ### Placement of ref.pl.1
 
-The first `reference plane` (ref.pl.1) was placed between LMs 01 and
-ref.pt.0 in such a way that it bisects the blade of the projectile along
-the mid-line. The method of placement enlists a second `reference point`
-(ref.pt.1), which was inserted along the first `reference vector`. It is
-located at a position equidistant between LMs 01 and ref.pt.0, but the
-coordinates of ref.pt.1 were altered to relocate it 15 mm from the
-vector in the direction of the Z-axis. The `pick point and coplanar`
-function was then used to place ref.pl.1 coplanar to the first
-`reference vector`, and in the direction of ref.pt.1. Following
-placement of ref.pl.1, ref.pt.1 was deleted.
+The first `reference plane` (ref.pl.1) was placed between LM 01 and
+ref.pt.0, bisecting the blade of the projectile along the mid-line. The
+method of placement enlists a second `reference point` (ref.pt.1),
+inserted along the first `reference vector`. It is located at a position
+equidistant between LM 01 and ref.pt.0, but the coordinates of ref.pt.1
+were altered to relocate it 15 mm from the vector in the direction of
+the Z-axis. The `pick point and coplanar` function was used to place
+ref.pl.1 coplanar to the first `reference vector`, and in the direction
+of ref.pt.1. Following placement of ref.pl.1, ref.pt.1 was deleted.
 
 ``` r
 knitr::include_graphics('images/lm3d3.ref.pl.1.png')
@@ -665,7 +665,7 @@ Area: The Clarence H. Webb Collections.” *Journal of Cultural Heritage*
 
 <div id="ref-RN20697">
 
-———. 2020. “Louisiana Limitrophe: An Iterative Morphological Exegesis of
+———. 2021. “Louisiana Limitrophe: An Iterative Morphological Exegesis of
 Caddo Bottle and Biface Production.” In *Ancestral Caddo Ceramic
 Traditions*, edited by Duncan P. McKinnon, Jeffrey S. Girard, and
 Timothy K. Perttula, (in press). Baton Rouge: LSU Press.
