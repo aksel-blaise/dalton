@@ -75,7 +75,7 @@ The `horizontal tangent` is calculated by drawing a horizontal line above the ti
 knitr::include_graphics('images/lm1.png')
 ```
 
-## Spline split at locations of LM 02 - LM 03
+## Spline split at locations of LM 02 and LM 03
 
 The point of highest curvature on either side of the basal edge was calculated using the `curvature` function in the Accuracy Analyser. This function displays the curvature flow as a continuous colour plot across the area of the curve. In this instance, _curvature_ is defined as the amount by which a geometric shape deviates from being flat or straight in the case of a line. The curvature is displayed in different colours according to the local radius, and is calculated in only one direction (U or V) along the curve. Using this tool, the two points of highest curvature were located between the basal and lateral edges on either side of each projectile where the local radius measure was largest. The alignment and orientation of each biface was dictated by the _auto3dgm_ output, and the landmarking protocol follows the mesh orientation, where LM 02 was always placed on the right side of the basal edge, and LM 03 on the left.
 
@@ -103,27 +103,29 @@ knitr::include_graphics('images/lm6.png')
 
 Through the preceding protocol, the initial spline was split into six discrete splines. These splines articulate with components of projectile morphology that can be compartmentalised in the analyses. The primary analytical gain achieved through this exercise is the requisite foundation needed to carry out replicable analyses of Dalton point morphology in three dimensions, further increasing the precision of the geometric morphometric analysis.
 
-```{r lm3d3.figsplinesplit-frbl, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 10. Result of spline splits include six discrete splines, each articulating with a region of analytical interest.**_"}
+```{r lm3d3.figsplinesplit-frbl, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 10. Result of spline splits include six discrete splines, each articulating with a region of analytical interest. The coordinates of each spline split are known, and used to place the landmarks.**_"}
 knitr::include_graphics('images/splinesplit-frbl.png')
 ```
 
-## Reference vectors
+## Reference vectors and ref.pt.0
 
-The fundamental components of `reference geometry` used to create LM3d2 are two `reference vectors`. The vectors were placed between LMs 01 and 06, and LMs 04 and 05, and serve as the basis for the remaining `reference geometry` needed to place the semilandmarks.
+The fundamental components of `reference geometry` used to create LM3d2 are three `reference vectors`, and a single `reference point` (ref.pt.0) that was placed equidistant between LM 04 and LM 05. The addition of ref.pt.0 allows for the replicable placement of landmarks and semilandmarks on incomplete specimens, as long as the shoulders of the projectile---which include LMs 04 and 05---are intact. The three `reference vectors` were subsequently placed between LMs 01 and ref.pt.0 (Vector 1), ref.pt.0 and LM 06 (Vector 2), and LMs 04 and 05 (Vector 3).  These three `reference vectors` serve as the foundation for the requisite `reference geometry` used to place the semilandmarks.
 
-```{r lm3d3.vectors, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 11. Reference vectors placed between LMs 01 and 06 (left), and between LMs 04 and 05 (right).**_"}
+```{r lm3d3.vectors, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 11. Reference vectors placed between LMs 01 and ref.pt.0 (left), ref.pt.0 and LM 06 (center), and between LMs 04 and 05 (right).**_"}
 knitr::include_graphics('images/lm3d3.vectors.png')
 ```
 
+_Measure of the angle between Vector 1 (blade) and Vector 2 (base) may have additional utility in lithic studies as an orthogonal metric associated with knapper skill, where greater skill is represented by an arbitrary range of angles nearest 180 degrees._ Collection of this metric from a 3D mesh in computer aided design (CAD) software adds an increased element of precision when compared to a goniometer, and provides a good example of an additional element of analytical value that can be extracted from this landmarking protocol.
+
 ## Reference planes and points
 
-Four `reference planes` provide the framework needed to populate the semilandmarks. Admittedly, the logic associated with placement may seem curious at this point; however, the utility of these `reference planes` will become clear in subsequent sections.
+Five `reference planes` provide the framework needed to populate the semilandmarks. Admittedly, the logic associated with placement may seem curious at this point; however, the utility of these `reference planes` will become clear in subsequent sections.
 
 ### Placement of ref.pl.1
 
-The first `reference plane` (ref.pl.1) was placed between LMs 01 and 06 in such a way that it bisects the projectile along the midline. The method of placement enlists a `reference point` (ref.pt.1), which was inserted along the first `reference vector`. It is located at a position equidistant between LMs 01 and 06, but the `reference point` coordinates were altered to relocate it 15 mm from the vector in the direction of the Z-axis. The `pick point and coplanar` function was used to place the plane coplanar to the first `reference vector`, and in the direction of ref.pt.1. Following placement of ref.pl.1, ref.pt.1 was deleted.
+The first `reference plane` (ref.pl.1) was placed between LMs 01 and ref.pt.0 in such a way that it bisects the blade of the projectile along the mid-line. The method of placement enlists a second `reference point` (ref.pt.1), which was inserted along the first `reference vector`. It is located at a position equidistant between LMs 01 and ref.pt.0, but the coordinates of ref.pt.1 were altered to relocate it 15 mm from the vector in the direction of the Z-axis. The `pick point and coplanar` function was then used to place ref.pl.1 coplanar to the first `reference vector`, and in the direction of ref.pt.1. Following placement of ref.pl.1, ref.pt.1 was deleted.
 
-```{r lm3d3.ref.pl.1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 12. Placement of ref.pl.1, and location of ref.pt.1.**_"}
+```{r lm3d3.ref.pl.1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 12. Placement of ref.pl.1, and location of ref.pt.1 on the blade of the projectile.**_"}
 knitr::include_graphics('images/lm3d3.ref.pl.1.png')
 ```
 
