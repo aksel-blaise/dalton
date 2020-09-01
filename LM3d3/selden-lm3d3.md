@@ -434,11 +434,28 @@ blade of the projectile.***
 
 ### Placement of ref.pl.2
 
-The second `reference plane` (ref.pl.3) was placed between ref.pt.0 and
+The second `reference plane` (ref.pl.2) was placed between ref.pt.0 and
 LM 06, bisecting the base of the projectile along the mid-line. The
 method of placement for ref.pl.2 follows the same protocol described in
 the application of ref.pl.1, and the `reference point` (ref.pt.2) was
-deleted following the placement of ref.pl.3.
+deleted following the placement of ref.pl.2.
+
+``` r
+knitr::include_graphics('images/lm3d3.ref.pl.2.png')
+```
+
+<div class="figure">
+
+<img src="images/lm3d3.ref.pl.2.png" alt="_**Figure 13. Placement of ref.pl.2, and temporary location of ref.pt.2.**_" width="100%" />
+
+<p class="caption">
+
+***Figure 13. Placement of ref.pl.2, and temporary location of
+ref.pt.2.***
+
+</p>
+
+</div>
 
 ### Placement of ref.pl.3
 
@@ -454,11 +471,11 @@ knitr::include_graphics('images/lm3d3.ref.pl.3.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.ref.pl.3.png" alt="_**Figure 13. Placement of ref.pl.3, and temporary location of ref.pt.3.**_" width="100%" />
+<img src="images/lm3d3.ref.pl.3.png" alt="_**Figure 14. Placement of ref.pl.3, and temporary location of ref.pt.3.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 13. Placement of ref.pl.3, and temporary location of
+***Figure 14. Placement of ref.pl.3, and temporary location of
 ref.pt.3.***
 
 </p>
@@ -477,11 +494,11 @@ knitr::include_graphics('images/lm3d3.ref.pl.3-4.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.ref.pl.3-4.png" alt="_**Figure 14. Placement of ref.pl.3 (top) and ref.pl.4 (bottom).**_" width="100%" />
+<img src="images/lm3d3.ref.pl.3-4.png" alt="_**Figure 15. Placement of ref.pl.3 (top) and ref.pl.4 (bottom).**_" width="100%" />
 
 <p class="caption">
 
-***Figure 14. Placement of ref.pl.3 (top) and ref.pl.4 (bottom).***
+***Figure 15. Placement of ref.pl.3 (top) and ref.pl.4 (bottom).***
 
 </p>
 
@@ -508,11 +525,11 @@ knitr::include_graphics('images/lm3d3.section1.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.section1.png" alt="_**Figure 15. Placement of the first section, bisecting the mesh along ref.pl.2.**_" width="100%" />
+<img src="images/lm3d3.section1.png" alt="_**Figure 16. Placement of the first section, bisecting the mesh along ref.pl.2.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 15. Placement of the first section, bisecting the mesh along
+***Figure 16. Placement of the first section, bisecting the mesh along
 ref.pl.2.***
 
 </p>
@@ -535,11 +552,11 @@ knitr::include_graphics('images/lm3d3.all.sections.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.all.sections.png" alt="_**Figure 16. Placement of the two equidistant sections between LM 06 and ref.pt.3.**_" width="100%" />
+<img src="images/lm3d3.all.sections.png" alt="_**Figure 17. Placement of the two equidistant sections between LM 06 and ref.pt.3.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 16. Placement of the two equidistant sections between LM 06
+***Figure 17. Placement of the two equidistant sections between LM 06
 and ref.pt.3.***
 
 </p>
@@ -561,11 +578,11 @@ knitr::include_graphics('images/lm3d3.split.sections.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.split.sections.png" alt="_**Figure 17. Each section was split at the points of highest curvature along the lateral edges, then along the mid-line at the intersection of the curve and ref.pl.1.**_" width="100%" />
+<img src="images/lm3d3.split.sections.png" alt="_**Figure 18. Each section was split at the points of highest curvature along the lateral edges, then along the mid-line at the intersection of the curve and ref.pl.1.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 17. Each section was split at the points of highest curvature
+***Figure 18. Each section was split at the points of highest curvature
 along the lateral edges, then along the mid-line at the intersection of
 the curve and ref.pl.1.***
 
@@ -592,11 +609,11 @@ knitr::include_graphics('images/lm3d3.semi.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.semi.png" alt="_**Figure 18. Landmarks (blue), semilandmarks (white), curves (orange), and splits (blue) used for LM3d3.**_" width="100%" />
+<img src="images/lm3d3.semi.png" alt="_**Figure 19. Landmarks (blue), semilandmarks (white), curves (orange), and splits (blue) used for LM3d3.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 18. Landmarks (blue), semilandmarks (white), curves (orange),
+***Figure 19. Landmarks (blue), semilandmarks (white), curves (orange),
 and splits (blue) used for LM3d3.***
 
 </p>
@@ -614,11 +631,11 @@ knitr::include_graphics('images/lm3d3.slm.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.slm.png" alt="_**Figure 19. Landmarks (blue), semilandmarks (white), and `reference geometry` used in LM3d3.**_" width="100%" />
+<img src="images/lm3d3.slm.png" alt="_**Figure 20. Landmarks (blue), semilandmarks (white), and `reference geometry` used in LM3d3.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 19. Landmarks (blue), semilandmarks (white), and `reference
+***Figure 20. Landmarks (blue), semilandmarks (white), and `reference
 geometry` used in LM3d3.***
 
 </p>
