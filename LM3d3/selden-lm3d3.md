@@ -55,7 +55,8 @@ protocol shifted to [Geomagic Design
 X](https://www.3dsystems.com/software/geomagic-design-x) *(Build Version
 2020.0.1 \[Build Number: 30\])*, where the workflow was modified to
 include elements of `reference geometry` that articulate with the
-prehistoric design attributes of each projectile point.
+prehistoric design attributes of each projectile point included in the
+sample.
 
 The goal of this effort was to increase both the precision and rigour of
 the study by including the Z-dimension to capture those morphological
