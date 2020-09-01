@@ -54,8 +54,8 @@ protocol serve as the basis for LM3d3.***
 
 Like its’ predecessors, LM3d3 was initially designed using the
 [`digit3DLand`](https://github.com/morphOptics/digit3DLand) package in
-R. When the draft protocol was complete, the protocol was shifted to
-[Geomagic Design
+R. When the draft protocol was complete, the design of the landmarking
+protocol shifted to [Geomagic Design
 X](https://www.3dsystems.com/software/geomagic-design-x) *(Build Version
 2020.0.1 \[Build Number: 30\])*, where the workflow was modified to
 include elements of `reference geometry` that articulate with the
