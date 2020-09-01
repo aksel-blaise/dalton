@@ -59,10 +59,10 @@ protocol shifted to [Geomagic Design
 X](https://www.3dsystems.com/software/geomagic-design-x) *(Build Version
 2020.0.1 \[Build Number: 30\])*, where the workflow was modified to
 include elements of `reference geometry` that articulate with the
-prehistoric design attributes of each point.
+prehistoric design attributes of each projectile point.
 
 The goal of this effort was to increase both the precision and rigour of
-the study by including the Z-dimension to capture morphological
+the study by including the Z-dimension to capture those morphological
 characteristics associated with axial twisting introduced by knappers
 through the practice of beveling
 ([LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md))
