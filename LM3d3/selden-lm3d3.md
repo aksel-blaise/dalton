@@ -207,9 +207,9 @@ second through fifth splits (LMs 02 - 05) occur at points of highest
 curvature, where LM 02 is always placed on the right side of the
 projectile following the application of the `reference vectors`. To
 place the final landmark (LM 06), a linear measurement was used to
-project a reference point equidistant between LM 02 and LM 03. The
-location of that point was leveraged in placing the reference plane used
-to cut the spline at the location of LM 06.
+project a `reference point` equidistant between LM 02 and LM 03. The
+location of that point was leveraged in placing the `reference plane`
+used to cut the spline at the location of LM 06.
 
 ## Spline split at location of LM 01
 
@@ -231,12 +231,12 @@ knitr::include_graphics('images/lm1.png')
 
 <div class="figure">
 
-<img src="images/lm1.png" alt="_**Figure 6. Identify horizontal tangent, insert reference point and reference plane (left). Use reference plane to cut spline at the location of the horizontal tangent (right).**_" width="100%" />
+<img src="images/lm1.png" alt="_**Figure 6. Identify horizontal tangent, insert `reference point` and `reference plane` (left). Use `reference plane` to cut spline at the location of the horizontal tangent (right).**_" width="100%" />
 
 <p class="caption">
 
-***Figure 6. Identify horizontal tangent, insert reference point and
-reference plane (left). Use reference plane to cut spline at the
+***Figure 6. Identify horizontal tangent, insert `reference point` and
+`reference plane` (left). Use `reference plane` to cut spline at the
 location of the horizontal tangent (right).***
 
 </p>
@@ -322,13 +322,13 @@ knitr::include_graphics('images/lm6.png')
 
 <div class="figure">
 
-<img src="images/lm6.png" alt="_**Figure 9. Calculate linear distance between LM 02 and LM 03, insert `reference plane` coplanar to Right plane equidistant between LM 02 and LM 03, and use the reference plane to cut the spline.**_" width="100%" />
+<img src="images/lm6.png" alt="_**Figure 9. Calculate linear distance between LM 02 and LM 03, insert `reference plane` coplanar to Right plane equidistant between LM 02 and LM 03, and use the `reference plane` to cut the spline.**_" width="100%" />
 
 <p class="caption">
 
 ***Figure 9. Calculate linear distance between LM 02 and LM 03, insert
 `reference plane` coplanar to Right plane equidistant between LM 02 and
-LM 03, and use the reference plane to cut the spline.***
+LM 03, and use the `reference plane` to cut the spline.***
 
 </p>
 
@@ -378,11 +378,11 @@ knitr::include_graphics('images/lm3d3.vectors.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.vectors.png" alt="_**Figure 11. Reference vectors placed between LMs 01 and ref.pt.0 (left), ref.pt.0 and LM 06 (center), and between LMs 04 and 05 (right).**_" width="100%" />
+<img src="images/lm3d3.vectors.png" alt="_**Figure 11. `Reference vectors` placed between LMs 01 and ref.pt.0 (left), ref.pt.0 and LM 06 (center), and between LMs 04 and 05 (right).**_" width="100%" />
 
 <p class="caption">
 
-***Figure 11. Reference vectors placed between LMs 01 and ref.pt.0
+***Figure 11. `Reference vectors` placed between LMs 01 and ref.pt.0
 (left), ref.pt.0 and LM 06 (center), and between LMs 04 and 05
 (right).***
 
@@ -589,11 +589,11 @@ application of LMs 02, 03, 04, and 05 in
 Each section was split at the point of highest curvature along the
 lateral margins of the projectile. A `reference plane` (ref.pl.1) was
 used to cut each of the four curves along the mid-line of the blade
-where it intersects with the curves. A second reference plane (ref.pl.2)
-was used to cut the single basal curve and the curve between LMs 04 and
-05. Since ref.pt.0 was used to generate ref.pl.1 and ref.pl.2, either
-could be used to cut the curve between LMs 04 and 05 since both
-intersect the curve at the same point.
+where it intersects with the curves. A second `reference plane`
+(ref.pl.2) was used to cut the single basal curve and the curve between
+LMs 04 and 05. Since ref.pt.0 was used to generate ref.pl.1 and
+ref.pl.2, either could be used to cut the curve between LMs 04 and 05
+since both intersect the curve at the same point.
 
 ``` r
 knitr::include_graphics('images/lm3d3.split.sections.png')
