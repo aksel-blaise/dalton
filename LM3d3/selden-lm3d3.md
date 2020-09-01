@@ -446,12 +446,13 @@ knitr::include_graphics('images/lm3d3.ref.pl.2.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.ref.pl.2.png" alt="_**Figure 13. Placement of ref.pl.2, and temporary location of ref.pt.2.**_" width="100%" />
+<img src="images/lm3d3.ref.pl.2.png" alt="_**Figure 13. Placement of ref.pl.2, and temporary location of ref.pt.2 15 mm from Vector 2, and equidistant between ref.pt.0 and LM 06 on the base of the projectile.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 13. Placement of ref.pl.2, and temporary location of
-ref.pt.2.***
+***Figure 13. Placement of ref.pl.2, and temporary location of ref.pt.2
+15 mm from Vector 2, and equidistant between ref.pt.0 and LM 06 on the
+base of the projectile.***
 
 </p>
 
@@ -471,34 +472,35 @@ knitr::include_graphics('images/lm3d3.ref.pl.3.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.ref.pl.3.png" alt="_**Figure 14. Placement of ref.pl.3, and temporary location of ref.pt.3.**_" width="100%" />
+<img src="images/lm3d3.ref.pl.3.png" alt="_**Figure 14. Placement of ref.pl.3, and temporary location of ref.pt.3 15 mm from Vector 3, and equidistant between LMs 04 and 05 at the intersection of the blade and base.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 14. Placement of ref.pl.3, and temporary location of
-ref.pt.3.***
+***Figure 14. Placement of ref.pl.3, and temporary location of ref.pt.3
+15 mm from Vector 3, and equidistant between LMs 04 and 05 at the
+intersection of the blade and base.***
 
 </p>
 
 </div>
 
-### Placement of ref.pl.3 and ref.pl.4
+### Placement of ref.pl.4 and ref.pl.5
 
-The third (ref.pl.3) and fourth (ref.pl.4) `reference planes` were
+The fourth (ref.pl.4) and fifth (ref.pl.5) `reference planes` were
 placed using the `pick point and normal` function at the intersections
 of the first `reference vector` and LMs 01 and 06.
 
 ``` r
-knitr::include_graphics('images/lm3d3.ref.pl.3-4.png')
+knitr::include_graphics('images/lm3d3.ref.pl.4-5.png')
 ```
 
 <div class="figure">
 
-<img src="images/lm3d3.ref.pl.3-4.png" alt="_**Figure 15. Placement of ref.pl.3 (top) and ref.pl.4 (bottom).**_" width="100%" />
+<img src="images/lm3d3.ref.pl.4-5.png" alt="_**Figure 15. Placement of ref.pl.4 (top) and ref.pl.5 (bottom).**_" width="100%" />
 
 <p class="caption">
 
-***Figure 15. Placement of ref.pl.3 (top) and ref.pl.4 (bottom).***
+***Figure 15. Placement of ref.pl.4 (top) and ref.pl.5 (bottom).***
 
 </p>
 

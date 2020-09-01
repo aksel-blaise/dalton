@@ -133,7 +133,7 @@ knitr::include_graphics('images/lm3d3.ref.pl.1.png')
 
 The second `reference plane` (ref.pl.2) was placed between ref.pt.0 and LM 06, bisecting the base of the projectile along the mid-line. The method of placement for ref.pl.2 follows the same protocol described in the application of ref.pl.1, and the `reference point` (ref.pt.2) was deleted following the placement of ref.pl.2.
 
-```{r lm3d3.ref.pl.2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 13. Placement of ref.pl.2, and temporary location of ref.pt.2.**_"}
+```{r lm3d3.ref.pl.2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 13. Placement of ref.pl.2, and temporary location of ref.pt.2 15 mm from Vector 2, and equidistant between ref.pt.0 and LM 06 on the base of the projectile.**_"}
 knitr::include_graphics('images/lm3d3.ref.pl.2.png')
 ```
 
@@ -141,16 +141,16 @@ knitr::include_graphics('images/lm3d3.ref.pl.2.png')
 
 The third `reference plane` (ref.pl.3) was placed between LMs 04 and 05, and bisects the projectile at the blade/base intersection. The method of placement for ref.pl.3 follows the same protocol described in the application of ref.pl.1, and the `reference point` (ref.pt.3) was deleted following the placement of ref.pl.3.
 
-```{r lm3d3.ref.pl.3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 14. Placement of ref.pl.3, and temporary location of ref.pt.3.**_"}
+```{r lm3d3.ref.pl.3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 14. Placement of ref.pl.3, and temporary location of ref.pt.3 15 mm from Vector 3, and equidistant between LMs 04 and 05 at the intersection of the blade and base.**_"}
 knitr::include_graphics('images/lm3d3.ref.pl.3.png')
 ```
 
-### Placement of ref.pl.3 and ref.pl.4
+### Placement of ref.pl.4 and ref.pl.5
 
-The third (ref.pl.3) and fourth (ref.pl.4) `reference planes` were placed using the `pick point and normal` function at the intersections of the first `reference vector` and LMs 01 and 06. 
+The fourth (ref.pl.4) and fifth (ref.pl.5) `reference planes` were placed using the `pick point and normal` function at the intersections of the first `reference vector` and LMs 01 and 06. 
 
-```{r lm3d3.ref.pl.4-5, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 15. Placement of ref.pl.3 (top) and ref.pl.4 (bottom).**_"}
-knitr::include_graphics('images/lm3d3.ref.pl.3-4.png')
+```{r lm3d3.ref.pl.4-5, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 15. Placement of ref.pl.4 (top) and ref.pl.5 (bottom).**_"}
+knitr::include_graphics('images/lm3d3.ref.pl.4-5.png')
 ```
 
 ## Sectioning the mesh
