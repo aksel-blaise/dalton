@@ -19,9 +19,8 @@ whole-object morphology, which can also be subset to explore
 morphological variation in *plan*, *profile*, and *cross-section*
 morphology. It also provides those data points needed to investigate
 questions of *directional asymmetry*, differences in front/back
-morphology, morphological integration between blade and basal
-morphology, and the capacity to include incomplete (broken/fractured)
-specimens.
+morphology, and morphological integration between blade and basal
+morphology.
 
 ``` r
 knitr::include_graphics('images/landmarks.png')
@@ -351,13 +350,10 @@ each spline split are known, and used to place the landmarks.***
 The fundamental components of `reference geometry` used to create LM3d3
 are three `reference vectors`, and a single `reference point`
 (ref.pt.0), which was placed equidistant between LM 04 and LM 05. The
-addition of ref.pt.0 allows for the replicable placement of landmarks
-and semilandmarks on incomplete specimens, as long as the shoulders of
-the projectile—which include LMs 04 and 05—are intact. The three
-`reference vectors` were subsequently placed between LMs 01 and ref.pt.0
-(Vector 1), ref.pt.0 and LM 06 (Vector 2), and LMs 04 and 05 (Vector 3).
-These three `reference vectors` serve as the foundation for the suite of
-`reference geometry` used to place the semilandmarks.
+three `reference vectors` were subsequently placed between LMs 01 and
+ref.pt.0 (Vector 1), ref.pt.0 and LM 06 (Vector 2), and LMs 04 and 05
+(Vector 3). These three `reference vectors` serve as the foundation for
+the suite of `reference geometry` used to place the semilandmarks.
 
 ``` r
 knitr::include_graphics('images/lm3d3.vectors.png')
