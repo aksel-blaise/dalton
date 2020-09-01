@@ -594,7 +594,7 @@ the curve and ref.pl.1 (for the blade), and ref.pl.2 (for the base).***
 
 </div>
 
-## Applying the semilandmarks
+## Application of semilandmarks
 
 Semilandmarks 07 - 18 were first applied around the lateral edges, and
 sLMs 12 and 13 between LMs 02, 06, and 03 uses the curve constructed in
@@ -660,6 +660,15 @@ analysis of Dalton point morphology. This iteration of the landmarking
 protocol was developed using the
 [`digit3DLand`](https://github.com/morphOptics/digit3DLand) package in
 R.
+
+## Funding
+
+Components of this analytical work flow were developed and funded by a
+Preservation Technology and Training grant (P14AP00138) to the author
+from the National Center for Preservation Technology and Training
+(NCPTT), and funding for this project was provided by grants to the RZS
+from the National Forests and Grasslands in Texas (15-PA-11081300-033)
+and the United States Forest Service (20-PA-11081300-074).
 
 <div id="refs" class="references">
 
