@@ -62,7 +62,7 @@ accuracy and precision in each analytical iteration.
 
 ## Hypotheses
 
-A suite of visual aids was created a means of visualising the various
+A suite of visual aids were created a means of visualising the various
 hypotheses that this landmarking protocol will be used to test. The
 visual representation of the following hypotheses were produced for my
 own reference, and used to critically assess the utility of the
