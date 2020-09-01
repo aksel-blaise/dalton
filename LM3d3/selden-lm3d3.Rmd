@@ -201,8 +201,4 @@ knitr::include_graphics('images/lm3d3.slm.png')
 
 I extend my gratitude to Christian S. Hoggard and David K. Thulman for their thoughtful comments and constructive criticisms on the draft of this landmarking protocol, which was originally developed for the study of [Gahagan bifaces](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md) [@RN21001], and is extended here for an analysis of Dalton point morphology. This iteration of the landmarking protocol was developed using the [`digit3DLand`](https://github.com/morphOptics/digit3DLand) package in R.
 
-## Funding
-
-Components of this analytical work flow were developed and funded by a Preservation Technology and Training grant (P14AP00138) to the author from the National Center for Preservation Technology and Training (NCPTT), and funding for this project was provided by grants to the RZS from the National Forests and Grasslands in Texas (15-PA-11081300-033) and the United States Forest Service (20-PA-11081300-074).
-
 ## References
