@@ -59,7 +59,7 @@ R. When the draft protocol was complete, the protocol was shifted to
 X](https://www.3dsystems.com/software/geomagic-design-x) *(Build Version
 2020.0.1 \[Build Number: 30\])*, where the workflow was modified to
 include elements of `reference geometry` that articulate with the
-specific design attributes of each point.
+prehistoric design attributes of each point.
 
 The goal of this effort was to increase both the precision and rigour of
 the study by including the Z-dimension to capture morphological
@@ -68,8 +68,8 @@ through the practice of beveling
 ([LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md))
 (Selden Jr., Dockall, and Dubied 2020). The addition of cross-sections
 was needed to better characterise whole-object morphology, providing for
-the possibility of subsampling the landmarks to explore the contribution
-of a specific cross-section or profile
+the possibility of subsampling the semilandmarks to explore the
+contribution of specific cross-sections or profiles
 ([LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html)).
 LM3d3 includes an additional cross section at the blade/base transition,
 allowing for tests of morphological integration. While true that some
