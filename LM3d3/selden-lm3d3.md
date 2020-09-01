@@ -14,16 +14,21 @@ difference between
 and LM3d3 is that the projectiles analysed using
 [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html)
 are lanceolate bifaces, and that landmarking protocol was not designed
-to capture the variation in basal morphology exhibited by Dalton
-projectile points. Like
+to capture the variation in basal morphology exhibited by stemmed
+(Dalton) projectile points. Like
 [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md)
 and
 [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html),
-LM3d3 uses mesh topology as the foundation for additional components of
-`reference geometry`, further expanding upon the previous landmarking
-protocols. The result is a landmarking protocol that provides for the
-improved characterisation of whole-object morphology, which can also be
-subset to explore morphological variation in *plan*, *profile*, and
+LM3d3 uses the topology of the mesh (prehistoric design) associated with
+each projectile to construct a suite of `reference geometry` used to
+apply semilandmarks in a replicable manner, and represents the logical
+evolution of
+[LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md)
+and
+[LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html).
+The result is a landmarking protocol that provides for the improved
+characterisation of whole-object morphology that can be subset to
+explore morphological variation in *plan*, *profile*, and
 *cross-section* morphology. It also provides those data points needed to
 investigate questions of *directional asymmetry*, differences in
 front/back morphology, and morphological integration between blade and
