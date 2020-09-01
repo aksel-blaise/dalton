@@ -4,23 +4,30 @@ Robert Z. Selden, Jr.
 01 September, 2020
 
 Landmarking protocol 3d3 (LM3d3) represents a significant advancement
-from LM3d1 (Selden Jr., Dockall, and Dubied 2020) and was modified from
-the
+from
+[LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md)
+(Selden Jr., Dockall, and Dubied 2020) and was modified from the
 [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html)
-protocols developed to analyse Gahagan bifaces. The principal difference
-between LM3d2 and LM3d3 is that the projectiles analysed using LM3d2 are
-lanceolate bifaces, and that landmarking protocol was not designed to
-capture the variation in basal morphology exhibited by Dalton projectile
-points. Like LM3d1 and LM3d2, LM3d3 uses the mesh topology as the
-foundation for additional components of `reference geometry`, further
-expanding upon the previous landmarking protocols. The result is a
-landmarking protocol that provides for the improved characterisation of
-whole-object morphology, which can also be subset to explore
-morphological variation in *plan*, *profile*, and *cross-section*
-morphology. It also provides those data points needed to investigate
-questions of *directional asymmetry*, differences in front/back
-morphology, and morphological integration between blade and basal
-morphology.
+protocols initially developed to analyse Gahagan bifaces. The principal
+difference between
+[LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html)
+and LM3d3 is that the projectiles analysed using
+[LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html)
+are lanceolate bifaces, and that landmarking protocol was not designed
+to capture the variation in basal morphology exhibited by Dalton
+projectile points. Like
+[LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md)
+and
+[LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html),
+LM3d3 uses mesh topology as the foundation for additional components of
+`reference geometry`, further expanding upon the previous landmarking
+protocols. The result is a landmarking protocol that provides for the
+improved characterisation of whole-object morphology, which can also be
+subset to explore morphological variation in *plan*, *profile*, and
+*cross-section* morphology. It also provides those data points needed to
+investigate questions of *directional asymmetry*, differences in
+front/back morphology, and morphological integration between blade and
+basal morphology.
 
 ``` r
 knitr::include_graphics('images/landmarks.png')
@@ -28,12 +35,13 @@ knitr::include_graphics('images/landmarks.png')
 
 <div class="figure">
 
-<img src="images/landmarks.png" alt="_**Figure 1. Coordinates of landmarks populated using the LM3d1 protocol serve as the basis for LM3d3.**_" width="100%" />
+<img src="images/landmarks.png" alt="_**Figure 1. Coordinates of landmarks populated using the [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md) protocol serve as the basis for LM3d3.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 1. Coordinates of landmarks populated using the LM3d1 protocol
-serve as the basis for LM3d3.***
+***Figure 1. Coordinates of landmarks populated using the
+[LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md)
+protocol serve as the basis for LM3d3.***
 
 </p>
 
@@ -49,16 +57,18 @@ that articulate with the specific design attributes of each point.
 The goal of this effort was to increase both the precision and rigour of
 the study by including the Z-dimension to capture morphological
 characteristics associated with axial twisting introduced by knappers
-through the practice of beveling (LM3d1) (Selden Jr., Dockall, and
-Dubied 2020). The addition of cross-sections was needed to better
-characterise whole-object morphology, providing for the possibility of
-subsampling the landmarks to explore the contribution of a specific
-cross-section or profile (LM3d2). LM3d3 includes an additional cross
-section at the blade/base transition, allowing for tests of
-morphological integration. While true that some landmarking protocols
-can be—–and often are—–recycled as new specimens are added, this
-particular research programme endeavours to achieve ever-greater
-accuracy and precision in each analytical iteration.
+through the practice of beveling
+([LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md))
+(Selden Jr., Dockall, and Dubied 2020). The addition of cross-sections
+was needed to better characterise whole-object morphology, providing for
+the possibility of subsampling the landmarks to explore the contribution
+of a specific cross-section or profile
+([LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html)).
+LM3d3 includes an additional cross section at the blade/base transition,
+allowing for tests of morphological integration. While true that some
+landmarking protocols can be—–and often are—–recycled as new specimens
+are added, this particular research programme endeavours to achieve
+ever-greater accuracy and precision in each analytical iteration.
 
 ## Hypotheses
 
@@ -567,14 +577,16 @@ and ref.pt.3.***
 
 The `curvature` function was employed to split the spline at the
 location of highest curvature. This function was detailed in the
-application of LMs 02, 03, 04, and 05 in LM3d1. Each section was split
-at the point of highest curvature along the lateral margins of the
-projectile. A `reference plane` (ref.pl.1) was used to cut each of the
-four curves along the mid-line of the blade where it intersects with the
-curves. A second reference plane (ref.pl.2) was used to cut the single
-basal curve and the curve between LMs 04 and 05. Since ref.pt.0 was used
-to generate ref.pl.1 and ref.pl.2, either could be used to cut the curve
-between LMs 04 and 05 since both intersect the curve at the same point.
+application of LMs 02, 03, 04, and 05 in
+[LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md).
+Each section was split at the point of highest curvature along the
+lateral margins of the projectile. A `reference plane` (ref.pl.1) was
+used to cut each of the four curves along the mid-line of the blade
+where it intersects with the curves. A second reference plane (ref.pl.2)
+was used to cut the single basal curve and the curve between LMs 04 and
+05. Since ref.pt.0 was used to generate ref.pl.1 and ref.pl.2, either
+could be used to cut the curve between LMs 04 and 05 since both
+intersect the curve at the same point.
 
 ``` r
 knitr::include_graphics('images/lm3d3.split.sections.png')
@@ -598,10 +610,11 @@ the curve and ref.pl.1 (for the blade), and ref.pl.2 (for the base).***
 
 Semilandmarks 07 - 18 were first applied around the lateral edges, and
 sLMs 12 and 13 between LMs 02, 06, and 03 uses the curve constructed in
-LM3d1. Semilandmarks 19 - 30 articulate with the mid-line between LMs 01
-and 06. Additional sLMs can be placed on each section equidistant
-between those sLMs defined by the splits described above to better
-characterise each cross section, if needed.
+[LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md).
+Semilandmarks 19 - 30 articulate with the mid-line between LMs 01 and
+06. Additional sLMs can be placed on each section equidistant between
+those sLMs defined by the splits described above to better characterise
+each cross section, if needed.
 
 The result is a landmark configuration that can be subset in numerous
 ways (plan, profile, cross-section, front/back, left/right, blade/base,
@@ -625,11 +638,12 @@ and splits (blue) used for LM3d3.***
 
 </div>
 
-Based upon knowledge garnered from running `LaSEC` on LM3d1, this
-landmarking protocol would likely oversampled if it included additional
-landmarks on the cross-sections; however, it can be readily modified to
-include as many or as few landmarks and semilandmarks needed to address
-the research question.
+Based upon knowledge garnered from running `LaSEC` (Watanabe 2018) on
+[LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md),
+this landmarking protocol would likely oversampled if it included
+additional landmarks on the cross-sections; however, it can be readily
+modified to include as many or as few landmarks and semilandmarks needed
+to address the research question.
 
 ``` r
 knitr::include_graphics('images/lm3d3.slm.png')
@@ -723,6 +737,14 @@ Selden Jr., Robert Z., John E. Dockall, and Harry J. Shafer. 2018.
 “Lithic Morphological Organisation: Gahagan Bifaces from the Southern
 Caddo Area.” *Digital Applications in Archaeology and Cultural Heritage*
 10: e00080. <https://doi.org/10.1016/j.daach.2018.e00080>.
+
+</div>
+
+<div id="ref-RN28913">
+
+Watanabe, Akinobu. 2018. “How Many Landmarks Are Enough to Characterize
+Shape and Size Variation?” Journal Article. *PLoS One* 13 (6): e0198341.
+<https://doi.org/10.1371/journal.pone.0198341>.
 
 </div>
 
