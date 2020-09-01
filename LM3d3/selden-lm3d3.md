@@ -61,11 +61,6 @@ can be—–and often are—–recycled as new specimens are added, this
 particular research programme endeavours to achieve ever-greater
 accuracy and precision in each analytical iteration.
 
-***Note: this landmarking protocol was developed prior to running
-`auto3dgm`, and details the procedure for applying landmarks and
-equidistant semilandmarks; however, it may not reflect their actual
-placement on this specimen.***
-
 ## Hypotheses
 
 A suite of visual aids was created a means of visualising the various
@@ -193,11 +188,11 @@ gainfully employed within the context of both ceramic (Selden Jr. 2018a,
 placed at the horizontal tangent on the tip of each Dalton point. The
 second through fifth splits (LMs 02 - 05) occur at points of highest
 curvature, where LM 02 is always placed on the right side of the
-projectile when oriented in 3D space following the alignment output of
-*auto3dgm*. To place the final landmark (LM 06), a linear measurement
-was used to project a reference point equidistant between LM 02 and LM
-03. The location of that point was leveraged in placing the reference
-plane used to cut the spline at the location of LM 06.
+projectile following the application of the `reference vectors`. To
+place the final landmark (LM 06), a linear measurement was used to
+project a reference point equidistant between LM 02 and LM 03. The
+location of that point was leveraged in placing the reference plane used
+to cut the spline at the location of LM 06.
 
 ## Spline split at location of LM 01
 
@@ -272,10 +267,10 @@ was also calculated using the `curvature function` in the Accuracy
 Analyser. Using this tool, the two points of highest curvature were
 located between the blade and base on either side of each projectile
 where the local radius measure was largest. The alignment and
-orientation of each biface was dictated by the *auto3dgm* output, and
-the landmarking protocol follows the mesh orientation in that figure,
-where LM 04 was always placed on the right side of the basal edge, and
-LM 05 on the left.
+orientation of each projectile was dictated by the *vectors* (discussed
+below, and Figure 11), and the landmarking protocol follows the mesh
+orientation in that figure, where LM 04 was always placed on the right
+side of the basal edge, and LM 05 on the left.
 
 ``` r
 knitr::include_graphics('images/splinesplit2.png')
@@ -352,15 +347,15 @@ each spline split are known, and used to place the landmarks.***
 
 ## Reference vectors and ref.pt.0
 
-The fundamental components of `reference geometry` used to create LM3d2
-are three `reference vectors`, and a single `reference point` (ref.pt.0)
-that was placed equidistant between LM 04 and LM 05. The addition of
-ref.pt.0 allows for the replicable placement of landmarks and
-semilandmarks on incomplete specimens, as long as the shoulders of the
-projectile—which include LMs 04 and 05—are intact. The three `reference
-vectors` were subsequently placed between LMs 01 and ref.pt.0 (Vector
-1), ref.pt.0 and LM 06 (Vector 2), and LMs 04 and 05 (Vector 3). These
-three `reference vectors` serve as the foundation for the requisite
+The fundamental components of `reference geometry` used to create LM3d3
+are three `reference vectors`, and a single `reference point`
+(ref.pt.0), which was placed equidistant between LM 04 and LM 05. The
+addition of ref.pt.0 allows for the replicable placement of landmarks
+and semilandmarks on incomplete specimens, as long as the shoulders of
+the projectile—which include LMs 04 and 05—are intact. The three
+`reference vectors` were subsequently placed between LMs 01 and ref.pt.0
+(Vector 1), ref.pt.0 and LM 06 (Vector 2), and LMs 04 and 05 (Vector 3).
+These three `reference vectors` serve as the foundation for the suite of
 `reference geometry` used to place the semilandmarks.
 
 ``` r
@@ -384,11 +379,23 @@ knitr::include_graphics('images/lm3d3.vectors.png')
 *Measure of the angle between Vector 1 (blade) and Vector 2 (base) may
 have additional utility in lithic studies as an orthogonal metric
 associated with knapper skill, where greater skill is represented by an
-arbitrary range of angles nearest 180 degrees.* Collection of this
-metric from a 3D mesh in computer aided design (CAD) software adds an
-increased element of precision when compared to a goniometer, and
-provides a good example of an additional element of analytical value
-that can be extracted from this landmarking protocol.
+arbitrary range of angles nearest 180 degrees.* A second similar measure
+could be collected between Vectors 1 and 2 in comparison with Vector 3.
+Collection of these metrics from a 3D mesh in computer aided design
+(CAD) software adds an increased element of precision in comparison with
+a goniometer, and serves as an example of the added analytical value
+that can be extracted from this novel landmarking protocol that reaches
+beyond the application of landmarks and semilandmarks.
+
+Prior to the addition of the `reference vectors`, the location of LMs 02
+to 05 are considered arbitrary. Previous iterations of this landmarking
+protocol have relied upon `auto3dgm` to provide principal alignments
+that dictate which LMs are placed on the left/right side of the biface
+or projectile. For this protocol, the side of the projectile with the
+lowest orthogonal measure between Vector 1 and Vector 2 will be on the
+left, meaning that from the investigator’s view, the projectiles will
+curve, bend, or lean slightly—or in some cases more dramatically—to the
+left from base to tip.
 
 ## Reference planes and points
 
