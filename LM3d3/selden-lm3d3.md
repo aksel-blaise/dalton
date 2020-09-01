@@ -82,12 +82,12 @@ knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
 
 <div class="figure">
 
-<img src="images/dalton-vizhypothesis1.jpg" alt="_**Figure 2. Hypothesis 1 considers whether Dalton points discovered in and out of the Heartland differ in morphology.**_" width="100%" />
+<img src="images/dalton-vizhypothesis1.jpg" alt="_**Figure 2. Hypothesis 1 considers whether Dalton points discovered in (left) and out (right) of the Heartland differ in morphology.**_" width="100%" />
 
 <p class="caption">
 
 ***Figure 2. Hypothesis 1 considers whether Dalton points discovered in
-and out of the Heartland differ in morphology.***
+(left) and out (right) of the Heartland differ in morphology.***
 
 </p>
 
@@ -105,12 +105,13 @@ knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
 
 <div class="figure">
 
-<img src="images/dalton-vizhypothesis2.jpg" alt="_**Figure 3. Hypothesis 2 considers whether Dalton points discovered in the heartland, interior, and northern periphery differ in morphology.**_" width="100%" />
+<img src="images/dalton-vizhypothesis2.jpg" alt="_**Figure 3. Hypothesis 2 considers whether Dalton points discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology.**_" width="100%" />
 
 <p class="caption">
 
 ***Figure 3. Hypothesis 2 considers whether Dalton points discovered in
-the heartland, interior, and northern periphery differ in morphology.***
+the heartland (left), interior (center), and northern periphery (right)
+differ in morphology.***
 
 </p>
 
@@ -127,12 +128,12 @@ knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
 
 <div class="figure">
 
-<img src="images/dalton-vizhypothesis3.jpg" alt="_**Figure 4. Hypothesis 3 considers whether beveled Dalton points differ in morphology from those that are not beveled.**_" width="100%" />
+<img src="images/dalton-vizhypothesis3.jpg" alt="_**Figure 4. Hypothesis 3 considers whether beveled Dalton points (left) differ in morphology from those that are not beveled (right).**_" width="100%" />
 
 <p class="caption">
 
-***Figure 4. Hypothesis 3 considers whether beveled Dalton points differ
-in morphology from those that are not beveled.***
+***Figure 4. Hypothesis 3 considers whether beveled Dalton points (left)
+differ in morphology from those that are not beveled (right).***
 
 </p>
 
