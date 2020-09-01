@@ -1,7 +1,7 @@
 Landmarking Protocol 3d3 + Hypothesis Viz
 ================
 Robert Z. Selden, Jr.
-August 31, 2020
+01 September, 2020
 
 Landmarking protocol 3d3 (LM3d3) represents a significant advancement
 from LM3d1 (Selden Jr., Dockall, and Dubied 2020) and was modified from
@@ -28,12 +28,12 @@ knitr::include_graphics('images/landmarks.png')
 
 <div class="figure">
 
-<img src="images/landmarks.png" alt="_**Figure 1. Landmarks populated using the LM3d1 protocol serve as the basis for LM3d3.**_" width="100%" />
+<img src="images/landmarks.png" alt="_**Figure 1. Coordinates of landmarks populated using the LM3d1 protocol serve as the basis for LM3d3.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 1. Landmarks populated using the LM3d1 protocol serve as the
-basis for LM3d3.***
+***Figure 1. Coordinates of landmarks populated using the LM3d1 protocol
+serve as the basis for LM3d3.***
 
 </p>
 
@@ -420,11 +420,12 @@ knitr::include_graphics('images/lm3d3.ref.pl.1.png')
 
 <div class="figure">
 
-<img src="images/lm3d3.ref.pl.1.png" alt="_**Figure 12. Placement of ref.pl.1, and location of ref.pt.1 on the blade of the projectile.**_" width="100%" />
+<img src="images/lm3d3.ref.pl.1.png" alt="_**Figure 12. Placement of ref.pl.1, and temporary location of ref.pt.1 15mm from Vector 1, and equidistant between LM 01 and ref.pt.0 on the blade of the projectile.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 12. Placement of ref.pl.1, and location of ref.pt.1 on the
+***Figure 12. Placement of ref.pl.1, and temporary location of ref.pt.1
+15mm from Vector 1, and equidistant between LM 01 and ref.pt.0 on the
 blade of the projectile.***
 
 </p>
@@ -433,23 +434,32 @@ blade of the projectile.***
 
 ### Placement of ref.pl.2
 
-The second `reference plane` (ref.pl.2) was placed between LMs 04 and
-05, and bisects the projectile at the blade/base intersection. The
+The second `reference plane` (ref.pl.3) was placed between ref.pt.0 and
+LM 06, bisecting the base of the projectile along the mid-line. The
 method of placement for ref.pl.2 follows the same protocol described in
-the previous section, and the `reference point` (ref.pt.2) was deleted
-following the placement of ref.pl.2.
+the application of ref.pl.1, and the `reference point` (ref.pt.2) was
+deleted following the placement of ref.pl.3.
+
+### Placement of ref.pl.3
+
+The third `reference plane` (ref.pl.3) was placed between LMs 04 and 05,
+and bisects the projectile at the blade/base intersection. The method of
+placement for ref.pl.3 follows the same protocol described in the
+application of ref.pl.1, and the `reference point` (ref.pt.3) was
+deleted following the placement of ref.pl.3.
 
 ``` r
-knitr::include_graphics('images/lm3d3.ref.pl.2.png')
+knitr::include_graphics('images/lm3d3.ref.pl.3.png')
 ```
 
 <div class="figure">
 
-<img src="images/lm3d3.ref.pl.2.png" alt="_**Figure 13. Placement of ref.pl.2, and location of ref.pt.2.**_" width="100%" />
+<img src="images/lm3d3.ref.pl.3.png" alt="_**Figure 13. Placement of ref.pl.3, and temporary location of ref.pt.3.**_" width="100%" />
 
 <p class="caption">
 
-***Figure 13. Placement of ref.pl.2, and location of ref.pt.2.***
+***Figure 13. Placement of ref.pl.3, and temporary location of
+ref.pt.3.***
 
 </p>
 
