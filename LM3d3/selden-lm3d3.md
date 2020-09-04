@@ -8,8 +8,8 @@ from
 [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md)
 (Selden Jr., Dockall, and Dubied 2020) and was modified from the
 [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html)
-protocol that was developed for the analysis of Gahagan bifaces. The
-principal difference between
+protocol developed for the analysis of Gahagan bifaces. The principal
+difference between
 [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html)
 and LM3d3 is that the projectiles analysed using
 [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html)
