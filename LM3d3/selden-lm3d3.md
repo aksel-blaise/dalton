@@ -197,7 +197,7 @@ left/right intersection of lateral and basal edges.***
 ## Spline split at locations of LM 04 and LM 05
 
 The point of highest curvature at the intersection of the blade and base
-was also calculated using the `curvature function` in the Accuracy
+was also calculated using the `curvature` function in the Accuracy
 Analyser. Using this tool, the two points of highest curvature were
 located between the blade and base on either side of each projectile
 where the local radius measure was largest. The alignment and

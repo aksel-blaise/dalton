@@ -53,7 +53,7 @@ knitr::include_graphics('images/splinesplit1.png')
 
 ## Spline split at locations of LM 04 and LM 05
 
-The point of highest curvature at the intersection of the blade and base was also calculated using the `curvature function` in the Accuracy Analyser. Using this tool, the two points of highest curvature were located between the blade and base on either side of each projectile where the local radius measure was largest. The alignment and orientation of each projectile was dictated by the _vectors_ (discussed below, and Figure 11), and the landmarking protocol follows the mesh orientation in that figure, where LM 04 was always placed on the right side of the basal edge, and LM 05 on the left.
+The point of highest curvature at the intersection of the blade and base was also calculated using the `curvature` function in the Accuracy Analyser. Using this tool, the two points of highest curvature were located between the blade and base on either side of each projectile where the local radius measure was largest. The alignment and orientation of each projectile was dictated by the _vectors_ (discussed below, and Figure 11), and the landmarking protocol follows the mesh orientation in that figure, where LM 04 was always placed on the right side of the basal edge, and LM 05 on the left.
 
 ```{r lm3d3.figcurve2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 5. Identify points of hightest curvature (light blue) at left/right intersection of blade and base.**_"}
 knitr::include_graphics('images/splinesplit2.png')
