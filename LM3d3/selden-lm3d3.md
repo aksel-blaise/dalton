@@ -1,7 +1,7 @@
 Landmarking Protocol 3d3 + Hypothesis Viz
 ================
 Robert Z. Selden, Jr.
-01 September, 2020
+04 September, 2020
 
 Landmarking protocol 3d3 (LM3d3) represents a substantive advancement
 from
@@ -27,8 +27,10 @@ characterisation of whole-object morphology, and can be subset to
 analyse variability associated with specific *plan*, *profile*, and
 *cross-section* components. It also provides those data points needed to
 investigate questions of *directional asymmetry*, differences in
-front/back morphology, and morphological integration between blade and
-basal morphology.
+front/back morphology, morphological integration between blade and basal
+morphology, and can also be used to analyse the morphology of broken,
+fractured, or otherwise incomplete specimens that permeate the
+archaeological record.
 
 ``` r
 knitr::include_graphics('images/landmarks.png')
