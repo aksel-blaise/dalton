@@ -23,7 +23,7 @@ LM3d3 uses the topology of the 3D mesh that articulates with the
 prehistoric design of each projectile point to construct a suite of
 `reference geometry` used to apply semilandmarks in a replicable manner.
 The result is a landmarking protocol that provides an improved
-characterisation of whole-object morphology that can be subset to
+characterisation of whole-object morphology, which can be subset to
 analyse variability associated with specific *plan*, *profile*, and
 *cross-section* components. It also provides those data points needed to
 investigate questions of *directional asymmetry*, differences in
