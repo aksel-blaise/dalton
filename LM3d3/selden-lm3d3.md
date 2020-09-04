@@ -28,9 +28,8 @@ analyse variability associated with specific *plan*, *profile*, and
 *cross-section* components. It also provides those data points needed to
 investigate questions of *directional asymmetry*, differences in
 front/back morphology, morphological integration between blade and basal
-morphology, and can also be used to analyse the morphology of broken,
-fractured, or otherwise incomplete specimens that permeate the
-archaeological record.
+morphology, and the morphology of broken, fractured, or otherwise
+incomplete specimens that permeate the archaeological record.
 
 ``` r
 knitr::include_graphics('images/landmarks.png')
