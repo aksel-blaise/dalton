@@ -11,51 +11,21 @@ fig_caption: yes
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Landmarking protocol 3d3 (LM3d3) represents a significant advancement from [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md) [@RN21001] and was modified from the [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html) protocols initially developed to analyse Gahagan bifaces. The principal difference between [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html) and LM3d3 is that the projectiles analysed using [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html) are lanceolate bifaces, and that landmarking protocol was not designed to capture the variation in basal morphology exhibited by stemmed (Dalton) projectile points. Like [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md) and [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html), LM3d3 uses the topology of the mesh (prehistoric design) associated with each projectile to construct a suite of `reference geometry` used to apply semilandmarks in a replicable manner, and represents the logical evolution of [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md) and [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html). The result is a landmarking protocol that provides for the improved characterisation of whole-object morphology that can be subset to explore morphological variation in _plan_, _profile_, and _cross-section_ morphology. It also provides those data points needed to investigate questions of _directional asymmetry_, differences in front/back morphology, and morphological integration between blade and basal morphology.
+Landmarking protocol 3d3 (LM3d3) represents a substantive advancement from [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md) [@RN21001] and was modified from the [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html) protocol that was developed for the analysis of Gahagan bifaces. The principal difference between [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html) and LM3d3 is that the projectiles analysed using [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html) are lanceolate bifaces, and that landmarking protocol was not designed to capture the variation in basal morphology exhibited by stemmed (Dalton) projectile points. Like [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md) and [LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html), LM3d3 uses the topology of the 3D mesh that articulates with the prehistoric design of each projectile point to construct a suite of `reference geometry` used to apply semilandmarks in a replicable manner. The result is a landmarking protocol that provides for an improved characterisation of whole-object morphology, and can be subset to analyse variability associated with specific _plan_, _profile_, and _cross-section_ components. It also provides those data points needed to investigate questions of _directional asymmetry_, differences in front/back morphology, and morphological integration between blade and basal morphology.
 
 ```{r lm3d3.landmarks, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 1. Coordinates of landmarks populated using the [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md) protocol serve as the basis for LM3d3.**_"}
 knitr::include_graphics('images/landmarks.png')
 ```
 
-Like its' predecessors, LM3d3 was initially designed using the [`digit3DLand`](https://github.com/morphOptics/digit3DLand) package in R. When the draft protocol was complete, the design of the landmarking protocol shifted to [Geomagic Design X](https://www.3dsystems.com/software/geomagic-design-x) _(Build Version 2020.0.1 [Build Number: 30])_, where the workflow was modified to include elements of `reference geometry` that articulate with the prehistoric design attributes of each projectile point.
+Like its' predecessors, LM3d3 was initially designed using the [`digit3DLand`](https://github.com/morphOptics/digit3DLand) package in R. When the draft protocol was completed, design of the landmarking protocol shifted to [Geomagic Design X](https://www.3dsystems.com/software/geomagic-design-x) _(Build Version 2020.0.1 [Build Number: 30])_, where the workflow was modified to include those elements of `reference geometry` that articulate with the prehistoric design attributes of each projectile point.
 
-The goal of this effort was to increase both the precision and rigour of the study by including the Z-dimension to capture those morphological characteristics associated with axial twisting introduced by knappers through the practice of beveling ([LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md)) [@RN21001]. The addition of cross-sections was needed to better characterise whole-object morphology, providing for the possibility of subsampling the semilandmarks to explore the contribution of specific cross-sections or profiles ([LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html)). LM3d3 includes an additional cross section at the blade/base transition, allowing for tests of morphological integration. While true that some landmarking protocols can be—--and often are—--recycled as new specimens are added, this particular research programme endeavours to achieve ever-greater accuracy and precision in each analytical iteration.
-
-## Hypotheses
-
-A suite of visual aids were created a means of visualising the various hypotheses that this landmarking protocol will be used to test. The visual representation of the following hypotheses were produced for my own reference, and used to critically assess the utility of the semilandmarks employed in the landmarking protocol. All hypotheses tested for this study will enlist the same sample of Dalton projectile points.
-
-### Hypothesis 1
-
-Hypothesis 1 will test whether there is a difference in morphology for Dalton points found in and out of the heartland.
-
-```{r lm3d3.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 2. Hypothesis 1 considers whether Dalton points discovered in (left) and out (right) of the Heartland differ in morphology.**_"}
-knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
-```
-
-### Hypothesis 2
-
-Hypothesis 2 will test whether there is a difference in morphology for Dalton points found in the heartland, the interior, and the northern periphery.
-
-```{r lm3d3.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 3. Hypothesis 2 considers whether Dalton points discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology.**_"}
-knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
-```
-
-### Hypothesis 3
-
-Hypothesis 3 will test whether there is a discernible difference in morphology for Dalton points that are beveled, or not beveled.
-
-```{r lm3d3.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 4. Hypothesis 3 considers whether beveled Dalton points (left) differ in morphology from those that are not beveled (right).**_"}
-knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
-```
-
-# Landmarking protocol 3d3
+The goal of this effort was to increase both the precision and rigour of the study by including the Z-dimension to capture those shape characteristics associated with axial twisting, introduced by knappers through the practice of beveling ([LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md)) [@RN21001]. The addition of cross-sections was needed to better characterise whole-object morphology, providing for the possibility of subsampling the semilandmarks to explore the contribution of specific cross-sections or profiles ([LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html)). LM3d3 includes an additional cross section at the blade/base transition, allowing for tests of morphological integration. While true that some landmarking protocols can be—--and often are—--recycled as new specimens are added, this particular research programme endeavours to achieve ever-greater accuracy and precision in each analytical iteration.
 
 ## Generating the peripheral (plan view) spline
 
 This effort begins with a spline extracted from the surface geometry of the mesh using the `extract contour curves` command. In reverse-engineering, `extract contour curves` is regularly employed as the first step in building a `patch network` used to create a surface. The extracted feature curve is rendered as a spline, and follows the highest curvature contours around the periphery of the lateral and basal edges, following the highly variable sinuous edge morphology around the entirety of the projectile. The remainder of the landmarking protocol is based upon this spline, which was subsequently split at six mathematically-defined locations.
 
-```{r lm3d3.figspline, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 5. Spline extracted along the highest contours of the Dalton point.**_"}
+```{r lm3d3.figspline, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 2. Spline extracted along the highest contours of the Dalton point.**_"}
 knitr::include_graphics('images/extractspline.png')
 ```
 
@@ -69,7 +39,7 @@ The characteristic points and tangents developed for this landmarking protocol w
 
 The `horizontal tangent` is calculated by drawing a horizontal line above the tip of the biface using the tangent as a `common constraint`, and the horizontal as the `independent constraint`. To split the 3D spline at the location of the horizontal tangent, a `reference point` was inserted at the location of the `tangent` in the sketch (light blue point; below, left), followed by a `reference plane` (in white; below, left and right) using the `pick point and normal axis` function where the `reference point` (h-tangent) was used as the `pick point`, and the `Right plane` as the `normal axis` (below, left). The spline was then cut at the location where the `reference plane` intersected with the spline (below image, right).
 
-```{r lm3d3.figlm1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 6. Identify horizontal tangent, insert `reference point` and `reference plane` (left). Use `reference plane` to cut spline at the location of the horizontal tangent (right).**_"}
+```{r lm3d3.figlm1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 3. Identify horizontal tangent, insert `reference point` and `reference plane` (left). Use `reference plane` to cut spline at the location of the horizontal tangent (right).**_"}
 knitr::include_graphics('images/lm1.png')
 ```
 
@@ -77,7 +47,7 @@ knitr::include_graphics('images/lm1.png')
 
 The point of highest curvature on either side of the basal edge was calculated using the `curvature` function in the Accuracy Analyser. This function displays the curvature flow as a continuous colour plot across the area of the curve. In this instance, _curvature_ is defined as the amount by which a geometric shape deviates from being flat or straight in the case of a line. The curvature is displayed in different colours according to the local radius, and is calculated in only one direction (U or V) along the curve. Using this tool, the two points of highest curvature were located between the basal and lateral edges on either side of each projectile where the local radius measure was largest. The alignment and orientation of each biface was dictated by the _auto3dgm_ output, and the landmarking protocol follows the mesh orientation, where LM 02 was always placed on the right side of the basal edge, and LM 03 on the left.
 
-```{r lm3d3.figcurve, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 7. Identify points of hightest curvature (light blue) at left/right intersection of lateral and basal edges.**_"}
+```{r lm3d3.figcurve, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 4. Identify points of hightest curvature (light blue) at left/right intersection of lateral and basal edges.**_"}
 knitr::include_graphics('images/splinesplit1.png')
 ```
 
@@ -85,7 +55,7 @@ knitr::include_graphics('images/splinesplit1.png')
 
 The point of highest curvature at the intersection of the blade and base was also calculated using the `curvature function` in the Accuracy Analyser. Using this tool, the two points of highest curvature were located between the blade and base on either side of each projectile where the local radius measure was largest. The alignment and orientation of each projectile was dictated by the _vectors_ (discussed below, and Figure 11), and the landmarking protocol follows the mesh orientation in that figure, where LM 04 was always placed on the right side of the basal edge, and LM 05 on the left.
 
-```{r lm3d3.figcurve2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 8. Identify points of hightest curvature (light blue) at left/right intersection of blade and base.**_"}
+```{r lm3d3.figcurve2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 5. Identify points of hightest curvature (light blue) at left/right intersection of blade and base.**_"}
 knitr::include_graphics('images/splinesplit2.png')
 ```
 
@@ -93,7 +63,7 @@ knitr::include_graphics('images/splinesplit2.png')
 
 One additional landmark (LM 06) was placed at the centre of the base. The location of this landmark was identified by calculating the linear distance between LM 02 and LM 03, and projecting a `reference point` (ctrl-div; below) equidistant between the two. A `reference plane` was added using the ctrl-div as the pick point, and the `Right plane` as the `normal axis`. The spline was then split at the intersection of the `reference plane` and the basal spline.
 
-```{r lm3d3.figlm4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 9. Calculate linear distance between LM 02 and LM 03, insert `reference plane` coplanar to Right plane equidistant between LM 02 and LM 03, and use the `reference plane` to cut the spline.**_"}
+```{r lm3d3.figlm4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 6. Calculate linear distance between LM 02 and LM 03, insert `reference plane` coplanar to Right plane equidistant between LM 02 and LM 03, and use the `reference plane` to cut the spline.**_"}
 knitr::include_graphics('images/lm6.png')
 ```
 
@@ -101,7 +71,7 @@ knitr::include_graphics('images/lm6.png')
 
 Through the preceding protocol, the initial spline was split into six discrete splines. These splines articulate with components of projectile morphology that can be compartmentalised in the analyses. The primary analytical gain achieved through this exercise is the requisite foundation needed to carry out replicable analyses of Dalton point morphology in three dimensions, further increasing the precision of the geometric morphometric analysis.
 
-```{r lm3d3.figsplinesplit-frbl, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 10. Result of spline splits include six discrete splines, each articulating with a region of analytical interest. The coordinates of each spline split are known, and used to place the landmarks.**_"}
+```{r lm3d3.figsplinesplit-frbl, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 7. Result of spline splits include six discrete splines, each articulating with a region of analytical interest. The coordinates of each spline split are known, and used to place the landmarks.**_"}
 knitr::include_graphics('images/splinesplit-frbl.png')
 ```
 
@@ -109,7 +79,7 @@ knitr::include_graphics('images/splinesplit-frbl.png')
 
 The fundamental components of `reference geometry` used to create LM3d3 consist of three `reference vectors`, and a single `reference point` (ref.pt.0), placed equidistant between LM 04 and LM 05. The three `reference vectors` were placed between LM 01 and ref.pt.0 (Vector 1), ref.pt.0 and LM 06 (Vector 2), and LMs 04 and 05 (Vector 3).  These three `reference vectors` serve as the foundation for the suite of `reference geometry` used to place the semilandmarks.
 
-```{r lm3d3.vectors, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 11. `Reference vectors` placed between LMs 01 and ref.pt.0 (left), ref.pt.0 and LM 06 (center), and between LMs 04 and 05 (right).**_"}
+```{r lm3d3.vectors, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 8. `Reference vectors` placed between LMs 01 and ref.pt.0 (left), ref.pt.0 and LM 06 (center), and between LMs 04 and 05 (right).**_"}
 knitr::include_graphics('images/lm3d3.vectors.png')
 ```
 
@@ -125,7 +95,7 @@ Five `reference planes` provide the framework needed to populate the semilandmar
 
 The first `reference plane` (ref.pl.1) was placed between LM 01 and ref.pt.0, bisecting the blade of the projectile along the mid-line. The method of placement enlists a second `reference point` (ref.pt.1), inserted along the first `reference vector`. It is located at a position equidistant between LM 01 and ref.pt.0, but the coordinates of ref.pt.1 were altered to relocate it 15 mm from the vector in the direction of the Z-axis. The `pick point and coplanar` function was used to place ref.pl.1 coplanar to the first `reference vector`, and in the direction of ref.pt.1. Following placement of ref.pl.1, ref.pt.1 was deleted.
 
-```{r lm3d3.ref.pl.1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 12. Placement of ref.pl.1, and temporary location of ref.pt.1 15mm from Vector 1, and equidistant between LM 01 and ref.pt.0 on the blade of the projectile.**_"}
+```{r lm3d3.ref.pl.1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 9. Placement of ref.pl.1, and temporary location of ref.pt.1 15mm from Vector 1, and equidistant between LM 01 and ref.pt.0 on the blade of the projectile.**_"}
 knitr::include_graphics('images/lm3d3.ref.pl.1.png')
 ```
 
@@ -133,7 +103,7 @@ knitr::include_graphics('images/lm3d3.ref.pl.1.png')
 
 The second `reference plane` (ref.pl.2) was placed between ref.pt.0 and LM 06, bisecting the base of the projectile along the mid-line. The method of placement for ref.pl.2 follows the same protocol described in the application of ref.pl.1, and the `reference point` (ref.pt.2) was deleted following the placement of ref.pl.2.
 
-```{r lm3d3.ref.pl.2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 13. Placement of ref.pl.2, and temporary location of ref.pt.2 15 mm from Vector 2, and equidistant between ref.pt.0 and LM 06 on the base of the projectile.**_"}
+```{r lm3d3.ref.pl.2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 10. Placement of ref.pl.2, and temporary location of ref.pt.2 15 mm from Vector 2, and equidistant between ref.pt.0 and LM 06 on the base of the projectile.**_"}
 knitr::include_graphics('images/lm3d3.ref.pl.2.png')
 ```
 
@@ -141,7 +111,7 @@ knitr::include_graphics('images/lm3d3.ref.pl.2.png')
 
 The third `reference plane` (ref.pl.3) was placed between LMs 04 and 05, and bisects the projectile at the blade/base intersection. The method of placement for ref.pl.3 follows the same protocol described in the application of ref.pl.1, and the `reference point` (ref.pt.3) was deleted following the placement of ref.pl.3.
 
-```{r lm3d3.ref.pl.3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 14. Placement of ref.pl.3, and temporary location of ref.pt.3 15 mm from Vector 3, and equidistant between LMs 04 and 05 at the intersection of the blade and base.**_"}
+```{r lm3d3.ref.pl.3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 11. Placement of ref.pl.3, and temporary location of ref.pt.3 15 mm from Vector 3, and equidistant between LMs 04 and 05 at the intersection of the blade and base.**_"}
 knitr::include_graphics('images/lm3d3.ref.pl.3.png')
 ```
 
@@ -149,7 +119,7 @@ knitr::include_graphics('images/lm3d3.ref.pl.3.png')
 
 The fourth (ref.pl.4) and fifth (ref.pl.5) `reference planes` were placed using the `pick point and normal` function at the intersections of the first `reference vector` and LMs 01 and 06. 
 
-```{r lm3d3.ref.pl.4-5, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 15. Placement of ref.pl.4 (top) and ref.pl.5 (bottom).**_"}
+```{r lm3d3.ref.pl.4-5, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 12. Placement of ref.pl.4 (top) and ref.pl.5 (bottom).**_"}
 knitr::include_graphics('images/lm3d3.ref.pl.4-5.png')
 ```
 
@@ -161,7 +131,7 @@ The `reference geometry` described above was enlisted in the following three-ste
 
 To section the blade/base intersection, a single section was inserted using ref.pl.2, resulting in a single cross-section that bisects the projectile between LMs 04 and 05.
 
-```{r lm3d3.section1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 16. Placement of the first section, bisecting the mesh along ref.pl.2.**_"}
+```{r lm3d3.section1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 13. Placement of the first section, bisecting the mesh along ref.pl.2.**_"}
 knitr::include_graphics('images/lm3d3.section1.png')
 ```
 
@@ -169,7 +139,7 @@ knitr::include_graphics('images/lm3d3.section1.png')
 
 Six equidistant sections were placed between LM 01 and ref.pt.0, and the two sections at the locations of LM 01 and ref.pt.0 were deleted. Three equidistant sections were placed between LM 06 and ref.pt.0. The sections intersecting with ref.pt.0 and LM 06 was deleted. Subsequent to placing the sections, ref.pt.0 was itself deleted.
 
-```{r lm3d3.section3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 17. Placement of the two equidistant sections between LM 06 and ref.pt.3.**_"}
+```{r lm3d3.section3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 14. Placement of the two equidistant sections between LM 06 and ref.pt.3.**_"}
 knitr::include_graphics('images/lm3d3.all.sections.png')
 ```
 
@@ -177,7 +147,7 @@ knitr::include_graphics('images/lm3d3.all.sections.png')
 
 The `curvature` function was employed to split the spline at the location of highest curvature. This function was detailed in the application of LMs 02, 03, 04, and 05 in [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md). Each section was split at the point of highest curvature along the lateral margins of the projectile. A `reference plane` (ref.pl.1) was used to cut each of the four curves along the mid-line of the blade where it intersects with the curves. A second `reference plane` (ref.pl.2) was used to cut the single basal curve and the curve between LMs 04 and 05. Since ref.pt.0 was used to generate ref.pl.1 and ref.pl.2, either could be used to cut the curve between LMs 04 and 05 since both intersect the curve at the same point.
 
-```{r lm3d3.split, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 18. Each section was split at the points of highest curvature along the lateral edges, then along the mid-line at the intersection of the curve and ref.pl.1 (for the blade), and ref.pl.2 (for the base).**_"}
+```{r lm3d3.split, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 15. Each section was split at the points of highest curvature along the lateral edges, then along the mid-line at the intersection of the curve and ref.pl.1 (for the blade), and ref.pl.2 (for the base).**_"}
 knitr::include_graphics('images/lm3d3.split.sections.png')
 ```
 
@@ -187,14 +157,43 @@ Semilandmarks 07 - 18 were first applied around the lateral edges, and sLMs 12 a
 
 The result is a landmark configuration that can be subset in numerous ways (plan, profile, cross-section, front/back, left/right, blade/base, etc.), and was designed to achieve maximum utility for analysts of lithic morphology.
 
-```{r lm3d3.semi, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 19. Landmarks (blue), semilandmarks (white), curves (orange), and splits (blue) used for LM3d3.**_"}
+```{r lm3d3.semi, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 16. Landmarks (blue), semilandmarks (white), curves (orange), and splits (blue) used for LM3d3.**_"}
 knitr::include_graphics('images/lm3d3.semi.png')
 ```
 
 Based upon knowledge garnered from running `LaSEC` [@RN28913] on [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md), this landmarking protocol would likely oversampled if it included additional landmarks on the cross-sections; however, it can be readily modified to include as many or as few landmarks and semilandmarks needed to address the research question. 
 
-```{r lm3d3.slm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 20. Landmarks (blue), semilandmarks (white), and `reference geometry` used in LM3d3.**_"}
+```{r lm3d3.slm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 17. Landmarks (blue), semilandmarks (white), and `reference geometry` used in LM3d3.**_"}
 knitr::include_graphics('images/lm3d3.slm.png')
+```
+
+
+## Hypotheses
+
+A suite of visual aids were created a means of visualising the various hypotheses that this landmarking protocol will be used to test. The visual representation of the following hypotheses were produced for my own reference, and used to critically assess the utility of the semilandmarks employed in the landmarking protocol. All hypotheses tested for this study will enlist the same sample of Dalton projectile points.
+
+### Hypothesis 1
+
+Hypothesis 1 will test whether there is a difference in morphology for Dalton points found in and out of the heartland.
+
+```{r lm3d3.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 18. Hypothesis 1 considers whether Dalton points discovered in (left) and out (right) of the Heartland differ in morphology.**_"}
+knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
+```
+
+### Hypothesis 2
+
+Hypothesis 2 will test whether there is a difference in morphology for Dalton points found in the heartland, the interior, and the northern periphery.
+
+```{r lm3d3.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 19. Hypothesis 2 considers whether Dalton points discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology.**_"}
+knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
+```
+
+### Hypothesis 3
+
+Hypothesis 3 will test whether there is a discernible difference in morphology for Dalton points that are beveled, or not beveled.
+
+```{r lm3d3.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 20. Hypothesis 3 considers whether beveled Dalton points (left) differ in morphology from those that are not beveled (right).**_"}
+knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
 ```
 
 ## Acknowledgments
