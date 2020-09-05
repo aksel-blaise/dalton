@@ -54,7 +54,7 @@ Like its’ predecessors, LM3d3 was initially designed using the
 R. When the draft protocol was completed, design of the landmarking
 protocol shifted to [Geomagic Design
 X](https://www.3dsystems.com/software/geomagic-design-x) *(Build Version
-2020.0.1 \[Build Number: 30\])*, where the workflow was modified to
+2020.0.2 \[Build Number: 55\])*, where the workflow was modified to
 include those elements of `reference geometry` that articulate with the
 prehistoric design attributes of each projectile point.
 
