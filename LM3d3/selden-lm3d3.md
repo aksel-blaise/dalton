@@ -593,8 +593,8 @@ A suite of visual aids were created as a means of visualising the
 hypotheses that LM3d3:c1 will be used to test. The visual representation
 of the following hypotheses were produced for my own reference, and were
 used to critically assess the utility of the semilandmarks employed in
-the landmarking protocol. *All hypotheses tested for this study will
-enlist the same sample of Dalton projectile points.*
+the landmarking protocol. *All hypotheses were assessed using the same
+sample of Dalton projectile points.*
 
 ### Hypothesis 1
 
