@@ -155,7 +155,7 @@ knitr::include_graphics('images/lm3d3.split.sections.png')
 
 ## LM3d3: Configuration 1
 
-LM3d3: Configuration 1 (LM3d3:c1) was used in the analysis of the first three hypotheses. Semilandmarks 07 - 18 were first applied around the lateral edges, and sLMs 12 and 13 between LMs 02, 06, and 03 uses the curve constructed in [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md). Semilandmarks 19 - 30 articulate with the mid-line between LMs 01 and 06. Additional sLMs can be placed on each section equidistant between those sLMs defined by the splits described above to better characterise each cross section, if needed.
+LM3d3: Configuration 1 (LM3d3:c1) was used to assess the first three hypotheses. Semilandmarks 07 - 18 were first applied around the lateral edges, and sLMs 12 and 13 between LMs 02, 06, and 03 uses the curve constructed in [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md). Semilandmarks 19 - 30 articulate with the mid-line between LMs 01 and 06. Additional sLMs can be placed on each section equidistant between those sLMs defined by the splits described above to better characterise each cross section, if needed.
 
 The result is a landmark configuration that can be subset in numerous ways (plan, profile, cross-section, front/back, left/right, blade/base, etc.), and was designed to achieve maximum utility for analysts of lithic morphology.
 
@@ -197,9 +197,15 @@ Hypothesis 3 will test whether there is a discernible difference in morphology f
 knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
 ```
 
-## LM3d3: Configuration 2
+## _**(in development)**_ LM3d3: Configuration 2
 
-## Hypothesis 4
+LM3d3: Configuration 2 (LM3d3:c2) is an extension and subset of LM3d3:c1, and is used in the assessment of Hypothesis 4.
+
+## _**(in development)**_ Sectioning the tip
+
+Three additional equidistant sections were placed between LM 01 and the first cross section on the blade, and were inserted using ref.pl.4 as the base plane. 
+
+## _**(in development)**_ Hypothesis 4
 
 ## Acknowledgments
 

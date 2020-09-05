@@ -531,10 +531,10 @@ the curve and ref.pl.1 (for the blade), and ref.pl.2 (for the base).***
 
 ## LM3d3: Configuration 1
 
-LM3d3: Configuration 1 (LM3d3:c1) was used in the analysis of the first
-three hypotheses. Semilandmarks 07 - 18 were first applied around the
-lateral edges, and sLMs 12 and 13 between LMs 02, 06, and 03 uses the
-curve constructed in
+LM3d3: Configuration 1 (LM3d3:c1) was used to assess the first three
+hypotheses. Semilandmarks 07 - 18 were first applied around the lateral
+edges, and sLMs 12 and 13 between LMs 02, 06, and 03 uses the curve
+constructed in
 [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md).
 Semilandmarks 19 - 30 articulate with the mid-line between LMs 01 and
 06. Additional sLMs can be placed on each section equidistant between
@@ -665,9 +665,18 @@ knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
 
 </div>
 
-## LM3d3: Configuration 2
+## ***(in development)*** LM3d3: Configuration 2
 
-## Hypothesis 4
+LM3d3: Configuration 2 (LM3d3:c2) is an extension and subset of
+LM3d3:c1, and is used in the assessment of Hypothesis 4.
+
+## ***(in development)*** Sectioning the tip
+
+Three additional equidistant sections were placed between LM 01 and the
+first cross section on the blade, and were inserted using ref.pl.4 as
+the base plane.
+
+## ***(in development)*** Hypothesis 4
 
 ## Acknowledgments
 
