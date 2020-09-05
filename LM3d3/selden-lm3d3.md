@@ -667,13 +667,73 @@ knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
 ## ***(in development)*** LM3d3: Configuration 2
 
 LM3d3: Configuration 2 (LM3d3:c2) is an extension and subset of
-LM3d3:c1, and is used in the assessment of Hypothesis 4.
+LM3d3:c1, and is used in the assessment of Hypothesis 4. Following the
+same methods described above, three additional equidistant sections were
+placed between LM 01 and the first cross section on the blade, and were
+inserted using ref.pl.4 as the base plane.
 
-## ***(in development)*** Sectioning the tip
+``` r
+knitr::include_graphics('images/lm3d3.c2.section.png')
+```
 
-Three additional equidistant sections were placed between LM 01 and the
-first cross section on the blade, and were inserted using ref.pl.4 as
-the base plane.
+<div class="figure">
+
+<img src="images/lm3d3.c2.section.png" alt="_**Figure 22. Five equidistant sections inserted between LM 01 and the first cross section. Those sections located at LM 01 and the first cross-section were deleted.**_" width="100%" />
+
+<p class="caption">
+
+***Figure 22. Five equidistant sections inserted between LM 01 and the
+first cross section. Those sections located at LM 01 and the first
+cross-section were deleted.***
+
+</p>
+
+</div>
+
+Each of the sections was split at the points of highest curvature along
+the lateral edges, then at the intersection of the curves and ref.pl.1.
+
+``` r
+knitr::include_graphics('images/lm3d3.c2.geom.png')
+```
+
+<div class="figure">
+
+<img src="images/lm3d3.c2.geom.png" alt="_**Figure 23. Curves were split at the points of highest curvature along the lateral edges, then at the intersection of the curves and ref.pl.1.**_" width="100%" />
+
+<p class="caption">
+
+***Figure 23. Curves were split at the points of highest curvature along
+the lateral edges, then at the intersection of the curves and
+ref.pl.1.***
+
+</p>
+
+</div>
+
+Semilandmarks were then populated in following with the preceding
+protocol, where sLMs 31 through 33 were placed on the right side of the
+projectile, and sLMs 34 through 36 were placed on the left.
+Semilandmarks 37 through 42 were placed along the intersection of the
+sections and ref.pl.1., and sLMs 43 through 54 were placed along the
+curves equidistant between those on the lateral edge and ref.pl.1.
+
+``` r
+knitr::include_graphics('images/lm3d3.c2.slm.png')
+```
+
+<div class="figure">
+
+<img src="images/lm3d3.c2.slm.png" alt="_**Figure 24. Location of semilandmarks added to address Hypothesis 4.**_" width="100%" />
+
+<p class="caption">
+
+***Figure 24. Location of semilandmarks added to address Hypothesis
+4.***
+
+</p>
+
+</div>
 
 ## ***(in development)*** Hypothesis 4
 
