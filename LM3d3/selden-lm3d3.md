@@ -1,7 +1,7 @@
 Landmarking Protocol 3d3 + Hypothesis Viz
 ================
 Robert Z. Selden, Jr.
-04 September, 2020
+05 September, 2020
 
 Landmarking protocol 3d3 (LM3d3) represents a substantive advancement
 from
@@ -22,7 +22,7 @@ and
 LM3d3 uses the topology of the 3D mesh that articulates with the
 prehistoric design of each projectile point to construct a suite of
 `reference geometry` used to apply semilandmarks in a replicable manner.
-The result is a landmarking protocol that provides an improved
+The result is a landmarking protocol that provides for an improved
 characterisation of whole-object morphology, which can be subset to
 analyse variability associated with specific *plan*, *profile*, and
 *cross-section* components. It also provides those data points needed to
@@ -167,15 +167,17 @@ calculated using the `curvature` function in the Accuracy Analyser. This
 function displays the curvature flow as a continuous colour plot across
 the area of the curve. In this instance, *curvature* is defined as the
 amount by which a geometric shape deviates from being flat or straight
-in the case of a line. The curvature is displayed in different colours
-according to the local radius, and is calculated in only one direction
-(U or V) along the curve. Using this tool, the two points of highest
+in the case of a line. Curvature is displayed in different colours
+according to the local radius, and calculated in only one direction (U
+or V) along the curve. Using this tool, the two points of highest
 curvature were located between the basal and lateral edges on either
 side of each projectile where the local radius measure was largest. The
-alignment and orientation of each biface was dictated by the *auto3dgm*
-output, and the landmarking protocol follows the mesh orientation, where
-LM 02 was always placed on the right side of the basal edge, and LM 03
-on the left.
+orientation of each biface was dictated by the *auto3dgm* output in
+[LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md)
+and
+[LM3d2](https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html);
+however, LM3d3 enlists a novel method to determine which side of the
+projectile is associated with LM 02 and LM03 using `reference vectors`.
 
 ``` r
 knitr::include_graphics('images/splinesplit1.png')
@@ -200,11 +202,11 @@ The point of highest curvature at the intersection of the blade and base
 was also calculated using the `curvature` function in the Accuracy
 Analyser. Using this tool, the two points of highest curvature were
 located between the blade and base on either side of each projectile
-where the local radius measure was largest. The alignment and
-orientation of each projectile was dictated by the *vectors* (discussed
-below, and Figure 11), and the landmarking protocol follows the mesh
-orientation in that figure, where LM 04 was always placed on the right
-side of the basal edge, and LM 05 on the left.
+where the local radius measure was largest. The orientation of each
+projectile was dictated by `reference vectors`, and the landmarking
+protocol follows the mesh orientation in that figure, where LM 04 was
+always placed on the right side of the basal edge, and LM 05 on the
+left.
 
 ``` r
 knitr::include_graphics('images/splinesplit2.png')
@@ -310,14 +312,13 @@ knitr::include_graphics('images/lm3d3.vectors.png')
 The measure of the angle between Vector 1 (blade) and Vector 2 (base)
 may have additional utility in lithic studies as an orthogonal metric
 associated with knapper skill, where greater skill is represented by an
-arbitrary range of angles nearest—and furthest away from—180 degrees. A
-second similar measure could be collected between Vectors 1 and 2 in
-comparison with Vector 3. Collection of these metrics from a 3D mesh in
-computer aided design (CAD) software adds an increased element of
-precision in comparison with a goniometer, and serves as an example of
-the added analytical value that can be extracted from this novel
-landmarking protocol that reaches beyond the application of landmarks
-and semilandmarks.
+arbitrary range of angles nearest—and lesser, furthest away from—180
+degrees. A second similar measure could be collected between Vectors 1
+and 2 in comparison with Vector 3. Collection of these metrics from a 3D
+mesh in computer aided design (CAD) software adds an increased element
+of precision in comparison with a goniometer, and serves as an example
+of the added analytical value that can be extracted from this novel
+landmarking protocol.
 
 Prior to the addition of the `reference vectors`, the location of LMs 02
 through 05 are considered arbitrary. Previous iterations of this
@@ -446,8 +447,7 @@ The `reference geometry` described above was enlisted in the following
 three-step method developed to produce one cross-section at the
 blade/base intersection, four cross-sections between the blade/base
 intersection and LM 01, and one cross-section between the blade/base
-intersection and LM 06, to include one that articulates with the
-location of LM 06.
+intersection and LM 06.
 
 ### Sectioning the blade/base intersection
 
@@ -477,8 +477,8 @@ ref.pl.2.***
 Six equidistant sections were placed between LM 01 and ref.pt.0, and the
 two sections at the locations of LM 01 and ref.pt.0 were deleted. Three
 equidistant sections were placed between LM 06 and ref.pt.0. The
-sections intersecting with ref.pt.0 and LM 06 was deleted. Subsequent to
-placing the sections, ref.pt.0 was itself deleted.
+sections intersecting with ref.pt.0 and LM 06 were deleted. Subsequent
+to placing the sections, ref.pt.0 was itself deleted.
 
 ``` r
 knitr::include_graphics('images/lm3d3.all.sections.png')
@@ -499,18 +499,17 @@ and ref.pt.3.***
 
 ## Splitting the sections
 
-The `curvature` function was employed to split the spline at the
-location of highest curvature. This function was detailed in the
-application of LMs 02, 03, 04, and 05 in
+The `curvature` function was employed to split each curves at the
+locations of highest curvature along the lateral edge. This function was
+detailed above, and in the application of LMs 02, 03, 04, and 05 in
 [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md).
-Each section was split at the point of highest curvature along the
-lateral margins of the projectile. A `reference plane` (ref.pl.1) was
-used to cut each of the four curves along the mid-line of the blade
-where it intersects with the curves. A second `reference plane`
-(ref.pl.2) was used to cut the single basal curve and the curve between
-LMs 04 and 05. Since ref.pt.0 was used to generate ref.pl.1 and
-ref.pl.2, either could be used to cut the curve between LMs 04 and 05
-since both intersect the curve at the same point.
+
+A `reference plane` (ref.pl.1) was then used to cut each of the four
+curves along the mid-line of the blade where it intersects with the
+curves. A second `reference plane` (ref.pl.2) was used to cut the single
+basal curve and the curve between LMs 04 and 05. Since ref.pt.0 was used
+to generate ref.pl.1 and ref.pl.2, either of the `reference planes`
+could be used to cut the curve between LMs 04 and 05.
 
 ``` r
 knitr::include_graphics('images/lm3d3.split.sections.png')
@@ -530,10 +529,12 @@ the curve and ref.pl.1 (for the blade), and ref.pl.2 (for the base).***
 
 </div>
 
-## Application of semilandmarks
+## LM3d3: Configuration 1
 
-Semilandmarks 07 - 18 were first applied around the lateral edges, and
-sLMs 12 and 13 between LMs 02, 06, and 03 uses the curve constructed in
+LM3d3: Configuration 1 (LM3d3:c1) was used in the analysis of the first
+three hypotheses. Semilandmarks 07 - 18 were first applied around the
+lateral edges, and sLMs 12 and 13 between LMs 02, 06, and 03 uses the
+curve constructed in
 [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md).
 Semilandmarks 19 - 30 articulate with the mid-line between LMs 01 and
 06. Additional sLMs can be placed on each section equidistant between
@@ -565,9 +566,9 @@ and splits (blue) used for LM3d3.***
 Based upon knowledge garnered from running `LaSEC` (Watanabe 2018) on
 [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md),
 this landmarking protocol would likely oversampled if it included
-additional landmarks on the cross-sections; however, it can be readily
-modified to include as many or as few landmarks and semilandmarks needed
-to address the research question.
+additional landmarks on the cross-sections; however, it can be adapted
+to include as many or as few landmarks and semilandmarks needed to
+address the research question.
 
 ``` r
 knitr::include_graphics('images/lm3d3.slm.png')
@@ -586,7 +587,7 @@ geometry` used in LM3d3.***
 
 </div>
 
-## Hypotheses
+## Hypotheses 1 through 3
 
 A suite of visual aids were created a means of visualising the various
 hypotheses that this landmarking protocol will be used to test. The
@@ -663,6 +664,10 @@ knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
 </p>
 
 </div>
+
+## LM3d3: Configuration 2
+
+## Hypothesis 4
 
 ## Acknowledgments
 
