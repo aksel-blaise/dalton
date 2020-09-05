@@ -565,7 +565,7 @@ and splits (blue) used for LM3d3.***
 
 Based upon knowledge garnered from running `LaSEC` (Watanabe 2018) on
 [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md),
-this landmarking protocol would likely oversampled if it included
+this landmarking protocol would likely be oversampled if it included
 additional landmarks on the cross-sections; however, it can be adapted
 to include as many or as few landmarks and semilandmarks needed to
 address the research question.

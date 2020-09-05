@@ -163,7 +163,7 @@ The result is a landmark configuration that can be subset in numerous ways (plan
 knitr::include_graphics('images/lm3d3.semi.png')
 ```
 
-Based upon knowledge garnered from running `LaSEC` [@RN28913] on [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md), this landmarking protocol would likely oversampled if it included additional landmarks on the cross-sections; however, it can be adapted to include as many or as few landmarks and semilandmarks needed to address the research question. 
+Based upon knowledge garnered from running `LaSEC` [@RN28913] on [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md), this landmarking protocol would likely be oversampled if it included additional landmarks on the cross-sections; however, it can be adapted to include as many or as few landmarks and semilandmarks needed to address the research question. 
 
 ```{r lm3d3.slm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 17. Landmarks (blue), semilandmarks (white), and `reference geometry` used in LM3d3.**_"}
 knitr::include_graphics('images/lm3d3.slm.png')
