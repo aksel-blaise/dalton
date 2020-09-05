@@ -598,7 +598,7 @@ sample of Dalton projectile points.*
 
 ### Hypothesis 1
 
-Hypothesis 1 will test whether there is a difference in morphology for
+Hypothesis 1 will assess whether there is a difference in morphology for
 Dalton points found in and out of the heartland.
 
 ``` r
@@ -620,7 +620,7 @@ knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
 
 ### Hypothesis 2
 
-Hypothesis 2 will test whether there is a difference in morphology for
+Hypothesis 2 will assess whether there is a difference in morphology for
 Dalton points found in the heartland, the interior, and the northern
 periphery.
 
@@ -644,7 +644,7 @@ differ in morphology.***
 
 ### Hypothesis 3
 
-Hypothesis 3 will test whether there is a discernible difference in
+Hypothesis 3 will assess whether there is a discernible difference in
 morphology for Dalton points that are beveled, or not beveled.
 
 ``` r

@@ -175,7 +175,7 @@ A suite of visual aids were created as a means of visualising the hypotheses tha
 
 ### Hypothesis 1
 
-Hypothesis 1 will test whether there is a difference in morphology for Dalton points found in and out of the heartland.
+Hypothesis 1 will assess whether there is a difference in morphology for Dalton points found in and out of the heartland.
 
 ```{r lm3d3.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 18. Hypothesis 1 considers whether Dalton points discovered in (left) and out (right) of the Heartland differ in morphology.**_"}
 knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
@@ -183,7 +183,7 @@ knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
 
 ### Hypothesis 2
 
-Hypothesis 2 will test whether there is a difference in morphology for Dalton points found in the heartland, the interior, and the northern periphery.
+Hypothesis 2 will assess whether there is a difference in morphology for Dalton points found in the heartland, the interior, and the northern periphery.
 
 ```{r lm3d3.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 19. Hypothesis 2 considers whether Dalton points discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology.**_"}
 knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
@@ -191,7 +191,7 @@ knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
 
 ### Hypothesis 3
 
-Hypothesis 3 will test whether there is a discernible difference in morphology for Dalton points that are beveled, or not beveled.
+Hypothesis 3 will assess whether there is a discernible difference in morphology for Dalton points that are beveled, or not beveled.
 
 ```{r lm3d3.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 20. Hypothesis 3 considers whether beveled Dalton points (left) differ in morphology from those that are not beveled (right).**_"}
 knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
