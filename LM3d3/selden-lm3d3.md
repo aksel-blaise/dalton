@@ -681,10 +681,9 @@ the base plane.
 
 I extend my gratitude to Christian S. Hoggard and David K. Thulman for
 their thoughtful comments and constructive criticisms on the draft of
-this landmarking protocol, which was originally developed for the study
-of [Gahagan
+the landmarking protocol developed for the study of [Gahagan
 bifaces](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md)
-(Selden Jr., Dockall, and Dubied 2020), and is extended here for an
+(Selden Jr., Dockall, and Dubied 2020), which is extended here for an
 analysis of Dalton point morphology. This iteration of the landmarking
 protocol was developed using the
 [`digit3DLand`](https://github.com/morphOptics/digit3DLand) package in
