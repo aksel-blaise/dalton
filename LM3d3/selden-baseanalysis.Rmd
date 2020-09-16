@@ -74,7 +74,6 @@ boxplot(csz~hreg,
 fig.cap = "Boxplot of centroid size by Heartland region."
 ```
 
-
 ## Principal Components Analysis
 
 ```{r pca, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
