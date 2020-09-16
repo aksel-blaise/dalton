@@ -1,7 +1,7 @@
 Landmarking Protocol 3d3 + Hypothesis Viz
 ================
 Robert Z. Selden, Jr.
-05 September, 2020
+16 September, 2020
 
 Landmarking protocol 3d3 (LM3d3) represents a substantive advancement
 from
@@ -531,7 +531,7 @@ the curve and ref.pl.1 (for the blade), and ref.pl.2 (for the base).***
 
 ## LM3d3: Configuration 1
 
-LM3d3: Configuration 1 (LM3d3:c1) was used to assess the first three
+LM3d3: Configuration 1 (LM3d3.c1) was used to assess the first three
 hypotheses. Semilandmarks 07 - 18 were first applied around the lateral
 edges, and sLMs 12 and 13 between LMs 02, 06, and 03 uses the curve
 constructed in
@@ -645,7 +645,7 @@ differ in morphology.***
 ### Hypothesis 3
 
 Hypothesis 3 will assess whether there is a discernible difference in
-morphology for Dalton points that are beveled, or not beveled.
+morphology for Dalton points that are beveled, or not.
 
 ``` r
 knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
@@ -663,79 +663,6 @@ knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
 </p>
 
 </div>
-
-## ***(in development)*** LM3d3: Configuration 2
-
-LM3d3: Configuration 2 (LM3d3:c2) is an extension and subset of
-LM3d3:c1, and is used in the assessment of Hypothesis 4. Following the
-same methods described above, three additional equidistant sections were
-placed between LM 01 and the first cross section on the blade, and were
-inserted using ref.pl.4 as the base plane.
-
-``` r
-knitr::include_graphics('images/lm3d3.c2.section.png')
-```
-
-<div class="figure">
-
-<img src="images/lm3d3.c2.section.png" alt="_**Figure 22. Five equidistant sections inserted between LM 01 and the first cross section. Those sections located at LM 01 and the first cross-section were deleted.**_" width="100%" />
-
-<p class="caption">
-
-***Figure 22. Five equidistant sections inserted between LM 01 and the
-first cross section. Those sections located at LM 01 and the first
-cross-section were deleted.***
-
-</p>
-
-</div>
-
-Each of the sections was split at the points of highest curvature along
-the lateral edges, then at the intersection of the curves and ref.pl.1.
-
-``` r
-knitr::include_graphics('images/lm3d3.c2.geom.png')
-```
-
-<div class="figure">
-
-<img src="images/lm3d3.c2.geom.png" alt="_**Figure 23. Curves were split at the points of highest curvature along the lateral edges, then at the intersection of the curves and ref.pl.1.**_" width="100%" />
-
-<p class="caption">
-
-***Figure 23. Curves were split at the points of highest curvature along
-the lateral edges, then at the intersection of the curves and
-ref.pl.1.***
-
-</p>
-
-</div>
-
-Semilandmarks were then populated in following with the preceding
-protocol, where sLMs 31 through 33 were placed on the right side of the
-projectile, and sLMs 34 through 36 were placed on the left.
-Semilandmarks 37 through 42 were placed along the intersection of the
-sections and ref.pl.1., and sLMs 43 through 54 were placed along the
-curves equidistant between those on the lateral edge and ref.pl.1.
-
-``` r
-knitr::include_graphics('images/lm3d3.c2.slm.png')
-```
-
-<div class="figure">
-
-<img src="images/lm3d3.c2.slm.png" alt="_**Figure 24. Location of semilandmarks added to address Hypothesis 4.**_" width="100%" />
-
-<p class="caption">
-
-***Figure 24. Location of semilandmarks added to address Hypothesis
-4.***
-
-</p>
-
-</div>
-
-## ***(in development)*** Hypothesis 4
 
 ## Acknowledgments
 
