@@ -44,7 +44,9 @@ plot(Y.gpa$consensus[,c("Z", "Y")], pch=20)
 # gpa plot
 # knitr::include_graphics('images/gpa3d.png')
 # fig.cap="Results of generalized Procrustes analysis."
+```
 
+```{r data.frame, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # geomorph data frame
 gdf <- geomorph.data.frame(shape = Y.gpa$coords, size = Y.gpa$Csize, heart = qdata$heart.out, hreg = qdata$heart.reg)
 
@@ -71,6 +73,7 @@ boxplot(csz~hreg,
         )
 fig.cap = "Boxplot of centroid size by Heartland region."
 ```
+
 
 ## Principal Components Analysis
 
