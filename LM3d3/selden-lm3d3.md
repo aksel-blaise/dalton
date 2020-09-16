@@ -531,20 +531,19 @@ the curve and ref.pl.1 (for the blade), and ref.pl.2 (for the base).***
 
 ## LM3d3: Configuration 1
 
-LM3d3: Configuration 1 (LM3d3.c1) was used to assess the first three
-hypotheses. Semilandmarks 07 - 18 were first applied around the lateral
-edges, and sLMs 12 and 13 between LMs 02, 06, and 03 uses the curve
-constructed in
+LM3d3: Configuration 1 (LM3d3.c1) was used to assess the three
+hypotheses included in this pilot study. Semilandmarks 07 - 18 were
+applied around the lateral edges, and sLMs 12 and 13 between LMs 02, 06,
+and 03 using the curve constructed in
 [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md).
 Semilandmarks 19 - 30 articulate with the mid-line between LMs 01 and
-06. Additional sLMs can be placed on each section equidistant between
-those sLMs defined by the splits described above to better characterise
-each cross section, if needed.
+06, and sLMs 31 - 34 were placed along the curve that articulates with
+ref.pl.3 equidistant between the lateral edge and midline. .
 
 The result is a landmark configuration that can be subset in numerous
 ways (plan, profile, cross-section, front/back, left/right, blade/base,
-etc.), and was designed to achieve maximum utility for analysts of
-lithic morphology.
+etc.), using a suite of design-based attributes to achieve maximum
+utility for analysts of lithic morphology.
 
 ``` r
 knitr::include_graphics('images/lm3d3.semi.png')
