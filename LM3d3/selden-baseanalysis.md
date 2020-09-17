@@ -52,7 +52,10 @@ qdata
     ##               heart.out heart.reg
     ## 11AI225               H         H
     ## 11HE445               N         P
+    ## HK49_1462             N         I
     ## HK49_2                N         I
+    ## HK49_3022             N         I
+    ## HK49_3823             N         I
     ## HK49_4                N         I
     ## HK49_7                N         I
     ## KeilMangold13         H         H
@@ -127,22 +130,22 @@ summary(pca)
     ## 
     ## Ordination type: Principal Component Analysis 
     ## Centering and projection: OLS 
-    ## Number of observations 9 
-    ## Number of vectors 9 
+    ## Number of observations 12 
+    ## Number of vectors 12 
     ## 
     ## Importance of Components:
-    ##                            Comp1       Comp2        Comp3        Comp4
-    ## Eigenvalues            0.0119500 0.002003109 0.0006055074 0.0005072158
-    ## Proportion of Variance 0.7356167 0.123307213 0.0372737657 0.0312231442
-    ## Cumulative Proportion  0.7356167 0.858923961 0.8961977266 0.9274208707
-    ##                              Comp5        Comp6        Comp7        Comp8
-    ## Eigenvalues            0.000464455 0.0003374303 0.0002227413 0.0001544117
-    ## Proportion of Variance 0.028590878 0.0207715002 0.0137114896 0.0095052614
-    ## Cumulative Proportion  0.956011749 0.9767832490 0.9904947386 1.0000000000
-    ##                               Comp9
-    ## Eigenvalues            1.818811e-33
-    ## Proportion of Variance 1.119622e-31
-    ## Cumulative Proportion  1.000000e+00
+    ##                              Comp1       Comp2        Comp3       Comp4
+    ## Eigenvalues            0.008924199 0.001495728 0.0008987617 0.000579829
+    ## Proportion of Variance 0.671963425 0.112623520 0.0676738607 0.043659251
+    ## Cumulative Proportion  0.671963425 0.784586944 0.8522608052 0.895920056
+    ##                              Comp5        Comp6       Comp7        Comp8
+    ## Eigenvalues            0.000404076 0.0003139634 0.000291867 0.0001797937
+    ## Proportion of Variance 0.030425620 0.0236404304 0.021976646 0.0135378841
+    ## Cumulative Proportion  0.926345676 0.9499861068 0.971962753 0.9855006375
+    ##                               Comp9       Comp10       Comp11       Comp12
+    ## Eigenvalues            8.108541e-05 6.602839e-05 4.544906e-05 2.006363e-33
+    ## Proportion of Variance 6.105470e-03 4.971725e-03 3.422168e-03 1.510727e-31
+    ## Cumulative Proportion  9.916061e-01 9.965778e-01 1.000000e+00 1.000000e+00
 
 ``` r
 # set plot parameters to plot by heartland in (H) and out (N)
@@ -223,9 +226,9 @@ anova(fit.size.heart)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##           Df     SS      MS     Rsq      F      Z  Pr(>F)  
-    ## heart      1 1383.2 1383.21 0.38082 4.3054 1.2145 0.08585 .
-    ## Residuals  7 2248.9  321.28 0.61918                        
-    ## Total      8 3632.1                                        
+    ## heart      1 1348.6 1348.63 0.36056 5.6386 1.3779 0.04505 *
+    ## Residuals 10 2391.8  239.18 0.63944                        
+    ## Total     11 3740.4                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -244,10 +247,10 @@ anova(fit.size.hreg)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##           Df     SS     MS     Rsq      F       Z Pr(>F)
-    ## hreg       2 1386.5 693.27 0.38174 1.8523 0.71201 0.2568
-    ## Residuals  6 2245.6 374.27 0.61826                      
-    ## Total      8 3632.1                                     
+    ##           Df     SS     MS     Rsq      F      Z Pr(>F)
+    ## hreg       2 1353.8 676.90 0.36194 2.5526 1.0291 0.1384
+    ## Residuals  9 2386.6 265.18 0.63806                     
+    ## Total     11 3740.4                                    
     ## 
     ## Call: procD.lm(f1 = size ~ hreg, iter = 9999, data = gdf, print.progress = FALSE)
 
@@ -271,10 +274,10 @@ summary(sz.hreg,
     ## Vectors hidden (use show.vectors = TRUE to view)
     ## 
     ## Pairwise distances between means, plus statistics
-    ##             d UCL (95%)         Z  Pr > d
-    ## H:I 27.042574  32.80832  1.275882 0.13055
-    ## H:P 25.554212  32.91342  1.143745 0.15075
-    ## I:P  1.488362  33.29938 -1.259120 0.93550
+    ##             d UCL (95%)         Z Pr > d
+    ## H:I 23.946604  24.88171  1.769518 0.0623
+    ## H:P 25.554212  28.39577  1.526889 0.0910
+    ## I:P  1.607608  24.99907 -1.192242 0.9057
 
 ``` r
 # pairwise distance between variances = standardization?
@@ -294,13 +297,13 @@ summary(sz.hreg,
     ## Observed variances by group
     ## 
     ##        H        I        P 
-    ## 173.8491 278.7527 295.9358 
+    ## 173.8491 162.8750 295.9358 
     ## 
     ## Pairwise distances between variances, plus statistics
-    ##             d UCL (95%)          Z Pr > d
-    ## H:I 104.90361  313.4813 -0.2920817 0.5274
-    ## H:P 122.08670  316.6555 -0.1238263 0.4726
-    ## I:P  17.18309  316.6538 -1.2435538 0.9287
+    ##             d UCL (95%)           Z  Pr > d
+    ## H:I  10.97416  291.3134 -1.34286166 0.95165
+    ## H:P 122.08670  342.0968 -0.24363463 0.53445
+    ## I:P 133.06086  296.4747  0.03641097 0.43275
 
 ## Shape
 
@@ -317,10 +320,12 @@ anova(fit.shape.heart)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##           Df       SS       MS     Rsq     F      Z Pr(>F)
-    ## heart      1 0.036932 0.036932 0.28418 2.779 1.5042 0.1044
-    ## Residuals  7 0.093027 0.013290 0.71582                    
-    ## Total      8 0.129959                                     
+    ##           Df       SS       MS     Rsq      F      Z Pr(>F)  
+    ## heart      1 0.032292 0.032292 0.22104 2.8376 1.6911 0.0654 .
+    ## Residuals 10 0.113797 0.011380 0.77896                       
+    ## Total     11 0.146089                                        
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## Call: procD.lm(f1 = shape ~ heart, iter = 9999, data = gdf, print.progress = FALSE)
 
@@ -337,10 +342,10 @@ anova(fit.shape.hreg)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##           Df       SS       MS    Rsq      F       Z Pr(>F)
-    ## hreg       2 0.042613 0.021306 0.3279 1.4636 0.68458 0.2874
-    ## Residuals  6 0.087346 0.014558 0.6721                      
-    ## Total      8 0.129959                                      
+    ##           Df       SS       MS     Rsq      F      Z Pr(>F)
+    ## hreg       2 0.040505 0.020253 0.27727 1.7264 1.0623 0.1623
+    ## Residuals  9 0.105583 0.011732 0.72273                     
+    ## Total     11 0.146089                                      
     ## 
     ## Call: procD.lm(f1 = shape ~ hreg, iter = 9999, data = gdf, print.progress = FALSE)
 
@@ -361,10 +366,10 @@ summary(sz.hreg, confidence = 0.95, test.type = "dist")
     ## Vectors hidden (use show.vectors = TRUE to view)
     ## 
     ## Pairwise distances between means, plus statistics
-    ##             d UCL (95%)         Z  Pr > d
-    ## H:I 27.042574  32.80832  1.275882 0.13055
-    ## H:P 25.554212  32.91342  1.143745 0.15075
-    ## I:P  1.488362  33.29938 -1.259120 0.93550
+    ##             d UCL (95%)         Z Pr > d
+    ## H:I 23.946604  24.88171  1.769518 0.0623
+    ## H:P 25.554212  28.39577  1.526889 0.0910
+    ## I:P  1.607608  24.99907 -1.192242 0.9057
 
 ``` r
 # pairwise distance between variances = standardization?
@@ -382,10 +387,10 @@ summary(sz.hreg, confidence = 0.95, test.type = "var")
     ## Observed variances by group
     ## 
     ##        H        I        P 
-    ## 173.8491 278.7527 295.9358 
+    ## 173.8491 162.8750 295.9358 
     ## 
     ## Pairwise distances between variances, plus statistics
-    ##             d UCL (95%)          Z Pr > d
-    ## H:I 104.90361  313.4813 -0.2920817 0.5274
-    ## H:P 122.08670  316.6555 -0.1238263 0.4726
-    ## I:P  17.18309  316.6538 -1.2435538 0.9287
+    ##             d UCL (95%)           Z  Pr > d
+    ## H:I  10.97416  291.3134 -1.34286166 0.95165
+    ## H:P 122.08670  342.0968 -0.24363463 0.53445
+    ## I:P 133.06086  296.4747  0.03641097 0.43275
