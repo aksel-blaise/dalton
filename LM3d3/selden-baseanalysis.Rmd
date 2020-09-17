@@ -17,6 +17,7 @@ knitr::opts_chunk$set(echo = TRUE)
 # library(devtools)
 #devtools::install_github("geomorphR/geomorph", ref = "Stable", build_vignettes = TRUE)
 library(geomorph)
+library(tidyverse)
 library(wesanderson)
 setwd(getwd())
 
@@ -32,6 +33,7 @@ setwd("../")
 # read qualitative data
 qdata <- read.csv("qdata.csv", header = TRUE, row.names = 1)
 qdata <- qdata[match(dimnames(coords)[[3]],rownames(qdata)),]
+qdata
 
 # gpa
 Y.gpa <- gpagen(coords, PrinAxes = TRUE, ProcD = TRUE, Proj = TRUE, print.progress = FALSE)
@@ -85,11 +87,13 @@ summary(pca)
 pch.gps.heart <- c(15,17)[as.factor(heart)]
 col.gps.heart <- wes_palette("Moonrise2")[as.factor(heart)]
 col.hull <- c("#798E87","#C27D38")
+
 # plot pca by heartland in (H) and out (N)
-pc.plot1 <- plot(pca, asp = 1,
-                  pch = pch.gps.heart,
-                  col = col.gps.heart)
-                  shapeHulls(pc.plot1, 
+pc.plot1 <- plot(pca, 
+                 asp = 1,
+                 pch = pch.gps.heart,
+                 col = col.gps.heart)
+                    shapeHulls(pc.plot1, 
                              groups = heart,
                              group.cols = col.hull)
                   
@@ -97,11 +101,75 @@ pc.plot1 <- plot(pca, asp = 1,
 pch.gps.hreg <- c(15,17,18)[as.factor(hreg)]
 col.gps.hreg <- wes_palette("Moonrise2")[as.factor(hreg)]
 col.hull.2 <- c("#798E87","#CCC591","#C27D38")
+
 # plot pca by heartland + regions
-pc.plot2 <- plot(pca, asp = 1,
-                  pch = pch.gps.hreg,
-                  col = col.gps.hreg)
-                  shapeHulls(pc.plot2, 
+pc.plot2 <- plot(pca, 
+                 asp = 1,
+                 pch = pch.gps.hreg,
+                 col = col.gps.hreg)
+                    shapeHulls(pc.plot2, 
                              groups = hreg,
                              group.cols = col.hull.2)
+```
+
+## Define models
+
+```{r def.mod, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+## Define models
+# size as a function of heart
+fit.size.heart <- procD.lm(size ~ heart, 
+                           data = gdf, 
+                           print.progress = FALSE, 
+                           iter = 9999)
+# size as a function of hreg
+fit.size.hreg <- procD.lm(size ~ hreg, 
+                          data = gdf, 
+                          print.progress = FALSE, 
+                          iter = 9999)
+
+# shape as a function of heart
+fit.shape.heart <- procD.lm(shape ~ heart, 
+                            data = gdf, 
+                            print.progress = FALSE, 
+                            iter = 9999)
+# shape as a function of hreg
+fit.shape.hreg <- procD.lm(shape ~ hreg, 
+                           data = gdf, 
+                           print.progress = FALSE, 
+                           iter = 9999)
+```
+
+## Size
+
+```{r reg.sz, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# ANOVA: do dalton projectile point sizes differ by heart?
+anova(fit.size.heart)
+
+# ANOVA: do dalton projectile point sizes differ by hreg?
+anova(fit.size.hreg)
+# pairwise comparison of LS means = which differ?
+sz.hreg <- pairwise(fit.size.hreg, 
+                    groups = qdata$heart.reg)
+summary(sz.hreg, 
+        confidence = 0.95, 
+        test.type = "dist")
+# pairwise distance between variances = standardization?
+summary(sz.hreg, 
+        confidence = 0.95, 
+        test.type = "var")
+```
+
+## Shape
+
+```{r reg.sh, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# ANOVA: do dalton projectile point shapes differ by heart?
+anova(fit.shape.heart)
+
+# ANOVA: do dalton projectile point shapes differ by hreg?
+anova(fit.shape.hreg)
+# pairwise comparison of LS means = which differ?
+sh.hreg <- pairwise(fit.shape.hreg, groups = qdata$heart.reg)
+summary(sz.hreg, confidence = 0.95, test.type = "dist")
+# pairwise distance between variances = standardization?
+summary(sz.hreg, confidence = 0.95, test.type = "var")
 ```
