@@ -1,7 +1,7 @@
 Analysis of Dalton point morphology
 ================
 Robert Z. Selden, Jr.
-17 September, 2020
+18 September, 2020
 
 ## Load packages + data
 
@@ -20,14 +20,14 @@ library(geomorph)
 library(tidyverse)
 ```
 
-    ## -- Attaching packages --------------------------- tidyverse 1.3.0 --
+    ## -- Attaching packages -------------------------- tidyverse 1.3.0 --
 
     ## v ggplot2 3.3.2     v purrr   0.3.4
     ## v tibble  3.0.3     v dplyr   1.0.2
     ## v tidyr   1.1.2     v stringr 1.4.0
     ## v readr   1.3.1     v forcats 0.5.0
 
-    ## -- Conflicts ------------------------------ tidyverse_conflicts() --
+    ## -- Conflicts ----------------------------- tidyverse_conflicts() --
     ## x dplyr::filter() masks stats::filter()
     ## x dplyr::lag()    masks stats::lag()
 
@@ -53,26 +53,26 @@ qdata <- read.csv("qdata.csv", header = TRUE, row.names = 1)
 qdata <- qdata[match(dimnames(coords)[[3]],rownames(qdata)),]
 
 # print qdata
-knitr::kable(qdata, caption = "Attributes included in qdata.")
+knitr::kable(qdata, align = "cc", caption = "Attributes included in qdata.")
 ```
 
 |               | heart.out | heart.reg |
-| :------------ | :-------- | :-------- |
-| 11AI225       | H         | H         |
-| 11HE445       | N         | P         |
-| HK49\_1462    | N         | I         |
-| HK49\_2       | N         | I         |
-| HK49\_3022    | N         | I         |
-| HK49\_3823    | N         | I         |
-| HK49\_4       | N         | I         |
-| HK49\_5928    | N         | I         |
-| HK49\_5961    | N         | I         |
-| HK49\_7       | N         | I         |
-| KeilMangold13 | H         | H         |
-| KeilMangold3  | H         | H         |
-| KeilMangold8  | H         | H         |
-| Kinzer46      | N         | P         |
-| Kinzer49      | N         | P         |
+| :------------ | :-------: | :-------: |
+| 11AI225       |     H     |     H     |
+| 11HE445       |     N     |     P     |
+| HK49\_1462    |     N     |     I     |
+| HK49\_2       |     N     |     I     |
+| HK49\_3022    |     N     |     I     |
+| HK49\_3823    |     N     |     I     |
+| HK49\_4       |     N     |     I     |
+| HK49\_5928    |     N     |     I     |
+| HK49\_5961    |     N     |     I     |
+| HK49\_7       |     N     |     I     |
+| KeilMangold13 |     H     |     H     |
+| KeilMangold3  |     H     |     H     |
+| KeilMangold8  |     H     |     H     |
+| Kinzer46      |     N     |     P     |
+| Kinzer49      |     N     |     P     |
 
 Attributes included in qdata.
 

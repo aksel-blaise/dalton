@@ -40,7 +40,7 @@ qdata <- read.csv("qdata.csv", header = TRUE, row.names = 1)
 qdata <- qdata[match(dimnames(coords)[[3]],rownames(qdata)),]
 
 # print qdata
-knitr::kable(qdata, caption = "Attributes included in qdata.")
+knitr::kable(qdata, align = "cc", caption = "Attributes included in qdata.")
 ```
 
 ## Generalized Procrustes Analysis
@@ -51,8 +51,6 @@ Y.gpa <- gpagen(coords, PrinAxes = TRUE, ProcD = TRUE, Proj = TRUE, print.progre
 
 # output + consensus configuration coords
 Y.gpa
-
-
 ```
 
 ```{r consensus, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="2D plot of 3D consensus configuration."}
