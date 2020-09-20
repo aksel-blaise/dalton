@@ -65,8 +65,14 @@ plot(Y.gpa$consensus[,c("Z", "Y")], pch=20)
 ## Boxplots by centroid size
 
 ```{r box.attr, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# add centroid size to qdata
+qdata$csz <- Y.gpa$Csize
+
+# print updated qdata with centroid size
+knitr::kable(qdata, align = "ccccc", caption = "Modified attributes included in qdata.")
+
 # attributes for boxplots
-csz <- Y.gpa$Csize # centroid size
+csz <- qdata$csz # centroid size
 heart <- qdata$heart.out # heartland in/out
 hreg <- qdata$heart.reg # heartland region
 bev.1 <- qdata$bev # beveled yes/no
@@ -98,7 +104,7 @@ b2
 ```{r box3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by beveled."}
 # boxplot of Dalton point centroid size by beveled y/n
 b3 <- boxplot(csz~bev.1,
-        names = c("y","n"), # yes/no
+        names = c("n","y"), # yes/no
         xlab = "Beveled?",
         ylab = "Centroid Size",
         col = wes_palette("Moonrise2")

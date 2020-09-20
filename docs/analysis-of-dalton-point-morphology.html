@@ -450,26 +450,190 @@ Figure 2.1: 2D plot of 3D consensus configuration.
 </div>
 <div id="boxplots-by-centroid-size" class="section level2">
 <h2><span class="header-section-number">2.3</span> Boxplots by centroid size</h2>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="analysis-of-dalton-point-morphology.html#cb24-1"></a><span class="co"># attributes for boxplots</span></span>
-<span id="cb24-2"><a href="analysis-of-dalton-point-morphology.html#cb24-2"></a>csz &lt;-<span class="st"> </span>Y.gpa<span class="op">$</span>Csize <span class="co"># centroid size</span></span>
-<span id="cb24-3"><a href="analysis-of-dalton-point-morphology.html#cb24-3"></a>heart &lt;-<span class="st"> </span>qdata<span class="op">$</span>heart.out <span class="co"># heartland in/out</span></span>
-<span id="cb24-4"><a href="analysis-of-dalton-point-morphology.html#cb24-4"></a>hreg &lt;-<span class="st"> </span>qdata<span class="op">$</span>heart.reg <span class="co"># heartland region</span></span>
-<span id="cb24-5"><a href="analysis-of-dalton-point-morphology.html#cb24-5"></a>bev<span class="fl">.1</span> &lt;-<span class="st"> </span>qdata<span class="op">$</span>bev <span class="co"># beveled yes/no</span></span>
-<span id="cb24-6"><a href="analysis-of-dalton-point-morphology.html#cb24-6"></a>bev<span class="fl">.2</span> &lt;-<span class="st"> </span>qdata<span class="op">$</span>bev.type <span class="co"># type of beveling</span></span></code></pre></div>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="analysis-of-dalton-point-morphology.html#cb25-1"></a><span class="co"># boxplot of Dalton point centroid size by in/out heartland</span></span>
-<span id="cb25-2"><a href="analysis-of-dalton-point-morphology.html#cb25-2"></a>b1 &lt;-<span class="st"> </span><span class="kw">boxplot</span>(csz<span class="op">~</span>heart,</span>
-<span id="cb25-3"><a href="analysis-of-dalton-point-morphology.html#cb25-3"></a>        <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">&quot;H&quot;</span>,<span class="st">&quot;N&quot;</span>), <span class="co"># heartland (H), and not heartland (N)</span></span>
-<span id="cb25-4"><a href="analysis-of-dalton-point-morphology.html#cb25-4"></a>        <span class="dt">xlab =</span> <span class="st">&quot;Heartland&quot;</span>,</span>
-<span id="cb25-5"><a href="analysis-of-dalton-point-morphology.html#cb25-5"></a>        <span class="dt">ylab =</span> <span class="st">&quot;Centroid Size&quot;</span>,</span>
-<span id="cb25-6"><a href="analysis-of-dalton-point-morphology.html#cb25-6"></a>        <span class="dt">col =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>),</span>
-<span id="cb25-7"><a href="analysis-of-dalton-point-morphology.html#cb25-7"></a>        )</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="analysis-of-dalton-point-morphology.html#cb24-1"></a><span class="co"># add centroid size to qdata</span></span>
+<span id="cb24-2"><a href="analysis-of-dalton-point-morphology.html#cb24-2"></a>qdata<span class="op">$</span>csz &lt;-<span class="st"> </span>Y.gpa<span class="op">$</span>Csize</span>
+<span id="cb24-3"><a href="analysis-of-dalton-point-morphology.html#cb24-3"></a></span>
+<span id="cb24-4"><a href="analysis-of-dalton-point-morphology.html#cb24-4"></a><span class="co"># print updated qdata with centroid size</span></span>
+<span id="cb24-5"><a href="analysis-of-dalton-point-morphology.html#cb24-5"></a>knitr<span class="op">::</span><span class="kw">kable</span>(qdata, <span class="dt">align =</span> <span class="st">&quot;ccccc&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;Modified attributes included in qdata.&quot;</span>)</span></code></pre></div>
+<table>
+<caption>(#tab:box.attr)Modified attributes included in qdata.</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="center">heart.out</th>
+<th align="center">heart.reg</th>
+<th align="center">bev</th>
+<th align="center">bev.type</th>
+<th align="center">csz</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">11AI225</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">unifacial.bimarginal</td>
+<td align="center">111.17971</td>
+</tr>
+<tr class="even">
+<td align="left">11HE445</td>
+<td align="center">N</td>
+<td align="center">P</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+<td align="center">125.68376</td>
+</tr>
+<tr class="odd">
+<td align="left">HK49_1462</td>
+<td align="center">N</td>
+<td align="center">I</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+<td align="center">106.02942</td>
+</tr>
+<tr class="even">
+<td align="left">HK49_2</td>
+<td align="center">N</td>
+<td align="center">I</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+<td align="center">77.88910</td>
+</tr>
+<tr class="odd">
+<td align="left">HK49_3022</td>
+<td align="center">N</td>
+<td align="center">I</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+<td align="center">100.02205</td>
+</tr>
+<tr class="even">
+<td align="left">HK49_3823</td>
+<td align="center">N</td>
+<td align="center">I</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+<td align="center">112.93309</td>
+</tr>
+<tr class="odd">
+<td align="left">HK49_4</td>
+<td align="center">N</td>
+<td align="center">I</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+<td align="center">118.11018</td>
+</tr>
+<tr class="even">
+<td align="left">HK49_5928</td>
+<td align="center">N</td>
+<td align="center">I</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+<td align="center">121.33863</td>
+</tr>
+<tr class="odd">
+<td align="left">HK49_5961</td>
+<td align="center">N</td>
+<td align="center">I</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+<td align="center">102.86813</td>
+</tr>
+<tr class="even">
+<td align="left">HK49_7</td>
+<td align="center">N</td>
+<td align="center">I</td>
+<td align="center">y</td>
+<td align="center">unifacial.bimarginal</td>
+<td align="center">104.40945</td>
+</tr>
+<tr class="odd">
+<td align="left">KeilMangold10</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+<td align="center">126.59440</td>
+</tr>
+<tr class="even">
+<td align="left">KeilMangold13</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+<td align="center">143.47265</td>
+</tr>
+<tr class="odd">
+<td align="left">KeilMangold14</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+<td align="center">147.46915</td>
+</tr>
+<tr class="even">
+<td align="left">KeilMangold17</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+<td align="center">105.16645</td>
+</tr>
+<tr class="odd">
+<td align="left">KeilMangold3</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+<td align="center">126.88410</td>
+</tr>
+<tr class="even">
+<td align="left">KeilMangold8</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+<td align="center">104.38197</td>
+</tr>
+<tr class="odd">
+<td align="left">Kinzer46</td>
+<td align="center">N</td>
+<td align="center">P</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+<td align="center">92.72096</td>
+</tr>
+<tr class="even">
+<td align="left">Kinzer49</td>
+<td align="center">N</td>
+<td align="center">P</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+<td align="center">86.46909</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="analysis-of-dalton-point-morphology.html#cb25-1"></a><span class="co"># attributes for boxplots</span></span>
+<span id="cb25-2"><a href="analysis-of-dalton-point-morphology.html#cb25-2"></a>csz &lt;-<span class="st"> </span>qdata<span class="op">$</span>csz <span class="co"># centroid size</span></span>
+<span id="cb25-3"><a href="analysis-of-dalton-point-morphology.html#cb25-3"></a>heart &lt;-<span class="st"> </span>qdata<span class="op">$</span>heart.out <span class="co"># heartland in/out</span></span>
+<span id="cb25-4"><a href="analysis-of-dalton-point-morphology.html#cb25-4"></a>hreg &lt;-<span class="st"> </span>qdata<span class="op">$</span>heart.reg <span class="co"># heartland region</span></span>
+<span id="cb25-5"><a href="analysis-of-dalton-point-morphology.html#cb25-5"></a>bev<span class="fl">.1</span> &lt;-<span class="st"> </span>qdata<span class="op">$</span>bev <span class="co"># beveled yes/no</span></span>
+<span id="cb25-6"><a href="analysis-of-dalton-point-morphology.html#cb25-6"></a>bev<span class="fl">.2</span> &lt;-<span class="st"> </span>qdata<span class="op">$</span>bev.type <span class="co"># type of beveling</span></span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="analysis-of-dalton-point-morphology.html#cb26-1"></a><span class="co"># boxplot of Dalton point centroid size by in/out heartland</span></span>
+<span id="cb26-2"><a href="analysis-of-dalton-point-morphology.html#cb26-2"></a>b1 &lt;-<span class="st"> </span><span class="kw">boxplot</span>(csz<span class="op">~</span>heart,</span>
+<span id="cb26-3"><a href="analysis-of-dalton-point-morphology.html#cb26-3"></a>        <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">&quot;H&quot;</span>,<span class="st">&quot;N&quot;</span>), <span class="co"># heartland (H), and not heartland (N)</span></span>
+<span id="cb26-4"><a href="analysis-of-dalton-point-morphology.html#cb26-4"></a>        <span class="dt">xlab =</span> <span class="st">&quot;Heartland&quot;</span>,</span>
+<span id="cb26-5"><a href="analysis-of-dalton-point-morphology.html#cb26-5"></a>        <span class="dt">ylab =</span> <span class="st">&quot;Centroid Size&quot;</span>,</span>
+<span id="cb26-6"><a href="analysis-of-dalton-point-morphology.html#cb26-6"></a>        <span class="dt">col =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>),</span>
+<span id="cb26-7"><a href="analysis-of-dalton-point-morphology.html#cb26-7"></a>        )</span></code></pre></div>
 <div class="figure"><span id="fig:box1"></span>
 <img src="dalton.supp_files/figure-html/box1-1.png" alt="Boxplot of centroid size by Heartland (in/out)." width="100%" />
 <p class="caption">
 Figure 2.2: Boxplot of centroid size by Heartland (in/out).
 </p>
 </div>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="analysis-of-dalton-point-morphology.html#cb26-1"></a>b1</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="analysis-of-dalton-point-morphology.html#cb27-1"></a>b1</span></code></pre></div>
 <pre><code>## $stats
 ##          [,1]     [,2]
 ## [1,] 104.3820  77.8891
@@ -494,20 +658,20 @@ Figure 2.2: Boxplot of centroid size by Heartland (in/out).
 ## 
 ## $names
 ## [1] &quot;H&quot; &quot;N&quot;</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="analysis-of-dalton-point-morphology.html#cb28-1"></a><span class="co"># boxplot of Dalton point centroid size by heartland + regions</span></span>
-<span id="cb28-2"><a href="analysis-of-dalton-point-morphology.html#cb28-2"></a>b2 &lt;-<span class="st"> </span><span class="kw">boxplot</span>(csz<span class="op">~</span>hreg,</span>
-<span id="cb28-3"><a href="analysis-of-dalton-point-morphology.html#cb28-3"></a>        <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">&quot;H&quot;</span>,<span class="st">&quot;I&quot;</span>,<span class="st">&quot;P&quot;</span>), <span class="co"># heartland (H), interior (I), and northern periphery (P)</span></span>
-<span id="cb28-4"><a href="analysis-of-dalton-point-morphology.html#cb28-4"></a>        <span class="dt">xlab =</span> <span class="st">&quot;Heartland Region&quot;</span>,</span>
-<span id="cb28-5"><a href="analysis-of-dalton-point-morphology.html#cb28-5"></a>        <span class="dt">ylab =</span> <span class="st">&quot;Centroid Size&quot;</span>,</span>
-<span id="cb28-6"><a href="analysis-of-dalton-point-morphology.html#cb28-6"></a>        <span class="dt">col =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)</span>
-<span id="cb28-7"><a href="analysis-of-dalton-point-morphology.html#cb28-7"></a>        )</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="analysis-of-dalton-point-morphology.html#cb29-1"></a><span class="co"># boxplot of Dalton point centroid size by heartland + regions</span></span>
+<span id="cb29-2"><a href="analysis-of-dalton-point-morphology.html#cb29-2"></a>b2 &lt;-<span class="st"> </span><span class="kw">boxplot</span>(csz<span class="op">~</span>hreg,</span>
+<span id="cb29-3"><a href="analysis-of-dalton-point-morphology.html#cb29-3"></a>        <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">&quot;H&quot;</span>,<span class="st">&quot;I&quot;</span>,<span class="st">&quot;P&quot;</span>), <span class="co"># heartland (H), interior (I), and northern periphery (P)</span></span>
+<span id="cb29-4"><a href="analysis-of-dalton-point-morphology.html#cb29-4"></a>        <span class="dt">xlab =</span> <span class="st">&quot;Heartland Region&quot;</span>,</span>
+<span id="cb29-5"><a href="analysis-of-dalton-point-morphology.html#cb29-5"></a>        <span class="dt">ylab =</span> <span class="st">&quot;Centroid Size&quot;</span>,</span>
+<span id="cb29-6"><a href="analysis-of-dalton-point-morphology.html#cb29-6"></a>        <span class="dt">col =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)</span>
+<span id="cb29-7"><a href="analysis-of-dalton-point-morphology.html#cb29-7"></a>        )</span></code></pre></div>
 <div class="figure"><span id="fig:box2"></span>
 <img src="dalton.supp_files/figure-html/box2-1.png" alt="Boxplot of centroid size by Heartland region." width="100%" />
 <p class="caption">
 Figure 2.3: Boxplot of centroid size by Heartland region.
 </p>
 </div>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="analysis-of-dalton-point-morphology.html#cb29-1"></a>b2</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="analysis-of-dalton-point-morphology.html#cb30-1"></a>b2</span></code></pre></div>
 <pre><code>## $stats
 ##          [,1]     [,2]      [,3]
 ## [1,] 104.3820 100.0220  86.46909
@@ -525,28 +689,27 @@ Figure 2.3: Boxplot of centroid size by Heartland region.
 ## [2,] 142.7215 113.08279 110.60703
 ## 
 ## $out
-##  HK49_2 
-## 77.8891 
+## [1] 77.8891
 ## 
 ## $group
 ## [1] 2
 ## 
 ## $names
 ## [1] &quot;H&quot; &quot;I&quot; &quot;P&quot;</code></pre>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="analysis-of-dalton-point-morphology.html#cb31-1"></a><span class="co"># boxplot of Dalton point centroid size by beveled y/n</span></span>
-<span id="cb31-2"><a href="analysis-of-dalton-point-morphology.html#cb31-2"></a>b3 &lt;-<span class="st"> </span><span class="kw">boxplot</span>(csz<span class="op">~</span>bev<span class="fl">.1</span>,</span>
-<span id="cb31-3"><a href="analysis-of-dalton-point-morphology.html#cb31-3"></a>        <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">&quot;y&quot;</span>,<span class="st">&quot;n&quot;</span>), <span class="co"># yes/no</span></span>
-<span id="cb31-4"><a href="analysis-of-dalton-point-morphology.html#cb31-4"></a>        <span class="dt">xlab =</span> <span class="st">&quot;Beveled?&quot;</span>,</span>
-<span id="cb31-5"><a href="analysis-of-dalton-point-morphology.html#cb31-5"></a>        <span class="dt">ylab =</span> <span class="st">&quot;Centroid Size&quot;</span>,</span>
-<span id="cb31-6"><a href="analysis-of-dalton-point-morphology.html#cb31-6"></a>        <span class="dt">col =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)</span>
-<span id="cb31-7"><a href="analysis-of-dalton-point-morphology.html#cb31-7"></a>        )</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="analysis-of-dalton-point-morphology.html#cb32-1"></a><span class="co"># boxplot of Dalton point centroid size by beveled y/n</span></span>
+<span id="cb32-2"><a href="analysis-of-dalton-point-morphology.html#cb32-2"></a>b3 &lt;-<span class="st"> </span><span class="kw">boxplot</span>(csz<span class="op">~</span>bev<span class="fl">.1</span>,</span>
+<span id="cb32-3"><a href="analysis-of-dalton-point-morphology.html#cb32-3"></a>        <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">&quot;n&quot;</span>,<span class="st">&quot;y&quot;</span>), <span class="co"># yes/no</span></span>
+<span id="cb32-4"><a href="analysis-of-dalton-point-morphology.html#cb32-4"></a>        <span class="dt">xlab =</span> <span class="st">&quot;Beveled?&quot;</span>,</span>
+<span id="cb32-5"><a href="analysis-of-dalton-point-morphology.html#cb32-5"></a>        <span class="dt">ylab =</span> <span class="st">&quot;Centroid Size&quot;</span>,</span>
+<span id="cb32-6"><a href="analysis-of-dalton-point-morphology.html#cb32-6"></a>        <span class="dt">col =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)</span>
+<span id="cb32-7"><a href="analysis-of-dalton-point-morphology.html#cb32-7"></a>        )</span></code></pre></div>
 <div class="figure"><span id="fig:box3"></span>
 <img src="dalton.supp_files/figure-html/box3-1.png" alt="Boxplot of centroid size by beveled." width="100%" />
 <p class="caption">
 Figure 2.4: Boxplot of centroid size by beveled.
 </p>
 </div>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="analysis-of-dalton-point-morphology.html#cb32-1"></a>b3</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="analysis-of-dalton-point-morphology.html#cb33-1"></a>b3</span></code></pre></div>
 <pre><code>## $stats
 ##           [,1]     [,2]
 ## [1,]  77.88910 104.3820
@@ -570,21 +733,21 @@ Figure 2.4: Boxplot of centroid size by beveled.
 ## numeric(0)
 ## 
 ## $names
-## [1] &quot;y&quot; &quot;n&quot;</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="analysis-of-dalton-point-morphology.html#cb34-1"></a><span class="co"># boxplot of Dalton point centroid size by bevel type</span></span>
-<span id="cb34-2"><a href="analysis-of-dalton-point-morphology.html#cb34-2"></a>b4 &lt;-<span class="st"> </span><span class="kw">boxplot</span>(csz<span class="op">~</span>bev<span class="fl">.2</span>,</span>
-<span id="cb34-3"><a href="analysis-of-dalton-point-morphology.html#cb34-3"></a>        <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">&quot;alternate&quot;</span>,<span class="st">&quot;no.bevel&quot;</span>,<span class="st">&quot;unifacial.bimarginal&quot;</span>), <span class="co"># bevel type/no bevel</span></span>
-<span id="cb34-4"><a href="analysis-of-dalton-point-morphology.html#cb34-4"></a>        <span class="dt">xlab =</span> <span class="st">&quot;Beveled Type&quot;</span>,</span>
-<span id="cb34-5"><a href="analysis-of-dalton-point-morphology.html#cb34-5"></a>        <span class="dt">ylab =</span> <span class="st">&quot;Centroid Size&quot;</span>,</span>
-<span id="cb34-6"><a href="analysis-of-dalton-point-morphology.html#cb34-6"></a>        <span class="dt">col =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>),</span>
-<span id="cb34-7"><a href="analysis-of-dalton-point-morphology.html#cb34-7"></a>        )</span></code></pre></div>
+## [1] &quot;n&quot; &quot;y&quot;</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="analysis-of-dalton-point-morphology.html#cb35-1"></a><span class="co"># boxplot of Dalton point centroid size by bevel type</span></span>
+<span id="cb35-2"><a href="analysis-of-dalton-point-morphology.html#cb35-2"></a>b4 &lt;-<span class="st"> </span><span class="kw">boxplot</span>(csz<span class="op">~</span>bev<span class="fl">.2</span>,</span>
+<span id="cb35-3"><a href="analysis-of-dalton-point-morphology.html#cb35-3"></a>        <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">&quot;alternate&quot;</span>,<span class="st">&quot;no.bevel&quot;</span>,<span class="st">&quot;unifacial.bimarginal&quot;</span>), <span class="co"># bevel type/no bevel</span></span>
+<span id="cb35-4"><a href="analysis-of-dalton-point-morphology.html#cb35-4"></a>        <span class="dt">xlab =</span> <span class="st">&quot;Beveled Type&quot;</span>,</span>
+<span id="cb35-5"><a href="analysis-of-dalton-point-morphology.html#cb35-5"></a>        <span class="dt">ylab =</span> <span class="st">&quot;Centroid Size&quot;</span>,</span>
+<span id="cb35-6"><a href="analysis-of-dalton-point-morphology.html#cb35-6"></a>        <span class="dt">col =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>),</span>
+<span id="cb35-7"><a href="analysis-of-dalton-point-morphology.html#cb35-7"></a>        )</span></code></pre></div>
 <div class="figure"><span id="fig:box4"></span>
 <img src="dalton.supp_files/figure-html/box4-1.png" alt="Boxplot of centroid size by bevel type." width="100%" />
 <p class="caption">
 Figure 2.5: Boxplot of centroid size by bevel type.
 </p>
 </div>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="analysis-of-dalton-point-morphology.html#cb35-1"></a>b4</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="analysis-of-dalton-point-morphology.html#cb36-1"></a>b4</span></code></pre></div>
 <pre><code>## $stats
 ##          [,1]      [,2]     [,3]
 ## [1,] 104.3820  77.88910 104.4094
@@ -613,9 +776,9 @@ Figure 2.5: Boxplot of centroid size by bevel type.
 <div id="principal-components-analysis" class="section level2">
 <h2><span class="header-section-number">2.4</span> Principal Components Analysis</h2>
 <p>Principal components analysis <span class="citation">(Jolliffe <a href="#ref-RN1746" role="doc-biblioref">2002</a>)</span> was used to visualise shape variation among the bifaces. The shape changes described by each principal axis are commonly visualized using thin-plate spline warping of a reference 3D mesh <span class="citation">(Klingenberg <a href="#ref-RN1731" role="doc-biblioref">2013</a>; Sherratt et al. <a href="#ref-RN479" role="doc-biblioref">2014</a>)</span>.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="analysis-of-dalton-point-morphology.html#cb37-1"></a><span class="co"># principal components analysis</span></span>
-<span id="cb37-2"><a href="analysis-of-dalton-point-morphology.html#cb37-2"></a>pca&lt;-<span class="kw">gm.prcomp</span>(Y.gpa<span class="op">$</span>coords)</span>
-<span id="cb37-3"><a href="analysis-of-dalton-point-morphology.html#cb37-3"></a><span class="kw">summary</span>(pca)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="analysis-of-dalton-point-morphology.html#cb38-1"></a><span class="co"># principal components analysis</span></span>
+<span id="cb38-2"><a href="analysis-of-dalton-point-morphology.html#cb38-2"></a>pca&lt;-<span class="kw">gm.prcomp</span>(Y.gpa<span class="op">$</span>coords)</span>
+<span id="cb38-3"><a href="analysis-of-dalton-point-morphology.html#cb38-3"></a><span class="kw">summary</span>(pca)</span></code></pre></div>
 <pre><code>## 
 ## Ordination type: Principal Component Analysis 
 ## Centering and projection: OLS 
@@ -635,141 +798,141 @@ Figure 2.5: Boxplot of centroid size by bevel type.
 ## Eigenvalues            4.155661e-05 3.586756e-05 2.518719e-05 2.179588e-05 1.877623e-05 2.012194e-33
 ## Proportion of Variance 2.726177e-03 2.352967e-03 1.652318e-03 1.429843e-03 1.231750e-03 1.320030e-31
 ## Cumulative Proportion  9.933331e-01 9.956861e-01 9.973384e-01 9.987683e-01 1.000000e+00 1.000000e+00</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="analysis-of-dalton-point-morphology.html#cb39-1"></a><span class="co"># set plot parameters to plot by heartland in (H) and out (N)</span></span>
-<span id="cb39-2"><a href="analysis-of-dalton-point-morphology.html#cb39-2"></a>pch.gps.heart &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="kw">as.factor</span>(heart)]</span>
-<span id="cb39-3"><a href="analysis-of-dalton-point-morphology.html#cb39-3"></a>col.gps.heart &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(heart)]</span>
-<span id="cb39-4"><a href="analysis-of-dalton-point-morphology.html#cb39-4"></a>col.hull &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
-<span id="cb39-5"><a href="analysis-of-dalton-point-morphology.html#cb39-5"></a></span>
-<span id="cb39-6"><a href="analysis-of-dalton-point-morphology.html#cb39-6"></a><span class="co"># plot pca by heartland in (H) and out (N)</span></span>
-<span id="cb39-7"><a href="analysis-of-dalton-point-morphology.html#cb39-7"></a>pc.plot1 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
-<span id="cb39-8"><a href="analysis-of-dalton-point-morphology.html#cb39-8"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb39-9"><a href="analysis-of-dalton-point-morphology.html#cb39-9"></a>                 <span class="dt">pch =</span> pch.gps.heart,</span>
-<span id="cb39-10"><a href="analysis-of-dalton-point-morphology.html#cb39-10"></a>                 <span class="dt">col =</span> col.gps.heart)</span>
-<span id="cb39-11"><a href="analysis-of-dalton-point-morphology.html#cb39-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot1, </span>
-<span id="cb39-12"><a href="analysis-of-dalton-point-morphology.html#cb39-12"></a>                             <span class="dt">groups =</span> heart,</span>
-<span id="cb39-13"><a href="analysis-of-dalton-point-morphology.html#cb39-13"></a>                             <span class="dt">group.cols =</span> col.hull)</span></code></pre></div>
-<p><img src="dalton.supp_files/figure-html/pca-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="analysis-of-dalton-point-morphology.html#cb40-1"></a><span class="co"># set plot parameters to plot by heartland + regions</span></span>
-<span id="cb40-2"><a href="analysis-of-dalton-point-morphology.html#cb40-2"></a>pch.gps.hreg &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="kw">as.factor</span>(hreg)]</span>
-<span id="cb40-3"><a href="analysis-of-dalton-point-morphology.html#cb40-3"></a>col.gps.hreg &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(hreg)]</span>
-<span id="cb40-4"><a href="analysis-of-dalton-point-morphology.html#cb40-4"></a>col.hull<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="analysis-of-dalton-point-morphology.html#cb40-1"></a><span class="co"># set plot parameters to plot by heartland in (H) and out (N)</span></span>
+<span id="cb40-2"><a href="analysis-of-dalton-point-morphology.html#cb40-2"></a>pch.gps.heart &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="kw">as.factor</span>(heart)]</span>
+<span id="cb40-3"><a href="analysis-of-dalton-point-morphology.html#cb40-3"></a>col.gps.heart &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(heart)]</span>
+<span id="cb40-4"><a href="analysis-of-dalton-point-morphology.html#cb40-4"></a>col.hull &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
 <span id="cb40-5"><a href="analysis-of-dalton-point-morphology.html#cb40-5"></a></span>
-<span id="cb40-6"><a href="analysis-of-dalton-point-morphology.html#cb40-6"></a><span class="co"># plot pca by heartland + regions</span></span>
-<span id="cb40-7"><a href="analysis-of-dalton-point-morphology.html#cb40-7"></a>pc.plot2 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
+<span id="cb40-6"><a href="analysis-of-dalton-point-morphology.html#cb40-6"></a><span class="co"># plot pca by heartland in (H) and out (N)</span></span>
+<span id="cb40-7"><a href="analysis-of-dalton-point-morphology.html#cb40-7"></a>pc.plot1 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
 <span id="cb40-8"><a href="analysis-of-dalton-point-morphology.html#cb40-8"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb40-9"><a href="analysis-of-dalton-point-morphology.html#cb40-9"></a>                 <span class="dt">pch =</span> pch.gps.hreg,</span>
-<span id="cb40-10"><a href="analysis-of-dalton-point-morphology.html#cb40-10"></a>                 <span class="dt">col =</span> col.gps.hreg)</span>
-<span id="cb40-11"><a href="analysis-of-dalton-point-morphology.html#cb40-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot2, </span>
-<span id="cb40-12"><a href="analysis-of-dalton-point-morphology.html#cb40-12"></a>                             <span class="dt">groups =</span> hreg,</span>
-<span id="cb40-13"><a href="analysis-of-dalton-point-morphology.html#cb40-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.2</span>)</span></code></pre></div>
-<p><img src="dalton.supp_files/figure-html/pca-2.png" width="100%" /></p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="analysis-of-dalton-point-morphology.html#cb41-1"></a><span class="co"># set plot parameters to plot by beveled y and n</span></span>
-<span id="cb41-2"><a href="analysis-of-dalton-point-morphology.html#cb41-2"></a>pch.gps.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.1</span>)]</span>
-<span id="cb41-3"><a href="analysis-of-dalton-point-morphology.html#cb41-3"></a>col.gps.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.1</span>)]</span>
-<span id="cb41-4"><a href="analysis-of-dalton-point-morphology.html#cb41-4"></a>col.hull<span class="fl">.3</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
+<span id="cb40-9"><a href="analysis-of-dalton-point-morphology.html#cb40-9"></a>                 <span class="dt">pch =</span> pch.gps.heart,</span>
+<span id="cb40-10"><a href="analysis-of-dalton-point-morphology.html#cb40-10"></a>                 <span class="dt">col =</span> col.gps.heart)</span>
+<span id="cb40-11"><a href="analysis-of-dalton-point-morphology.html#cb40-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot1, </span>
+<span id="cb40-12"><a href="analysis-of-dalton-point-morphology.html#cb40-12"></a>                             <span class="dt">groups =</span> heart,</span>
+<span id="cb40-13"><a href="analysis-of-dalton-point-morphology.html#cb40-13"></a>                             <span class="dt">group.cols =</span> col.hull)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/pca-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="analysis-of-dalton-point-morphology.html#cb41-1"></a><span class="co"># set plot parameters to plot by heartland + regions</span></span>
+<span id="cb41-2"><a href="analysis-of-dalton-point-morphology.html#cb41-2"></a>pch.gps.hreg &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="kw">as.factor</span>(hreg)]</span>
+<span id="cb41-3"><a href="analysis-of-dalton-point-morphology.html#cb41-3"></a>col.gps.hreg &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(hreg)]</span>
+<span id="cb41-4"><a href="analysis-of-dalton-point-morphology.html#cb41-4"></a>col.hull<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
 <span id="cb41-5"><a href="analysis-of-dalton-point-morphology.html#cb41-5"></a></span>
-<span id="cb41-6"><a href="analysis-of-dalton-point-morphology.html#cb41-6"></a><span class="co"># plot pca by heartland in (H) and out (N)</span></span>
-<span id="cb41-7"><a href="analysis-of-dalton-point-morphology.html#cb41-7"></a>pc.plot3 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
+<span id="cb41-6"><a href="analysis-of-dalton-point-morphology.html#cb41-6"></a><span class="co"># plot pca by heartland + regions</span></span>
+<span id="cb41-7"><a href="analysis-of-dalton-point-morphology.html#cb41-7"></a>pc.plot2 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
 <span id="cb41-8"><a href="analysis-of-dalton-point-morphology.html#cb41-8"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb41-9"><a href="analysis-of-dalton-point-morphology.html#cb41-9"></a>                 <span class="dt">pch =</span> pch.gps.bev<span class="fl">.1</span>,</span>
-<span id="cb41-10"><a href="analysis-of-dalton-point-morphology.html#cb41-10"></a>                 <span class="dt">col =</span> col.gps.bev<span class="fl">.1</span>)</span>
-<span id="cb41-11"><a href="analysis-of-dalton-point-morphology.html#cb41-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot3, </span>
-<span id="cb41-12"><a href="analysis-of-dalton-point-morphology.html#cb41-12"></a>                             <span class="dt">groups =</span> bev<span class="fl">.1</span>,</span>
-<span id="cb41-13"><a href="analysis-of-dalton-point-morphology.html#cb41-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.3</span>)</span></code></pre></div>
-<p><img src="dalton.supp_files/figure-html/pca-3.png" width="100%" /></p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="analysis-of-dalton-point-morphology.html#cb42-1"></a><span class="co"># set plot parameters to plot by bevel type</span></span>
-<span id="cb42-2"><a href="analysis-of-dalton-point-morphology.html#cb42-2"></a>pch.gps.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.2</span>)]</span>
-<span id="cb42-3"><a href="analysis-of-dalton-point-morphology.html#cb42-3"></a>col.gps.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.2</span>)]</span>
-<span id="cb42-4"><a href="analysis-of-dalton-point-morphology.html#cb42-4"></a>col.hull<span class="fl">.4</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
+<span id="cb41-9"><a href="analysis-of-dalton-point-morphology.html#cb41-9"></a>                 <span class="dt">pch =</span> pch.gps.hreg,</span>
+<span id="cb41-10"><a href="analysis-of-dalton-point-morphology.html#cb41-10"></a>                 <span class="dt">col =</span> col.gps.hreg)</span>
+<span id="cb41-11"><a href="analysis-of-dalton-point-morphology.html#cb41-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot2, </span>
+<span id="cb41-12"><a href="analysis-of-dalton-point-morphology.html#cb41-12"></a>                             <span class="dt">groups =</span> hreg,</span>
+<span id="cb41-13"><a href="analysis-of-dalton-point-morphology.html#cb41-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.2</span>)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/pca-2.png" width="100%" /></p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="analysis-of-dalton-point-morphology.html#cb42-1"></a><span class="co"># set plot parameters to plot by beveled y and n</span></span>
+<span id="cb42-2"><a href="analysis-of-dalton-point-morphology.html#cb42-2"></a>pch.gps.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.1</span>)]</span>
+<span id="cb42-3"><a href="analysis-of-dalton-point-morphology.html#cb42-3"></a>col.gps.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.1</span>)]</span>
+<span id="cb42-4"><a href="analysis-of-dalton-point-morphology.html#cb42-4"></a>col.hull<span class="fl">.3</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
 <span id="cb42-5"><a href="analysis-of-dalton-point-morphology.html#cb42-5"></a></span>
-<span id="cb42-6"><a href="analysis-of-dalton-point-morphology.html#cb42-6"></a><span class="co"># plot pca by bevel type</span></span>
-<span id="cb42-7"><a href="analysis-of-dalton-point-morphology.html#cb42-7"></a>pc.plot4 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
+<span id="cb42-6"><a href="analysis-of-dalton-point-morphology.html#cb42-6"></a><span class="co"># plot pca by heartland in (H) and out (N)</span></span>
+<span id="cb42-7"><a href="analysis-of-dalton-point-morphology.html#cb42-7"></a>pc.plot3 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
 <span id="cb42-8"><a href="analysis-of-dalton-point-morphology.html#cb42-8"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb42-9"><a href="analysis-of-dalton-point-morphology.html#cb42-9"></a>                 <span class="dt">pch =</span> pch.gps.bev<span class="fl">.2</span>,</span>
-<span id="cb42-10"><a href="analysis-of-dalton-point-morphology.html#cb42-10"></a>                 <span class="dt">col =</span> col.gps.bev<span class="fl">.2</span>)</span>
-<span id="cb42-11"><a href="analysis-of-dalton-point-morphology.html#cb42-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot4, </span>
-<span id="cb42-12"><a href="analysis-of-dalton-point-morphology.html#cb42-12"></a>                             <span class="dt">groups =</span> bev<span class="fl">.2</span>,</span>
-<span id="cb42-13"><a href="analysis-of-dalton-point-morphology.html#cb42-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.4</span>)</span></code></pre></div>
+<span id="cb42-9"><a href="analysis-of-dalton-point-morphology.html#cb42-9"></a>                 <span class="dt">pch =</span> pch.gps.bev<span class="fl">.1</span>,</span>
+<span id="cb42-10"><a href="analysis-of-dalton-point-morphology.html#cb42-10"></a>                 <span class="dt">col =</span> col.gps.bev<span class="fl">.1</span>)</span>
+<span id="cb42-11"><a href="analysis-of-dalton-point-morphology.html#cb42-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot3, </span>
+<span id="cb42-12"><a href="analysis-of-dalton-point-morphology.html#cb42-12"></a>                             <span class="dt">groups =</span> bev<span class="fl">.1</span>,</span>
+<span id="cb42-13"><a href="analysis-of-dalton-point-morphology.html#cb42-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.3</span>)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/pca-3.png" width="100%" /></p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="analysis-of-dalton-point-morphology.html#cb43-1"></a><span class="co"># set plot parameters to plot by bevel type</span></span>
+<span id="cb43-2"><a href="analysis-of-dalton-point-morphology.html#cb43-2"></a>pch.gps.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.2</span>)]</span>
+<span id="cb43-3"><a href="analysis-of-dalton-point-morphology.html#cb43-3"></a>col.gps.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.2</span>)]</span>
+<span id="cb43-4"><a href="analysis-of-dalton-point-morphology.html#cb43-4"></a>col.hull<span class="fl">.4</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
+<span id="cb43-5"><a href="analysis-of-dalton-point-morphology.html#cb43-5"></a></span>
+<span id="cb43-6"><a href="analysis-of-dalton-point-morphology.html#cb43-6"></a><span class="co"># plot pca by bevel type</span></span>
+<span id="cb43-7"><a href="analysis-of-dalton-point-morphology.html#cb43-7"></a>pc.plot4 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
+<span id="cb43-8"><a href="analysis-of-dalton-point-morphology.html#cb43-8"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb43-9"><a href="analysis-of-dalton-point-morphology.html#cb43-9"></a>                 <span class="dt">pch =</span> pch.gps.bev<span class="fl">.2</span>,</span>
+<span id="cb43-10"><a href="analysis-of-dalton-point-morphology.html#cb43-10"></a>                 <span class="dt">col =</span> col.gps.bev<span class="fl">.2</span>)</span>
+<span id="cb43-11"><a href="analysis-of-dalton-point-morphology.html#cb43-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot4, </span>
+<span id="cb43-12"><a href="analysis-of-dalton-point-morphology.html#cb43-12"></a>                             <span class="dt">groups =</span> bev<span class="fl">.2</span>,</span>
+<span id="cb43-13"><a href="analysis-of-dalton-point-morphology.html#cb43-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.4</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca-4.png" width="100%" /></p>
 </div>
 <div id="define-models" class="section level2">
 <h2><span class="header-section-number">2.5</span> Define models</h2>
 <div id="hypothesis-1" class="section level3">
 <h3><span class="header-section-number">2.5.1</span> Hypothesis 1</h3>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="analysis-of-dalton-point-morphology.html#cb43-1"></a><span class="co">## Define models</span></span>
-<span id="cb43-2"><a href="analysis-of-dalton-point-morphology.html#cb43-2"></a><span class="co"># size as a function of heart</span></span>
-<span id="cb43-3"><a href="analysis-of-dalton-point-morphology.html#cb43-3"></a>fit.size.heart &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(size <span class="op">~</span><span class="st"> </span>heart, </span>
-<span id="cb43-4"><a href="analysis-of-dalton-point-morphology.html#cb43-4"></a>                           <span class="dt">data =</span> gdf, </span>
-<span id="cb43-5"><a href="analysis-of-dalton-point-morphology.html#cb43-5"></a>                           <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb43-6"><a href="analysis-of-dalton-point-morphology.html#cb43-6"></a>                           <span class="dt">iter =</span> <span class="dv">9999</span>)</span>
-<span id="cb43-7"><a href="analysis-of-dalton-point-morphology.html#cb43-7"></a><span class="co"># shape as a function of heart</span></span>
-<span id="cb43-8"><a href="analysis-of-dalton-point-morphology.html#cb43-8"></a>fit.shape.heart &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>heart, </span>
-<span id="cb43-9"><a href="analysis-of-dalton-point-morphology.html#cb43-9"></a>                            <span class="dt">data =</span> gdf, </span>
-<span id="cb43-10"><a href="analysis-of-dalton-point-morphology.html#cb43-10"></a>                            <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb43-11"><a href="analysis-of-dalton-point-morphology.html#cb43-11"></a>                            <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="analysis-of-dalton-point-morphology.html#cb44-1"></a><span class="co">## Define models</span></span>
+<span id="cb44-2"><a href="analysis-of-dalton-point-morphology.html#cb44-2"></a><span class="co"># size as a function of heart</span></span>
+<span id="cb44-3"><a href="analysis-of-dalton-point-morphology.html#cb44-3"></a>fit.size.heart &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(size <span class="op">~</span><span class="st"> </span>heart, </span>
+<span id="cb44-4"><a href="analysis-of-dalton-point-morphology.html#cb44-4"></a>                           <span class="dt">data =</span> gdf, </span>
+<span id="cb44-5"><a href="analysis-of-dalton-point-morphology.html#cb44-5"></a>                           <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb44-6"><a href="analysis-of-dalton-point-morphology.html#cb44-6"></a>                           <span class="dt">iter =</span> <span class="dv">9999</span>)</span>
+<span id="cb44-7"><a href="analysis-of-dalton-point-morphology.html#cb44-7"></a><span class="co"># shape as a function of heart</span></span>
+<span id="cb44-8"><a href="analysis-of-dalton-point-morphology.html#cb44-8"></a>fit.shape.heart &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>heart, </span>
+<span id="cb44-9"><a href="analysis-of-dalton-point-morphology.html#cb44-9"></a>                            <span class="dt">data =</span> gdf, </span>
+<span id="cb44-10"><a href="analysis-of-dalton-point-morphology.html#cb44-10"></a>                            <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb44-11"><a href="analysis-of-dalton-point-morphology.html#cb44-11"></a>                            <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 </div>
 <div id="hypothesis-2" class="section level3">
 <h3><span class="header-section-number">2.5.2</span> Hypothesis 2</h3>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="analysis-of-dalton-point-morphology.html#cb44-1"></a><span class="co">## Define models</span></span>
-<span id="cb44-2"><a href="analysis-of-dalton-point-morphology.html#cb44-2"></a><span class="co"># size as a function of hreg</span></span>
-<span id="cb44-3"><a href="analysis-of-dalton-point-morphology.html#cb44-3"></a>fit.size.hreg &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(size <span class="op">~</span><span class="st"> </span>hreg, </span>
-<span id="cb44-4"><a href="analysis-of-dalton-point-morphology.html#cb44-4"></a>                          <span class="dt">data =</span> gdf, </span>
-<span id="cb44-5"><a href="analysis-of-dalton-point-morphology.html#cb44-5"></a>                          <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb44-6"><a href="analysis-of-dalton-point-morphology.html#cb44-6"></a>                          <span class="dt">iter =</span> <span class="dv">9999</span>)</span>
-<span id="cb44-7"><a href="analysis-of-dalton-point-morphology.html#cb44-7"></a></span>
-<span id="cb44-8"><a href="analysis-of-dalton-point-morphology.html#cb44-8"></a></span>
-<span id="cb44-9"><a href="analysis-of-dalton-point-morphology.html#cb44-9"></a><span class="co"># shape as a function of hreg</span></span>
-<span id="cb44-10"><a href="analysis-of-dalton-point-morphology.html#cb44-10"></a>fit.shape.hreg &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>hreg, </span>
-<span id="cb44-11"><a href="analysis-of-dalton-point-morphology.html#cb44-11"></a>                           <span class="dt">data =</span> gdf, </span>
-<span id="cb44-12"><a href="analysis-of-dalton-point-morphology.html#cb44-12"></a>                           <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb44-13"><a href="analysis-of-dalton-point-morphology.html#cb44-13"></a>                           <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
-</div>
-<div id="hypothesis-3" class="section level3">
-<h3><span class="header-section-number">2.5.3</span> Hypothesis 3</h3>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="analysis-of-dalton-point-morphology.html#cb45-1"></a><span class="co">## Define models</span></span>
-<span id="cb45-2"><a href="analysis-of-dalton-point-morphology.html#cb45-2"></a><span class="co"># size as a function of bev.1</span></span>
-<span id="cb45-3"><a href="analysis-of-dalton-point-morphology.html#cb45-3"></a>fit.size.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(size <span class="op">~</span><span class="st"> </span>bev<span class="fl">.1</span>, </span>
+<span id="cb45-2"><a href="analysis-of-dalton-point-morphology.html#cb45-2"></a><span class="co"># size as a function of hreg</span></span>
+<span id="cb45-3"><a href="analysis-of-dalton-point-morphology.html#cb45-3"></a>fit.size.hreg &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(size <span class="op">~</span><span class="st"> </span>hreg, </span>
 <span id="cb45-4"><a href="analysis-of-dalton-point-morphology.html#cb45-4"></a>                          <span class="dt">data =</span> gdf, </span>
 <span id="cb45-5"><a href="analysis-of-dalton-point-morphology.html#cb45-5"></a>                          <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
 <span id="cb45-6"><a href="analysis-of-dalton-point-morphology.html#cb45-6"></a>                          <span class="dt">iter =</span> <span class="dv">9999</span>)</span>
 <span id="cb45-7"><a href="analysis-of-dalton-point-morphology.html#cb45-7"></a></span>
 <span id="cb45-8"><a href="analysis-of-dalton-point-morphology.html#cb45-8"></a></span>
-<span id="cb45-9"><a href="analysis-of-dalton-point-morphology.html#cb45-9"></a><span class="co"># shape as a function of bev.1</span></span>
-<span id="cb45-10"><a href="analysis-of-dalton-point-morphology.html#cb45-10"></a>fit.shape.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>bev<span class="fl">.1</span>, </span>
+<span id="cb45-9"><a href="analysis-of-dalton-point-morphology.html#cb45-9"></a><span class="co"># shape as a function of hreg</span></span>
+<span id="cb45-10"><a href="analysis-of-dalton-point-morphology.html#cb45-10"></a>fit.shape.hreg &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>hreg, </span>
 <span id="cb45-11"><a href="analysis-of-dalton-point-morphology.html#cb45-11"></a>                           <span class="dt">data =</span> gdf, </span>
 <span id="cb45-12"><a href="analysis-of-dalton-point-morphology.html#cb45-12"></a>                           <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
 <span id="cb45-13"><a href="analysis-of-dalton-point-morphology.html#cb45-13"></a>                           <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 </div>
-<div id="hypothesis-4" class="section level3">
-<h3><span class="header-section-number">2.5.4</span> Hypothesis 4</h3>
+<div id="hypothesis-3" class="section level3">
+<h3><span class="header-section-number">2.5.3</span> Hypothesis 3</h3>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="analysis-of-dalton-point-morphology.html#cb46-1"></a><span class="co">## Define models</span></span>
-<span id="cb46-2"><a href="analysis-of-dalton-point-morphology.html#cb46-2"></a><span class="co"># size as a function of bev.2</span></span>
-<span id="cb46-3"><a href="analysis-of-dalton-point-morphology.html#cb46-3"></a>fit.size.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(size <span class="op">~</span><span class="st"> </span>bev<span class="fl">.2</span>, </span>
+<span id="cb46-2"><a href="analysis-of-dalton-point-morphology.html#cb46-2"></a><span class="co"># size as a function of bev.1</span></span>
+<span id="cb46-3"><a href="analysis-of-dalton-point-morphology.html#cb46-3"></a>fit.size.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(size <span class="op">~</span><span class="st"> </span>bev<span class="fl">.1</span>, </span>
 <span id="cb46-4"><a href="analysis-of-dalton-point-morphology.html#cb46-4"></a>                          <span class="dt">data =</span> gdf, </span>
 <span id="cb46-5"><a href="analysis-of-dalton-point-morphology.html#cb46-5"></a>                          <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
 <span id="cb46-6"><a href="analysis-of-dalton-point-morphology.html#cb46-6"></a>                          <span class="dt">iter =</span> <span class="dv">9999</span>)</span>
 <span id="cb46-7"><a href="analysis-of-dalton-point-morphology.html#cb46-7"></a></span>
 <span id="cb46-8"><a href="analysis-of-dalton-point-morphology.html#cb46-8"></a></span>
-<span id="cb46-9"><a href="analysis-of-dalton-point-morphology.html#cb46-9"></a><span class="co"># shape as a function of bev.2</span></span>
-<span id="cb46-10"><a href="analysis-of-dalton-point-morphology.html#cb46-10"></a>fit.shape.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>bev<span class="fl">.2</span>, </span>
+<span id="cb46-9"><a href="analysis-of-dalton-point-morphology.html#cb46-9"></a><span class="co"># shape as a function of bev.1</span></span>
+<span id="cb46-10"><a href="analysis-of-dalton-point-morphology.html#cb46-10"></a>fit.shape.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>bev<span class="fl">.1</span>, </span>
 <span id="cb46-11"><a href="analysis-of-dalton-point-morphology.html#cb46-11"></a>                           <span class="dt">data =</span> gdf, </span>
 <span id="cb46-12"><a href="analysis-of-dalton-point-morphology.html#cb46-12"></a>                           <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
 <span id="cb46-13"><a href="analysis-of-dalton-point-morphology.html#cb46-13"></a>                           <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+</div>
+<div id="hypothesis-4" class="section level3">
+<h3><span class="header-section-number">2.5.4</span> Hypothesis 4</h3>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="analysis-of-dalton-point-morphology.html#cb47-1"></a><span class="co">## Define models</span></span>
+<span id="cb47-2"><a href="analysis-of-dalton-point-morphology.html#cb47-2"></a><span class="co"># size as a function of bev.2</span></span>
+<span id="cb47-3"><a href="analysis-of-dalton-point-morphology.html#cb47-3"></a>fit.size.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(size <span class="op">~</span><span class="st"> </span>bev<span class="fl">.2</span>, </span>
+<span id="cb47-4"><a href="analysis-of-dalton-point-morphology.html#cb47-4"></a>                          <span class="dt">data =</span> gdf, </span>
+<span id="cb47-5"><a href="analysis-of-dalton-point-morphology.html#cb47-5"></a>                          <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb47-6"><a href="analysis-of-dalton-point-morphology.html#cb47-6"></a>                          <span class="dt">iter =</span> <span class="dv">9999</span>)</span>
+<span id="cb47-7"><a href="analysis-of-dalton-point-morphology.html#cb47-7"></a></span>
+<span id="cb47-8"><a href="analysis-of-dalton-point-morphology.html#cb47-8"></a></span>
+<span id="cb47-9"><a href="analysis-of-dalton-point-morphology.html#cb47-9"></a><span class="co"># shape as a function of bev.2</span></span>
+<span id="cb47-10"><a href="analysis-of-dalton-point-morphology.html#cb47-10"></a>fit.shape.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>bev<span class="fl">.2</span>, </span>
+<span id="cb47-11"><a href="analysis-of-dalton-point-morphology.html#cb47-11"></a>                           <span class="dt">data =</span> gdf, </span>
+<span id="cb47-12"><a href="analysis-of-dalton-point-morphology.html#cb47-12"></a>                           <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb47-13"><a href="analysis-of-dalton-point-morphology.html#cb47-13"></a>                           <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="test-hypothesis-1" class="section level2">
 <h2><span class="header-section-number">2.6</span> Test Hypothesis 1</h2>
 <p>Hypothesis 1 assesses whether there is a difference in morphology for Dalton points found in and out of the heartland.</p>
 <p>A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs <span class="citation">(Adams and Collyer <a href="#ref-RN1655" role="doc-biblioref">2015</a>; Collyer and Adams <a href="#ref-RN11775" role="doc-biblioref">2018</a>)</span>, which has higher statistical power and a greater ability to identify patterns in the data should they be present <span class="citation">(Anderson and Ter Braak <a href="#ref-RN1719" role="doc-biblioref">2003</a>)</span>. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs <span class="citation">(Goodall <a href="#ref-RN1749" role="doc-biblioref">1991</a>)</span> were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions <span class="citation">(Collyer, Sekora, and Adams <a href="#ref-RN1756" role="doc-biblioref">2015</a>)</span>.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="analysis-of-dalton-point-morphology.html#cb47-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis1.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="analysis-of-dalton-point-morphology.html#cb48-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis1.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis1.jpg" alt="_**Figure 18. Hypothesis 1 considers whether Dalton points discovered in (left) and out (right) of the Heartland differ in morphology.**_" width="100%" />
 <p class="caption">
 (#fig:lm3d3.a1.h1)<em><strong>Figure 18. Hypothesis 1 considers whether Dalton points discovered in (left) and out (right) of the Heartland differ in morphology.</strong></em>
 </p>
 </div>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="analysis-of-dalton-point-morphology.html#cb48-1"></a><span class="co"># ANOVA: do dalton projectile point sizes differ by heart?</span></span>
-<span id="cb48-2"><a href="analysis-of-dalton-point-morphology.html#cb48-2"></a><span class="kw">anova</span>(fit.size.heart)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="analysis-of-dalton-point-morphology.html#cb49-1"></a><span class="co"># ANOVA: do dalton projectile point sizes differ by heart?</span></span>
+<span id="cb49-2"><a href="analysis-of-dalton-point-morphology.html#cb49-2"></a><span class="kw">anova</span>(fit.size.heart)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -786,8 +949,8 @@ Figure 2.5: Boxplot of centroid size by bevel type.
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = size ~ heart, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="analysis-of-dalton-point-morphology.html#cb50-1"></a><span class="co"># ANOVA: do dalton projectile point shapes differ by heart?</span></span>
-<span id="cb50-2"><a href="analysis-of-dalton-point-morphology.html#cb50-2"></a><span class="kw">anova</span>(fit.shape.heart)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="analysis-of-dalton-point-morphology.html#cb51-1"></a><span class="co"># ANOVA: do dalton projectile point shapes differ by heart?</span></span>
+<span id="cb51-2"><a href="analysis-of-dalton-point-morphology.html#cb51-2"></a><span class="kw">anova</span>(fit.shape.heart)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -809,15 +972,15 @@ Figure 2.5: Boxplot of centroid size by bevel type.
 <h2><span class="header-section-number">2.7</span> Test Hypothesis 2</h2>
 <p>Hypothesis 2 assesses whether there is a difference in morphology for Dalton points found in the heartland, the interior, and the northern periphery.</p>
 <p>A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs <span class="citation">(Adams and Collyer <a href="#ref-RN1655" role="doc-biblioref">2015</a>; Collyer and Adams <a href="#ref-RN11775" role="doc-biblioref">2018</a>)</span>, which has higher statistical power and a greater ability to identify patterns in the data should they be present <span class="citation">(Anderson and Ter Braak <a href="#ref-RN1719" role="doc-biblioref">2003</a>)</span>. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs <span class="citation">(Goodall <a href="#ref-RN1749" role="doc-biblioref">1991</a>)</span> were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions <span class="citation">(Collyer, Sekora, and Adams <a href="#ref-RN1756" role="doc-biblioref">2015</a>)</span>.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="analysis-of-dalton-point-morphology.html#cb52-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis2.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="analysis-of-dalton-point-morphology.html#cb53-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis2.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis2.jpg" alt="_**Figure 19. Hypothesis 2 considers whether Dalton points discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology.**_" width="100%" />
 <p class="caption">
 (#fig:lm3d3.a1.h2)<em><strong>Figure 19. Hypothesis 2 considers whether Dalton points discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology.</strong></em>
 </p>
 </div>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="analysis-of-dalton-point-morphology.html#cb53-1"></a><span class="co"># ANOVA: does dalton projectile point size differ by hreg?</span></span>
-<span id="cb53-2"><a href="analysis-of-dalton-point-morphology.html#cb53-2"></a><span class="kw">anova</span>(fit.size.hreg)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="analysis-of-dalton-point-morphology.html#cb54-1"></a><span class="co"># ANOVA: does dalton projectile point size differ by hreg?</span></span>
+<span id="cb54-2"><a href="analysis-of-dalton-point-morphology.html#cb54-2"></a><span class="kw">anova</span>(fit.size.hreg)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -834,12 +997,12 @@ Figure 2.5: Boxplot of centroid size by bevel type.
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = size ~ hreg, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="analysis-of-dalton-point-morphology.html#cb55-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
-<span id="cb55-2"><a href="analysis-of-dalton-point-morphology.html#cb55-2"></a>sz.hreg &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.size.hreg, </span>
-<span id="cb55-3"><a href="analysis-of-dalton-point-morphology.html#cb55-3"></a>                    <span class="dt">groups =</span> qdata<span class="op">$</span>heart.reg)</span>
-<span id="cb55-4"><a href="analysis-of-dalton-point-morphology.html#cb55-4"></a><span class="kw">summary</span>(sz.hreg, </span>
-<span id="cb55-5"><a href="analysis-of-dalton-point-morphology.html#cb55-5"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb55-6"><a href="analysis-of-dalton-point-morphology.html#cb55-6"></a>        <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="analysis-of-dalton-point-morphology.html#cb56-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
+<span id="cb56-2"><a href="analysis-of-dalton-point-morphology.html#cb56-2"></a>sz.hreg &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.size.hreg, </span>
+<span id="cb56-3"><a href="analysis-of-dalton-point-morphology.html#cb56-3"></a>                    <span class="dt">groups =</span> qdata<span class="op">$</span>heart.reg)</span>
+<span id="cb56-4"><a href="analysis-of-dalton-point-morphology.html#cb56-4"></a><span class="kw">summary</span>(sz.hreg, </span>
+<span id="cb56-5"><a href="analysis-of-dalton-point-morphology.html#cb56-5"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb56-6"><a href="analysis-of-dalton-point-morphology.html#cb56-6"></a>        <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -855,10 +1018,10 @@ Figure 2.5: Boxplot of centroid size by bevel type.
 ## H:I 18.142628  18.15233  1.9298847 0.0503
 ## H:P 21.968027  24.07614  1.6170807 0.0760
 ## I:P  3.825399  23.66874 -0.8365537 0.7575</code></pre>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="analysis-of-dalton-point-morphology.html#cb57-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
-<span id="cb57-2"><a href="analysis-of-dalton-point-morphology.html#cb57-2"></a><span class="kw">summary</span>(sz.hreg, </span>
-<span id="cb57-3"><a href="analysis-of-dalton-point-morphology.html#cb57-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb57-4"><a href="analysis-of-dalton-point-morphology.html#cb57-4"></a>        <span class="dt">test.type =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="analysis-of-dalton-point-morphology.html#cb58-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
+<span id="cb58-2"><a href="analysis-of-dalton-point-morphology.html#cb58-2"></a><span class="kw">summary</span>(sz.hreg, </span>
+<span id="cb58-3"><a href="analysis-of-dalton-point-morphology.html#cb58-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb58-4"><a href="analysis-of-dalton-point-morphology.html#cb58-4"></a>        <span class="dt">test.type =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -877,8 +1040,8 @@ Figure 2.5: Boxplot of centroid size by bevel type.
 ## H:I 105.73722  234.3821  0.10137213 0.3983
 ## H:P  31.96414  310.5803 -1.05245785 0.8554
 ## I:P 137.70136  301.5930  0.08975482 0.4094</code></pre>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="analysis-of-dalton-point-morphology.html#cb59-1"></a><span class="co"># ANOVA: does dalton projectile point shape differ by hreg?</span></span>
-<span id="cb59-2"><a href="analysis-of-dalton-point-morphology.html#cb59-2"></a><span class="kw">anova</span>(fit.shape.hreg)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="analysis-of-dalton-point-morphology.html#cb60-1"></a><span class="co"># ANOVA: does dalton projectile point shape differ by hreg?</span></span>
+<span id="cb60-2"><a href="analysis-of-dalton-point-morphology.html#cb60-2"></a><span class="kw">anova</span>(fit.shape.hreg)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -895,12 +1058,12 @@ Figure 2.5: Boxplot of centroid size by bevel type.
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = shape ~ hreg, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="analysis-of-dalton-point-morphology.html#cb61-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
-<span id="cb61-2"><a href="analysis-of-dalton-point-morphology.html#cb61-2"></a>sh.hreg &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.shape.hreg, </span>
-<span id="cb61-3"><a href="analysis-of-dalton-point-morphology.html#cb61-3"></a>                    <span class="dt">groups =</span> qdata<span class="op">$</span>heart.reg)</span>
-<span id="cb61-4"><a href="analysis-of-dalton-point-morphology.html#cb61-4"></a><span class="kw">summary</span>(sz.hreg, </span>
-<span id="cb61-5"><a href="analysis-of-dalton-point-morphology.html#cb61-5"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb61-6"><a href="analysis-of-dalton-point-morphology.html#cb61-6"></a>        <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="analysis-of-dalton-point-morphology.html#cb62-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
+<span id="cb62-2"><a href="analysis-of-dalton-point-morphology.html#cb62-2"></a>sh.hreg &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.shape.hreg, </span>
+<span id="cb62-3"><a href="analysis-of-dalton-point-morphology.html#cb62-3"></a>                    <span class="dt">groups =</span> qdata<span class="op">$</span>heart.reg)</span>
+<span id="cb62-4"><a href="analysis-of-dalton-point-morphology.html#cb62-4"></a><span class="kw">summary</span>(sz.hreg, </span>
+<span id="cb62-5"><a href="analysis-of-dalton-point-morphology.html#cb62-5"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb62-6"><a href="analysis-of-dalton-point-morphology.html#cb62-6"></a>        <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -916,10 +1079,10 @@ Figure 2.5: Boxplot of centroid size by bevel type.
 ## H:I 18.142628  18.15233  1.9298847 0.0503
 ## H:P 21.968027  24.07614  1.6170807 0.0760
 ## I:P  3.825399  23.66874 -0.8365537 0.7575</code></pre>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="analysis-of-dalton-point-morphology.html#cb63-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
-<span id="cb63-2"><a href="analysis-of-dalton-point-morphology.html#cb63-2"></a><span class="kw">summary</span>(sz.hreg, </span>
-<span id="cb63-3"><a href="analysis-of-dalton-point-morphology.html#cb63-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb63-4"><a href="analysis-of-dalton-point-morphology.html#cb63-4"></a>        <span class="dt">test.type =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="analysis-of-dalton-point-morphology.html#cb64-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
+<span id="cb64-2"><a href="analysis-of-dalton-point-morphology.html#cb64-2"></a><span class="kw">summary</span>(sz.hreg, </span>
+<span id="cb64-3"><a href="analysis-of-dalton-point-morphology.html#cb64-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb64-4"><a href="analysis-of-dalton-point-morphology.html#cb64-4"></a>        <span class="dt">test.type =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -943,15 +1106,15 @@ Figure 2.5: Boxplot of centroid size by bevel type.
 <h2><span class="header-section-number">2.8</span> Test Hypothesis 3</h2>
 <p>Hypothesis 3 assesses whether there is a discernible difference in morphology for Dalton points that are beveled.</p>
 <p>A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs <span class="citation">(Adams and Collyer <a href="#ref-RN1655" role="doc-biblioref">2015</a>; Collyer and Adams <a href="#ref-RN11775" role="doc-biblioref">2018</a>)</span>, which has higher statistical power and a greater ability to identify patterns in the data should they be present <span class="citation">(Anderson and Ter Braak <a href="#ref-RN1719" role="doc-biblioref">2003</a>)</span>. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs <span class="citation">(Goodall <a href="#ref-RN1749" role="doc-biblioref">1991</a>)</span> were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions <span class="citation">(Collyer, Sekora, and Adams <a href="#ref-RN1756" role="doc-biblioref">2015</a>)</span>.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="analysis-of-dalton-point-morphology.html#cb65-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis3.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="analysis-of-dalton-point-morphology.html#cb66-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis3.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis3.jpg" alt="_**Figure 20. Hypothesis 3 considers whether beveled Dalton points (left) differ in morphology from those that are not beveled (right).**_" width="100%" />
 <p class="caption">
 (#fig:lm3d3.a1.h3)<em><strong>Figure 20. Hypothesis 3 considers whether beveled Dalton points (left) differ in morphology from those that are not beveled (right).</strong></em>
 </p>
 </div>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="analysis-of-dalton-point-morphology.html#cb66-1"></a><span class="co"># ANOVA: do dalton projectile point sizes differ by beveling?</span></span>
-<span id="cb66-2"><a href="analysis-of-dalton-point-morphology.html#cb66-2"></a><span class="kw">anova</span>(fit.size.bev<span class="fl">.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="analysis-of-dalton-point-morphology.html#cb67-1"></a><span class="co"># ANOVA: do dalton projectile point sizes differ by beveling?</span></span>
+<span id="cb67-2"><a href="analysis-of-dalton-point-morphology.html#cb67-2"></a><span class="kw">anova</span>(fit.size.bev<span class="fl">.1</span>)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -968,8 +1131,8 @@ Figure 2.5: Boxplot of centroid size by bevel type.
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = size ~ bev.1, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="analysis-of-dalton-point-morphology.html#cb68-1"></a><span class="co"># ANOVA: do dalton projectile point shapes differ by beveling?</span></span>
-<span id="cb68-2"><a href="analysis-of-dalton-point-morphology.html#cb68-2"></a><span class="kw">anova</span>(fit.shape.bev<span class="fl">.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="analysis-of-dalton-point-morphology.html#cb69-1"></a><span class="co"># ANOVA: do dalton projectile point shapes differ by beveling?</span></span>
+<span id="cb69-2"><a href="analysis-of-dalton-point-morphology.html#cb69-2"></a><span class="kw">anova</span>(fit.shape.bev<span class="fl">.1</span>)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -989,8 +1152,8 @@ Figure 2.5: Boxplot of centroid size by bevel type.
 </div>
 <div id="test-hypothesis-4" class="section level2">
 <h2><span class="header-section-number">2.9</span> Test Hypothesis 4</h2>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="analysis-of-dalton-point-morphology.html#cb70-1"></a><span class="co"># ANOVA: does dalton projectile point size differ by bev.2?</span></span>
-<span id="cb70-2"><a href="analysis-of-dalton-point-morphology.html#cb70-2"></a><span class="kw">anova</span>(fit.size.bev<span class="fl">.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="analysis-of-dalton-point-morphology.html#cb71-1"></a><span class="co"># ANOVA: does dalton projectile point size differ by bev.2?</span></span>
+<span id="cb71-2"><a href="analysis-of-dalton-point-morphology.html#cb71-2"></a><span class="kw">anova</span>(fit.size.bev<span class="fl">.2</span>)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1007,12 +1170,12 @@ Figure 2.5: Boxplot of centroid size by bevel type.
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = size ~ bev.2, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="analysis-of-dalton-point-morphology.html#cb72-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
-<span id="cb72-2"><a href="analysis-of-dalton-point-morphology.html#cb72-2"></a>sz.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.size.bev<span class="fl">.2</span>, </span>
-<span id="cb72-3"><a href="analysis-of-dalton-point-morphology.html#cb72-3"></a>                    <span class="dt">groups =</span> qdata<span class="op">$</span>bev.type)</span>
-<span id="cb72-4"><a href="analysis-of-dalton-point-morphology.html#cb72-4"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
-<span id="cb72-5"><a href="analysis-of-dalton-point-morphology.html#cb72-5"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb72-6"><a href="analysis-of-dalton-point-morphology.html#cb72-6"></a>        <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="analysis-of-dalton-point-morphology.html#cb73-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
+<span id="cb73-2"><a href="analysis-of-dalton-point-morphology.html#cb73-2"></a>sz.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.size.bev<span class="fl">.2</span>, </span>
+<span id="cb73-3"><a href="analysis-of-dalton-point-morphology.html#cb73-3"></a>                    <span class="dt">groups =</span> qdata<span class="op">$</span>bev.type)</span>
+<span id="cb73-4"><a href="analysis-of-dalton-point-morphology.html#cb73-4"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
+<span id="cb73-5"><a href="analysis-of-dalton-point-morphology.html#cb73-5"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb73-6"><a href="analysis-of-dalton-point-morphology.html#cb73-6"></a>        <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -1028,10 +1191,10 @@ Figure 2.5: Boxplot of centroid size by bevel type.
 ## alternate:no.bevel             22.518820  17.65279  2.8119002 0.0090
 ## alternate:unifacial.bimarginal 17.249329  28.08042  0.6376581 0.2508
 ## no.bevel:unifacial.bimarginal   5.269491  27.68019 -0.7286631 0.7086</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="analysis-of-dalton-point-morphology.html#cb74-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
-<span id="cb74-2"><a href="analysis-of-dalton-point-morphology.html#cb74-2"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
-<span id="cb74-3"><a href="analysis-of-dalton-point-morphology.html#cb74-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb74-4"><a href="analysis-of-dalton-point-morphology.html#cb74-4"></a>        <span class="dt">test.type =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="analysis-of-dalton-point-morphology.html#cb75-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
+<span id="cb75-2"><a href="analysis-of-dalton-point-morphology.html#cb75-2"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
+<span id="cb75-3"><a href="analysis-of-dalton-point-morphology.html#cb75-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb75-4"><a href="analysis-of-dalton-point-morphology.html#cb75-4"></a>        <span class="dt">test.type =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -1050,8 +1213,8 @@ Figure 2.5: Boxplot of centroid size by bevel type.
 ## alternate:no.bevel              33.12899  211.8927 -0.8457345 0.7677
 ## alternate:unifacial.bimarginal 229.12065  329.3559  0.8464656 0.2025
 ## no.bevel:unifacial.bimarginal  195.99167  316.7426  0.5636644 0.2819</code></pre>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="analysis-of-dalton-point-morphology.html#cb76-1"></a><span class="co"># ANOVA: does dalton projectile point shape differ by bev.2?</span></span>
-<span id="cb76-2"><a href="analysis-of-dalton-point-morphology.html#cb76-2"></a><span class="kw">anova</span>(fit.shape.bev<span class="fl">.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="analysis-of-dalton-point-morphology.html#cb77-1"></a><span class="co"># ANOVA: does dalton projectile point shape differ by bev.2?</span></span>
+<span id="cb77-2"><a href="analysis-of-dalton-point-morphology.html#cb77-2"></a><span class="kw">anova</span>(fit.shape.bev<span class="fl">.2</span>)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1068,12 +1231,12 @@ Figure 2.5: Boxplot of centroid size by bevel type.
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = shape ~ bev.2, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="analysis-of-dalton-point-morphology.html#cb78-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
-<span id="cb78-2"><a href="analysis-of-dalton-point-morphology.html#cb78-2"></a>sh.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.shape.bev<span class="fl">.2</span>, </span>
-<span id="cb78-3"><a href="analysis-of-dalton-point-morphology.html#cb78-3"></a>                    <span class="dt">groups =</span> qdata<span class="op">$</span>bev.type)</span>
-<span id="cb78-4"><a href="analysis-of-dalton-point-morphology.html#cb78-4"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
-<span id="cb78-5"><a href="analysis-of-dalton-point-morphology.html#cb78-5"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb78-6"><a href="analysis-of-dalton-point-morphology.html#cb78-6"></a>        <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="analysis-of-dalton-point-morphology.html#cb79-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
+<span id="cb79-2"><a href="analysis-of-dalton-point-morphology.html#cb79-2"></a>sh.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.shape.bev<span class="fl">.2</span>, </span>
+<span id="cb79-3"><a href="analysis-of-dalton-point-morphology.html#cb79-3"></a>                    <span class="dt">groups =</span> qdata<span class="op">$</span>bev.type)</span>
+<span id="cb79-4"><a href="analysis-of-dalton-point-morphology.html#cb79-4"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
+<span id="cb79-5"><a href="analysis-of-dalton-point-morphology.html#cb79-5"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb79-6"><a href="analysis-of-dalton-point-morphology.html#cb79-6"></a>        <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -1089,10 +1252,10 @@ Figure 2.5: Boxplot of centroid size by bevel type.
 ## alternate:no.bevel             22.518820  17.65279  2.8119002 0.0090
 ## alternate:unifacial.bimarginal 17.249329  28.08042  0.6376581 0.2508
 ## no.bevel:unifacial.bimarginal   5.269491  27.68019 -0.7286631 0.7086</code></pre>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="analysis-of-dalton-point-morphology.html#cb80-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
-<span id="cb80-2"><a href="analysis-of-dalton-point-morphology.html#cb80-2"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
-<span id="cb80-3"><a href="analysis-of-dalton-point-morphology.html#cb80-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb80-4"><a href="analysis-of-dalton-point-morphology.html#cb80-4"></a>        <span class="dt">test.type =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="analysis-of-dalton-point-morphology.html#cb81-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
+<span id="cb81-2"><a href="analysis-of-dalton-point-morphology.html#cb81-2"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
+<span id="cb81-3"><a href="analysis-of-dalton-point-morphology.html#cb81-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb81-4"><a href="analysis-of-dalton-point-morphology.html#cb81-4"></a>        <span class="dt">test.type =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
