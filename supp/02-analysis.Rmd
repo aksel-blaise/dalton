@@ -75,42 +75,46 @@ bev.2 <- qdata$bev.type # type of beveling
 
 ```{r box1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by Heartland (in/out)."}
 # boxplot of Dalton point centroid size by in/out heartland
-boxplot(csz~heart,
+b1 <- boxplot(csz~heart,
         names = c("H","N"), # heartland (H), and not heartland (N)
         xlab = "Heartland",
         ylab = "Centroid Size",
         col = wes_palette("Moonrise2"),
         )
+b1
 ```
 
 ```{r box2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by Heartland region."}
 # boxplot of Dalton point centroid size by heartland + regions
-boxplot(csz~hreg,
+b2 <- boxplot(csz~hreg,
         names = c("H","I","P"), # heartland (H), interior (I), and northern periphery (P)
         xlab = "Heartland Region",
         ylab = "Centroid Size",
-        col = wes_palette("Moonrise2"),
+        col = wes_palette("Moonrise2")
         )
+b2
 ```
 
 ```{r box3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by beveled."}
 # boxplot of Dalton point centroid size by beveled y/n
-boxplot(csz~bev.1,
+b3 <- boxplot(csz~bev.1,
         names = c("y","n"), # yes/no
         xlab = "Beveled?",
         ylab = "Centroid Size",
-        col = wes_palette("Moonrise2"),
+        col = wes_palette("Moonrise2")
         )
+b3
 ```
 
 ```{r box4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by bevel type."}
 # boxplot of Dalton point centroid size by bevel type
-boxplot(csz~bev.2,
-        names = c("alternate","unifacial.bimarginal","no.bevel"), # bevel type/no bevel
+b4 <- boxplot(csz~bev.2,
+        names = c("alternate","no.bevel","unifacial.bimarginal"), # bevel type/no bevel
         xlab = "Beveled Type",
         ylab = "Centroid Size",
         col = wes_palette("Moonrise2"),
         )
+b4
 ```
 
 ## Principal Components Analysis
