@@ -104,10 +104,10 @@ boxplot(csz~bev.1,
 ```
 
 ```{r box4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by bevel type."}
-# boxplot of Dalton point centroid size by beveled y/n
+# boxplot of Dalton point centroid size by bevel type
 boxplot(csz~bev.2,
         names = c("alternate","unifacial.bimarginal","no.bevel"), # bevel type/no bevel
-        xlab = "Beveled?",
+        xlab = "Beveled Type",
         ylab = "Centroid Size",
         col = wes_palette("Moonrise2"),
         )
