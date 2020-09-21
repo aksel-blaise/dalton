@@ -1,5 +1,9 @@
 # Elliptic Fourier Analysis
 
+Prior to running the full 3D geometric morphometric (3DGM) analysis, an elliptic Fourier analysis was conducted to identify differences in Dalton projectile point shape in plan view. These data inform the subsequent landmarking protocol used in the 3DGM analysis.
+
+Those 2D images (jpegs) used in the EFA were generated as screen captures of the 3D dataset, and are oriented with the same base alignment. Each image was masked using Photoshop to render a binary (black/white) image.
+
 ## Load packages + data
 
 ```{r load.packages, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
@@ -37,13 +41,16 @@ norm.outlines <- data.out %>%
 
 ```{r stack.panel, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # outline stack
-stack(norm.outlines)
+pile(norm.outlines)
 
-# panels
-par(mfrow = c(2,2))
+# mosaics
+# in/out of heartland
 mosaic(data.out, ~heart.out, asp = 1, palette = pal_qual_Dark2)
+# heartland regions (heartland, interior, and northern periphery)
 mosaic(data.out, ~heart.reg, asp = 1, palette = pal_qual_Dark2)
+# beveled or not
 mosaic(data.out, ~bev, asp = 1, palette = pal_qual_Dark2)
+# bevel type
 mosaic(data.out, ~bev.type, asp = 1, palette = pal_qual_Dark2)
 ```
 
@@ -51,7 +58,7 @@ mosaic(data.out, ~bev.type, asp = 1, palette = pal_qual_Dark2)
 
 ```{r cal.harm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 
-calibrate_harmonicpower_efourier(norm.outlines)
+calibrate_harmonicpower_efourier(norm.outlines, nb.h = 20)
 calibrate_reconstructions_efourier(norm.outlines, range = 1:10) #10 harmonics
 
 efa.outlines <- efourier(norm.outlines, nb.h = 10, norm = TRUE)
@@ -66,10 +73,13 @@ pca.outlines <- PCA(efa.outlines)
 scree_plot(pca.outlines)
 
 # plot pca
-par(mfrow = c(2,2))
+# heartland in/out
 plot_PCA(pca.outlines, morphospace_position = "range", ~heart.out, palette = pal_qual_Dark2)
+# heartland region
 plot_PCA(pca.outlines, morphospace_position = "range", ~heart.reg, palette = pal_qual_Dark2)
+# beveled or not
 plot_PCA(pca.outlines, morphospace_position = "range", ~bev, palette = pal_qual_Dark2)
+# bevel type
 plot_PCA(pca.outlines, morphospace_position = "range", ~bev.type, palette = pal_qual_Dark2)
 
 # contribution of each pc
@@ -96,40 +106,26 @@ MANOVA_PW(pca.outlines, 'bev.type')
 
 ## Mean shapes
 
-```{r ms1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for in (green) and out (maroon) of the heartland."}
+```{r ms1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for in (H) and out (N) of the heartland."}
 # mean shapes
-ms.heart <- MSHAPES(efa.outlines, 'heart.out')
-ms.heart$Coe
-msh <- ms.heart$shp
-coo_plot(msh$H, border = 'forestgreen')
-coo_draw(msh$N, border = 'firebrick4')
+ms.1 <- MSHAPES(efa.outlines, ~heart.out)
+plot_MSHAPES(ms.1, size = 0.75)
 ```
 
-```{r ms2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for heartland (green), interior (black), and northern periphery (maroon)."}
+```{r ms2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for heartland (H), interior (I), and northern periphery (P)."}
 # mean shapes
-ms.hreg <- MSHAPES(efa.outlines, 'heart.reg', FUN = mean)
-ms.hreg$Coe
-mshr <- ms.hreg$shp
-coo_plot(mshr$H, border = 'forestgreen')
-coo_draw(mshr$I)
-coo_draw(mshr$P, border = 'firebrick4')
+ms.2 <- MSHAPES(efa.outlines, ~heart.reg)
+plot_MSHAPES(ms.2, size = 0.75)
 ```
 
-```{r ms3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for alternate (green),  and not beveled (maroon)."}
+```{r ms3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for beveled (y), and not beveled (n)."}
 # mean shapes
-ms.bev <- MSHAPES(efa.outlines, 'bev', FUN = mean)
-ms.bev$Coe
-msb <- ms.bev$shp
-coo_plot(msb$y, border = 'forestgreen')
-coo_draw(msb$n, border = 'firebrick4')
+ms.3 <- MSHAPES(efa.outlines, ~bev)
+plot_MSHAPES(ms.3, size = 0.75)
 ```
 
-```{r ms4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes by bevel type: alternate (green), unifacial bimarginal (black), and not beveled (maroon)."}
+```{r ms4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for alternate, unifacial.bimarginal, and no.bevel."}
 # mean shapes
-ms.bevt <- MSHAPES(efa.outlines, 'bev.type', FUN = mean)
-ms.bevt$Coe
-msbt <- ms.bevt$shp
-coo_plot(msbt$alternate, border = 'forestgreen')
-coo_draw(msbt$unifacial.bimarginal)
-coo_draw(msbt$no.bevel, border = 'firebrick4')
+ms.4 <- MSHAPES(efa.outlines, ~bev.type)
+plot_MSHAPES(ms.4, size = 0.75)
 ```

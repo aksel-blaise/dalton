@@ -209,6 +209,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="elliptic-fourier-analysis" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Elliptic Fourier Analysis</h1>
+<p>Prior to running the full 3D geometric morphometric (3DGM) analysis, an elliptic Fourier analysis was conducted to identify differences in Dalton projectile point shape in plan view. These data inform the subsequent landmarking protocol used in the 3DGM analysis.</p>
+<p>Those 2D images (jpegs) used in the EFA were generated as screen captures of the 3D dataset, and are oriented with the same base alignment. Each image was masked using Photoshop to render a binary (black/white) image.</p>
 <div id="load-packages-data" class="section level2">
 <h2><span class="header-section-number">1.1</span> Load packages + data</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="elliptic-fourier-analysis.html#cb1-1"></a><span class="co"># load packages</span></span>
@@ -276,7 +278,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [ 43 / 45 ]  Welton4.jpg
 ## [ 44 / 45 ]  Welton5.jpg
 ## [ 45 / 45 ]  Welton6.jpg</code></pre>
-<pre><code>## Done in 6.7 secs</code></pre>
+<pre><code>## Done in 4.5 secs</code></pre>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="elliptic-fourier-analysis.html#cb6-1"></a>data.out &lt;-<span class="st"> </span><span class="kw">Out</span>(outlines, </span>
 <span id="cb6-2"><a href="elliptic-fourier-analysis.html#cb6-2"></a>         <span class="dt">fac =</span> att.data)</span>
 <span id="cb6-3"><a href="elliptic-fourier-analysis.html#cb6-3"></a></span>
@@ -287,213 +289,226 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="stack-and-panels" class="section level2">
 <h2><span class="header-section-number">1.3</span> Stack and panels</h2>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="elliptic-fourier-analysis.html#cb7-1"></a><span class="co"># outline stack</span></span>
-<span id="cb7-2"><a href="elliptic-fourier-analysis.html#cb7-2"></a><span class="kw">stack</span>(norm.outlines)</span></code></pre></div>
-<pre><code>## will soon be deprecated, see ?pile</code></pre>
+<span id="cb7-2"><a href="elliptic-fourier-analysis.html#cb7-2"></a><span class="kw">pile</span>(norm.outlines)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/stack.panel-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="elliptic-fourier-analysis.html#cb9-1"></a><span class="co"># panels</span></span>
-<span id="cb9-2"><a href="elliptic-fourier-analysis.html#cb9-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
-<span id="cb9-3"><a href="elliptic-fourier-analysis.html#cb9-3"></a><span class="kw">mosaic</span>(data.out, <span class="op">~</span>heart.out, <span class="dt">asp =</span> <span class="dv">1</span>, <span class="dt">palette =</span> pal_qual_Dark2)</span>
-<span id="cb9-4"><a href="elliptic-fourier-analysis.html#cb9-4"></a><span class="kw">mosaic</span>(data.out, <span class="op">~</span>heart.reg, <span class="dt">asp =</span> <span class="dv">1</span>, <span class="dt">palette =</span> pal_qual_Dark2)</span>
-<span id="cb9-5"><a href="elliptic-fourier-analysis.html#cb9-5"></a><span class="kw">mosaic</span>(data.out, <span class="op">~</span>bev, <span class="dt">asp =</span> <span class="dv">1</span>, <span class="dt">palette =</span> pal_qual_Dark2)</span>
-<span id="cb9-6"><a href="elliptic-fourier-analysis.html#cb9-6"></a><span class="kw">mosaic</span>(data.out, <span class="op">~</span>bev.type, <span class="dt">asp =</span> <span class="dv">1</span>, <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="elliptic-fourier-analysis.html#cb8-1"></a><span class="co"># mosaics</span></span>
+<span id="cb8-2"><a href="elliptic-fourier-analysis.html#cb8-2"></a><span class="co"># in/out of heartland</span></span>
+<span id="cb8-3"><a href="elliptic-fourier-analysis.html#cb8-3"></a><span class="kw">mosaic</span>(data.out, <span class="op">~</span>heart.out, <span class="dt">asp =</span> <span class="dv">1</span>, <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/stack.panel-2.png" width="100%" /></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="elliptic-fourier-analysis.html#cb9-1"></a><span class="co"># heartland regions (heartland, interior, and northern periphery)</span></span>
+<span id="cb9-2"><a href="elliptic-fourier-analysis.html#cb9-2"></a><span class="kw">mosaic</span>(data.out, <span class="op">~</span>heart.reg, <span class="dt">asp =</span> <span class="dv">1</span>, <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/stack.panel-3.png" width="100%" /></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="elliptic-fourier-analysis.html#cb10-1"></a><span class="co"># beveled or not</span></span>
+<span id="cb10-2"><a href="elliptic-fourier-analysis.html#cb10-2"></a><span class="kw">mosaic</span>(data.out, <span class="op">~</span>bev, <span class="dt">asp =</span> <span class="dv">1</span>, <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/stack.panel-4.png" width="100%" /></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="elliptic-fourier-analysis.html#cb11-1"></a><span class="co"># bevel type</span></span>
+<span id="cb11-2"><a href="elliptic-fourier-analysis.html#cb11-2"></a><span class="kw">mosaic</span>(data.out, <span class="op">~</span>bev.type, <span class="dt">asp =</span> <span class="dv">1</span>, <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/stack.panel-5.png" width="100%" /></p>
 </div>
 <div id="calibrate-harmonic-efa" class="section level2">
 <h2><span class="header-section-number">1.4</span> Calibrate harmonic + EFA</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="elliptic-fourier-analysis.html#cb10-1"></a><span class="kw">calibrate_harmonicpower_efourier</span>(norm.outlines)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="elliptic-fourier-analysis.html#cb12-1"></a><span class="kw">calibrate_harmonicpower_efourier</span>(norm.outlines, <span class="dt">nb.h =</span> <span class="dv">20</span>)</span></code></pre></div>
 <pre><code>## $gg</code></pre>
 <p><img src="dalton.supp_files/figure-html/cal.harm-1.png" width="100%" /></p>
 <pre><code>## 
 ## $q
 ##                                  h1       h2       h3       h4       h5       h6       h7       h8       h9
-## 11AI225                    65.76904 71.47028 90.94189 93.25239 97.79672 97.99095 98.40472 98.87328 98.93888
-## 11HE445                    31.66941 67.90523 87.64311 90.25066 96.67793 97.34122 98.72999 99.00600 99.05095
+## 11AI225                    65.85908 71.56834 91.06827 93.38305 97.93433 98.12907 98.54328 99.01252 99.07841
+## 11HE445                    31.71380 68.00042 87.76597 90.37718 96.81345 97.47767 98.86839 99.14479 99.18980
+## HK49_1462                  54.77031 83.17790 94.41895 95.35329 98.43893 98.65503 99.30013 99.43902 99.47831
+## HK49_2                     71.50329 83.31028 94.41132 95.49433 97.87996 98.57595 98.98002 99.25857 99.52727
+## HK49_3022                  48.39494 79.30088 90.31980 91.90675 95.50910 96.02254 98.26328 98.88060 99.07661
+## HK49_3823                  41.02266 81.71531 90.90259 92.09555 96.59107 96.90104 98.73089 99.07067 99.55885
+## HK49_4                     51.06059 76.17592 89.59546 90.70925 95.32511 96.59638 98.24941 98.69573 98.77843
+## HK49_5928                  52.37516 93.35387 94.97209 95.02615 98.28995 98.73472 99.10547 99.23040 99.65007
+## HK49_5961                  62.96163 83.49033 93.61738 94.31914 97.28153 97.63356 98.66096 98.86936 99.04765
+## HK49_7                     63.54297 76.16877 91.15774 93.68197 98.02700 98.25801 99.02253 99.11723 99.34876
+## Keil-Mangold3              36.92348 77.42257 88.46542 89.06440 95.29969 96.22379 98.11702 98.28659 99.26402
+## KeilMangold10              30.66085 81.18734 90.68406 91.78727 96.26064 96.53226 97.99246 98.08294 98.77661
+## KeilMangold13              37.11521 74.05227 85.03287 86.39464 93.96513 95.30306 98.31182 98.48662 99.32247
+## KeilMangold14              29.04780 84.09499 89.58838 91.71462 95.52528 96.22420 98.00602 98.18528 99.06264
+## KeilMangold17              42.47902 74.47388 87.70073 88.72376 95.49248 96.71112 98.63372 98.67051 99.09769
+## KeilMangold24              34.60233 65.07349 85.49001 88.26197 95.70266 96.02241 98.89177 98.94385 99.14781
+## KeilMangold42              32.04287 61.81458 83.29544 87.14419 95.01931 95.80262 98.49166 98.84542 99.28779
+## KeilMangold64              42.93900 78.52855 87.93326 89.21172 95.08793 95.53587 98.25528 98.52489 99.44268
+## KeilMangold8               34.83942 74.13054 88.24788 91.03793 95.68828 96.28801 98.13136 98.41405 99.00932
+## KeilMangold90              42.81487 90.79557 95.39600 95.98156 98.37536 98.46630 99.44468 99.46978 99.74061
+## Kinzer46                   70.33790 79.02209 95.51880 97.01168 98.66173 98.94227 98.96786 99.56643 99.64917
+## Kinzer49                   59.31487 84.47910 95.25888 95.77987 97.99347 98.38394 98.77454 99.15880 99.23428
+## Kinzer50                   65.44184 84.99214 94.95731 95.33941 98.10893 98.46743 99.18040 99.37676 99.45718
+## Leprechaun11MS1983FSI800-5 41.50553 74.62689 84.36269 85.94567 90.78311 92.21101 95.59745 96.42852 98.14350
+## MA1699p1                   45.90440 72.96551 86.20258 88.58088 95.29469 95.89919 98.25385 98.60495 99.16375
+## MA1699p3                   40.00252 53.13164 78.18449 81.89398 93.54727 95.27500 98.41191 98.67541 99.06007
+## McL4_158                   62.10878 83.85781 92.41304 92.51768 96.82901 98.34804 98.76789 99.38597 99.70625
+## McL4_614                   42.73570 81.65149 91.05945 93.72356 97.08052 97.13061 99.00538 99.23101 99.74212
+## McL7_101                   52.69355 82.35807 93.29284 93.35288 97.29253 98.25765 98.85622 99.12916 99.20004
+## McL7_168                   57.53115 79.39151 93.24306 94.56819 98.28313 98.62874 99.09836 99.27519 99.29297
+## Nochta11MS128BFSI267-1     62.71156 83.26033 91.42871 92.25802 97.91593 98.46809 99.32012 99.35164 99.64799
+## Nochta11MS128bFSIPP1001    59.32746 81.74062 91.75299 92.60223 97.31183 97.81025 99.31377 99.37977 99.63628
+## Nochta11MS128BFSIPP2495    63.65100 69.73261 93.03348 95.00499 98.45445 98.70157 98.80832 99.25433 99.46432
+## Nochta11MS128BFSIPP3305    50.62463 56.18438 88.60695 88.86063 97.18311 97.75743 98.06819 98.71883 98.92568
+## Nochta11MS12BFIS800-168    42.97063 63.97628 84.15762 87.29134 95.31437 96.20255 98.45093 98.88566 99.23521
+## OH1_176                    65.24696 81.99938 93.93475 94.61611 97.50530 97.82201 98.55653 98.73204 99.11266
+## ReedVoss2                  45.55421 71.69262 87.23360 88.63422 96.09138 96.78253 98.57354 98.81740 99.20475
+## TR10_19                    53.56373 81.55262 91.63256 92.65051 97.52262 97.81025 98.64173 99.01780 99.41266
+## TR10_4                     61.92913 73.31379 94.02994 95.84468 98.68984 98.81733 98.86542 99.50520 99.62770
+## Welton1                    11.39291 77.05020 85.52808 91.48072 95.32411 95.89848 97.94971 98.17442 99.26838
+## Welton2                    67.61736 86.49242 94.60502 94.95758 97.79397 97.91220 98.95367 99.21988 99.46104
+## Welton3                    33.95774 81.90709 89.18768 91.15808 95.58114 96.05185 98.17714 98.30586 99.33863
+## Welton4                    33.90037 84.13558 91.37781 92.67638 96.78332 97.41759 99.03729 99.14366 99.63979
+## Welton5                    19.96734 79.21885 86.69763 91.04814 94.68065 95.43068 97.09599 97.22612 98.27772
+## Welton6                    43.90564 66.07756 75.97847 77.94012 83.05639 86.56435 91.55629 93.35972 96.62547
 ##                                 h10      h11      h12      h13      h14      h15      h16      h17      h18
-## 11AI225                    99.34035 99.52850 99.56479 99.68341 99.75225 99.81241 99.82872 99.83903 99.85432
-## 11HE445                    99.33530 99.39369 99.60894 99.69180 99.72818 99.75081 99.75791 99.82529 99.84558
-##                                 h19      h20      h21      h22      h23      h24      h25      h26      h27
-## 11AI225                    99.85917 99.89730 99.90229 99.90496 99.91404 99.91466 99.91878 99.92349 99.92641
-## 11HE445                    99.86002 99.86465 99.87880 99.88311 99.89611 99.90364 99.91052 99.91746 99.92106
-##                                 h28      h29      h30      h31      h32      h33      h34      h35      h36
-## 11AI225                    99.92799 99.92868 99.93842 99.93901 99.94263 99.94864 99.95333 99.96133 99.96349
-## 11HE445                    99.92930 99.93138 99.93316 99.93779 99.93833 99.94076 99.94169 99.94642 99.95258
-##                                 h37      h38      h39      h40      h41      h42      h43      h44      h45
-## 11AI225                    99.96511 99.96589 99.96662 99.96780 99.97071 99.97238 99.97287 99.97390 99.97457
-## 11HE445                    99.95518 99.95681 99.95791 99.95959 99.95996 99.96115 99.96174 99.96265 99.96314
-##                                 h46      h47      h48      h49      h50      h51      h52      h53      h54
-## 11AI225                    99.97533 99.97628 99.97667 99.97710 99.97753 99.97817 99.97857 99.97885 99.98002
-## 11HE445                    99.96377 99.96602 99.96718 99.96924 99.97069 99.97265 99.97396 99.97430 99.97518
-##                                 h55      h56      h57      h58      h59      h60      h61      h62      h63
-## 11AI225                    99.98050 99.98116 99.98251 99.98315 99.98443 99.98463 99.98496 99.98507 99.98527
-## 11HE445                    99.97674 99.97705 99.97771 99.97995 99.98148 99.98227 99.98344 99.98451 99.98477
-##                                 h64      h65      h66      h67      h68      h69      h70      h71      h72
-## 11AI225                    99.98562 99.98593 99.98628 99.98650 99.98673 99.98695 99.98718 99.98752 99.98785
-## 11HE445                    99.98524 99.98566 99.98627 99.98646 99.98660 99.98663 99.98672 99.98767 99.98782
-##                                 h73      h74      h75      h76      h77      h78      h79      h80      h81
-## 11AI225                    99.98802 99.98818 99.98841 99.98849 99.98883 99.98887 99.98937 99.98958 99.98978
-## 11HE445                    99.98795 99.98803 99.98838 99.98857 99.98869 99.98878 99.98886 99.98898 99.98913
-##                                 h82      h83      h84      h85      h86      h87      h88      h89      h90
-## 11AI225                    99.98991 99.98996 99.99007 99.99023 99.99046 99.99059 99.99081 99.99090 99.99107
-## 11HE445                    99.98936 99.98939 99.98947 99.98981 99.99029 99.99033 99.99050 99.99060 99.99079
-##                                 h91      h92      h93      h94      h95      h96      h97      h98      h99
-## 11AI225                    99.99115 99.99123 99.99132 99.99145 99.99153 99.99163 99.99169 99.99185 99.99191
-## 11HE445                    99.99096 99.99107 99.99119 99.99133 99.99136 99.99161 99.99173 99.99180 99.99217
-##                                h100     h101     h102     h103     h104     h105     h106     h107     h108
-## 11AI225                    99.99193 99.99198 99.99199 99.99214 99.99215 99.99216 99.99217 99.99222 99.99243
-## 11HE445                    99.99232 99.99240 99.99241 99.99247 99.99251 99.99254 99.99269 99.99277 99.99290
-##                                h109     h110     h111     h112     h113     h114     h115     h116     h117
-## 11AI225                    99.99247 99.99255 99.99260 99.99265 99.99274 99.99301 99.99309 99.99317 99.99319
-## 11HE445                    99.99296 99.99296 99.99298 99.99299 99.99309 99.99318 99.99328 99.99333 99.99357
-##                                h118     h119     h120     h121     h122     h123     h124     h125     h126
-## 11AI225                    99.99332 99.99337 99.99343 99.99352 99.99354 99.99364 99.99366 99.99368 99.99380
-## 11HE445                    99.99369 99.99372 99.99384 99.99392 99.99395 99.99405 99.99420 99.99425 99.99433
-##                                h127     h128     h129     h130     h131     h132     h133     h134     h135
-## 11AI225                    99.99384 99.99391 99.99392 99.99396 99.99404 99.99408 99.99412 99.99413 99.99418
-## 11HE445                    99.99451 99.99458 99.99463 99.99468 99.99474 99.99486 99.99494 99.99499 99.99505
-##                                h136     h137     h138     h139     h140     h141     h142     h143     h144
-## 11AI225                    99.99421 99.99424 99.99430 99.99430 99.99434 99.99437 99.99440 99.99443 99.99443
-## 11HE445                    99.99523 99.99527 99.99529 99.99539 99.99554 99.99555 99.99557 99.99558 99.99558
-##                                h145     h146     h147     h148     h149     h150     h151     h152     h153
-## 11AI225                    99.99447 99.99453 99.99453 99.99460 99.99464 99.99490 99.99495 99.99504 99.99511
-## 11HE445                    99.99560 99.99566 99.99572 99.99573 99.99575 99.99580 99.99581 99.99587 99.99589
-##                                h154     h155     h156     h157     h158     h159     h160     h161     h162
-## 11AI225                    99.99512 99.99516 99.99520 99.99522 99.99529 99.99532 99.99537 99.99540 99.99545
-## 11HE445                    99.99595 99.99604 99.99616 99.99621 99.99625 99.99627 99.99629 99.99630 99.99631
-##                                h163     h164     h165     h166     h167     h168     h169     h170     h171
-## 11AI225                    99.99547 99.99549 99.99550 99.99555 99.99557 99.99562 99.99562 99.99563 99.99567
-## 11HE445                    99.99634 99.99635 99.99635 99.99636 99.99637 99.99638 99.99643 99.99647 99.99648
-##                                h172     h173     h174     h175     h176     h177     h178     h179     h180
-## 11AI225                    99.99572 99.99574 99.99577 99.99585 99.99587 99.99587 99.99589 99.99591 99.99594
-## 11HE445                    99.99649 99.99651 99.99655 99.99660 99.99660 99.99662 99.99668 99.99674 99.99677
-##                                h181     h182     h183     h184     h185     h186     h187     h188     h189
-## 11AI225                    99.99598 99.99601 99.99608 99.99610 99.99612 99.99614 99.99616 99.99619 99.99621
-## 11HE445                    99.99680 99.99681 99.99683 99.99684 99.99686 99.99689 99.99691 99.99701 99.99705
-##                                h190     h191     h192     h193     h194     h195     h196     h197     h198
-## 11AI225                    99.99624 99.99625 99.99628 99.99629 99.99631 99.99634 99.99637 99.99637 99.99637
-## 11HE445                    99.99709 99.99710 99.99712 99.99714 99.99717 99.99718 99.99719 99.99721 99.99725
-##                                h199     h200     h201     h202     h203     h204     h205     h206     h207
-## 11AI225                    99.99638 99.99642 99.99643 99.99646 99.99647 99.99648 99.99648 99.99655 99.99660
-## 11HE445                    99.99728 99.99728 99.99729 99.99729 99.99731 99.99732 99.99736 99.99737 99.99738
-##                                h208     h209     h210     h211     h212     h213     h214     h215     h216
-## 11AI225                    99.99665 99.99669 99.99670 99.99677 99.99677 99.99678 99.99682 99.99685 99.99687
-## 11HE445                    99.99739 99.99740 99.99741 99.99743 99.99744 99.99744 99.99745 99.99748 99.99748
-##                                h217     h218     h219     h220     h221     h222     h223     h224     h225
-## 11AI225                    99.99694 99.99697 99.99698 99.99699 99.99709 99.99710 99.99714 99.99717 99.99720
-## 11HE445                    99.99750 99.99752 99.99752 99.99754 99.99756 99.99758 99.99760 99.99768 99.99772
-##                                h226     h227     h228     h229     h230     h231     h232     h233     h234
-## 11AI225                    99.99727 99.99731 99.99732 99.99737 99.99739 99.99740 99.99741 99.99750 99.99752
-## 11HE445                    99.99774 99.99775 99.99777 99.99779 99.99781 99.99782 99.99783 99.99786 99.99791
-##                                h235     h236     h237     h238     h239     h240     h241     h242     h243
-## 11AI225                    99.99755 99.99756 99.99757 99.99759 99.99759 99.99762 99.99766 99.99769 99.99770
-## 11HE445                    99.99795 99.99799 99.99803 99.99807 99.99807 99.99808 99.99809 99.99810 99.99812
-##                                h244     h245     h246     h247     h248     h249     h250     h251     h252
-## 11AI225                    99.99773 99.99777 99.99780 99.99783 99.99786 99.99787 99.99789 99.99791 99.99794
-## 11HE445                    99.99813 99.99814 99.99817 99.99818 99.99819 99.99819 99.99823 99.99824 99.99826
-##                                h253     h254     h255     h256     h257     h258     h259     h260     h261
-## 11AI225                    99.99795 99.99795 99.99798 99.99800 99.99802 99.99808 99.99809 99.99809 99.99812
-## 11HE445                    99.99828 99.99829 99.99830 99.99831 99.99833 99.99835 99.99836 99.99839 99.99841
-##                                h262     h263     h264     h265     h266     h267     h268     h269     h270
-## 11AI225                    99.99817 99.99817 99.99820 99.99824 99.99827 99.99833 99.99836 99.99836 99.99837
-## 11HE445                    99.99843 99.99843 99.99844 99.99850 99.99851 99.99853 99.99854 99.99855 99.99855
-##                                h271     h272     h273     h274     h275     h276     h277     h278     h279
-## 11AI225                    99.99839 99.99840 99.99844 99.99845 99.99847 99.99848 99.99850 99.99851 99.99853
-## 11HE445                    99.99856 99.99857 99.99858 99.99860 99.99861 99.99861 99.99863 99.99864 99.99865
-##                                h280     h281     h282     h283     h284     h285     h286     h287     h288
-## 11AI225                    99.99854 99.99854 99.99857 99.99860 99.99865 99.99870 99.99871 99.99871 99.99871
-## 11HE445                    99.99866 99.99867 99.99870 99.99872 99.99873 99.99874 99.99875 99.99878 99.99882
-##                                h289     h290     h291     h292     h293     h294     h295     h296     h297
-## 11AI225                    99.99874 99.99876 99.99877 99.99878 99.99880 99.99881 99.99884 99.99885 99.99887
-## 11HE445                    99.99884 99.99887 99.99887 99.99888 99.99892 99.99892 99.99896 99.99896 99.99898
-##                                h298     h299     h300     h301     h302     h303     h304     h305     h306
-## 11AI225                    99.99887 99.99887 99.99888 99.99888 99.99889 99.99889 99.99890 99.99890 99.99893
-## 11HE445                    99.99898 99.99899 99.99899 99.99902 99.99903 99.99904 99.99904 99.99904 99.99905
-##                                h307     h308     h309     h310     h311     h312     h313     h314     h315
-## 11AI225                    99.99895 99.99897 99.99898 99.99900 99.99901 99.99905 99.99906 99.99908 99.99909
-## 11HE445                    99.99906 99.99908 99.99909 99.99910 99.99911 99.99913 99.99913 99.99914 99.99915
-##                                h316     h317     h318     h319     h320     h321     h322     h323     h324
-## 11AI225                    99.99910 99.99911 99.99912 99.99913 99.99915 99.99915 99.99916 99.99917 99.99918
-## 11HE445                    99.99918 99.99920 99.99921 99.99924 99.99925 99.99925 99.99925 99.99927 99.99927
-##                                h325     h326     h327     h328     h329     h330     h331     h332     h333
-## 11AI225                    99.99918 99.99922 99.99925 99.99925 99.99925 99.99926 99.99926 99.99927 99.99927
-## 11HE445                    99.99928 99.99930 99.99931 99.99936 99.99937 99.99939 99.99940 99.99941 99.99942
-##                                h334     h335     h336     h337     h338     h339     h340     h341     h342
-## 11AI225                    99.99928 99.99931 99.99932 99.99933 99.99935 99.99938 99.99942 99.99942 99.99943
-## 11HE445                    99.99943 99.99944 99.99945 99.99945 99.99945 99.99947 99.99948 99.99949 99.99950
-##                                h343     h344     h345     h346     h347     h348     h349     h350     h351
-## 11AI225                    99.99944 99.99946 99.99947 99.99948 99.99948 99.99949 99.99951 99.99951 99.99952
-## 11HE445                    99.99951 99.99952 99.99954 99.99955 99.99956 99.99956 99.99958 99.99959 99.99959
-##                                h352     h353     h354     h355     h356     h357     h358     h359     h360
-## 11AI225                    99.99953 99.99955 99.99957 99.99958 99.99958 99.99958 99.99960 99.99961 99.99961
-## 11HE445                    99.99959 99.99961 99.99962 99.99962 99.99963 99.99964 99.99965 99.99967 99.99967
-##                                h361     h362     h363     h364     h365     h366     h367     h368     h369
-## 11AI225                    99.99963 99.99963 99.99963 99.99964 99.99964 99.99967 99.99969 99.99969 99.99971
-## 11HE445                    99.99967 99.99968 99.99969 99.99970 99.99971 99.99974 99.99974 99.99976 99.99977
-##                                h370     h371     h372     h373     h374     h375     h376     h377     h378
-## 11AI225                    99.99972 99.99973 99.99975 99.99975 99.99975 99.99976 99.99976 99.99977 99.99977
-## 11HE445                    99.99980 99.99982 99.99982 99.99982 99.99983 99.99983 99.99983 99.99984 99.99984
-##                                h379     h380     h381     h382     h383     h384     h385     h386     h387
-## 11AI225                    99.99980 99.99981 99.99982 99.99983 99.99984 99.99985 99.99986 99.99986 99.99988
-## 11HE445                    99.99984 99.99985 99.99986 99.99987 99.99987 99.99989 99.99990 99.99990 99.99991
-##                                h388     h389     h390     h391     h392     h393     h394     h395     h396
-## 11AI225                    99.99989 99.99991 99.99992 99.99993 99.99994 99.99994 99.99996 99.99996 99.99997
-## 11HE445                    99.99991 99.99992 99.99992 99.99994 99.99995 99.99995 99.99995 99.99996 99.99996
-##                                 h397      h398      h399 h400
-## 11AI225                     99.99998  99.99999 100.00000  100
-## 11HE445                     99.99997  99.99999 100.00000  100
-##  [ reached getOption(&quot;max.print&quot;) -- omitted 43 rows ]
+## 11AI225                    99.48099 99.66937 99.70586 99.82427 99.89312 99.95302 99.96944 99.97974 99.99516
+## 11HE445                    99.47455 99.53302 99.74857 99.83155 99.86798 99.89064 99.89775 99.96522 99.98554
+## HK49_1462                  99.72894 99.79513 99.83847 99.87109 99.89442 99.97203 99.98009 99.98320 99.98734
+## HK49_2                     99.65659 99.76875 99.80320 99.90730 99.94805 99.96495 99.96890 99.97659 99.99185
+## HK49_3022                  99.47851 99.64948 99.76534 99.79263 99.82049 99.90345 99.92775 99.96264 99.98669
+## HK49_3823                  99.64301 99.69597 99.84387 99.86088 99.90336 99.92922 99.96034 99.96530 99.98627
+## HK49_4                     99.49395 99.64466 99.68573 99.80215 99.81407 99.90398 99.91441 99.94387 99.99133
+## HK49_5928                  99.70397 99.75929 99.84727 99.91241 99.95240 99.95691 99.96006 99.98453 99.99320
+## HK49_5961                  99.48465 99.58917 99.60336 99.80849 99.83078 99.89954 99.97206 99.98319 99.98373
+## HK49_7                     99.75291 99.79376 99.82360 99.91892 99.92621 99.95930 99.96108 99.97613 99.98710
+## Keil-Mangold3              99.42210 99.71696 99.74171 99.75922 99.82321 99.82927 99.91472 99.92845 99.97312
+## KeilMangold10              98.85932 98.96524 99.12731 99.19793 99.46388 99.52495 99.75746 99.83477 99.97147
+## KeilMangold13              99.42195 99.61789 99.64186 99.66412 99.76829 99.82653 99.92424 99.96399 99.97819
+## KeilMangold14              99.21574 99.65721 99.67596 99.74699 99.78250 99.83223 99.86548 99.90819 99.97552
+## KeilMangold17              99.20569 99.24801 99.42842 99.46495 99.67572 99.74458 99.80871 99.86693 99.95911
+## KeilMangold24              99.33411 99.40224 99.65931 99.69292 99.86606 99.88402 99.93451 99.95024 99.95449
+## KeilMangold42              99.38843 99.48417 99.69937 99.72194 99.81800 99.86667 99.92328 99.92978 99.94446
+## KeilMangold64              99.50013 99.59336 99.65104 99.71429 99.78764 99.79087 99.89719 99.92356 99.99261
+## KeilMangold8               99.20757 99.29442 99.55104 99.64563 99.76900 99.84382 99.92820 99.94019 99.97497
+## KeilMangold90              99.77866 99.83614 99.88995 99.89368 99.94372 99.94811 99.96954 99.97937 99.98885
+## Kinzer46                   99.73433 99.77083 99.85076 99.88830 99.89389 99.90206 99.93342 99.94745 99.97476
+## Kinzer49                   99.54470 99.69122 99.73786 99.80523 99.88052 99.90782 99.93033 99.93584 99.97141
+## Kinzer50                   99.69452 99.72778 99.79117 99.81172 99.84466 99.90969 99.92801 99.93738 99.95529
+## Leprechaun11MS1983FSI800-5 98.42368 99.06685 99.22942 99.32720 99.51543 99.73748 99.95214 99.95659 99.98051
+## MA1699p1                   99.31342 99.41556 99.62129 99.63596 99.78698 99.82468 99.94327 99.95594 99.96975
+## MA1699p3                   99.09438 99.20327 99.57105 99.68760 99.87323 99.91246 99.91565 99.96029 99.98990
+## McL4_158                   99.75988 99.80274 99.81765 99.89756 99.92963 99.93903 99.96124 99.97140 99.99140
+## McL4_614                   99.76258 99.79112 99.87684 99.88065 99.94882 99.96520 99.97398 99.98263 99.98382
+## McL7_101                   99.79267 99.84997 99.87324 99.90388 99.93391 99.95662 99.96062 99.97999 99.98540
+## McL7_168                   99.66385 99.70527 99.80831 99.81955 99.86535 99.91101 99.93514 99.97393 99.98006
+## Nochta11MS128BFSI267-1     99.66857 99.77270 99.91925 99.92952 99.94604 99.96169 99.98049 99.99166 99.99499
+## Nochta11MS128bFSIPP1001    99.65221 99.71365 99.80958 99.81904 99.92444 99.92723 99.95598 99.95930 99.97340
+## Nochta11MS128BFSIPP2495    99.79058 99.80215 99.82518 99.87203 99.92725 99.94984 99.95918 99.97001 99.98974
+## Nochta11MS128BFSIPP3305    99.20282 99.33792 99.43269 99.72389 99.78362 99.82656 99.88350 99.91832 99.94746
+## Nochta11MS12BFIS800-168    99.30013 99.44446 99.77059 99.80238 99.84979 99.87640 99.89814 99.95164 99.95520
+## OH1_176                    99.56660 99.59523 99.64582 99.88035 99.89886 99.93296 99.96416 99.98159 99.99453
+## ReedVoss2                  99.32453 99.36367 99.64388 99.68978 99.82180 99.88040 99.94291 99.95531 99.96936
+## TR10_19                    99.55578 99.62968 99.84509 99.89405 99.91079 99.95326 99.95793 99.97675 99.98567
+## TR10_4                     99.79192 99.81087 99.84234 99.93504 99.95738 99.95792 99.98032 99.98618 99.99449
+## Welton1                    99.38531 99.67584 99.71951 99.79230 99.83360 99.84454 99.92178 99.93489 99.98638
+## Welton2                    99.58883 99.73900 99.88810 99.90517 99.91051 99.95462 99.95620 99.97122 99.97592
+## Welton3                    99.37360 99.69441 99.72403 99.83641 99.87142 99.87348 99.94359 99.94528 99.99199
+## Welton4                    99.65976 99.77721 99.81815 99.84584 99.88097 99.89230 99.95613 99.96836 99.98335
+## Welton5                    98.53168 99.31495 99.48053 99.54706 99.59449 99.73144 99.92359 99.98223 99.99879
+## Welton6                    97.91635 98.94790 99.09255 99.18568 99.53253 99.74076 99.84686 99.91989 99.96848
+##                            h19
+## 11AI225                    100
+## 11HE445                    100
+## HK49_1462                  100
+## HK49_2                     100
+## HK49_3022                  100
+## HK49_3823                  100
+## HK49_4                     100
+## HK49_5928                  100
+## HK49_5961                  100
+## HK49_7                     100
+## Keil-Mangold3              100
+## KeilMangold10              100
+## KeilMangold13              100
+## KeilMangold14              100
+## KeilMangold17              100
+## KeilMangold24              100
+## KeilMangold42              100
+## KeilMangold64              100
+## KeilMangold8               100
+## KeilMangold90              100
+## Kinzer46                   100
+## Kinzer49                   100
+## Kinzer50                   100
+## Leprechaun11MS1983FSI800-5 100
+## MA1699p1                   100
+## MA1699p3                   100
+## McL4_158                   100
+## McL4_614                   100
+## McL7_101                   100
+## McL7_168                   100
+## Nochta11MS128BFSI267-1     100
+## Nochta11MS128bFSIPP1001    100
+## Nochta11MS128BFSIPP2495    100
+## Nochta11MS128BFSIPP3305    100
+## Nochta11MS12BFIS800-168    100
+## OH1_176                    100
+## ReedVoss2                  100
+## TR10_19                    100
+## TR10_4                     100
+## Welton1                    100
+## Welton2                    100
+## Welton3                    100
+## Welton4                    100
+## Welton5                    100
+## Welton6                    100
 ## 
 ## $minh
 ##   90%   95%   99% 99.9% 
-##     4     6    10    28</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="elliptic-fourier-analysis.html#cb13-1"></a><span class="kw">calibrate_reconstructions_efourier</span>(norm.outlines, <span class="dt">range =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) <span class="co">#10 harmonics</span></span></code></pre></div>
+##     4     6    10    16</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="elliptic-fourier-analysis.html#cb15-1"></a><span class="kw">calibrate_reconstructions_efourier</span>(norm.outlines, <span class="dt">range =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) <span class="co">#10 harmonics</span></span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/cal.harm-2.png" width="100%" /></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="elliptic-fourier-analysis.html#cb14-1"></a>efa.outlines &lt;-<span class="st"> </span><span class="kw">efourier</span>(norm.outlines, <span class="dt">nb.h =</span> <span class="dv">10</span>, <span class="dt">norm =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb14-2"><a href="elliptic-fourier-analysis.html#cb14-2"></a></span>
-<span id="cb14-3"><a href="elliptic-fourier-analysis.html#cb14-3"></a>pca.outlines &lt;-<span class="st"> </span><span class="kw">PCA</span>(efa.outlines)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="elliptic-fourier-analysis.html#cb16-1"></a>efa.outlines &lt;-<span class="st"> </span><span class="kw">efourier</span>(norm.outlines, <span class="dt">nb.h =</span> <span class="dv">10</span>, <span class="dt">norm =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb16-2"><a href="elliptic-fourier-analysis.html#cb16-2"></a></span>
+<span id="cb16-3"><a href="elliptic-fourier-analysis.html#cb16-3"></a>pca.outlines &lt;-<span class="st"> </span><span class="kw">PCA</span>(efa.outlines)</span></code></pre></div>
 </div>
 <div id="pca" class="section level2">
 <h2><span class="header-section-number">1.5</span> PCA</h2>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="elliptic-fourier-analysis.html#cb15-1"></a><span class="co"># pca </span></span>
-<span id="cb15-2"><a href="elliptic-fourier-analysis.html#cb15-2"></a><span class="kw">scree_plot</span>(pca.outlines)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="elliptic-fourier-analysis.html#cb17-1"></a><span class="co"># pca </span></span>
+<span id="cb17-2"><a href="elliptic-fourier-analysis.html#cb17-2"></a><span class="kw">scree_plot</span>(pca.outlines)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.plot-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="elliptic-fourier-analysis.html#cb16-1"></a><span class="co"># plot pca</span></span>
-<span id="cb16-2"><a href="elliptic-fourier-analysis.html#cb16-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
-<span id="cb16-3"><a href="elliptic-fourier-analysis.html#cb16-3"></a><span class="kw">plot_PCA</span>(pca.outlines, <span class="dt">morphospace_position =</span> <span class="st">&quot;range&quot;</span>, <span class="op">~</span>heart.out, <span class="dt">palette =</span> pal_qual_Dark2)</span>
-<span id="cb16-4"><a href="elliptic-fourier-analysis.html#cb16-4"></a><span class="kw">plot_PCA</span>(pca.outlines, <span class="dt">morphospace_position =</span> <span class="st">&quot;range&quot;</span>, <span class="op">~</span>heart.reg, <span class="dt">palette =</span> pal_qual_Dark2)</span>
-<span id="cb16-5"><a href="elliptic-fourier-analysis.html#cb16-5"></a><span class="kw">plot_PCA</span>(pca.outlines, <span class="dt">morphospace_position =</span> <span class="st">&quot;range&quot;</span>, <span class="op">~</span>bev, <span class="dt">palette =</span> pal_qual_Dark2)</span>
-<span id="cb16-6"><a href="elliptic-fourier-analysis.html#cb16-6"></a><span class="kw">plot_PCA</span>(pca.outlines, <span class="dt">morphospace_position =</span> <span class="st">&quot;range&quot;</span>, <span class="op">~</span>bev.type, <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="elliptic-fourier-analysis.html#cb18-1"></a><span class="co"># plot pca</span></span>
+<span id="cb18-2"><a href="elliptic-fourier-analysis.html#cb18-2"></a><span class="co"># heartland in/out</span></span>
+<span id="cb18-3"><a href="elliptic-fourier-analysis.html#cb18-3"></a><span class="kw">plot_PCA</span>(pca.outlines, <span class="dt">morphospace_position =</span> <span class="st">&quot;range&quot;</span>, <span class="op">~</span>heart.out, <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.plot-2.png" width="100%" /></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="elliptic-fourier-analysis.html#cb17-1"></a><span class="co"># contribution of each pc</span></span>
-<span id="cb17-2"><a href="elliptic-fourier-analysis.html#cb17-2"></a><span class="kw">boxplot</span>(pca.outlines, <span class="op">~</span>heart.out, <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="elliptic-fourier-analysis.html#cb19-1"></a><span class="co"># heartland region</span></span>
+<span id="cb19-2"><a href="elliptic-fourier-analysis.html#cb19-2"></a><span class="kw">plot_PCA</span>(pca.outlines, <span class="dt">morphospace_position =</span> <span class="st">&quot;range&quot;</span>, <span class="op">~</span>heart.reg, <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.plot-3.png" width="100%" /></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="elliptic-fourier-analysis.html#cb18-1"></a><span class="kw">boxplot</span>(pca.outlines, <span class="op">~</span>heart.reg, <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="elliptic-fourier-analysis.html#cb20-1"></a><span class="co"># beveled or not</span></span>
+<span id="cb20-2"><a href="elliptic-fourier-analysis.html#cb20-2"></a><span class="kw">plot_PCA</span>(pca.outlines, <span class="dt">morphospace_position =</span> <span class="st">&quot;range&quot;</span>, <span class="op">~</span>bev, <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.plot-4.png" width="100%" /></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="elliptic-fourier-analysis.html#cb19-1"></a><span class="kw">boxplot</span>(pca.outlines, <span class="op">~</span>bev, <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="elliptic-fourier-analysis.html#cb21-1"></a><span class="co"># bevel type</span></span>
+<span id="cb21-2"><a href="elliptic-fourier-analysis.html#cb21-2"></a><span class="kw">plot_PCA</span>(pca.outlines, <span class="dt">morphospace_position =</span> <span class="st">&quot;range&quot;</span>, <span class="op">~</span>bev.type, <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.plot-5.png" width="100%" /></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="elliptic-fourier-analysis.html#cb20-1"></a><span class="kw">boxplot</span>(pca.outlines, <span class="op">~</span>bev.type, <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="elliptic-fourier-analysis.html#cb22-1"></a><span class="co"># contribution of each pc</span></span>
+<span id="cb22-2"><a href="elliptic-fourier-analysis.html#cb22-2"></a><span class="kw">boxplot</span>(pca.outlines, <span class="op">~</span>heart.out, <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.plot-6.png" width="100%" /></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="elliptic-fourier-analysis.html#cb21-1"></a><span class="co"># mean shape + 2sd for each pc</span></span>
-<span id="cb21-2"><a href="elliptic-fourier-analysis.html#cb21-2"></a><span class="kw">PCcontrib</span>(pca.outlines, <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="elliptic-fourier-analysis.html#cb23-1"></a><span class="kw">boxplot</span>(pca.outlines, <span class="op">~</span>heart.reg, <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.plot-7.png" width="100%" /></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="elliptic-fourier-analysis.html#cb24-1"></a><span class="kw">boxplot</span>(pca.outlines, <span class="op">~</span>bev, <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/pca.plot-8.png" width="100%" /></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="elliptic-fourier-analysis.html#cb25-1"></a><span class="kw">boxplot</span>(pca.outlines, <span class="op">~</span>bev.type, <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/pca.plot-9.png" width="100%" /></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="elliptic-fourier-analysis.html#cb26-1"></a><span class="co"># mean shape + 2sd for each pc</span></span>
+<span id="cb26-2"><a href="elliptic-fourier-analysis.html#cb26-2"></a><span class="kw">PCcontrib</span>(pca.outlines, <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/pca.plot-10.png" width="100%" /></p>
 </div>
 <div id="manova-manova_pw" class="section level2">
 <h2><span class="header-section-number">1.6</span> MANOVA + MANOVA_PW</h2>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="elliptic-fourier-analysis.html#cb22-1"></a><span class="co"># manova + manova_pw</span></span>
-<span id="cb22-2"><a href="elliptic-fourier-analysis.html#cb22-2"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;heart.out&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="elliptic-fourier-analysis.html#cb27-1"></a><span class="co"># manova + manova_pw</span></span>
+<span id="cb27-2"><a href="elliptic-fourier-analysis.html#cb27-2"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;heart.out&#39;</span>)</span></code></pre></div>
 <pre><code>## PC axes 1 to 11 were retained</code></pre>
 <pre><code>##           Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
-## fac        1           2.2646   6.7937     11     33 8.214e-06 ***
+## fac        1           2.2646   6.7938     11     33 8.212e-06 ***
 ## Residuals 43                                                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="elliptic-fourier-analysis.html#cb25-1"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;heart.reg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="elliptic-fourier-analysis.html#cb30-1"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;heart.reg&#39;</span>)</span></code></pre></div>
 <pre><code>## PC axes 1 to 11 were retained</code></pre>
 <pre><code>##           Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
 ## fac        2           3.2261   4.5458     22     62 1.299e-06 ***
 ## Residuals 42                                                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="elliptic-fourier-analysis.html#cb28-1"></a><span class="kw">MANOVA_PW</span>(pca.outlines, <span class="st">&#39;heart.reg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="elliptic-fourier-analysis.html#cb33-1"></a><span class="kw">MANOVA_PW</span>(pca.outlines, <span class="st">&#39;heart.reg&#39;</span>)</span></code></pre></div>
 <pre><code>## &#39;P&#39; has 10 rows, and &#39;retain&#39; is set accordingly</code></pre>
 <pre><code>## PC axes 1 to 10 were retained</code></pre>
 <pre><code>## HI</code></pre>
@@ -506,24 +521,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## $summary (see also $manovas)
 ##       Df Pillai approx F num Df den Df    Pr(&gt;F)
-## H - I  1 0.8218   11.067     10     24 9.112e-07
+## H - I  1 0.8218   11.068     10     24 9.105e-07
 ## H - P  1 0.6242    3.155     10     19 1.500e-02
 ## I - P  1 0.5994    2.095     10     14 1.000e-01</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="elliptic-fourier-analysis.html#cb35-1"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;bev&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="elliptic-fourier-analysis.html#cb40-1"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;bev&#39;</span>)</span></code></pre></div>
 <pre><code>## PC axes 1 to 11 were retained</code></pre>
 <pre><code>##           Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
-## fac        1           1.4062   4.2188     11     33 0.0006276 ***
+## fac        1           1.4062   4.2186     11     33 0.0006277 ***
 ## Residuals 43                                                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="elliptic-fourier-analysis.html#cb38-1"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;bev.type&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="elliptic-fourier-analysis.html#cb43-1"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;bev.type&#39;</span>)</span></code></pre></div>
 <pre><code>## PC axes 1 to 11 were retained</code></pre>
 <pre><code>##           Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
-## fac        2           2.8864   4.0672     22     62 6.899e-06 ***
+## fac        2           2.8863   4.0671     22     62 6.901e-06 ***
 ## Residuals 42                                                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="elliptic-fourier-analysis.html#cb41-1"></a><span class="kw">MANOVA_PW</span>(pca.outlines, <span class="st">&#39;bev.type&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="elliptic-fourier-analysis.html#cb46-1"></a><span class="kw">MANOVA_PW</span>(pca.outlines, <span class="st">&#39;bev.type&#39;</span>)</span></code></pre></div>
 <pre><code>## &#39;unifacial.bimarginal&#39; has 3 rows, and &#39;retain&#39; is set accordingly</code></pre>
 <pre><code>## PC axes 1 to 3 were retained</code></pre>
 <pre><code>## alternateno.bevel</code></pre>
@@ -537,93 +552,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $summary (see also $manovas)
 ##                                  Df  Pillai approx F num Df den Df   Pr(&gt;F)
 ## alternate - no.bevel              1 0.31187  5.74067      3     38 0.002428
-## alternate - unifacial.bimarginal  1 0.15609  1.41799      3     23 0.263049
-## no.bevel - unifacial.bimarginal   1 0.01724  0.09942      3     17 0.959246</code></pre>
+## alternate - unifacial.bimarginal  1 0.15609  1.41807      3     23 0.263027
+## no.bevel - unifacial.bimarginal   1 0.01723  0.09937      3     17 0.959277</code></pre>
 </div>
 <div id="mean-shapes" class="section level2">
 <h2><span class="header-section-number">1.7</span> Mean shapes</h2>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="elliptic-fourier-analysis.html#cb48-1"></a><span class="co"># mean shapes</span></span>
-<span id="cb48-2"><a href="elliptic-fourier-analysis.html#cb48-2"></a>ms.heart &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, <span class="st">&#39;heart.out&#39;</span>)</span>
-<span id="cb48-3"><a href="elliptic-fourier-analysis.html#cb48-3"></a>ms.heart<span class="op">$</span>Coe</span></code></pre></div>
-<pre><code>## An OutCoe object [ elliptical Fourier analysis ]
-## --------------------
-##  - $coe: 2 outlines described, 10 harmonics
-## # A tibble: 2 x 5
-##   spec    heart.out heart.reg bev   bev.type            
-##   &lt;chr&gt;   &lt;fct&gt;     &lt;fct&gt;     &lt;fct&gt; &lt;fct&gt;               
-## 1 11AI225 H         H         y     unifacial.bimarginal
-## 2 11HE445 N         P         n     no.bevel</code></pre>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="elliptic-fourier-analysis.html#cb50-1"></a>msh &lt;-<span class="st"> </span>ms.heart<span class="op">$</span>shp</span>
-<span id="cb50-2"><a href="elliptic-fourier-analysis.html#cb50-2"></a><span class="kw">coo_plot</span>(msh<span class="op">$</span>H, <span class="dt">border =</span> <span class="st">&#39;forestgreen&#39;</span>)</span>
-<span id="cb50-3"><a href="elliptic-fourier-analysis.html#cb50-3"></a><span class="kw">coo_draw</span>(msh<span class="op">$</span>N, <span class="dt">border =</span> <span class="st">&#39;firebrick4&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="elliptic-fourier-analysis.html#cb53-1"></a><span class="co"># mean shapes</span></span>
+<span id="cb53-2"><a href="elliptic-fourier-analysis.html#cb53-2"></a>ms<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, <span class="op">~</span>heart.out)</span>
+<span id="cb53-3"><a href="elliptic-fourier-analysis.html#cb53-3"></a><span class="kw">plot_MSHAPES</span>(ms<span class="fl">.1</span>, <span class="dt">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:ms1"></span>
-<img src="dalton.supp_files/figure-html/ms1-1.png" alt="Mean shapes for in (green) and out (maroon) of the heartland." width="100%" />
+<img src="dalton.supp_files/figure-html/ms1-1.png" alt="Mean shapes for in (H) and out (N) of the heartland." width="100%" />
 <p class="caption">
-Figure 1.1: Mean shapes for in (green) and out (maroon) of the heartland.
-</p>
-</div>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="elliptic-fourier-analysis.html#cb51-1"></a><span class="co"># mean shapes</span></span>
-<span id="cb51-2"><a href="elliptic-fourier-analysis.html#cb51-2"></a>ms.hreg &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, <span class="st">&#39;heart.reg&#39;</span>, <span class="dt">FUN =</span> mean)</span>
-<span id="cb51-3"><a href="elliptic-fourier-analysis.html#cb51-3"></a>ms.hreg<span class="op">$</span>Coe</span></code></pre></div>
-<pre><code>## An OutCoe object [ elliptical Fourier analysis ]
-## --------------------
-##  - $coe: 3 outlines described, 10 harmonics
-## # A tibble: 3 x 5
-##   spec      heart.out heart.reg bev   bev.type            
-##   &lt;chr&gt;     &lt;fct&gt;     &lt;fct&gt;     &lt;fct&gt; &lt;fct&gt;               
-## 1 11AI225   H         H         y     unifacial.bimarginal
-## 2 HK49_1462 N         I         n     no.bevel            
-## 3 11HE445   N         P         n     no.bevel</code></pre>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="elliptic-fourier-analysis.html#cb53-1"></a>mshr &lt;-<span class="st"> </span>ms.hreg<span class="op">$</span>shp</span>
-<span id="cb53-2"><a href="elliptic-fourier-analysis.html#cb53-2"></a><span class="kw">coo_plot</span>(mshr<span class="op">$</span>H, <span class="dt">border =</span> <span class="st">&#39;forestgreen&#39;</span>)</span>
-<span id="cb53-3"><a href="elliptic-fourier-analysis.html#cb53-3"></a><span class="kw">coo_draw</span>(mshr<span class="op">$</span>I)</span>
-<span id="cb53-4"><a href="elliptic-fourier-analysis.html#cb53-4"></a><span class="kw">coo_draw</span>(mshr<span class="op">$</span>P, <span class="dt">border =</span> <span class="st">&#39;firebrick4&#39;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:ms2"></span>
-<img src="dalton.supp_files/figure-html/ms2-1.png" alt="Mean shapes for heartland (green), interior (black), and northern periphery (maroon)." width="100%" />
-<p class="caption">
-Figure 1.2: Mean shapes for heartland (green), interior (black), and northern periphery (maroon).
+Figure 1.1: Mean shapes for in (H) and out (N) of the heartland.
 </p>
 </div>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="elliptic-fourier-analysis.html#cb54-1"></a><span class="co"># mean shapes</span></span>
-<span id="cb54-2"><a href="elliptic-fourier-analysis.html#cb54-2"></a>ms.bev &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, <span class="st">&#39;bev&#39;</span>, <span class="dt">FUN =</span> mean)</span>
-<span id="cb54-3"><a href="elliptic-fourier-analysis.html#cb54-3"></a>ms.bev<span class="op">$</span>Coe</span></code></pre></div>
-<pre><code>## An OutCoe object [ elliptical Fourier analysis ]
-## --------------------
-##  - $coe: 2 outlines described, 10 harmonics
-## # A tibble: 2 x 5
-##   spec    heart.out heart.reg bev   bev.type            
-##   &lt;chr&gt;   &lt;fct&gt;     &lt;fct&gt;     &lt;fct&gt; &lt;fct&gt;               
-## 1 11HE445 N         P         n     no.bevel            
-## 2 11AI225 H         H         y     unifacial.bimarginal</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="elliptic-fourier-analysis.html#cb56-1"></a>msb &lt;-<span class="st"> </span>ms.bev<span class="op">$</span>shp</span>
-<span id="cb56-2"><a href="elliptic-fourier-analysis.html#cb56-2"></a><span class="kw">coo_plot</span>(msb<span class="op">$</span>y, <span class="dt">border =</span> <span class="st">&#39;forestgreen&#39;</span>)</span>
-<span id="cb56-3"><a href="elliptic-fourier-analysis.html#cb56-3"></a><span class="kw">coo_draw</span>(msb<span class="op">$</span>n, <span class="dt">border =</span> <span class="st">&#39;firebrick4&#39;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:ms3"></span>
-<img src="dalton.supp_files/figure-html/ms3-1.png" alt="Mean shapes for alternate (green),  and not beveled (maroon)." width="100%" />
+<span id="cb54-2"><a href="elliptic-fourier-analysis.html#cb54-2"></a>ms<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, <span class="op">~</span>heart.reg)</span>
+<span id="cb54-3"><a href="elliptic-fourier-analysis.html#cb54-3"></a><span class="kw">plot_MSHAPES</span>(ms<span class="fl">.2</span>, <span class="dt">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:ms2"></span>
+<img src="dalton.supp_files/figure-html/ms2-1.png" alt="Mean shapes for heartland (H), interior (I), and northern periphery (P)." width="100%" />
 <p class="caption">
-Figure 1.3: Mean shapes for alternate (green), and not beveled (maroon).
+Figure 1.2: Mean shapes for heartland (H), interior (I), and northern periphery (P).
 </p>
 </div>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="elliptic-fourier-analysis.html#cb57-1"></a><span class="co"># mean shapes</span></span>
-<span id="cb57-2"><a href="elliptic-fourier-analysis.html#cb57-2"></a>ms.bevt &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, <span class="st">&#39;bev.type&#39;</span>, <span class="dt">FUN =</span> mean)</span>
-<span id="cb57-3"><a href="elliptic-fourier-analysis.html#cb57-3"></a>ms.bevt<span class="op">$</span>Coe</span></code></pre></div>
-<pre><code>## An OutCoe object [ elliptical Fourier analysis ]
-## --------------------
-##  - $coe: 3 outlines described, 10 harmonics
-## # A tibble: 3 x 5
-##   spec      heart.out heart.reg bev   bev.type            
-##   &lt;chr&gt;     &lt;fct&gt;     &lt;fct&gt;     &lt;fct&gt; &lt;fct&gt;               
-## 1 HK49_5928 N         I         y     alternate           
-## 2 11HE445   N         P         n     no.bevel            
-## 3 11AI225   H         H         y     unifacial.bimarginal</code></pre>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="elliptic-fourier-analysis.html#cb59-1"></a>msbt &lt;-<span class="st"> </span>ms.bevt<span class="op">$</span>shp</span>
-<span id="cb59-2"><a href="elliptic-fourier-analysis.html#cb59-2"></a><span class="kw">coo_plot</span>(msbt<span class="op">$</span>alternate, <span class="dt">border =</span> <span class="st">&#39;forestgreen&#39;</span>)</span>
-<span id="cb59-3"><a href="elliptic-fourier-analysis.html#cb59-3"></a><span class="kw">coo_draw</span>(msbt<span class="op">$</span>unifacial.bimarginal)</span>
-<span id="cb59-4"><a href="elliptic-fourier-analysis.html#cb59-4"></a><span class="kw">coo_draw</span>(msbt<span class="op">$</span>no.bevel, <span class="dt">border =</span> <span class="st">&#39;firebrick4&#39;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:ms4"></span>
-<img src="dalton.supp_files/figure-html/ms4-1.png" alt="Mean shapes by bevel type: alternate (green), unifacial bimarginal (black), and not beveled (maroon)." width="100%" />
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="elliptic-fourier-analysis.html#cb55-1"></a><span class="co"># mean shapes</span></span>
+<span id="cb55-2"><a href="elliptic-fourier-analysis.html#cb55-2"></a>ms<span class="fl">.3</span> &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, <span class="op">~</span>bev)</span>
+<span id="cb55-3"><a href="elliptic-fourier-analysis.html#cb55-3"></a><span class="kw">plot_MSHAPES</span>(ms<span class="fl">.3</span>, <span class="dt">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:ms3"></span>
+<img src="dalton.supp_files/figure-html/ms3-1.png" alt="Mean shapes for beveled (y), and not beveled (n)." width="100%" />
 <p class="caption">
-Figure 1.4: Mean shapes by bevel type: alternate (green), unifacial bimarginal (black), and not beveled (maroon).
+Figure 1.3: Mean shapes for beveled (y), and not beveled (n).
+</p>
+</div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="elliptic-fourier-analysis.html#cb56-1"></a><span class="co"># mean shapes</span></span>
+<span id="cb56-2"><a href="elliptic-fourier-analysis.html#cb56-2"></a>ms<span class="fl">.4</span> &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, <span class="op">~</span>bev.type)</span>
+<span id="cb56-3"><a href="elliptic-fourier-analysis.html#cb56-3"></a><span class="kw">plot_MSHAPES</span>(ms<span class="fl">.4</span>, <span class="dt">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:ms4"></span>
+<img src="dalton.supp_files/figure-html/ms4-1.png" alt="Mean shapes for alternate, unifacial.bimarginal, and no.bevel." width="100%" />
+<p class="caption">
+Figure 1.4: Mean shapes for alternate, unifacial.bimarginal, and no.bevel.
 </p>
 </div>
 
