@@ -272,7 +272,7 @@ Hypothesis 1 assesses whether there is a difference in morphology for Dalton poi
 
 A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
 
-```{r lm3d3.a1.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 18. Hypothesis 1 considers whether Dalton points discovered in (left) and out (right) of the Heartland differ in morphology.**_"}
+```{r lm3d3.a1.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 1 considers whether Dalton points discovered in (left) and out (right) of the Heartland differ in morphology."}
 knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
 ```
 
@@ -290,7 +290,7 @@ Hypothesis 2 assesses whether there is a difference in morphology for Dalton poi
 
 A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
 
-```{r lm3d3.a1.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 19. Hypothesis 2 considers whether Dalton points discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology.**_"}
+```{r lm3d3.a1.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 2 considers whether Dalton points discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology."}
 knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
 ```
 
@@ -328,7 +328,7 @@ Hypothesis 3 assesses whether there is a discernible difference in morphology fo
 
 A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
 
-```{r lm3d3.a1.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="_**Figure 20. Hypothesis 3 considers whether beveled Dalton points (left) differ in morphology from those that are not beveled (right).**_"}
+```{r lm3d3.a1.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 3 considers whether beveled Dalton points (left) differ in morphology from those that are not beveled (right)."}
 knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
 ```
 
@@ -341,6 +341,14 @@ anova(fit.shape.bev.1)
 ```
 
 ## Test Hypothesis 4 (Techno)
+
+Hypothesis 4 assesses whether there is a discernible difference in the morphology of specific beveling types associated with Dalton points.
+
+A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
+
+```{r lm3d3.a1.h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 4 considers whether discrete beveling practices articulate with differences in the morphology of Dalton points"}
+knitr::include_graphics('images/dalton-vizhypothesis4-1.jpg')
+```
 
 ```{r h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # ANOVA: does dalton projectile point size differ by bev.2?

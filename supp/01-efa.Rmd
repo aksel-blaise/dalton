@@ -37,10 +37,10 @@ norm.outlines <- data.out %>%
   coo_scale()
 ```
 
-## Stack and panels
+## Pile and mosaics
 
 ```{r stack.panel, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# outline stack
+# outline pile
 pile(norm.outlines)
 
 # mosaics
@@ -88,7 +88,7 @@ boxplot(pca.outlines, ~heart.reg, nax = 1:5, palette = pal_qual_Dark2)
 boxplot(pca.outlines, ~bev, nax = 1:5, palette = pal_qual_Dark2)
 boxplot(pca.outlines, ~bev.type, nax = 1:5, palette = pal_qual_Dark2)
 
-# mean shape + 2sd for each pc
+# mean shape + 2sd for the first 10 pcs
 PCcontrib(pca.outlines, nax = 1:10)
 ```
 
