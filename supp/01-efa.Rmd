@@ -45,13 +45,13 @@ pile(norm.outlines)
 
 # mosaics
 # in/out of heartland
-mosaic(data.out, ~heart.out, asp = 1, palette = pal_qual_Dark2)
+mosaic(norm.outlines, ~heart.out, asp = 1, palette = pal_qual_Dark2)
 # heartland regions (heartland, interior, and northern periphery)
-mosaic(data.out, ~heart.reg, asp = 1, palette = pal_qual_Dark2)
+mosaic(norm.outlines, ~heart.reg, asp = 1, palette = pal_qual_Dark2)
 # beveled or not
-mosaic(data.out, ~bev, asp = 1, palette = pal_qual_Dark2)
+mosaic(norm.outlines, ~bev, asp = 1, palette = pal_qual_Dark2)
 # bevel type
-mosaic(data.out, ~bev.type, asp = 1, palette = pal_qual_Dark2)
+mosaic(norm.outlines, ~bev.type, asp = 1, palette = pal_qual_Dark2)
 ```
 
 ## Calibrate harmonic + EFA
