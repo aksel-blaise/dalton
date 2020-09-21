@@ -25,7 +25,7 @@ As an exploratory research endeavour, this study was not [preregistered](https:/
 
 ## Acknowledgments
 
-I extend my gratitude to Christian S. Hoggard and David K. Thulman for their thoughtful comments and constructive criticisms on the draft of the landmarking protocol developed for the study of [Gahagan bifaces](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md) [@RN21001], which is extended here for an analysis of Dalton point morphology. This iteration of the landmarking protocol was developed using the [`digit3DLand`](https://github.com/morphOptics/digit3DLand) package in R.
+I extend my gratitude to Christian S. Hoggard and David K. Thulman for their thoughtful comments and constructive criticisms on the draft of the landmarking protocol developed for the study of [Gahagan bifaces](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md) [@RN21001], which is extended here for an analysis of Dalton point morphology. Additional thanks to Christian S. Hoggard for fielding questions related to the EFA analysis. This iteration of the landmarking protocol was initially developed using the [`digit3DLand`](https://github.com/morphOptics/digit3DLand) package in R, and I am grateful to Morgane Dubied for her help with coding questions.
 
 ## Funding
 
