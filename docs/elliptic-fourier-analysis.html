@@ -209,8 +209,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="elliptic-fourier-analysis" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Elliptic Fourier Analysis</h1>
-<p>Prior to running the full 3D geometric morphometric (3DGM) analysis, an elliptic Fourier analysis was conducted to identify differences in Dalton projectile point shape in plan view. These data inform the subsequent landmarking protocol used in the 3DGM analysis.</p>
-<p>Those 2D images (jpegs) used in the EFA were generated as screen captures of the 3D dataset, and are oriented with the same base alignment. Each image was masked using Photoshop to render a binary (black/white) image.</p>
+<p>Prior to running the full 3D geometric morphometric (3DGM) analysis, an elliptic Fourier analysis was conducted to identify differences in Dalton projectile point shape in plan view. These data were employed to inform the subsequent landmarking protocol used for the 3DGM analysis.</p>
+<p>Those 2D images (jpegs) used in the EFA were generated as screen captures of the 3D dataset, and are oriented with the same base alignment. Each image was masked in Photoshop to render a binary (black/white) image.</p>
 <div id="load-packages-data" class="section level2">
 <h2><span class="header-section-number">1.1</span> Load packages + data</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="elliptic-fourier-analysis.html#cb1-1"></a><span class="co"># load packages</span></span>
@@ -224,9 +224,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-9"><a href="elliptic-fourier-analysis.html#cb1-9"></a></span>
 <span id="cb1-10"><a href="elliptic-fourier-analysis.html#cb1-10"></a><span class="co"># attributes to factors</span></span>
 <span id="cb1-11"><a href="elliptic-fourier-analysis.html#cb1-11"></a>att.data<span class="op">$</span>heart.out &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>heart.out)</span>
-<span id="cb1-12"><a href="elliptic-fourier-analysis.html#cb1-12"></a>att.data<span class="op">$</span>heart.reg &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>heart.reg)</span>
-<span id="cb1-13"><a href="elliptic-fourier-analysis.html#cb1-13"></a>att.data<span class="op">$</span>bev &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>bev)</span>
-<span id="cb1-14"><a href="elliptic-fourier-analysis.html#cb1-14"></a>att.data<span class="op">$</span>bev.type &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>bev.type)</span></code></pre></div>
+<span id="cb1-12"><a href="elliptic-fourier-analysis.html#cb1-12"></a>att.data<span class="op">$</span>heart.out &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>heart.out)</span>
+<span id="cb1-13"><a href="elliptic-fourier-analysis.html#cb1-13"></a>att.data<span class="op">$</span>heart.reg &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>heart.reg)</span>
+<span id="cb1-14"><a href="elliptic-fourier-analysis.html#cb1-14"></a>att.data<span class="op">$</span>bev &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>bev)</span>
+<span id="cb1-15"><a href="elliptic-fourier-analysis.html#cb1-15"></a>att.data<span class="op">$</span>bev.type &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>bev.type)</span>
+<span id="cb1-16"><a href="elliptic-fourier-analysis.html#cb1-16"></a></span>
+<span id="cb1-17"><a href="elliptic-fourier-analysis.html#cb1-17"></a><span class="co"># colors</span></span>
+<span id="cb1-18"><a href="elliptic-fourier-analysis.html#cb1-18"></a>col.out &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)</span></code></pre></div>
 </div>
 <div id="generate-outlines" class="section level2">
 <h2><span class="header-section-number">1.2</span> Generate outlines</h2>
@@ -278,7 +282,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [ 43 / 45 ]  Welton4.jpg
 ## [ 44 / 45 ]  Welton5.jpg
 ## [ 45 / 45 ]  Welton6.jpg</code></pre>
-<pre><code>## Done in 4.9 secs</code></pre>
+<pre><code>## Done in 4.8 secs</code></pre>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="elliptic-fourier-analysis.html#cb6-1"></a>data.out &lt;-<span class="st"> </span><span class="kw">Out</span>(outlines, </span>
 <span id="cb6-2"><a href="elliptic-fourier-analysis.html#cb6-2"></a>         <span class="dt">fac =</span> att.data)</span>
 <span id="cb6-3"><a href="elliptic-fourier-analysis.html#cb6-3"></a></span>
@@ -313,7 +317,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## 
 ## $q
 ##                                  h1       h2       h3       h4       h5       h6       h7       h8       h9
-## 11AI225                    66.04859 71.64065 91.19967 93.51140 97.97763 98.16551 98.55269 99.01784 99.09204
+## 11AI225                    65.84612 71.55256 91.05778 93.37513 97.93198 98.12745 98.54202 99.01125 99.07758
 ## 11HE445                    31.71380 68.00042 87.76597 90.37718 96.81345 97.47767 98.86839 99.14479 99.18980
 ## HK49_1462                  54.77031 83.17790 94.41895 95.35329 98.43893 98.65503 99.30013 99.43902 99.47831
 ## HK49_2                     71.50329 83.31028 94.41132 95.49433 97.87996 98.57595 98.98002 99.25857 99.52727
@@ -359,7 +363,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Welton5                    19.96734 79.21885 86.69763 91.04814 94.68065 95.43068 97.09599 97.22612 98.27772
 ## Welton6                    43.90564 66.07756 75.97847 77.94012 83.05639 86.56435 91.55629 93.35972 96.62547
 ##                                 h10      h11      h12      h13      h14      h15      h16      h17      h18
-## 11AI225                    99.48607 99.66783 99.69619 99.82495 99.89756 99.95304 99.97105 99.98106 99.99504
+## 11AI225                    99.48158 99.66948 99.70582 99.82409 99.89316 99.95344 99.96958 99.98000 99.99518
 ## 11HE445                    99.47455 99.53302 99.74857 99.83155 99.86798 99.89064 99.89775 99.96522 99.98554
 ## HK49_1462                  99.72894 99.79513 99.83847 99.87109 99.89442 99.97203 99.98009 99.98320 99.98734
 ## HK49_2                     99.65659 99.76875 99.80320 99.90730 99.94805 99.96495 99.96890 99.97659 99.99185
@@ -497,14 +501,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb27-2"><a href="elliptic-fourier-analysis.html#cb27-2"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;heart.out&#39;</span>)</span></code></pre></div>
 <pre><code>## PC axes 1 to 11 were retained</code></pre>
 <pre><code>##           Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
-## fac        1           2.2624   6.7872     11     33 8.294e-06 ***
+## fac        1           2.2653   6.7958     11     33 8.188e-06 ***
 ## Residuals 43                                                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="elliptic-fourier-analysis.html#cb30-1"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;heart.reg&#39;</span>)</span></code></pre></div>
 <pre><code>## PC axes 1 to 11 were retained</code></pre>
 <pre><code>##           Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
-## fac        2           3.2225   4.5407     22     62 1.322e-06 ***
+## fac        2           3.2269    4.547     22     62 1.294e-06 ***
 ## Residuals 42                                                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
@@ -521,20 +525,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## $summary (see also $manovas)
 ##       Df Pillai approx F num Df den Df    Pr(&gt;F)
-## H - I  1 0.8238   11.224     10     24 8.003e-07
-## H - P  1 0.6243    3.158     10     19 1.495e-02
-## I - P  1 0.5994    2.095     10     14 1.001e-01</code></pre>
+## H - I  1 0.8218   11.070     10     24 9.094e-07
+## H - P  1 0.6242    3.156     10     19 1.500e-02
+## I - P  1 0.5994    2.095     10     14 1.000e-01</code></pre>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="elliptic-fourier-analysis.html#cb40-1"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;bev&#39;</span>)</span></code></pre></div>
 <pre><code>## PC axes 1 to 11 were retained</code></pre>
 <pre><code>##           Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
-## fac        1           1.4017   4.2052     11     33 0.0006439 ***
+## fac        1           1.4063    4.219     11     33 0.0006273 ***
 ## Residuals 43                                                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="elliptic-fourier-analysis.html#cb43-1"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;bev.type&#39;</span>)</span></code></pre></div>
 <pre><code>## PC axes 1 to 11 were retained</code></pre>
 <pre><code>##           Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
-## fac        2           2.8862   4.0669     22     62 6.906e-06 ***
+## fac        2           2.8864   4.0673     22     62 6.897e-06 ***
 ## Residuals 42                                                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
@@ -551,9 +555,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## $summary (see also $manovas)
 ##                                  Df  Pillai approx F num Df den Df   Pr(&gt;F)
-## alternate - no.bevel              1 0.31189  5.74121      3     38 0.002427
-## alternate - unifacial.bimarginal  1 0.15687  1.42642      3     23 0.260695
-## no.bevel - unifacial.bimarginal   1 0.01728  0.09962      3     17 0.959134</code></pre>
+## alternate - no.bevel              1 0.31187  5.74066      3     38 0.002428
+## alternate - unifacial.bimarginal  1 0.15609  1.41808      3     23 0.263024
+## no.bevel - unifacial.bimarginal   1 0.01723  0.09932      3     17 0.959301</code></pre>
 </div>
 <div id="mean-shapes" class="section level2">
 <h2><span class="header-section-number">1.7</span> Mean shapes</h2>

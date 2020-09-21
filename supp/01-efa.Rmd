@@ -1,8 +1,8 @@
 # Elliptic Fourier Analysis
 
-Prior to running the full 3D geometric morphometric (3DGM) analysis, an elliptic Fourier analysis was conducted to identify differences in Dalton projectile point shape in plan view. These data inform the subsequent landmarking protocol used in the 3DGM analysis.
+Prior to running the full 3D geometric morphometric (3DGM) analysis, an elliptic Fourier analysis was conducted to identify differences in Dalton projectile point shape in plan view. These data were employed to inform the subsequent landmarking protocol used for the 3DGM analysis.
 
-Those 2D images (jpegs) used in the EFA were generated as screen captures of the 3D dataset, and are oriented with the same base alignment. Each image was masked using Photoshop to render a binary (black/white) image.
+Those 2D images (jpegs) used in the EFA were generated as screen captures of the 3D dataset, and are oriented with the same base alignment. Each image was masked in Photoshop to render a binary (black/white) image.
 
 ## Load packages + data
 
@@ -18,9 +18,13 @@ att.data <- read.csv("qdata.csv", header = TRUE, as.is = TRUE)
 
 # attributes to factors
 att.data$heart.out <- as.factor(att.data$heart.out)
+att.data$heart.out <- as.factor(att.data$heart.out)
 att.data$heart.reg <- as.factor(att.data$heart.reg)
 att.data$bev <- as.factor(att.data$bev)
 att.data$bev.type <- as.factor(att.data$bev.type)
+
+# colors
+col.out <- wes_palette("Moonrise2")
 ```
 
 ## Generate outlines
