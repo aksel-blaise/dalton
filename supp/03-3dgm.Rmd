@@ -44,7 +44,8 @@ Y.gpa
 
 # geomorph data frame
 gdf <- geomorph.data.frame(shape = Y.gpa$coords, size = Y.gpa$Csize, 
-                           heart = qdata$heart.out, hreg = qdata$heart.reg)
+                           heart = qdata$heart.out, hreg = qdata$heart.reg,
+                           bev.1 = qdata$bev, bev.2 = qdata$bev.type)
 ```
 
 ```{r consensus, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="2D plot of 3D consensus configuration."}
