@@ -7,6 +7,7 @@
 
 # devtools::install_github("geomorphR/geomorph", ref = "Stable", build_vignettes = TRUE)
 library(geomorph)
+library(tidyverse)
 library(wesanderson)
 
 # setwd
@@ -81,46 +82,50 @@ bev.2 <- qdata$bev.type # type of beveling
 
 ```{r box1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by Heartland (in/out)."}
 # boxplot of Dalton point centroid size by in/out heartland
-b1 <- boxplot(csz~heart,
-        names = c("H","N"), # heartland (H), and not heartland (N)
-        xlab = "Heartland",
-        ylab = "Centroid Size",
-        col = wes_palette("Moonrise2"),
-        )
-b1
+csz.hrt <- ggplot(qdata, aes(x = heart, y = csz, color = heart)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize = 0.3) +
+  scale_colour_manual(values = wes_palette("Moonrise2")) +
+  theme(legend.position = "none") +
+  labs(x = 'In Heartland?', y = 'Centroid Size')
+# render plot
+csz.hrt
 ```
 
 ```{r box2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by Heartland region."}
 # boxplot of Dalton point centroid size by heartland + regions
-b2 <- boxplot(csz~hreg,
-        names = c("H","I","P"), # heartland (H), interior (I), and northern periphery (P)
-        xlab = "Heartland Region",
-        ylab = "Centroid Size",
-        col = wes_palette("Moonrise2")
-        )
-b2
+csz.hreg <- ggplot(qdata, aes(x = hreg, y = csz, color = hreg)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize = 0.3) +
+  scale_colour_manual(values = wes_palette("Moonrise2")) +
+  theme(legend.position = "none") +
+  labs(x = 'Heartland Region', y = 'Centroid Size')
+# render plot
+csz.hreg
 ```
 
 ```{r box3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by beveled."}
 # boxplot of Dalton point centroid size by beveled y/n
-b3 <- boxplot(csz~bev.1,
-        names = c("n","y"), # yes/no
-        xlab = "Beveled?",
-        ylab = "Centroid Size",
-        col = wes_palette("Moonrise2")
-        )
-b3
+csz.bev.1 <- ggplot(qdata, aes(x = bev.1, y = csz, color = bev.1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize = 0.3) +
+  scale_colour_manual(values = wes_palette("Moonrise2")) +
+  theme(legend.position = "none") +
+  labs(x = 'Beveled?', y = 'Centroid Size')
+# render plot
+csz.bev.1
 ```
 
 ```{r box4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by bevel type."}
 # boxplot of Dalton point centroid size by bevel type
-b4 <- boxplot(csz~bev.2,
-        names = c("alternate","no.bevel","unifacial.bimarginal"), # bevel type/no bevel
-        xlab = "Beveled Type",
-        ylab = "Centroid Size",
-        col = wes_palette("Moonrise2"),
-        )
-b4
+csz.bev.2 <- ggplot(qdata, aes(x = bev.2, y = csz, color = bev.2)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize = 0.3) +
+  scale_colour_manual(values = wes_palette("Moonrise2")) +
+  theme(legend.position = "none") +
+  labs(x = 'Bevel Type', y = 'Centroid Size')
+# render plot
+csz.bev.2
 ```
 
 ## Principal Components Analysis
@@ -261,7 +266,7 @@ fit.shape.bev.2 <- procD.lm(shape ~ bev.2,
                            iter = 9999)
 ```
 
-## Test Hypothesis 1
+## Test Hypothesis 1 (Geo)
 
 Hypothesis 1 assesses whether there is a difference in morphology for Dalton points found in and out of the heartland.
 
@@ -279,7 +284,7 @@ anova(fit.size.heart)
 anova(fit.shape.heart)
 ```
 
-## Test Hypothesis 2
+## Test Hypothesis 2 (Geo)
 
 Hypothesis 2 assesses whether there is a difference in morphology for Dalton points found in the heartland, the interior, and the northern periphery.
 
@@ -317,7 +322,7 @@ summary(sz.hreg,
         test.type = "var")
 ```
 
-## Test Hypothesis 3
+## Test Hypothesis 3 (Techno)
 
 Hypothesis 3 assesses whether there is a discernible difference in morphology for Dalton points that are beveled.
 
@@ -335,7 +340,7 @@ anova(fit.size.bev.1)
 anova(fit.shape.bev.1)
 ```
 
-## Test Hypothesis 4
+## Test Hypothesis 4 (Techno)
 
 ```{r h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # ANOVA: does dalton projectile point size differ by bev.2?

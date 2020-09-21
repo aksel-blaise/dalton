@@ -1,0 +1,135 @@
+# Elliptic Fourier Analysis
+
+## Load packages + data
+
+```{r load.packages, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# load packages
+library(here)
+library(wesanderson)
+library(Momocs)
+
+# read images + attribute data
+jpg.list <- list.files(here("/jpeg"), full.names = TRUE)
+att.data <- read.csv("qdata.csv", header = TRUE, as.is = TRUE)
+
+# attributes to factors
+att.data$heart.out <- as.factor(att.data$heart.out)
+att.data$heart.reg <- as.factor(att.data$heart.reg)
+att.data$bev <- as.factor(att.data$bev)
+att.data$bev.type <- as.factor(att.data$bev.type)
+```
+
+## Generate outlines
+
+```{r outlines + attribues, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+outlines <- jpg.list %>%
+  import_jpg()
+
+data.out <- Out(outlines, 
+         fac = att.data)
+
+norm.outlines <- data.out %>% 
+  coo_center %>%
+  coo_scale()
+```
+
+## Stack and panels
+
+```{r stack.panel, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# outline stack
+stack(norm.outlines)
+
+# panels
+par(mfrow = c(2,2))
+mosaic(data.out, ~heart.out, asp = 1, palette = pal_qual_Dark2)
+mosaic(data.out, ~heart.reg, asp = 1, palette = pal_qual_Dark2)
+mosaic(data.out, ~bev, asp = 1, palette = pal_qual_Dark2)
+mosaic(data.out, ~bev.type, asp = 1, palette = pal_qual_Dark2)
+```
+
+## Calibrate harmonic + EFA
+
+```{r cal.harm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+
+calibrate_harmonicpower_efourier(norm.outlines)
+calibrate_reconstructions_efourier(norm.outlines, range = 1:10) #10 harmonics
+
+efa.outlines <- efourier(norm.outlines, nb.h = 10, norm = TRUE)
+
+pca.outlines <- PCA(efa.outlines)
+```
+
+## PCA
+
+```{r pca.plot, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# pca 
+scree_plot(pca.outlines)
+
+# plot pca
+par(mfrow = c(2,2))
+plot_PCA(pca.outlines, morphospace_position = "range", ~heart.out, palette = pal_qual_Dark2)
+plot_PCA(pca.outlines, morphospace_position = "range", ~heart.reg, palette = pal_qual_Dark2)
+plot_PCA(pca.outlines, morphospace_position = "range", ~bev, palette = pal_qual_Dark2)
+plot_PCA(pca.outlines, morphospace_position = "range", ~bev.type, palette = pal_qual_Dark2)
+
+# contribution of each pc
+boxplot(pca.outlines, ~heart.out, nax = 1:5, palette = pal_qual_Dark2)
+boxplot(pca.outlines, ~heart.reg, nax = 1:5, palette = pal_qual_Dark2)
+boxplot(pca.outlines, ~bev, nax = 1:5, palette = pal_qual_Dark2)
+boxplot(pca.outlines, ~bev.type, nax = 1:5, palette = pal_qual_Dark2)
+
+# mean shape + 2sd for each pc
+PCcontrib(pca.outlines, nax = 1:10)
+```
+
+## MANOVA + MANOVA_PW
+
+```{r manova, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# manova + manova_pw
+MANOVA(pca.outlines, 'heart.out')
+MANOVA(pca.outlines, 'heart.reg')
+MANOVA_PW(pca.outlines, 'heart.reg')
+MANOVA(pca.outlines, 'bev')
+MANOVA(pca.outlines, 'bev.type')
+MANOVA_PW(pca.outlines, 'bev.type')
+```
+
+## Mean shapes
+
+```{r ms1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for in (green) and out (maroon) of the heartland."}
+# mean shapes
+ms.heart <- MSHAPES(efa.outlines, 'heart.out')
+ms.heart$Coe
+msh <- ms.heart$shp
+coo_plot(msh$H, border = 'forestgreen')
+coo_draw(msh$N, border = 'firebrick4')
+```
+
+```{r ms2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for heartland (green), interior (black), and northern periphery (maroon)."}
+# mean shapes
+ms.hreg <- MSHAPES(efa.outlines, 'heart.reg', FUN = mean)
+ms.hreg$Coe
+mshr <- ms.hreg$shp
+coo_plot(mshr$H, border = 'forestgreen')
+coo_draw(mshr$I)
+coo_draw(mshr$P, border = 'firebrick4')
+```
+
+```{r ms3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for alternate (green),  and not beveled (maroon)."}
+# mean shapes
+ms.bev <- MSHAPES(efa.outlines, 'bev', FUN = mean)
+ms.bev$Coe
+msb <- ms.bev$shp
+coo_plot(msb$y, border = 'forestgreen')
+coo_draw(msb$n, border = 'firebrick4')
+```
+
+```{r ms4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes by bevel type: alternate (green), unifacial bimarginal (black), and not beveled (maroon)."}
+# mean shapes
+ms.bevt <- MSHAPES(efa.outlines, 'bev.type', FUN = mean)
+ms.bevt$Coe
+msbt <- ms.bevt$shp
+coo_plot(msbt$alternate, border = 'forestgreen')
+coo_draw(msbt$unifacial.bimarginal)
+coo_draw(msbt$no.bevel, border = 'firebrick4')
+```
