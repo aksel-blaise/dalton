@@ -1,8 +1,8 @@
 # Elliptic Fourier Analysis
 
-Prior to running the full 3D geometric morphometric (3DGM) analysis, an elliptic Fourier analysis was conducted to identify differences in Dalton projectile point shape in plan view. These data were employed to inform the subsequent landmarking protocol used for the 3DGM analysis.
+Prior to running the full 3D geometric morphometric (3DGM) analysis, an elliptic Fourier analysis was conducted to identify differences in the plan view of Dalton projectile points. These data have utility in developing the subsequent 3D landmarking protocol (LM3d3) used in the 3DGM analysis.
 
-Those 2D images (jpegs) used in the EFA were generated as screen captures of the 3D dataset, and are oriented with the same base alignment. Each image was masked in Photoshop to render a binary (black/white) image.
+The 2D images used in the EFA were exported as screen captures from _Geomagic Design X_, and are oriented using the same exact alignment as the 3D dataset. Each image was then masked in Photoshop to render the binary (black/white) image used for this preliminary analysis.
 
 ## Load packages + data
 
@@ -63,7 +63,9 @@ mosaic(norm.outlines, ~bev.type, asp = 1, palette = pal_qual_Dark2)
 ```{r cal.harm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 
 calibrate_harmonicpower_efourier(norm.outlines, nb.h = 20)
-calibrate_reconstructions_efourier(norm.outlines, range = 1:10) #10 harmonics
+
+# 10 harmonics capture 99 percent of variation
+calibrate_reconstructions_efourier(norm.outlines, range = 1:10)
 
 efa.outlines <- efourier(norm.outlines, nb.h = 10, norm = TRUE)
 
