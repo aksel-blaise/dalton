@@ -30,15 +30,20 @@ col.out <- wes_palette("Moonrise2")
 ## Generate outlines
 
 ```{r outlines + attribues, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# generate outlines
 outlines <- jpg.list %>%
   import_jpg()
 
+# add attributes
 data.out <- Out(outlines, 
          fac = att.data)
 
+# center, scale, align, and rotate specimens
 norm.outlines <- data.out %>% 
   coo_center %>%
-  coo_scale()
+  coo_scale() %>%
+  coo_align() %>% 
+  coo_rotate()
 ```
 
 ## Pile and mosaics
@@ -61,14 +66,16 @@ mosaic(norm.outlines, ~bev.type, asp = 1, palette = pal_qual_Dark2)
 ## Calibrate harmonic + EFA
 
 ```{r cal.harm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-
+# calibrate how many harmonics needed
 calibrate_harmonicpower_efourier(norm.outlines, nb.h = 20)
 
 # 10 harmonics capture 99 percent of variation
 calibrate_reconstructions_efourier(norm.outlines, range = 1:10)
 
+# generate efa outlines with 10 harmonics
 efa.outlines <- efourier(norm.outlines, nb.h = 10, norm = TRUE)
 
+# use efa.outlines for pca
 pca.outlines <- PCA(efa.outlines)
 ```
 
@@ -80,13 +87,13 @@ scree_plot(pca.outlines)
 
 # plot pca
 # heartland in/out
-plot_PCA(pca.outlines, morphospace_position = "range", ~heart.out, palette = pal_qual_Dark2)
+plot_PCA(pca.outlines, morphospace_position = "range", ~heart.out, zoom = 1.25, palette = pal_qual_Dark2)
 # heartland region
-plot_PCA(pca.outlines, morphospace_position = "range", ~heart.reg, palette = pal_qual_Dark2)
+plot_PCA(pca.outlines, morphospace_position = "range", ~heart.reg, zoom = 1.25, palette = pal_qual_Dark2)
 # beveled or not
-plot_PCA(pca.outlines, morphospace_position = "range", ~bev, palette = pal_qual_Dark2)
+plot_PCA(pca.outlines, morphospace_position = "range", ~bev, zoom = 1.25, palette = pal_qual_Dark2)
 # bevel type
-plot_PCA(pca.outlines, morphospace_position = "range", ~bev.type, palette = pal_qual_Dark2)
+plot_PCA(pca.outlines, morphospace_position = "range", ~bev.type, zoom = 1.25, palette = pal_qual_Dark2)
 
 # contribution of each pc
 boxplot(pca.outlines, ~heart.out, nax = 1:5, palette = pal_qual_Dark2)
@@ -102,11 +109,17 @@ PCcontrib(pca.outlines, nax = 1:10)
 
 ```{r manova, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # manova + manova_pw
+# do shapes differ in/out of heartland?
 MANOVA(pca.outlines, 'heart.out')
+# do shapes differ between heartland regions?
 MANOVA(pca.outlines, 'heart.reg')
+# which?
 MANOVA_PW(pca.outlines, 'heart.reg')
+# do shapes differ if beveled?
 MANOVA(pca.outlines, 'bev')
+# do shapes differ by bevel type?
 MANOVA(pca.outlines, 'bev.type')
+# which?
 MANOVA_PW(pca.outlines, 'bev.type')
 ```
 
