@@ -1,4 +1,4 @@
-# Elliptic Fourier Analysis
+# Elliptical Fourier Analysis
 
 Prior to running the full 3D geometric morphometric (3DGM) analysis, an elliptic Fourier analysis was conducted to identify differences in the plan view of Dalton projectile points. These data have utility in developing the subsequent 3D landmarking protocol (LM3d3) used in the 3DGM analysis.
 
