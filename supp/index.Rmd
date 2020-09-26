@@ -1,7 +1,7 @@
 --- 
 title: "Landmark 3D geometric morphometrics of Dalton projectile points"
 author: 
-    - Robert Z. Selden, Jr.^[Heritage Research Center, Stephen F. Austin State University; Virtual Curation Laboratory, Virginia Commonwealth University; and Cultural Heritage Department, Jean Monnet University, zselden@sfasu.edu]
+    - Robert Z. Selden, Jr.^[Heritage Research Center, Stephen F. Austin State University and Cultural Heritage Department, Jean Monnet University, zselden@sfasu.edu]
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -13,7 +13,7 @@ description: "Morphological analysis of Dalton projectile points"
 
 # Preface {-}
 
->Reproducibility—the ability to recompute results—and replicability—the chances other experimenters will achieve a consistent result—are two foundational characteristics of successful scientific research [@RN20918].
+>Reproducibility---the ability to recompute results---and replicability--—the chances other experimenters will achieve a consistent result---are two foundational characteristics of successful scientific research [@RN20918].
 
 This volume is written in _Markdown_, and all files needed to reproduce it are included in the [GitHub repository](https://github.com/aksel-blaise/dalton). The reproducible nature of this undertaking provides a means for others to critically assess and evaluate the various analytical components [@RN20915;@RN20916;@RN20917], which is a necessary requirement for the production of reliable knowledge.
 

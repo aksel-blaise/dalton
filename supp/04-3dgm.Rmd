@@ -1,5 +1,7 @@
 # Analysis of Dalton point morphology
 
+This analysis includes semilandmarks 12 and 13.
+
 ## Load packages + data
 
 ```{r load.data, echo = TRUE}
