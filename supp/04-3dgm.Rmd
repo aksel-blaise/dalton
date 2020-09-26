@@ -197,6 +197,26 @@ pc.plot4 <- plot(pca,
 
 ## Define models
 
+### Allometry
+
+```{r allom.dalton, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# allometry
+fit.size <- procD.lm(shape ~ size, data = gdf, 
+                     print.progress = FALSE, iter = 9999)
+# allometry - common allometry, different means -> heart
+fit.sz.cinc <- procD.lm(shape ~ size + heart, data = gdf, 
+                        print.progress = FALSE, iter = 9999)
+# allometry - unique allometries -> heart
+fit.sz.uinc <- procD.lm(shape ~ size * heart, data = gdf, 
+                        print.progress = FALSE, iter = 9999)
+# allometry - common allometry, different means -> hreg
+fit.sz.cinc2 <- procD.lm(shape ~ size + hreg, data = gdf, 
+                         print.progress = FALSE, iter = 9999)
+# allometry - unique allometries -> hreg
+fit.sz.uinc2 <- procD.lm(shape ~ size * hreg, data = gdf, 
+                         print.progress = FALSE, iter = 9999)
+```
+
 ### Hypothesis 1
 
 ```{r def.mod.1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
@@ -265,6 +285,67 @@ fit.shape.bev.2 <- procD.lm(shape ~ bev.2,
                            data = gdf, 
                            print.progress = FALSE, 
                            iter = 9999)
+```
+
+## Allometry
+
+```{r allometryEX, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# allometry - does shape change with size?
+anova(fit.size)
+```
+
+### Common allometry
+
+```{r common.all.ex, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# inc
+anova(fit.sz.cinc) # common allometry (inc)
+
+# inc2
+anova(fit.sz.cinc2) # common allometry (inc2)
+
+```
+
+```{r allom.plot1.ex, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# allometry plots
+# regscore (Drake and Klingenberg 2008)
+plot(fit.size, type = "regression", reg.type = "RegScore", 
+     predictor = log(gdf$size), pch = pch.gps.heart, col = col.gps.heart)
+plot(fit.size, type = "regression", reg.type = "RegScore", 
+     predictor = log(gdf$size), pch = pch.gps.hreg, col = col.gps.hreg)
+```
+
+```{r allom.plot2.ex, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# common allometric component (Mitteroecker 2004)
+plotAllometry(fit.size, size = gdf$size, logsz = TRUE, method = "CAC", 
+              pch = pch.gps.heart, col = col.gps.heart)
+plotAllometry(fit.size, size = gdf$size, logsz = TRUE, method = "CAC", 
+              pch = pch.gps.hreg, col = col.gps.hreg)
+```
+
+```{r allom.plot3.ex, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# size-shape pca (Mitteroecker 2004)
+plotAllometry(fit.size, size = gdf$size, logsz = TRUE, method = "size.shape", 
+              pch = pch.gps.heart, col = col.gps.heart)
+plotAllometry(fit.size, size = gdf$size, logsz = TRUE, method = "size.shape", 
+              pch = pch.gps.hreg, col = col.gps.hreg)
+```
+
+### Unique allometry
+
+```{r unique.all.ex, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# heart
+anova(fit.sz.uinc) # unique allometry (heart)
+
+# hreg
+anova(fit.sz.uinc2) # unique allometry (hreg)
+```
+
+```{r unique.allom.plot, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# predline (Adams and Nistri 2010)
+plotAllometry(fit.sz.uinc, size = gdf$size, logsz = TRUE, method = "PredLine", 
+              pch = pch.gps.heart, col = col.gps.heart)
+plotAllometry(fit.sz.uinc2, size = gdf$size, logsz = TRUE, method = "PredLine", 
+              pch = pch.gps.hreg, col = col.gps.hreg)
 ```
 
 ## Test Hypothesis 1 (Geo)

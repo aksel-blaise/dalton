@@ -6,10 +6,9 @@ The 2D images used in the EFA were exported as screen captures from _Geomagic De
 
 ## Load packages + data
 
-```{r load.packages, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+```{r load.packages.efa, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # load packages
 library(here)
-library(wesanderson)
 library(Momocs)
 
 # read images + attribute data
@@ -22,9 +21,6 @@ att.data$heart.out <- as.factor(att.data$heart.out)
 att.data$heart.reg <- as.factor(att.data$heart.reg)
 att.data$bev <- as.factor(att.data$bev)
 att.data$bev.type <- as.factor(att.data$bev.type)
-
-# colors
-col.out <- wes_palette("Moonrise2")
 ```
 
 ## Generate outlines
