@@ -9,6 +9,9 @@ The 2D images used in the EFA were exported as screen captures from _Geomagic De
 ```{r load.packages.efa, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # load packages
 library(here)
+library(tidyverse)
+library(ggtree)
+library(wesanderson)
 library(Momocs)
 
 # read images + attribute data

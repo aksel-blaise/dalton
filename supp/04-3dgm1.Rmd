@@ -1,6 +1,4 @@
-# Analysis of Dalton point morphology
-
-This analysis includes semilandmarks 12 and 13.
+# 3DGM with sLMs 12 and 13.
 
 ## Load packages + data
 
