@@ -138,6 +138,8 @@ pc.plot4 <- plot(pca,
                              group.cols = col.hull.4)
 ```
 
+## Define models
+
 ### Hypothesis 1
 
 ```{r def.mod.1.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
