@@ -1,4 +1,4 @@
-# 3DGM with sLMs 12 and 13.
+# Analysis of Dalton morphology
 
 ## Load packages + data
 
