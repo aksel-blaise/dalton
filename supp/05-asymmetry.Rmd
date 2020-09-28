@@ -49,15 +49,21 @@ summary(res.bilat)
 ```{r symm.shape, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Symmetric shape component plotted in 2D."}
 # symmetric shape
 symm.shape <- res.bilat$symm.shape[,1:2,]
+symm.shape2 <- res.bilat$symm.shape[,2:3,]
+
 # plot all specimens in 2D
 plotAllSpecimens(symm.shape)
+plotAllSpecimens(symm.shape2)
 ```
 
 ```{r asymm.shape, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Asymmetric shape component plotted in 2D."}
 # asymmetric shape
 asymm.shape<-res.bilat$asymm.shape[,1:2,]
+asymm.shape2 <- res.bilat$asymm.shape[,2:3,]
+
 # plot all specimens in 2D
 plotAllSpecimens(asymm.shape)
+plotAllSpecimens(asymm.shape2)
 ```
 
 ## Principal Components Analsis
@@ -96,18 +102,18 @@ pc.plot1 <- plot(pca,
                              group.cols = col.hull)
 
   # mshape                              
-  M<-mshape(Y.gpa$coords)
+  M<-mshape(res.bilat$symm.shape)
   # shapes at the minima and maxima of PC1 and PC2 using min and max
   # corresponding to the x/y values in the four PC plots
   pc <- pca$x[,1] # x-axis
-  preds <- shape.predictor(Y.gpa$coords, 
+  preds <- shape.predictor(res.bilat$symm.shape, 
                            x = pc, Intercept = FALSE, 
                            pred1 = min(pc), 
                            pred2 = max(pc))
   plotRefToTarget(M, preds$pred1) # minimum x-axis
   plotRefToTarget(M, preds$pred2) # maximum x-axis
   pc <- pca$x[,2] # y-axis
-  preds<-shape.predictor(Y.gpa$coords, 
+  preds<-shape.predictor(res.bilat$symm.shape, 
                          x = pc, Intercept = FALSE, 
                          pred1 = min(pc), 
                          pred2 = max(pc))

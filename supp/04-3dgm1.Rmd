@@ -70,7 +70,7 @@ plot(Y.gpa$consensus[,c("Z", "Y")], pch=20)
 # knitr::include_graphics('images/gpa3d.png')
 ```
 
-## Boxplots by centroid size
+### Boxplot attributes
 
 ```{r box.attr, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # add centroid size to qdata
@@ -89,6 +89,154 @@ bev.1 <- qdata$bev # beveled yes/no
 bev.2 <- qdata$bev.type # type of beveling
 ```
 
+## Principal Components Analysis
+
+Principal components analysis [@RN1746] was used to visualise shape variation among the bifaces. The shape changes described by each principal axis are commonly visualized using thin-plate spline warping of a reference 3D mesh [@RN1731;@RN479]. 
+
+```{r pca, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# principal components analysis
+pca<-gm.prcomp(Y.gpa$coords)
+summary(pca)
+```
+
+## Define models
+
+### Allometry
+
+```{r allom.dalton, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# general allometry
+fit.size <- procD.lm(shape ~ size, 
+                     data = gdf, 
+                     print.progress = FALSE, 
+                     iter = 9999)
+```
+
+### Hypothesis 1
+
+```{r def.mod.1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+## Define models
+# allometry - common allometry, different means -> heart
+fit.sz.cheart <- procD.lm(shape ~ size + heart, 
+                        data = gdf, 
+                        print.progress = FALSE, 
+                        iter = 9999)
+# allometry - unique allometries -> heart
+fit.sz.uheart <- procD.lm(shape ~ size * heart, 
+                        data = gdf, 
+                        print.progress = FALSE, 
+                        iter = 9999)
+# size as a function of heart
+fit.size.heart <- procD.lm(size ~ heart, 
+                           data = gdf, 
+                           print.progress = FALSE, 
+                           iter = 9999)
+# shape as a function of heart
+fit.shape.heart <- procD.lm(shape ~ heart, 
+                            data = gdf, 
+                            print.progress = FALSE, 
+                            iter = 9999)
+```
+
+### Hypothesis 2
+
+```{r def.mod.2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+## Define models
+# allometry - common allometry, different means -> hreg
+fit.sz.chreg <- procD.lm(shape ~ size + hreg, 
+                         data = gdf, 
+                         print.progress = FALSE, 
+                         iter = 9999)
+# allometry - unique allometries -> hreg
+fit.sz.uhreg <- procD.lm(shape ~ size * hreg, 
+                         data = gdf, 
+                         print.progress = FALSE, 
+                         iter = 9999)
+# size as a function of hreg
+fit.size.hreg <- procD.lm(size ~ hreg, 
+                          data = gdf, 
+                          print.progress = FALSE, 
+                          iter = 9999)
+
+# shape as a function of hreg
+fit.shape.hreg <- procD.lm(shape ~ hreg, 
+                           data = gdf, 
+                           print.progress = FALSE, 
+                           iter = 9999)
+```
+
+### Hypothesis 3
+
+```{r def.mod.3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+## Define models
+# allometry - common allometry, different means -> bev.1
+fit.sz.cbev.1 <- procD.lm(shape ~ size + bev.1, 
+                        data = gdf, 
+                        print.progress = FALSE, 
+                        iter = 9999)
+# allometry - unique allometries -> bev.1
+fit.sz.ubev.1 <- procD.lm(shape ~ size * bev.1, 
+                        data = gdf, 
+                        print.progress = FALSE, 
+                        iter = 9999)
+# size as a function of bev.1
+fit.size.bev.1 <- procD.lm(size ~ bev.1, 
+                          data = gdf, 
+                          print.progress = FALSE, 
+                          iter = 9999)
+
+# shape as a function of bev.1
+fit.shape.bev.1 <- procD.lm(shape ~ bev.1, 
+                           data = gdf, 
+                           print.progress = FALSE, 
+                           iter = 9999)
+```
+
+### Hypothesis 4
+
+```{r def.mod.4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+## Define models
+# allometry - common allometry, different means -> bev.2
+fit.sz.cbev.2 <- procD.lm(shape ~ size + bev.2, 
+                        data = gdf, 
+                        print.progress = FALSE, 
+                        iter = 9999)
+# allometry - unique allometries -> bev.2
+fit.sz.ubev.2 <- procD.lm(shape ~ size * bev.2, 
+                        data = gdf, 
+                        print.progress = FALSE, 
+                        iter = 9999)
+# size as a function of bev.2
+fit.size.bev.2 <- procD.lm(size ~ bev.2, 
+                          data = gdf, 
+                          print.progress = FALSE, 
+                          iter = 9999)
+
+# shape as a function of bev.2
+fit.shape.bev.2 <- procD.lm(shape ~ bev.2, 
+                           data = gdf, 
+                           print.progress = FALSE, 
+                           iter = 9999)
+```
+
+## Allometry
+
+```{r allometry, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# general allometry - does dalton shape change with size?
+anova(fit.size)
+```
+
+## Test Hypothesis 1 (Geo)
+
+Hypothesis 1 assesses whether there is a difference in morphology for Dalton points found in and out of the heartland.
+
+A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
+
+```{r lm3d3.a1.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 1 considers whether Dalton points discovered in (left) and out (right) of the Heartland differ in morphology."}
+knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
+```
+
+### Boxplot (H1)
+
 ```{r box1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by Heartland (in/out)."}
 # boxplot of Dalton point centroid size by in/out heartland
 csz.hrt <- ggplot(qdata, aes(x = heart, y = csz, color = heart)) + 
@@ -101,51 +249,9 @@ csz.hrt <- ggplot(qdata, aes(x = heart, y = csz, color = heart)) +
 csz.hrt
 ```
 
-```{r box2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by Heartland region."}
-# boxplot of Dalton point centroid size by heartland + regions
-csz.hreg <- ggplot(qdata, aes(x = hreg, y = csz, color = hreg)) + 
-  geom_boxplot() +
-  geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize = 0.3) +
-  scale_colour_manual(values = wes_palette("Moonrise2")) +
-  theme(legend.position = "none") +
-  labs(x = 'Heartland Region', y = 'Centroid Size')
-# render plot
-csz.hreg
-```
-
-```{r box3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by beveled."}
-# boxplot of Dalton point centroid size by beveled y/n
-csz.bev.1 <- ggplot(qdata, aes(x = bev.1, y = csz, color = bev.1)) + 
-  geom_boxplot() +
-  geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize = 0.3) +
-  scale_colour_manual(values = wes_palette("Moonrise2")) +
-  theme(legend.position = "none") +
-  labs(x = 'Beveled?', y = 'Centroid Size')
-# render plot
-csz.bev.1
-```
-
-```{r box4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by bevel type."}
-# boxplot of Dalton point centroid size by bevel type
-csz.bev.2 <- ggplot(qdata, aes(x = bev.2, y = csz, color = bev.2)) + 
-  geom_boxplot() +
-  geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize = 0.3) +
-  scale_colour_manual(values = wes_palette("Moonrise2")) +
-  theme(legend.position = "none") +
-  labs(x = 'Bevel Type', y = 'Centroid Size')
-# render plot
-csz.bev.2
-```
-
-## Principal Components Analysis
-
-Principal components analysis [@RN1746] was used to visualise shape variation among the bifaces. The shape changes described by each principal axis are commonly visualized using thin-plate spline warping of a reference 3D mesh [@RN1731;@RN479]. 
+### Principal Components Analysis (H1)
 
 ```{r pca1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# principal components analysis
-pca<-gm.prcomp(Y.gpa$coords)
-summary(pca)
-
 # set plot parameters to plot by heartland in (H) and out (N)
 pch.gps.heart <- c(15,17)[as.factor(heart)]
 col.gps.heart <- wes_palette("Moonrise2")[as.factor(heart)]
@@ -177,260 +283,18 @@ pc.plot1 <- plot(pca,
                          pred1 = min(pc), 
                          pred2 = max(pc))
   plotRefToTarget(M, preds$pred1) # minimum y-axis
-  plotRefToTarget(M, preds$pred2) # maximum y-axis                    
+  plotRefToTarget(M, preds$pred2) # maximum y-axis   
 ```
 
-```{r pca2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# set plot parameters to plot by heartland + regions
-pch.gps.hreg <- c(15,17,18)[as.factor(hreg)]
-col.gps.hreg <- wes_palette("Moonrise2")[as.factor(hreg)]
-col.hull.2 <- c("#798E87","#CCC591","#C27D38")
-
-# plot pca by heartland + regions
-pc.plot2 <- plot(pca, 
-                 asp = 1,
-                 pch = pch.gps.hreg,
-                 col = col.gps.hreg)
-                    shapeHulls(pc.plot2, 
-                             groups = hreg,
-                             group.cols = col.hull.2)
-```
-
-```{r pca3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# set plot parameters to plot by beveled y and n
-pch.gps.bev.1 <- c(15,17)[as.factor(bev.1)]
-col.gps.bev.1 <- wes_palette("Moonrise2")[as.factor(bev.1)]
-col.hull.3 <- c("#C27D38","#798E87")
-
-# plot pca by heartland in (H) and out (N)
-pc.plot3 <- plot(pca, 
-                 asp = 1,
-                 pch = pch.gps.bev.1,
-                 col = col.gps.bev.1)
-                    shapeHulls(pc.plot3, 
-                             groups = bev.1,
-                             group.cols = col.hull.3)
-```
-
-```{r pca4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# set plot parameters to plot by bevel type
-pch.gps.bev.2 <- c(15,17,18)[as.factor(bev.2)]
-col.gps.bev.2 <- wes_palette("Moonrise2")[as.factor(bev.2)]
-col.hull.4 <- c("#CCC591","#C27D38","#798E87")
-
-# plot pca by bevel type
-pc.plot4 <- plot(pca, 
-                 asp = 1,
-                 pch = pch.gps.bev.2,
-                 col = col.gps.bev.2)
-                    shapeHulls(pc.plot4, 
-                             groups = bev.2,
-                             group.cols = col.hull.4)
-```
-
-## Define models
-
-### Allometry
-
-```{r allom.dalton, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# allometry
-fit.size <- procD.lm(shape ~ size, 
-                     data = gdf, 
-                     print.progress = FALSE, 
-                     iter = 9999)
-# allometry - common allometry, different means -> heart
-fit.sz.cinc <- procD.lm(shape ~ size + heart, 
-                        data = gdf, 
-                        print.progress = FALSE, 
-                        iter = 9999)
-# allometry - unique allometries -> heart
-fit.sz.uinc <- procD.lm(shape ~ size * heart, 
-                        data = gdf, 
-                        print.progress = FALSE, 
-                        iter = 9999)
-# allometry - common allometry, different means -> hreg
-fit.sz.cinc2 <- procD.lm(shape ~ size + hreg, 
-                         data = gdf, 
-                         print.progress = FALSE, 
-                         iter = 9999)
-# allometry - unique allometries -> hreg
-fit.sz.uinc2 <- procD.lm(shape ~ size * hreg, 
-                         data = gdf, 
-                         print.progress = FALSE, 
-                         iter = 9999)
-```
-
-### Hypothesis 1
-
-```{r def.mod.1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-## Define models
-# size as a function of heart
-fit.size.heart <- procD.lm(size ~ heart, 
-                           data = gdf, 
-                           print.progress = FALSE, 
-                           iter = 9999)
-# shape as a function of heart
-fit.shape.heart <- procD.lm(shape ~ heart, 
-                            data = gdf, 
-                            print.progress = FALSE, 
-                            iter = 9999)
-```
-
-### Hypothesis 2
-
-```{r def.mod.2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-## Define models
-# size as a function of hreg
-fit.size.hreg <- procD.lm(size ~ hreg, 
-                          data = gdf, 
-                          print.progress = FALSE, 
-                          iter = 9999)
-
-# shape as a function of hreg
-fit.shape.hreg <- procD.lm(shape ~ hreg, 
-                           data = gdf, 
-                           print.progress = FALSE, 
-                           iter = 9999)
-```
-
-### Hypothesis 3
-
-```{r def.mod.3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-## Define models
-# size as a function of bev.1
-fit.size.bev.1 <- procD.lm(size ~ bev.1, 
-                          data = gdf, 
-                          print.progress = FALSE, 
-                          iter = 9999)
-
-# shape as a function of bev.1
-fit.shape.bev.1 <- procD.lm(shape ~ bev.1, 
-                           data = gdf, 
-                           print.progress = FALSE, 
-                           iter = 9999)
-```
-
-### Hypothesis 4
-
-```{r def.mod.4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-## Define models
-# size as a function of bev.2
-fit.size.bev.2 <- procD.lm(size ~ bev.2, 
-                          data = gdf, 
-                          print.progress = FALSE, 
-                          iter = 9999)
-
-# shape as a function of bev.2
-fit.shape.bev.2 <- procD.lm(shape ~ bev.2, 
-                           data = gdf, 
-                           print.progress = FALSE, 
-                           iter = 9999)
-```
-
-## Allometry
-
-```{r allometryEX, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# allometry - does shape change with size?
-anova(fit.size)
-```
-
-### Common allometry
-
-```{r common.all.ex, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# inc
-anova(fit.sz.cinc) # common allometry (inc)
-
-# inc2
-anova(fit.sz.cinc2) # common allometry (inc2)
-
-```
-
-```{r allom.plot1.ex, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# allometry plots
-# regscore (Drake and Klingenberg 2008)
-plot(fit.size, 
-     type = "regression", 
-     reg.type = "RegScore", 
-     predictor = log(gdf$size), 
-     pch = pch.gps.heart, 
-     col = col.gps.heart)
-plot(fit.size, 
-     type = "regression", 
-     reg.type = "RegScore", 
-     predictor = log(gdf$size), 
-     pch = pch.gps.hreg, 
-     col = col.gps.hreg)
-```
-
-```{r allom.plot2.ex, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# common allometric component (Mitteroecker 2004)
-plotAllometry(fit.size, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "CAC", 
-              pch = pch.gps.heart, 
-              col = col.gps.heart)
-plotAllometry(fit.size, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "CAC", 
-              pch = pch.gps.hreg, 
-              col = col.gps.hreg)
-```
-
-```{r allom.plot3.ex, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# size-shape pca (Mitteroecker 2004)
-plotAllometry(fit.size, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "size.shape", 
-              pch = pch.gps.heart, 
-              col = col.gps.heart)
-plotAllometry(fit.size, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "size.shape", 
-              pch = pch.gps.hreg, 
-              col = col.gps.hreg)
-```
-
-### Unique allometry
-
-```{r unique.all.ex, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# heart
-anova(fit.sz.uinc) # unique allometry (heart)
-
-# hreg
-anova(fit.sz.uinc2) # unique allometry (hreg)
-```
-
-```{r unique.allom.plot, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# predline (Adams and Nistri 2010)
-plotAllometry(fit.sz.uinc, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "PredLine", 
-              pch = pch.gps.heart, 
-              col = col.gps.heart)
-plotAllometry(fit.sz.uinc2, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "PredLine", 
-              pch = pch.gps.hreg, 
-              col = col.gps.hreg)
-```
-
-## Test Hypothesis 1 (Geo)
-
-Hypothesis 1 assesses whether there is a difference in morphology for Dalton points found in and out of the heartland.
-
-A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
-
-```{r lm3d3.a1.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 1 considers whether Dalton points discovered in (left) and out (right) of the Heartland differ in morphology."}
-knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
-```
+### ANOVA (H1)
 
 ```{r h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# heart
+anova(fit.sz.cheart) # common allometry (heart)
+
+# heart
+anova(fit.sz.uheart) # unique allometry (heart)
+
 # ANOVA: do dalton projectile point sizes differ by heart?
 anova(fit.size.heart)
 
@@ -438,119 +302,65 @@ anova(fit.size.heart)
 anova(fit.shape.heart)
 ```
 
-## Test Hypothesis 2 (Geo)
+### Allometry (H1)
 
-Hypothesis 2 assesses whether there is a difference in morphology for Dalton points found in the heartland, the interior, and the northern periphery.
+```{r c.allom.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# regscore (Drake and Klingenberg 2008)
 
-A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
+# heart
+plotAllometry(fit.sz.cheart,
+              size = gdf$size,
+              logsz = TRUE,
+              method = "RegScore", 
+              pch = pch.gps.heart, 
+              col = col.gps.heart)
 
-```{r lm3d3.a1.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 2 considers whether Dalton points discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology."}
-knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
+# common allometric component (Mitteroecker 2004)
+
+# heart
+plotAllometry(fit.sz.cheart, 
+              size = gdf$size, 
+              logsz = TRUE, 
+              method = "CAC", 
+              pch = pch.gps.heart, 
+              col = col.gps.heart)
+
+# size-shape pca (Mitteroecker 2004)
+
+# heart
+plotAllometry(fit.sz.cheart, 
+              size = gdf$size, 
+              logsz = TRUE, 
+              method = "size.shape", 
+              pch = pch.gps.heart, 
+              col = col.gps.heart)
 ```
 
-```{r h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# ANOVA: does dalton projectile point size differ by hreg?
-anova(fit.size.hreg)
-# pairwise comparison of LS means = which differ?
-sz.hreg <- pairwise(fit.size.hreg, 
-                    groups = qdata$heart.reg)
-summary(sz.hreg, 
-        confidence = 0.95, 
-        test.type = "dist")
-# pairwise distance between variances = standardization?
-summary(sz.hreg, 
-        confidence = 0.95, 
-        test.type = "var")
+```{r u.allom.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+## predline (Adams and Nistri 2010)
 
-# ANOVA: does dalton projectile point shape differ by hreg?
-anova(fit.shape.hreg)
-# pairwise comparison of LS means = which differ?
-sh.hreg <- pairwise(fit.shape.hreg, 
-                    groups = qdata$heart.reg)
-summary(sz.hreg, 
-        confidence = 0.95, 
-        test.type = "dist")
-# pairwise distance between variances = standardization?
-summary(sz.hreg, 
-        confidence = 0.95, 
-        test.type = "var")
+# heart
+plotAllometry(fit.sz.uheart, 
+              size = gdf$size, 
+              logsz = TRUE, 
+              method = "PredLine", 
+              pch = pch.gps.heart, 
+              col = col.gps.heart)
 ```
 
-## Test Hypothesis 3 (Techno)
+### Morphological disparity (H1)
 
-Hypothesis 3 assesses whether there is a discernible difference in morphology for Dalton points that are beveled.
-
-A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
-
-```{r lm3d3.a1.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 3 considers whether beveled Dalton points (left) differ in morphology from those that are not beveled (right)."}
-knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
+```{r m-disparity.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# morphological disparity: does one group display greater 
+# shape variation among individuals relative to the other group?
+morphol.disparity(shape ~ heart, 
+                  groups = qdata$heart.out, 
+                  data = gdf, 
+                  print.progress = FALSE, 
+                  iter = 9999)
 ```
 
-```{r h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# ANOVA: do dalton projectile point sizes differ by beveling?
-anova(fit.size.bev.1)
-
-# ANOVA: do dalton projectile point shapes differ by beveling?
-anova(fit.shape.bev.1)
-```
-
-## Test Hypothesis 4 (Techno)
-
-Hypothesis 4 assesses whether there is a discernible difference in the morphology of specific beveling types associated with Dalton points.
-
-A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
-
-```{r lm3d3.a1.h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 4 considers whether discrete beveling practices articulate with differences in the morphology of Dalton points"}
-knitr::include_graphics('images/dalton-vizhypothesis4-1.jpg')
-```
-
-```{r h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# ANOVA: does dalton projectile point size differ by bev.2?
-anova(fit.size.bev.2)
-# pairwise comparison of LS means = which differ?
-sz.bev.2 <- pairwise(fit.size.bev.2, 
-                    groups = qdata$bev.type)
-summary(sz.bev.2, 
-        confidence = 0.95, 
-        test.type = "dist")
-# pairwise distance between variances = standardization?
-summary(sz.bev.2, 
-        confidence = 0.95, 
-        test.type = "var")
-
-# ANOVA: does dalton projectile point shape differ by bev.2?
-anova(fit.shape.bev.2)
-# pairwise comparison of LS means = which differ?
-sh.bev.2 <- pairwise(fit.shape.bev.2, 
-                    groups = qdata$bev.type)
-summary(sz.bev.2, 
-        confidence = 0.95, 
-        test.type = "dist")
-# pairwise distance between variances = standardization?
-summary(sz.bev.2, 
-        confidence = 0.95, 
-        test.type = "var")
-```
-
-## Morphological integration
-
-```{r morph.integ, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# morphological integration::
-# partition blade/base landmarks
-land.gps<-c("A","B","B","B","B","B","A","A",
-            "A","A","B","B","B","B","A","A",
-            "A","A","A","A","A","A","B","B",
-            "B","B","A","A","A","A","B","B",
-            "B","B")
-it<-integration.test(Y.gpa$coords, 
-                     partition.gp = land.gps, 
-                     iter = 9999, 
-                     print.progress = FALSE)
-summary(it)
-plot(it)
-```
-
-## Mean Shapes (H1)
+### Mean Shapes (H1)
 
 ```{r mshape.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # subset landmark coordinates to produce mean shapes for hypothesis 1
@@ -574,7 +384,147 @@ plotRefToTarget(mean$H,
 ##knitr::include_graphics('images/mshape.h1.jpg')
 ```
 
-## Mean Shapes (H2)
+## Test Hypothesis 2 (Geo)
+
+Hypothesis 2 assesses whether there is a difference in morphology for Dalton points found in the heartland, the interior, and the northern periphery.
+
+A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
+
+```{r lm3d3.a1.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 2 considers whether Dalton points discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology."}
+knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
+```
+
+### Boxplot (H2)
+
+```{r box2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by Heartland region."}
+# boxplot of Dalton point centroid size by heartland + regions
+csz.hreg <- ggplot(qdata, aes(x = hreg, y = csz, color = hreg)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize = 0.3) +
+  scale_colour_manual(values = wes_palette("Moonrise2")) +
+  theme(legend.position = "none") +
+  labs(x = 'Heartland Region', y = 'Centroid Size')
+# render plot
+csz.hreg
+```
+
+### Principal Components Analysis (H2)
+
+```{r pca2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# set plot parameters to plot by heartland + regions
+pch.gps.hreg <- c(15,17,18)[as.factor(hreg)]
+col.gps.hreg <- wes_palette("Moonrise2")[as.factor(hreg)]
+col.hull.2 <- c("#798E87","#CCC591","#C27D38")
+
+# plot pca by heartland + regions
+pc.plot2 <- plot(pca, 
+                 asp = 1,
+                 pch = pch.gps.hreg,
+                 col = col.gps.hreg)
+                    shapeHulls(pc.plot2, 
+                             groups = hreg,
+                             group.cols = col.hull.2)
+```
+
+### ANOVA (H2)
+
+```{r h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# hreg
+anova(fit.sz.chreg) # common allometry (hreg)
+
+# hreg
+anova(fit.sz.uhreg) # unique allometry (hreg)
+
+# ANOVA: does dalton projectile point size differ by hreg?
+anova(fit.size.hreg)
+
+# pairwise comparison of LS means = which differ?
+sz.hreg <- pairwise(fit.size.hreg, 
+                    groups = qdata$heart.reg)
+summary(sz.hreg, 
+        confidence = 0.95, 
+        test.type = "dist")
+
+# pairwise distance between variances = standardization?
+summary(sz.hreg, 
+        confidence = 0.95, 
+        test.type = "var")
+
+# ANOVA: does dalton projectile point shape differ by hreg?
+anova(fit.shape.hreg)
+
+# pairwise comparison of LS means = which differ?
+sh.hreg <- pairwise(fit.shape.hreg, 
+                    groups = qdata$heart.reg)
+summary(sz.hreg, 
+        confidence = 0.95, 
+        test.type = "dist")
+
+# pairwise distance between variances = standardization?
+summary(sz.hreg, 
+        confidence = 0.95, 
+        test.type = "var")
+```
+
+### Allometry (H2)
+
+```{r c.allom.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# regscore (Drake and Klingenberg 2008)
+
+# hreg
+plotAllometry(fit.sz.chreg, 
+              size = gdf$size,
+              logsz = TRUE,
+              method = "RegScore", 
+              pch = pch.gps.hreg, 
+              col = col.gps.hreg)
+
+# common allometric component (Mitteroecker 2004)
+
+# hreg
+plotAllometry(fit.sz.chreg, 
+              size = gdf$size, 
+              logsz = TRUE, 
+              method = "CAC", 
+              pch = pch.gps.hreg, 
+              col = col.gps.hreg)
+
+# size-shape pca (Mitteroecker 2004)
+
+# hreg
+plotAllometry(fit.sz.chreg, 
+              size = gdf$size, 
+              logsz = TRUE, 
+              method = "size.shape", 
+              pch = pch.gps.hreg, 
+              col = col.gps.hreg)
+```
+
+```{r u.allom.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# predline (Adams and Nistri 2010)
+
+# hreg
+plotAllometry(fit.sz.uhreg, 
+              size = gdf$size, 
+              logsz = TRUE, 
+              method = "PredLine", 
+              pch = pch.gps.hreg, 
+              col = col.gps.hreg)
+```
+
+### Morphological disparity (H2)
+
+```{r m-disparity.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# morphological disparity: do any of the groups display greater 
+# shape variation among individuals relative to the other group?
+morphol.disparity(shape ~ hreg, 
+                  groups = qdata$heart.reg, 
+                  data = gdf, 
+                  print.progress = FALSE, 
+                  iter = 9999)
+```
+
+### Mean Shapes (H2)
 
 ```{r mshape.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # subset landmark coordinates to produce mean shapes for hypothesis 2
@@ -607,7 +557,123 @@ plotRefToTarget(mean$I,
 ##knitr::include_graphics('images/mshape.h2.jpg')
 ```
 
-## Mean Shapes (H3)
+## Test Hypothesis 3 (Techno)
+
+Hypothesis 3 assesses whether there is a discernible difference in morphology for Dalton points that are beveled.
+
+A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
+
+```{r lm3d3.a1.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 3 considers whether beveled Dalton points (left) differ in morphology from those that are not beveled (right)."}
+knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
+```
+
+### Boxplot (H3)
+
+```{r box3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by beveled."}
+# boxplot of Dalton point centroid size by beveled y/n
+csz.bev.1 <- ggplot(qdata, aes(x = bev.1, y = csz, color = bev.1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize = 0.3) +
+  scale_colour_manual(values = wes_palette("Moonrise2")) +
+  theme(legend.position = "none") +
+  labs(x = 'Beveled?', y = 'Centroid Size')
+# render plot
+csz.bev.1
+```
+
+### Principal Components Analysis (H3)
+
+```{r pca3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# set plot parameters to plot by beveled y and n
+pch.gps.bev.1 <- c(15,17)[as.factor(bev.1)]
+col.gps.bev.1 <- wes_palette("Moonrise2")[as.factor(bev.1)]
+col.hull.3 <- c("#C27D38","#798E87")
+
+# plot pca by heartland in (H) and out (N)
+pc.plot3 <- plot(pca, 
+                 asp = 1,
+                 pch = pch.gps.bev.1,
+                 col = col.gps.bev.1)
+                    shapeHulls(pc.plot3, 
+                             groups = bev.1,
+                             group.cols = col.hull.3)
+```
+
+### ANOVA (H3)
+
+```{r h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# bev.1
+anova(fit.sz.cbev.1) # common allometry (bev.1)
+
+# bev.1
+anova(fit.sz.ubev.1) # unique allometry (bev.1)
+
+# ANOVA: do dalton projectile point sizes differ by beveling?
+anova(fit.size.bev.1)
+
+# ANOVA: do dalton projectile point shapes differ by beveling?
+anova(fit.shape.bev.1)
+```
+
+### Allometry (H3)
+
+```{r c.allom.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# regscore (Drake and Klingenberg 2008)
+
+# bev.1
+plotAllometry(fit.sz.cbev.1, 
+              size = gdf$size,
+              logsz = TRUE,
+              method = "RegScore", 
+              pch = pch.gps.bev.1, 
+              col = col.gps.bev.1)
+
+# common allometric component (Mitteroecker 2004)
+
+# bev.1
+plotAllometry(fit.sz.cbev.1, 
+              size = gdf$size, 
+              logsz = TRUE, 
+              method = "CAC", 
+              pch = pch.gps.bev.1, 
+              col = col.gps.bev.1)
+
+# size-shape pca (Mitteroecker 2004)
+
+# bev.1
+plotAllometry(fit.sz.cbev.1, 
+              size = gdf$size, 
+              logsz = TRUE, 
+              method = "size.shape", 
+              pch = pch.gps.bev.1, 
+              col = col.gps.bev.1)
+```
+
+```{r u.allom.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# predline (Adams and Nistri 2010)
+
+# bev.1
+plotAllometry(fit.sz.ubev.1, 
+              size = gdf$size, 
+              logsz = TRUE, 
+              method = "PredLine", 
+              pch = pch.gps.bev.1, 
+              col = col.gps.bev.1)
+```
+
+### Morphological disparity (H3)
+
+```{r m-disparity.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# morphological disparity: does one group display greater 
+# shape variation among individuals relative to the other group?
+morphol.disparity(shape ~ bev.1, 
+                  groups = qdata$bev, 
+                  data = gdf, 
+                  print.progress = FALSE, 
+                  iter = 9999)
+```
+
+### Mean Shapes (H3)
 
 ```{r mshape.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # subset landmark coordinates to produce mean shapes for hypothesis 3
@@ -631,7 +697,148 @@ plotRefToTarget(mean$y,
 ##knitr::include_graphics('images/mshape.h3.jpg')
 ```
 
-## Mean Shapes (H4)
+## Test Hypothesis 4 (Techno)
+
+Hypothesis 4 assesses whether there is a discernible difference in the morphology of specific beveling types associated with Dalton points.
+
+A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
+
+```{r lm3d3.a1.h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 4 considers whether discrete beveling practices articulate with differences in the morphology of Dalton points"}
+knitr::include_graphics('images/dalton-vizhypothesis4-1.jpg')
+```
+
+### Boxplot (H4)
+
+```{r box4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by bevel type."}
+# boxplot of Dalton point centroid size by bevel type
+csz.bev.2 <- ggplot(qdata, aes(x = bev.2, y = csz, color = bev.2)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize = 0.3) +
+  scale_colour_manual(values = wes_palette("Moonrise2")) +
+  theme(legend.position = "none") +
+  labs(x = 'Bevel Type', y = 'Centroid Size')
+# render plot
+csz.bev.2
+```
+
+### Principal Components Analysis (H4)
+
+```{r pca4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# set plot parameters to plot by bevel type
+pch.gps.bev.2 <- c(15,17,18)[as.factor(bev.2)]
+col.gps.bev.2 <- wes_palette("Moonrise2")[as.factor(bev.2)]
+col.hull.4 <- c("#CCC591","#C27D38","#798E87")
+
+# plot pca by bevel type
+pc.plot4 <- plot(pca, 
+                 asp = 1,
+                 pch = pch.gps.bev.2,
+                 col = col.gps.bev.2)
+                    shapeHulls(pc.plot4, 
+                             groups = bev.2,
+                             group.cols = col.hull.4)
+```
+
+### ANOVA (H4)
+
+```{r h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# bev.2
+anova(fit.sz.cbev.2) # common allometry (bev.2)
+
+# bev.2
+anova(fit.sz.ubev.2) # unique allometry (bev.2)
+
+# ANOVA: does dalton projectile point size differ by bev.2?
+anova(fit.size.bev.2)
+
+# pairwise comparison of LS means = which differ?
+sz.bev.2 <- pairwise(fit.size.bev.2, 
+                    groups = qdata$bev.type)
+summary(sz.bev.2, 
+        confidence = 0.95, 
+        test.type = "dist")
+
+# pairwise distance between variances = standardization?
+summary(sz.bev.2, 
+        confidence = 0.95, 
+        test.type = "var")
+
+# ANOVA: does dalton projectile point shape differ by bev.2?
+anova(fit.shape.bev.2)
+
+# pairwise comparison of LS means = which differ?
+sh.bev.2 <- pairwise(fit.shape.bev.2, 
+                    groups = qdata$bev.type)
+summary(sz.bev.2, 
+        confidence = 0.95, 
+        test.type = "dist")
+
+# pairwise distance between variances = standardization?
+summary(sz.bev.2, 
+        confidence = 0.95, 
+        test.type = "var")
+```
+
+### Allometry (H4)
+
+```{r c.allom.h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# regscore (Drake and Klingenberg 2008)
+
+# bev.2
+plotAllometry(fit.sz.cbev.2, 
+              size = gdf$size,
+              logsz = TRUE,
+              method = "RegScore",  
+              pch = pch.gps.bev.2, 
+              col = col.gps.bev.2)
+
+# common allometric component (Mitteroecker 2004)
+
+# bev.2
+plotAllometry(fit.sz.cbev.2, 
+              size = gdf$size, 
+              logsz = TRUE, 
+              method = "CAC", 
+              pch = pch.gps.bev.2, 
+              col = col.gps.bev.2)
+
+# size-shape pca (Mitteroecker 2004)
+
+# bev.2
+plotAllometry(fit.sz.cbev.2, 
+              size = gdf$size, 
+              logsz = TRUE, 
+              method = "size.shape", 
+              pch = pch.gps.bev.2, 
+              col = col.gps.bev.2)
+```
+
+
+```{r u.allom.h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# predline (Adams and Nistri 2010)
+
+# bev.2
+plotAllometry(fit.sz.ubev.2, 
+              size = gdf$size, 
+              logsz = TRUE, 
+              method = "PredLine", 
+              pch = pch.gps.bev.2, 
+              col = col.gps.bev.2)
+```
+
+### Morphological disparity (H4)
+
+```{r m-disparity.h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# morphological disparity: do any of the groups display greater 
+# shape variation among individuals relative to the other group?
+morphol.disparity(shape ~ bev.2, 
+                  groups = qdata$bev.type, 
+                  data = gdf, 
+                  print.progress = FALSE, 
+                  iter = 9999)
+```
+
+### Mean Shapes (H4)
 
 ```{r mshape.h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # subset landmark coordinates to produce mean shapes for hypothesis 4
@@ -662,4 +869,22 @@ plotRefToTarget(mean$no.bevel,
                 mag=2)
 
 ##knitr::include_graphics('images/mshape.h4.jpg')
+```
+
+## Morphological integration
+
+```{r morph.integ, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# morphological integration::
+# partition blade/base landmarks
+land.gps<-c("A","B","B","B","B","B","A","A",
+            "A","A","B","B","B","B","A","A",
+            "A","A","A","A","A","A","B","B",
+            "B","B","A","A","A","A","B","B",
+            "B","B")
+it<-integration.test(Y.gpa$coords, 
+                     partition.gp = land.gps, 
+                     iter = 9999, 
+                     print.progress = FALSE)
+summary(it)
+plot(it)
 ```
