@@ -267,7 +267,7 @@ pc.plot1 <- plot(pca,
                              group.cols = col.hull)
   
   # mshape                                   
-  M<-mshape(Y.gpa$coords)
+  M <- mshape(Y.gpa$coords)
   # shapes at the minima and maxima of PC1 and PC2 using min and max
   # corresponding to the x/y values in the four PC plots
   pc <- pca$x[,1] # x-axis
