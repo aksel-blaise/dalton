@@ -85,17 +85,24 @@ calibrate_reconstructions_efourier(norm.outlines,
                                    range = 1:10)
 
 # generate efa outlines with 10 harmonics
+<<<<<<< HEAD
 efa.outlines <- efourier(norm.outlines, 
                          nb.h = 10, 
                          norm = TRUE)
 
 # use efa.outlines for pca
 pca.outlines <- PCA(efa.outlines)
+=======
+efa.outlines <- efourier(norm.outlines, nb.h = 10, norm = TRUE)
+>>>>>>> 73d89186bafe517dfaec407b16358d9d2d0673d6
 ```
 
-## PCA
+## Principal Components Analysis
 
 ```{r pca.plot, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# use efa.outlines for pca
+pca.outlines <- PCA(efa.outlines)
+
 # pca 
 scree_plot(pca.outlines)
 
