@@ -30,7 +30,9 @@ lmdata <- two.d.array(lmdata)
 setwd("../")
 
 # analysis
-lasec(coord.data = lmdata, n.dim = 3, iter = 1000)
+lasec(coord.data = lmdata, 
+      n.dim = 3, 
+      iter = 1000)
 ```
 
 Results demonstrate that eight landmarks are necessary to achieve a median fit value of 0.90, 12 to achieve a median fit value of 0.95, and 23 to achieve a fit value of 0.99. For centroid size, seven landmarks were needed to achieve a median fit value of 0.99.

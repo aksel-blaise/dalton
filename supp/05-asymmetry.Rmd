@@ -94,7 +94,28 @@ pc.plot1 <- plot(pca,
                     shapeHulls(pc.plot1, 
                              groups = heart,
                              group.cols = col.hull)
-                  
+
+  # mshape                              
+  M<-mshape(Y.gpa$coords)
+  # shapes at the minima and maxima of PC1 and PC2 using min and max
+  # corresponding to the x/y values in the four PC plots
+  pc <- pca$x[,1] # x-axis
+  preds <- shape.predictor(Y.gpa$coords, 
+                           x = pc, Intercept = FALSE, 
+                           pred1 = min(pc), 
+                           pred2 = max(pc))
+  plotRefToTarget(M, preds$pred1) # minimum x-axis
+  plotRefToTarget(M, preds$pred2) # maximum x-axis
+  pc <- pca$x[,2] # y-axis
+  preds<-shape.predictor(Y.gpa$coords, 
+                         x = pc, Intercept = FALSE, 
+                         pred1 = min(pc), 
+                         pred2 = max(pc))
+  plotRefToTarget(M, preds$pred1) # minimum y-axis
+  plotRefToTarget(M, preds$pred2) # maximum y-axis 
+```
+
+```{r pca.asymm2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # set plot parameters to plot by heartland + regions
 pch.gps.hreg <- c(15,17,18)[as.factor(hreg)]
 col.gps.hreg <- wes_palette("Moonrise2")[as.factor(hreg)]
@@ -108,7 +129,9 @@ pc.plot2 <- plot(pca,
                     shapeHulls(pc.plot2, 
                              groups = hreg,
                              group.cols = col.hull.2)
-                    
+```
+
+```{r pca.asymm3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # set plot parameters to plot by beveled y and n
 pch.gps.bev.1 <- c(15,17)[as.factor(bev.1)]
 col.gps.bev.1 <- wes_palette("Moonrise2")[as.factor(bev.1)]
@@ -122,7 +145,9 @@ pc.plot3 <- plot(pca,
                     shapeHulls(pc.plot3, 
                              groups = bev.1,
                              group.cols = col.hull.3)
-                    
+```
+
+```{r pca.asymm4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # set plot parameters to plot by bevel type
 pch.gps.bev.2 <- c(15,17,18)[as.factor(bev.2)]
 col.gps.bev.2 <- wes_palette("Moonrise2")[as.factor(bev.2)]
@@ -137,6 +162,7 @@ pc.plot4 <- plot(pca,
                              groups = bev.2,
                              group.cols = col.hull.4)
 ```
+
 
 ## Define models
 

@@ -36,8 +36,11 @@ Landmark data were aligned to a global coordinate system [@RN11622;@RN11623;@RN1
 
 ```{r gpa, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # gpa
-Y.gpa <- gpagen(coords, PrinAxes = TRUE, ProcD = TRUE, 
-                Proj = TRUE, print.progress = FALSE)
+Y.gpa <- gpagen(coords, 
+                PrinAxes = TRUE, 
+                ProcD = TRUE, 
+                Proj = TRUE, 
+                print.progress = FALSE)
 
 # output + consensus configuration coords
 Y.gpa
@@ -74,7 +77,9 @@ plot(Y.gpa$consensus[,c("Z", "Y")], pch=20)
 qdata$csz <- Y.gpa$Csize
 
 # print updated qdata with centroid size
-knitr::kable(qdata, align = "ccccc", caption = "Modified attributes included in qdata.")
+knitr::kable(qdata, 
+             align = "ccccc", 
+             caption = "Modified attributes included in qdata.")
 
 # attributes for boxplots
 csz <- qdata$csz # centroid size
@@ -136,7 +141,7 @@ csz.bev.2
 
 Principal components analysis [@RN1746] was used to visualise shape variation among the bifaces. The shape changes described by each principal axis are commonly visualized using thin-plate spline warping of a reference 3D mesh [@RN1731;@RN479]. 
 
-```{r pca, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+```{r pca1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # principal components analysis
 pca<-gm.prcomp(Y.gpa$coords)
 summary(pca)
@@ -154,7 +159,28 @@ pc.plot1 <- plot(pca,
                     shapeHulls(pc.plot1, 
                              groups = heart,
                              group.cols = col.hull)
-                  
+  
+  # mshape                                   
+  M<-mshape(Y.gpa$coords)
+  # shapes at the minima and maxima of PC1 and PC2 using min and max
+  # corresponding to the x/y values in the four PC plots
+  pc <- pca$x[,1] # x-axis
+  preds <- shape.predictor(Y.gpa$coords, 
+                           x = pc, Intercept = FALSE, 
+                           pred1 = min(pc), 
+                           pred2 = max(pc))
+  plotRefToTarget(M, preds$pred1) # minimum x-axis
+  plotRefToTarget(M, preds$pred2) # maximum x-axis
+  pc <- pca$x[,2] # y-axis
+  preds<-shape.predictor(Y.gpa$coords, 
+                         x = pc, Intercept = FALSE, 
+                         pred1 = min(pc), 
+                         pred2 = max(pc))
+  plotRefToTarget(M, preds$pred1) # minimum y-axis
+  plotRefToTarget(M, preds$pred2) # maximum y-axis                    
+```
+
+```{r pca2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # set plot parameters to plot by heartland + regions
 pch.gps.hreg <- c(15,17,18)[as.factor(hreg)]
 col.gps.hreg <- wes_palette("Moonrise2")[as.factor(hreg)]
@@ -168,7 +194,9 @@ pc.plot2 <- plot(pca,
                     shapeHulls(pc.plot2, 
                              groups = hreg,
                              group.cols = col.hull.2)
-                    
+```
+
+```{r pca3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # set plot parameters to plot by beveled y and n
 pch.gps.bev.1 <- c(15,17)[as.factor(bev.1)]
 col.gps.bev.1 <- wes_palette("Moonrise2")[as.factor(bev.1)]
@@ -182,7 +210,9 @@ pc.plot3 <- plot(pca,
                     shapeHulls(pc.plot3, 
                              groups = bev.1,
                              group.cols = col.hull.3)
-                    
+```
+
+```{r pca4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # set plot parameters to plot by bevel type
 pch.gps.bev.2 <- c(15,17,18)[as.factor(bev.2)]
 col.gps.bev.2 <- wes_palette("Moonrise2")[as.factor(bev.2)]
@@ -204,20 +234,30 @@ pc.plot4 <- plot(pca,
 
 ```{r allom.dalton, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # allometry
-fit.size <- procD.lm(shape ~ size, data = gdf, 
-                     print.progress = FALSE, iter = 9999)
+fit.size <- procD.lm(shape ~ size, 
+                     data = gdf, 
+                     print.progress = FALSE, 
+                     iter = 9999)
 # allometry - common allometry, different means -> heart
-fit.sz.cinc <- procD.lm(shape ~ size + heart, data = gdf, 
-                        print.progress = FALSE, iter = 9999)
+fit.sz.cinc <- procD.lm(shape ~ size + heart, 
+                        data = gdf, 
+                        print.progress = FALSE, 
+                        iter = 9999)
 # allometry - unique allometries -> heart
-fit.sz.uinc <- procD.lm(shape ~ size * heart, data = gdf, 
-                        print.progress = FALSE, iter = 9999)
+fit.sz.uinc <- procD.lm(shape ~ size * heart, 
+                        data = gdf, 
+                        print.progress = FALSE, 
+                        iter = 9999)
 # allometry - common allometry, different means -> hreg
-fit.sz.cinc2 <- procD.lm(shape ~ size + hreg, data = gdf, 
-                         print.progress = FALSE, iter = 9999)
+fit.sz.cinc2 <- procD.lm(shape ~ size + hreg, 
+                         data = gdf, 
+                         print.progress = FALSE, 
+                         iter = 9999)
 # allometry - unique allometries -> hreg
-fit.sz.uinc2 <- procD.lm(shape ~ size * hreg, data = gdf, 
-                         print.progress = FALSE, iter = 9999)
+fit.sz.uinc2 <- procD.lm(shape ~ size * hreg, 
+                         data = gdf, 
+                         print.progress = FALSE, 
+                         iter = 9999)
 ```
 
 ### Hypothesis 1
@@ -246,7 +286,6 @@ fit.size.hreg <- procD.lm(size ~ hreg,
                           print.progress = FALSE, 
                           iter = 9999)
 
-
 # shape as a function of hreg
 fit.shape.hreg <- procD.lm(shape ~ hreg, 
                            data = gdf, 
@@ -264,7 +303,6 @@ fit.size.bev.1 <- procD.lm(size ~ bev.1,
                           print.progress = FALSE, 
                           iter = 9999)
 
-
 # shape as a function of bev.1
 fit.shape.bev.1 <- procD.lm(shape ~ bev.1, 
                            data = gdf, 
@@ -281,7 +319,6 @@ fit.size.bev.2 <- procD.lm(size ~ bev.2,
                           data = gdf, 
                           print.progress = FALSE, 
                           iter = 9999)
-
 
 # shape as a function of bev.2
 fit.shape.bev.2 <- procD.lm(shape ~ bev.2, 
@@ -311,26 +348,50 @@ anova(fit.sz.cinc2) # common allometry (inc2)
 ```{r allom.plot1.ex, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # allometry plots
 # regscore (Drake and Klingenberg 2008)
-plot(fit.size, type = "regression", reg.type = "RegScore", 
-     predictor = log(gdf$size), pch = pch.gps.heart, col = col.gps.heart)
-plot(fit.size, type = "regression", reg.type = "RegScore", 
-     predictor = log(gdf$size), pch = pch.gps.hreg, col = col.gps.hreg)
+plot(fit.size, 
+     type = "regression", 
+     reg.type = "RegScore", 
+     predictor = log(gdf$size), 
+     pch = pch.gps.heart, 
+     col = col.gps.heart)
+plot(fit.size, 
+     type = "regression", 
+     reg.type = "RegScore", 
+     predictor = log(gdf$size), 
+     pch = pch.gps.hreg, 
+     col = col.gps.hreg)
 ```
 
 ```{r allom.plot2.ex, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # common allometric component (Mitteroecker 2004)
-plotAllometry(fit.size, size = gdf$size, logsz = TRUE, method = "CAC", 
-              pch = pch.gps.heart, col = col.gps.heart)
-plotAllometry(fit.size, size = gdf$size, logsz = TRUE, method = "CAC", 
-              pch = pch.gps.hreg, col = col.gps.hreg)
+plotAllometry(fit.size, 
+              size = gdf$size, 
+              logsz = TRUE, 
+              method = "CAC", 
+              pch = pch.gps.heart, 
+              col = col.gps.heart)
+plotAllometry(fit.size, 
+              size = gdf$size, 
+              logsz = TRUE, 
+              method = "CAC", 
+              pch = pch.gps.hreg, 
+              col = col.gps.hreg)
 ```
 
 ```{r allom.plot3.ex, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # size-shape pca (Mitteroecker 2004)
-plotAllometry(fit.size, size = gdf$size, logsz = TRUE, method = "size.shape", 
-              pch = pch.gps.heart, col = col.gps.heart)
-plotAllometry(fit.size, size = gdf$size, logsz = TRUE, method = "size.shape", 
-              pch = pch.gps.hreg, col = col.gps.hreg)
+plotAllometry(fit.size, 
+              size = gdf$size, 
+              logsz = TRUE, 
+              method = "size.shape", 
+              pch = pch.gps.heart, 
+              col = col.gps.heart)
+plotAllometry(fit.size, 
+              size = gdf$size, 
+              logsz = TRUE, 
+              method = "size.shape", 
+              pch = pch.gps.hreg, 
+              col = col.gps.hreg)
 ```
 
 ### Unique allometry
@@ -345,10 +406,18 @@ anova(fit.sz.uinc2) # unique allometry (hreg)
 
 ```{r unique.allom.plot, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # predline (Adams and Nistri 2010)
-plotAllometry(fit.sz.uinc, size = gdf$size, logsz = TRUE, method = "PredLine", 
-              pch = pch.gps.heart, col = col.gps.heart)
-plotAllometry(fit.sz.uinc2, size = gdf$size, logsz = TRUE, method = "PredLine", 
-              pch = pch.gps.hreg, col = col.gps.hreg)
+plotAllometry(fit.sz.uinc, 
+              size = gdf$size, 
+              logsz = TRUE, 
+              method = "PredLine", 
+              pch = pch.gps.heart, 
+              col = col.gps.heart)
+plotAllometry(fit.sz.uinc2, 
+              size = gdf$size, 
+              logsz = TRUE, 
+              method = "PredLine", 
+              pch = pch.gps.hreg, 
+              col = col.gps.hreg)
 ```
 
 ## Test Hypothesis 1 (Geo)
@@ -461,4 +530,136 @@ summary(sz.bev.2,
 summary(sz.bev.2, 
         confidence = 0.95, 
         test.type = "var")
+```
+
+## Morphological integration
+
+```{r morph.integ, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# morphological integration::
+# partition blade/base landmarks
+land.gps<-c("A","B","B","B","B","B","A","A",
+            "A","A","B","B","B","B","A","A",
+            "A","A","A","A","A","A","B","B",
+            "B","B","A","A","A","A","B","B",
+            "B","B")
+it<-integration.test(Y.gpa$coords, 
+                     partition.gp = land.gps, 
+                     iter = 9999, 
+                     print.progress = FALSE)
+summary(it)
+plot(it)
+```
+
+## Mean Shapes (H1)
+
+```{r mshape.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# subset landmark coordinates to produce mean shapes for hypothesis 1
+new.coords<-coords.subset(A = Y.gpa$coords, 
+                          group = qdata$heart.out)
+names(new.coords)
+
+# group shape means
+mean <- lapply(new.coords, mshape)
+
+# plot mean shapes
+plot(mean$H)
+plot(mean$N)
+
+# comparison plots
+plotRefToTarget(mean$H, 
+                mean$N, 
+                method="vector",
+                mag=2)
+
+##knitr::include_graphics('images/mshape.h1.jpg')
+```
+
+## Mean Shapes (H2)
+
+```{r mshape.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# subset landmark coordinates to produce mean shapes for hypothesis 2
+new.coords<-coords.subset(A = Y.gpa$coords, 
+                          group = qdata$heart.reg)
+names(new.coords)
+
+# group shape means
+mean <- lapply(new.coords, mshape)
+
+# plot mean shapes
+plot(mean$H)
+plot(mean$I)
+plot(mean$P)
+
+# comparison plots
+plotRefToTarget(mean$H, 
+                mean$I, 
+                method="vector",
+                mag=2)
+plotRefToTarget(mean$H, 
+                mean$P, 
+                method="vector",
+                mag=2)
+plotRefToTarget(mean$I, 
+                mean$P, 
+                method="vector",
+                mag=2)
+
+##knitr::include_graphics('images/mshape.h2.jpg')
+```
+
+## Mean Shapes (H3)
+
+```{r mshape.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# subset landmark coordinates to produce mean shapes for hypothesis 3
+new.coords<-coords.subset(A = Y.gpa$coords, 
+                          group = qdata$bev)
+names(new.coords)
+
+# group shape means
+mean <- lapply(new.coords, mshape)
+
+# plot mean shapes
+plot(mean$y)
+plot(mean$n)
+
+# comparison plots
+plotRefToTarget(mean$y, 
+                mean$n, 
+                method="vector",
+                mag=2)
+
+##knitr::include_graphics('images/mshape.h3.jpg')
+```
+
+## Mean Shapes (H4)
+
+```{r mshape.h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# subset landmark coordinates to produce mean shapes for hypothesis 4
+new.coords<-coords.subset(A = Y.gpa$coords, 
+                          group = qdata$bev.type)
+names(new.coords)
+
+# group shape means
+mean <- lapply(new.coords, mshape)
+
+# plot mean shapes
+plot(mean$alternate)
+plot(mean$no.bevel)
+plot(mean$unifacial.bimarginal)
+
+# comparison plots
+plotRefToTarget(mean$alternate, 
+                mean$no.bevel, 
+                method="vector",
+                mag=2)
+plotRefToTarget(mean$alternate, 
+                mean$unifacial.bimarginal, 
+                method="vector",
+                mag=2)
+plotRefToTarget(mean$no.bevel, 
+                mean$unifacial.bimarginal, 
+                method="vector",
+                mag=2)
+
+##knitr::include_graphics('images/mshape.h4.jpg')
 ```

@@ -10,7 +10,6 @@ The 2D images used in the EFA were exported as screen captures from _Geomagic De
 # load packages
 library(here)
 library(tidyverse)
-library(ggtree)
 library(wesanderson)
 library(Momocs)
 
@@ -53,13 +52,25 @@ pile(norm.outlines)
 
 # mosaics
 # in/out of heartland
-mosaic(norm.outlines, ~heart.out, asp = 1, palette = pal_qual_Dark2)
+mosaic(norm.outlines, 
+       ~heart.out, 
+       asp = 1, 
+       palette = pal_qual_Dark2)
 # heartland regions (heartland, interior, and northern periphery)
-mosaic(norm.outlines, ~heart.reg, asp = 1, palette = pal_qual_Dark2)
+mosaic(norm.outlines, 
+       ~heart.reg, 
+       asp = 1, 
+       palette = pal_qual_Dark2)
 # beveled or not
-mosaic(norm.outlines, ~bev, asp = 1, palette = pal_qual_Dark2)
+mosaic(norm.outlines, 
+       ~bev, 
+       asp = 1, 
+       palette = pal_qual_Dark2)
 # bevel type
-mosaic(norm.outlines, ~bev.type, asp = 1, palette = pal_qual_Dark2)
+mosaic(norm.outlines, 
+       ~bev.type, 
+       asp = 1, 
+       palette = pal_qual_Dark2)
 ```
 
 ## Calibrate harmonic + EFA
@@ -86,22 +97,46 @@ scree_plot(pca.outlines)
 
 # plot pca
 # heartland in/out
-plot_PCA(pca.outlines, morphospace_position = "range", ~heart.out, zoom = 1.25, palette = pal_qual_Dark2)
+plot_PCA(pca.outlines, 
+         morphospace_position = "range", 
+         ~heart.out, zoom = 1.25, 
+         palette = pal_qual_Dark2)
 # heartland region
-plot_PCA(pca.outlines, morphospace_position = "range", ~heart.reg, zoom = 1.25, palette = pal_qual_Dark2)
+plot_PCA(pca.outlines, 
+         morphospace_position = "range", 
+         ~heart.reg, zoom = 1.25, 
+         palette = pal_qual_Dark2)
 # beveled or not
-plot_PCA(pca.outlines, morphospace_position = "range", ~bev, zoom = 1.25, palette = pal_qual_Dark2)
+plot_PCA(pca.outlines, 
+         morphospace_position = "range", 
+         ~bev, zoom = 1.25, 
+         palette = pal_qual_Dark2)
 # bevel type
-plot_PCA(pca.outlines, morphospace_position = "range", ~bev.type, zoom = 1.25, palette = pal_qual_Dark2)
+plot_PCA(pca.outlines, 
+         morphospace_position = "range", 
+         ~bev.type, zoom = 1.25, palette = pal_qual_Dark2)
 
 # contribution of each pc
-boxplot(pca.outlines, ~heart.out, nax = 1:5, palette = pal_qual_Dark2)
-boxplot(pca.outlines, ~heart.reg, nax = 1:5, palette = pal_qual_Dark2)
-boxplot(pca.outlines, ~bev, nax = 1:5, palette = pal_qual_Dark2)
-boxplot(pca.outlines, ~bev.type, nax = 1:5, palette = pal_qual_Dark2)
+boxplot(pca.outlines, 
+        ~heart.out, 
+        nax = 1:5, 
+        palette = pal_qual_Dark2)
+boxplot(pca.outlines, 
+        ~heart.reg, 
+        nax = 1:5, 
+        palette = pal_qual_Dark2)
+boxplot(pca.outlines, 
+        ~bev, 
+        nax = 1:5, 
+        palette = pal_qual_Dark2)
+boxplot(pca.outlines, 
+        ~bev.type, 
+        nax = 1:5, 
+        palette = pal_qual_Dark2)
 
 # mean shape + 2sd for the first 10 pcs
-PCcontrib(pca.outlines, nax = 1:5)
+PCcontrib(pca.outlines, 
+          nax = 1:5)
 ```
 
 ## MANOVA + MANOVA_PW
@@ -126,24 +161,28 @@ MANOVA_PW(pca.outlines, 'bev.type')
 
 ```{r ms1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for in (H) and out (N) of the heartland."}
 # mean shapes
-ms.1 <- MSHAPES(efa.outlines, ~heart.out)
+ms.1 <- MSHAPES(efa.outlines, 
+                ~heart.out)
 plot_MSHAPES(ms.1, size = 0.75)
 ```
 
 ```{r ms2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for heartland (H), interior (I), and northern periphery (P)."}
 # mean shapes
-ms.2 <- MSHAPES(efa.outlines, ~heart.reg)
+ms.2 <- MSHAPES(efa.outlines, 
+                ~heart.reg)
 plot_MSHAPES(ms.2, size = 0.75)
 ```
 
 ```{r ms3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for beveled (y), and not beveled (n)."}
 # mean shapes
-ms.3 <- MSHAPES(efa.outlines, ~bev)
+ms.3 <- MSHAPES(efa.outlines, 
+                ~bev)
 plot_MSHAPES(ms.3, size = 0.75)
 ```
 
 ```{r ms4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for alternate, unifacial.bimarginal, and no.bevel."}
 # mean shapes
-ms.4 <- MSHAPES(efa.outlines, ~bev.type)
+ms.4 <- MSHAPES(efa.outlines, 
+                ~bev.type)
 plot_MSHAPES(ms.4, size = 0.75)
 ```
