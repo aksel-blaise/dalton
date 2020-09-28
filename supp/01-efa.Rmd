@@ -77,13 +77,17 @@ mosaic(norm.outlines,
 
 ```{r cal.harm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # calibrate how many harmonics needed
-calibrate_harmonicpower_efourier(norm.outlines, nb.h = 20)
+calibrate_harmonicpower_efourier(norm.outlines, 
+                                 nb.h = 20)
 
 # 10 harmonics capture 99 percent of variation
-calibrate_reconstructions_efourier(norm.outlines, range = 1:10)
+calibrate_reconstructions_efourier(norm.outlines, 
+                                   range = 1:10)
 
 # generate efa outlines with 10 harmonics
-efa.outlines <- efourier(norm.outlines, nb.h = 10, norm = TRUE)
+efa.outlines <- efourier(norm.outlines, 
+                         nb.h = 10, 
+                         norm = TRUE)
 
 # use efa.outlines for pca
 pca.outlines <- PCA(efa.outlines)
@@ -114,7 +118,8 @@ plot_PCA(pca.outlines,
 # bevel type
 plot_PCA(pca.outlines, 
          morphospace_position = "range", 
-         ~bev.type, zoom = 1.25, palette = pal_qual_Dark2)
+         ~bev.type, zoom = 1.25, 
+         palette = pal_qual_Dark2)
 
 # contribution of each pc
 boxplot(pca.outlines, 
