@@ -190,16 +190,16 @@ pc.plot1 <- plot(pca,
   # shapes at the minima and maxima of PC1 and PC2 using min and max
   # corresponding to the x/y values in the four PC plots
   pc <- pca$x[,1] # x-axis
-  preds <- shape.predictor(res.bilat$symm.shape, 
-                           x = pc, Intercept = FALSE, 
-                           pred1 = min(pc), 
+  preds <- shape.predictor(res.bilat$symm.shape,
+                           x = pc, Intercept = FALSE,
+                           pred1 = min(pc),
                            pred2 = max(pc))
   plotRefToTarget(M, preds$pred1) # minimum x-axis
   plotRefToTarget(M, preds$pred2) # maximum x-axis
   pc <- pca$x[,2] # y-axis
-  preds<-shape.predictor(res.bilat$symm.shape, 
-                         x = pc, Intercept = FALSE, 
-                         pred1 = min(pc), 
+  preds<-shape.predictor(res.bilat$symm.shape,
+                         x = pc, Intercept = FALSE,
+                         pred1 = min(pc),
                          pred2 = max(pc))
   plotRefToTarget(M, preds$pred1) # minimum y-axis
   plotRefToTarget(M, preds$pred2) # maximum y-axis 
