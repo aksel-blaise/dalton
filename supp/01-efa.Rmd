@@ -44,33 +44,11 @@ norm.outlines <- data.out %>%
   coo_center()
 ```
 
-## Pile and mosaics
+## Pile
 
 ```{r stack.panel, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # outline pile
 pile(norm.outlines)
-
-# mosaics
-# in/out of heartland
-mosaic(norm.outlines, 
-       ~heart.out, 
-       asp = 1, 
-       palette = pal_qual_Dark2)
-# heartland regions (heartland, interior, and northern periphery)
-mosaic(norm.outlines, 
-       ~heart.reg, 
-       asp = 1, 
-       palette = pal_qual_Dark2)
-# beveled or not
-mosaic(norm.outlines, 
-       ~bev, 
-       asp = 1, 
-       palette = pal_qual_Dark2)
-# bevel type
-mosaic(norm.outlines, 
-       ~bev.type, 
-       asp = 1, 
-       palette = pal_qual_Dark2)
 ```
 
 ## Calibrate harmonic + EFA
@@ -85,16 +63,16 @@ calibrate_reconstructions_efourier(norm.outlines,
                                    range = 1:10)
 
 # generate efa outlines with 10 harmonics
-<<<<<<< HEAD
 efa.outlines <- efourier(norm.outlines, 
                          nb.h = 10, 
                          norm = TRUE)
 
 # use efa.outlines for pca
 pca.outlines <- PCA(efa.outlines)
-=======
-efa.outlines <- efourier(norm.outlines, nb.h = 10, norm = TRUE)
->>>>>>> 73d89186bafe517dfaec407b16358d9d2d0673d6
+
+efa.outlines <- efourier(norm.outlines, 
+                         nb.h = 10, 
+                         norm = TRUE)
 ```
 
 ## Principal Components Analysis
@@ -106,22 +84,180 @@ pca.outlines <- PCA(efa.outlines)
 # pca 
 scree_plot(pca.outlines)
 
+# mean shape + 2sd for the first 10 pcs
+PCcontrib(pca.outlines, 
+          nax = 1:5)
+```
+
+## Test Hypothesis 1 (Geo)
+
+### Mosaic (H1)
+
+```{r mosaic.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# plot mosaic
+
+# in/out of heartland
+mosaic(norm.outlines, 
+       ~heart.out, 
+       asp = 1, 
+       palette = pal_qual_Dark2)
+```
+
+### Principal Components Analysis (H1)
+
+```{r pca.h1,, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # plot pca
+
 # heartland in/out
 plot_PCA(pca.outlines, 
          morphospace_position = "range", 
          ~heart.out, zoom = 1.25, 
          palette = pal_qual_Dark2)
+
+# contribution of each pc
+boxplot(pca.outlines, 
+        ~heart.out, 
+        nax = 1:5, 
+        palette = pal_qual_Dark2)
+```
+
+### MANOVA (H1)
+
+```{r manova.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# manova + manova_pw
+
+# do shapes differ in/out of heartland?
+MANOVA(pca.outlines, 'heart.out')
+```
+
+### Mean shapes (H1)
+
+```{r msshape.1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for in (H) and out (N) of the heartland."}
+# mean shapes
+ms.1 <- MSHAPES(efa.outlines, 
+                ~heart.out)
+plot_MSHAPES(ms.1, size = 0.75)
+```
+
+## Test Hypothesis 2 (Geo)
+
+### Mosaic (H2)
+
+```{r mosaic.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# plot mosaic
+
+# heartland regions (heartland, interior, and northern periphery)
+mosaic(norm.outlines, 
+       ~heart.reg, 
+       asp = 1, 
+       palette = pal_qual_Dark2)
+```
+
+### Principal Components Analysis (H2)
+
+```{r pca.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# plot pca
+
 # heartland region
 plot_PCA(pca.outlines, 
          morphospace_position = "range", 
          ~heart.reg, zoom = 1.25, 
          palette = pal_qual_Dark2)
+
+# contribution of each pc
+boxplot(pca.outlines, 
+        ~heart.reg, 
+        nax = 1:5, 
+        palette = pal_qual_Dark2)
+```
+
+### MANOVA + MANOVA_PW (H2)
+
+```{r manova.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# manova_pw
+
+# do shapes differ between heartland regions?
+MANOVA(pca.outlines, 'heart.reg')
+# which?
+MANOVA_PW(pca.outlines, 'heart.reg')
+```
+
+### Mean shapes (H2)
+
+```{r mean.shape.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for heartland (H), interior (I), and northern periphery (P)."}
+# mean shapes
+ms.2 <- MSHAPES(efa.outlines, 
+                ~heart.reg)
+plot_MSHAPES(ms.2, size = 0.75)
+```
+
+## Test Hypothesis 3 (Techno)
+
+### Mosaic (H3)
+
+```{r mosaic.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# plot mosaic 
+
+# beveled or not
+mosaic(norm.outlines, 
+       ~bev, 
+       asp = 1, 
+       palette = pal_qual_Dark2)
+```
+
+### Principal Components Analysis (H3)
+
+```{r pca.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# plot pca
+
 # beveled or not
 plot_PCA(pca.outlines, 
          morphospace_position = "range", 
          ~bev, zoom = 1.25, 
          palette = pal_qual_Dark2)
+
+# contribution of each pc
+boxplot(pca.outlines, 
+        ~bev, 
+        nax = 1:5, 
+        palette = pal_qual_Dark2)
+```
+
+### MANOVA (H3)
+
+```{r manova.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# manova + manova_pw
+
+# do shapes differ if beveled?
+MANOVA(pca.outlines, 'bev')
+```
+
+### Mean shapes (H3)
+
+```{r mshape3efa, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for beveled (y), and not beveled (n)."}
+# mean shapes
+ms.3 <- MSHAPES(efa.outlines, 
+                ~bev)
+plot_MSHAPES(ms.3, size = 0.75)
+```
+
+## Test Hypothesis 4 (Techno)
+
+### Mosaic (H4)
+
+```{r mosaic.h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# plot mosaic
+
+# bevel type
+mosaic(norm.outlines, 
+       ~bev.type, 
+       asp = 1, 
+       palette = pal_qual_Dark2)
+```
+
+### Principal Components Analysis (H4)
+
+```{r pca.h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # bevel type
 plot_PCA(pca.outlines, 
          morphospace_position = "range", 
@@ -130,69 +266,25 @@ plot_PCA(pca.outlines,
 
 # contribution of each pc
 boxplot(pca.outlines, 
-        ~heart.out, 
-        nax = 1:5, 
-        palette = pal_qual_Dark2)
-boxplot(pca.outlines, 
-        ~heart.reg, 
-        nax = 1:5, 
-        palette = pal_qual_Dark2)
-boxplot(pca.outlines, 
-        ~bev, 
-        nax = 1:5, 
-        palette = pal_qual_Dark2)
-boxplot(pca.outlines, 
         ~bev.type, 
         nax = 1:5, 
         palette = pal_qual_Dark2)
-
-# mean shape + 2sd for the first 10 pcs
-PCcontrib(pca.outlines, 
-          nax = 1:5)
 ```
 
-## MANOVA + MANOVA_PW
+### MANOVA + MANOVA_PW (H4)
 
 ```{r manova, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # manova + manova_pw
-# do shapes differ in/out of heartland?
-MANOVA(pca.outlines, 'heart.out')
-# do shapes differ between heartland regions?
-MANOVA(pca.outlines, 'heart.reg')
-# which?
-MANOVA_PW(pca.outlines, 'heart.reg')
-# do shapes differ if beveled?
-MANOVA(pca.outlines, 'bev')
+
 # do shapes differ by bevel type?
 MANOVA(pca.outlines, 'bev.type')
 # which?
 MANOVA_PW(pca.outlines, 'bev.type')
 ```
 
-## Mean shapes
+### Mean shapes (H4)
 
-```{r ms1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for in (H) and out (N) of the heartland."}
-# mean shapes
-ms.1 <- MSHAPES(efa.outlines, 
-                ~heart.out)
-plot_MSHAPES(ms.1, size = 0.75)
-```
-
-```{r ms2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for heartland (H), interior (I), and northern periphery (P)."}
-# mean shapes
-ms.2 <- MSHAPES(efa.outlines, 
-                ~heart.reg)
-plot_MSHAPES(ms.2, size = 0.75)
-```
-
-```{r ms3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for beveled (y), and not beveled (n)."}
-# mean shapes
-ms.3 <- MSHAPES(efa.outlines, 
-                ~bev)
-plot_MSHAPES(ms.3, size = 0.75)
-```
-
-```{r ms4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for alternate, unifacial.bimarginal, and no.bevel."}
+```{r mshape4efa, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for alternate, unifacial.bimarginal, and no.bevel."}
 # mean shapes
 ms.4 <- MSHAPES(efa.outlines, 
                 ~bev.type)
