@@ -154,7 +154,7 @@ mosaic(norm.outlines,
 # heartland region
 plot_PCA(pca.outlines, 
          morphospace_position = "range", 
-         ~heart.reg, zoom = 1.5, 
+         ~heart.reg, zoom = 1.25, 
          palette = pal_qual_Dark2)
 
 # contribution of each pc
@@ -206,7 +206,7 @@ mosaic(norm.outlines,
 # beveled or not
 plot_PCA(pca.outlines, 
          morphospace_position = "range", 
-         ~bev, zoom = 1.5, 
+         ~bev, zoom = 1.25, 
          palette = pal_qual_Dark2)
 
 # contribution of each pc
@@ -254,7 +254,7 @@ mosaic(norm.outlines,
 # bevel type
 plot_PCA(pca.outlines, 
          morphospace_position = "range", 
-         ~bev.type, zoom = 1.5, 
+         ~bev.type, zoom = 1.25, 
          palette = pal_qual_Dark2)
 
 # contribution of each pc
