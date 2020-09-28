@@ -66,13 +66,6 @@ calibrate_reconstructions_efourier(norm.outlines,
 efa.outlines <- efourier(norm.outlines, 
                          nb.h = 10, 
                          norm = TRUE)
-
-# use efa.outlines for pca
-pca.outlines <- PCA(efa.outlines)
-
-efa.outlines <- efourier(norm.outlines, 
-                         nb.h = 10, 
-                         norm = TRUE)
 ```
 
 ## Principal Components Analysis
@@ -161,7 +154,7 @@ mosaic(norm.outlines,
 # heartland region
 plot_PCA(pca.outlines, 
          morphospace_position = "range", 
-         ~heart.reg, zoom = 1.25, 
+         ~heart.reg, zoom = 1.5, 
          palette = pal_qual_Dark2)
 
 # contribution of each pc
@@ -213,7 +206,7 @@ mosaic(norm.outlines,
 # beveled or not
 plot_PCA(pca.outlines, 
          morphospace_position = "range", 
-         ~bev, zoom = 1.25, 
+         ~bev, zoom = 1.5, 
          palette = pal_qual_Dark2)
 
 # contribution of each pc
@@ -261,7 +254,7 @@ mosaic(norm.outlines,
 # bevel type
 plot_PCA(pca.outlines, 
          morphospace_position = "range", 
-         ~bev.type, zoom = 1.25, 
+         ~bev.type, zoom = 1.5, 
          palette = pal_qual_Dark2)
 
 # contribution of each pc
