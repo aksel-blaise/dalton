@@ -303,12 +303,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## Loading required package: RRPP</code></pre>
 <pre><code>## Loading required package: rgl</code></pre>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="analysis-of-dalton-morphology.html#cb4-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
-<pre><code>## -- Attaching packages ----------------------------------------------- tidyverse 1.3.0 --</code></pre>
+<pre><code>## -- Attaching packages ------------------------------------------------------------------------- tidyverse 1.3.0 --</code></pre>
 <pre><code>## v ggplot2 3.3.2     v purrr   0.3.4
 ## v tibble  3.0.3     v dplyr   1.0.2
 ## v tidyr   1.1.2     v stringr 1.4.0
 ## v readr   1.3.1     v forcats 0.5.0</code></pre>
-<pre><code>## -- Conflicts -------------------------------------------------- tidyverse_conflicts() --
+<pre><code>## -- Conflicts ---------------------------------------------------------------------------- tidyverse_conflicts() --
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()</code></pre>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="analysis-of-dalton-morphology.html#cb8-1"></a><span class="kw">library</span>(wesanderson)</span>
@@ -547,6 +547,83 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="center">no.bevel</td>
 </tr>
 <tr class="even">
+<td align="left">McL7_168</td>
+<td align="center">N</td>
+<td align="center">I</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+</tr>
+<tr class="odd">
+<td align="left">Nochta11MS128BFSI267-1</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+</tr>
+<tr class="even">
+<td align="left">Nochta11MS128bFSIPP1001</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+</tr>
+<tr class="odd">
+<td align="left">Nochta11MS128BFSIPP2495</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+</tr>
+<tr class="even">
+<td align="left">Nochta11MS128BFSIPP3305</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+</tr>
+<tr class="odd">
+<td align="left">Nochta11MS12BFIS800-168</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+</tr>
+<tr class="even">
+<td align="left">OH1_176</td>
+<td align="center">N</td>
+<td align="center">I</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+</tr>
+<tr class="odd">
+<td align="left">ReedVoss2</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+</tr>
+<tr class="even">
+<td align="left">TR10_4</td>
+<td align="center">N</td>
+<td align="center">I</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+</tr>
+<tr class="odd">
+<td align="left">Welton1</td>
+<td align="center">N</td>
+<td align="center">P</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+</tr>
+<tr class="even">
+<td align="left">Welton2</td>
+<td align="center">N</td>
+<td align="center">P</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+</tr>
+<tr class="odd">
 <td align="left">Welton5</td>
 <td align="center">N</td>
 <td align="center">P</td>
@@ -581,46 +658,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 34 fixed landmarks
 ## 0 semilandmarks (sliders)
 ## 3-dimensional landmarks
-## 2 GPA iterations to converge
+## 3 GPA iterations to converge
 ## 
 ## 
 ## Consensus (mean) Configuration
 ## 
-##               X             Y             Z
-## 1  -0.329321831 -1.060184e-03 -5.995287e-04
-## 2   0.214029192  1.145521e-01 -1.781868e-03
-## 3   0.211319539 -1.204046e-01  1.056587e-03
-## 4   0.087837514  1.170436e-01 -1.739455e-03
-## 5   0.080965450 -1.144601e-01  5.003806e-04
-## 6   0.195623681 -2.436920e-03  2.359960e-04
-## 7  -0.246903389  4.749537e-02  1.931355e-03
-## 8  -0.164215189  7.099799e-02  6.677889e-04
-## 9  -0.081460795  8.440547e-02  1.300479e-03
-## 10  0.001305547  9.764645e-02  8.482380e-05
-## 11  0.144074411  1.099508e-01 -1.799317e-03
-## 12  0.214400300  5.791249e-02 -1.202801e-03
-## 13  0.215069743 -6.360564e-02  2.986674e-04
-## 14  0.136232404 -1.111443e-01  9.741897e-05
-## 15  0.002564429 -9.432532e-02 -1.851550e-03
-## 16 -0.080339447 -8.253429e-02 -2.151198e-03
-## 17 -0.163283617 -6.958498e-02 -2.130539e-03
-## 18 -0.246255439 -4.769882e-02 -2.260444e-03
-## 19 -0.246529758 -5.901113e-04  2.097840e-02
-## 20 -0.163698130 -5.100633e-05  2.815418e-02
-## 21 -0.080883292  4.216522e-04  3.086934e-02
-## 22  0.001969132  9.566683e-04  3.085556e-02
-## 23  0.084410366  1.426377e-03  2.783684e-02
-## 24  0.139921401 -4.675893e-04  2.089336e-02
-## 25  0.140235447 -6.219444e-04 -1.993138e-02
-## 26  0.084423423  1.202288e-03 -2.634741e-02
-## 27  0.002008817  7.309227e-04 -2.921340e-02
-## 28 -0.080833538  2.632861e-04 -2.914000e-02
-## 29 -0.163700262 -2.468624e-04 -2.661805e-02
-## 30 -0.246532116 -6.825969e-04 -2.114638e-02
-## 31  0.086247145  6.261302e-02  2.316307e-02
-## 32  0.082560541 -5.954031e-02  2.447001e-02
-## 33  0.082559129 -5.996408e-02 -2.307768e-02
-## 34  0.086199192  6.180121e-02 -2.240326e-02</code></pre>
+##                X             Y             Z
+## 1  -3.263635e-01 -0.0013385403 -0.0009684616
+## 2   2.192495e-01  0.1172356087 -0.0012141590
+## 3   2.150290e-01 -0.1225383686  0.0008116295
+## 4   8.278056e-02  0.1197457917 -0.0013937141
+## 5   8.133923e-02 -0.1172897761  0.0001947492
+## 6   1.963424e-01 -0.0022811090  0.0003911166
+## 7  -2.450091e-01  0.0465479319  0.0015677849
+## 8  -1.634113e-01  0.0697823147  0.0007021236
+## 9  -8.174435e-02  0.0846137860  0.0006888902
+## 10 -6.112658e-05  0.0994269516 -0.0004149999
+## 11  1.431415e-01  0.1132463238 -0.0013320999
+## 12  2.161750e-01  0.0594104623 -0.0011749763
+## 13  2.174165e-01 -0.0643647311  0.0004647941
+## 14  1.357850e-01 -0.1134541944 -0.0004054045
+## 15  1.188792e-03 -0.0956031163 -0.0012146496
+## 16 -8.064685e-02 -0.0821218472 -0.0020393529
+## 17 -1.625181e-01 -0.0688073013 -0.0014644822
+## 18 -2.434044e-01 -0.0477832555 -0.0015146358
+## 19 -2.446820e-01 -0.0008732904  0.0211067380
+## 20 -1.629505e-01 -0.0003073281  0.0280988610
+## 21 -8.120893e-02  0.0002088046  0.0310869847
+## 22  5.697717e-04  0.0007661819  0.0313819860
+## 23  8.199898e-02  0.0013216730  0.0282438977
+## 24  1.390420e-01 -0.0004594756  0.0214652460
+## 25  1.395028e-01 -0.0005631335 -0.0206368953
+## 26  8.211085e-02  0.0011924026 -0.0268781908
+## 27  6.967301e-04  0.0006908318 -0.0297999335
+## 28 -8.106954e-02  0.0001985095 -0.0293716160
+## 29 -1.628592e-01 -0.0003465058 -0.0272496204
+## 30 -2.446260e-01 -0.0008518792 -0.0207895420
+## 31  8.243056e-02  0.0637655712  0.0235284582
+## 32  8.161249e-02 -0.0611404804  0.0242257955
+## 33  8.166948e-02 -0.0612214348 -0.0234904892
+## 34  8.247369e-02  0.0631926222 -0.0226058321</code></pre>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="analysis-of-dalton-morphology.html#cb11-1"></a><span class="co"># geomorph data frame</span></span>
 <span id="cb11-2"><a href="analysis-of-dalton-morphology.html#cb11-2"></a>gdf &lt;-<span class="st"> </span><span class="kw">geomorph.data.frame</span>(<span class="dt">shape =</span> Y.gpa<span class="op">$</span>coords, </span>
 <span id="cb11-3"><a href="analysis-of-dalton-morphology.html#cb11-3"></a>                           <span class="dt">size =</span> Y.gpa<span class="op">$</span>Csize, </span>
@@ -899,6 +976,94 @@ Figure 4.1: 2D plot of 3D consensus configuration.
 <td align="center">82.38421</td>
 </tr>
 <tr class="even">
+<td align="left">McL7_168</td>
+<td align="center">N</td>
+<td align="center">I</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+<td align="center">101.23743</td>
+</tr>
+<tr class="odd">
+<td align="left">Nochta11MS128BFSI267-1</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+<td align="center">104.48051</td>
+</tr>
+<tr class="even">
+<td align="left">Nochta11MS128bFSIPP1001</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+<td align="center">164.44493</td>
+</tr>
+<tr class="odd">
+<td align="left">Nochta11MS128BFSIPP2495</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+<td align="center">91.73625</td>
+</tr>
+<tr class="even">
+<td align="left">Nochta11MS128BFSIPP3305</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+<td align="center">67.26310</td>
+</tr>
+<tr class="odd">
+<td align="left">Nochta11MS12BFIS800-168</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+<td align="center">111.63691</td>
+</tr>
+<tr class="even">
+<td align="left">OH1_176</td>
+<td align="center">N</td>
+<td align="center">I</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+<td align="center">83.95530</td>
+</tr>
+<tr class="odd">
+<td align="left">ReedVoss2</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+<td align="center">120.36607</td>
+</tr>
+<tr class="even">
+<td align="left">TR10_4</td>
+<td align="center">N</td>
+<td align="center">I</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+<td align="center">73.36491</td>
+</tr>
+<tr class="odd">
+<td align="left">Welton1</td>
+<td align="center">N</td>
+<td align="center">P</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+<td align="center">222.31528</td>
+</tr>
+<tr class="even">
+<td align="left">Welton2</td>
+<td align="center">N</td>
+<td align="center">P</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+<td align="center">134.84432</td>
+</tr>
+<tr class="odd">
 <td align="left">Welton5</td>
 <td align="center">N</td>
 <td align="center">P</td>
@@ -925,42 +1090,54 @@ Figure 4.1: 2D plot of 3D consensus configuration.
 <pre><code>## 
 ## Ordination type: Principal Component Analysis 
 ## Centering and projection: OLS 
-## Number of observations 30 
-## Number of vectors 30 
+## Number of observations 41 
+## Number of vectors 41 
 ## 
 ## Importance of Components:
 ##                             Comp1       Comp2       Comp3        Comp4
-## Eigenvalues            0.01067701 0.002417482 0.001066134 0.0005397387
-## Proportion of Variance 0.65685054 0.148723728 0.065588685 0.0332047772
-## Cumulative Proportion  0.65685054 0.805574268 0.871162953 0.9043677302
+## Eigenvalues            0.01309236 0.002948616 0.001079526 0.0006593874
+## Proportion of Variance 0.66840498 0.150535911 0.055113110 0.0336637492
+## Cumulative Proportion  0.66840498 0.818940893 0.874054002 0.9077177516
 ##                               Comp5        Comp6        Comp7       Comp8
-## Eigenvalues            0.0002956727 0.0002520693 0.0001629169 0.000124321
-## Proportion of Variance 0.0181898135 0.0155073290 0.0100226613 0.007648241
-## Cumulative Proportion  0.9225575437 0.9380648726 0.9480875339 0.955735775
+## Eigenvalues            0.0003079612 0.0002871892 0.0001873739 0.000177321
+## Proportion of Variance 0.0157223637 0.0146618897 0.0095660117 0.009052782
+## Cumulative Proportion  0.9234401153 0.9381020050 0.9476680167 0.956720799
 ##                               Comp9       Comp10       Comp11       Comp12
-## Eigenvalues            0.0001166916 9.862814e-05 8.124054e-05 7.173952e-05
-## Proportion of Variance 0.0071788778 6.067613e-03 4.997926e-03 4.413422e-03
-## Cumulative Proportion  0.9629146526 9.689823e-01 9.739802e-01 9.783936e-01
+## Eigenvalues            0.0001328815 0.0000903513 8.423705e-05 6.998802e-05
+## Proportion of Variance 0.0067840091 0.0046127110 4.300560e-03 3.573103e-03
+## Cumulative Proportion  0.9635048079 0.9681175188 9.724181e-01 9.759912e-01
 ##                              Comp13       Comp14       Comp15       Comp16
-## Eigenvalues            6.081002e-05 0.0000449716 0.0000442316 3.310208e-05
-## Proportion of Variance 3.741039e-03 0.0027666574 0.0027211322 2.036443e-03
-## Cumulative Proportion  9.821347e-01 0.9849013093 0.9876224414 9.896589e-01
+## Eigenvalues            6.116251e-05 0.0000583672 0.0000477215 4.434491e-05
+## Proportion of Variance 3.122533e-03 0.0029798243 0.0024363289 2.263944e-03
+## Cumulative Proportion  9.791137e-01 0.9820935393 0.9845298681 9.867938e-01
 ##                              Comp17       Comp18       Comp19       Comp20
-## Eigenvalues            2.894895e-05 2.524288e-05 2.125917e-05 1.982931e-05
-## Proportion of Variance 1.780942e-03 1.552944e-03 1.307866e-03 1.219901e-03
-## Cumulative Proportion  9.914398e-01 9.929928e-01 9.943006e-01 9.955205e-01
+## Eigenvalues            3.225885e-05 3.031609e-05 2.596142e-05 2.238225e-05
+## Proportion of Variance 1.646913e-03 1.547729e-03 1.325410e-03 1.142683e-03
+## Cumulative Proportion  9.884407e-01 9.899885e-01 9.913139e-01 9.924565e-01
 ##                              Comp21       Comp22       Comp23       Comp24
-## Eigenvalues            1.795615e-05 1.313158e-05 9.393266e-06 8.590636e-06
-## Proportion of Variance 1.104664e-03 8.078563e-04 5.778746e-04 5.284968e-04
-## Cumulative Proportion  9.966252e-01 9.974331e-01 9.980109e-01 9.985394e-01
+## Eigenvalues            2.107502e-05 1.926094e-05 1.382093e-05 1.307978e-05
+## Proportion of Variance 1.075944e-03 9.833302e-04 7.056009e-04 6.677630e-04
+## Cumulative Proportion  9.935325e-01 9.945158e-01 9.952214e-01 9.958892e-01
 ##                              Comp25       Comp26       Comp27       Comp28
-## Eigenvalues            7.007875e-06 5.757423e-06 5.246174e-06 3.967039e-06
-## Proportion of Variance 4.311251e-04 3.541972e-04 3.227451e-04 2.440526e-04
-## Cumulative Proportion  9.989706e-01 9.993248e-01 9.996475e-01 9.998915e-01
-##                              Comp29       Comp30
-## Eigenvalues            1.762841e-06 2.105668e-33
-## Proportion of Variance 1.084502e-04 1.295409e-31
-## Cumulative Proportion  1.000000e+00 1.000000e+00</code></pre>
+## Eigenvalues            1.202387e-05 1.108433e-05 1.006566e-05 8.956883e-06
+## Proportion of Variance 6.138554e-04 5.658888e-04 5.138826e-04 4.572763e-04
+## Cumulative Proportion  9.965030e-01 9.970689e-01 9.975828e-01 9.980401e-01
+##                              Comp29       Comp30       Comp31       Comp32
+## Eigenvalues            7.430666e-06 6.103555e-06 5.294946e-06 3.855350e-06
+## Proportion of Variance 3.793583e-04 3.116052e-04 2.703232e-04 1.968275e-04
+## Cumulative Proportion  9.984194e-01 9.987311e-01 9.990014e-01 9.991982e-01
+##                              Comp33       Comp34       Comp35       Comp36
+## Eigenvalues            3.709280e-06 0.0000033365 2.478276e-06 2.107250e-06
+## Proportion of Variance 1.893701e-04 0.0001703385 1.265236e-04 1.075816e-04
+## Cumulative Proportion  9.993876e-01 0.9995579113 9.996844e-01 9.997920e-01
+##                              Comp37       Comp38       Comp39       Comp40
+## Eigenvalues            1.611993e-06 1.077719e-06 8.498190e-07 5.343375e-07
+## Proportion of Variance 8.229720e-05 5.502087e-05 4.338587e-05 2.727957e-05
+## Cumulative Proportion  9.998743e-01 9.999293e-01 9.999727e-01 1.000000e+00
+##                              Comp41
+## Eigenvalues            2.582012e-33
+## Proportion of Variance 1.318196e-31
+## Cumulative Proportion  1.000000e+00</code></pre>
 </div>
 <div id="define-models" class="section level2">
 <h2><span class="header-section-number">4.4</span> Define models</h2>
@@ -1084,10 +1261,10 @@ Figure 4.1: 2D plot of 3D consensus configuration.
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df      SS       MS     Rsq      F      Z Pr(&gt;F)    
-## size       1 0.20019 0.200190 0.42468 20.669 4.0833  1e-04 ***
-## Residuals 28 0.27120 0.009686 0.57532                         
-## Total     29 0.47139                                          
+##           Df      SS      MS     Rsq     F      Z Pr(&gt;F)    
+## size       1 0.32804 0.32804 0.41869 28.09 4.3261  1e-04 ***
+## Residuals 39 0.45545 0.01168 0.58131                        
+## Total     40 0.78350                                        
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -1108,7 +1285,7 @@ Figure 4.1: 2D plot of 3D consensus configuration.
 <h3><span class="header-section-number">4.6.1</span> Boxplot (H1)</h3>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="analysis-of-dalton-morphology.html#cb26-1"></a><span class="co"># boxplot of Dalton point centroid size by in/out heartland</span></span>
 <span id="cb26-2"><a href="analysis-of-dalton-morphology.html#cb26-2"></a>csz.hrt &lt;-<span class="st"> </span><span class="kw">ggplot</span>(qdata, <span class="kw">aes</span>(<span class="dt">x =</span> heart, <span class="dt">y =</span> csz, <span class="dt">color =</span> heart)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb26-3"><a href="analysis-of-dalton-morphology.html#cb26-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">notch =</span> <span class="ot">TRUE</span>) <span class="op">+</span></span>
+<span id="cb26-3"><a href="analysis-of-dalton-morphology.html#cb26-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></span>
 <span id="cb26-4"><a href="analysis-of-dalton-morphology.html#cb26-4"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="dt">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="dt">dotsize =</span> <span class="fl">0.3</span>) <span class="op">+</span></span>
 <span id="cb26-5"><a href="analysis-of-dalton-morphology.html#cb26-5"></a><span class="st">  </span><span class="kw">scale_colour_manual</span>(<span class="dt">values =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="op">+</span></span>
 <span id="cb26-6"><a href="analysis-of-dalton-morphology.html#cb26-6"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></span>
@@ -1174,11 +1351,11 @@ Figure 4.2: Boxplot of centroid size by Heartland (in/out).
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df      SS       MS     Rsq       F      Z Pr(&gt;F)    
-## size       1 0.20019 0.200190 0.42468 24.0867 4.2655  1e-04 ***
-## heart      1 0.04680 0.046798 0.09928  5.6307 2.8722 0.0019 ** 
-## Residuals 27 0.22440 0.008311 0.47604                          
-## Total     29 0.47139                                           
+##           Df      SS      MS     Rsq       F      Z Pr(&gt;F)    
+## size       1 0.32804 0.32804 0.41869 32.2999 4.4882  1e-04 ***
+## heart      1 0.06952 0.06952 0.08873  6.8449 3.1809  6e-04 ***
+## Residuals 38 0.38594 0.01016 0.49258                          
+## Total     40 0.78350                                          
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -1194,12 +1371,12 @@ Figure 4.2: Boxplot of centroid size by Heartland (in/out).
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##            Df      SS       MS     Rsq       F       Z Pr(&gt;F)    
-## size        1 0.20019 0.200190 0.42468 23.5560  4.2488  1e-04 ***
-## heart       1 0.04680 0.046798 0.09928  5.5066  2.8377 0.0020 ** 
-## size:heart  1 0.00344 0.003442 0.00730  0.4051 -1.0685 0.8554    
-## Residuals  26 0.22096 0.008498 0.46874                           
-## Total      29 0.47139                                            
+##            Df      SS      MS     Rsq       F      Z Pr(&gt;F)    
+## size        1 0.32804 0.32804 0.41869 33.5287 4.5301  1e-04 ***
+## heart       1 0.06952 0.06952 0.08873  7.1053 3.2353 0.0005 ***
+## size:heart  1 0.02393 0.02393 0.03054  2.4457 1.6437 0.0551 .  
+## Residuals  37 0.36201 0.00978 0.46204                          
+## Total      40 0.78350                                          
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -1215,12 +1392,10 @@ Figure 4.2: Boxplot of centroid size by Heartland (in/out).
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df      SS     MS     Rsq     F      Z Pr(&gt;F)   
-## heart      1  5156.4 5156.4 0.21018 7.451 1.4747 0.0096 **
-## Residuals 28 19377.2  692.0 0.78982                       
-## Total     29 24533.6                                      
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+##           Df    SS     MS     Rsq     F       Z Pr(&gt;F)
+## heart      1  2491 2490.7 0.05567 2.299 0.92469 0.1371
+## Residuals 39 42253 1083.4 0.94433                     
+## Total     40 44743                                    
 ## 
 ## Call: procD.lm(f1 = size ~ heart, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="analysis-of-dalton-morphology.html#cb39-1"></a><span class="co"># ANOVA: do dalton projectile point shapes differ by heart?</span></span>
@@ -1233,10 +1408,10 @@ Figure 4.2: Boxplot of centroid size by Heartland (in/out).
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df      SS       MS     Rsq      F      Z Pr(&gt;F)    
-## heart      1 0.14109 0.141094 0.29932 11.961 3.3852  4e-04 ***
-## Residuals 28 0.33030 0.011796 0.70068                         
-## Total     29 0.47139                                          
+##           Df      SS       MS     Rsq     F     Z Pr(&gt;F)   
+## heart      1 0.12924 0.129241 0.16495 7.704 2.817  0.001 **
+## Residuals 39 0.65426 0.016776 0.83505                      
+## Total     40 0.78350                                       
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -1306,19 +1481,19 @@ Figure 4.2: Boxplot of centroid size by Heartland (in/out).
 ## 
 ## Procrustes variances for defined groups
 ##          H          N 
-## 0.01075330 0.01123438 
+## 0.01810433 0.01391291 
 ## 
 ## 
 ## Pairwise absolute differences between variances
-##              H            N
-## H 0.0000000000 0.0004810776
-## N 0.0004810776 0.0000000000
+##             H           N
+## H 0.000000000 0.004191421
+## N 0.004191421 0.000000000
 ## 
 ## 
 ## P-Values
 ##        H      N
-## H 1.0000 0.9118
-## N 0.9118 1.0000</code></pre>
+## H 1.0000 0.6456
+## N 0.6456 1.0000</code></pre>
 </div>
 <div id="mean-shapes-h1" class="section level3">
 <h3><span class="header-section-number">4.6.6</span> Mean Shapes (H1)</h3>
@@ -1358,7 +1533,7 @@ Figure 4.2: Boxplot of centroid size by Heartland (in/out).
 <h3><span class="header-section-number">4.7.1</span> Boxplot (H2)</h3>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="analysis-of-dalton-morphology.html#cb51-1"></a><span class="co"># boxplot of Dalton point centroid size by heartland + regions</span></span>
 <span id="cb51-2"><a href="analysis-of-dalton-morphology.html#cb51-2"></a>csz.hreg &lt;-<span class="st"> </span><span class="kw">ggplot</span>(qdata, <span class="kw">aes</span>(<span class="dt">x =</span> hreg, <span class="dt">y =</span> csz, <span class="dt">color =</span> hreg)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb51-3"><a href="analysis-of-dalton-morphology.html#cb51-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">notch =</span> <span class="ot">TRUE</span>) <span class="op">+</span></span>
+<span id="cb51-3"><a href="analysis-of-dalton-morphology.html#cb51-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></span>
 <span id="cb51-4"><a href="analysis-of-dalton-morphology.html#cb51-4"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="dt">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="dt">dotsize =</span> <span class="fl">0.3</span>) <span class="op">+</span></span>
 <span id="cb51-5"><a href="analysis-of-dalton-morphology.html#cb51-5"></a><span class="st">  </span><span class="kw">scale_colour_manual</span>(<span class="dt">values =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="op">+</span></span>
 <span id="cb51-6"><a href="analysis-of-dalton-morphology.html#cb51-6"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></span>
@@ -1366,8 +1541,6 @@ Figure 4.2: Boxplot of centroid size by Heartland (in/out).
 <span id="cb51-8"><a href="analysis-of-dalton-morphology.html#cb51-8"></a><span class="co"># render plot</span></span>
 <span id="cb51-9"><a href="analysis-of-dalton-morphology.html#cb51-9"></a>csz.hreg</span></code></pre></div>
 <pre><code>## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<pre><code>## notch went outside hinges. Try setting notch=FALSE.
-## notch went outside hinges. Try setting notch=FALSE.</code></pre>
 <div class="figure"><span id="fig:box2"></span>
 <img src="dalton.supp_files/figure-html/box2-1.png" alt="Boxplot of centroid size by Heartland region." width="100%" />
 <p class="caption">
@@ -1377,25 +1550,25 @@ Figure 4.3: Boxplot of centroid size by Heartland region.
 </div>
 <div id="principal-components-analysis-h2" class="section level3">
 <h3><span class="header-section-number">4.7.2</span> Principal Components Analysis (H2)</h3>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="analysis-of-dalton-morphology.html#cb54-1"></a><span class="co"># set plot parameters to plot by heartland + regions</span></span>
-<span id="cb54-2"><a href="analysis-of-dalton-morphology.html#cb54-2"></a>pch.gps.hreg &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="kw">as.factor</span>(hreg)]</span>
-<span id="cb54-3"><a href="analysis-of-dalton-morphology.html#cb54-3"></a>col.gps.hreg &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(hreg)]</span>
-<span id="cb54-4"><a href="analysis-of-dalton-morphology.html#cb54-4"></a>col.hull<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
-<span id="cb54-5"><a href="analysis-of-dalton-morphology.html#cb54-5"></a></span>
-<span id="cb54-6"><a href="analysis-of-dalton-morphology.html#cb54-6"></a><span class="co"># plot pca by heartland + regions</span></span>
-<span id="cb54-7"><a href="analysis-of-dalton-morphology.html#cb54-7"></a>pc.plot2 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
-<span id="cb54-8"><a href="analysis-of-dalton-morphology.html#cb54-8"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb54-9"><a href="analysis-of-dalton-morphology.html#cb54-9"></a>                 <span class="dt">pch =</span> pch.gps.hreg,</span>
-<span id="cb54-10"><a href="analysis-of-dalton-morphology.html#cb54-10"></a>                 <span class="dt">col =</span> col.gps.hreg)</span>
-<span id="cb54-11"><a href="analysis-of-dalton-morphology.html#cb54-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot2, </span>
-<span id="cb54-12"><a href="analysis-of-dalton-morphology.html#cb54-12"></a>                             <span class="dt">groups =</span> hreg,</span>
-<span id="cb54-13"><a href="analysis-of-dalton-morphology.html#cb54-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="analysis-of-dalton-morphology.html#cb53-1"></a><span class="co"># set plot parameters to plot by heartland + regions</span></span>
+<span id="cb53-2"><a href="analysis-of-dalton-morphology.html#cb53-2"></a>pch.gps.hreg &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="kw">as.factor</span>(hreg)]</span>
+<span id="cb53-3"><a href="analysis-of-dalton-morphology.html#cb53-3"></a>col.gps.hreg &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(hreg)]</span>
+<span id="cb53-4"><a href="analysis-of-dalton-morphology.html#cb53-4"></a>col.hull<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
+<span id="cb53-5"><a href="analysis-of-dalton-morphology.html#cb53-5"></a></span>
+<span id="cb53-6"><a href="analysis-of-dalton-morphology.html#cb53-6"></a><span class="co"># plot pca by heartland + regions</span></span>
+<span id="cb53-7"><a href="analysis-of-dalton-morphology.html#cb53-7"></a>pc.plot2 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
+<span id="cb53-8"><a href="analysis-of-dalton-morphology.html#cb53-8"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb53-9"><a href="analysis-of-dalton-morphology.html#cb53-9"></a>                 <span class="dt">pch =</span> pch.gps.hreg,</span>
+<span id="cb53-10"><a href="analysis-of-dalton-morphology.html#cb53-10"></a>                 <span class="dt">col =</span> col.gps.hreg)</span>
+<span id="cb53-11"><a href="analysis-of-dalton-morphology.html#cb53-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot2, </span>
+<span id="cb53-12"><a href="analysis-of-dalton-morphology.html#cb53-12"></a>                             <span class="dt">groups =</span> hreg,</span>
+<span id="cb53-13"><a href="analysis-of-dalton-morphology.html#cb53-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.2</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca2-1.png" width="100%" /></p>
 </div>
 <div id="anova-h2" class="section level3">
 <h3><span class="header-section-number">4.7.3</span> ANOVA (H2)</h3>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="analysis-of-dalton-morphology.html#cb55-1"></a><span class="co"># hreg</span></span>
-<span id="cb55-2"><a href="analysis-of-dalton-morphology.html#cb55-2"></a><span class="kw">anova</span>(fit.sz.chreg) <span class="co"># common allometry (hreg)</span></span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="analysis-of-dalton-morphology.html#cb54-1"></a><span class="co"># hreg</span></span>
+<span id="cb54-2"><a href="analysis-of-dalton-morphology.html#cb54-2"></a><span class="kw">anova</span>(fit.sz.chreg) <span class="co"># common allometry (hreg)</span></span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1404,17 +1577,17 @@ Figure 4.3: Boxplot of centroid size by Heartland region.
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df      SS       MS     Rsq       F      Z Pr(&gt;F)    
-## size       1 0.20019 0.200190 0.42468 24.3130 4.2698  1e-04 ***
-## hreg       2 0.05712 0.028560 0.12117  3.4686 2.6667 0.0038 ** 
-## Residuals 26 0.21408 0.008234 0.45415                          
-## Total     29 0.47139                                           
+##           Df      SS      MS     Rsq       F      Z Pr(&gt;F)    
+## size       1 0.32804 0.32804 0.41869 32.1375 4.4789  1e-04 ***
+## hreg       2 0.07778 0.03889 0.09927  3.8097 2.8898 0.0012 ** 
+## Residuals 37 0.37768 0.01021 0.48204                          
+## Total     40 0.78350                                          
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = shape ~ size + hreg, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="analysis-of-dalton-morphology.html#cb57-1"></a><span class="co"># hreg</span></span>
-<span id="cb57-2"><a href="analysis-of-dalton-morphology.html#cb57-2"></a><span class="kw">anova</span>(fit.sz.uhreg) <span class="co"># unique allometry (hreg)</span></span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="analysis-of-dalton-morphology.html#cb56-1"></a><span class="co"># hreg</span></span>
+<span id="cb56-2"><a href="analysis-of-dalton-morphology.html#cb56-2"></a><span class="kw">anova</span>(fit.sz.uhreg) <span class="co"># unique allometry (hreg)</span></span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1423,18 +1596,18 @@ Figure 4.3: Boxplot of centroid size by Heartland region.
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df      SS       MS     Rsq       F       Z Pr(&gt;F)    
-## size       1 0.20019 0.200190 0.42468 23.4784  4.2373  1e-04 ***
-## hreg       2 0.05712 0.028560 0.12117  3.3495  2.5878 0.0047 ** 
-## size:hreg  2 0.00944 0.004721 0.02003  0.5537 -0.9549 0.8218    
-## Residuals 24 0.20464 0.008527 0.43411                           
-## Total     29 0.47139                                            
+##           Df      SS      MS     Rsq       F      Z Pr(&gt;F)    
+## size       1 0.32804 0.32804 0.41869 33.7298 4.5329  1e-04 ***
+## hreg       2 0.07778 0.03889 0.09927  3.9985 2.9809 0.0008 ***
+## size:hreg  2 0.03728 0.01864 0.04758  1.9166 1.5007 0.0684 .  
+## Residuals 35 0.34040 0.00973 0.43446                          
+## Total     40 0.78350                                          
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = shape ~ size * hreg, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="analysis-of-dalton-morphology.html#cb59-1"></a><span class="co"># ANOVA: does dalton projectile point size differ by hreg?</span></span>
-<span id="cb59-2"><a href="analysis-of-dalton-morphology.html#cb59-2"></a><span class="kw">anova</span>(fit.size.hreg)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="analysis-of-dalton-morphology.html#cb58-1"></a><span class="co"># ANOVA: does dalton projectile point size differ by hreg?</span></span>
+<span id="cb58-2"><a href="analysis-of-dalton-morphology.html#cb58-2"></a><span class="kw">anova</span>(fit.size.hreg)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1443,20 +1616,20 @@ Figure 4.3: Boxplot of centroid size by Heartland region.
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df      SS      MS     Rsq      F      Z Pr(&gt;F)  
-## hreg       2  6095.2 3047.59 0.24844 4.4627 1.5497 0.0231 *
-## Residuals 27 18438.4  682.91 0.75156                       
-## Total     29 24533.6                                       
+##           Df    SS     MS    Rsq      F      Z Pr(&gt;F)  
+## hreg       2  8967 4483.3 0.2004 4.7619 1.6017 0.0142 *
+## Residuals 38 35777  941.5 0.7996                       
+## Total     40 44743                                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = size ~ hreg, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="analysis-of-dalton-morphology.html#cb61-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
-<span id="cb61-2"><a href="analysis-of-dalton-morphology.html#cb61-2"></a>sz.hreg &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.size.hreg, </span>
-<span id="cb61-3"><a href="analysis-of-dalton-morphology.html#cb61-3"></a>                    <span class="dt">groups =</span> qdata<span class="op">$</span>heart.reg)</span>
-<span id="cb61-4"><a href="analysis-of-dalton-morphology.html#cb61-4"></a><span class="kw">summary</span>(sz.hreg, </span>
-<span id="cb61-5"><a href="analysis-of-dalton-morphology.html#cb61-5"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb61-6"><a href="analysis-of-dalton-morphology.html#cb61-6"></a>        <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="analysis-of-dalton-morphology.html#cb60-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
+<span id="cb60-2"><a href="analysis-of-dalton-morphology.html#cb60-2"></a>sz.hreg &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.size.hreg, </span>
+<span id="cb60-3"><a href="analysis-of-dalton-morphology.html#cb60-3"></a>                    <span class="dt">groups =</span> qdata<span class="op">$</span>heart.reg)</span>
+<span id="cb60-4"><a href="analysis-of-dalton-morphology.html#cb60-4"></a><span class="kw">summary</span>(sz.hreg, </span>
+<span id="cb60-5"><a href="analysis-of-dalton-morphology.html#cb60-5"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb60-6"><a href="analysis-of-dalton-morphology.html#cb60-6"></a>        <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -1468,14 +1641,14 @@ Figure 4.3: Boxplot of centroid size by Heartland region.
 ## Vectors hidden (use show.vectors = TRUE to view)
 ## 
 ## Pairwise distances between means, plus statistics
-##            d UCL (95%)         Z Pr &gt; d
-## H:I 31.44333  22.66895 3.1629592 0.0045
-## H:P 14.91762  28.93957 0.3130171 0.3321
-## I:P 16.52571  31.03253 0.3953209 0.3090</code></pre>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="analysis-of-dalton-morphology.html#cb63-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
-<span id="cb63-2"><a href="analysis-of-dalton-morphology.html#cb63-2"></a><span class="kw">summary</span>(sz.hreg, </span>
-<span id="cb63-3"><a href="analysis-of-dalton-morphology.html#cb63-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb63-4"><a href="analysis-of-dalton-morphology.html#cb63-4"></a>        <span class="dt">test.type =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
+##             d UCL (95%)          Z Pr &gt; d
+## H:I 28.010203  22.64950  2.7102945 0.0114
+## H:P  9.241509  29.00339 -0.3212633 0.5548
+## I:P 37.251712  30.60554  2.6462055 0.0134</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="analysis-of-dalton-morphology.html#cb62-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
+<span id="cb62-2"><a href="analysis-of-dalton-morphology.html#cb62-2"></a><span class="kw">summary</span>(sz.hreg, </span>
+<span id="cb62-3"><a href="analysis-of-dalton-morphology.html#cb62-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb62-4"><a href="analysis-of-dalton-morphology.html#cb62-4"></a>        <span class="dt">test.type =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -1487,15 +1660,15 @@ Figure 4.3: Boxplot of centroid size by Heartland region.
 ## Observed variances by group
 ## 
 ##         H         I         P 
-##  586.0178  234.1051 1531.8062 
+##  765.6253  242.0404 2439.3694 
 ## 
 ## Pairwise distances between variances, plus statistics
-##             d UCL (95%)           Z Pr &gt; d
-## H:I  351.9127  821.6439 -0.09074268 0.4780
-## H:P  945.7884 1030.7637  1.36709865 0.0737
-## I:P 1297.7011 1078.9704  2.20414317 0.0280</code></pre>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="analysis-of-dalton-morphology.html#cb65-1"></a><span class="co"># ANOVA: does dalton projectile point shape differ by hreg?</span></span>
-<span id="cb65-2"><a href="analysis-of-dalton-morphology.html#cb65-2"></a><span class="kw">anova</span>(fit.shape.hreg)</span></code></pre></div>
+##             d UCL (95%)         Z Pr &gt; d
+## H:I  523.5849  987.3217 0.2811609 0.3623
+## H:P 1673.7440 1265.1701 2.8979769 0.0137
+## I:P 2197.3290 1350.3031 3.9315467 0.0010</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="analysis-of-dalton-morphology.html#cb64-1"></a><span class="co"># ANOVA: does dalton projectile point shape differ by hreg?</span></span>
+<span id="cb64-2"><a href="analysis-of-dalton-morphology.html#cb64-2"></a><span class="kw">anova</span>(fit.shape.hreg)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1504,20 +1677,20 @@ Figure 4.3: Boxplot of centroid size by Heartland region.
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df      SS       MS     Rsq      F      Z Pr(&gt;F)    
-## hreg       2 0.15262 0.076308 0.32376 6.4632 3.1609  8e-04 ***
-## Residuals 27 0.31878 0.011806 0.67624                         
-## Total     29 0.47139                                          
+##           Df     SS       MS     Rsq      F     Z Pr(&gt;F)   
+## hreg       2 0.1566 0.078299 0.19987 4.7462 2.674 0.0021 **
+## Residuals 38 0.6269 0.016497 0.80013                       
+## Total     40 0.7835                                        
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = shape ~ hreg, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="analysis-of-dalton-morphology.html#cb67-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
-<span id="cb67-2"><a href="analysis-of-dalton-morphology.html#cb67-2"></a>sh.hreg &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.shape.hreg, </span>
-<span id="cb67-3"><a href="analysis-of-dalton-morphology.html#cb67-3"></a>                    <span class="dt">groups =</span> qdata<span class="op">$</span>heart.reg)</span>
-<span id="cb67-4"><a href="analysis-of-dalton-morphology.html#cb67-4"></a><span class="kw">summary</span>(sz.hreg, </span>
-<span id="cb67-5"><a href="analysis-of-dalton-morphology.html#cb67-5"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb67-6"><a href="analysis-of-dalton-morphology.html#cb67-6"></a>        <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="analysis-of-dalton-morphology.html#cb66-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
+<span id="cb66-2"><a href="analysis-of-dalton-morphology.html#cb66-2"></a>sh.hreg &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.shape.hreg, </span>
+<span id="cb66-3"><a href="analysis-of-dalton-morphology.html#cb66-3"></a>                    <span class="dt">groups =</span> qdata<span class="op">$</span>heart.reg)</span>
+<span id="cb66-4"><a href="analysis-of-dalton-morphology.html#cb66-4"></a><span class="kw">summary</span>(sz.hreg, </span>
+<span id="cb66-5"><a href="analysis-of-dalton-morphology.html#cb66-5"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb66-6"><a href="analysis-of-dalton-morphology.html#cb66-6"></a>        <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -1529,14 +1702,14 @@ Figure 4.3: Boxplot of centroid size by Heartland region.
 ## Vectors hidden (use show.vectors = TRUE to view)
 ## 
 ## Pairwise distances between means, plus statistics
-##            d UCL (95%)         Z Pr &gt; d
-## H:I 31.44333  22.66895 3.1629592 0.0045
-## H:P 14.91762  28.93957 0.3130171 0.3321
-## I:P 16.52571  31.03253 0.3953209 0.3090</code></pre>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="analysis-of-dalton-morphology.html#cb69-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
-<span id="cb69-2"><a href="analysis-of-dalton-morphology.html#cb69-2"></a><span class="kw">summary</span>(sz.hreg, </span>
-<span id="cb69-3"><a href="analysis-of-dalton-morphology.html#cb69-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb69-4"><a href="analysis-of-dalton-morphology.html#cb69-4"></a>        <span class="dt">test.type =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
+##             d UCL (95%)          Z Pr &gt; d
+## H:I 28.010203  22.64950  2.7102945 0.0114
+## H:P  9.241509  29.00339 -0.3212633 0.5548
+## I:P 37.251712  30.60554  2.6462055 0.0134</code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="analysis-of-dalton-morphology.html#cb68-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
+<span id="cb68-2"><a href="analysis-of-dalton-morphology.html#cb68-2"></a><span class="kw">summary</span>(sz.hreg, </span>
+<span id="cb68-3"><a href="analysis-of-dalton-morphology.html#cb68-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb68-4"><a href="analysis-of-dalton-morphology.html#cb68-4"></a>        <span class="dt">test.type =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -1548,66 +1721,66 @@ Figure 4.3: Boxplot of centroid size by Heartland region.
 ## Observed variances by group
 ## 
 ##         H         I         P 
-##  586.0178  234.1051 1531.8062 
+##  765.6253  242.0404 2439.3694 
 ## 
 ## Pairwise distances between variances, plus statistics
-##             d UCL (95%)           Z Pr &gt; d
-## H:I  351.9127  821.6439 -0.09074268 0.4780
-## H:P  945.7884 1030.7637  1.36709865 0.0737
-## I:P 1297.7011 1078.9704  2.20414317 0.0280</code></pre>
+##             d UCL (95%)         Z Pr &gt; d
+## H:I  523.5849  987.3217 0.2811609 0.3623
+## H:P 1673.7440 1265.1701 2.8979769 0.0137
+## I:P 2197.3290 1350.3031 3.9315467 0.0010</code></pre>
 </div>
 <div id="allometry-h2" class="section level3">
 <h3><span class="header-section-number">4.7.4</span> Allometry (H2)</h3>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="analysis-of-dalton-morphology.html#cb71-1"></a><span class="co"># regscore (Drake and Klingenberg 2008)</span></span>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="analysis-of-dalton-morphology.html#cb70-1"></a><span class="co"># regscore (Drake and Klingenberg 2008)</span></span>
+<span id="cb70-2"><a href="analysis-of-dalton-morphology.html#cb70-2"></a></span>
+<span id="cb70-3"><a href="analysis-of-dalton-morphology.html#cb70-3"></a><span class="co"># hreg</span></span>
+<span id="cb70-4"><a href="analysis-of-dalton-morphology.html#cb70-4"></a><span class="kw">plotAllometry</span>(fit.sz.chreg, </span>
+<span id="cb70-5"><a href="analysis-of-dalton-morphology.html#cb70-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size,</span>
+<span id="cb70-6"><a href="analysis-of-dalton-morphology.html#cb70-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb70-7"><a href="analysis-of-dalton-morphology.html#cb70-7"></a>              <span class="dt">method =</span> <span class="st">&quot;RegScore&quot;</span>, </span>
+<span id="cb70-8"><a href="analysis-of-dalton-morphology.html#cb70-8"></a>              <span class="dt">pch =</span> pch.gps.hreg, </span>
+<span id="cb70-9"><a href="analysis-of-dalton-morphology.html#cb70-9"></a>              <span class="dt">col =</span> col.gps.hreg)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/c.allom.h2-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="analysis-of-dalton-morphology.html#cb71-1"></a><span class="co"># common allometric component (Mitteroecker 2004)</span></span>
 <span id="cb71-2"><a href="analysis-of-dalton-morphology.html#cb71-2"></a></span>
 <span id="cb71-3"><a href="analysis-of-dalton-morphology.html#cb71-3"></a><span class="co"># hreg</span></span>
 <span id="cb71-4"><a href="analysis-of-dalton-morphology.html#cb71-4"></a><span class="kw">plotAllometry</span>(fit.sz.chreg, </span>
-<span id="cb71-5"><a href="analysis-of-dalton-morphology.html#cb71-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size,</span>
-<span id="cb71-6"><a href="analysis-of-dalton-morphology.html#cb71-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb71-7"><a href="analysis-of-dalton-morphology.html#cb71-7"></a>              <span class="dt">method =</span> <span class="st">&quot;RegScore&quot;</span>, </span>
+<span id="cb71-5"><a href="analysis-of-dalton-morphology.html#cb71-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size, </span>
+<span id="cb71-6"><a href="analysis-of-dalton-morphology.html#cb71-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>, </span>
+<span id="cb71-7"><a href="analysis-of-dalton-morphology.html#cb71-7"></a>              <span class="dt">method =</span> <span class="st">&quot;CAC&quot;</span>, </span>
 <span id="cb71-8"><a href="analysis-of-dalton-morphology.html#cb71-8"></a>              <span class="dt">pch =</span> pch.gps.hreg, </span>
 <span id="cb71-9"><a href="analysis-of-dalton-morphology.html#cb71-9"></a>              <span class="dt">col =</span> col.gps.hreg)</span></code></pre></div>
-<p><img src="dalton.supp_files/figure-html/c.allom.h2-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="analysis-of-dalton-morphology.html#cb72-1"></a><span class="co"># common allometric component (Mitteroecker 2004)</span></span>
+<p><img src="dalton.supp_files/figure-html/c.allom.h2-2.png" width="100%" /></p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="analysis-of-dalton-morphology.html#cb72-1"></a><span class="co"># size-shape pca (Mitteroecker 2004)</span></span>
 <span id="cb72-2"><a href="analysis-of-dalton-morphology.html#cb72-2"></a></span>
 <span id="cb72-3"><a href="analysis-of-dalton-morphology.html#cb72-3"></a><span class="co"># hreg</span></span>
 <span id="cb72-4"><a href="analysis-of-dalton-morphology.html#cb72-4"></a><span class="kw">plotAllometry</span>(fit.sz.chreg, </span>
 <span id="cb72-5"><a href="analysis-of-dalton-morphology.html#cb72-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size, </span>
 <span id="cb72-6"><a href="analysis-of-dalton-morphology.html#cb72-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>, </span>
-<span id="cb72-7"><a href="analysis-of-dalton-morphology.html#cb72-7"></a>              <span class="dt">method =</span> <span class="st">&quot;CAC&quot;</span>, </span>
+<span id="cb72-7"><a href="analysis-of-dalton-morphology.html#cb72-7"></a>              <span class="dt">method =</span> <span class="st">&quot;size.shape&quot;</span>, </span>
 <span id="cb72-8"><a href="analysis-of-dalton-morphology.html#cb72-8"></a>              <span class="dt">pch =</span> pch.gps.hreg, </span>
 <span id="cb72-9"><a href="analysis-of-dalton-morphology.html#cb72-9"></a>              <span class="dt">col =</span> col.gps.hreg)</span></code></pre></div>
-<p><img src="dalton.supp_files/figure-html/c.allom.h2-2.png" width="100%" /></p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="analysis-of-dalton-morphology.html#cb73-1"></a><span class="co"># size-shape pca (Mitteroecker 2004)</span></span>
+<p><img src="dalton.supp_files/figure-html/c.allom.h2-3.png" width="100%" /></p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="analysis-of-dalton-morphology.html#cb73-1"></a><span class="co"># predline (Adams and Nistri 2010)</span></span>
 <span id="cb73-2"><a href="analysis-of-dalton-morphology.html#cb73-2"></a></span>
 <span id="cb73-3"><a href="analysis-of-dalton-morphology.html#cb73-3"></a><span class="co"># hreg</span></span>
-<span id="cb73-4"><a href="analysis-of-dalton-morphology.html#cb73-4"></a><span class="kw">plotAllometry</span>(fit.sz.chreg, </span>
+<span id="cb73-4"><a href="analysis-of-dalton-morphology.html#cb73-4"></a><span class="kw">plotAllometry</span>(fit.sz.uhreg, </span>
 <span id="cb73-5"><a href="analysis-of-dalton-morphology.html#cb73-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size, </span>
 <span id="cb73-6"><a href="analysis-of-dalton-morphology.html#cb73-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>, </span>
-<span id="cb73-7"><a href="analysis-of-dalton-morphology.html#cb73-7"></a>              <span class="dt">method =</span> <span class="st">&quot;size.shape&quot;</span>, </span>
+<span id="cb73-7"><a href="analysis-of-dalton-morphology.html#cb73-7"></a>              <span class="dt">method =</span> <span class="st">&quot;PredLine&quot;</span>, </span>
 <span id="cb73-8"><a href="analysis-of-dalton-morphology.html#cb73-8"></a>              <span class="dt">pch =</span> pch.gps.hreg, </span>
 <span id="cb73-9"><a href="analysis-of-dalton-morphology.html#cb73-9"></a>              <span class="dt">col =</span> col.gps.hreg)</span></code></pre></div>
-<p><img src="dalton.supp_files/figure-html/c.allom.h2-3.png" width="100%" /></p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="analysis-of-dalton-morphology.html#cb74-1"></a><span class="co"># predline (Adams and Nistri 2010)</span></span>
-<span id="cb74-2"><a href="analysis-of-dalton-morphology.html#cb74-2"></a></span>
-<span id="cb74-3"><a href="analysis-of-dalton-morphology.html#cb74-3"></a><span class="co"># hreg</span></span>
-<span id="cb74-4"><a href="analysis-of-dalton-morphology.html#cb74-4"></a><span class="kw">plotAllometry</span>(fit.sz.uhreg, </span>
-<span id="cb74-5"><a href="analysis-of-dalton-morphology.html#cb74-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size, </span>
-<span id="cb74-6"><a href="analysis-of-dalton-morphology.html#cb74-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>, </span>
-<span id="cb74-7"><a href="analysis-of-dalton-morphology.html#cb74-7"></a>              <span class="dt">method =</span> <span class="st">&quot;PredLine&quot;</span>, </span>
-<span id="cb74-8"><a href="analysis-of-dalton-morphology.html#cb74-8"></a>              <span class="dt">pch =</span> pch.gps.hreg, </span>
-<span id="cb74-9"><a href="analysis-of-dalton-morphology.html#cb74-9"></a>              <span class="dt">col =</span> col.gps.hreg)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/u.allom.h2-1.png" width="100%" /></p>
 </div>
 <div id="morphological-disparity-h2" class="section level3">
 <h3><span class="header-section-number">4.7.5</span> Morphological disparity (H2)</h3>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="analysis-of-dalton-morphology.html#cb75-1"></a><span class="co"># morphological disparity: do any of the groups display greater </span></span>
-<span id="cb75-2"><a href="analysis-of-dalton-morphology.html#cb75-2"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
-<span id="cb75-3"><a href="analysis-of-dalton-morphology.html#cb75-3"></a><span class="kw">morphol.disparity</span>(shape <span class="op">~</span><span class="st"> </span>hreg, </span>
-<span id="cb75-4"><a href="analysis-of-dalton-morphology.html#cb75-4"></a>                  <span class="dt">groups =</span> qdata<span class="op">$</span>heart.reg, </span>
-<span id="cb75-5"><a href="analysis-of-dalton-morphology.html#cb75-5"></a>                  <span class="dt">data =</span> gdf, </span>
-<span id="cb75-6"><a href="analysis-of-dalton-morphology.html#cb75-6"></a>                  <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb75-7"><a href="analysis-of-dalton-morphology.html#cb75-7"></a>                  <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="analysis-of-dalton-morphology.html#cb74-1"></a><span class="co"># morphological disparity: do any of the groups display greater </span></span>
+<span id="cb74-2"><a href="analysis-of-dalton-morphology.html#cb74-2"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
+<span id="cb74-3"><a href="analysis-of-dalton-morphology.html#cb74-3"></a><span class="kw">morphol.disparity</span>(shape <span class="op">~</span><span class="st"> </span>hreg, </span>
+<span id="cb74-4"><a href="analysis-of-dalton-morphology.html#cb74-4"></a>                  <span class="dt">groups =</span> qdata<span class="op">$</span>heart.reg, </span>
+<span id="cb74-5"><a href="analysis-of-dalton-morphology.html#cb74-5"></a>                  <span class="dt">data =</span> gdf, </span>
+<span id="cb74-6"><a href="analysis-of-dalton-morphology.html#cb74-6"></a>                  <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb74-7"><a href="analysis-of-dalton-morphology.html#cb74-7"></a>                  <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## morphol.disparity(f1 = shape ~ hreg, groups = qdata$heart.reg,  
@@ -1619,60 +1792,60 @@ Figure 4.3: Boxplot of centroid size by Heartland region.
 ## 10000 Permutations
 ## 
 ## Procrustes variances for defined groups
-##           H           I           P 
-## 0.010753304 0.008936548 0.013985346 
+##          H          I          P 
+## 0.01810433 0.01120108 0.01542829 
 ## 
 ## 
 ## Pairwise absolute differences between variances
 ##             H           I           P
-## H 0.000000000 0.001816756 0.003232042
-## I 0.001816756 0.000000000 0.005048798
-## P 0.003232042 0.005048798 0.000000000
+## H 0.000000000 0.006903248 0.002676041
+## I 0.006903248 0.000000000 0.004227207
+## P 0.002676041 0.004227207 0.000000000
 ## 
 ## 
 ## P-Values
-##        H      I      P
-## H 1.0000 0.6955 0.5919
-## I 0.6955 1.0000 0.3914
-## P 0.5919 0.3914 1.0000</code></pre>
+##       H      I      P
+## H 1.000 0.4250 0.7700
+## I 0.425 1.0000 0.6493
+## P 0.770 0.6493 1.0000</code></pre>
 </div>
 <div id="mean-shapes-h2" class="section level3">
 <h3><span class="header-section-number">4.7.6</span> Mean Shapes (H2)</h3>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="analysis-of-dalton-morphology.html#cb77-1"></a><span class="co"># subset landmark coordinates to produce mean shapes for hypothesis 2</span></span>
-<span id="cb77-2"><a href="analysis-of-dalton-morphology.html#cb77-2"></a>new.coords&lt;-<span class="kw">coords.subset</span>(<span class="dt">A =</span> Y.gpa<span class="op">$</span>coords, </span>
-<span id="cb77-3"><a href="analysis-of-dalton-morphology.html#cb77-3"></a>                          <span class="dt">group =</span> qdata<span class="op">$</span>heart.reg)</span>
-<span id="cb77-4"><a href="analysis-of-dalton-morphology.html#cb77-4"></a><span class="kw">names</span>(new.coords)</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="analysis-of-dalton-morphology.html#cb76-1"></a><span class="co"># subset landmark coordinates to produce mean shapes for hypothesis 2</span></span>
+<span id="cb76-2"><a href="analysis-of-dalton-morphology.html#cb76-2"></a>new.coords&lt;-<span class="kw">coords.subset</span>(<span class="dt">A =</span> Y.gpa<span class="op">$</span>coords, </span>
+<span id="cb76-3"><a href="analysis-of-dalton-morphology.html#cb76-3"></a>                          <span class="dt">group =</span> qdata<span class="op">$</span>heart.reg)</span>
+<span id="cb76-4"><a href="analysis-of-dalton-morphology.html#cb76-4"></a><span class="kw">names</span>(new.coords)</span></code></pre></div>
 <pre><code>## [1] &quot;H&quot; &quot;I&quot; &quot;P&quot;</code></pre>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="analysis-of-dalton-morphology.html#cb79-1"></a><span class="co"># group shape means</span></span>
-<span id="cb79-2"><a href="analysis-of-dalton-morphology.html#cb79-2"></a>mean &lt;-<span class="st"> </span><span class="kw">lapply</span>(new.coords, mshape)</span>
-<span id="cb79-3"><a href="analysis-of-dalton-morphology.html#cb79-3"></a></span>
-<span id="cb79-4"><a href="analysis-of-dalton-morphology.html#cb79-4"></a><span class="co"># plot mean shapes</span></span>
-<span id="cb79-5"><a href="analysis-of-dalton-morphology.html#cb79-5"></a><span class="kw">plot</span>(mean<span class="op">$</span>H)</span>
-<span id="cb79-6"><a href="analysis-of-dalton-morphology.html#cb79-6"></a><span class="kw">plot</span>(mean<span class="op">$</span>I)</span>
-<span id="cb79-7"><a href="analysis-of-dalton-morphology.html#cb79-7"></a><span class="kw">plot</span>(mean<span class="op">$</span>P)</span>
-<span id="cb79-8"><a href="analysis-of-dalton-morphology.html#cb79-8"></a></span>
-<span id="cb79-9"><a href="analysis-of-dalton-morphology.html#cb79-9"></a><span class="co"># comparison plots</span></span>
-<span id="cb79-10"><a href="analysis-of-dalton-morphology.html#cb79-10"></a><span class="kw">plotRefToTarget</span>(mean<span class="op">$</span>H, </span>
-<span id="cb79-11"><a href="analysis-of-dalton-morphology.html#cb79-11"></a>                mean<span class="op">$</span>I, </span>
-<span id="cb79-12"><a href="analysis-of-dalton-morphology.html#cb79-12"></a>                <span class="dt">method=</span><span class="st">&quot;vector&quot;</span>,</span>
-<span id="cb79-13"><a href="analysis-of-dalton-morphology.html#cb79-13"></a>                <span class="dt">mag=</span><span class="dv">2</span>)</span>
-<span id="cb79-14"><a href="analysis-of-dalton-morphology.html#cb79-14"></a><span class="kw">plotRefToTarget</span>(mean<span class="op">$</span>H, </span>
-<span id="cb79-15"><a href="analysis-of-dalton-morphology.html#cb79-15"></a>                mean<span class="op">$</span>P, </span>
-<span id="cb79-16"><a href="analysis-of-dalton-morphology.html#cb79-16"></a>                <span class="dt">method=</span><span class="st">&quot;vector&quot;</span>,</span>
-<span id="cb79-17"><a href="analysis-of-dalton-morphology.html#cb79-17"></a>                <span class="dt">mag=</span><span class="dv">2</span>)</span>
-<span id="cb79-18"><a href="analysis-of-dalton-morphology.html#cb79-18"></a><span class="kw">plotRefToTarget</span>(mean<span class="op">$</span>I, </span>
-<span id="cb79-19"><a href="analysis-of-dalton-morphology.html#cb79-19"></a>                mean<span class="op">$</span>P, </span>
-<span id="cb79-20"><a href="analysis-of-dalton-morphology.html#cb79-20"></a>                <span class="dt">method=</span><span class="st">&quot;vector&quot;</span>,</span>
-<span id="cb79-21"><a href="analysis-of-dalton-morphology.html#cb79-21"></a>                <span class="dt">mag=</span><span class="dv">2</span>)</span>
-<span id="cb79-22"><a href="analysis-of-dalton-morphology.html#cb79-22"></a></span>
-<span id="cb79-23"><a href="analysis-of-dalton-morphology.html#cb79-23"></a><span class="co">##knitr::include_graphics(&#39;images/mshape.h2.jpg&#39;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="analysis-of-dalton-morphology.html#cb78-1"></a><span class="co"># group shape means</span></span>
+<span id="cb78-2"><a href="analysis-of-dalton-morphology.html#cb78-2"></a>mean &lt;-<span class="st"> </span><span class="kw">lapply</span>(new.coords, mshape)</span>
+<span id="cb78-3"><a href="analysis-of-dalton-morphology.html#cb78-3"></a></span>
+<span id="cb78-4"><a href="analysis-of-dalton-morphology.html#cb78-4"></a><span class="co"># plot mean shapes</span></span>
+<span id="cb78-5"><a href="analysis-of-dalton-morphology.html#cb78-5"></a><span class="kw">plot</span>(mean<span class="op">$</span>H)</span>
+<span id="cb78-6"><a href="analysis-of-dalton-morphology.html#cb78-6"></a><span class="kw">plot</span>(mean<span class="op">$</span>I)</span>
+<span id="cb78-7"><a href="analysis-of-dalton-morphology.html#cb78-7"></a><span class="kw">plot</span>(mean<span class="op">$</span>P)</span>
+<span id="cb78-8"><a href="analysis-of-dalton-morphology.html#cb78-8"></a></span>
+<span id="cb78-9"><a href="analysis-of-dalton-morphology.html#cb78-9"></a><span class="co"># comparison plots</span></span>
+<span id="cb78-10"><a href="analysis-of-dalton-morphology.html#cb78-10"></a><span class="kw">plotRefToTarget</span>(mean<span class="op">$</span>H, </span>
+<span id="cb78-11"><a href="analysis-of-dalton-morphology.html#cb78-11"></a>                mean<span class="op">$</span>I, </span>
+<span id="cb78-12"><a href="analysis-of-dalton-morphology.html#cb78-12"></a>                <span class="dt">method=</span><span class="st">&quot;vector&quot;</span>,</span>
+<span id="cb78-13"><a href="analysis-of-dalton-morphology.html#cb78-13"></a>                <span class="dt">mag=</span><span class="dv">2</span>)</span>
+<span id="cb78-14"><a href="analysis-of-dalton-morphology.html#cb78-14"></a><span class="kw">plotRefToTarget</span>(mean<span class="op">$</span>H, </span>
+<span id="cb78-15"><a href="analysis-of-dalton-morphology.html#cb78-15"></a>                mean<span class="op">$</span>P, </span>
+<span id="cb78-16"><a href="analysis-of-dalton-morphology.html#cb78-16"></a>                <span class="dt">method=</span><span class="st">&quot;vector&quot;</span>,</span>
+<span id="cb78-17"><a href="analysis-of-dalton-morphology.html#cb78-17"></a>                <span class="dt">mag=</span><span class="dv">2</span>)</span>
+<span id="cb78-18"><a href="analysis-of-dalton-morphology.html#cb78-18"></a><span class="kw">plotRefToTarget</span>(mean<span class="op">$</span>I, </span>
+<span id="cb78-19"><a href="analysis-of-dalton-morphology.html#cb78-19"></a>                mean<span class="op">$</span>P, </span>
+<span id="cb78-20"><a href="analysis-of-dalton-morphology.html#cb78-20"></a>                <span class="dt">method=</span><span class="st">&quot;vector&quot;</span>,</span>
+<span id="cb78-21"><a href="analysis-of-dalton-morphology.html#cb78-21"></a>                <span class="dt">mag=</span><span class="dv">2</span>)</span>
+<span id="cb78-22"><a href="analysis-of-dalton-morphology.html#cb78-22"></a></span>
+<span id="cb78-23"><a href="analysis-of-dalton-morphology.html#cb78-23"></a><span class="co">##knitr::include_graphics(&#39;images/mshape.h2.jpg&#39;)</span></span></code></pre></div>
 </div>
 </div>
 <div id="test-hypothesis-3-techno-gm" class="section level2">
 <h2><span class="header-section-number">4.8</span> Test Hypothesis 3 (Techno GM)</h2>
 <p>Hypothesis 3 assesses whether there is a discernible difference in morphology for Dalton points that are beveled.</p>
 <p>A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs <span class="citation">(Adams and Collyer <a href="#ref-RN1655" role="doc-biblioref">2015</a>; Collyer and Adams <a href="#ref-RN11775" role="doc-biblioref">2018</a>)</span>, which has higher statistical power and a greater ability to identify patterns in the data should they be present <span class="citation">(Anderson and Ter Braak <a href="#ref-RN1719" role="doc-biblioref">2003</a>)</span>. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs <span class="citation">(Goodall <a href="#ref-RN1749" role="doc-biblioref">1991</a>)</span> were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions <span class="citation">(Collyer, Sekora, and Adams <a href="#ref-RN1756" role="doc-biblioref">2015</a>)</span>.</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="analysis-of-dalton-morphology.html#cb80-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis3.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="analysis-of-dalton-morphology.html#cb79-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis3.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis3.jpg" alt="Hypothesis 3 considers whether beveled Dalton points (left) differ in morphology from those that are not beveled (right)." width="100%" />
 <p class="caption">
@@ -1681,18 +1854,16 @@ Figure 4.3: Boxplot of centroid size by Heartland region.
 </div>
 <div id="boxplot-h3" class="section level3">
 <h3><span class="header-section-number">4.8.1</span> Boxplot (H3)</h3>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="analysis-of-dalton-morphology.html#cb81-1"></a><span class="co"># boxplot of Dalton point centroid size by beveled y/n</span></span>
-<span id="cb81-2"><a href="analysis-of-dalton-morphology.html#cb81-2"></a>csz.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">ggplot</span>(qdata, <span class="kw">aes</span>(<span class="dt">x =</span> bev<span class="fl">.1</span>, <span class="dt">y =</span> csz, <span class="dt">color =</span> bev<span class="fl">.1</span>)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb81-3"><a href="analysis-of-dalton-morphology.html#cb81-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">notch =</span> <span class="ot">TRUE</span>) <span class="op">+</span></span>
-<span id="cb81-4"><a href="analysis-of-dalton-morphology.html#cb81-4"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="dt">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="dt">dotsize =</span> <span class="fl">0.3</span>) <span class="op">+</span></span>
-<span id="cb81-5"><a href="analysis-of-dalton-morphology.html#cb81-5"></a><span class="st">  </span><span class="kw">scale_colour_manual</span>(<span class="dt">values =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="op">+</span></span>
-<span id="cb81-6"><a href="analysis-of-dalton-morphology.html#cb81-6"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></span>
-<span id="cb81-7"><a href="analysis-of-dalton-morphology.html#cb81-7"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&#39;Beveled?&#39;</span>, <span class="dt">y =</span> <span class="st">&#39;Centroid Size&#39;</span>)</span>
-<span id="cb81-8"><a href="analysis-of-dalton-morphology.html#cb81-8"></a><span class="co"># render plot</span></span>
-<span id="cb81-9"><a href="analysis-of-dalton-morphology.html#cb81-9"></a>csz.bev<span class="fl">.1</span></span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="analysis-of-dalton-morphology.html#cb80-1"></a><span class="co"># boxplot of Dalton point centroid size by beveled y/n</span></span>
+<span id="cb80-2"><a href="analysis-of-dalton-morphology.html#cb80-2"></a>csz.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">ggplot</span>(qdata, <span class="kw">aes</span>(<span class="dt">x =</span> bev<span class="fl">.1</span>, <span class="dt">y =</span> csz, <span class="dt">color =</span> bev<span class="fl">.1</span>)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb80-3"><a href="analysis-of-dalton-morphology.html#cb80-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></span>
+<span id="cb80-4"><a href="analysis-of-dalton-morphology.html#cb80-4"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="dt">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="dt">dotsize =</span> <span class="fl">0.3</span>) <span class="op">+</span></span>
+<span id="cb80-5"><a href="analysis-of-dalton-morphology.html#cb80-5"></a><span class="st">  </span><span class="kw">scale_colour_manual</span>(<span class="dt">values =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="op">+</span></span>
+<span id="cb80-6"><a href="analysis-of-dalton-morphology.html#cb80-6"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></span>
+<span id="cb80-7"><a href="analysis-of-dalton-morphology.html#cb80-7"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&#39;Beveled?&#39;</span>, <span class="dt">y =</span> <span class="st">&#39;Centroid Size&#39;</span>)</span>
+<span id="cb80-8"><a href="analysis-of-dalton-morphology.html#cb80-8"></a><span class="co"># render plot</span></span>
+<span id="cb80-9"><a href="analysis-of-dalton-morphology.html#cb80-9"></a>csz.bev<span class="fl">.1</span></span></code></pre></div>
 <pre><code>## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<pre><code>## notch went outside hinges. Try setting notch=FALSE.
-## notch went outside hinges. Try setting notch=FALSE.</code></pre>
 <div class="figure"><span id="fig:box3"></span>
 <img src="dalton.supp_files/figure-html/box3-1.png" alt="Boxplot of centroid size by beveled." width="100%" />
 <p class="caption">
@@ -1702,25 +1873,25 @@ Figure 4.4: Boxplot of centroid size by beveled.
 </div>
 <div id="principal-components-analysis-h3" class="section level3">
 <h3><span class="header-section-number">4.8.2</span> Principal Components Analysis (H3)</h3>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="analysis-of-dalton-morphology.html#cb84-1"></a><span class="co"># set plot parameters to plot by beveled y and n</span></span>
-<span id="cb84-2"><a href="analysis-of-dalton-morphology.html#cb84-2"></a>pch.gps.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.1</span>)]</span>
-<span id="cb84-3"><a href="analysis-of-dalton-morphology.html#cb84-3"></a>col.gps.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.1</span>)]</span>
-<span id="cb84-4"><a href="analysis-of-dalton-morphology.html#cb84-4"></a>col.hull<span class="fl">.3</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
-<span id="cb84-5"><a href="analysis-of-dalton-morphology.html#cb84-5"></a></span>
-<span id="cb84-6"><a href="analysis-of-dalton-morphology.html#cb84-6"></a><span class="co"># plot pca by heartland in (H) and out (N)</span></span>
-<span id="cb84-7"><a href="analysis-of-dalton-morphology.html#cb84-7"></a>pc.plot3 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
-<span id="cb84-8"><a href="analysis-of-dalton-morphology.html#cb84-8"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb84-9"><a href="analysis-of-dalton-morphology.html#cb84-9"></a>                 <span class="dt">pch =</span> pch.gps.bev<span class="fl">.1</span>,</span>
-<span id="cb84-10"><a href="analysis-of-dalton-morphology.html#cb84-10"></a>                 <span class="dt">col =</span> col.gps.bev<span class="fl">.1</span>)</span>
-<span id="cb84-11"><a href="analysis-of-dalton-morphology.html#cb84-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot3, </span>
-<span id="cb84-12"><a href="analysis-of-dalton-morphology.html#cb84-12"></a>                             <span class="dt">groups =</span> bev<span class="fl">.1</span>,</span>
-<span id="cb84-13"><a href="analysis-of-dalton-morphology.html#cb84-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="analysis-of-dalton-morphology.html#cb82-1"></a><span class="co"># set plot parameters to plot by beveled y and n</span></span>
+<span id="cb82-2"><a href="analysis-of-dalton-morphology.html#cb82-2"></a>pch.gps.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.1</span>)]</span>
+<span id="cb82-3"><a href="analysis-of-dalton-morphology.html#cb82-3"></a>col.gps.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.1</span>)]</span>
+<span id="cb82-4"><a href="analysis-of-dalton-morphology.html#cb82-4"></a>col.hull<span class="fl">.3</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
+<span id="cb82-5"><a href="analysis-of-dalton-morphology.html#cb82-5"></a></span>
+<span id="cb82-6"><a href="analysis-of-dalton-morphology.html#cb82-6"></a><span class="co"># plot pca by heartland in (H) and out (N)</span></span>
+<span id="cb82-7"><a href="analysis-of-dalton-morphology.html#cb82-7"></a>pc.plot3 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
+<span id="cb82-8"><a href="analysis-of-dalton-morphology.html#cb82-8"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb82-9"><a href="analysis-of-dalton-morphology.html#cb82-9"></a>                 <span class="dt">pch =</span> pch.gps.bev<span class="fl">.1</span>,</span>
+<span id="cb82-10"><a href="analysis-of-dalton-morphology.html#cb82-10"></a>                 <span class="dt">col =</span> col.gps.bev<span class="fl">.1</span>)</span>
+<span id="cb82-11"><a href="analysis-of-dalton-morphology.html#cb82-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot3, </span>
+<span id="cb82-12"><a href="analysis-of-dalton-morphology.html#cb82-12"></a>                             <span class="dt">groups =</span> bev<span class="fl">.1</span>,</span>
+<span id="cb82-13"><a href="analysis-of-dalton-morphology.html#cb82-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.3</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca3-1.png" width="100%" /></p>
 </div>
 <div id="anova-h3" class="section level3">
 <h3><span class="header-section-number">4.8.3</span> ANOVA (H3)</h3>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="analysis-of-dalton-morphology.html#cb85-1"></a><span class="co"># bev.1</span></span>
-<span id="cb85-2"><a href="analysis-of-dalton-morphology.html#cb85-2"></a><span class="kw">anova</span>(fit.sz.cbev<span class="fl">.1</span>) <span class="co"># common allometry (bev.1)</span></span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="analysis-of-dalton-morphology.html#cb83-1"></a><span class="co"># bev.1</span></span>
+<span id="cb83-2"><a href="analysis-of-dalton-morphology.html#cb83-2"></a><span class="kw">anova</span>(fit.sz.cbev<span class="fl">.1</span>) <span class="co"># common allometry (bev.1)</span></span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1729,18 +1900,18 @@ Figure 4.4: Boxplot of centroid size by beveled.
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df      SS       MS     Rsq       F      Z Pr(&gt;F)    
-## size       1 0.20019 0.200190 0.42468 22.3020 4.1711  1e-04 ***
-## bev.1      1 0.02884 0.028839 0.06118  3.2128 2.0238  0.027 *  
-## Residuals 27 0.24236 0.008976 0.51414                          
-## Total     29 0.47139                                           
+##           Df      SS      MS     Rsq       F      Z Pr(&gt;F)    
+## size       1 0.32804 0.32804 0.41869 31.2092 4.4484  1e-04 ***
+## bev.1      1 0.05603 0.05603 0.07151  5.3306 2.7960 0.0013 ** 
+## Residuals 38 0.39942 0.01051 0.50980                          
+## Total     40 0.78350                                          
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = shape ~ size + bev.1, iter = 9999, data = gdf,  
 ##     print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="analysis-of-dalton-morphology.html#cb87-1"></a><span class="co"># bev.1</span></span>
-<span id="cb87-2"><a href="analysis-of-dalton-morphology.html#cb87-2"></a><span class="kw">anova</span>(fit.sz.ubev<span class="fl">.1</span>) <span class="co"># unique allometry (bev.1)</span></span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="analysis-of-dalton-morphology.html#cb85-1"></a><span class="co"># bev.1</span></span>
+<span id="cb85-2"><a href="analysis-of-dalton-morphology.html#cb85-2"></a><span class="kw">anova</span>(fit.sz.ubev<span class="fl">.1</span>) <span class="co"># unique allometry (bev.1)</span></span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1749,19 +1920,19 @@ Figure 4.4: Boxplot of centroid size by beveled.
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##            Df      SS       MS     Rsq       F       Z Pr(&gt;F)    
-## size        1 0.20019 0.200190 0.42468 22.0850  4.1549  1e-04 ***
-## bev.1       1 0.02884 0.028839 0.06118  3.1816  2.0076 0.0278 *  
-## size:bev.1  1 0.00668 0.006683 0.01418  0.7373 -0.1732 0.5504    
-## Residuals  26 0.23568 0.009065 0.49996                           
-## Total      29 0.47139                                            
+##            Df      SS      MS     Rsq       F      Z Pr(&gt;F)    
+## size        1 0.32804 0.32804 0.41869 31.5885 4.4606  1e-04 ***
+## bev.1       1 0.05603 0.05603 0.07151  5.3953 2.8117 0.0012 ** 
+## size:bev.1  1 0.01518 0.01518 0.01938  1.4619 0.8753 0.1931    
+## Residuals  37 0.38424 0.01038 0.49042                          
+## Total      40 0.78350                                          
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = shape ~ size * bev.1, iter = 9999, data = gdf,  
 ##     print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="analysis-of-dalton-morphology.html#cb89-1"></a><span class="co"># ANOVA: do dalton projectile point sizes differ by beveling?</span></span>
-<span id="cb89-2"><a href="analysis-of-dalton-morphology.html#cb89-2"></a><span class="kw">anova</span>(fit.size.bev<span class="fl">.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="analysis-of-dalton-morphology.html#cb87-1"></a><span class="co"># ANOVA: do dalton projectile point sizes differ by beveling?</span></span>
+<span id="cb87-2"><a href="analysis-of-dalton-morphology.html#cb87-2"></a><span class="kw">anova</span>(fit.size.bev<span class="fl">.1</span>)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1770,16 +1941,14 @@ Figure 4.4: Boxplot of centroid size by beveled.
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df      SS     MS     Rsq      F      Z Pr(&gt;F)  
-## bev.1      1  3927.5 3927.5 0.16009 5.3368 1.3013 0.0256 *
-## Residuals 28 20606.1  735.9 0.83991                       
-## Total     29 24533.6                                      
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+##           Df    SS     MS     Rsq      F       Z Pr(&gt;F)
+## bev.1      1  2333 2333.4 0.05215 2.1458 0.89979 0.1565
+## Residuals 39 42410 1087.4 0.94785                      
+## Total     40 44743                                     
 ## 
 ## Call: procD.lm(f1 = size ~ bev.1, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="analysis-of-dalton-morphology.html#cb91-1"></a><span class="co"># ANOVA: do dalton projectile point shapes differ by beveling?</span></span>
-<span id="cb91-2"><a href="analysis-of-dalton-morphology.html#cb91-2"></a><span class="kw">anova</span>(fit.shape.bev<span class="fl">.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="analysis-of-dalton-morphology.html#cb89-1"></a><span class="co"># ANOVA: do dalton projectile point shapes differ by beveling?</span></span>
+<span id="cb89-2"><a href="analysis-of-dalton-morphology.html#cb89-2"></a><span class="kw">anova</span>(fit.shape.bev<span class="fl">.1</span>)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1788,10 +1957,10 @@ Figure 4.4: Boxplot of centroid size by beveled.
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df      SS       MS     Rsq      F     Z Pr(&gt;F)   
-## bev.1      1 0.09684 0.096842 0.20544 7.2396 2.748 0.0018 **
-## Residuals 28 0.37455 0.013377 0.79456                       
-## Total     29 0.47139                                        
+##           Df      SS       MS     Rsq      F      Z Pr(&gt;F)   
+## bev.1      1 0.10992 0.109916 0.14029 6.3641 2.5947 0.0038 **
+## Residuals 39 0.67358 0.017271 0.85971                        
+## Total     40 0.78350                                         
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -1799,56 +1968,56 @@ Figure 4.4: Boxplot of centroid size by beveled.
 </div>
 <div id="allometry-h3" class="section level3">
 <h3><span class="header-section-number">4.8.4</span> Allometry (H3)</h3>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="analysis-of-dalton-morphology.html#cb93-1"></a><span class="co"># regscore (Drake and Klingenberg 2008)</span></span>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="analysis-of-dalton-morphology.html#cb91-1"></a><span class="co"># regscore (Drake and Klingenberg 2008)</span></span>
+<span id="cb91-2"><a href="analysis-of-dalton-morphology.html#cb91-2"></a></span>
+<span id="cb91-3"><a href="analysis-of-dalton-morphology.html#cb91-3"></a><span class="co"># bev.1</span></span>
+<span id="cb91-4"><a href="analysis-of-dalton-morphology.html#cb91-4"></a><span class="kw">plotAllometry</span>(fit.sz.cbev<span class="fl">.1</span>, </span>
+<span id="cb91-5"><a href="analysis-of-dalton-morphology.html#cb91-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size,</span>
+<span id="cb91-6"><a href="analysis-of-dalton-morphology.html#cb91-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb91-7"><a href="analysis-of-dalton-morphology.html#cb91-7"></a>              <span class="dt">method =</span> <span class="st">&quot;RegScore&quot;</span>, </span>
+<span id="cb91-8"><a href="analysis-of-dalton-morphology.html#cb91-8"></a>              <span class="dt">pch =</span> pch.gps.bev<span class="fl">.1</span>, </span>
+<span id="cb91-9"><a href="analysis-of-dalton-morphology.html#cb91-9"></a>              <span class="dt">col =</span> col.gps.bev<span class="fl">.1</span>)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/c.allom.h3-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="analysis-of-dalton-morphology.html#cb92-1"></a><span class="co"># common allometric component (Mitteroecker 2004)</span></span>
+<span id="cb92-2"><a href="analysis-of-dalton-morphology.html#cb92-2"></a></span>
+<span id="cb92-3"><a href="analysis-of-dalton-morphology.html#cb92-3"></a><span class="co"># bev.1</span></span>
+<span id="cb92-4"><a href="analysis-of-dalton-morphology.html#cb92-4"></a><span class="kw">plotAllometry</span>(fit.sz.cbev<span class="fl">.1</span>, </span>
+<span id="cb92-5"><a href="analysis-of-dalton-morphology.html#cb92-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size, </span>
+<span id="cb92-6"><a href="analysis-of-dalton-morphology.html#cb92-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>, </span>
+<span id="cb92-7"><a href="analysis-of-dalton-morphology.html#cb92-7"></a>              <span class="dt">method =</span> <span class="st">&quot;CAC&quot;</span>, </span>
+<span id="cb92-8"><a href="analysis-of-dalton-morphology.html#cb92-8"></a>              <span class="dt">pch =</span> pch.gps.bev<span class="fl">.1</span>, </span>
+<span id="cb92-9"><a href="analysis-of-dalton-morphology.html#cb92-9"></a>              <span class="dt">col =</span> col.gps.bev<span class="fl">.1</span>)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/c.allom.h3-2.png" width="100%" /></p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="analysis-of-dalton-morphology.html#cb93-1"></a><span class="co"># size-shape pca (Mitteroecker 2004)</span></span>
 <span id="cb93-2"><a href="analysis-of-dalton-morphology.html#cb93-2"></a></span>
 <span id="cb93-3"><a href="analysis-of-dalton-morphology.html#cb93-3"></a><span class="co"># bev.1</span></span>
 <span id="cb93-4"><a href="analysis-of-dalton-morphology.html#cb93-4"></a><span class="kw">plotAllometry</span>(fit.sz.cbev<span class="fl">.1</span>, </span>
-<span id="cb93-5"><a href="analysis-of-dalton-morphology.html#cb93-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size,</span>
-<span id="cb93-6"><a href="analysis-of-dalton-morphology.html#cb93-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb93-7"><a href="analysis-of-dalton-morphology.html#cb93-7"></a>              <span class="dt">method =</span> <span class="st">&quot;RegScore&quot;</span>, </span>
+<span id="cb93-5"><a href="analysis-of-dalton-morphology.html#cb93-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size, </span>
+<span id="cb93-6"><a href="analysis-of-dalton-morphology.html#cb93-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>, </span>
+<span id="cb93-7"><a href="analysis-of-dalton-morphology.html#cb93-7"></a>              <span class="dt">method =</span> <span class="st">&quot;size.shape&quot;</span>, </span>
 <span id="cb93-8"><a href="analysis-of-dalton-morphology.html#cb93-8"></a>              <span class="dt">pch =</span> pch.gps.bev<span class="fl">.1</span>, </span>
 <span id="cb93-9"><a href="analysis-of-dalton-morphology.html#cb93-9"></a>              <span class="dt">col =</span> col.gps.bev<span class="fl">.1</span>)</span></code></pre></div>
-<p><img src="dalton.supp_files/figure-html/c.allom.h3-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="analysis-of-dalton-morphology.html#cb94-1"></a><span class="co"># common allometric component (Mitteroecker 2004)</span></span>
+<p><img src="dalton.supp_files/figure-html/c.allom.h3-3.png" width="100%" /></p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="analysis-of-dalton-morphology.html#cb94-1"></a><span class="co"># predline (Adams and Nistri 2010)</span></span>
 <span id="cb94-2"><a href="analysis-of-dalton-morphology.html#cb94-2"></a></span>
 <span id="cb94-3"><a href="analysis-of-dalton-morphology.html#cb94-3"></a><span class="co"># bev.1</span></span>
-<span id="cb94-4"><a href="analysis-of-dalton-morphology.html#cb94-4"></a><span class="kw">plotAllometry</span>(fit.sz.cbev<span class="fl">.1</span>, </span>
+<span id="cb94-4"><a href="analysis-of-dalton-morphology.html#cb94-4"></a><span class="kw">plotAllometry</span>(fit.sz.ubev<span class="fl">.1</span>, </span>
 <span id="cb94-5"><a href="analysis-of-dalton-morphology.html#cb94-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size, </span>
 <span id="cb94-6"><a href="analysis-of-dalton-morphology.html#cb94-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>, </span>
-<span id="cb94-7"><a href="analysis-of-dalton-morphology.html#cb94-7"></a>              <span class="dt">method =</span> <span class="st">&quot;CAC&quot;</span>, </span>
+<span id="cb94-7"><a href="analysis-of-dalton-morphology.html#cb94-7"></a>              <span class="dt">method =</span> <span class="st">&quot;PredLine&quot;</span>, </span>
 <span id="cb94-8"><a href="analysis-of-dalton-morphology.html#cb94-8"></a>              <span class="dt">pch =</span> pch.gps.bev<span class="fl">.1</span>, </span>
 <span id="cb94-9"><a href="analysis-of-dalton-morphology.html#cb94-9"></a>              <span class="dt">col =</span> col.gps.bev<span class="fl">.1</span>)</span></code></pre></div>
-<p><img src="dalton.supp_files/figure-html/c.allom.h3-2.png" width="100%" /></p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="analysis-of-dalton-morphology.html#cb95-1"></a><span class="co"># size-shape pca (Mitteroecker 2004)</span></span>
-<span id="cb95-2"><a href="analysis-of-dalton-morphology.html#cb95-2"></a></span>
-<span id="cb95-3"><a href="analysis-of-dalton-morphology.html#cb95-3"></a><span class="co"># bev.1</span></span>
-<span id="cb95-4"><a href="analysis-of-dalton-morphology.html#cb95-4"></a><span class="kw">plotAllometry</span>(fit.sz.cbev<span class="fl">.1</span>, </span>
-<span id="cb95-5"><a href="analysis-of-dalton-morphology.html#cb95-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size, </span>
-<span id="cb95-6"><a href="analysis-of-dalton-morphology.html#cb95-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>, </span>
-<span id="cb95-7"><a href="analysis-of-dalton-morphology.html#cb95-7"></a>              <span class="dt">method =</span> <span class="st">&quot;size.shape&quot;</span>, </span>
-<span id="cb95-8"><a href="analysis-of-dalton-morphology.html#cb95-8"></a>              <span class="dt">pch =</span> pch.gps.bev<span class="fl">.1</span>, </span>
-<span id="cb95-9"><a href="analysis-of-dalton-morphology.html#cb95-9"></a>              <span class="dt">col =</span> col.gps.bev<span class="fl">.1</span>)</span></code></pre></div>
-<p><img src="dalton.supp_files/figure-html/c.allom.h3-3.png" width="100%" /></p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="analysis-of-dalton-morphology.html#cb96-1"></a><span class="co"># predline (Adams and Nistri 2010)</span></span>
-<span id="cb96-2"><a href="analysis-of-dalton-morphology.html#cb96-2"></a></span>
-<span id="cb96-3"><a href="analysis-of-dalton-morphology.html#cb96-3"></a><span class="co"># bev.1</span></span>
-<span id="cb96-4"><a href="analysis-of-dalton-morphology.html#cb96-4"></a><span class="kw">plotAllometry</span>(fit.sz.ubev<span class="fl">.1</span>, </span>
-<span id="cb96-5"><a href="analysis-of-dalton-morphology.html#cb96-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size, </span>
-<span id="cb96-6"><a href="analysis-of-dalton-morphology.html#cb96-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>, </span>
-<span id="cb96-7"><a href="analysis-of-dalton-morphology.html#cb96-7"></a>              <span class="dt">method =</span> <span class="st">&quot;PredLine&quot;</span>, </span>
-<span id="cb96-8"><a href="analysis-of-dalton-morphology.html#cb96-8"></a>              <span class="dt">pch =</span> pch.gps.bev<span class="fl">.1</span>, </span>
-<span id="cb96-9"><a href="analysis-of-dalton-morphology.html#cb96-9"></a>              <span class="dt">col =</span> col.gps.bev<span class="fl">.1</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/u.allom.h3-1.png" width="100%" /></p>
 </div>
 <div id="morphological-disparity-h3" class="section level3">
 <h3><span class="header-section-number">4.8.5</span> Morphological disparity (H3)</h3>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="analysis-of-dalton-morphology.html#cb97-1"></a><span class="co"># morphological disparity: does one group display greater </span></span>
-<span id="cb97-2"><a href="analysis-of-dalton-morphology.html#cb97-2"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
-<span id="cb97-3"><a href="analysis-of-dalton-morphology.html#cb97-3"></a><span class="kw">morphol.disparity</span>(shape <span class="op">~</span><span class="st"> </span>bev<span class="fl">.1</span>, </span>
-<span id="cb97-4"><a href="analysis-of-dalton-morphology.html#cb97-4"></a>                  <span class="dt">groups =</span> qdata<span class="op">$</span>bev, </span>
-<span id="cb97-5"><a href="analysis-of-dalton-morphology.html#cb97-5"></a>                  <span class="dt">data =</span> gdf, </span>
-<span id="cb97-6"><a href="analysis-of-dalton-morphology.html#cb97-6"></a>                  <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb97-7"><a href="analysis-of-dalton-morphology.html#cb97-7"></a>                  <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="analysis-of-dalton-morphology.html#cb95-1"></a><span class="co"># morphological disparity: does one group display greater </span></span>
+<span id="cb95-2"><a href="analysis-of-dalton-morphology.html#cb95-2"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
+<span id="cb95-3"><a href="analysis-of-dalton-morphology.html#cb95-3"></a><span class="kw">morphol.disparity</span>(shape <span class="op">~</span><span class="st"> </span>bev<span class="fl">.1</span>, </span>
+<span id="cb95-4"><a href="analysis-of-dalton-morphology.html#cb95-4"></a>                  <span class="dt">groups =</span> qdata<span class="op">$</span>bev, </span>
+<span id="cb95-5"><a href="analysis-of-dalton-morphology.html#cb95-5"></a>                  <span class="dt">data =</span> gdf, </span>
+<span id="cb95-6"><a href="analysis-of-dalton-morphology.html#cb95-6"></a>                  <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb95-7"><a href="analysis-of-dalton-morphology.html#cb95-7"></a>                  <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## morphol.disparity(f1 = shape ~ bev.1, groups = qdata$bev, iter = 9999,  
@@ -1860,49 +2029,49 @@ Figure 4.4: Boxplot of centroid size by beveled.
 ## 10000 Permutations
 ## 
 ## Procrustes variances for defined groups
-##           n           y 
-## 0.008989387 0.014815352 
+##          n          y 
+## 0.01266879 0.01883527 
 ## 
 ## 
 ## Pairwise absolute differences between variances
 ##             n           y
-## n 0.000000000 0.005825964
-## y 0.005825964 0.000000000
+## n 0.000000000 0.006166472
+## y 0.006166472 0.000000000
 ## 
 ## 
 ## P-Values
 ##        n      y
-## n 1.0000 0.0985
-## y 0.0985 1.0000</code></pre>
+## n 1.0000 0.4167
+## y 0.4167 1.0000</code></pre>
 </div>
 <div id="mean-shapes-h3" class="section level3">
 <h3><span class="header-section-number">4.8.6</span> Mean Shapes (H3)</h3>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="analysis-of-dalton-morphology.html#cb99-1"></a><span class="co"># subset landmark coordinates to produce mean shapes for hypothesis 3</span></span>
-<span id="cb99-2"><a href="analysis-of-dalton-morphology.html#cb99-2"></a>new.coords&lt;-<span class="kw">coords.subset</span>(<span class="dt">A =</span> Y.gpa<span class="op">$</span>coords, </span>
-<span id="cb99-3"><a href="analysis-of-dalton-morphology.html#cb99-3"></a>                          <span class="dt">group =</span> qdata<span class="op">$</span>bev)</span>
-<span id="cb99-4"><a href="analysis-of-dalton-morphology.html#cb99-4"></a><span class="kw">names</span>(new.coords)</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="analysis-of-dalton-morphology.html#cb97-1"></a><span class="co"># subset landmark coordinates to produce mean shapes for hypothesis 3</span></span>
+<span id="cb97-2"><a href="analysis-of-dalton-morphology.html#cb97-2"></a>new.coords&lt;-<span class="kw">coords.subset</span>(<span class="dt">A =</span> Y.gpa<span class="op">$</span>coords, </span>
+<span id="cb97-3"><a href="analysis-of-dalton-morphology.html#cb97-3"></a>                          <span class="dt">group =</span> qdata<span class="op">$</span>bev)</span>
+<span id="cb97-4"><a href="analysis-of-dalton-morphology.html#cb97-4"></a><span class="kw">names</span>(new.coords)</span></code></pre></div>
 <pre><code>## [1] &quot;n&quot; &quot;y&quot;</code></pre>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="analysis-of-dalton-morphology.html#cb101-1"></a><span class="co"># group shape means</span></span>
-<span id="cb101-2"><a href="analysis-of-dalton-morphology.html#cb101-2"></a>mean &lt;-<span class="st"> </span><span class="kw">lapply</span>(new.coords, mshape)</span>
-<span id="cb101-3"><a href="analysis-of-dalton-morphology.html#cb101-3"></a></span>
-<span id="cb101-4"><a href="analysis-of-dalton-morphology.html#cb101-4"></a><span class="co"># plot mean shapes</span></span>
-<span id="cb101-5"><a href="analysis-of-dalton-morphology.html#cb101-5"></a><span class="kw">plot</span>(mean<span class="op">$</span>y)</span>
-<span id="cb101-6"><a href="analysis-of-dalton-morphology.html#cb101-6"></a><span class="kw">plot</span>(mean<span class="op">$</span>n)</span>
-<span id="cb101-7"><a href="analysis-of-dalton-morphology.html#cb101-7"></a></span>
-<span id="cb101-8"><a href="analysis-of-dalton-morphology.html#cb101-8"></a><span class="co"># comparison plots</span></span>
-<span id="cb101-9"><a href="analysis-of-dalton-morphology.html#cb101-9"></a><span class="kw">plotRefToTarget</span>(mean<span class="op">$</span>y, </span>
-<span id="cb101-10"><a href="analysis-of-dalton-morphology.html#cb101-10"></a>                mean<span class="op">$</span>n, </span>
-<span id="cb101-11"><a href="analysis-of-dalton-morphology.html#cb101-11"></a>                <span class="dt">method=</span><span class="st">&quot;vector&quot;</span>,</span>
-<span id="cb101-12"><a href="analysis-of-dalton-morphology.html#cb101-12"></a>                <span class="dt">mag=</span><span class="dv">2</span>)</span>
-<span id="cb101-13"><a href="analysis-of-dalton-morphology.html#cb101-13"></a></span>
-<span id="cb101-14"><a href="analysis-of-dalton-morphology.html#cb101-14"></a><span class="co">##knitr::include_graphics(&#39;images/mshape.h3.jpg&#39;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="analysis-of-dalton-morphology.html#cb99-1"></a><span class="co"># group shape means</span></span>
+<span id="cb99-2"><a href="analysis-of-dalton-morphology.html#cb99-2"></a>mean &lt;-<span class="st"> </span><span class="kw">lapply</span>(new.coords, mshape)</span>
+<span id="cb99-3"><a href="analysis-of-dalton-morphology.html#cb99-3"></a></span>
+<span id="cb99-4"><a href="analysis-of-dalton-morphology.html#cb99-4"></a><span class="co"># plot mean shapes</span></span>
+<span id="cb99-5"><a href="analysis-of-dalton-morphology.html#cb99-5"></a><span class="kw">plot</span>(mean<span class="op">$</span>y)</span>
+<span id="cb99-6"><a href="analysis-of-dalton-morphology.html#cb99-6"></a><span class="kw">plot</span>(mean<span class="op">$</span>n)</span>
+<span id="cb99-7"><a href="analysis-of-dalton-morphology.html#cb99-7"></a></span>
+<span id="cb99-8"><a href="analysis-of-dalton-morphology.html#cb99-8"></a><span class="co"># comparison plots</span></span>
+<span id="cb99-9"><a href="analysis-of-dalton-morphology.html#cb99-9"></a><span class="kw">plotRefToTarget</span>(mean<span class="op">$</span>y, </span>
+<span id="cb99-10"><a href="analysis-of-dalton-morphology.html#cb99-10"></a>                mean<span class="op">$</span>n, </span>
+<span id="cb99-11"><a href="analysis-of-dalton-morphology.html#cb99-11"></a>                <span class="dt">method=</span><span class="st">&quot;vector&quot;</span>,</span>
+<span id="cb99-12"><a href="analysis-of-dalton-morphology.html#cb99-12"></a>                <span class="dt">mag=</span><span class="dv">2</span>)</span>
+<span id="cb99-13"><a href="analysis-of-dalton-morphology.html#cb99-13"></a></span>
+<span id="cb99-14"><a href="analysis-of-dalton-morphology.html#cb99-14"></a><span class="co">##knitr::include_graphics(&#39;images/mshape.h3.jpg&#39;)</span></span></code></pre></div>
 </div>
 </div>
 <div id="test-hypothesis-4-techno-gm" class="section level2">
 <h2><span class="header-section-number">4.9</span> Test Hypothesis 4 (Techno GM)</h2>
 <p>Hypothesis 4 assesses whether there is a discernible difference in the morphology of specific beveling types associated with Dalton points.</p>
 <p>A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs <span class="citation">(Adams and Collyer <a href="#ref-RN1655" role="doc-biblioref">2015</a>; Collyer and Adams <a href="#ref-RN11775" role="doc-biblioref">2018</a>)</span>, which has higher statistical power and a greater ability to identify patterns in the data should they be present <span class="citation">(Anderson and Ter Braak <a href="#ref-RN1719" role="doc-biblioref">2003</a>)</span>. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs <span class="citation">(Goodall <a href="#ref-RN1749" role="doc-biblioref">1991</a>)</span> were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions <span class="citation">(Collyer, Sekora, and Adams <a href="#ref-RN1756" role="doc-biblioref">2015</a>)</span>.</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="analysis-of-dalton-morphology.html#cb102-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis4-1.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="analysis-of-dalton-morphology.html#cb100-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis4-1.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis4-1.jpg" alt="Hypothesis 4 considers whether discrete beveling practices articulate with differences in the morphology of Dalton points" width="100%" />
 <p class="caption">
@@ -1911,19 +2080,16 @@ Figure 4.4: Boxplot of centroid size by beveled.
 </div>
 <div id="boxplot-h4" class="section level3">
 <h3><span class="header-section-number">4.9.1</span> Boxplot (H4)</h3>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="analysis-of-dalton-morphology.html#cb103-1"></a><span class="co"># boxplot of Dalton point centroid size by bevel type</span></span>
-<span id="cb103-2"><a href="analysis-of-dalton-morphology.html#cb103-2"></a>csz.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">ggplot</span>(qdata, <span class="kw">aes</span>(<span class="dt">x =</span> bev<span class="fl">.2</span>, <span class="dt">y =</span> csz, <span class="dt">color =</span> bev<span class="fl">.2</span>)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb103-3"><a href="analysis-of-dalton-morphology.html#cb103-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">notch =</span> <span class="ot">TRUE</span>) <span class="op">+</span></span>
-<span id="cb103-4"><a href="analysis-of-dalton-morphology.html#cb103-4"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="dt">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="dt">dotsize =</span> <span class="fl">0.3</span>) <span class="op">+</span></span>
-<span id="cb103-5"><a href="analysis-of-dalton-morphology.html#cb103-5"></a><span class="st">  </span><span class="kw">scale_colour_manual</span>(<span class="dt">values =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="op">+</span></span>
-<span id="cb103-6"><a href="analysis-of-dalton-morphology.html#cb103-6"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></span>
-<span id="cb103-7"><a href="analysis-of-dalton-morphology.html#cb103-7"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&#39;Bevel Type&#39;</span>, <span class="dt">y =</span> <span class="st">&#39;Centroid Size&#39;</span>)</span>
-<span id="cb103-8"><a href="analysis-of-dalton-morphology.html#cb103-8"></a><span class="co"># render plot</span></span>
-<span id="cb103-9"><a href="analysis-of-dalton-morphology.html#cb103-9"></a>csz.bev<span class="fl">.2</span></span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="analysis-of-dalton-morphology.html#cb101-1"></a><span class="co"># boxplot of Dalton point centroid size by bevel type</span></span>
+<span id="cb101-2"><a href="analysis-of-dalton-morphology.html#cb101-2"></a>csz.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">ggplot</span>(qdata, <span class="kw">aes</span>(<span class="dt">x =</span> bev<span class="fl">.2</span>, <span class="dt">y =</span> csz, <span class="dt">color =</span> bev<span class="fl">.2</span>)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb101-3"><a href="analysis-of-dalton-morphology.html#cb101-3"></a><span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></span>
+<span id="cb101-4"><a href="analysis-of-dalton-morphology.html#cb101-4"></a><span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="dt">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="dt">dotsize =</span> <span class="fl">0.3</span>) <span class="op">+</span></span>
+<span id="cb101-5"><a href="analysis-of-dalton-morphology.html#cb101-5"></a><span class="st">  </span><span class="kw">scale_colour_manual</span>(<span class="dt">values =</span> <span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="op">+</span></span>
+<span id="cb101-6"><a href="analysis-of-dalton-morphology.html#cb101-6"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></span>
+<span id="cb101-7"><a href="analysis-of-dalton-morphology.html#cb101-7"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&#39;Bevel Type&#39;</span>, <span class="dt">y =</span> <span class="st">&#39;Centroid Size&#39;</span>)</span>
+<span id="cb101-8"><a href="analysis-of-dalton-morphology.html#cb101-8"></a><span class="co"># render plot</span></span>
+<span id="cb101-9"><a href="analysis-of-dalton-morphology.html#cb101-9"></a>csz.bev<span class="fl">.2</span></span></code></pre></div>
 <pre><code>## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<pre><code>## notch went outside hinges. Try setting notch=FALSE.
-## notch went outside hinges. Try setting notch=FALSE.
-## notch went outside hinges. Try setting notch=FALSE.</code></pre>
 <div class="figure"><span id="fig:box4"></span>
 <img src="dalton.supp_files/figure-html/box4-1.png" alt="Boxplot of centroid size by bevel type." width="100%" />
 <p class="caption">
@@ -1933,25 +2099,25 @@ Figure 4.5: Boxplot of centroid size by bevel type.
 </div>
 <div id="principal-components-analysis-h4" class="section level3">
 <h3><span class="header-section-number">4.9.2</span> Principal Components Analysis (H4)</h3>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="analysis-of-dalton-morphology.html#cb106-1"></a><span class="co"># set plot parameters to plot by bevel type</span></span>
-<span id="cb106-2"><a href="analysis-of-dalton-morphology.html#cb106-2"></a>pch.gps.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.2</span>)]</span>
-<span id="cb106-3"><a href="analysis-of-dalton-morphology.html#cb106-3"></a>col.gps.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.2</span>)]</span>
-<span id="cb106-4"><a href="analysis-of-dalton-morphology.html#cb106-4"></a>col.hull<span class="fl">.4</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
-<span id="cb106-5"><a href="analysis-of-dalton-morphology.html#cb106-5"></a></span>
-<span id="cb106-6"><a href="analysis-of-dalton-morphology.html#cb106-6"></a><span class="co"># plot pca by bevel type</span></span>
-<span id="cb106-7"><a href="analysis-of-dalton-morphology.html#cb106-7"></a>pc.plot4 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
-<span id="cb106-8"><a href="analysis-of-dalton-morphology.html#cb106-8"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb106-9"><a href="analysis-of-dalton-morphology.html#cb106-9"></a>                 <span class="dt">pch =</span> pch.gps.bev<span class="fl">.2</span>,</span>
-<span id="cb106-10"><a href="analysis-of-dalton-morphology.html#cb106-10"></a>                 <span class="dt">col =</span> col.gps.bev<span class="fl">.2</span>)</span>
-<span id="cb106-11"><a href="analysis-of-dalton-morphology.html#cb106-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot4, </span>
-<span id="cb106-12"><a href="analysis-of-dalton-morphology.html#cb106-12"></a>                             <span class="dt">groups =</span> bev<span class="fl">.2</span>,</span>
-<span id="cb106-13"><a href="analysis-of-dalton-morphology.html#cb106-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="analysis-of-dalton-morphology.html#cb103-1"></a><span class="co"># set plot parameters to plot by bevel type</span></span>
+<span id="cb103-2"><a href="analysis-of-dalton-morphology.html#cb103-2"></a>pch.gps.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.2</span>)]</span>
+<span id="cb103-3"><a href="analysis-of-dalton-morphology.html#cb103-3"></a>col.gps.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.2</span>)]</span>
+<span id="cb103-4"><a href="analysis-of-dalton-morphology.html#cb103-4"></a>col.hull<span class="fl">.4</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
+<span id="cb103-5"><a href="analysis-of-dalton-morphology.html#cb103-5"></a></span>
+<span id="cb103-6"><a href="analysis-of-dalton-morphology.html#cb103-6"></a><span class="co"># plot pca by bevel type</span></span>
+<span id="cb103-7"><a href="analysis-of-dalton-morphology.html#cb103-7"></a>pc.plot4 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
+<span id="cb103-8"><a href="analysis-of-dalton-morphology.html#cb103-8"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb103-9"><a href="analysis-of-dalton-morphology.html#cb103-9"></a>                 <span class="dt">pch =</span> pch.gps.bev<span class="fl">.2</span>,</span>
+<span id="cb103-10"><a href="analysis-of-dalton-morphology.html#cb103-10"></a>                 <span class="dt">col =</span> col.gps.bev<span class="fl">.2</span>)</span>
+<span id="cb103-11"><a href="analysis-of-dalton-morphology.html#cb103-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot4, </span>
+<span id="cb103-12"><a href="analysis-of-dalton-morphology.html#cb103-12"></a>                             <span class="dt">groups =</span> bev<span class="fl">.2</span>,</span>
+<span id="cb103-13"><a href="analysis-of-dalton-morphology.html#cb103-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.4</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca4-1.png" width="100%" /></p>
 </div>
 <div id="anova-h4" class="section level3">
 <h3><span class="header-section-number">4.9.3</span> ANOVA (H4)</h3>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="analysis-of-dalton-morphology.html#cb107-1"></a><span class="co"># bev.2</span></span>
-<span id="cb107-2"><a href="analysis-of-dalton-morphology.html#cb107-2"></a><span class="kw">anova</span>(fit.sz.cbev<span class="fl">.2</span>) <span class="co"># common allometry (bev.2)</span></span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="analysis-of-dalton-morphology.html#cb104-1"></a><span class="co"># bev.2</span></span>
+<span id="cb104-2"><a href="analysis-of-dalton-morphology.html#cb104-2"></a><span class="kw">anova</span>(fit.sz.cbev<span class="fl">.2</span>) <span class="co"># common allometry (bev.2)</span></span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1960,18 +2126,18 @@ Figure 4.5: Boxplot of centroid size by bevel type.
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df      SS       MS     Rsq       F      Z Pr(&gt;F)    
-## size       1 0.20019 0.200190 0.42468 27.3075 4.4158  1e-04 ***
-## bev.2      2 0.08060 0.040298 0.17097  5.4969 3.5195  1e-04 ***
-## Residuals 26 0.19061 0.007331 0.40435                          
-## Total     29 0.47139                                           
+##           Df      SS      MS     Rsq       F      Z Pr(&gt;F)    
+## size       1 0.32804 0.32804 0.41869 34.5021 4.5651  1e-04 ***
+## bev.2      2 0.10366 0.05183 0.13230  5.4512 3.5717  1e-04 ***
+## Residuals 37 0.35179 0.00951 0.44900                          
+## Total     40 0.78350                                          
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = shape ~ size + bev.2, iter = 9999, data = gdf,  
 ##     print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="analysis-of-dalton-morphology.html#cb109-1"></a><span class="co"># bev.2</span></span>
-<span id="cb109-2"><a href="analysis-of-dalton-morphology.html#cb109-2"></a><span class="kw">anova</span>(fit.sz.ubev<span class="fl">.2</span>) <span class="co"># unique allometry (bev.2)</span></span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="analysis-of-dalton-morphology.html#cb106-1"></a><span class="co"># bev.2</span></span>
+<span id="cb106-2"><a href="analysis-of-dalton-morphology.html#cb106-2"></a><span class="kw">anova</span>(fit.sz.ubev<span class="fl">.2</span>) <span class="co"># unique allometry (bev.2)</span></span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1980,19 +2146,19 @@ Figure 4.5: Boxplot of centroid size by bevel type.
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##            Df      SS       MS     Rsq       F      Z Pr(&gt;F)    
-## size        1 0.20019 0.200190 0.42468 27.2035 4.4166  1e-04 ***
-## bev.2       2 0.08060 0.040298 0.17097  5.4760 3.5105  1e-04 ***
-## size:bev.2  2 0.01399 0.006995 0.02968  0.9505 0.0547 0.4797    
-## Residuals  24 0.17662 0.007359 0.37467                          
-## Total      29 0.47139                                           
+##            Df      SS      MS     Rsq       F      Z Pr(&gt;F)    
+## size        1 0.32804 0.32804 0.41869 35.0681 4.5789  1e-04 ***
+## bev.2       2 0.10366 0.05183 0.13230  5.5406 3.5967  1e-04 ***
+## size:bev.2  2 0.02439 0.01219 0.03113  1.3035 0.7341 0.2274    
+## Residuals  35 0.32741 0.00935 0.41788                          
+## Total      40 0.78350                                          
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = shape ~ size * bev.2, iter = 9999, data = gdf,  
 ##     print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="analysis-of-dalton-morphology.html#cb111-1"></a><span class="co"># ANOVA: does dalton projectile point size differ by bev.2?</span></span>
-<span id="cb111-2"><a href="analysis-of-dalton-morphology.html#cb111-2"></a><span class="kw">anova</span>(fit.size.bev<span class="fl">.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="analysis-of-dalton-morphology.html#cb108-1"></a><span class="co"># ANOVA: does dalton projectile point size differ by bev.2?</span></span>
+<span id="cb108-2"><a href="analysis-of-dalton-morphology.html#cb108-2"></a><span class="kw">anova</span>(fit.size.bev<span class="fl">.2</span>)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -2001,20 +2167,18 @@ Figure 4.5: Boxplot of centroid size by bevel type.
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df      SS      MS     Rsq      F      Z Pr(&gt;F)  
-## bev.2      2  4187.3 2093.64 0.17068 2.7783 1.1856 0.0787 .
-## Residuals 27 20346.3  753.57 0.82932                       
-## Total     29 24533.6                                       
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+##           Df    SS     MS     Rsq      F       Z Pr(&gt;F)
+## bev.2      2  2829 1414.5 0.06323 1.2824 0.61261 0.2819
+## Residuals 38 41914 1103.0 0.93677                      
+## Total     40 44743                                     
 ## 
 ## Call: procD.lm(f1 = size ~ bev.2, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="analysis-of-dalton-morphology.html#cb113-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
-<span id="cb113-2"><a href="analysis-of-dalton-morphology.html#cb113-2"></a>sz.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.size.bev<span class="fl">.2</span>, </span>
-<span id="cb113-3"><a href="analysis-of-dalton-morphology.html#cb113-3"></a>                    <span class="dt">groups =</span> qdata<span class="op">$</span>bev.type)</span>
-<span id="cb113-4"><a href="analysis-of-dalton-morphology.html#cb113-4"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
-<span id="cb113-5"><a href="analysis-of-dalton-morphology.html#cb113-5"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb113-6"><a href="analysis-of-dalton-morphology.html#cb113-6"></a>        <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="analysis-of-dalton-morphology.html#cb110-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
+<span id="cb110-2"><a href="analysis-of-dalton-morphology.html#cb110-2"></a>sz.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.size.bev<span class="fl">.2</span>, </span>
+<span id="cb110-3"><a href="analysis-of-dalton-morphology.html#cb110-3"></a>                    <span class="dt">groups =</span> qdata<span class="op">$</span>bev.type)</span>
+<span id="cb110-4"><a href="analysis-of-dalton-morphology.html#cb110-4"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
+<span id="cb110-5"><a href="analysis-of-dalton-morphology.html#cb110-5"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb110-6"><a href="analysis-of-dalton-morphology.html#cb110-6"></a>        <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -2027,13 +2191,13 @@ Figure 4.5: Boxplot of centroid size by bevel type.
 ## 
 ## Pairwise distances between means, plus statistics
 ##                                       d UCL (95%)          Z Pr &gt; d
-## alternate:no.bevel             21.65699  21.79475  1.9076715 0.0516
-## alternate:unifacial.bimarginal 10.19275  35.85820 -0.4241635 0.5974
-## no.bevel:unifacial.bimarginal  31.84974  36.52396  1.4704480 0.0904</code></pre>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="analysis-of-dalton-morphology.html#cb115-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
-<span id="cb115-2"><a href="analysis-of-dalton-morphology.html#cb115-2"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
-<span id="cb115-3"><a href="analysis-of-dalton-morphology.html#cb115-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb115-4"><a href="analysis-of-dalton-morphology.html#cb115-4"></a>        <span class="dt">test.type =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
+## alternate:no.bevel             13.82105  21.62410  0.7566772 0.2168
+## alternate:unifacial.bimarginal 13.70139  39.50807 -0.2235649 0.5161
+## no.bevel:unifacial.bimarginal  27.52245  40.69728  0.8325099 0.1867</code></pre>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="analysis-of-dalton-morphology.html#cb112-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
+<span id="cb112-2"><a href="analysis-of-dalton-morphology.html#cb112-2"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
+<span id="cb112-3"><a href="analysis-of-dalton-morphology.html#cb112-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb112-4"><a href="analysis-of-dalton-morphology.html#cb112-4"></a>        <span class="dt">test.type =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -2045,15 +2209,15 @@ Figure 4.5: Boxplot of centroid size by bevel type.
 ## Observed variances by group
 ## 
 ##            alternate             no.bevel unifacial.bimarginal 
-##             843.4938             275.7160            1461.7774 
+##             864.8726            1156.3579            1461.7774 
 ## 
 ## Pairwise distances between variances, plus statistics
-##                                        d UCL (95%)        Z Pr &gt; d
-## alternate:no.bevel              567.7778  765.5106 1.015793 0.1702
-## alternate:unifacial.bimarginal  618.2836 1326.3437 0.230190 0.3162
-## no.bevel:unifacial.bimarginal  1186.0614 1329.1076 1.576989 0.0745</code></pre>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="analysis-of-dalton-morphology.html#cb117-1"></a><span class="co"># ANOVA: does dalton projectile point shape differ by bev.2?</span></span>
-<span id="cb117-2"><a href="analysis-of-dalton-morphology.html#cb117-2"></a><span class="kw">anova</span>(fit.shape.bev<span class="fl">.2</span>)</span></code></pre></div>
+##                                       d UCL (95%)          Z Pr &gt; d
+## alternate:no.bevel             291.4854  1238.404 -1.0026019 0.8151
+## alternate:unifacial.bimarginal 596.9049  3844.126 -0.3087819 0.5443
+## no.bevel:unifacial.bimarginal  305.4195  3855.441 -0.6203602 0.7689</code></pre>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="analysis-of-dalton-morphology.html#cb114-1"></a><span class="co"># ANOVA: does dalton projectile point shape differ by bev.2?</span></span>
+<span id="cb114-2"><a href="analysis-of-dalton-morphology.html#cb114-2"></a><span class="kw">anova</span>(fit.shape.bev<span class="fl">.2</span>)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -2062,20 +2226,20 @@ Figure 4.5: Boxplot of centroid size by bevel type.
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df      SS       MS     Rsq      F      Z Pr(&gt;F)    
-## bev.2      2 0.13671 0.068357 0.29002 5.5146 2.8948  8e-04 ***
-## Residuals 27 0.33468 0.012395 0.70998                         
-## Total     29 0.47139                                          
+##           Df      SS       MS     Rsq      F      Z Pr(&gt;F)   
+## bev.2      2 0.14512 0.072562 0.18523 4.3193 2.5323 0.0033 **
+## Residuals 38 0.63837 0.016799 0.81477                        
+## Total     40 0.78350                                         
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = shape ~ bev.2, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="analysis-of-dalton-morphology.html#cb119-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
-<span id="cb119-2"><a href="analysis-of-dalton-morphology.html#cb119-2"></a>sh.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.shape.bev<span class="fl">.2</span>, </span>
-<span id="cb119-3"><a href="analysis-of-dalton-morphology.html#cb119-3"></a>                    <span class="dt">groups =</span> qdata<span class="op">$</span>bev.type)</span>
-<span id="cb119-4"><a href="analysis-of-dalton-morphology.html#cb119-4"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
-<span id="cb119-5"><a href="analysis-of-dalton-morphology.html#cb119-5"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb119-6"><a href="analysis-of-dalton-morphology.html#cb119-6"></a>        <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="analysis-of-dalton-morphology.html#cb116-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
+<span id="cb116-2"><a href="analysis-of-dalton-morphology.html#cb116-2"></a>sh.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.shape.bev<span class="fl">.2</span>, </span>
+<span id="cb116-3"><a href="analysis-of-dalton-morphology.html#cb116-3"></a>                    <span class="dt">groups =</span> qdata<span class="op">$</span>bev.type)</span>
+<span id="cb116-4"><a href="analysis-of-dalton-morphology.html#cb116-4"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
+<span id="cb116-5"><a href="analysis-of-dalton-morphology.html#cb116-5"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb116-6"><a href="analysis-of-dalton-morphology.html#cb116-6"></a>        <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -2088,13 +2252,13 @@ Figure 4.5: Boxplot of centroid size by bevel type.
 ## 
 ## Pairwise distances between means, plus statistics
 ##                                       d UCL (95%)          Z Pr &gt; d
-## alternate:no.bevel             21.65699  21.79475  1.9076715 0.0516
-## alternate:unifacial.bimarginal 10.19275  35.85820 -0.4241635 0.5974
-## no.bevel:unifacial.bimarginal  31.84974  36.52396  1.4704480 0.0904</code></pre>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="analysis-of-dalton-morphology.html#cb121-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
-<span id="cb121-2"><a href="analysis-of-dalton-morphology.html#cb121-2"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
-<span id="cb121-3"><a href="analysis-of-dalton-morphology.html#cb121-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb121-4"><a href="analysis-of-dalton-morphology.html#cb121-4"></a>        <span class="dt">test.type =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
+## alternate:no.bevel             13.82105  21.62410  0.7566772 0.2168
+## alternate:unifacial.bimarginal 13.70139  39.50807 -0.2235649 0.5161
+## no.bevel:unifacial.bimarginal  27.52245  40.69728  0.8325099 0.1867</code></pre>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="analysis-of-dalton-morphology.html#cb118-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
+<span id="cb118-2"><a href="analysis-of-dalton-morphology.html#cb118-2"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
+<span id="cb118-3"><a href="analysis-of-dalton-morphology.html#cb118-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb118-4"><a href="analysis-of-dalton-morphology.html#cb118-4"></a>        <span class="dt">test.type =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -2106,66 +2270,66 @@ Figure 4.5: Boxplot of centroid size by bevel type.
 ## Observed variances by group
 ## 
 ##            alternate             no.bevel unifacial.bimarginal 
-##             843.4938             275.7160            1461.7774 
+##             864.8726            1156.3579            1461.7774 
 ## 
 ## Pairwise distances between variances, plus statistics
-##                                        d UCL (95%)        Z Pr &gt; d
-## alternate:no.bevel              567.7778  765.5106 1.015793 0.1702
-## alternate:unifacial.bimarginal  618.2836 1326.3437 0.230190 0.3162
-## no.bevel:unifacial.bimarginal  1186.0614 1329.1076 1.576989 0.0745</code></pre>
+##                                       d UCL (95%)          Z Pr &gt; d
+## alternate:no.bevel             291.4854  1238.404 -1.0026019 0.8151
+## alternate:unifacial.bimarginal 596.9049  3844.126 -0.3087819 0.5443
+## no.bevel:unifacial.bimarginal  305.4195  3855.441 -0.6203602 0.7689</code></pre>
 </div>
 <div id="allometry-h4" class="section level3">
 <h3><span class="header-section-number">4.9.4</span> Allometry (H4)</h3>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="analysis-of-dalton-morphology.html#cb123-1"></a><span class="co"># regscore (Drake and Klingenberg 2008)</span></span>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="analysis-of-dalton-morphology.html#cb120-1"></a><span class="co"># regscore (Drake and Klingenberg 2008)</span></span>
+<span id="cb120-2"><a href="analysis-of-dalton-morphology.html#cb120-2"></a></span>
+<span id="cb120-3"><a href="analysis-of-dalton-morphology.html#cb120-3"></a><span class="co"># bev.2</span></span>
+<span id="cb120-4"><a href="analysis-of-dalton-morphology.html#cb120-4"></a><span class="kw">plotAllometry</span>(fit.sz.cbev<span class="fl">.2</span>, </span>
+<span id="cb120-5"><a href="analysis-of-dalton-morphology.html#cb120-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size,</span>
+<span id="cb120-6"><a href="analysis-of-dalton-morphology.html#cb120-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb120-7"><a href="analysis-of-dalton-morphology.html#cb120-7"></a>              <span class="dt">method =</span> <span class="st">&quot;RegScore&quot;</span>,  </span>
+<span id="cb120-8"><a href="analysis-of-dalton-morphology.html#cb120-8"></a>              <span class="dt">pch =</span> pch.gps.bev<span class="fl">.2</span>, </span>
+<span id="cb120-9"><a href="analysis-of-dalton-morphology.html#cb120-9"></a>              <span class="dt">col =</span> col.gps.bev<span class="fl">.2</span>)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/c.allom.h4-1.png" width="100%" /></p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="analysis-of-dalton-morphology.html#cb121-1"></a><span class="co"># common allometric component (Mitteroecker 2004)</span></span>
+<span id="cb121-2"><a href="analysis-of-dalton-morphology.html#cb121-2"></a></span>
+<span id="cb121-3"><a href="analysis-of-dalton-morphology.html#cb121-3"></a><span class="co"># bev.2</span></span>
+<span id="cb121-4"><a href="analysis-of-dalton-morphology.html#cb121-4"></a><span class="kw">plotAllometry</span>(fit.sz.cbev<span class="fl">.2</span>, </span>
+<span id="cb121-5"><a href="analysis-of-dalton-morphology.html#cb121-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size, </span>
+<span id="cb121-6"><a href="analysis-of-dalton-morphology.html#cb121-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>, </span>
+<span id="cb121-7"><a href="analysis-of-dalton-morphology.html#cb121-7"></a>              <span class="dt">method =</span> <span class="st">&quot;CAC&quot;</span>, </span>
+<span id="cb121-8"><a href="analysis-of-dalton-morphology.html#cb121-8"></a>              <span class="dt">pch =</span> pch.gps.bev<span class="fl">.2</span>, </span>
+<span id="cb121-9"><a href="analysis-of-dalton-morphology.html#cb121-9"></a>              <span class="dt">col =</span> col.gps.bev<span class="fl">.2</span>)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/c.allom.h4-2.png" width="100%" /></p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="analysis-of-dalton-morphology.html#cb122-1"></a><span class="co"># size-shape pca (Mitteroecker 2004)</span></span>
+<span id="cb122-2"><a href="analysis-of-dalton-morphology.html#cb122-2"></a></span>
+<span id="cb122-3"><a href="analysis-of-dalton-morphology.html#cb122-3"></a><span class="co"># bev.2</span></span>
+<span id="cb122-4"><a href="analysis-of-dalton-morphology.html#cb122-4"></a><span class="kw">plotAllometry</span>(fit.sz.cbev<span class="fl">.2</span>, </span>
+<span id="cb122-5"><a href="analysis-of-dalton-morphology.html#cb122-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size, </span>
+<span id="cb122-6"><a href="analysis-of-dalton-morphology.html#cb122-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>, </span>
+<span id="cb122-7"><a href="analysis-of-dalton-morphology.html#cb122-7"></a>              <span class="dt">method =</span> <span class="st">&quot;size.shape&quot;</span>, </span>
+<span id="cb122-8"><a href="analysis-of-dalton-morphology.html#cb122-8"></a>              <span class="dt">pch =</span> pch.gps.bev<span class="fl">.2</span>, </span>
+<span id="cb122-9"><a href="analysis-of-dalton-morphology.html#cb122-9"></a>              <span class="dt">col =</span> col.gps.bev<span class="fl">.2</span>)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/c.allom.h4-3.png" width="100%" /></p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="analysis-of-dalton-morphology.html#cb123-1"></a><span class="co"># predline (Adams and Nistri 2010)</span></span>
 <span id="cb123-2"><a href="analysis-of-dalton-morphology.html#cb123-2"></a></span>
 <span id="cb123-3"><a href="analysis-of-dalton-morphology.html#cb123-3"></a><span class="co"># bev.2</span></span>
-<span id="cb123-4"><a href="analysis-of-dalton-morphology.html#cb123-4"></a><span class="kw">plotAllometry</span>(fit.sz.cbev<span class="fl">.2</span>, </span>
-<span id="cb123-5"><a href="analysis-of-dalton-morphology.html#cb123-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size,</span>
-<span id="cb123-6"><a href="analysis-of-dalton-morphology.html#cb123-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb123-7"><a href="analysis-of-dalton-morphology.html#cb123-7"></a>              <span class="dt">method =</span> <span class="st">&quot;RegScore&quot;</span>,  </span>
+<span id="cb123-4"><a href="analysis-of-dalton-morphology.html#cb123-4"></a><span class="kw">plotAllometry</span>(fit.sz.ubev<span class="fl">.2</span>, </span>
+<span id="cb123-5"><a href="analysis-of-dalton-morphology.html#cb123-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size, </span>
+<span id="cb123-6"><a href="analysis-of-dalton-morphology.html#cb123-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>, </span>
+<span id="cb123-7"><a href="analysis-of-dalton-morphology.html#cb123-7"></a>              <span class="dt">method =</span> <span class="st">&quot;PredLine&quot;</span>, </span>
 <span id="cb123-8"><a href="analysis-of-dalton-morphology.html#cb123-8"></a>              <span class="dt">pch =</span> pch.gps.bev<span class="fl">.2</span>, </span>
 <span id="cb123-9"><a href="analysis-of-dalton-morphology.html#cb123-9"></a>              <span class="dt">col =</span> col.gps.bev<span class="fl">.2</span>)</span></code></pre></div>
-<p><img src="dalton.supp_files/figure-html/c.allom.h4-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="analysis-of-dalton-morphology.html#cb124-1"></a><span class="co"># common allometric component (Mitteroecker 2004)</span></span>
-<span id="cb124-2"><a href="analysis-of-dalton-morphology.html#cb124-2"></a></span>
-<span id="cb124-3"><a href="analysis-of-dalton-morphology.html#cb124-3"></a><span class="co"># bev.2</span></span>
-<span id="cb124-4"><a href="analysis-of-dalton-morphology.html#cb124-4"></a><span class="kw">plotAllometry</span>(fit.sz.cbev<span class="fl">.2</span>, </span>
-<span id="cb124-5"><a href="analysis-of-dalton-morphology.html#cb124-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size, </span>
-<span id="cb124-6"><a href="analysis-of-dalton-morphology.html#cb124-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>, </span>
-<span id="cb124-7"><a href="analysis-of-dalton-morphology.html#cb124-7"></a>              <span class="dt">method =</span> <span class="st">&quot;CAC&quot;</span>, </span>
-<span id="cb124-8"><a href="analysis-of-dalton-morphology.html#cb124-8"></a>              <span class="dt">pch =</span> pch.gps.bev<span class="fl">.2</span>, </span>
-<span id="cb124-9"><a href="analysis-of-dalton-morphology.html#cb124-9"></a>              <span class="dt">col =</span> col.gps.bev<span class="fl">.2</span>)</span></code></pre></div>
-<p><img src="dalton.supp_files/figure-html/c.allom.h4-2.png" width="100%" /></p>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="analysis-of-dalton-morphology.html#cb125-1"></a><span class="co"># size-shape pca (Mitteroecker 2004)</span></span>
-<span id="cb125-2"><a href="analysis-of-dalton-morphology.html#cb125-2"></a></span>
-<span id="cb125-3"><a href="analysis-of-dalton-morphology.html#cb125-3"></a><span class="co"># bev.2</span></span>
-<span id="cb125-4"><a href="analysis-of-dalton-morphology.html#cb125-4"></a><span class="kw">plotAllometry</span>(fit.sz.cbev<span class="fl">.2</span>, </span>
-<span id="cb125-5"><a href="analysis-of-dalton-morphology.html#cb125-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size, </span>
-<span id="cb125-6"><a href="analysis-of-dalton-morphology.html#cb125-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>, </span>
-<span id="cb125-7"><a href="analysis-of-dalton-morphology.html#cb125-7"></a>              <span class="dt">method =</span> <span class="st">&quot;size.shape&quot;</span>, </span>
-<span id="cb125-8"><a href="analysis-of-dalton-morphology.html#cb125-8"></a>              <span class="dt">pch =</span> pch.gps.bev<span class="fl">.2</span>, </span>
-<span id="cb125-9"><a href="analysis-of-dalton-morphology.html#cb125-9"></a>              <span class="dt">col =</span> col.gps.bev<span class="fl">.2</span>)</span></code></pre></div>
-<p><img src="dalton.supp_files/figure-html/c.allom.h4-3.png" width="100%" /></p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="analysis-of-dalton-morphology.html#cb126-1"></a><span class="co"># predline (Adams and Nistri 2010)</span></span>
-<span id="cb126-2"><a href="analysis-of-dalton-morphology.html#cb126-2"></a></span>
-<span id="cb126-3"><a href="analysis-of-dalton-morphology.html#cb126-3"></a><span class="co"># bev.2</span></span>
-<span id="cb126-4"><a href="analysis-of-dalton-morphology.html#cb126-4"></a><span class="kw">plotAllometry</span>(fit.sz.ubev<span class="fl">.2</span>, </span>
-<span id="cb126-5"><a href="analysis-of-dalton-morphology.html#cb126-5"></a>              <span class="dt">size =</span> gdf<span class="op">$</span>size, </span>
-<span id="cb126-6"><a href="analysis-of-dalton-morphology.html#cb126-6"></a>              <span class="dt">logsz =</span> <span class="ot">TRUE</span>, </span>
-<span id="cb126-7"><a href="analysis-of-dalton-morphology.html#cb126-7"></a>              <span class="dt">method =</span> <span class="st">&quot;PredLine&quot;</span>, </span>
-<span id="cb126-8"><a href="analysis-of-dalton-morphology.html#cb126-8"></a>              <span class="dt">pch =</span> pch.gps.bev<span class="fl">.2</span>, </span>
-<span id="cb126-9"><a href="analysis-of-dalton-morphology.html#cb126-9"></a>              <span class="dt">col =</span> col.gps.bev<span class="fl">.2</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/u.allom.h4-1.png" width="100%" /></p>
 </div>
 <div id="morphological-disparity-h4" class="section level3">
 <h3><span class="header-section-number">4.9.5</span> Morphological disparity (H4)</h3>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="analysis-of-dalton-morphology.html#cb127-1"></a><span class="co"># morphological disparity: do any of the groups display greater </span></span>
-<span id="cb127-2"><a href="analysis-of-dalton-morphology.html#cb127-2"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
-<span id="cb127-3"><a href="analysis-of-dalton-morphology.html#cb127-3"></a><span class="kw">morphol.disparity</span>(shape <span class="op">~</span><span class="st"> </span>bev<span class="fl">.2</span>, </span>
-<span id="cb127-4"><a href="analysis-of-dalton-morphology.html#cb127-4"></a>                  <span class="dt">groups =</span> qdata<span class="op">$</span>bev.type, </span>
-<span id="cb127-5"><a href="analysis-of-dalton-morphology.html#cb127-5"></a>                  <span class="dt">data =</span> gdf, </span>
-<span id="cb127-6"><a href="analysis-of-dalton-morphology.html#cb127-6"></a>                  <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb127-7"><a href="analysis-of-dalton-morphology.html#cb127-7"></a>                  <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="analysis-of-dalton-morphology.html#cb124-1"></a><span class="co"># morphological disparity: do any of the groups display greater </span></span>
+<span id="cb124-2"><a href="analysis-of-dalton-morphology.html#cb124-2"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
+<span id="cb124-3"><a href="analysis-of-dalton-morphology.html#cb124-3"></a><span class="kw">morphol.disparity</span>(shape <span class="op">~</span><span class="st"> </span>bev<span class="fl">.2</span>, </span>
+<span id="cb124-4"><a href="analysis-of-dalton-morphology.html#cb124-4"></a>                  <span class="dt">groups =</span> qdata<span class="op">$</span>bev.type, </span>
+<span id="cb124-5"><a href="analysis-of-dalton-morphology.html#cb124-5"></a>                  <span class="dt">data =</span> gdf, </span>
+<span id="cb124-6"><a href="analysis-of-dalton-morphology.html#cb124-6"></a>                  <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb124-7"><a href="analysis-of-dalton-morphology.html#cb124-7"></a>                  <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## morphol.disparity(f1 = shape ~ bev.2, groups = qdata$bev.type,  
@@ -2178,68 +2342,68 @@ Figure 4.5: Boxplot of centroid size by bevel type.
 ## 
 ## Procrustes variances for defined groups
 ##            alternate             no.bevel unifacial.bimarginal 
-##          0.011860018          0.008989387          0.016301540 
+##           0.01758059           0.01266879           0.01630035 
 ## 
 ## 
 ## Pairwise absolute differences between variances
 ##                        alternate    no.bevel unifacial.bimarginal
-## alternate            0.000000000 0.002870631          0.004441522
-## no.bevel             0.002870631 0.000000000          0.007312153
-## unifacial.bimarginal 0.004441522 0.007312153          0.000000000
+## alternate            0.000000000 0.004911794          0.001280240
+## no.bevel             0.004911794 0.000000000          0.003631554
+## unifacial.bimarginal 0.001280240 0.003631554          0.000000000
 ## 
 ## 
 ## P-Values
 ##                      alternate no.bevel unifacial.bimarginal
-## alternate               1.0000   0.4070               0.4416
-## no.bevel                0.4070   1.0000               0.1903
-## unifacial.bimarginal    0.4416   0.1903               1.0000</code></pre>
+## alternate               1.0000   0.5804               0.8982
+## no.bevel                0.5804   1.0000               0.7055
+## unifacial.bimarginal    0.8982   0.7055               1.0000</code></pre>
 </div>
 <div id="mean-shapes-h4" class="section level3">
 <h3><span class="header-section-number">4.9.6</span> Mean Shapes (H4)</h3>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="analysis-of-dalton-morphology.html#cb129-1"></a><span class="co"># subset landmark coordinates to produce mean shapes for hypothesis 4</span></span>
-<span id="cb129-2"><a href="analysis-of-dalton-morphology.html#cb129-2"></a>new.coords&lt;-<span class="kw">coords.subset</span>(<span class="dt">A =</span> Y.gpa<span class="op">$</span>coords, </span>
-<span id="cb129-3"><a href="analysis-of-dalton-morphology.html#cb129-3"></a>                          <span class="dt">group =</span> qdata<span class="op">$</span>bev.type)</span>
-<span id="cb129-4"><a href="analysis-of-dalton-morphology.html#cb129-4"></a><span class="kw">names</span>(new.coords)</span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="analysis-of-dalton-morphology.html#cb126-1"></a><span class="co"># subset landmark coordinates to produce mean shapes for hypothesis 4</span></span>
+<span id="cb126-2"><a href="analysis-of-dalton-morphology.html#cb126-2"></a>new.coords&lt;-<span class="kw">coords.subset</span>(<span class="dt">A =</span> Y.gpa<span class="op">$</span>coords, </span>
+<span id="cb126-3"><a href="analysis-of-dalton-morphology.html#cb126-3"></a>                          <span class="dt">group =</span> qdata<span class="op">$</span>bev.type)</span>
+<span id="cb126-4"><a href="analysis-of-dalton-morphology.html#cb126-4"></a><span class="kw">names</span>(new.coords)</span></code></pre></div>
 <pre><code>## [1] &quot;alternate&quot;            &quot;no.bevel&quot;             &quot;unifacial.bimarginal&quot;</code></pre>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="analysis-of-dalton-morphology.html#cb131-1"></a><span class="co"># group shape means</span></span>
-<span id="cb131-2"><a href="analysis-of-dalton-morphology.html#cb131-2"></a>mean &lt;-<span class="st"> </span><span class="kw">lapply</span>(new.coords, mshape)</span>
-<span id="cb131-3"><a href="analysis-of-dalton-morphology.html#cb131-3"></a></span>
-<span id="cb131-4"><a href="analysis-of-dalton-morphology.html#cb131-4"></a><span class="co"># plot mean shapes</span></span>
-<span id="cb131-5"><a href="analysis-of-dalton-morphology.html#cb131-5"></a><span class="kw">plot</span>(mean<span class="op">$</span>alternate)</span>
-<span id="cb131-6"><a href="analysis-of-dalton-morphology.html#cb131-6"></a><span class="kw">plot</span>(mean<span class="op">$</span>no.bevel)</span>
-<span id="cb131-7"><a href="analysis-of-dalton-morphology.html#cb131-7"></a><span class="kw">plot</span>(mean<span class="op">$</span>unifacial.bimarginal)</span>
-<span id="cb131-8"><a href="analysis-of-dalton-morphology.html#cb131-8"></a></span>
-<span id="cb131-9"><a href="analysis-of-dalton-morphology.html#cb131-9"></a><span class="co"># comparison plots</span></span>
-<span id="cb131-10"><a href="analysis-of-dalton-morphology.html#cb131-10"></a><span class="kw">plotRefToTarget</span>(mean<span class="op">$</span>alternate, </span>
-<span id="cb131-11"><a href="analysis-of-dalton-morphology.html#cb131-11"></a>                mean<span class="op">$</span>no.bevel, </span>
-<span id="cb131-12"><a href="analysis-of-dalton-morphology.html#cb131-12"></a>                <span class="dt">method=</span><span class="st">&quot;vector&quot;</span>,</span>
-<span id="cb131-13"><a href="analysis-of-dalton-morphology.html#cb131-13"></a>                <span class="dt">mag=</span><span class="dv">2</span>)</span>
-<span id="cb131-14"><a href="analysis-of-dalton-morphology.html#cb131-14"></a><span class="kw">plotRefToTarget</span>(mean<span class="op">$</span>alternate, </span>
-<span id="cb131-15"><a href="analysis-of-dalton-morphology.html#cb131-15"></a>                mean<span class="op">$</span>unifacial.bimarginal, </span>
-<span id="cb131-16"><a href="analysis-of-dalton-morphology.html#cb131-16"></a>                <span class="dt">method=</span><span class="st">&quot;vector&quot;</span>,</span>
-<span id="cb131-17"><a href="analysis-of-dalton-morphology.html#cb131-17"></a>                <span class="dt">mag=</span><span class="dv">2</span>)</span>
-<span id="cb131-18"><a href="analysis-of-dalton-morphology.html#cb131-18"></a><span class="kw">plotRefToTarget</span>(mean<span class="op">$</span>no.bevel, </span>
-<span id="cb131-19"><a href="analysis-of-dalton-morphology.html#cb131-19"></a>                mean<span class="op">$</span>unifacial.bimarginal, </span>
-<span id="cb131-20"><a href="analysis-of-dalton-morphology.html#cb131-20"></a>                <span class="dt">method=</span><span class="st">&quot;vector&quot;</span>,</span>
-<span id="cb131-21"><a href="analysis-of-dalton-morphology.html#cb131-21"></a>                <span class="dt">mag=</span><span class="dv">2</span>)</span>
-<span id="cb131-22"><a href="analysis-of-dalton-morphology.html#cb131-22"></a></span>
-<span id="cb131-23"><a href="analysis-of-dalton-morphology.html#cb131-23"></a><span class="co">##knitr::include_graphics(&#39;images/mshape.h4.jpg&#39;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="analysis-of-dalton-morphology.html#cb128-1"></a><span class="co"># group shape means</span></span>
+<span id="cb128-2"><a href="analysis-of-dalton-morphology.html#cb128-2"></a>mean &lt;-<span class="st"> </span><span class="kw">lapply</span>(new.coords, mshape)</span>
+<span id="cb128-3"><a href="analysis-of-dalton-morphology.html#cb128-3"></a></span>
+<span id="cb128-4"><a href="analysis-of-dalton-morphology.html#cb128-4"></a><span class="co"># plot mean shapes</span></span>
+<span id="cb128-5"><a href="analysis-of-dalton-morphology.html#cb128-5"></a><span class="kw">plot</span>(mean<span class="op">$</span>alternate)</span>
+<span id="cb128-6"><a href="analysis-of-dalton-morphology.html#cb128-6"></a><span class="kw">plot</span>(mean<span class="op">$</span>no.bevel)</span>
+<span id="cb128-7"><a href="analysis-of-dalton-morphology.html#cb128-7"></a><span class="kw">plot</span>(mean<span class="op">$</span>unifacial.bimarginal)</span>
+<span id="cb128-8"><a href="analysis-of-dalton-morphology.html#cb128-8"></a></span>
+<span id="cb128-9"><a href="analysis-of-dalton-morphology.html#cb128-9"></a><span class="co"># comparison plots</span></span>
+<span id="cb128-10"><a href="analysis-of-dalton-morphology.html#cb128-10"></a><span class="kw">plotRefToTarget</span>(mean<span class="op">$</span>alternate, </span>
+<span id="cb128-11"><a href="analysis-of-dalton-morphology.html#cb128-11"></a>                mean<span class="op">$</span>no.bevel, </span>
+<span id="cb128-12"><a href="analysis-of-dalton-morphology.html#cb128-12"></a>                <span class="dt">method=</span><span class="st">&quot;vector&quot;</span>,</span>
+<span id="cb128-13"><a href="analysis-of-dalton-morphology.html#cb128-13"></a>                <span class="dt">mag=</span><span class="dv">2</span>)</span>
+<span id="cb128-14"><a href="analysis-of-dalton-morphology.html#cb128-14"></a><span class="kw">plotRefToTarget</span>(mean<span class="op">$</span>alternate, </span>
+<span id="cb128-15"><a href="analysis-of-dalton-morphology.html#cb128-15"></a>                mean<span class="op">$</span>unifacial.bimarginal, </span>
+<span id="cb128-16"><a href="analysis-of-dalton-morphology.html#cb128-16"></a>                <span class="dt">method=</span><span class="st">&quot;vector&quot;</span>,</span>
+<span id="cb128-17"><a href="analysis-of-dalton-morphology.html#cb128-17"></a>                <span class="dt">mag=</span><span class="dv">2</span>)</span>
+<span id="cb128-18"><a href="analysis-of-dalton-morphology.html#cb128-18"></a><span class="kw">plotRefToTarget</span>(mean<span class="op">$</span>no.bevel, </span>
+<span id="cb128-19"><a href="analysis-of-dalton-morphology.html#cb128-19"></a>                mean<span class="op">$</span>unifacial.bimarginal, </span>
+<span id="cb128-20"><a href="analysis-of-dalton-morphology.html#cb128-20"></a>                <span class="dt">method=</span><span class="st">&quot;vector&quot;</span>,</span>
+<span id="cb128-21"><a href="analysis-of-dalton-morphology.html#cb128-21"></a>                <span class="dt">mag=</span><span class="dv">2</span>)</span>
+<span id="cb128-22"><a href="analysis-of-dalton-morphology.html#cb128-22"></a></span>
+<span id="cb128-23"><a href="analysis-of-dalton-morphology.html#cb128-23"></a><span class="co">##knitr::include_graphics(&#39;images/mshape.h4.jpg&#39;)</span></span></code></pre></div>
 </div>
 </div>
 <div id="morphological-integration" class="section level2">
 <h2><span class="header-section-number">4.10</span> Morphological integration</h2>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="analysis-of-dalton-morphology.html#cb132-1"></a><span class="co"># morphological integration::</span></span>
-<span id="cb132-2"><a href="analysis-of-dalton-morphology.html#cb132-2"></a><span class="co"># partition blade/base landmarks</span></span>
-<span id="cb132-3"><a href="analysis-of-dalton-morphology.html#cb132-3"></a>land.gps&lt;-<span class="kw">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,</span>
-<span id="cb132-4"><a href="analysis-of-dalton-morphology.html#cb132-4"></a>            <span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,</span>
-<span id="cb132-5"><a href="analysis-of-dalton-morphology.html#cb132-5"></a>            <span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,</span>
-<span id="cb132-6"><a href="analysis-of-dalton-morphology.html#cb132-6"></a>            <span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,</span>
-<span id="cb132-7"><a href="analysis-of-dalton-morphology.html#cb132-7"></a>            <span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>)</span>
-<span id="cb132-8"><a href="analysis-of-dalton-morphology.html#cb132-8"></a>it&lt;-<span class="kw">integration.test</span>(Y.gpa<span class="op">$</span>coords, </span>
-<span id="cb132-9"><a href="analysis-of-dalton-morphology.html#cb132-9"></a>                     <span class="dt">partition.gp =</span> land.gps, </span>
-<span id="cb132-10"><a href="analysis-of-dalton-morphology.html#cb132-10"></a>                     <span class="dt">iter =</span> <span class="dv">9999</span>, </span>
-<span id="cb132-11"><a href="analysis-of-dalton-morphology.html#cb132-11"></a>                     <span class="dt">print.progress =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb132-12"><a href="analysis-of-dalton-morphology.html#cb132-12"></a><span class="kw">summary</span>(it)</span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="analysis-of-dalton-morphology.html#cb129-1"></a><span class="co"># morphological integration::</span></span>
+<span id="cb129-2"><a href="analysis-of-dalton-morphology.html#cb129-2"></a><span class="co"># partition blade/base landmarks</span></span>
+<span id="cb129-3"><a href="analysis-of-dalton-morphology.html#cb129-3"></a>land.gps&lt;-<span class="kw">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,</span>
+<span id="cb129-4"><a href="analysis-of-dalton-morphology.html#cb129-4"></a>            <span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,</span>
+<span id="cb129-5"><a href="analysis-of-dalton-morphology.html#cb129-5"></a>            <span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,</span>
+<span id="cb129-6"><a href="analysis-of-dalton-morphology.html#cb129-6"></a>            <span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,</span>
+<span id="cb129-7"><a href="analysis-of-dalton-morphology.html#cb129-7"></a>            <span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>)</span>
+<span id="cb129-8"><a href="analysis-of-dalton-morphology.html#cb129-8"></a>it&lt;-<span class="kw">integration.test</span>(Y.gpa<span class="op">$</span>coords, </span>
+<span id="cb129-9"><a href="analysis-of-dalton-morphology.html#cb129-9"></a>                     <span class="dt">partition.gp =</span> land.gps, </span>
+<span id="cb129-10"><a href="analysis-of-dalton-morphology.html#cb129-10"></a>                     <span class="dt">iter =</span> <span class="dv">9999</span>, </span>
+<span id="cb129-11"><a href="analysis-of-dalton-morphology.html#cb129-11"></a>                     <span class="dt">print.progress =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb129-12"><a href="analysis-of-dalton-morphology.html#cb129-12"></a><span class="kw">summary</span>(it)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## integration.test(A = Y.gpa$coords, partition.gp = land.gps, iter = 9999,  
@@ -2247,14 +2411,14 @@ Figure 4.5: Boxplot of centroid size by bevel type.
 ## 
 ## 
 ## 
-## r-PLS: 0.9025
+## r-PLS: 0.9299
 ## 
 ## P-value: 1e-04
 ## 
-## Effect Size: 6.94866
+## Effect Size: 4.66235
 ## 
 ## Based on 10000 random permutations</code></pre>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="analysis-of-dalton-morphology.html#cb134-1"></a><span class="kw">plot</span>(it)</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="analysis-of-dalton-morphology.html#cb131-1"></a><span class="kw">plot</span>(it)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/morph.integ-1.png" width="100%" /></p>
 
 </div>

@@ -240,7 +240,7 @@ knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
 ```{r box1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by Heartland (in/out)."}
 # boxplot of Dalton point centroid size by in/out heartland
 csz.hrt <- ggplot(qdata, aes(x = heart, y = csz, color = heart)) + 
-  geom_boxplot(notch = TRUE) +
+  geom_boxplot() +
   geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize = 0.3) +
   scale_colour_manual(values = wes_palette("Moonrise2")) +
   theme(legend.position = "none") +
@@ -399,7 +399,7 @@ knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
 ```{r box2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by Heartland region."}
 # boxplot of Dalton point centroid size by heartland + regions
 csz.hreg <- ggplot(qdata, aes(x = hreg, y = csz, color = hreg)) + 
-  geom_boxplot(notch = TRUE) +
+  geom_boxplot() +
   geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize = 0.3) +
   scale_colour_manual(values = wes_palette("Moonrise2")) +
   theme(legend.position = "none") +
@@ -572,7 +572,7 @@ knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
 ```{r box3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by beveled."}
 # boxplot of Dalton point centroid size by beveled y/n
 csz.bev.1 <- ggplot(qdata, aes(x = bev.1, y = csz, color = bev.1)) + 
-  geom_boxplot(notch = TRUE) +
+  geom_boxplot() +
   geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize = 0.3) +
   scale_colour_manual(values = wes_palette("Moonrise2")) +
   theme(legend.position = "none") +
@@ -712,7 +712,7 @@ knitr::include_graphics('images/dalton-vizhypothesis4-1.jpg')
 ```{r box4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap = "Boxplot of centroid size by bevel type."}
 # boxplot of Dalton point centroid size by bevel type
 csz.bev.2 <- ggplot(qdata, aes(x = bev.2, y = csz, color = bev.2)) + 
-  geom_boxplot(notch = TRUE) +
+  geom_boxplot() +
   geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize = 0.3) +
   scale_colour_manual(values = wes_palette("Moonrise2")) +
   theme(legend.position = "none") +
