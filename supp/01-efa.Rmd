@@ -82,7 +82,13 @@ PCcontrib(pca.outlines,
           nax = 1:5)
 ```
 
-## Test Hypothesis 1 (Geo)
+## Test Hypothesis 1 (Geo EFA)
+
+Hypothesis 1 assesses whether there is a difference in the symmetric shape of Dalton points found in and out of the heartland.
+
+```{r lm3d3.a1.h1.efa, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 1 considers whether Dalton points discovered in (left) and out (right) of the Heartland differ in morphology."}
+knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
+```
 
 ### Mosaic (H1)
 
@@ -132,7 +138,13 @@ ms.1 <- MSHAPES(efa.outlines,
 plot_MSHAPES(ms.1, size = 0.75)
 ```
 
-## Test Hypothesis 2 (Geo)
+## Test Hypothesis 2 (Geo EFA)
+
+Hypothesis 2 assesses whether there is a difference in morphology for Dalton points found in the heartland, the interior, and the northern periphery.
+
+```{r lm3d3.a1.h2.efa, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 2 considers whether Dalton points discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology."}
+knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
+```
 
 ### Mosaic (H2)
 
@@ -184,7 +196,13 @@ ms.2 <- MSHAPES(efa.outlines,
 plot_MSHAPES(ms.2, size = 0.75)
 ```
 
-## Test Hypothesis 3 (Techno)
+## Test Hypothesis 3 (Techno EFA)
+
+Hypothesis 3 assesses whether there is a discernible difference in morphology for Dalton points that are beveled.
+
+```{r lm3d3.a1.h3.efa, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 3 considers whether beveled Dalton points (left) differ in morphology from those that are not beveled (right)."}
+knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
+```
 
 ### Mosaic (H3)
 
@@ -234,7 +252,13 @@ ms.3 <- MSHAPES(efa.outlines,
 plot_MSHAPES(ms.3, size = 0.75)
 ```
 
-## Test Hypothesis 4 (Techno)
+## Test Hypothesis 4 (Techno EFA)
+
+Hypothesis 4 assesses whether there is a discernible difference in the morphology of specific beveling types associated with Dalton points.
+
+```{r lm3d3.a1.h4.efa, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 4 considers whether discrete beveling practices articulate with differences in the morphology of Dalton points"}
+knitr::include_graphics('images/dalton-vizhypothesis4-1.jpg')
+```
 
 ### Mosaic (H4)
 
