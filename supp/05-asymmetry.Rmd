@@ -83,9 +83,13 @@ hreg <- qdata$heart.reg # heartland region
 bev.1 <- qdata$bev # beveled yes/no
 bev.2 <- qdata$bev.type # type of beveling
 
-# principal components analysis
-pca<-gm.prcomp(res.bilat$symm.shape)
+# principal components analysis (symmetric)
+pca <- gm.prcomp(res.bilat$symm.shape)
 summary(pca)
+
+# principal components analysis (asymmetric)
+pca.asymm <- gm.prcomp(res.bilat$asymm.shape)
+summary(pca.asymm)
 ```
 
 ## Define models
@@ -151,7 +155,7 @@ fit.shape.bev.2 <- procD.lm(shape ~ bev.2,
                            print.progress = FALSE, 
                            iter = 9999)
 
-# symmetric shape as a function of bev.2
+# asymmetric shape as a function of bev.2
 fit.shape.bev.2.asymm <- procD.lm(ashape ~ bev.2, 
                            data = gdf, 
                            print.progress = FALSE, 
@@ -170,7 +174,9 @@ knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
 
 ### Principal Components Analysis (H1)
 
-```{r pca.asymm.1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+#### PCA (symmetric)
+
+```{r pca.symm.1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # set plot parameters to plot by heartland in (H) and out (N)
 pch.gps.heart <- c(15,17)[as.factor(heart)]
 col.gps.heart <- wes_palette("Moonrise2")[as.factor(heart)]
@@ -184,36 +190,40 @@ pc.plot1 <- plot(pca,
                     shapeHulls(pc.plot1, 
                              groups = heart,
                              group.cols = col.hull)
+```
 
-  # mshape                              
-  M <- mshape(res.bilat$symm.shape)
-  # shapes at the minima and maxima of PC1 and PC2 using min and max
-  # corresponding to the x/y values in the four PC plots
-  pc <- pca$x[,1] # x-axis
-  preds <- shape.predictor(res.bilat$symm.shape,
-                           x = pc, Intercept = FALSE,
-                           pred1 = min(pc),
-                           pred2 = max(pc))
-  plotRefToTarget(M, preds$pred1) # minimum x-axis
-  plotRefToTarget(M, preds$pred2) # maximum x-axis
-  pc <- pca$x[,2] # y-axis
-  preds<-shape.predictor(res.bilat$symm.shape,
-                         x = pc, Intercept = FALSE,
-                         pred1 = min(pc),
-                         pred2 = max(pc))
-  plotRefToTarget(M, preds$pred1) # minimum y-axis
-  plotRefToTarget(M, preds$pred2) # maximum y-axis 
+#### PCA (asymmetric)
+
+```{r pca.asymm.1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# plot pca by heartland in (H) and out (N)
+pc.plot.asymm.1 <- plot(pca.asymm, 
+                 asp = 1,
+                 pch = pch.gps.heart,
+                 col = col.gps.heart)
+                    shapeHulls(pc.plot.asymm.1, 
+                             groups = heart,
+                             group.cols = col.hull)
 ```
 
 ### ANOVA
 
 ```{r h1.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # ANOVA: do symmetric dalton projectile point shapes differ by heart?
+## (are there differences in design intent?)
 anova(fit.shape.heart)
+```
 
-# ANOVA: do asymmetric dalton projectile point shapes differ by heart?
-anova(fit.shape.heart.asymm)
+### Morphological disparity
 
+```{r m-disparity, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# morphological disparity: do any of the groups display greater asymmetric 
+# shape variation among individuals relative to the other group?
+## (lesser/greater skill?)
+morphol.disparity(fit.shape.heart.asymm, 
+                  groups = qdata$heart.out, 
+                  data = gdf, 
+                  print.progress = FALSE, 
+                  iter = 9999)
 ```
 
 ## Test Hypothesis 2 (Geo Symm)
@@ -228,26 +238,42 @@ knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
 
 ### Principal Components Analysis (H2)
 
-```{r pca.asymm2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# set plot parameters to plot by heartland + regions
+#### PCA (symmetric)
+
+```{r pca.symm.2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# set plot parameters to plot by heartland + regions 
 pch.gps.hreg <- c(15,17,18)[as.factor(hreg)]
 col.gps.hreg <- wes_palette("Moonrise2")[as.factor(hreg)]
 col.hull.2 <- c("#798E87","#CCC591","#C27D38")
 
-# plot pca by heartland + regions
-pc.plot2 <- plot(pca, 
+# plot pca by heartland + regions (symmetric)
+pc.plot.2 <- plot(pca, 
                  asp = 1,
                  pch = pch.gps.hreg,
                  col = col.gps.hreg)
-                    shapeHulls(pc.plot2, 
+                    shapeHulls(pc.plot.2, 
                              groups = hreg,
                              group.cols = col.hull.2)
+```
+
+#### PCA (asymmetric)
+
+```{r pca.asymm.2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# plot pca by heartland + regions (asymmetric)
+pc.plot.asymm.2 <- plot(pca.asymm, 
+                   asp = 1,
+                   pch = pch.gps.hreg,
+                   col = col.gps.hreg)
+                    shapeHulls(pc.plot.asymm.2, 
+                               groups = hreg,
+                               group.cols = col.hull.2)
 ```
 
 ### ANOVA
 
 ```{r h2.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # ANOVA: does symmetric dalton projectile point shape differ by hreg?
+## (are there differences in design intent?)
 anova(fit.shape.hreg)
 # pairwise comparison of LS means = which differ?
 sh.hreg <- pairwise(fit.shape.hreg, 
@@ -255,15 +281,19 @@ sh.hreg <- pairwise(fit.shape.hreg,
 summary(sh.hreg, 
         confidence = 0.95, 
         test.type = "dist")
+```
 
-# ANOVA: does asymmetric dalton projectile point shape differ by hreg?
-anova(fit.shape.hreg.asymm)
-# pairwise comparison of LS means = which differ?
-sh.hreg <- pairwise(fit.shape.hreg.asymm, 
-                    groups = qdata$heart.reg)
-summary(sh.hreg, 
-        confidence = 0.95, 
-        test.type = "dist")
+### Morphological disparity
+
+```{r m-disparity.2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# morphological disparity: do any of the groups display greater asymmetric 
+# shape variation among individuals relative to the other group?
+## (lesser/greater skill?)
+morphol.disparity(fit.shape.hreg.asymm, 
+                  groups = qdata$heart.reg, 
+                  data = gdf, 
+                  print.progress = FALSE, 
+                  iter = 9999)
 ```
 
 ## Test Hypothesis 3 (Techno Symm)
@@ -278,13 +308,15 @@ knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
 
 ### Principal Components Analysis (H3)
 
-```{r pca.asymm3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+#### PCA (symmetric)
+
+```{r pca.symm.3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # set plot parameters to plot by beveled y and n
 pch.gps.bev.1 <- c(15,17)[as.factor(bev.1)]
 col.gps.bev.1 <- wes_palette("Moonrise2")[as.factor(bev.1)]
 col.hull.3 <- c("#C27D38","#798E87")
 
-# plot pca by heartland in (H) and out (N)
+# plot pca by heartland in (H) and out (N) (symmetric)
 pc.plot3 <- plot(pca, 
                  asp = 1,
                  pch = pch.gps.bev.1,
@@ -294,14 +326,38 @@ pc.plot3 <- plot(pca,
                              group.cols = col.hull.3)
 ```
 
+#### PCA (asymmetric)
+
+```{r pca.asymm.3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# plot pca by heartland in (H) and out (N) (asymmetric)
+pc.plot.asymm.3 <- plot(pca.asymm, 
+                   asp = 1,
+                   pch = pch.gps.bev.1,
+                   col = col.gps.bev.1)
+                      shapeHulls(pc.plot.asymm.3, 
+                               groups = bev.1,
+                               group.cols = col.hull.3)
+```
+
 ### ANOVA
 
 ```{r h3.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # ANOVA: do symmetric dalton projectile point shapes differ by beveling?
+## (are there differences in design intent?)
 anova(fit.shape.bev.1)
+```
 
-# ANOVA: do asymmetric dalton projectile point shapes differ by beveling?
-anova(fit.shape.bev.1.asymm)
+### Morphological disparity
+
+```{r m-disparity.3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# morphological disparity: do any of the groups display greater asymmetric 
+# shape variation among individuals relative to the other group?
+## (lesser/greater skill?)
+morphol.disparity(fit.shape.bev.1.asymm, 
+                  groups = qdata$bev, 
+                  data = gdf, 
+                  print.progress = FALSE, 
+                  iter = 9999)
 ```
 
 ## Test Hypothesis 4 (Techno Symm)
@@ -316,13 +372,15 @@ knitr::include_graphics('images/dalton-vizhypothesis4-1.jpg')
 
 ### Principal Components Analysis (H4)
 
-```{r pca.asymm4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+#### PCA (symmetric)
+
+```{r pca.symm4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # set plot parameters to plot by bevel type
 pch.gps.bev.2 <- c(15,17,18)[as.factor(bev.2)]
 col.gps.bev.2 <- wes_palette("Moonrise2")[as.factor(bev.2)]
 col.hull.4 <- c("#CCC591","#C27D38","#798E87")
 
-# plot pca by bevel type
+# plot pca by bevel type (symmetric)
 pc.plot4 <- plot(pca, 
                  asp = 1,
                  pch = pch.gps.bev.2,
@@ -332,10 +390,24 @@ pc.plot4 <- plot(pca,
                              group.cols = col.hull.4)
 ```
 
+#### PCA (asymmetric)
+
+```{r pca.asymm.4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# plot pca by bevel type (asymmetric)
+pc.plot.asymm.4 <- plot(pca.asymm, 
+                   asp = 1,
+                   pch = pch.gps.bev.2,
+                   col = col.gps.bev.2)
+                      shapeHulls(pc.plot.asymm.4, 
+                               groups = bev.2,
+                               group.cols = col.hull.4)
+```
+
 ### ANOVA
 
 ```{r h4.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # ANOVA: does symmetric dalton projectile point shape differ by bev.2?
+## (are there differences in design intent?)
 anova(fit.shape.bev.2)
 # pairwise comparison of LS means = which differ?
 sh.bev.2 <- pairwise(fit.shape.bev.2, 
@@ -343,13 +415,18 @@ sh.bev.2 <- pairwise(fit.shape.bev.2,
 summary(sh.bev.2, 
         confidence = 0.95, 
         test.type = "dist")
+```
 
-# ANOVA: does asymmetric dalton projectile point shape differ by bev.2?
-anova(fit.shape.bev.2.asymm)
-# pairwise comparison of LS means = which differ?
-sh.bev.2 <- pairwise(fit.shape.bev.2.asymm, 
-                    groups = qdata$bev.type)
-summary(sh.bev.2, 
-        confidence = 0.95, 
-        test.type = "dist")
+### Morphological disparity
+
+```{r m-disparity.4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# morphological disparity: do any of the groups display greater asymmetric 
+# shape variation among individuals relative to the other group?
+## (lesser/greater skill?)
+morphol.disparity(fit.shape.bev.2.asymm, 
+                  groups = qdata$bev.type, 
+                  data = gdf, 
+                  print.progress = FALSE, 
+                  iter = 9999)
+# end of code
 ```

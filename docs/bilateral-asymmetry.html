@@ -24,7 +24,7 @@
 <meta name="author" content="Robert Z. Selden, Jr." />
 
 
-<meta name="date" content="2020-09-29" />
+<meta name="date" content="2020-09-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -257,18 +257,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.5" data-path="bilateral-asymmetry.html"><a href="bilateral-asymmetry.html#test-hypothesis-1-geo-symm"><i class="fa fa-check"></i><b>5.5</b> Test Hypothesis 1 (Geo Symm)</a><ul>
 <li class="chapter" data-level="5.5.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h1"><i class="fa fa-check"></i><b>5.5.1</b> Principal Components Analysis (H1)</a></li>
 <li class="chapter" data-level="5.5.2" data-path="bilateral-asymmetry.html"><a href="bilateral-asymmetry.html#anova"><i class="fa fa-check"></i><b>5.5.2</b> ANOVA</a></li>
+<li class="chapter" data-level="5.5.3" data-path="bilateral-asymmetry.html"><a href="bilateral-asymmetry.html#morphological-disparity"><i class="fa fa-check"></i><b>5.5.3</b> Morphological disparity</a></li>
 </ul></li>
 <li class="chapter" data-level="5.6" data-path="bilateral-asymmetry.html"><a href="bilateral-asymmetry.html#test-hypothesis-2-geo-symm"><i class="fa fa-check"></i><b>5.6</b> Test Hypothesis 2 (Geo Symm)</a><ul>
 <li class="chapter" data-level="5.6.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h2"><i class="fa fa-check"></i><b>5.6.1</b> Principal Components Analysis (H2)</a></li>
 <li class="chapter" data-level="5.6.2" data-path="bilateral-asymmetry.html"><a href="bilateral-asymmetry.html#anova-1"><i class="fa fa-check"></i><b>5.6.2</b> ANOVA</a></li>
+<li class="chapter" data-level="5.6.3" data-path="bilateral-asymmetry.html"><a href="bilateral-asymmetry.html#morphological-disparity-1"><i class="fa fa-check"></i><b>5.6.3</b> Morphological disparity</a></li>
 </ul></li>
 <li class="chapter" data-level="5.7" data-path="bilateral-asymmetry.html"><a href="bilateral-asymmetry.html#test-hypothesis-3-techno-symm"><i class="fa fa-check"></i><b>5.7</b> Test Hypothesis 3 (Techno Symm)</a><ul>
 <li class="chapter" data-level="5.7.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h3"><i class="fa fa-check"></i><b>5.7.1</b> Principal Components Analysis (H3)</a></li>
 <li class="chapter" data-level="5.7.2" data-path="bilateral-asymmetry.html"><a href="bilateral-asymmetry.html#anova-2"><i class="fa fa-check"></i><b>5.7.2</b> ANOVA</a></li>
+<li class="chapter" data-level="5.7.3" data-path="bilateral-asymmetry.html"><a href="bilateral-asymmetry.html#morphological-disparity-2"><i class="fa fa-check"></i><b>5.7.3</b> Morphological disparity</a></li>
 </ul></li>
 <li class="chapter" data-level="5.8" data-path="bilateral-asymmetry.html"><a href="bilateral-asymmetry.html#test-hypothesis-4-techno-symm"><i class="fa fa-check"></i><b>5.8</b> Test Hypothesis 4 (Techno Symm)</a><ul>
 <li class="chapter" data-level="5.8.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h4"><i class="fa fa-check"></i><b>5.8.1</b> Principal Components Analysis (H4)</a></li>
 <li class="chapter" data-level="5.8.2" data-path="bilateral-asymmetry.html"><a href="bilateral-asymmetry.html#anova-3"><i class="fa fa-check"></i><b>5.8.2</b> ANOVA</a></li>
+<li class="chapter" data-level="5.8.3" data-path="bilateral-asymmetry.html"><a href="bilateral-asymmetry.html#morphological-disparity-3"><i class="fa fa-check"></i><b>5.8.3</b> Morphological disparity</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#references"><i class="fa fa-check"></i>References</a></li>
@@ -718,8 +722,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb239-12"><a href="bilateral-asymmetry.html#cb239-12"></a>bev<span class="fl">.1</span> &lt;-<span class="st"> </span>qdata<span class="op">$</span>bev <span class="co"># beveled yes/no</span></span>
 <span id="cb239-13"><a href="bilateral-asymmetry.html#cb239-13"></a>bev<span class="fl">.2</span> &lt;-<span class="st"> </span>qdata<span class="op">$</span>bev.type <span class="co"># type of beveling</span></span>
 <span id="cb239-14"><a href="bilateral-asymmetry.html#cb239-14"></a></span>
-<span id="cb239-15"><a href="bilateral-asymmetry.html#cb239-15"></a><span class="co"># principal components analysis</span></span>
-<span id="cb239-16"><a href="bilateral-asymmetry.html#cb239-16"></a>pca&lt;-<span class="kw">gm.prcomp</span>(res.bilat<span class="op">$</span>symm.shape)</span>
+<span id="cb239-15"><a href="bilateral-asymmetry.html#cb239-15"></a><span class="co"># principal components analysis (symmetric)</span></span>
+<span id="cb239-16"><a href="bilateral-asymmetry.html#cb239-16"></a>pca &lt;-<span class="st"> </span><span class="kw">gm.prcomp</span>(res.bilat<span class="op">$</span>symm.shape)</span>
 <span id="cb239-17"><a href="bilateral-asymmetry.html#cb239-17"></a><span class="kw">summary</span>(pca)</span></code></pre></div>
 <pre><code>## 
 ## Ordination type: Principal Component Analysis 
@@ -752,75 +756,109 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Eigenvalues            1.624204e-07 9.276129e-08 4.711254e-08 1.603986e-08 9.295655e-09 2.167403e-09 1.068737e-33
 ## Proportion of Variance 9.150414e-06 5.225971e-06 2.654219e-06 9.036514e-07 5.236972e-07 1.221068e-07 6.021032e-32
 ## Cumulative Proportion  9.999906e-01 9.999958e-01 9.999985e-01 9.999994e-01 9.999999e-01 1.000000e+00 1.000000e+00</code></pre>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="bilateral-asymmetry.html#cb241-1"></a><span class="co"># principal components analysis (asymmetric)</span></span>
+<span id="cb241-2"><a href="bilateral-asymmetry.html#cb241-2"></a>pca.asymm &lt;-<span class="st"> </span><span class="kw">gm.prcomp</span>(res.bilat<span class="op">$</span>asymm.shape)</span>
+<span id="cb241-3"><a href="bilateral-asymmetry.html#cb241-3"></a><span class="kw">summary</span>(pca.asymm)</span></code></pre></div>
+<pre><code>## 
+## Ordination type: Principal Component Analysis 
+## Centering and projection: OLS 
+## Number of observations 42 
+## Number of vectors 42 
+## 
+## Importance of Components:
+##                              Comp1        Comp2        Comp3        Comp4        Comp5       Comp6      Comp7
+## Eigenvalues            0.001437839 0.0007433406 0.0004594355 0.0003020858 0.0002047576 0.000172311 0.00013877
+## Proportion of Variance 0.365070978 0.1887360684 0.1166518460 0.0767003556 0.0519884788 0.043750189 0.03523405
+## Cumulative Proportion  0.365070978 0.5538070464 0.6704588924 0.7471592480 0.7991477269 0.842897916 0.87813196
+##                               Comp8        Comp9       Comp10       Comp11       Comp12       Comp13       Comp14
+## Eigenvalues            0.0001069855 7.981277e-05 5.496367e-05 0.0000453226 0.0000410865 3.505527e-05 3.113882e-05
+## Proportion of Variance 0.0271638968 2.026466e-02 1.395541e-02 0.0115075220 0.0104319668 8.900622e-03 7.906225e-03
+## Cumulative Proportion  0.9052958596 9.255605e-01 9.395159e-01 0.9510234605 0.9614554273 9.703560e-01 9.782623e-01
+##                              Comp15       Comp16       Comp17       Comp18       Comp19       Comp20       Comp21
+## Eigenvalues            1.928934e-05 1.743706e-05 1.281831e-05 9.709428e-06 8.606998e-06 6.988891e-06 4.491664e-06
+## Proportion of Variance 4.897612e-03 4.427314e-03 3.254602e-03 2.465248e-03 2.185339e-03 1.774497e-03 1.140445e-03
+## Cumulative Proportion  9.831599e-01 9.875872e-01 9.908418e-01 9.933071e-01 9.954924e-01 9.972669e-01 9.984073e-01
+##                              Comp22       Comp23       Comp24       Comp25       Comp26       Comp27       Comp28
+## Eigenvalues            2.668628e-06 1.501759e-06 9.628939e-07 5.153617e-07 2.014969e-07 1.992644e-07 7.027611e-08
+## Proportion of Variance 6.775714e-04 3.813003e-04 2.444812e-04 1.308516e-04 5.116057e-05 5.059373e-05 1.784328e-05
+## Cumulative Proportion  9.990849e-01 9.994662e-01 9.997107e-01 9.998415e-01 9.998927e-01 9.999433e-01 9.999611e-01
+##                              Comp29       Comp30       Comp31       Comp32       Comp33       Comp34       Comp35
+## Eigenvalues            5.723627e-08 2.725512e-08 2.531305e-08 1.587685e-08 1.218187e-08 6.212028e-09 3.362596e-09
+## Proportion of Variance 1.453243e-05 6.920143e-06 6.427048e-06 4.031171e-06 3.093009e-06 1.577250e-06 8.537716e-07
+## Cumulative Proportion  9.999757e-01 9.999826e-01 9.999890e-01 9.999930e-01 9.999961e-01 9.999977e-01 9.999986e-01
+##                              Comp36       Comp37       Comp38       Comp39       Comp40       Comp41       Comp42
+## Eigenvalues            2.486841e-09 1.452584e-09 8.905458e-10 4.612056e-10 3.427086e-10 3.918817e-12 1.439731e-33
+## Proportion of Variance 6.314151e-07 3.688149e-07 2.261118e-07 1.171013e-07 8.701457e-08 9.949974e-10 3.655513e-31
+## Cumulative Proportion  9.999992e-01 9.999996e-01 9.999998e-01 9.999999e-01 1.000000e+00 1.000000e+00 1.000000e+00</code></pre>
 </div>
 <div id="define-models" class="section level2">
 <h2><span class="header-section-number">5.4</span> Define models</h2>
 <div id="hypothesis-1" class="section level3">
 <h3><span class="header-section-number">5.4.1</span> Hypothesis 1</h3>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="bilateral-asymmetry.html#cb241-1"></a><span class="co">## Define models</span></span>
-<span id="cb241-2"><a href="bilateral-asymmetry.html#cb241-2"></a><span class="co"># symmetric shape as a function of heart</span></span>
-<span id="cb241-3"><a href="bilateral-asymmetry.html#cb241-3"></a>fit.shape.heart &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>heart, </span>
-<span id="cb241-4"><a href="bilateral-asymmetry.html#cb241-4"></a>                            <span class="dt">data =</span> gdf, </span>
-<span id="cb241-5"><a href="bilateral-asymmetry.html#cb241-5"></a>                            <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb241-6"><a href="bilateral-asymmetry.html#cb241-6"></a>                            <span class="dt">iter =</span> <span class="dv">9999</span>)</span>
-<span id="cb241-7"><a href="bilateral-asymmetry.html#cb241-7"></a></span>
-<span id="cb241-8"><a href="bilateral-asymmetry.html#cb241-8"></a><span class="co"># asymmetric shape as a function of heart</span></span>
-<span id="cb241-9"><a href="bilateral-asymmetry.html#cb241-9"></a>fit.shape.heart.asymm &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(ashape <span class="op">~</span><span class="st"> </span>heart, </span>
-<span id="cb241-10"><a href="bilateral-asymmetry.html#cb241-10"></a>                            <span class="dt">data =</span> gdf, </span>
-<span id="cb241-11"><a href="bilateral-asymmetry.html#cb241-11"></a>                            <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb241-12"><a href="bilateral-asymmetry.html#cb241-12"></a>                            <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="bilateral-asymmetry.html#cb243-1"></a><span class="co">## Define models</span></span>
+<span id="cb243-2"><a href="bilateral-asymmetry.html#cb243-2"></a><span class="co"># symmetric shape as a function of heart</span></span>
+<span id="cb243-3"><a href="bilateral-asymmetry.html#cb243-3"></a>fit.shape.heart &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>heart, </span>
+<span id="cb243-4"><a href="bilateral-asymmetry.html#cb243-4"></a>                            <span class="dt">data =</span> gdf, </span>
+<span id="cb243-5"><a href="bilateral-asymmetry.html#cb243-5"></a>                            <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb243-6"><a href="bilateral-asymmetry.html#cb243-6"></a>                            <span class="dt">iter =</span> <span class="dv">9999</span>)</span>
+<span id="cb243-7"><a href="bilateral-asymmetry.html#cb243-7"></a></span>
+<span id="cb243-8"><a href="bilateral-asymmetry.html#cb243-8"></a><span class="co"># asymmetric shape as a function of heart</span></span>
+<span id="cb243-9"><a href="bilateral-asymmetry.html#cb243-9"></a>fit.shape.heart.asymm &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(ashape <span class="op">~</span><span class="st"> </span>heart, </span>
+<span id="cb243-10"><a href="bilateral-asymmetry.html#cb243-10"></a>                            <span class="dt">data =</span> gdf, </span>
+<span id="cb243-11"><a href="bilateral-asymmetry.html#cb243-11"></a>                            <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb243-12"><a href="bilateral-asymmetry.html#cb243-12"></a>                            <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 </div>
 <div id="hypothesis-2" class="section level3">
 <h3><span class="header-section-number">5.4.2</span> Hypothesis 2</h3>
-<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="bilateral-asymmetry.html#cb242-1"></a><span class="co">## Define models</span></span>
-<span id="cb242-2"><a href="bilateral-asymmetry.html#cb242-2"></a><span class="co"># symmetric shape as a function of hreg</span></span>
-<span id="cb242-3"><a href="bilateral-asymmetry.html#cb242-3"></a>fit.shape.hreg &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>hreg, </span>
-<span id="cb242-4"><a href="bilateral-asymmetry.html#cb242-4"></a>                           <span class="dt">data =</span> gdf, </span>
-<span id="cb242-5"><a href="bilateral-asymmetry.html#cb242-5"></a>                           <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb242-6"><a href="bilateral-asymmetry.html#cb242-6"></a>                           <span class="dt">iter =</span> <span class="dv">9999</span>)</span>
-<span id="cb242-7"><a href="bilateral-asymmetry.html#cb242-7"></a></span>
-<span id="cb242-8"><a href="bilateral-asymmetry.html#cb242-8"></a><span class="co"># asymmetric shape as a function of hreg</span></span>
-<span id="cb242-9"><a href="bilateral-asymmetry.html#cb242-9"></a>fit.shape.hreg.asymm &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(ashape <span class="op">~</span><span class="st"> </span>hreg, </span>
-<span id="cb242-10"><a href="bilateral-asymmetry.html#cb242-10"></a>                           <span class="dt">data =</span> gdf, </span>
-<span id="cb242-11"><a href="bilateral-asymmetry.html#cb242-11"></a>                           <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb242-12"><a href="bilateral-asymmetry.html#cb242-12"></a>                           <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
-</div>
-<div id="hypothesis-3" class="section level3">
-<h3><span class="header-section-number">5.4.3</span> Hypothesis 3</h3>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="bilateral-asymmetry.html#cb243-1"></a><span class="co">## Define models</span></span>
-<span id="cb243-2"><a href="bilateral-asymmetry.html#cb243-2"></a><span class="co"># symmetric shape as a function of bev.1</span></span>
-<span id="cb243-3"><a href="bilateral-asymmetry.html#cb243-3"></a>fit.shape.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>bev<span class="fl">.1</span>, </span>
-<span id="cb243-4"><a href="bilateral-asymmetry.html#cb243-4"></a>                           <span class="dt">data =</span> gdf, </span>
-<span id="cb243-5"><a href="bilateral-asymmetry.html#cb243-5"></a>                           <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb243-6"><a href="bilateral-asymmetry.html#cb243-6"></a>                           <span class="dt">iter =</span> <span class="dv">9999</span>)</span>
-<span id="cb243-7"><a href="bilateral-asymmetry.html#cb243-7"></a></span>
-<span id="cb243-8"><a href="bilateral-asymmetry.html#cb243-8"></a><span class="co"># asymmetric shape as a function of bev.1</span></span>
-<span id="cb243-9"><a href="bilateral-asymmetry.html#cb243-9"></a>fit.shape.bev.<span class="fl">1.</span>asymm &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(ashape <span class="op">~</span><span class="st"> </span>bev<span class="fl">.1</span>, </span>
-<span id="cb243-10"><a href="bilateral-asymmetry.html#cb243-10"></a>                           <span class="dt">data =</span> gdf, </span>
-<span id="cb243-11"><a href="bilateral-asymmetry.html#cb243-11"></a>                           <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
-<span id="cb243-12"><a href="bilateral-asymmetry.html#cb243-12"></a>                           <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
-</div>
-<div id="hypothesis-4" class="section level3">
-<h3><span class="header-section-number">5.4.4</span> Hypothesis 4</h3>
 <div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="bilateral-asymmetry.html#cb244-1"></a><span class="co">## Define models</span></span>
-<span id="cb244-2"><a href="bilateral-asymmetry.html#cb244-2"></a><span class="co"># symmetric shape as a function of bev.2</span></span>
-<span id="cb244-3"><a href="bilateral-asymmetry.html#cb244-3"></a>fit.shape.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>bev<span class="fl">.2</span>, </span>
+<span id="cb244-2"><a href="bilateral-asymmetry.html#cb244-2"></a><span class="co"># symmetric shape as a function of hreg</span></span>
+<span id="cb244-3"><a href="bilateral-asymmetry.html#cb244-3"></a>fit.shape.hreg &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>hreg, </span>
 <span id="cb244-4"><a href="bilateral-asymmetry.html#cb244-4"></a>                           <span class="dt">data =</span> gdf, </span>
 <span id="cb244-5"><a href="bilateral-asymmetry.html#cb244-5"></a>                           <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
 <span id="cb244-6"><a href="bilateral-asymmetry.html#cb244-6"></a>                           <span class="dt">iter =</span> <span class="dv">9999</span>)</span>
 <span id="cb244-7"><a href="bilateral-asymmetry.html#cb244-7"></a></span>
-<span id="cb244-8"><a href="bilateral-asymmetry.html#cb244-8"></a><span class="co"># symmetric shape as a function of bev.2</span></span>
-<span id="cb244-9"><a href="bilateral-asymmetry.html#cb244-9"></a>fit.shape.bev.<span class="fl">2.</span>asymm &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(ashape <span class="op">~</span><span class="st"> </span>bev<span class="fl">.2</span>, </span>
+<span id="cb244-8"><a href="bilateral-asymmetry.html#cb244-8"></a><span class="co"># asymmetric shape as a function of hreg</span></span>
+<span id="cb244-9"><a href="bilateral-asymmetry.html#cb244-9"></a>fit.shape.hreg.asymm &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(ashape <span class="op">~</span><span class="st"> </span>hreg, </span>
 <span id="cb244-10"><a href="bilateral-asymmetry.html#cb244-10"></a>                           <span class="dt">data =</span> gdf, </span>
 <span id="cb244-11"><a href="bilateral-asymmetry.html#cb244-11"></a>                           <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
 <span id="cb244-12"><a href="bilateral-asymmetry.html#cb244-12"></a>                           <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+</div>
+<div id="hypothesis-3" class="section level3">
+<h3><span class="header-section-number">5.4.3</span> Hypothesis 3</h3>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="bilateral-asymmetry.html#cb245-1"></a><span class="co">## Define models</span></span>
+<span id="cb245-2"><a href="bilateral-asymmetry.html#cb245-2"></a><span class="co"># symmetric shape as a function of bev.1</span></span>
+<span id="cb245-3"><a href="bilateral-asymmetry.html#cb245-3"></a>fit.shape.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>bev<span class="fl">.1</span>, </span>
+<span id="cb245-4"><a href="bilateral-asymmetry.html#cb245-4"></a>                           <span class="dt">data =</span> gdf, </span>
+<span id="cb245-5"><a href="bilateral-asymmetry.html#cb245-5"></a>                           <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb245-6"><a href="bilateral-asymmetry.html#cb245-6"></a>                           <span class="dt">iter =</span> <span class="dv">9999</span>)</span>
+<span id="cb245-7"><a href="bilateral-asymmetry.html#cb245-7"></a></span>
+<span id="cb245-8"><a href="bilateral-asymmetry.html#cb245-8"></a><span class="co"># asymmetric shape as a function of bev.1</span></span>
+<span id="cb245-9"><a href="bilateral-asymmetry.html#cb245-9"></a>fit.shape.bev.<span class="fl">1.</span>asymm &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(ashape <span class="op">~</span><span class="st"> </span>bev<span class="fl">.1</span>, </span>
+<span id="cb245-10"><a href="bilateral-asymmetry.html#cb245-10"></a>                           <span class="dt">data =</span> gdf, </span>
+<span id="cb245-11"><a href="bilateral-asymmetry.html#cb245-11"></a>                           <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb245-12"><a href="bilateral-asymmetry.html#cb245-12"></a>                           <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+</div>
+<div id="hypothesis-4" class="section level3">
+<h3><span class="header-section-number">5.4.4</span> Hypothesis 4</h3>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="bilateral-asymmetry.html#cb246-1"></a><span class="co">## Define models</span></span>
+<span id="cb246-2"><a href="bilateral-asymmetry.html#cb246-2"></a><span class="co"># symmetric shape as a function of bev.2</span></span>
+<span id="cb246-3"><a href="bilateral-asymmetry.html#cb246-3"></a>fit.shape.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>bev<span class="fl">.2</span>, </span>
+<span id="cb246-4"><a href="bilateral-asymmetry.html#cb246-4"></a>                           <span class="dt">data =</span> gdf, </span>
+<span id="cb246-5"><a href="bilateral-asymmetry.html#cb246-5"></a>                           <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb246-6"><a href="bilateral-asymmetry.html#cb246-6"></a>                           <span class="dt">iter =</span> <span class="dv">9999</span>)</span>
+<span id="cb246-7"><a href="bilateral-asymmetry.html#cb246-7"></a></span>
+<span id="cb246-8"><a href="bilateral-asymmetry.html#cb246-8"></a><span class="co"># asymmetric shape as a function of bev.2</span></span>
+<span id="cb246-9"><a href="bilateral-asymmetry.html#cb246-9"></a>fit.shape.bev.<span class="fl">2.</span>asymm &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(ashape <span class="op">~</span><span class="st"> </span>bev<span class="fl">.2</span>, </span>
+<span id="cb246-10"><a href="bilateral-asymmetry.html#cb246-10"></a>                           <span class="dt">data =</span> gdf, </span>
+<span id="cb246-11"><a href="bilateral-asymmetry.html#cb246-11"></a>                           <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb246-12"><a href="bilateral-asymmetry.html#cb246-12"></a>                           <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="test-hypothesis-1-geo-symm" class="section level2">
 <h2><span class="header-section-number">5.5</span> Test Hypothesis 1 (Geo Symm)</h2>
 <p>Hypothesis 1 assesses whether there is a difference in the symmetric shape of Dalton points found in and out of the heartland.</p>
 <p>A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs <span class="citation">(Adams and Collyer <a href="#ref-RN1655" role="doc-biblioref">2015</a>; Collyer and Adams <a href="#ref-RN11775" role="doc-biblioref">2018</a>)</span>, which has higher statistical power and a greater ability to identify patterns in the data should they be present <span class="citation">(Anderson and Ter Braak <a href="#ref-RN1719" role="doc-biblioref">2003</a>)</span>. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs <span class="citation">(Goodall <a href="#ref-RN1749" role="doc-biblioref">1991</a>)</span> were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions <span class="citation">(Collyer, Sekora, and Adams <a href="#ref-RN1756" role="doc-biblioref">2015</a>)</span>.</p>
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="bilateral-asymmetry.html#cb245-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis1.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="bilateral-asymmetry.html#cb247-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis1.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis1.jpg" alt="Hypothesis 1 considers whether Dalton points discovered in (left) and out (right) of the Heartland differ in morphology." width="100%" />
 <p class="caption">
@@ -829,47 +867,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="principal-components-analysis-h1" class="section level3">
 <h3><span class="header-section-number">5.5.1</span> Principal Components Analysis (H1)</h3>
-<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="bilateral-asymmetry.html#cb246-1"></a><span class="co"># set plot parameters to plot by heartland in (H) and out (N)</span></span>
-<span id="cb246-2"><a href="bilateral-asymmetry.html#cb246-2"></a>pch.gps.heart &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="kw">as.factor</span>(heart)]</span>
-<span id="cb246-3"><a href="bilateral-asymmetry.html#cb246-3"></a>col.gps.heart &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(heart)]</span>
-<span id="cb246-4"><a href="bilateral-asymmetry.html#cb246-4"></a>col.hull &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
-<span id="cb246-5"><a href="bilateral-asymmetry.html#cb246-5"></a></span>
-<span id="cb246-6"><a href="bilateral-asymmetry.html#cb246-6"></a><span class="co"># plot pca by heartland in (H) and out (N)</span></span>
-<span id="cb246-7"><a href="bilateral-asymmetry.html#cb246-7"></a>pc.plot1 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
-<span id="cb246-8"><a href="bilateral-asymmetry.html#cb246-8"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb246-9"><a href="bilateral-asymmetry.html#cb246-9"></a>                 <span class="dt">pch =</span> pch.gps.heart,</span>
-<span id="cb246-10"><a href="bilateral-asymmetry.html#cb246-10"></a>                 <span class="dt">col =</span> col.gps.heart)</span>
-<span id="cb246-11"><a href="bilateral-asymmetry.html#cb246-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot1, </span>
-<span id="cb246-12"><a href="bilateral-asymmetry.html#cb246-12"></a>                             <span class="dt">groups =</span> heart,</span>
-<span id="cb246-13"><a href="bilateral-asymmetry.html#cb246-13"></a>                             <span class="dt">group.cols =</span> col.hull)</span></code></pre></div>
+<div id="pca-symmetric" class="section level4">
+<h4><span class="header-section-number">5.5.1.1</span> PCA (symmetric)</h4>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="bilateral-asymmetry.html#cb248-1"></a><span class="co"># set plot parameters to plot by heartland in (H) and out (N)</span></span>
+<span id="cb248-2"><a href="bilateral-asymmetry.html#cb248-2"></a>pch.gps.heart &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="kw">as.factor</span>(heart)]</span>
+<span id="cb248-3"><a href="bilateral-asymmetry.html#cb248-3"></a>col.gps.heart &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(heart)]</span>
+<span id="cb248-4"><a href="bilateral-asymmetry.html#cb248-4"></a>col.hull &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
+<span id="cb248-5"><a href="bilateral-asymmetry.html#cb248-5"></a></span>
+<span id="cb248-6"><a href="bilateral-asymmetry.html#cb248-6"></a><span class="co"># plot pca by heartland in (H) and out (N)</span></span>
+<span id="cb248-7"><a href="bilateral-asymmetry.html#cb248-7"></a>pc.plot1 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
+<span id="cb248-8"><a href="bilateral-asymmetry.html#cb248-8"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb248-9"><a href="bilateral-asymmetry.html#cb248-9"></a>                 <span class="dt">pch =</span> pch.gps.heart,</span>
+<span id="cb248-10"><a href="bilateral-asymmetry.html#cb248-10"></a>                 <span class="dt">col =</span> col.gps.heart)</span>
+<span id="cb248-11"><a href="bilateral-asymmetry.html#cb248-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot1, </span>
+<span id="cb248-12"><a href="bilateral-asymmetry.html#cb248-12"></a>                             <span class="dt">groups =</span> heart,</span>
+<span id="cb248-13"><a href="bilateral-asymmetry.html#cb248-13"></a>                             <span class="dt">group.cols =</span> col.hull)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/pca.symm.1-1.png" width="100%" /></p>
+</div>
+<div id="pca-asymmetric" class="section level4">
+<h4><span class="header-section-number">5.5.1.2</span> PCA (asymmetric)</h4>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="bilateral-asymmetry.html#cb249-1"></a><span class="co"># plot pca by heartland in (H) and out (N)</span></span>
+<span id="cb249-2"><a href="bilateral-asymmetry.html#cb249-2"></a>pc.plot.asymm<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">plot</span>(pca.asymm, </span>
+<span id="cb249-3"><a href="bilateral-asymmetry.html#cb249-3"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb249-4"><a href="bilateral-asymmetry.html#cb249-4"></a>                 <span class="dt">pch =</span> pch.gps.heart,</span>
+<span id="cb249-5"><a href="bilateral-asymmetry.html#cb249-5"></a>                 <span class="dt">col =</span> col.gps.heart)</span>
+<span id="cb249-6"><a href="bilateral-asymmetry.html#cb249-6"></a>                    <span class="kw">shapeHulls</span>(pc.plot.asymm<span class="fl">.1</span>, </span>
+<span id="cb249-7"><a href="bilateral-asymmetry.html#cb249-7"></a>                             <span class="dt">groups =</span> heart,</span>
+<span id="cb249-8"><a href="bilateral-asymmetry.html#cb249-8"></a>                             <span class="dt">group.cols =</span> col.hull)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.asymm.1-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="bilateral-asymmetry.html#cb247-1"></a>  <span class="co"># mshape                              </span></span>
-<span id="cb247-2"><a href="bilateral-asymmetry.html#cb247-2"></a>  M &lt;-<span class="st"> </span><span class="kw">mshape</span>(res.bilat<span class="op">$</span>symm.shape)</span>
-<span id="cb247-3"><a href="bilateral-asymmetry.html#cb247-3"></a>  <span class="co"># shapes at the minima and maxima of PC1 and PC2 using min and max</span></span>
-<span id="cb247-4"><a href="bilateral-asymmetry.html#cb247-4"></a>  <span class="co"># corresponding to the x/y values in the four PC plots</span></span>
-<span id="cb247-5"><a href="bilateral-asymmetry.html#cb247-5"></a>  pc &lt;-<span class="st"> </span>pca<span class="op">$</span>x[,<span class="dv">1</span>] <span class="co"># x-axis</span></span>
-<span id="cb247-6"><a href="bilateral-asymmetry.html#cb247-6"></a>  preds &lt;-<span class="st"> </span><span class="kw">shape.predictor</span>(res.bilat<span class="op">$</span>symm.shape,</span>
-<span id="cb247-7"><a href="bilateral-asymmetry.html#cb247-7"></a>                           <span class="dt">x =</span> pc, <span class="dt">Intercept =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb247-8"><a href="bilateral-asymmetry.html#cb247-8"></a>                           <span class="dt">pred1 =</span> <span class="kw">min</span>(pc),</span>
-<span id="cb247-9"><a href="bilateral-asymmetry.html#cb247-9"></a>                           <span class="dt">pred2 =</span> <span class="kw">max</span>(pc))</span>
-<span id="cb247-10"><a href="bilateral-asymmetry.html#cb247-10"></a>  <span class="kw">plotRefToTarget</span>(M, preds<span class="op">$</span>pred1) <span class="co"># minimum x-axis</span></span></code></pre></div>
-<p><img src="dalton.supp_files/figure-html/pca.asymm.1-2.png" width="100%" /></p>
-<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="bilateral-asymmetry.html#cb248-1"></a>  <span class="kw">plotRefToTarget</span>(M, preds<span class="op">$</span>pred2) <span class="co"># maximum x-axis</span></span></code></pre></div>
-<p><img src="dalton.supp_files/figure-html/pca.asymm.1-3.png" width="100%" /></p>
-<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="bilateral-asymmetry.html#cb249-1"></a>  pc &lt;-<span class="st"> </span>pca<span class="op">$</span>x[,<span class="dv">2</span>] <span class="co"># y-axis</span></span>
-<span id="cb249-2"><a href="bilateral-asymmetry.html#cb249-2"></a>  preds&lt;-<span class="kw">shape.predictor</span>(res.bilat<span class="op">$</span>symm.shape,</span>
-<span id="cb249-3"><a href="bilateral-asymmetry.html#cb249-3"></a>                         <span class="dt">x =</span> pc, <span class="dt">Intercept =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb249-4"><a href="bilateral-asymmetry.html#cb249-4"></a>                         <span class="dt">pred1 =</span> <span class="kw">min</span>(pc),</span>
-<span id="cb249-5"><a href="bilateral-asymmetry.html#cb249-5"></a>                         <span class="dt">pred2 =</span> <span class="kw">max</span>(pc))</span>
-<span id="cb249-6"><a href="bilateral-asymmetry.html#cb249-6"></a>  <span class="kw">plotRefToTarget</span>(M, preds<span class="op">$</span>pred1) <span class="co"># minimum y-axis</span></span></code></pre></div>
-<p><img src="dalton.supp_files/figure-html/pca.asymm.1-4.png" width="100%" /></p>
-<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="bilateral-asymmetry.html#cb250-1"></a>  <span class="kw">plotRefToTarget</span>(M, preds<span class="op">$</span>pred2) <span class="co"># maximum y-axis </span></span></code></pre></div>
-<p><img src="dalton.supp_files/figure-html/pca.asymm.1-5.png" width="100%" /></p>
+</div>
 </div>
 <div id="anova" class="section level3">
 <h3><span class="header-section-number">5.5.2</span> ANOVA</h3>
-<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="bilateral-asymmetry.html#cb251-1"></a><span class="co"># ANOVA: do symmetric dalton projectile point shapes differ by heart?</span></span>
-<span id="cb251-2"><a href="bilateral-asymmetry.html#cb251-2"></a><span class="kw">anova</span>(fit.shape.heart)</span></code></pre></div>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="bilateral-asymmetry.html#cb250-1"></a><span class="co"># ANOVA: do symmetric dalton projectile point shapes differ by heart?</span></span>
+<span id="cb250-2"><a href="bilateral-asymmetry.html#cb250-2"></a><span class="co">## (are there differences in design intent?)</span></span>
+<span id="cb250-3"><a href="bilateral-asymmetry.html#cb250-3"></a><span class="kw">anova</span>(fit.shape.heart)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -886,31 +918,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = shape ~ heart, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="bilateral-asymmetry.html#cb253-1"></a><span class="co"># ANOVA: do asymmetric dalton projectile point shapes differ by heart?</span></span>
-<span id="cb253-2"><a href="bilateral-asymmetry.html#cb253-2"></a><span class="kw">anova</span>(fit.shape.heart.asymm)</span></code></pre></div>
+</div>
+<div id="morphological-disparity" class="section level3">
+<h3><span class="header-section-number">5.5.3</span> Morphological disparity</h3>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="bilateral-asymmetry.html#cb252-1"></a><span class="co"># morphological disparity: do any of the groups display greater asymmetric </span></span>
+<span id="cb252-2"><a href="bilateral-asymmetry.html#cb252-2"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
+<span id="cb252-3"><a href="bilateral-asymmetry.html#cb252-3"></a><span class="co">## (lesser/greater skill?)</span></span>
+<span id="cb252-4"><a href="bilateral-asymmetry.html#cb252-4"></a><span class="kw">morphol.disparity</span>(fit.shape.heart.asymm, </span>
+<span id="cb252-5"><a href="bilateral-asymmetry.html#cb252-5"></a>                  <span class="dt">groups =</span> qdata<span class="op">$</span>heart.out, </span>
+<span id="cb252-6"><a href="bilateral-asymmetry.html#cb252-6"></a>                  <span class="dt">data =</span> gdf, </span>
+<span id="cb252-7"><a href="bilateral-asymmetry.html#cb252-7"></a>                  <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb252-8"><a href="bilateral-asymmetry.html#cb252-8"></a>                  <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 <pre><code>## 
-## Analysis of Variance, using Residual Randomization
-## Permutation procedure: Randomization of null model residuals 
-## Number of permutations: 10000 
-## Estimation method: Ordinary Least Squares 
-## Sums of Squares and Cross-products: Type I 
-## Effect sizes (Z) based on F distributions
+## Call:
+## morphol.disparity(f1 = fit.shape.heart.asymm, groups = qdata$heart.out,  
+##     iter = 9999, data = gdf, print.progress = FALSE) 
 ## 
-##           Df       SS        MS     Rsq      F      Z Pr(&gt;F)  
-## heart      1 0.006329 0.0063290 0.06248 2.6657 1.8467 0.0285 *
-## Residuals 40 0.094970 0.0023742 0.93752                       
-## Total     41 0.101299                                         
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Call: procD.lm(f1 = ashape ~ heart, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
+## 
+## Randomized Residual Permutation Procedure Used
+## 10000 Permutations
+## 
+## Procrustes variances for defined groups
+##           H           N 
+## 0.001943695 0.002549807 
+## 
+## 
+## Pairwise absolute differences between variances
+##             H           N
+## H 0.000000000 0.000606112
+## N 0.000606112 0.000000000
+## 
+## 
+## P-Values
+##       H     N
+## H 1.000 0.344
+## N 0.344 1.000</code></pre>
 </div>
 </div>
 <div id="test-hypothesis-2-geo-symm" class="section level2">
 <h2><span class="header-section-number">5.6</span> Test Hypothesis 2 (Geo Symm)</h2>
 <p>Hypothesis 2 assesses whether there is a difference in morphology for Dalton points found in the heartland, the interior, and the northern periphery.</p>
 <p>A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs <span class="citation">(Adams and Collyer <a href="#ref-RN1655" role="doc-biblioref">2015</a>; Collyer and Adams <a href="#ref-RN11775" role="doc-biblioref">2018</a>)</span>, which has higher statistical power and a greater ability to identify patterns in the data should they be present <span class="citation">(Anderson and Ter Braak <a href="#ref-RN1719" role="doc-biblioref">2003</a>)</span>. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs <span class="citation">(Goodall <a href="#ref-RN1749" role="doc-biblioref">1991</a>)</span> were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions <span class="citation">(Collyer, Sekora, and Adams <a href="#ref-RN1756" role="doc-biblioref">2015</a>)</span>.</p>
-<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="bilateral-asymmetry.html#cb255-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis2.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="bilateral-asymmetry.html#cb254-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis2.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis2.jpg" alt="Hypothesis 2 considers whether Dalton points discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology." width="100%" />
 <p class="caption">
@@ -919,25 +969,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="principal-components-analysis-h2" class="section level3">
 <h3><span class="header-section-number">5.6.1</span> Principal Components Analysis (H2)</h3>
-<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="bilateral-asymmetry.html#cb256-1"></a><span class="co"># set plot parameters to plot by heartland + regions</span></span>
-<span id="cb256-2"><a href="bilateral-asymmetry.html#cb256-2"></a>pch.gps.hreg &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="kw">as.factor</span>(hreg)]</span>
-<span id="cb256-3"><a href="bilateral-asymmetry.html#cb256-3"></a>col.gps.hreg &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(hreg)]</span>
-<span id="cb256-4"><a href="bilateral-asymmetry.html#cb256-4"></a>col.hull<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
-<span id="cb256-5"><a href="bilateral-asymmetry.html#cb256-5"></a></span>
-<span id="cb256-6"><a href="bilateral-asymmetry.html#cb256-6"></a><span class="co"># plot pca by heartland + regions</span></span>
-<span id="cb256-7"><a href="bilateral-asymmetry.html#cb256-7"></a>pc.plot2 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
-<span id="cb256-8"><a href="bilateral-asymmetry.html#cb256-8"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb256-9"><a href="bilateral-asymmetry.html#cb256-9"></a>                 <span class="dt">pch =</span> pch.gps.hreg,</span>
-<span id="cb256-10"><a href="bilateral-asymmetry.html#cb256-10"></a>                 <span class="dt">col =</span> col.gps.hreg)</span>
-<span id="cb256-11"><a href="bilateral-asymmetry.html#cb256-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot2, </span>
-<span id="cb256-12"><a href="bilateral-asymmetry.html#cb256-12"></a>                             <span class="dt">groups =</span> hreg,</span>
-<span id="cb256-13"><a href="bilateral-asymmetry.html#cb256-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.2</span>)</span></code></pre></div>
-<p><img src="dalton.supp_files/figure-html/pca.asymm2-1.png" width="100%" /></p>
+<div id="pca-symmetric-1" class="section level4">
+<h4><span class="header-section-number">5.6.1.1</span> PCA (symmetric)</h4>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="bilateral-asymmetry.html#cb255-1"></a><span class="co"># set plot parameters to plot by heartland + regions </span></span>
+<span id="cb255-2"><a href="bilateral-asymmetry.html#cb255-2"></a>pch.gps.hreg &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="kw">as.factor</span>(hreg)]</span>
+<span id="cb255-3"><a href="bilateral-asymmetry.html#cb255-3"></a>col.gps.hreg &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(hreg)]</span>
+<span id="cb255-4"><a href="bilateral-asymmetry.html#cb255-4"></a>col.hull<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
+<span id="cb255-5"><a href="bilateral-asymmetry.html#cb255-5"></a></span>
+<span id="cb255-6"><a href="bilateral-asymmetry.html#cb255-6"></a><span class="co"># plot pca by heartland + regions (symmetric)</span></span>
+<span id="cb255-7"><a href="bilateral-asymmetry.html#cb255-7"></a>pc.plot<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
+<span id="cb255-8"><a href="bilateral-asymmetry.html#cb255-8"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb255-9"><a href="bilateral-asymmetry.html#cb255-9"></a>                 <span class="dt">pch =</span> pch.gps.hreg,</span>
+<span id="cb255-10"><a href="bilateral-asymmetry.html#cb255-10"></a>                 <span class="dt">col =</span> col.gps.hreg)</span>
+<span id="cb255-11"><a href="bilateral-asymmetry.html#cb255-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot<span class="fl">.2</span>, </span>
+<span id="cb255-12"><a href="bilateral-asymmetry.html#cb255-12"></a>                             <span class="dt">groups =</span> hreg,</span>
+<span id="cb255-13"><a href="bilateral-asymmetry.html#cb255-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.2</span>)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/pca.symm.2-1.png" width="100%" /></p>
+</div>
+<div id="pca-asymmetric-1" class="section level4">
+<h4><span class="header-section-number">5.6.1.2</span> PCA (asymmetric)</h4>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="bilateral-asymmetry.html#cb256-1"></a><span class="co"># plot pca by heartland + regions (asymmetric)</span></span>
+<span id="cb256-2"><a href="bilateral-asymmetry.html#cb256-2"></a>pc.plot.asymm<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">plot</span>(pca.asymm, </span>
+<span id="cb256-3"><a href="bilateral-asymmetry.html#cb256-3"></a>                   <span class="dt">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb256-4"><a href="bilateral-asymmetry.html#cb256-4"></a>                   <span class="dt">pch =</span> pch.gps.hreg,</span>
+<span id="cb256-5"><a href="bilateral-asymmetry.html#cb256-5"></a>                   <span class="dt">col =</span> col.gps.hreg)</span>
+<span id="cb256-6"><a href="bilateral-asymmetry.html#cb256-6"></a>                    <span class="kw">shapeHulls</span>(pc.plot.asymm<span class="fl">.2</span>, </span>
+<span id="cb256-7"><a href="bilateral-asymmetry.html#cb256-7"></a>                               <span class="dt">groups =</span> hreg,</span>
+<span id="cb256-8"><a href="bilateral-asymmetry.html#cb256-8"></a>                               <span class="dt">group.cols =</span> col.hull<span class="fl">.2</span>)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/pca.asymm.2-1.png" width="100%" /></p>
+</div>
 </div>
 <div id="anova-1" class="section level3">
 <h3><span class="header-section-number">5.6.2</span> ANOVA</h3>
 <div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="bilateral-asymmetry.html#cb257-1"></a><span class="co"># ANOVA: does symmetric dalton projectile point shape differ by hreg?</span></span>
-<span id="cb257-2"><a href="bilateral-asymmetry.html#cb257-2"></a><span class="kw">anova</span>(fit.shape.hreg)</span></code></pre></div>
+<span id="cb257-2"><a href="bilateral-asymmetry.html#cb257-2"></a><span class="co">## (are there differences in design intent?)</span></span>
+<span id="cb257-3"><a href="bilateral-asymmetry.html#cb257-3"></a><span class="kw">anova</span>(fit.shape.hreg)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -975,52 +1041,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## H:I 0.12591411 0.07873513 4.3776657 0.0005
 ## H:P 0.06629787 0.09426348 0.7445451 0.2057
 ## I:P 0.07904313 0.10008261 1.1049303 0.1387</code></pre>
-<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="bilateral-asymmetry.html#cb261-1"></a><span class="co"># ANOVA: does asymmetric dalton projectile point shape differ by hreg?</span></span>
-<span id="cb261-2"><a href="bilateral-asymmetry.html#cb261-2"></a><span class="kw">anova</span>(fit.shape.hreg.asymm)</span></code></pre></div>
+</div>
+<div id="morphological-disparity-1" class="section level3">
+<h3><span class="header-section-number">5.6.3</span> Morphological disparity</h3>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="bilateral-asymmetry.html#cb261-1"></a><span class="co"># morphological disparity: do any of the groups display greater asymmetric </span></span>
+<span id="cb261-2"><a href="bilateral-asymmetry.html#cb261-2"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
+<span id="cb261-3"><a href="bilateral-asymmetry.html#cb261-3"></a><span class="co">## (lesser/greater skill?)</span></span>
+<span id="cb261-4"><a href="bilateral-asymmetry.html#cb261-4"></a><span class="kw">morphol.disparity</span>(fit.shape.hreg.asymm, </span>
+<span id="cb261-5"><a href="bilateral-asymmetry.html#cb261-5"></a>                  <span class="dt">groups =</span> qdata<span class="op">$</span>heart.reg, </span>
+<span id="cb261-6"><a href="bilateral-asymmetry.html#cb261-6"></a>                  <span class="dt">data =</span> gdf, </span>
+<span id="cb261-7"><a href="bilateral-asymmetry.html#cb261-7"></a>                  <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb261-8"><a href="bilateral-asymmetry.html#cb261-8"></a>                  <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 <pre><code>## 
-## Analysis of Variance, using Residual Randomization
-## Permutation procedure: Randomization of null model residuals 
-## Number of permutations: 10000 
-## Estimation method: Ordinary Least Squares 
-## Sums of Squares and Cross-products: Type I 
-## Effect sizes (Z) based on F distributions
+## Call:
+## morphol.disparity(f1 = fit.shape.hreg.asymm, groups = qdata$heart.reg,  
+##     iter = 9999, data = gdf, print.progress = FALSE) 
 ## 
-##           Df       SS        MS     Rsq      F      Z Pr(&gt;F)  
-## hreg       2 0.009474 0.0047368 0.09352 2.0118 1.6825 0.0416 *
-## Residuals 39 0.091825 0.0023545 0.90648                       
-## Total     41 0.101299                                         
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Call: procD.lm(f1 = ashape ~ hreg, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="bilateral-asymmetry.html#cb263-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
-<span id="cb263-2"><a href="bilateral-asymmetry.html#cb263-2"></a>sh.hreg &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.shape.hreg.asymm, </span>
-<span id="cb263-3"><a href="bilateral-asymmetry.html#cb263-3"></a>                    <span class="dt">groups =</span> qdata<span class="op">$</span>heart.reg)</span>
-<span id="cb263-4"><a href="bilateral-asymmetry.html#cb263-4"></a><span class="kw">summary</span>(sh.hreg, </span>
-<span id="cb263-5"><a href="bilateral-asymmetry.html#cb263-5"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb263-6"><a href="bilateral-asymmetry.html#cb263-6"></a>        <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
-<pre><code>## 
-## Pairwise comparisons
 ## 
-## Groups: H I P 
+## Randomized Residual Permutation Procedure Used
+## 10000 Permutations
 ## 
-## RRPP: 10000 permutations
+## Procrustes variances for defined groups
+##           H           I           P 
+## 0.001943695 0.002686386 0.001917713 
 ## 
-## LS means:
-## Vectors hidden (use show.vectors = TRUE to view)
 ## 
-## Pairwise distances between means, plus statistics
-##              d  UCL (95%)         Z Pr &gt; d
-## H:I 0.02894608 0.02612668 2.4056164 0.0214
-## H:P 0.02425219 0.03166268 0.6875441 0.2225
-## I:P 0.02485353 0.03346989 0.5675279 0.2579</code></pre>
+## Pairwise absolute differences between variances
+##              H            I            P
+## H 0.000000e+00 0.0007426914 2.598247e-05
+## I 7.426914e-04 0.0000000000 7.686738e-04
+## P 2.598247e-05 0.0007686738 0.000000e+00
+## 
+## 
+## P-Values
+##        H      I      P
+## H 1.0000 0.2543 0.9735
+## I 0.2543 1.0000 0.3598
+## P 0.9735 0.3598 1.0000</code></pre>
 </div>
 </div>
 <div id="test-hypothesis-3-techno-symm" class="section level2">
 <h2><span class="header-section-number">5.7</span> Test Hypothesis 3 (Techno Symm)</h2>
 <p>Hypothesis 3 assesses whether there is a discernible difference in morphology for Dalton points that are beveled.</p>
 <p>A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs <span class="citation">(Adams and Collyer <a href="#ref-RN1655" role="doc-biblioref">2015</a>; Collyer and Adams <a href="#ref-RN11775" role="doc-biblioref">2018</a>)</span>, which has higher statistical power and a greater ability to identify patterns in the data should they be present <span class="citation">(Anderson and Ter Braak <a href="#ref-RN1719" role="doc-biblioref">2003</a>)</span>. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs <span class="citation">(Goodall <a href="#ref-RN1749" role="doc-biblioref">1991</a>)</span> were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions <span class="citation">(Collyer, Sekora, and Adams <a href="#ref-RN1756" role="doc-biblioref">2015</a>)</span>.</p>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="bilateral-asymmetry.html#cb265-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis3.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="bilateral-asymmetry.html#cb263-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis3.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis3.jpg" alt="Hypothesis 3 considers whether beveled Dalton points (left) differ in morphology from those that are not beveled (right)." width="100%" />
 <p class="caption">
@@ -1029,25 +1094,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="principal-components-analysis-h3" class="section level3">
 <h3><span class="header-section-number">5.7.1</span> Principal Components Analysis (H3)</h3>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="bilateral-asymmetry.html#cb266-1"></a><span class="co"># set plot parameters to plot by beveled y and n</span></span>
-<span id="cb266-2"><a href="bilateral-asymmetry.html#cb266-2"></a>pch.gps.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.1</span>)]</span>
-<span id="cb266-3"><a href="bilateral-asymmetry.html#cb266-3"></a>col.gps.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.1</span>)]</span>
-<span id="cb266-4"><a href="bilateral-asymmetry.html#cb266-4"></a>col.hull<span class="fl">.3</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
-<span id="cb266-5"><a href="bilateral-asymmetry.html#cb266-5"></a></span>
-<span id="cb266-6"><a href="bilateral-asymmetry.html#cb266-6"></a><span class="co"># plot pca by heartland in (H) and out (N)</span></span>
-<span id="cb266-7"><a href="bilateral-asymmetry.html#cb266-7"></a>pc.plot3 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
-<span id="cb266-8"><a href="bilateral-asymmetry.html#cb266-8"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb266-9"><a href="bilateral-asymmetry.html#cb266-9"></a>                 <span class="dt">pch =</span> pch.gps.bev<span class="fl">.1</span>,</span>
-<span id="cb266-10"><a href="bilateral-asymmetry.html#cb266-10"></a>                 <span class="dt">col =</span> col.gps.bev<span class="fl">.1</span>)</span>
-<span id="cb266-11"><a href="bilateral-asymmetry.html#cb266-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot3, </span>
-<span id="cb266-12"><a href="bilateral-asymmetry.html#cb266-12"></a>                             <span class="dt">groups =</span> bev<span class="fl">.1</span>,</span>
-<span id="cb266-13"><a href="bilateral-asymmetry.html#cb266-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.3</span>)</span></code></pre></div>
-<p><img src="dalton.supp_files/figure-html/pca.asymm3-1.png" width="100%" /></p>
+<div id="pca-symmetric-2" class="section level4">
+<h4><span class="header-section-number">5.7.1.1</span> PCA (symmetric)</h4>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="bilateral-asymmetry.html#cb264-1"></a><span class="co"># set plot parameters to plot by beveled y and n</span></span>
+<span id="cb264-2"><a href="bilateral-asymmetry.html#cb264-2"></a>pch.gps.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.1</span>)]</span>
+<span id="cb264-3"><a href="bilateral-asymmetry.html#cb264-3"></a>col.gps.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.1</span>)]</span>
+<span id="cb264-4"><a href="bilateral-asymmetry.html#cb264-4"></a>col.hull<span class="fl">.3</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
+<span id="cb264-5"><a href="bilateral-asymmetry.html#cb264-5"></a></span>
+<span id="cb264-6"><a href="bilateral-asymmetry.html#cb264-6"></a><span class="co"># plot pca by heartland in (H) and out (N) (symmetric)</span></span>
+<span id="cb264-7"><a href="bilateral-asymmetry.html#cb264-7"></a>pc.plot3 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
+<span id="cb264-8"><a href="bilateral-asymmetry.html#cb264-8"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb264-9"><a href="bilateral-asymmetry.html#cb264-9"></a>                 <span class="dt">pch =</span> pch.gps.bev<span class="fl">.1</span>,</span>
+<span id="cb264-10"><a href="bilateral-asymmetry.html#cb264-10"></a>                 <span class="dt">col =</span> col.gps.bev<span class="fl">.1</span>)</span>
+<span id="cb264-11"><a href="bilateral-asymmetry.html#cb264-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot3, </span>
+<span id="cb264-12"><a href="bilateral-asymmetry.html#cb264-12"></a>                             <span class="dt">groups =</span> bev<span class="fl">.1</span>,</span>
+<span id="cb264-13"><a href="bilateral-asymmetry.html#cb264-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.3</span>)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/pca.symm.3-1.png" width="100%" /></p>
+</div>
+<div id="pca-asymmetric-2" class="section level4">
+<h4><span class="header-section-number">5.7.1.2</span> PCA (asymmetric)</h4>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="bilateral-asymmetry.html#cb265-1"></a><span class="co"># plot pca by heartland in (H) and out (N) (asymmetric)</span></span>
+<span id="cb265-2"><a href="bilateral-asymmetry.html#cb265-2"></a>pc.plot.asymm<span class="fl">.3</span> &lt;-<span class="st"> </span><span class="kw">plot</span>(pca.asymm, </span>
+<span id="cb265-3"><a href="bilateral-asymmetry.html#cb265-3"></a>                   <span class="dt">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb265-4"><a href="bilateral-asymmetry.html#cb265-4"></a>                   <span class="dt">pch =</span> pch.gps.bev<span class="fl">.1</span>,</span>
+<span id="cb265-5"><a href="bilateral-asymmetry.html#cb265-5"></a>                   <span class="dt">col =</span> col.gps.bev<span class="fl">.1</span>)</span>
+<span id="cb265-6"><a href="bilateral-asymmetry.html#cb265-6"></a>                      <span class="kw">shapeHulls</span>(pc.plot.asymm<span class="fl">.3</span>, </span>
+<span id="cb265-7"><a href="bilateral-asymmetry.html#cb265-7"></a>                               <span class="dt">groups =</span> bev<span class="fl">.1</span>,</span>
+<span id="cb265-8"><a href="bilateral-asymmetry.html#cb265-8"></a>                               <span class="dt">group.cols =</span> col.hull<span class="fl">.3</span>)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/pca.asymm.3-1.png" width="100%" /></p>
+</div>
 </div>
 <div id="anova-2" class="section level3">
 <h3><span class="header-section-number">5.7.2</span> ANOVA</h3>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="bilateral-asymmetry.html#cb267-1"></a><span class="co"># ANOVA: do symmetric dalton projectile point shapes differ by beveling?</span></span>
-<span id="cb267-2"><a href="bilateral-asymmetry.html#cb267-2"></a><span class="kw">anova</span>(fit.shape.bev<span class="fl">.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="bilateral-asymmetry.html#cb266-1"></a><span class="co"># ANOVA: do symmetric dalton projectile point shapes differ by beveling?</span></span>
+<span id="cb266-2"><a href="bilateral-asymmetry.html#cb266-2"></a><span class="co">## (are there differences in design intent?)</span></span>
+<span id="cb266-3"><a href="bilateral-asymmetry.html#cb266-3"></a><span class="kw">anova</span>(fit.shape.bev<span class="fl">.1</span>)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1064,31 +1145,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = shape ~ bev.1, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="bilateral-asymmetry.html#cb269-1"></a><span class="co"># ANOVA: do asymmetric dalton projectile point shapes differ by beveling?</span></span>
-<span id="cb269-2"><a href="bilateral-asymmetry.html#cb269-2"></a><span class="kw">anova</span>(fit.shape.bev.<span class="fl">1.</span>asymm)</span></code></pre></div>
+</div>
+<div id="morphological-disparity-2" class="section level3">
+<h3><span class="header-section-number">5.7.3</span> Morphological disparity</h3>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="bilateral-asymmetry.html#cb268-1"></a><span class="co"># morphological disparity: do any of the groups display greater asymmetric </span></span>
+<span id="cb268-2"><a href="bilateral-asymmetry.html#cb268-2"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
+<span id="cb268-3"><a href="bilateral-asymmetry.html#cb268-3"></a><span class="co">## (lesser/greater skill?)</span></span>
+<span id="cb268-4"><a href="bilateral-asymmetry.html#cb268-4"></a><span class="kw">morphol.disparity</span>(fit.shape.bev.<span class="fl">1.</span>asymm, </span>
+<span id="cb268-5"><a href="bilateral-asymmetry.html#cb268-5"></a>                  <span class="dt">groups =</span> qdata<span class="op">$</span>bev, </span>
+<span id="cb268-6"><a href="bilateral-asymmetry.html#cb268-6"></a>                  <span class="dt">data =</span> gdf, </span>
+<span id="cb268-7"><a href="bilateral-asymmetry.html#cb268-7"></a>                  <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb268-8"><a href="bilateral-asymmetry.html#cb268-8"></a>                  <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 <pre><code>## 
-## Analysis of Variance, using Residual Randomization
-## Permutation procedure: Randomization of null model residuals 
-## Number of permutations: 10000 
-## Estimation method: Ordinary Least Squares 
-## Sums of Squares and Cross-products: Type I 
-## Effect sizes (Z) based on F distributions
+## Call:
+## morphol.disparity(f1 = fit.shape.bev.1.asymm, groups = qdata$bev,  
+##     iter = 9999, data = gdf, print.progress = FALSE) 
 ## 
-##           Df       SS        MS     Rsq      F      Z Pr(&gt;F)  
-## bev.1      1 0.006719 0.0067187 0.06633 2.8415 1.9509 0.0244 *
-## Residuals 40 0.094580 0.0023645 0.93367                       
-## Total     41 0.101299                                         
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Call: procD.lm(f1 = ashape ~ bev.1, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
+## 
+## Randomized Residual Permutation Procedure Used
+## 10000 Permutations
+## 
+## Procrustes variances for defined groups
+##           n           y 
+## 0.002704672 0.001973277 
+## 
+## 
+## Pairwise absolute differences between variances
+##              n            y
+## n 0.0000000000 0.0007313954
+## y 0.0007313954 0.0000000000
+## 
+## 
+## P-Values
+##       n     y
+## n 1.000 0.273
+## y 0.273 1.000</code></pre>
 </div>
 </div>
 <div id="test-hypothesis-4-techno-symm" class="section level2">
 <h2><span class="header-section-number">5.8</span> Test Hypothesis 4 (Techno Symm)</h2>
 <p>Hypothesis 4 assesses whether there is a discernible difference in the morphology of specific beveling types associated with Dalton points.</p>
 <p>A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs <span class="citation">(Adams and Collyer <a href="#ref-RN1655" role="doc-biblioref">2015</a>; Collyer and Adams <a href="#ref-RN11775" role="doc-biblioref">2018</a>)</span>, which has higher statistical power and a greater ability to identify patterns in the data should they be present <span class="citation">(Anderson and Ter Braak <a href="#ref-RN1719" role="doc-biblioref">2003</a>)</span>. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs <span class="citation">(Goodall <a href="#ref-RN1749" role="doc-biblioref">1991</a>)</span> were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions <span class="citation">(Collyer, Sekora, and Adams <a href="#ref-RN1756" role="doc-biblioref">2015</a>)</span>.</p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="bilateral-asymmetry.html#cb271-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis4-1.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="bilateral-asymmetry.html#cb270-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis4-1.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis4-1.jpg" alt="Hypothesis 4 considers whether discrete beveling practices articulate with differences in the morphology of Dalton points" width="100%" />
 <p class="caption">
@@ -1097,25 +1196,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="principal-components-analysis-h4" class="section level3">
 <h3><span class="header-section-number">5.8.1</span> Principal Components Analysis (H4)</h3>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="bilateral-asymmetry.html#cb272-1"></a><span class="co"># set plot parameters to plot by bevel type</span></span>
-<span id="cb272-2"><a href="bilateral-asymmetry.html#cb272-2"></a>pch.gps.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.2</span>)]</span>
-<span id="cb272-3"><a href="bilateral-asymmetry.html#cb272-3"></a>col.gps.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.2</span>)]</span>
-<span id="cb272-4"><a href="bilateral-asymmetry.html#cb272-4"></a>col.hull<span class="fl">.4</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
-<span id="cb272-5"><a href="bilateral-asymmetry.html#cb272-5"></a></span>
-<span id="cb272-6"><a href="bilateral-asymmetry.html#cb272-6"></a><span class="co"># plot pca by bevel type</span></span>
-<span id="cb272-7"><a href="bilateral-asymmetry.html#cb272-7"></a>pc.plot4 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
-<span id="cb272-8"><a href="bilateral-asymmetry.html#cb272-8"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb272-9"><a href="bilateral-asymmetry.html#cb272-9"></a>                 <span class="dt">pch =</span> pch.gps.bev<span class="fl">.2</span>,</span>
-<span id="cb272-10"><a href="bilateral-asymmetry.html#cb272-10"></a>                 <span class="dt">col =</span> col.gps.bev<span class="fl">.2</span>)</span>
-<span id="cb272-11"><a href="bilateral-asymmetry.html#cb272-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot4, </span>
-<span id="cb272-12"><a href="bilateral-asymmetry.html#cb272-12"></a>                             <span class="dt">groups =</span> bev<span class="fl">.2</span>,</span>
-<span id="cb272-13"><a href="bilateral-asymmetry.html#cb272-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.4</span>)</span></code></pre></div>
-<p><img src="dalton.supp_files/figure-html/pca.asymm4-1.png" width="100%" /></p>
+<div id="pca-symmetric-3" class="section level4">
+<h4><span class="header-section-number">5.8.1.1</span> PCA (symmetric)</h4>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="bilateral-asymmetry.html#cb271-1"></a><span class="co"># set plot parameters to plot by bevel type</span></span>
+<span id="cb271-2"><a href="bilateral-asymmetry.html#cb271-2"></a>pch.gps.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.2</span>)]</span>
+<span id="cb271-3"><a href="bilateral-asymmetry.html#cb271-3"></a>col.gps.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.2</span>)]</span>
+<span id="cb271-4"><a href="bilateral-asymmetry.html#cb271-4"></a>col.hull<span class="fl">.4</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
+<span id="cb271-5"><a href="bilateral-asymmetry.html#cb271-5"></a></span>
+<span id="cb271-6"><a href="bilateral-asymmetry.html#cb271-6"></a><span class="co"># plot pca by bevel type (symmetric)</span></span>
+<span id="cb271-7"><a href="bilateral-asymmetry.html#cb271-7"></a>pc.plot4 &lt;-<span class="st"> </span><span class="kw">plot</span>(pca, </span>
+<span id="cb271-8"><a href="bilateral-asymmetry.html#cb271-8"></a>                 <span class="dt">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb271-9"><a href="bilateral-asymmetry.html#cb271-9"></a>                 <span class="dt">pch =</span> pch.gps.bev<span class="fl">.2</span>,</span>
+<span id="cb271-10"><a href="bilateral-asymmetry.html#cb271-10"></a>                 <span class="dt">col =</span> col.gps.bev<span class="fl">.2</span>)</span>
+<span id="cb271-11"><a href="bilateral-asymmetry.html#cb271-11"></a>                    <span class="kw">shapeHulls</span>(pc.plot4, </span>
+<span id="cb271-12"><a href="bilateral-asymmetry.html#cb271-12"></a>                             <span class="dt">groups =</span> bev<span class="fl">.2</span>,</span>
+<span id="cb271-13"><a href="bilateral-asymmetry.html#cb271-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.4</span>)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/pca.symm4-1.png" width="100%" /></p>
+</div>
+<div id="pca-asymmetric-3" class="section level4">
+<h4><span class="header-section-number">5.8.1.2</span> PCA (asymmetric)</h4>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="bilateral-asymmetry.html#cb272-1"></a><span class="co"># plot pca by bevel type (asymmetric)</span></span>
+<span id="cb272-2"><a href="bilateral-asymmetry.html#cb272-2"></a>pc.plot.asymm<span class="fl">.4</span> &lt;-<span class="st"> </span><span class="kw">plot</span>(pca.asymm, </span>
+<span id="cb272-3"><a href="bilateral-asymmetry.html#cb272-3"></a>                   <span class="dt">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb272-4"><a href="bilateral-asymmetry.html#cb272-4"></a>                   <span class="dt">pch =</span> pch.gps.bev<span class="fl">.2</span>,</span>
+<span id="cb272-5"><a href="bilateral-asymmetry.html#cb272-5"></a>                   <span class="dt">col =</span> col.gps.bev<span class="fl">.2</span>)</span>
+<span id="cb272-6"><a href="bilateral-asymmetry.html#cb272-6"></a>                      <span class="kw">shapeHulls</span>(pc.plot.asymm<span class="fl">.4</span>, </span>
+<span id="cb272-7"><a href="bilateral-asymmetry.html#cb272-7"></a>                               <span class="dt">groups =</span> bev<span class="fl">.2</span>,</span>
+<span id="cb272-8"><a href="bilateral-asymmetry.html#cb272-8"></a>                               <span class="dt">group.cols =</span> col.hull<span class="fl">.4</span>)</span></code></pre></div>
+<p><img src="dalton.supp_files/figure-html/pca.asymm.4-1.png" width="100%" /></p>
+</div>
 </div>
 <div id="anova-3" class="section level3">
 <h3><span class="header-section-number">5.8.2</span> ANOVA</h3>
 <div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="bilateral-asymmetry.html#cb273-1"></a><span class="co"># ANOVA: does symmetric dalton projectile point shape differ by bev.2?</span></span>
-<span id="cb273-2"><a href="bilateral-asymmetry.html#cb273-2"></a><span class="kw">anova</span>(fit.shape.bev<span class="fl">.2</span>)</span></code></pre></div>
+<span id="cb273-2"><a href="bilateral-asymmetry.html#cb273-2"></a><span class="co">## (are there differences in design intent?)</span></span>
+<span id="cb273-3"><a href="bilateral-asymmetry.html#cb273-3"></a><span class="kw">anova</span>(fit.shape.bev<span class="fl">.2</span>)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1153,45 +1268,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## alternate:no.bevel             0.11513286 0.07375128  4.2290595 0.0010
 ## alternate:unifacial.bimarginal 0.11243052 0.13807622  1.1881301 0.1270
 ## no.bevel:unifacial.bimarginal  0.05596616 0.14202772 -0.5080011 0.6418</code></pre>
-<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="bilateral-asymmetry.html#cb277-1"></a><span class="co"># ANOVA: does asymmetric dalton projectile point shape differ by bev.2?</span></span>
-<span id="cb277-2"><a href="bilateral-asymmetry.html#cb277-2"></a><span class="kw">anova</span>(fit.shape.bev.<span class="fl">2.</span>asymm)</span></code></pre></div>
+</div>
+<div id="morphological-disparity-3" class="section level3">
+<h3><span class="header-section-number">5.8.3</span> Morphological disparity</h3>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="bilateral-asymmetry.html#cb277-1"></a><span class="co"># morphological disparity: do any of the groups display greater asymmetric </span></span>
+<span id="cb277-2"><a href="bilateral-asymmetry.html#cb277-2"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
+<span id="cb277-3"><a href="bilateral-asymmetry.html#cb277-3"></a><span class="co">## (lesser/greater skill?)</span></span>
+<span id="cb277-4"><a href="bilateral-asymmetry.html#cb277-4"></a><span class="kw">morphol.disparity</span>(fit.shape.bev.<span class="fl">2.</span>asymm, </span>
+<span id="cb277-5"><a href="bilateral-asymmetry.html#cb277-5"></a>                  <span class="dt">groups =</span> qdata<span class="op">$</span>bev.type, </span>
+<span id="cb277-6"><a href="bilateral-asymmetry.html#cb277-6"></a>                  <span class="dt">data =</span> gdf, </span>
+<span id="cb277-7"><a href="bilateral-asymmetry.html#cb277-7"></a>                  <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb277-8"><a href="bilateral-asymmetry.html#cb277-8"></a>                  <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 <pre><code>## 
-## Analysis of Variance, using Residual Randomization
-## Permutation procedure: Randomization of null model residuals 
-## Number of permutations: 10000 
-## Estimation method: Ordinary Least Squares 
-## Sums of Squares and Cross-products: Type I 
-## Effect sizes (Z) based on F distributions
+## Call:
+## morphol.disparity(f1 = fit.shape.bev.2.asymm, groups = qdata$bev.type,  
+##     iter = 9999, data = gdf, print.progress = FALSE) 
 ## 
-##           Df       SS        MS    Rsq      F      Z Pr(&gt;F)  
-## bev.2      2 0.009644 0.0048218 0.0952 2.0517 1.6695  0.046 *
-## Residuals 39 0.091655 0.0023501 0.9048                       
-## Total     41 0.101299                                        
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Call: procD.lm(f1 = ashape ~ bev.2, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="bilateral-asymmetry.html#cb279-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
-<span id="cb279-2"><a href="bilateral-asymmetry.html#cb279-2"></a>sh.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">pairwise</span>(fit.shape.bev.<span class="fl">2.</span>asymm, </span>
-<span id="cb279-3"><a href="bilateral-asymmetry.html#cb279-3"></a>                    <span class="dt">groups =</span> qdata<span class="op">$</span>bev.type)</span>
-<span id="cb279-4"><a href="bilateral-asymmetry.html#cb279-4"></a><span class="kw">summary</span>(sh.bev<span class="fl">.2</span>, </span>
-<span id="cb279-5"><a href="bilateral-asymmetry.html#cb279-5"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb279-6"><a href="bilateral-asymmetry.html#cb279-6"></a>        <span class="dt">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
-<pre><code>## 
-## Pairwise comparisons
 ## 
-## Groups: alternate no.bevel unifacial.bimarginal 
+## Randomized Residual Permutation Procedure Used
+## 10000 Permutations
 ## 
-## RRPP: 10000 permutations
+## Procrustes variances for defined groups
+##            alternate             no.bevel unifacial.bimarginal 
+##         0.0019974178         0.0027046722         0.0008132527 
 ## 
-## LS means:
-## Vectors hidden (use show.vectors = TRUE to view)
 ## 
-## Pairwise distances between means, plus statistics
-##                                         d  UCL (95%)          Z Pr &gt; d
-## alternate:no.bevel             0.02815341 0.02425185  2.6662982 0.0138
-## alternate:unifacial.bimarginal 0.03319803 0.04762538  0.4382243 0.2979
-## no.bevel:unifacial.bimarginal  0.02787699 0.04837476 -0.1584717 0.5079</code></pre>
+## Pairwise absolute differences between variances
+##                         alternate     no.bevel unifacial.bimarginal
+## alternate            0.0000000000 0.0007072543          0.001184165
+## no.bevel             0.0007072543 0.0000000000          0.001891420
+## unifacial.bimarginal 0.0011841652 0.0018914195          0.000000000
+## 
+## 
+## P-Values
+##                      alternate no.bevel unifacial.bimarginal
+## alternate               1.0000   0.2934               0.3342
+## no.bevel                0.2934   1.0000               0.1125
+## unifacial.bimarginal    0.3342   0.1125               1.0000</code></pre>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="bilateral-asymmetry.html#cb279-1"></a><span class="co"># end of code</span></span></code></pre></div>
 
 </div>
 </div>
