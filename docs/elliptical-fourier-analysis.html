@@ -390,7 +390,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [ 43 / 45 ]  Welton4.jpg
 ## [ 44 / 45 ]  Welton5.jpg
 ## [ 45 / 45 ]  Welton6.jpg</code></pre>
-<pre><code>## Done in 6.7 secs</code></pre>
+<pre><code>## Done in 6.5 secs</code></pre>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="elliptical-fourier-analysis.html#cb18-1"></a><span class="co"># add attributes</span></span>
 <span id="cb18-2"><a href="elliptical-fourier-analysis.html#cb18-2"></a>data.out &lt;-<span class="st"> </span><span class="kw">Out</span>(outlines, </span>
 <span id="cb18-3"><a href="elliptical-fourier-analysis.html#cb18-3"></a>         <span class="dt">fac =</span> att.data)</span>
@@ -418,7 +418,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## 
 ## $q
 ##                                  h1       h2       h3       h4       h5       h6       h7       h8       h9
-## 11AI225                    65.97512 71.53051 91.13162 93.43869 97.93984 98.13585 98.54531 99.02323 99.09077
+## 11AI225                    65.97783 71.53601 91.13577 93.44065 97.94130 98.13697 98.54514 99.02187 99.08995
 ## 11HE445                    31.71380 68.00042 87.76597 90.37718 96.81345 97.47767 98.86839 99.14479 99.18980
 ## HK49_1462                  54.77031 83.17790 94.41895 95.35329 98.43893 98.65503 99.30013 99.43902 99.47831
 ## HK49_2                     71.50329 83.31028 94.41132 95.49433 97.87996 98.57595 98.98002 99.25857 99.52727
@@ -464,7 +464,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Welton5                    19.96734 79.21885 86.69763 91.04814 94.68065 95.43068 97.09599 97.22612 98.27772
 ## Welton6                    43.90564 66.07756 75.97847 77.94012 83.05639 86.56435 91.55629 93.35972 96.62547
 ##                                 h10      h11      h12      h13      h14      h15      h16      h17      h18 h19
-## 11AI225                    99.48732 99.66986 99.70139 99.82480 99.89427 99.95236 99.96840 99.97868 99.99511 100
+## 11AI225                    99.48717 99.67095 99.70294 99.82559 99.89388 99.95232 99.96854 99.97867 99.99484 100
 ## 11HE445                    99.47455 99.53302 99.74857 99.83155 99.86798 99.89064 99.89775 99.96522 99.98554 100
 ## HK49_1462                  99.72894 99.79513 99.83847 99.87109 99.89442 99.97203 99.98009 99.98320 99.98734 100
 ## HK49_2                     99.65659 99.76875 99.80320 99.90730 99.94805 99.96495 99.96890 99.97659 99.99185 100
@@ -581,7 +581,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb31-4"><a href="elliptical-fourier-analysis.html#cb31-4"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;heart.out&#39;</span>)</span></code></pre></div>
 <pre><code>## PC axes 1 to 11 were retained</code></pre>
 <pre><code>##           Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
-## fac        1           2.2648   6.7945     11     33 8.204e-06 ***
+## fac        1           2.2645   6.7936     11     33 8.216e-06 ***
 ## Residuals 43                                                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
@@ -645,9 +645,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb39-3"><a href="elliptical-fourier-analysis.html#cb39-3"></a><span class="co"># do shapes differ between heartland regions?</span></span>
 <span id="cb39-4"><a href="elliptical-fourier-analysis.html#cb39-4"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;heart.reg&#39;</span>)</span></code></pre></div>
 <pre><code>## PC axes 1 to 11 were retained</code></pre>
-<pre><code>##           Df Hotelling-Lawley approx F num Df den Df   Pr(&gt;F)    
-## fac        2           3.2275   4.5479     22     62 1.29e-06 ***
-## Residuals 42                                                     
+<pre><code>##           Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
+## fac        2           3.2274   4.5478     22     62 1.291e-06 ***
+## Residuals 42                                                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="elliptical-fourier-analysis.html#cb42-1"></a><span class="co"># which?</span></span>
@@ -664,7 +664,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## $summary (see also $manovas)
 ##       Df Pillai approx F num Df den Df    Pr(&gt;F)
-## H - I  1 0.8222   11.096     10     24 8.897e-07
+## H - I  1 0.8221   11.090     10     24 8.939e-07
 ## H - P  1 0.6245    3.160     10     19 1.490e-02
 ## I - P  1 0.5994    2.095     10     14 1.001e-01</code></pre>
 </div>
@@ -727,9 +727,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb54-3"><a href="elliptical-fourier-analysis.html#cb54-3"></a><span class="co"># do shapes differ if beveled?</span></span>
 <span id="cb54-4"><a href="elliptical-fourier-analysis.html#cb54-4"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;bev&#39;</span>)</span></code></pre></div>
 <pre><code>## PC axes 1 to 11 were retained</code></pre>
-<pre><code>##           Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
-## fac        1           1.4051   4.2153     11     33 0.0006317 ***
-## Residuals 43                                                      
+<pre><code>##           Df Hotelling-Lawley approx F num Df den Df   Pr(&gt;F)    
+## fac        1           1.4053   4.2159     11     33 0.000631 ***
+## Residuals 43                                                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
@@ -791,7 +791,7 @@ Figure 1.1: Mean shapes for beveled (y), and not beveled (n).
 <span id="cb62-4"><a href="elliptical-fourier-analysis.html#cb62-4"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;bev.type&#39;</span>)</span></code></pre></div>
 <pre><code>## PC axes 1 to 11 were retained</code></pre>
 <pre><code>##           Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
-## fac        2            2.886   4.0666     22     62 6.912e-06 ***
+## fac        2           2.8859   4.0665     22     62 6.915e-06 ***
 ## Residuals 42                                                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
@@ -809,9 +809,9 @@ Figure 1.1: Mean shapes for beveled (y), and not beveled (n).
 ## 
 ## $summary (see also $manovas)
 ##                                  Df  Pillai approx F num Df den Df   Pr(&gt;F)
-## alternate - no.bevel              1 0.31187  5.74064      3     38 0.002428
-## alternate - unifacial.bimarginal  1 0.15664  1.42399      3     23 0.261371
-## no.bevel - unifacial.bimarginal   1 0.01698  0.09789      3     17 0.960118</code></pre>
+## alternate - no.bevel              1 0.31187  5.74061      3     38 0.002428
+## alternate - unifacial.bimarginal  1 0.15663  1.42388      3     23 0.261400
+## no.bevel - unifacial.bimarginal   1 0.01699  0.09791      3     17 0.960107</code></pre>
 </div>
 <div id="mean-shapes-h4" class="section level3">
 <h3><span class="header-section-number">1.9.4</span> Mean shapes (H4)</h3>

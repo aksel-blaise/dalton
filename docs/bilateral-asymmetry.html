@@ -539,6 +539,90 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="center">no.bevel</td>
 </tr>
 <tr class="even">
+<td align="left">McL7_168</td>
+<td align="center">N</td>
+<td align="center">I</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+</tr>
+<tr class="odd">
+<td align="left">Nochta11MS128BFSI267-1</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+</tr>
+<tr class="even">
+<td align="left">Nochta11MS128bFSIPP1001</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+</tr>
+<tr class="odd">
+<td align="left">Nochta11MS128BFSIPP2495</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+</tr>
+<tr class="even">
+<td align="left">Nochta11MS128BFSIPP3305</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+</tr>
+<tr class="odd">
+<td align="left">Nochta11MS12BFIS800-168</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+</tr>
+<tr class="even">
+<td align="left">OH1_176</td>
+<td align="center">N</td>
+<td align="center">I</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+</tr>
+<tr class="odd">
+<td align="left">ReedVoss2</td>
+<td align="center">H</td>
+<td align="center">H</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+</tr>
+<tr class="even">
+<td align="left">TR10_4</td>
+<td align="center">N</td>
+<td align="center">I</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+</tr>
+<tr class="odd">
+<td align="left">Welton1</td>
+<td align="center">N</td>
+<td align="center">P</td>
+<td align="center">n</td>
+<td align="center">no.bevel</td>
+</tr>
+<tr class="even">
+<td align="left">Welton2</td>
+<td align="center">N</td>
+<td align="center">P</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+</tr>
+<tr class="odd">
+<td align="left">Welton4</td>
+<td align="center">N</td>
+<td align="center">P</td>
+<td align="center">y</td>
+<td align="center">alternate</td>
+</tr>
+<tr class="even">
 <td align="left">Welton5</td>
 <td align="center">N</td>
 <td align="center">P</td>
@@ -572,11 +656,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10000 Permutations
 ## 
 ## Shape ANOVA
-##          Df      SS        MS     Rsq       F       Z Pr(&gt;F)    
-## ind      29 0.87277 0.0300955 0.93569 17.1058 11.5047  1e-04 ***
-## side      1 0.00896 0.0089590 0.00960  5.0922  3.0377  3e-04 ***
-## ind:side 29 0.05102 0.0017594 0.05470                           
-## Total    59 0.93275                                             
+##          Df      SS       MS     Rsq       F       Z Pr(&gt;F)    
+## ind      41 1.45550 0.035500 0.94161 18.0271 13.6374  1e-04 ***
+## side      1 0.00951 0.009514 0.00616  4.8314  3.0524  9e-04 ***
+## ind:side 41 0.08074 0.001969 0.05223                           
+## Total    83 1.54576                                            
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="bilateral-asymmetry.html#cb235-1"></a><span class="co"># symmetric shape</span></span>
@@ -640,30 +724,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## 
 ## Ordination type: Principal Component Analysis 
 ## Centering and projection: OLS 
-## Number of observations 30 
-## Number of vectors 30 
+## Number of observations 42 
+## Number of vectors 42 
 ## 
 ## Importance of Components:
-##                             Comp1       Comp2      Comp3        Comp4       Comp5        Comp6        Comp7
-## Eigenvalues            0.01037512 0.002345607 0.00102700 0.0004716595 0.000239168 0.0001113863 9.375162e-05
-## Proportion of Variance 0.68948018 0.155877691 0.06824944 0.0313442107 0.015893947 0.0074021958 6.230279e-03
-## Cumulative Proportion  0.68948018 0.845357867 0.91360730 0.9449515145 0.960845462 0.9682476574 9.744779e-01
-##                               Comp8        Comp9      Comp10       Comp11       Comp12       Comp13       Comp14
-## Eigenvalues            8.245751e-05 6.958385e-05 3.90212e-05 3.310055e-05 2.922062e-05 2.785148e-05 2.177044e-05
-## Proportion of Variance 5.479727e-03 4.624206e-03 2.59316e-03 2.199703e-03 1.941861e-03 1.850874e-03 1.446758e-03
-## Cumulative Proportion  9.799577e-01 9.845819e-01 9.87175e-01 9.893747e-01 9.913166e-01 9.931675e-01 9.946142e-01
+##                             Comp1       Comp2       Comp3        Comp4        Comp5        Comp6        Comp7
+## Eigenvalues            0.01249648 0.002719931 0.001020206 0.0005533874 0.0002553088 0.0001449308 0.0001248289
+## Proportion of Variance 0.70402454 0.153235084 0.057476195 0.0311766536 0.0143835472 0.0081650902 0.0070325895
+## Cumulative Proportion  0.70402454 0.857259622 0.914735816 0.9459124700 0.9602960171 0.9684611073 0.9754936968
+##                               Comp8        Comp9       Comp10       Comp11       Comp12       Comp13       Comp14
+## Eigenvalues            8.059204e-05 6.971356e-05 4.329956e-05 0.0000393538 3.139489e-05 2.716026e-05 2.272738e-05
+## Proportion of Variance 4.540382e-03 3.927512e-03 2.439404e-03 0.0022171082 1.768721e-03 1.530150e-03 1.280412e-03
+## Cumulative Proportion  9.800341e-01 9.839616e-01 9.864010e-01 0.9886181033 9.903868e-01 9.919170e-01 9.931974e-01
 ##                              Comp15       Comp16       Comp17       Comp18       Comp19       Comp20       Comp21
-## Eigenvalues            1.940422e-05 1.256109e-05 1.082012e-05 8.914351e-06 7.826043e-06 5.595026e-06 4.280040e-06
-## Proportion of Variance 1.289511e-03 8.347493e-04 7.190530e-04 5.924046e-04 5.200810e-04 3.718183e-04 2.844307e-04
-## Cumulative Proportion  9.959037e-01 9.967385e-01 9.974575e-01 9.980499e-01 9.985700e-01 9.989418e-01 9.992263e-01
+## Eigenvalues            0.0000190157 1.570933e-05 1.403873e-05 1.200803e-05 0.0000103973 8.720161e-06 8.383211e-06
+## Proportion of Variance 0.0010713036 8.850301e-04 7.909120e-04 6.765067e-04 0.0005857613 4.912751e-04 4.722921e-04
+## Cumulative Proportion  0.9942686897 9.951537e-01 9.959446e-01 9.966211e-01 0.9972068998 9.976982e-01 9.981705e-01
 ##                              Comp22       Comp23       Comp24       Comp25       Comp26       Comp27       Comp28
-## Eigenvalues            3.750605e-06 3.162191e-06 1.505023e-06 1.358418e-06 8.568591e-07 6.764130e-07 2.110413e-07
-## Proportion of Variance 2.492471e-04 2.101439e-04 1.000166e-04 9.027388e-05 5.694271e-05 4.495113e-05 1.402478e-05
-## Cumulative Proportion  9.994755e-01 9.996857e-01 9.997857e-01 9.998760e-01 9.999329e-01 9.999778e-01 9.999919e-01
-##                              Comp29       Comp30
-## Eigenvalues            1.222740e-07 2.046131e-33
-## Proportion of Variance 8.125741e-06 1.359760e-31
-## Cumulative Proportion  1.000000e+00 1.000000e+00</code></pre>
+## Eigenvalues            6.636620e-06 5.872215e-06 4.578097e-06 3.198292e-06 2.870649e-06 2.695773e-06 1.712704e-06
+## Proportion of Variance 3.738929e-04 3.308279e-04 2.579201e-04 1.801849e-04 1.617262e-04 1.518740e-04 9.649008e-05
+## Cumulative Proportion  9.985444e-01 9.988752e-01 9.991331e-01 9.993133e-01 9.994750e-01 9.996269e-01 9.997234e-01
+##                              Comp29       Comp30       Comp31       Comp32       Comp33       Comp34       Comp35
+## Eigenvalues            1.420216e-06 9.916059e-07 5.800881e-07 4.855554e-07 4.481457e-07 3.527907e-07 3.017663e-07
+## Proportion of Variance 8.001194e-05 5.586494e-05 3.268092e-05 2.735515e-05 2.524756e-05 1.987547e-05 1.700086e-05
+## Cumulative Proportion  9.998034e-01 9.998593e-01 9.998919e-01 9.999193e-01 9.999445e-01 9.999644e-01 9.999814e-01
+##                              Comp36       Comp37       Comp38       Comp39       Comp40       Comp41       Comp42
+## Eigenvalues            1.624204e-07 9.276129e-08 4.711254e-08 1.603986e-08 9.295655e-09 2.167403e-09 1.068737e-33
+## Proportion of Variance 9.150414e-06 5.225971e-06 2.654219e-06 9.036514e-07 5.236972e-07 1.221068e-07 6.021032e-32
+## Cumulative Proportion  9.999906e-01 9.999958e-01 9.999985e-01 9.999994e-01 9.999999e-01 1.000000e+00 1.000000e+00</code></pre>
 </div>
 <div id="define-models" class="section level2">
 <h2><span class="header-section-number">5.4</span> Define models</h2>
@@ -790,10 +878,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df      SS       MS     Rsq      F      Z Pr(&gt;F)    
-## heart      1 0.12935 0.129351 0.31632 12.955 3.0685  5e-04 ***
-## Residuals 28 0.27958 0.009985 0.68368                         
-## Total     29 0.40893                                          
+##           Df      SS       MS     Rsq      F      Z Pr(&gt;F)   
+## heart      1 0.10729 0.107294 0.15605 7.3964 2.4808 0.0023 **
+## Residuals 40 0.58025 0.014506 0.84395                        
+## Total     41 0.68755                                         
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -808,10 +896,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df       SS        MS     Rsq     F        Z Pr(&gt;F)
-## heart      1 0.001815 0.0018147 0.03104 0.897 0.095473 0.4822
-## Residuals 28 0.056642 0.0020229 0.96896                      
-## Total     29 0.058457                                        
+##           Df       SS        MS     Rsq      F      Z Pr(&gt;F)  
+## heart      1 0.006329 0.0063290 0.06248 2.6657 1.8467 0.0285 *
+## Residuals 40 0.094970 0.0023742 0.93752                       
+## Total     41 0.101299                                         
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = ashape ~ heart, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
 </div>
@@ -857,9 +947,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df      SS       MS     Rsq      F      Z Pr(&gt;F)   
-## hreg       2 0.13756 0.068778 0.33638 6.8429 2.9271  0.001 **
-## Residuals 27 0.27137 0.010051 0.66362                        
-## Total     29 0.40893                                         
+## hreg       2 0.13910 0.069551 0.20232 4.9457 2.5121 0.0035 **
+## Residuals 39 0.54845 0.014063 0.79768                        
+## Total     41 0.68755                                         
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -881,10 +971,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Vectors hidden (use show.vectors = TRUE to view)
 ## 
 ## Pairwise distances between means, plus statistics
-##              d  UCL (95%)          Z Pr &gt; d
-## H:I 0.13553051 0.08380674  4.4828440 0.0005
-## H:P 0.12909775 0.10585479  2.8316429 0.0130
-## I:P 0.04885384 0.11136159 -0.3432411 0.5670</code></pre>
+##              d  UCL (95%)         Z Pr &gt; d
+## H:I 0.12591411 0.07873513 4.3776657 0.0005
+## H:P 0.06629787 0.09426348 0.7445451 0.2057
+## I:P 0.07904313 0.10008261 1.1049303 0.1387</code></pre>
 <div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="bilateral-asymmetry.html#cb261-1"></a><span class="co"># ANOVA: does asymmetric dalton projectile point shape differ by hreg?</span></span>
 <span id="cb261-2"><a href="bilateral-asymmetry.html#cb261-2"></a><span class="kw">anova</span>(fit.shape.hreg.asymm)</span></code></pre></div>
 <pre><code>## 
@@ -895,10 +985,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df       SS        MS     Rsq      F      Z Pr(&gt;F)
-## hreg       2 0.005700 0.0028500 0.09751 1.4586 1.0194 0.1554
-## Residuals 27 0.052757 0.0019539 0.90249                     
-## Total     29 0.058457                                       
+##           Df       SS        MS     Rsq      F      Z Pr(&gt;F)  
+## hreg       2 0.009474 0.0047368 0.09352 2.0118 1.6825 0.0416 *
+## Residuals 39 0.091825 0.0023545 0.90648                       
+## Total     41 0.101299                                         
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = ashape ~ hreg, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
 <div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="bilateral-asymmetry.html#cb263-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
@@ -919,9 +1011,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## Pairwise distances between means, plus statistics
 ##              d  UCL (95%)         Z Pr &gt; d
-## H:I 0.01801174 0.02664993 0.1252569 0.4170
-## H:P 0.02900083 0.03471517 0.9733710 0.1627
-## I:P 0.03361959 0.03574710 1.5002736 0.0811</code></pre>
+## H:I 0.02894608 0.02612668 2.4056164 0.0214
+## H:P 0.02425219 0.03166268 0.6875441 0.2225
+## I:P 0.02485353 0.03346989 0.5675279 0.2579</code></pre>
 </div>
 </div>
 <div id="test-hypothesis-3-techno-symm" class="section level2">
@@ -965,9 +1057,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df      SS       MS     Rsq      F      Z Pr(&gt;F)   
-## bev.1      1 0.08958 0.089576 0.21905 7.8538 2.5173  0.002 **
-## Residuals 28 0.31935 0.011405 0.78095                        
-## Total     29 0.40893                                         
+## bev.1      1 0.10694 0.106944 0.15554 7.3678 2.4487 0.0023 **
+## Residuals 40 0.58060 0.014515 0.84446                        
+## Total     41 0.68755                                         
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -982,10 +1074,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df       SS        MS     Rsq      F      Z Pr(&gt;F)
-## bev.1      1 0.003181 0.0031809 0.05442 1.6113 1.0254  0.152
-## Residuals 28 0.055276 0.0019741 0.94558                     
-## Total     29 0.058457                                       
+##           Df       SS        MS     Rsq      F      Z Pr(&gt;F)  
+## bev.1      1 0.006719 0.0067187 0.06633 2.8415 1.9509 0.0244 *
+## Residuals 40 0.094580 0.0023645 0.93367                       
+## Total     41 0.101299                                         
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = ashape ~ bev.1, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
 </div>
@@ -1030,10 +1124,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df      SS       MS     Rsq      F      Z Pr(&gt;F)    
-## bev.2      2 0.12763 0.063816 0.31211 6.1254 2.7593  8e-04 ***
-## Residuals 27 0.28130 0.010418 0.68789                         
-## Total     29 0.40893                                          
+##           Df      SS       MS     Rsq      F      Z Pr(&gt;F)   
+## bev.2      2 0.14049 0.070245 0.20434 5.0078 2.5201 0.0028 **
+## Residuals 39 0.54706 0.014027 0.79566                        
+## Total     41 0.68755                                         
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -1056,9 +1150,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## Pairwise distances between means, plus statistics
 ##                                         d  UCL (95%)          Z Pr &gt; d
-## alternate:no.bevel             0.12992026 0.08000294  4.4896165 0.0002
-## alternate:unifacial.bimarginal 0.12337960 0.13072505  1.7239632 0.0697
-## no.bevel:unifacial.bimarginal  0.05418585 0.13383069 -0.4933506 0.6300</code></pre>
+## alternate:no.bevel             0.11513286 0.07375128  4.2290595 0.0010
+## alternate:unifacial.bimarginal 0.11243052 0.13807622  1.1881301 0.1270
+## no.bevel:unifacial.bimarginal  0.05596616 0.14202772 -0.5080011 0.6418</code></pre>
 <div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="bilateral-asymmetry.html#cb277-1"></a><span class="co"># ANOVA: does asymmetric dalton projectile point shape differ by bev.2?</span></span>
 <span id="cb277-2"><a href="bilateral-asymmetry.html#cb277-2"></a><span class="kw">anova</span>(fit.shape.bev.<span class="fl">2.</span>asymm)</span></code></pre></div>
 <pre><code>## 
@@ -1069,10 +1163,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df       SS        MS     Rsq      F       Z Pr(&gt;F)
-## bev.2      2 0.004453 0.0022265 0.07618 1.1132 0.41839 0.3464
-## Residuals 27 0.054004 0.0020001 0.92382                      
-## Total     29 0.058457                                        
+##           Df       SS        MS    Rsq      F      Z Pr(&gt;F)  
+## bev.2      2 0.009644 0.0048218 0.0952 2.0517 1.6695  0.046 *
+## Residuals 39 0.091655 0.0023501 0.9048                       
+## Total     41 0.101299                                        
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = ashape ~ bev.2, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
 <div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="bilateral-asymmetry.html#cb279-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
@@ -1092,10 +1188,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Vectors hidden (use show.vectors = TRUE to view)
 ## 
 ## Pairwise distances between means, plus statistics
-##                                         d  UCL (95%)            Z Pr &gt; d
-## alternate:no.bevel             0.02148761 0.02560023  0.965360570 0.1665
-## alternate:unifacial.bimarginal 0.02255747 0.04263526 -0.525061831 0.6658
-## no.bevel:unifacial.bimarginal  0.02768079 0.04352622  0.005717663 0.4536</code></pre>
+##                                         d  UCL (95%)          Z Pr &gt; d
+## alternate:no.bevel             0.02815341 0.02425185  2.6662982 0.0138
+## alternate:unifacial.bimarginal 0.03319803 0.04762538  0.4382243 0.2979
+## no.bevel:unifacial.bimarginal  0.02787699 0.04837476 -0.1584717 0.5079</code></pre>
 
 </div>
 </div>
