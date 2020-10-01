@@ -1,4 +1,6 @@
-# Bilateral Asymmetry
+# Bilateral/Object Asymmetry
+
+In studies of projectile morphology, an analysis of bilateral/object symmetry can yield useful insights related to _design intent_, provided the assumption that the goal of the knapper was to achieve a fully-symmetrical form. Within that framework, deviation from symmetry (asymmetry) can serve as a useful measure of _knapper skill_. Both measures have utility in comparisons of contexts and sites, to include wide-ranging spatial and temporal applications. Initially developed for a [symmetry analysis of Gahagan bifaces](https://github.com/aksel-blaise/gahagan.asymmetry/blob/master/asymmetry.md), the same approach can be employed for an analysis of symmetry in Dalton projectile points.
 
 ## Load packages + data
 
