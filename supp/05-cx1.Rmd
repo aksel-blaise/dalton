@@ -221,7 +221,7 @@ fit.shape.bev.2 <- procD.lm(shape ~ bev.2,
 anova(fit.size)
 ```
 
-## Test Hypothesis 1 (Geo GM)
+## Test Hypothesis 1 (Geo X1)
 
 Hypothesis 1 assesses whether there is a difference in morphology for Dalton points found in and out of the heartland.
 
@@ -361,7 +361,7 @@ plotRefToTarget(mean$H,
 ##knitr::include_graphics('images/mshape.h1.jpg')
 ```
 
-## Test Hypothesis 2 (Geo GM)
+## Test Hypothesis 2 (Geo X1)
 
 Hypothesis 2 assesses whether there is a difference in morphology for Dalton points found in the heartland, the interior, and the northern periphery.
 
@@ -534,7 +534,7 @@ plotRefToTarget(mean$I,
 ##knitr::include_graphics('images/mshape.h2.jpg')
 ```
 
-## Test Hypothesis 3 (Techno GM)
+## Test Hypothesis 3 (Techno X1)
 
 Hypothesis 3 assesses whether there is a discernible difference in morphology for Dalton points that are beveled.
 
@@ -674,7 +674,7 @@ plotRefToTarget(mean$y,
 ##knitr::include_graphics('images/mshape.h3.jpg')
 ```
 
-## Test Hypothesis 4 (Techno GM)
+## Test Hypothesis 4 (Techno X1)
 
 Hypothesis 4 assesses whether there is a discernible difference in the morphology of specific beveling types associated with Dalton points.
 
