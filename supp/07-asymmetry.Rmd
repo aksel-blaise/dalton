@@ -1,6 +1,6 @@
-# Bilateral/Object Asymmetry
+# Symmetry and Asymmetry
 
-In studies of projectile morphology, an analysis of bilateral/object symmetry can yield useful insights related to _design intent_, provided the assumption that the goal of the knapper was to achieve a fully-symmetrical form. Within that framework, deviation from symmetry (asymmetry) can serve as a useful measure of _knapper skill_. Both measures have utility in comparisons of contexts and sites, to include wide-ranging spatial and temporal applications. Initially developed for a [symmetry analysis of Gahagan bifaces](https://github.com/aksel-blaise/gahagan.asymmetry/blob/master/asymmetry.md), the same approach can be employed for an analysis of symmetry in Dalton projectile points.
+In studies of projectile morphology, an analysis of bilateral/object symmetry can yield useful insights related to _design intent_, provided we assume that the goal of the knapper was to achieve a fully-symmetrical form. Within that framework,  deviation from bilateral symmetry (fluctuating asymmetry) can serve as a useful measure of _knapper skill_ and/or _differential production_ . Both measures have utility in comparisons of contexts and sites, to include wide-ranging spatial and temporal applications. Initially developed for a [symmetry analysis of Gahagan bifaces](https://github.com/aksel-blaise/gahagan.asymmetry/blob/master/asymmetry.md), the same approach can be employed for an analysis of symmetry in Dalton projectile points.
 
 ## Load packages + data
 
@@ -60,8 +60,8 @@ plotAllSpecimens(symm.shape2)
 
 ```{r asymm.shape, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Asymmetric shape component plotted in 2D."}
 # asymmetric shape
-asymm.shape <- res.bilat$asymm.shape[,1:2,]
-asymm.shape2 <- res.bilat$asymm.shape[,2:3,]
+asymm.shape <- res.bilat$FA.component[,1:2,]
+asymm.shape2 <- res.bilat$FA.component[,2:3,]
 
 # plot all specimens in 2D
 plotAllSpecimens(asymm.shape)
@@ -72,8 +72,8 @@ plotAllSpecimens(asymm.shape2)
 
 ```{r pca.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # geomorph data frame
-gdf <- geomorph.data.frame(shape = symm.shape, 
-                           ashape = asymm.shape,
+gdf <- geomorph.data.frame(shape = res.bilat$symm.shape, 
+                           ashape = res.bilat$FA.component,
                            heart = qdata$heart.out, 
                            hreg = qdata$heart.reg,
                            bev.1 = qdata$bev, 
@@ -88,10 +88,6 @@ bev.2 <- qdata$bev.type # type of beveling
 # principal components analysis (symmetric)
 pca <- gm.prcomp(res.bilat$symm.shape)
 summary(pca)
-
-# principal components analysis (asymmetric)
-pca.asymm <- gm.prcomp(res.bilat$asymm.shape)
-summary(pca.asymm)
 ```
 
 ## Define models
@@ -176,8 +172,6 @@ knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
 
 ### Principal Components Analysis (H1)
 
-#### PCA (symmetric)
-
 ```{r pca.symm.1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # set plot parameters to plot by heartland in (H) and out (N)
 pch.gps.heart <- c(15,17)[as.factor(heart)]
@@ -190,19 +184,6 @@ pc.plot1 <- plot(pca,
                  pch = pch.gps.heart,
                  col = col.gps.heart)
                     shapeHulls(pc.plot1, 
-                             groups = heart,
-                             group.cols = col.hull)
-```
-
-#### PCA (asymmetric)
-
-```{r pca.asymm.1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# plot pca by heartland in (H) and out (N)
-pc.plot.asymm.1 <- plot(pca.asymm, 
-                 asp = 1,
-                 pch = pch.gps.heart,
-                 col = col.gps.heart)
-                    shapeHulls(pc.plot.asymm.1, 
                              groups = heart,
                              group.cols = col.hull)
 ```
@@ -240,8 +221,6 @@ knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
 
 ### Principal Components Analysis (H2)
 
-#### PCA (symmetric)
-
 ```{r pca.symm.2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # set plot parameters to plot by heartland + regions 
 pch.gps.hreg <- c(15,17,18)[as.factor(hreg)]
@@ -256,19 +235,6 @@ pc.plot.2 <- plot(pca,
                     shapeHulls(pc.plot.2, 
                              groups = hreg,
                              group.cols = col.hull.2)
-```
-
-#### PCA (asymmetric)
-
-```{r pca.asymm.2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# plot pca by heartland + regions (asymmetric)
-pc.plot.asymm.2 <- plot(pca.asymm, 
-                   asp = 1,
-                   pch = pch.gps.hreg,
-                   col = col.gps.hreg)
-                    shapeHulls(pc.plot.asymm.2, 
-                               groups = hreg,
-                               group.cols = col.hull.2)
 ```
 
 ### ANOVA
@@ -310,8 +276,6 @@ knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
 
 ### Principal Components Analysis (H3)
 
-#### PCA (symmetric)
-
 ```{r pca.symm.3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # set plot parameters to plot by beveled y and n
 pch.gps.bev.1 <- c(15,17)[as.factor(bev.1)]
@@ -326,19 +290,6 @@ pc.plot3 <- plot(pca,
                     shapeHulls(pc.plot3, 
                              groups = bev.1,
                              group.cols = col.hull.3)
-```
-
-#### PCA (asymmetric)
-
-```{r pca.asymm.3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# plot pca by heartland in (H) and out (N) (asymmetric)
-pc.plot.asymm.3 <- plot(pca.asymm, 
-                   asp = 1,
-                   pch = pch.gps.bev.1,
-                   col = col.gps.bev.1)
-                      shapeHulls(pc.plot.asymm.3, 
-                               groups = bev.1,
-                               group.cols = col.hull.3)
 ```
 
 ### ANOVA
@@ -374,8 +325,6 @@ knitr::include_graphics('images/dalton-vizhypothesis4-1.jpg')
 
 ### Principal Components Analysis (H4)
 
-#### PCA (symmetric)
-
 ```{r pca.symm4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # set plot parameters to plot by bevel type
 pch.gps.bev.2 <- c(15,17,18)[as.factor(bev.2)]
@@ -390,19 +339,6 @@ pc.plot4 <- plot(pca,
                     shapeHulls(pc.plot4, 
                              groups = bev.2,
                              group.cols = col.hull.4)
-```
-
-#### PCA (asymmetric)
-
-```{r pca.asymm.4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# plot pca by bevel type (asymmetric)
-pc.plot.asymm.4 <- plot(pca.asymm, 
-                   asp = 1,
-                   pch = pch.gps.bev.2,
-                   col = col.gps.bev.2)
-                      shapeHulls(pc.plot.asymm.4, 
-                               groups = bev.2,
-                               group.cols = col.hull.4)
 ```
 
 ### ANOVA
