@@ -19,7 +19,7 @@ setwd(getwd())
 source('readmulti.csv.R')
 
 # read .csv files
-setwd("./data.mid.x")
+setwd("./data")
 filelist <- list.files(pattern = ".csv")
 coords <- readmulti.csv(filelist)
 setwd("../")
@@ -37,17 +37,28 @@ qdata <- qdata[match(dimnames(coords)[[3]],rownames(qdata)),]
 Landmark data were aligned to a global coordinate system [@RN11622;@RN11623;@RN11563], achieved through generalized Procrustes superimposition [@RN478] performed in R 4.0.2 [@R] using the `geomorph` library v. 3.3.1 [@RN11530;@RN1774]. Procrustes superimposition translates, scales, and rotates the coordinate data to allow for comparisons among objects [@RN11564;@RN478]. The `geomorph` package uses a partial Procrustes superimposition that projects the aligned specimens into tangent space subsequent to alignment in preparation for the use of multivariate methods that assume linear space [@RN1646;@RN11563]. 
 
 ```{r gpa.midcross, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+#select landmarks from coords for midline cross-section
+a <- c(1,6,19:30)
+
+# new coords midline
+mid.cross <- coords[a,,]
+
 # gpa
-Y.gpa <- gpagen(coords, 
+Y.gpa <- gpagen(mid.cross, 
                 PrinAxes = TRUE, 
                 ProcD = TRUE, 
                 Proj = TRUE, 
                 print.progress = FALSE)
 
 # output + consensus configuration coords
-Y.gpa
+#Y.gpa
 
-plot(Y.gpa)
+# plot gpa results in 3D
+#plot(Y.gpa)
+
+# plot superimposed mshape + samples in 2D
+gpa.shape <- Y.gpa$coords[,1:2,]
+plotAllSpecimens(gpa.shape, mean = TRUE, label = TRUE)
 
 # geomorph data frame
 gdf <- geomorph.data.frame(shape = Y.gpa$coords, 
