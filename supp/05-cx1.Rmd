@@ -8,12 +8,10 @@ The [dynamic midline cross-section](https://aksel-blaise.github.io/dalton/landma
 # load packages
 
 # devtools::install_github("geomorphR/geomorph", ref = "Stable", build_vignettes = TRUE)
+library(here)
 library(geomorph)
 library(tidyverse)
 library(wesanderson)
-
-# setwd
-setwd(getwd())
 
 # read GM data
 source('readmulti.csv.R')

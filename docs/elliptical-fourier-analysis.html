@@ -24,7 +24,7 @@
 <meta name="author" content="Robert Z. Selden, Jr." />
 
 
-<meta name="date" content="2020-10-05" />
+<meta name="date" content="2020-10-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -397,16 +397,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="load-packages-data" class="section level2">
 <h2><span class="header-section-number">1.1</span> Load packages + data</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="elliptical-fourier-analysis.html#cb1-1"></a><span class="co"># load packages</span></span>
-<span id="cb1-2"><a href="elliptical-fourier-analysis.html#cb1-2"></a><span class="kw">library</span>(here)</span></code></pre></div>
-<pre><code>## here() starts at E:/github/dalton/supp</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="elliptical-fourier-analysis.html#cb3-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb3-2"><a href="elliptical-fourier-analysis.html#cb3-2"></a><span class="kw">library</span>(wesanderson)</span>
-<span id="cb3-3"><a href="elliptical-fourier-analysis.html#cb3-3"></a><span class="kw">library</span>(Momocs)</span></code></pre></div>
-<pre><code>## 
-##   Momocs is now retired and will no longer be maintained.
-##   It is superseded by Momocs2 and more generally MomX ecosystem:
-## 
-##              &lt;   https://momx.github.io   &gt;</code></pre>
+<span id="cb1-2"><a href="elliptical-fourier-analysis.html#cb1-2"></a><span class="kw">library</span>(here)</span>
+<span id="cb1-3"><a href="elliptical-fourier-analysis.html#cb1-3"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="elliptical-fourier-analysis.html#cb1-4"></a><span class="kw">library</span>(wesanderson)</span>
+<span id="cb1-5"><a href="elliptical-fourier-analysis.html#cb1-5"></a><span class="kw">library</span>(Momocs)</span></code></pre></div>
 <pre><code>## 
 ## Attaching package: &#39;Momocs&#39;</code></pre>
 <pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
@@ -421,22 +415,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## The following object is masked from &#39;package:stats&#39;:
 ## 
 ##     filter</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="elliptical-fourier-analysis.html#cb10-1"></a><span class="co"># read images + attribute data</span></span>
-<span id="cb10-2"><a href="elliptical-fourier-analysis.html#cb10-2"></a>jpg.list &lt;-<span class="st"> </span><span class="kw">list.files</span>(<span class="kw">here</span>(<span class="st">&quot;/jpeg&quot;</span>), <span class="dt">full.names =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb10-3"><a href="elliptical-fourier-analysis.html#cb10-3"></a>att.data &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;qdata.csv&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">as.is =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb10-4"><a href="elliptical-fourier-analysis.html#cb10-4"></a></span>
-<span id="cb10-5"><a href="elliptical-fourier-analysis.html#cb10-5"></a><span class="co"># attributes to factors</span></span>
-<span id="cb10-6"><a href="elliptical-fourier-analysis.html#cb10-6"></a>att.data<span class="op">$</span>heart.out &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>heart.out)</span>
-<span id="cb10-7"><a href="elliptical-fourier-analysis.html#cb10-7"></a>att.data<span class="op">$</span>heart.out &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>heart.out)</span>
-<span id="cb10-8"><a href="elliptical-fourier-analysis.html#cb10-8"></a>att.data<span class="op">$</span>heart.reg &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>heart.reg)</span>
-<span id="cb10-9"><a href="elliptical-fourier-analysis.html#cb10-9"></a>att.data<span class="op">$</span>bev &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>bev)</span>
-<span id="cb10-10"><a href="elliptical-fourier-analysis.html#cb10-10"></a>att.data<span class="op">$</span>bev.type &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>bev.type)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="elliptical-fourier-analysis.html#cb7-1"></a><span class="co"># read images + attribute data</span></span>
+<span id="cb7-2"><a href="elliptical-fourier-analysis.html#cb7-2"></a>jpg.list &lt;-<span class="st"> </span><span class="kw">list.files</span>(<span class="kw">here</span>(<span class="st">&quot;/jpeg&quot;</span>), <span class="dt">full.names =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb7-3"><a href="elliptical-fourier-analysis.html#cb7-3"></a>att.data &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;qdata.csv&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">as.is =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb7-4"><a href="elliptical-fourier-analysis.html#cb7-4"></a></span>
+<span id="cb7-5"><a href="elliptical-fourier-analysis.html#cb7-5"></a><span class="co"># attributes to factors</span></span>
+<span id="cb7-6"><a href="elliptical-fourier-analysis.html#cb7-6"></a>att.data<span class="op">$</span>heart.out &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>heart.out)</span>
+<span id="cb7-7"><a href="elliptical-fourier-analysis.html#cb7-7"></a>att.data<span class="op">$</span>heart.out &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>heart.out)</span>
+<span id="cb7-8"><a href="elliptical-fourier-analysis.html#cb7-8"></a>att.data<span class="op">$</span>heart.reg &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>heart.reg)</span>
+<span id="cb7-9"><a href="elliptical-fourier-analysis.html#cb7-9"></a>att.data<span class="op">$</span>bev &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>bev)</span>
+<span id="cb7-10"><a href="elliptical-fourier-analysis.html#cb7-10"></a>att.data<span class="op">$</span>bev.type &lt;-<span class="st"> </span><span class="kw">as.factor</span>(att.data<span class="op">$</span>bev.type)</span></code></pre></div>
 </div>
 <div id="generate-outlines" class="section level2">
 <h2><span class="header-section-number">1.2</span> Generate outlines</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="elliptical-fourier-analysis.html#cb11-1"></a><span class="co"># generate outlines</span></span>
-<span id="cb11-2"><a href="elliptical-fourier-analysis.html#cb11-2"></a>outlines &lt;-<span class="st"> </span>jpg.list <span class="op">%&gt;%</span></span>
-<span id="cb11-3"><a href="elliptical-fourier-analysis.html#cb11-3"></a><span class="st">  </span><span class="kw">import_jpg</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="elliptical-fourier-analysis.html#cb8-1"></a><span class="co"># generate outlines</span></span>
+<span id="cb8-2"><a href="elliptical-fourier-analysis.html#cb8-2"></a>outlines &lt;-<span class="st"> </span>jpg.list <span class="op">%&gt;%</span></span>
+<span id="cb8-3"><a href="elliptical-fourier-analysis.html#cb8-3"></a><span class="st">  </span><span class="kw">import_jpg</span>()</span></code></pre></div>
 <pre><code>## Extracting 45.jpg outlines...</code></pre>
 <pre><code>## [ 1 / 45 ]  11AI225.jpg
 ## [ 2 / 45 ]  11HE445.jpg
@@ -483,35 +477,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [ 43 / 45 ]  Welton4.jpg
 ## [ 44 / 45 ]  Welton5.jpg
 ## [ 45 / 45 ]  Welton6.jpg</code></pre>
-<pre><code>## Done in 7.5 secs</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="elliptical-fourier-analysis.html#cb15-1"></a><span class="co"># add attributes</span></span>
-<span id="cb15-2"><a href="elliptical-fourier-analysis.html#cb15-2"></a>data.out &lt;-<span class="st"> </span><span class="kw">Out</span>(outlines, </span>
-<span id="cb15-3"><a href="elliptical-fourier-analysis.html#cb15-3"></a>         <span class="dt">fac =</span> att.data)</span>
-<span id="cb15-4"><a href="elliptical-fourier-analysis.html#cb15-4"></a></span>
-<span id="cb15-5"><a href="elliptical-fourier-analysis.html#cb15-5"></a><span class="co"># center, scale, align, and rotate specimens</span></span>
-<span id="cb15-6"><a href="elliptical-fourier-analysis.html#cb15-6"></a>norm.outlines &lt;-<span class="st"> </span>data.out <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb15-7"><a href="elliptical-fourier-analysis.html#cb15-7"></a><span class="st">  </span><span class="kw">coo_scale</span>() <span class="op">%&gt;%</span></span>
-<span id="cb15-8"><a href="elliptical-fourier-analysis.html#cb15-8"></a><span class="st">  </span><span class="kw">coo_rotate</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb15-9"><a href="elliptical-fourier-analysis.html#cb15-9"></a><span class="st">  </span><span class="kw">coo_align</span>() <span class="op">%&gt;%</span></span>
-<span id="cb15-10"><a href="elliptical-fourier-analysis.html#cb15-10"></a><span class="st">  </span><span class="kw">coo_center</span>()</span></code></pre></div>
+<pre><code>## Done in 6.7 secs</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="elliptical-fourier-analysis.html#cb12-1"></a><span class="co"># add attributes</span></span>
+<span id="cb12-2"><a href="elliptical-fourier-analysis.html#cb12-2"></a>data.out &lt;-<span class="st"> </span><span class="kw">Out</span>(outlines, </span>
+<span id="cb12-3"><a href="elliptical-fourier-analysis.html#cb12-3"></a>         <span class="dt">fac =</span> att.data)</span>
+<span id="cb12-4"><a href="elliptical-fourier-analysis.html#cb12-4"></a></span>
+<span id="cb12-5"><a href="elliptical-fourier-analysis.html#cb12-5"></a><span class="co"># center, scale, align, and rotate specimens</span></span>
+<span id="cb12-6"><a href="elliptical-fourier-analysis.html#cb12-6"></a>norm.outlines &lt;-<span class="st"> </span>data.out <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb12-7"><a href="elliptical-fourier-analysis.html#cb12-7"></a><span class="st">  </span><span class="kw">coo_scale</span>() <span class="op">%&gt;%</span></span>
+<span id="cb12-8"><a href="elliptical-fourier-analysis.html#cb12-8"></a><span class="st">  </span><span class="kw">coo_rotate</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb12-9"><a href="elliptical-fourier-analysis.html#cb12-9"></a><span class="st">  </span><span class="kw">coo_align</span>() <span class="op">%&gt;%</span></span>
+<span id="cb12-10"><a href="elliptical-fourier-analysis.html#cb12-10"></a><span class="st">  </span><span class="kw">coo_center</span>()</span></code></pre></div>
 </div>
 <div id="pile" class="section level2">
 <h2><span class="header-section-number">1.3</span> Pile</h2>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="elliptical-fourier-analysis.html#cb16-1"></a><span class="co"># outline pile</span></span>
-<span id="cb16-2"><a href="elliptical-fourier-analysis.html#cb16-2"></a><span class="kw">pile</span>(norm.outlines)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="elliptical-fourier-analysis.html#cb13-1"></a><span class="co"># outline pile</span></span>
+<span id="cb13-2"><a href="elliptical-fourier-analysis.html#cb13-2"></a><span class="kw">pile</span>(norm.outlines)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/stack.panel-1.png" width="100%" /></p>
 </div>
 <div id="calibrate-harmonic-efa" class="section level2">
 <h2><span class="header-section-number">1.4</span> Calibrate harmonic + EFA</h2>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="elliptical-fourier-analysis.html#cb17-1"></a><span class="co"># calibrate how many harmonics needed</span></span>
-<span id="cb17-2"><a href="elliptical-fourier-analysis.html#cb17-2"></a><span class="kw">calibrate_harmonicpower_efourier</span>(norm.outlines, </span>
-<span id="cb17-3"><a href="elliptical-fourier-analysis.html#cb17-3"></a>                                 <span class="dt">nb.h =</span> <span class="dv">20</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="elliptical-fourier-analysis.html#cb14-1"></a><span class="co"># calibrate how many harmonics needed</span></span>
+<span id="cb14-2"><a href="elliptical-fourier-analysis.html#cb14-2"></a><span class="kw">calibrate_harmonicpower_efourier</span>(norm.outlines, </span>
+<span id="cb14-3"><a href="elliptical-fourier-analysis.html#cb14-3"></a>                                 <span class="dt">nb.h =</span> <span class="dv">20</span>)</span></code></pre></div>
 <pre><code>## $gg</code></pre>
 <p><img src="dalton.supp_files/figure-html/cal.harm-1.png" width="100%" /></p>
 <pre><code>## 
 ## $q
 ##                                  h1       h2       h3       h4       h5       h6       h7       h8       h9      h10      h11      h12
-## 11AI225                    65.86198 71.57072 91.07001 93.38341 97.93521 98.12971 98.54463 99.01310 99.07857 99.47985 99.66870 99.70516
+## 11AI225                    65.97512 71.53051 91.13162 93.43869 97.93984 98.13585 98.54531 99.02323 99.09077 99.48732 99.66986 99.70139
 ## 11HE445                    31.71380 68.00042 87.76597 90.37718 96.81345 97.47767 98.86839 99.14479 99.18980 99.47455 99.53302 99.74857
 ## HK49_1462                  54.77031 83.17790 94.41895 95.35329 98.43893 98.65503 99.30013 99.43902 99.47831 99.72894 99.79513 99.83847
 ## HK49_2                     71.50329 83.31028 94.41132 95.49433 97.87996 98.57595 98.98002 99.25857 99.52727 99.65659 99.76875 99.80320
@@ -557,7 +551,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Welton5                    19.96734 79.21885 86.69763 91.04814 94.68065 95.43068 97.09599 97.22612 98.27772 98.53168 99.31495 99.48053
 ## Welton6                    43.90564 66.07756 75.97847 77.94012 83.05639 86.56435 91.55629 93.35972 96.62547 97.91635 98.94790 99.09255
 ##                                 h13      h14      h15      h16      h17      h18 h19
-## 11AI225                    99.82418 99.89303 99.95335 99.96985 99.98000 99.99529 100
+## 11AI225                    99.82480 99.89427 99.95236 99.96840 99.97868 99.99511 100
 ## 11HE445                    99.83155 99.86798 99.89064 99.89775 99.96522 99.98554 100
 ## HK49_1462                  99.87109 99.89442 99.97203 99.98009 99.98320 99.98734 100
 ## HK49_2                     99.90730 99.94805 99.96495 99.96890 99.97659 99.99185 100
@@ -606,32 +600,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $minh
 ##   90%   95%   99% 99.9% 
 ##     4     6    10    16</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="elliptical-fourier-analysis.html#cb20-1"></a><span class="co"># 10 harmonics capture 99 percent of variation</span></span>
-<span id="cb20-2"><a href="elliptical-fourier-analysis.html#cb20-2"></a><span class="kw">calibrate_reconstructions_efourier</span>(norm.outlines, </span>
-<span id="cb20-3"><a href="elliptical-fourier-analysis.html#cb20-3"></a>                                   <span class="dt">range =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="elliptical-fourier-analysis.html#cb17-1"></a><span class="co"># 10 harmonics capture 99 percent of variation</span></span>
+<span id="cb17-2"><a href="elliptical-fourier-analysis.html#cb17-2"></a><span class="kw">calibrate_reconstructions_efourier</span>(norm.outlines, </span>
+<span id="cb17-3"><a href="elliptical-fourier-analysis.html#cb17-3"></a>                                   <span class="dt">range =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/cal.harm-2.png" width="100%" /></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="elliptical-fourier-analysis.html#cb21-1"></a><span class="co"># generate efa outlines with 10 harmonics</span></span>
-<span id="cb21-2"><a href="elliptical-fourier-analysis.html#cb21-2"></a>efa.outlines &lt;-<span class="st"> </span><span class="kw">efourier</span>(norm.outlines, </span>
-<span id="cb21-3"><a href="elliptical-fourier-analysis.html#cb21-3"></a>                         <span class="dt">nb.h =</span> <span class="dv">10</span>, </span>
-<span id="cb21-4"><a href="elliptical-fourier-analysis.html#cb21-4"></a>                         <span class="dt">norm =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="elliptical-fourier-analysis.html#cb18-1"></a><span class="co"># generate efa outlines with 10 harmonics</span></span>
+<span id="cb18-2"><a href="elliptical-fourier-analysis.html#cb18-2"></a>efa.outlines &lt;-<span class="st"> </span><span class="kw">efourier</span>(norm.outlines, </span>
+<span id="cb18-3"><a href="elliptical-fourier-analysis.html#cb18-3"></a>                         <span class="dt">nb.h =</span> <span class="dv">10</span>, </span>
+<span id="cb18-4"><a href="elliptical-fourier-analysis.html#cb18-4"></a>                         <span class="dt">norm =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 </div>
 <div id="principal-components-analysis" class="section level2">
 <h2><span class="header-section-number">1.5</span> Principal Components Analysis</h2>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="elliptical-fourier-analysis.html#cb22-1"></a><span class="co"># use efa.outlines for pca</span></span>
-<span id="cb22-2"><a href="elliptical-fourier-analysis.html#cb22-2"></a>pca.outlines &lt;-<span class="st"> </span><span class="kw">PCA</span>(efa.outlines)</span>
-<span id="cb22-3"><a href="elliptical-fourier-analysis.html#cb22-3"></a></span>
-<span id="cb22-4"><a href="elliptical-fourier-analysis.html#cb22-4"></a><span class="co"># pca </span></span>
-<span id="cb22-5"><a href="elliptical-fourier-analysis.html#cb22-5"></a><span class="kw">scree_plot</span>(pca.outlines)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="elliptical-fourier-analysis.html#cb19-1"></a><span class="co"># use efa.outlines for pca</span></span>
+<span id="cb19-2"><a href="elliptical-fourier-analysis.html#cb19-2"></a>pca.outlines &lt;-<span class="st"> </span><span class="kw">PCA</span>(efa.outlines)</span>
+<span id="cb19-3"><a href="elliptical-fourier-analysis.html#cb19-3"></a></span>
+<span id="cb19-4"><a href="elliptical-fourier-analysis.html#cb19-4"></a><span class="co"># pca </span></span>
+<span id="cb19-5"><a href="elliptical-fourier-analysis.html#cb19-5"></a><span class="kw">scree_plot</span>(pca.outlines)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.plot-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="elliptical-fourier-analysis.html#cb23-1"></a><span class="co"># mean shape + 2sd for the first 10 pcs</span></span>
-<span id="cb23-2"><a href="elliptical-fourier-analysis.html#cb23-2"></a><span class="kw">PCcontrib</span>(pca.outlines, </span>
-<span id="cb23-3"><a href="elliptical-fourier-analysis.html#cb23-3"></a>          <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="elliptical-fourier-analysis.html#cb20-1"></a><span class="co"># mean shape + 2sd for the first 10 pcs</span></span>
+<span id="cb20-2"><a href="elliptical-fourier-analysis.html#cb20-2"></a><span class="kw">PCcontrib</span>(pca.outlines, </span>
+<span id="cb20-3"><a href="elliptical-fourier-analysis.html#cb20-3"></a>          <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.plot-2.png" width="100%" /></p>
 </div>
 <div id="test-hypothesis-1-geo-efa" class="section level2">
 <h2><span class="header-section-number">1.6</span> Test Hypothesis 1 (Geo EFA)</h2>
 <p>Hypothesis 1 assesses whether there is a difference in the symmetric shape of Dalton points found in and out of the heartland.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="elliptical-fourier-analysis.html#cb24-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis1.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="elliptical-fourier-analysis.html#cb21-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis1.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis1.jpg" alt="Hypothesis 1 considers whether Dalton points discovered in (left) and out (right) of the Heartland differ in morphology." width="100%" />
 <p class="caption">
@@ -640,51 +634,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="mosaic-h1" class="section level3">
 <h3><span class="header-section-number">1.6.1</span> Mosaic (H1)</h3>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="elliptical-fourier-analysis.html#cb25-1"></a><span class="co"># plot mosaic</span></span>
-<span id="cb25-2"><a href="elliptical-fourier-analysis.html#cb25-2"></a></span>
-<span id="cb25-3"><a href="elliptical-fourier-analysis.html#cb25-3"></a><span class="co"># in/out of heartland</span></span>
-<span id="cb25-4"><a href="elliptical-fourier-analysis.html#cb25-4"></a><span class="kw">mosaic</span>(norm.outlines, </span>
-<span id="cb25-5"><a href="elliptical-fourier-analysis.html#cb25-5"></a>       <span class="op">~</span>heart.out, </span>
-<span id="cb25-6"><a href="elliptical-fourier-analysis.html#cb25-6"></a>       <span class="dt">asp =</span> <span class="dv">1</span>, </span>
-<span id="cb25-7"><a href="elliptical-fourier-analysis.html#cb25-7"></a>       <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="elliptical-fourier-analysis.html#cb22-1"></a><span class="co"># plot mosaic</span></span>
+<span id="cb22-2"><a href="elliptical-fourier-analysis.html#cb22-2"></a></span>
+<span id="cb22-3"><a href="elliptical-fourier-analysis.html#cb22-3"></a><span class="co"># in/out of heartland</span></span>
+<span id="cb22-4"><a href="elliptical-fourier-analysis.html#cb22-4"></a><span class="kw">mosaic</span>(norm.outlines, </span>
+<span id="cb22-5"><a href="elliptical-fourier-analysis.html#cb22-5"></a>       <span class="op">~</span>heart.out, </span>
+<span id="cb22-6"><a href="elliptical-fourier-analysis.html#cb22-6"></a>       <span class="dt">asp =</span> <span class="dv">1</span>, </span>
+<span id="cb22-7"><a href="elliptical-fourier-analysis.html#cb22-7"></a>       <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/mosaic.h1-1.png" width="100%" /></p>
 </div>
 <div id="principal-components-analysis-h1" class="section level3">
 <h3><span class="header-section-number">1.6.2</span> Principal Components Analysis (H1)</h3>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="elliptical-fourier-analysis.html#cb26-1"></a><span class="co"># plot pca</span></span>
-<span id="cb26-2"><a href="elliptical-fourier-analysis.html#cb26-2"></a></span>
-<span id="cb26-3"><a href="elliptical-fourier-analysis.html#cb26-3"></a><span class="co"># heartland in/out</span></span>
-<span id="cb26-4"><a href="elliptical-fourier-analysis.html#cb26-4"></a><span class="kw">plot_PCA</span>(pca.outlines, </span>
-<span id="cb26-5"><a href="elliptical-fourier-analysis.html#cb26-5"></a>         <span class="dt">morphospace_position =</span> <span class="st">&quot;range&quot;</span>, </span>
-<span id="cb26-6"><a href="elliptical-fourier-analysis.html#cb26-6"></a>         <span class="op">~</span>heart.out, <span class="dt">zoom =</span> <span class="fl">1.25</span>, </span>
-<span id="cb26-7"><a href="elliptical-fourier-analysis.html#cb26-7"></a>         <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="elliptical-fourier-analysis.html#cb23-1"></a><span class="co"># plot pca</span></span>
+<span id="cb23-2"><a href="elliptical-fourier-analysis.html#cb23-2"></a></span>
+<span id="cb23-3"><a href="elliptical-fourier-analysis.html#cb23-3"></a><span class="co"># heartland in/out</span></span>
+<span id="cb23-4"><a href="elliptical-fourier-analysis.html#cb23-4"></a><span class="kw">plot_PCA</span>(pca.outlines, </span>
+<span id="cb23-5"><a href="elliptical-fourier-analysis.html#cb23-5"></a>         <span class="dt">morphospace_position =</span> <span class="st">&quot;range&quot;</span>, </span>
+<span id="cb23-6"><a href="elliptical-fourier-analysis.html#cb23-6"></a>         <span class="op">~</span>heart.out, <span class="dt">zoom =</span> <span class="fl">1.25</span>, </span>
+<span id="cb23-7"><a href="elliptical-fourier-analysis.html#cb23-7"></a>         <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.h1,-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="elliptical-fourier-analysis.html#cb27-1"></a><span class="co"># contribution of each pc</span></span>
-<span id="cb27-2"><a href="elliptical-fourier-analysis.html#cb27-2"></a><span class="kw">boxplot</span>(pca.outlines, </span>
-<span id="cb27-3"><a href="elliptical-fourier-analysis.html#cb27-3"></a>        <span class="op">~</span>heart.out, </span>
-<span id="cb27-4"><a href="elliptical-fourier-analysis.html#cb27-4"></a>        <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, </span>
-<span id="cb27-5"><a href="elliptical-fourier-analysis.html#cb27-5"></a>        <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="elliptical-fourier-analysis.html#cb24-1"></a><span class="co"># contribution of each pc</span></span>
+<span id="cb24-2"><a href="elliptical-fourier-analysis.html#cb24-2"></a><span class="kw">boxplot</span>(pca.outlines, </span>
+<span id="cb24-3"><a href="elliptical-fourier-analysis.html#cb24-3"></a>        <span class="op">~</span>heart.out, </span>
+<span id="cb24-4"><a href="elliptical-fourier-analysis.html#cb24-4"></a>        <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, </span>
+<span id="cb24-5"><a href="elliptical-fourier-analysis.html#cb24-5"></a>        <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.h1,-2.png" width="100%" /></p>
 </div>
 <div id="manova-h1" class="section level3">
 <h3><span class="header-section-number">1.6.3</span> MANOVA (H1)</h3>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="elliptical-fourier-analysis.html#cb28-1"></a><span class="co"># manova + manova_pw</span></span>
-<span id="cb28-2"><a href="elliptical-fourier-analysis.html#cb28-2"></a></span>
-<span id="cb28-3"><a href="elliptical-fourier-analysis.html#cb28-3"></a><span class="co"># do shapes differ in/out of heartland?</span></span>
-<span id="cb28-4"><a href="elliptical-fourier-analysis.html#cb28-4"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;heart.out&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="elliptical-fourier-analysis.html#cb25-1"></a><span class="co"># manova + manova_pw</span></span>
+<span id="cb25-2"><a href="elliptical-fourier-analysis.html#cb25-2"></a></span>
+<span id="cb25-3"><a href="elliptical-fourier-analysis.html#cb25-3"></a><span class="co"># do shapes differ in/out of heartland?</span></span>
+<span id="cb25-4"><a href="elliptical-fourier-analysis.html#cb25-4"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;heart.out&#39;</span>)</span></code></pre></div>
 <pre><code>## PC axes 1 to 11 were retained</code></pre>
 <pre><code>##           Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
-## fac        1           2.2649   6.7946     11     33 8.203e-06 ***
+## fac        1           2.2648   6.7945     11     33 8.204e-06 ***
 ## Residuals 43                                                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
 <div id="mean-shapes-h1" class="section level3">
 <h3><span class="header-section-number">1.6.4</span> Mean shapes (H1)</h3>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="elliptical-fourier-analysis.html#cb31-1"></a><span class="co"># mean shapes</span></span>
-<span id="cb31-2"><a href="elliptical-fourier-analysis.html#cb31-2"></a>ms<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, </span>
-<span id="cb31-3"><a href="elliptical-fourier-analysis.html#cb31-3"></a>                <span class="op">~</span>heart.out)</span>
-<span id="cb31-4"><a href="elliptical-fourier-analysis.html#cb31-4"></a><span class="kw">plot_MSHAPES</span>(ms<span class="fl">.1</span>, <span class="dt">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="elliptical-fourier-analysis.html#cb28-1"></a><span class="co"># mean shapes</span></span>
+<span id="cb28-2"><a href="elliptical-fourier-analysis.html#cb28-2"></a>ms<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, </span>
+<span id="cb28-3"><a href="elliptical-fourier-analysis.html#cb28-3"></a>                <span class="op">~</span>heart.out)</span>
+<span id="cb28-4"><a href="elliptical-fourier-analysis.html#cb28-4"></a><span class="kw">plot_MSHAPES</span>(ms<span class="fl">.1</span>, <span class="dt">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
 <div class="figure">
 <img src="dalton.supp_files/figure-html/msshape.1-1.png" alt="Mean shapes for in (H) and out (N) of the heartland." width="100%" />
 <p class="caption">
@@ -696,7 +690,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="test-hypothesis-2-geo-efa" class="section level2">
 <h2><span class="header-section-number">1.7</span> Test Hypothesis 2 (Geo EFA)</h2>
 <p>Hypothesis 2 assesses whether there is a difference in morphology for Dalton points found in the heartland, the interior, and the northern periphery.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="elliptical-fourier-analysis.html#cb32-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis2.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="elliptical-fourier-analysis.html#cb29-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis2.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis2.jpg" alt="Hypothesis 2 considers whether Dalton points discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology." width="100%" />
 <p class="caption">
@@ -705,46 +699,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="mosaic-h2" class="section level3">
 <h3><span class="header-section-number">1.7.1</span> Mosaic (H2)</h3>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="elliptical-fourier-analysis.html#cb33-1"></a><span class="co"># plot mosaic</span></span>
-<span id="cb33-2"><a href="elliptical-fourier-analysis.html#cb33-2"></a></span>
-<span id="cb33-3"><a href="elliptical-fourier-analysis.html#cb33-3"></a><span class="co"># heartland regions (heartland, interior, and northern periphery)</span></span>
-<span id="cb33-4"><a href="elliptical-fourier-analysis.html#cb33-4"></a><span class="kw">mosaic</span>(norm.outlines, </span>
-<span id="cb33-5"><a href="elliptical-fourier-analysis.html#cb33-5"></a>       <span class="op">~</span>heart.reg, </span>
-<span id="cb33-6"><a href="elliptical-fourier-analysis.html#cb33-6"></a>       <span class="dt">asp =</span> <span class="dv">1</span>, </span>
-<span id="cb33-7"><a href="elliptical-fourier-analysis.html#cb33-7"></a>       <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="elliptical-fourier-analysis.html#cb30-1"></a><span class="co"># plot mosaic</span></span>
+<span id="cb30-2"><a href="elliptical-fourier-analysis.html#cb30-2"></a></span>
+<span id="cb30-3"><a href="elliptical-fourier-analysis.html#cb30-3"></a><span class="co"># heartland regions (heartland, interior, and northern periphery)</span></span>
+<span id="cb30-4"><a href="elliptical-fourier-analysis.html#cb30-4"></a><span class="kw">mosaic</span>(norm.outlines, </span>
+<span id="cb30-5"><a href="elliptical-fourier-analysis.html#cb30-5"></a>       <span class="op">~</span>heart.reg, </span>
+<span id="cb30-6"><a href="elliptical-fourier-analysis.html#cb30-6"></a>       <span class="dt">asp =</span> <span class="dv">1</span>, </span>
+<span id="cb30-7"><a href="elliptical-fourier-analysis.html#cb30-7"></a>       <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/mosaic.h2-1.png" width="100%" /></p>
 </div>
 <div id="principal-components-analysis-h2" class="section level3">
 <h3><span class="header-section-number">1.7.2</span> Principal Components Analysis (H2)</h3>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="elliptical-fourier-analysis.html#cb34-1"></a><span class="co"># plot pca</span></span>
-<span id="cb34-2"><a href="elliptical-fourier-analysis.html#cb34-2"></a></span>
-<span id="cb34-3"><a href="elliptical-fourier-analysis.html#cb34-3"></a><span class="co"># heartland region</span></span>
-<span id="cb34-4"><a href="elliptical-fourier-analysis.html#cb34-4"></a><span class="kw">plot_PCA</span>(pca.outlines, </span>
-<span id="cb34-5"><a href="elliptical-fourier-analysis.html#cb34-5"></a>         <span class="dt">morphospace_position =</span> <span class="st">&quot;range&quot;</span>, </span>
-<span id="cb34-6"><a href="elliptical-fourier-analysis.html#cb34-6"></a>         <span class="op">~</span>heart.reg, <span class="dt">zoom =</span> <span class="fl">1.25</span>, </span>
-<span id="cb34-7"><a href="elliptical-fourier-analysis.html#cb34-7"></a>         <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="elliptical-fourier-analysis.html#cb31-1"></a><span class="co"># plot pca</span></span>
+<span id="cb31-2"><a href="elliptical-fourier-analysis.html#cb31-2"></a></span>
+<span id="cb31-3"><a href="elliptical-fourier-analysis.html#cb31-3"></a><span class="co"># heartland region</span></span>
+<span id="cb31-4"><a href="elliptical-fourier-analysis.html#cb31-4"></a><span class="kw">plot_PCA</span>(pca.outlines, </span>
+<span id="cb31-5"><a href="elliptical-fourier-analysis.html#cb31-5"></a>         <span class="dt">morphospace_position =</span> <span class="st">&quot;range&quot;</span>, </span>
+<span id="cb31-6"><a href="elliptical-fourier-analysis.html#cb31-6"></a>         <span class="op">~</span>heart.reg, <span class="dt">zoom =</span> <span class="fl">1.25</span>, </span>
+<span id="cb31-7"><a href="elliptical-fourier-analysis.html#cb31-7"></a>         <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.h2-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="elliptical-fourier-analysis.html#cb35-1"></a><span class="co"># contribution of each pc</span></span>
-<span id="cb35-2"><a href="elliptical-fourier-analysis.html#cb35-2"></a><span class="kw">boxplot</span>(pca.outlines, </span>
-<span id="cb35-3"><a href="elliptical-fourier-analysis.html#cb35-3"></a>        <span class="op">~</span>heart.reg, </span>
-<span id="cb35-4"><a href="elliptical-fourier-analysis.html#cb35-4"></a>        <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, </span>
-<span id="cb35-5"><a href="elliptical-fourier-analysis.html#cb35-5"></a>        <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="elliptical-fourier-analysis.html#cb32-1"></a><span class="co"># contribution of each pc</span></span>
+<span id="cb32-2"><a href="elliptical-fourier-analysis.html#cb32-2"></a><span class="kw">boxplot</span>(pca.outlines, </span>
+<span id="cb32-3"><a href="elliptical-fourier-analysis.html#cb32-3"></a>        <span class="op">~</span>heart.reg, </span>
+<span id="cb32-4"><a href="elliptical-fourier-analysis.html#cb32-4"></a>        <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, </span>
+<span id="cb32-5"><a href="elliptical-fourier-analysis.html#cb32-5"></a>        <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.h2-2.png" width="100%" /></p>
 </div>
 <div id="manova-manova_pw-h2" class="section level3">
 <h3><span class="header-section-number">1.7.3</span> MANOVA + MANOVA_PW (H2)</h3>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="elliptical-fourier-analysis.html#cb36-1"></a><span class="co"># manova_pw</span></span>
-<span id="cb36-2"><a href="elliptical-fourier-analysis.html#cb36-2"></a></span>
-<span id="cb36-3"><a href="elliptical-fourier-analysis.html#cb36-3"></a><span class="co"># do shapes differ between heartland regions?</span></span>
-<span id="cb36-4"><a href="elliptical-fourier-analysis.html#cb36-4"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;heart.reg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="elliptical-fourier-analysis.html#cb33-1"></a><span class="co"># manova_pw</span></span>
+<span id="cb33-2"><a href="elliptical-fourier-analysis.html#cb33-2"></a></span>
+<span id="cb33-3"><a href="elliptical-fourier-analysis.html#cb33-3"></a><span class="co"># do shapes differ between heartland regions?</span></span>
+<span id="cb33-4"><a href="elliptical-fourier-analysis.html#cb33-4"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;heart.reg&#39;</span>)</span></code></pre></div>
 <pre><code>## PC axes 1 to 11 were retained</code></pre>
-<pre><code>##           Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
-## fac        2           3.2264   4.5463     22     62 1.297e-06 ***
-## Residuals 42                                                      
+<pre><code>##           Df Hotelling-Lawley approx F num Df den Df   Pr(&gt;F)    
+## fac        2           3.2275   4.5479     22     62 1.29e-06 ***
+## Residuals 42                                                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="elliptical-fourier-analysis.html#cb39-1"></a><span class="co"># which?</span></span>
-<span id="cb39-2"><a href="elliptical-fourier-analysis.html#cb39-2"></a><span class="kw">MANOVA_PW</span>(pca.outlines, <span class="st">&#39;heart.reg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="elliptical-fourier-analysis.html#cb36-1"></a><span class="co"># which?</span></span>
+<span id="cb36-2"><a href="elliptical-fourier-analysis.html#cb36-2"></a><span class="kw">MANOVA_PW</span>(pca.outlines, <span class="st">&#39;heart.reg&#39;</span>)</span></code></pre></div>
 <pre><code>## &#39;P&#39; has 10 rows, and &#39;retain&#39; is set accordingly</code></pre>
 <pre><code>## PC axes 1 to 10 were retained</code></pre>
 <pre><code>## HI</code></pre>
@@ -756,17 +750,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## I       -
 ## 
 ## $summary (see also $manovas)
-##       Df Pillai approx F num Df den Df   Pr(&gt;F)
-## H - I  1 0.8218   11.068     10     24 9.11e-07
-## H - P  1 0.6242    3.155     10     19 1.50e-02
-## I - P  1 0.5995    2.095     10     14 1.00e-01</code></pre>
+##       Df Pillai approx F num Df den Df    Pr(&gt;F)
+## H - I  1 0.8222   11.096     10     24 8.897e-07
+## H - P  1 0.6245    3.160     10     19 1.490e-02
+## I - P  1 0.5994    2.095     10     14 1.001e-01</code></pre>
 </div>
 <div id="mean-shapes-h2" class="section level3">
 <h3><span class="header-section-number">1.7.4</span> Mean shapes (H2)</h3>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="elliptical-fourier-analysis.html#cb46-1"></a><span class="co"># mean shapes</span></span>
-<span id="cb46-2"><a href="elliptical-fourier-analysis.html#cb46-2"></a>ms<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, </span>
-<span id="cb46-3"><a href="elliptical-fourier-analysis.html#cb46-3"></a>                <span class="op">~</span>heart.reg)</span>
-<span id="cb46-4"><a href="elliptical-fourier-analysis.html#cb46-4"></a><span class="kw">plot_MSHAPES</span>(ms<span class="fl">.2</span>, <span class="dt">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="elliptical-fourier-analysis.html#cb43-1"></a><span class="co"># mean shapes</span></span>
+<span id="cb43-2"><a href="elliptical-fourier-analysis.html#cb43-2"></a>ms<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, </span>
+<span id="cb43-3"><a href="elliptical-fourier-analysis.html#cb43-3"></a>                <span class="op">~</span>heart.reg)</span>
+<span id="cb43-4"><a href="elliptical-fourier-analysis.html#cb43-4"></a><span class="kw">plot_MSHAPES</span>(ms<span class="fl">.2</span>, <span class="dt">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
 <div class="figure">
 <img src="dalton.supp_files/figure-html/mean.shape.h2-1.png" alt="Mean shapes for heartland (H), interior (I), and northern periphery (P)." width="100%" />
 <p class="caption">
@@ -778,7 +772,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="test-hypothesis-3-techno-efa" class="section level2">
 <h2><span class="header-section-number">1.8</span> Test Hypothesis 3 (Techno EFA)</h2>
 <p>Hypothesis 3 assesses whether there is a discernible difference in morphology for Dalton points that are beveled.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="elliptical-fourier-analysis.html#cb47-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis3.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="elliptical-fourier-analysis.html#cb44-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis3.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis3.jpg" alt="Hypothesis 3 considers whether beveled Dalton points (left) differ in morphology from those that are not beveled (right)." width="100%" />
 <p class="caption">
@@ -787,51 +781,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="mosaic-h3" class="section level3">
 <h3><span class="header-section-number">1.8.1</span> Mosaic (H3)</h3>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="elliptical-fourier-analysis.html#cb48-1"></a><span class="co"># plot mosaic </span></span>
-<span id="cb48-2"><a href="elliptical-fourier-analysis.html#cb48-2"></a></span>
-<span id="cb48-3"><a href="elliptical-fourier-analysis.html#cb48-3"></a><span class="co"># beveled or not</span></span>
-<span id="cb48-4"><a href="elliptical-fourier-analysis.html#cb48-4"></a><span class="kw">mosaic</span>(norm.outlines, </span>
-<span id="cb48-5"><a href="elliptical-fourier-analysis.html#cb48-5"></a>       <span class="op">~</span>bev, </span>
-<span id="cb48-6"><a href="elliptical-fourier-analysis.html#cb48-6"></a>       <span class="dt">asp =</span> <span class="dv">1</span>, </span>
-<span id="cb48-7"><a href="elliptical-fourier-analysis.html#cb48-7"></a>       <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="elliptical-fourier-analysis.html#cb45-1"></a><span class="co"># plot mosaic </span></span>
+<span id="cb45-2"><a href="elliptical-fourier-analysis.html#cb45-2"></a></span>
+<span id="cb45-3"><a href="elliptical-fourier-analysis.html#cb45-3"></a><span class="co"># beveled or not</span></span>
+<span id="cb45-4"><a href="elliptical-fourier-analysis.html#cb45-4"></a><span class="kw">mosaic</span>(norm.outlines, </span>
+<span id="cb45-5"><a href="elliptical-fourier-analysis.html#cb45-5"></a>       <span class="op">~</span>bev, </span>
+<span id="cb45-6"><a href="elliptical-fourier-analysis.html#cb45-6"></a>       <span class="dt">asp =</span> <span class="dv">1</span>, </span>
+<span id="cb45-7"><a href="elliptical-fourier-analysis.html#cb45-7"></a>       <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/mosaic.h3-1.png" width="100%" /></p>
 </div>
 <div id="principal-components-analysis-h3" class="section level3">
 <h3><span class="header-section-number">1.8.2</span> Principal Components Analysis (H3)</h3>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="elliptical-fourier-analysis.html#cb49-1"></a><span class="co"># plot pca</span></span>
-<span id="cb49-2"><a href="elliptical-fourier-analysis.html#cb49-2"></a></span>
-<span id="cb49-3"><a href="elliptical-fourier-analysis.html#cb49-3"></a><span class="co"># beveled or not</span></span>
-<span id="cb49-4"><a href="elliptical-fourier-analysis.html#cb49-4"></a><span class="kw">plot_PCA</span>(pca.outlines, </span>
-<span id="cb49-5"><a href="elliptical-fourier-analysis.html#cb49-5"></a>         <span class="dt">morphospace_position =</span> <span class="st">&quot;range&quot;</span>, </span>
-<span id="cb49-6"><a href="elliptical-fourier-analysis.html#cb49-6"></a>         <span class="op">~</span>bev, <span class="dt">zoom =</span> <span class="fl">1.25</span>, </span>
-<span id="cb49-7"><a href="elliptical-fourier-analysis.html#cb49-7"></a>         <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="elliptical-fourier-analysis.html#cb46-1"></a><span class="co"># plot pca</span></span>
+<span id="cb46-2"><a href="elliptical-fourier-analysis.html#cb46-2"></a></span>
+<span id="cb46-3"><a href="elliptical-fourier-analysis.html#cb46-3"></a><span class="co"># beveled or not</span></span>
+<span id="cb46-4"><a href="elliptical-fourier-analysis.html#cb46-4"></a><span class="kw">plot_PCA</span>(pca.outlines, </span>
+<span id="cb46-5"><a href="elliptical-fourier-analysis.html#cb46-5"></a>         <span class="dt">morphospace_position =</span> <span class="st">&quot;range&quot;</span>, </span>
+<span id="cb46-6"><a href="elliptical-fourier-analysis.html#cb46-6"></a>         <span class="op">~</span>bev, <span class="dt">zoom =</span> <span class="fl">1.25</span>, </span>
+<span id="cb46-7"><a href="elliptical-fourier-analysis.html#cb46-7"></a>         <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.h3-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="elliptical-fourier-analysis.html#cb50-1"></a><span class="co"># contribution of each pc</span></span>
-<span id="cb50-2"><a href="elliptical-fourier-analysis.html#cb50-2"></a><span class="kw">boxplot</span>(pca.outlines, </span>
-<span id="cb50-3"><a href="elliptical-fourier-analysis.html#cb50-3"></a>        <span class="op">~</span>bev, </span>
-<span id="cb50-4"><a href="elliptical-fourier-analysis.html#cb50-4"></a>        <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, </span>
-<span id="cb50-5"><a href="elliptical-fourier-analysis.html#cb50-5"></a>        <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="elliptical-fourier-analysis.html#cb47-1"></a><span class="co"># contribution of each pc</span></span>
+<span id="cb47-2"><a href="elliptical-fourier-analysis.html#cb47-2"></a><span class="kw">boxplot</span>(pca.outlines, </span>
+<span id="cb47-3"><a href="elliptical-fourier-analysis.html#cb47-3"></a>        <span class="op">~</span>bev, </span>
+<span id="cb47-4"><a href="elliptical-fourier-analysis.html#cb47-4"></a>        <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, </span>
+<span id="cb47-5"><a href="elliptical-fourier-analysis.html#cb47-5"></a>        <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.h3-2.png" width="100%" /></p>
 </div>
 <div id="manova-h3" class="section level3">
 <h3><span class="header-section-number">1.8.3</span> MANOVA (H3)</h3>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="elliptical-fourier-analysis.html#cb51-1"></a><span class="co"># manova + manova_pw</span></span>
-<span id="cb51-2"><a href="elliptical-fourier-analysis.html#cb51-2"></a></span>
-<span id="cb51-3"><a href="elliptical-fourier-analysis.html#cb51-3"></a><span class="co"># do shapes differ if beveled?</span></span>
-<span id="cb51-4"><a href="elliptical-fourier-analysis.html#cb51-4"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;bev&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="elliptical-fourier-analysis.html#cb48-1"></a><span class="co"># manova + manova_pw</span></span>
+<span id="cb48-2"><a href="elliptical-fourier-analysis.html#cb48-2"></a></span>
+<span id="cb48-3"><a href="elliptical-fourier-analysis.html#cb48-3"></a><span class="co"># do shapes differ if beveled?</span></span>
+<span id="cb48-4"><a href="elliptical-fourier-analysis.html#cb48-4"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;bev&#39;</span>)</span></code></pre></div>
 <pre><code>## PC axes 1 to 11 were retained</code></pre>
 <pre><code>##           Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
-## fac        1           1.4064   4.2191     11     33 0.0006272 ***
+## fac        1           1.4051   4.2153     11     33 0.0006317 ***
 ## Residuals 43                                                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
 <div id="mean-shapes-h3" class="section level3">
 <h3><span class="header-section-number">1.8.4</span> Mean shapes (H3)</h3>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="elliptical-fourier-analysis.html#cb54-1"></a><span class="co"># mean shapes</span></span>
-<span id="cb54-2"><a href="elliptical-fourier-analysis.html#cb54-2"></a>ms<span class="fl">.3</span> &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, </span>
-<span id="cb54-3"><a href="elliptical-fourier-analysis.html#cb54-3"></a>                <span class="op">~</span>bev)</span>
-<span id="cb54-4"><a href="elliptical-fourier-analysis.html#cb54-4"></a><span class="kw">plot_MSHAPES</span>(ms<span class="fl">.3</span>, <span class="dt">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="elliptical-fourier-analysis.html#cb51-1"></a><span class="co"># mean shapes</span></span>
+<span id="cb51-2"><a href="elliptical-fourier-analysis.html#cb51-2"></a>ms<span class="fl">.3</span> &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, </span>
+<span id="cb51-3"><a href="elliptical-fourier-analysis.html#cb51-3"></a>                <span class="op">~</span>bev)</span>
+<span id="cb51-4"><a href="elliptical-fourier-analysis.html#cb51-4"></a><span class="kw">plot_MSHAPES</span>(ms<span class="fl">.3</span>, <span class="dt">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:mshape3efa"></span>
 <img src="dalton.supp_files/figure-html/mshape3efa-1.png" alt="Mean shapes for beveled (y), and not beveled (n)." width="100%" />
 <p class="caption">
@@ -843,7 +837,7 @@ Figure 1.1: Mean shapes for beveled (y), and not beveled (n).
 <div id="test-hypothesis-4-techno-efa" class="section level2">
 <h2><span class="header-section-number">1.9</span> Test Hypothesis 4 (Techno EFA)</h2>
 <p>Hypothesis 4 assesses whether there is a discernible difference in the morphology of specific beveling types associated with Dalton points.</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="elliptical-fourier-analysis.html#cb55-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis4-1.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="elliptical-fourier-analysis.html#cb52-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis4-1.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis4-1.jpg" alt="Hypothesis 4 considers whether discrete beveling practices articulate with differences in the morphology of Dalton points" width="100%" />
 <p class="caption">
@@ -852,44 +846,44 @@ Figure 1.1: Mean shapes for beveled (y), and not beveled (n).
 </div>
 <div id="mosaic-h4" class="section level3">
 <h3><span class="header-section-number">1.9.1</span> Mosaic (H4)</h3>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="elliptical-fourier-analysis.html#cb56-1"></a><span class="co"># plot mosaic</span></span>
-<span id="cb56-2"><a href="elliptical-fourier-analysis.html#cb56-2"></a></span>
-<span id="cb56-3"><a href="elliptical-fourier-analysis.html#cb56-3"></a><span class="co"># bevel type</span></span>
-<span id="cb56-4"><a href="elliptical-fourier-analysis.html#cb56-4"></a><span class="kw">mosaic</span>(norm.outlines, </span>
-<span id="cb56-5"><a href="elliptical-fourier-analysis.html#cb56-5"></a>       <span class="op">~</span>bev.type, </span>
-<span id="cb56-6"><a href="elliptical-fourier-analysis.html#cb56-6"></a>       <span class="dt">asp =</span> <span class="dv">1</span>, </span>
-<span id="cb56-7"><a href="elliptical-fourier-analysis.html#cb56-7"></a>       <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="elliptical-fourier-analysis.html#cb53-1"></a><span class="co"># plot mosaic</span></span>
+<span id="cb53-2"><a href="elliptical-fourier-analysis.html#cb53-2"></a></span>
+<span id="cb53-3"><a href="elliptical-fourier-analysis.html#cb53-3"></a><span class="co"># bevel type</span></span>
+<span id="cb53-4"><a href="elliptical-fourier-analysis.html#cb53-4"></a><span class="kw">mosaic</span>(norm.outlines, </span>
+<span id="cb53-5"><a href="elliptical-fourier-analysis.html#cb53-5"></a>       <span class="op">~</span>bev.type, </span>
+<span id="cb53-6"><a href="elliptical-fourier-analysis.html#cb53-6"></a>       <span class="dt">asp =</span> <span class="dv">1</span>, </span>
+<span id="cb53-7"><a href="elliptical-fourier-analysis.html#cb53-7"></a>       <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/mosaic.h4-1.png" width="100%" /></p>
 </div>
 <div id="principal-components-analysis-h4" class="section level3">
 <h3><span class="header-section-number">1.9.2</span> Principal Components Analysis (H4)</h3>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="elliptical-fourier-analysis.html#cb57-1"></a><span class="co"># bevel type</span></span>
-<span id="cb57-2"><a href="elliptical-fourier-analysis.html#cb57-2"></a><span class="kw">plot_PCA</span>(pca.outlines, </span>
-<span id="cb57-3"><a href="elliptical-fourier-analysis.html#cb57-3"></a>         <span class="dt">morphospace_position =</span> <span class="st">&quot;range&quot;</span>, </span>
-<span id="cb57-4"><a href="elliptical-fourier-analysis.html#cb57-4"></a>         <span class="op">~</span>bev.type, <span class="dt">zoom =</span> <span class="fl">1.25</span>, </span>
-<span id="cb57-5"><a href="elliptical-fourier-analysis.html#cb57-5"></a>         <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="elliptical-fourier-analysis.html#cb54-1"></a><span class="co"># bevel type</span></span>
+<span id="cb54-2"><a href="elliptical-fourier-analysis.html#cb54-2"></a><span class="kw">plot_PCA</span>(pca.outlines, </span>
+<span id="cb54-3"><a href="elliptical-fourier-analysis.html#cb54-3"></a>         <span class="dt">morphospace_position =</span> <span class="st">&quot;range&quot;</span>, </span>
+<span id="cb54-4"><a href="elliptical-fourier-analysis.html#cb54-4"></a>         <span class="op">~</span>bev.type, <span class="dt">zoom =</span> <span class="fl">1.25</span>, </span>
+<span id="cb54-5"><a href="elliptical-fourier-analysis.html#cb54-5"></a>         <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.h4-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="elliptical-fourier-analysis.html#cb58-1"></a><span class="co"># contribution of each pc</span></span>
-<span id="cb58-2"><a href="elliptical-fourier-analysis.html#cb58-2"></a><span class="kw">boxplot</span>(pca.outlines, </span>
-<span id="cb58-3"><a href="elliptical-fourier-analysis.html#cb58-3"></a>        <span class="op">~</span>bev.type, </span>
-<span id="cb58-4"><a href="elliptical-fourier-analysis.html#cb58-4"></a>        <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, </span>
-<span id="cb58-5"><a href="elliptical-fourier-analysis.html#cb58-5"></a>        <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="elliptical-fourier-analysis.html#cb55-1"></a><span class="co"># contribution of each pc</span></span>
+<span id="cb55-2"><a href="elliptical-fourier-analysis.html#cb55-2"></a><span class="kw">boxplot</span>(pca.outlines, </span>
+<span id="cb55-3"><a href="elliptical-fourier-analysis.html#cb55-3"></a>        <span class="op">~</span>bev.type, </span>
+<span id="cb55-4"><a href="elliptical-fourier-analysis.html#cb55-4"></a>        <span class="dt">nax =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, </span>
+<span id="cb55-5"><a href="elliptical-fourier-analysis.html#cb55-5"></a>        <span class="dt">palette =</span> pal_qual_Dark2)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.h4-2.png" width="100%" /></p>
 </div>
 <div id="manova-manova_pw-h4" class="section level3">
 <h3><span class="header-section-number">1.9.3</span> MANOVA + MANOVA_PW (H4)</h3>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="elliptical-fourier-analysis.html#cb59-1"></a><span class="co"># manova + manova_pw</span></span>
-<span id="cb59-2"><a href="elliptical-fourier-analysis.html#cb59-2"></a></span>
-<span id="cb59-3"><a href="elliptical-fourier-analysis.html#cb59-3"></a><span class="co"># do shapes differ by bevel type?</span></span>
-<span id="cb59-4"><a href="elliptical-fourier-analysis.html#cb59-4"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;bev.type&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="elliptical-fourier-analysis.html#cb56-1"></a><span class="co"># manova + manova_pw</span></span>
+<span id="cb56-2"><a href="elliptical-fourier-analysis.html#cb56-2"></a></span>
+<span id="cb56-3"><a href="elliptical-fourier-analysis.html#cb56-3"></a><span class="co"># do shapes differ by bevel type?</span></span>
+<span id="cb56-4"><a href="elliptical-fourier-analysis.html#cb56-4"></a><span class="kw">MANOVA</span>(pca.outlines, <span class="st">&#39;bev.type&#39;</span>)</span></code></pre></div>
 <pre><code>## PC axes 1 to 11 were retained</code></pre>
 <pre><code>##           Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    
-## fac        2           2.8865   4.0673     22     62 6.896e-06 ***
+## fac        2            2.886   4.0666     22     62 6.912e-06 ***
 ## Residuals 42                                                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="elliptical-fourier-analysis.html#cb62-1"></a><span class="co"># which?</span></span>
-<span id="cb62-2"><a href="elliptical-fourier-analysis.html#cb62-2"></a><span class="kw">MANOVA_PW</span>(pca.outlines, <span class="st">&#39;bev.type&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="elliptical-fourier-analysis.html#cb59-1"></a><span class="co"># which?</span></span>
+<span id="cb59-2"><a href="elliptical-fourier-analysis.html#cb59-2"></a><span class="kw">MANOVA_PW</span>(pca.outlines, <span class="st">&#39;bev.type&#39;</span>)</span></code></pre></div>
 <pre><code>## &#39;unifacial.bimarginal&#39; has 3 rows, and &#39;retain&#39; is set accordingly</code></pre>
 <pre><code>## PC axes 1 to 3 were retained</code></pre>
 <pre><code>## alternateno.bevel</code></pre>
@@ -902,16 +896,16 @@ Figure 1.1: Mean shapes for beveled (y), and not beveled (n).
 ## 
 ## $summary (see also $manovas)
 ##                                  Df  Pillai approx F num Df den Df   Pr(&gt;F)
-## alternate - no.bevel              1 0.31187  5.74067      3     38 0.002428
-## alternate - unifacial.bimarginal  1 0.15608  1.41794      3     23 0.263064
-## no.bevel - unifacial.bimarginal   1 0.01725  0.09945      3     17 0.959228</code></pre>
+## alternate - no.bevel              1 0.31187  5.74064      3     38 0.002428
+## alternate - unifacial.bimarginal  1 0.15664  1.42399      3     23 0.261371
+## no.bevel - unifacial.bimarginal   1 0.01698  0.09789      3     17 0.960118</code></pre>
 </div>
 <div id="mean-shapes-h4" class="section level3">
 <h3><span class="header-section-number">1.9.4</span> Mean shapes (H4)</h3>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="elliptical-fourier-analysis.html#cb69-1"></a><span class="co"># mean shapes</span></span>
-<span id="cb69-2"><a href="elliptical-fourier-analysis.html#cb69-2"></a>ms<span class="fl">.4</span> &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, </span>
-<span id="cb69-3"><a href="elliptical-fourier-analysis.html#cb69-3"></a>                <span class="op">~</span>bev.type)</span>
-<span id="cb69-4"><a href="elliptical-fourier-analysis.html#cb69-4"></a><span class="kw">plot_MSHAPES</span>(ms<span class="fl">.4</span>, <span class="dt">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="elliptical-fourier-analysis.html#cb66-1"></a><span class="co"># mean shapes</span></span>
+<span id="cb66-2"><a href="elliptical-fourier-analysis.html#cb66-2"></a>ms<span class="fl">.4</span> &lt;-<span class="st"> </span><span class="kw">MSHAPES</span>(efa.outlines, </span>
+<span id="cb66-3"><a href="elliptical-fourier-analysis.html#cb66-3"></a>                <span class="op">~</span>bev.type)</span>
+<span id="cb66-4"><a href="elliptical-fourier-analysis.html#cb66-4"></a><span class="kw">plot_MSHAPES</span>(ms<span class="fl">.4</span>, <span class="dt">size =</span> <span class="fl">0.75</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:mshape4efa"></span>
 <img src="dalton.supp_files/figure-html/mshape4efa-1.png" alt="Mean shapes for alternate, unifacial.bimarginal, and no.bevel." width="100%" />
 <p class="caption">

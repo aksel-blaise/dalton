@@ -8,12 +8,10 @@ In studies of projectile morphology, an analysis of bilateral/object symmetry ca
 # load packages
 
 # devtools::install_github("geomorphR/geomorph", ref = "Stable", build_vignettes = TRUE)
+library(here)
 library(geomorph)
 library(tidyverse)
 library(wesanderson)
-
-# setwd
-setwd(getwd())
 
 # read GM data
 source('readmulti.csv.R')

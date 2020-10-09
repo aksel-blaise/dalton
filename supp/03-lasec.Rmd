@@ -16,10 +16,9 @@ LaSEC conducts the following procedure [@RN28913, 4-5]:
 ```{r, load.lasec.package.dalton, echo=TRUE}
 # load package
 #devtools::install_github("akiopteryx/lambda")
+library(here)
 library(LaMBDA)
 
-# set working directory
-setwd(getwd())
 source('readmulti.csv.R')
 
 # read .csv files
