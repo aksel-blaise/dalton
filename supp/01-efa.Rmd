@@ -90,18 +90,6 @@ Hypothesis 1 assesses whether there is a difference in the symmetric shape of Da
 knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
 ```
 
-### Mosaic (H1)
-
-```{r mosaic.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# plot mosaic
-
-# in/out of heartland
-mosaic(norm.outlines, 
-       ~heart.out, 
-       asp = 1, 
-       palette = pal_qual_Dark2)
-```
-
 ### Principal Components Analysis (H1)
 
 ```{r pca.h1,, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
@@ -144,18 +132,6 @@ Hypothesis 2 assesses whether there is a difference in morphology for Dalton poi
 
 ```{r lm3d3.a1.h2.efa, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 2 considers whether Dalton points discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology."}
 knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
-```
-
-### Mosaic (H2)
-
-```{r mosaic.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# plot mosaic
-
-# heartland regions (heartland, interior, and northern periphery)
-mosaic(norm.outlines, 
-       ~heart.reg, 
-       asp = 1, 
-       palette = pal_qual_Dark2)
 ```
 
 ### Principal Components Analysis (H2)
@@ -204,18 +180,6 @@ Hypothesis 3 assesses whether there is a discernible difference in morphology fo
 knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
 ```
 
-### Mosaic (H3)
-
-```{r mosaic.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# plot mosaic 
-
-# beveled or not
-mosaic(norm.outlines, 
-       ~bev, 
-       asp = 1, 
-       palette = pal_qual_Dark2)
-```
-
 ### Principal Components Analysis (H3)
 
 ```{r pca.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
@@ -258,18 +222,6 @@ Hypothesis 4 assesses whether there is a discernible difference in the morpholog
 
 ```{r lm3d3.a1.h4.efa, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 4 considers whether discrete beveling practices articulate with differences in the morphology of Dalton points"}
 knitr::include_graphics('images/dalton-vizhypothesis4-1.jpg')
-```
-
-### Mosaic (H4)
-
-```{r mosaic.h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# plot mosaic
-
-# bevel type
-mosaic(norm.outlines, 
-       ~bev.type, 
-       asp = 1, 
-       palette = pal_qual_Dark2)
 ```
 
 ### Principal Components Analysis (H4)
