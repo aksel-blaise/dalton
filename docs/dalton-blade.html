@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Dalton blade | Landmark 3D geometric morphometrics of Dalton projectile points</title>
   <meta name="description" content="Morphological analysis of Dalton projectile points" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Dalton blade | Landmark 3D geometric morphometrics of Dalton projectile points" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Robert Z. Selden, Jr." />
 
 
-<meta name="date" content="2020-10-19" />
+<meta name="date" content="2020-10-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -193,11 +195,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="landmark-sampling-evaluation-curve-lasec.html"><a href="landmark-sampling-evaluation-curve-lasec.html#analysis-of-experimental-sample"><i class="fa fa-check"></i><b>3.1</b> Analysis of experimental sample</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html"><i class="fa fa-check"></i><b>4</b> Analysis of Dalton morphology</a><ul>
-<li class="chapter" data-level="4.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#load-packages-data"><i class="fa fa-check"></i><b>4.1</b> Load packages + data</a></li>
+<li class="chapter" data-level="4.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#load-packages-data-1"><i class="fa fa-check"></i><b>4.1</b> Load packages + data</a></li>
 <li class="chapter" data-level="4.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#generalized-procrustes-analysis"><i class="fa fa-check"></i><b>4.2</b> Generalized Procrustes Analysis</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-attributes"><i class="fa fa-check"></i><b>4.2.1</b> Boxplot attributes</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis"><i class="fa fa-check"></i><b>4.3</b> Principal Components Analysis</a></li>
+<li class="chapter" data-level="4.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#principal-components-analysis-1"><i class="fa fa-check"></i><b>4.3</b> Principal Components Analysis</a></li>
 <li class="chapter" data-level="4.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#define-models"><i class="fa fa-check"></i><b>4.4</b> Define models</a><ul>
 <li class="chapter" data-level="4.4.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry"><i class="fa fa-check"></i><b>4.4.1</b> Allometry</a></li>
 <li class="chapter" data-level="4.4.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-1"><i class="fa fa-check"></i><b>4.4.2</b> Hypothesis 1</a></li>
@@ -208,180 +210,180 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-1"><i class="fa fa-check"></i><b>4.5</b> Allometry</a></li>
 <li class="chapter" data-level="4.6" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-1-geo-gm"><i class="fa fa-check"></i><b>4.6</b> Test Hypothesis 1 (Geo GM)</a><ul>
 <li class="chapter" data-level="4.6.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h1"><i class="fa fa-check"></i><b>4.6.1</b> Boxplot (H1)</a></li>
-<li class="chapter" data-level="4.6.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h1"><i class="fa fa-check"></i><b>4.6.2</b> Principal Components Analysis (H1)</a></li>
+<li class="chapter" data-level="4.6.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#principal-components-analysis-h1-1"><i class="fa fa-check"></i><b>4.6.2</b> Principal Components Analysis (H1)</a></li>
 <li class="chapter" data-level="4.6.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h1"><i class="fa fa-check"></i><b>4.6.3</b> ANOVA (H1)</a></li>
 <li class="chapter" data-level="4.6.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h1"><i class="fa fa-check"></i><b>4.6.4</b> Allometry (H1)</a></li>
 <li class="chapter" data-level="4.6.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h1"><i class="fa fa-check"></i><b>4.6.5</b> Morphological disparity (H1)</a></li>
-<li class="chapter" data-level="4.6.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h1"><i class="fa fa-check"></i><b>4.6.6</b> Mean Shapes (H1)</a></li>
+<li class="chapter" data-level="4.6.6" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#mean-shapes-h1-1"><i class="fa fa-check"></i><b>4.6.6</b> Mean Shapes (H1)</a></li>
 </ul></li>
 <li class="chapter" data-level="4.7" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-2-geo-gm"><i class="fa fa-check"></i><b>4.7</b> Test Hypothesis 2 (Geo GM)</a><ul>
 <li class="chapter" data-level="4.7.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h2"><i class="fa fa-check"></i><b>4.7.1</b> Boxplot (H2)</a></li>
-<li class="chapter" data-level="4.7.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h2"><i class="fa fa-check"></i><b>4.7.2</b> Principal Components Analysis (H2)</a></li>
+<li class="chapter" data-level="4.7.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#principal-components-analysis-h2-1"><i class="fa fa-check"></i><b>4.7.2</b> Principal Components Analysis (H2)</a></li>
 <li class="chapter" data-level="4.7.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h2"><i class="fa fa-check"></i><b>4.7.3</b> ANOVA (H2)</a></li>
 <li class="chapter" data-level="4.7.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h2"><i class="fa fa-check"></i><b>4.7.4</b> Allometry (H2)</a></li>
 <li class="chapter" data-level="4.7.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h2"><i class="fa fa-check"></i><b>4.7.5</b> Morphological disparity (H2)</a></li>
-<li class="chapter" data-level="4.7.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h2"><i class="fa fa-check"></i><b>4.7.6</b> Mean Shapes (H2)</a></li>
+<li class="chapter" data-level="4.7.6" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#mean-shapes-h2-1"><i class="fa fa-check"></i><b>4.7.6</b> Mean Shapes (H2)</a></li>
 </ul></li>
 <li class="chapter" data-level="4.8" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-3-techno-gm"><i class="fa fa-check"></i><b>4.8</b> Test Hypothesis 3 (Techno GM)</a><ul>
 <li class="chapter" data-level="4.8.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h3"><i class="fa fa-check"></i><b>4.8.1</b> Boxplot (H3)</a></li>
-<li class="chapter" data-level="4.8.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h3"><i class="fa fa-check"></i><b>4.8.2</b> Principal Components Analysis (H3)</a></li>
+<li class="chapter" data-level="4.8.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#principal-components-analysis-h3-1"><i class="fa fa-check"></i><b>4.8.2</b> Principal Components Analysis (H3)</a></li>
 <li class="chapter" data-level="4.8.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h3"><i class="fa fa-check"></i><b>4.8.3</b> ANOVA (H3)</a></li>
 <li class="chapter" data-level="4.8.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h3"><i class="fa fa-check"></i><b>4.8.4</b> Allometry (H3)</a></li>
 <li class="chapter" data-level="4.8.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h3"><i class="fa fa-check"></i><b>4.8.5</b> Morphological disparity (H3)</a></li>
-<li class="chapter" data-level="4.8.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h3"><i class="fa fa-check"></i><b>4.8.6</b> Mean Shapes (H3)</a></li>
+<li class="chapter" data-level="4.8.6" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#mean-shapes-h3-1"><i class="fa fa-check"></i><b>4.8.6</b> Mean Shapes (H3)</a></li>
 </ul></li>
 <li class="chapter" data-level="4.9" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-4-techno-gm"><i class="fa fa-check"></i><b>4.9</b> Test Hypothesis 4 (Techno GM)</a><ul>
 <li class="chapter" data-level="4.9.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h4"><i class="fa fa-check"></i><b>4.9.1</b> Boxplot (H4)</a></li>
-<li class="chapter" data-level="4.9.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h4"><i class="fa fa-check"></i><b>4.9.2</b> Principal Components Analysis (H4)</a></li>
+<li class="chapter" data-level="4.9.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#principal-components-analysis-h4-1"><i class="fa fa-check"></i><b>4.9.2</b> Principal Components Analysis (H4)</a></li>
 <li class="chapter" data-level="4.9.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h4"><i class="fa fa-check"></i><b>4.9.3</b> ANOVA (H4)</a></li>
 <li class="chapter" data-level="4.9.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h4"><i class="fa fa-check"></i><b>4.9.4</b> Allometry (H4)</a></li>
 <li class="chapter" data-level="4.9.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h4"><i class="fa fa-check"></i><b>4.9.5</b> Morphological disparity (H4)</a></li>
-<li class="chapter" data-level="4.9.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h4"><i class="fa fa-check"></i><b>4.9.6</b> Mean Shapes (H4)</a></li>
+<li class="chapter" data-level="4.9.6" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#mean-shapes-h4-1"><i class="fa fa-check"></i><b>4.9.6</b> Mean Shapes (H4)</a></li>
 </ul></li>
 <li class="chapter" data-level="4.10" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-integration"><i class="fa fa-check"></i><b>4.10</b> Morphological integration</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="dalton-blade.html"><a href="dalton-blade.html"><i class="fa fa-check"></i><b>5</b> Dalton blade</a><ul>
-<li class="chapter" data-level="5.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#load-packages-data"><i class="fa fa-check"></i><b>5.1</b> Load packages + data</a></li>
-<li class="chapter" data-level="5.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#generalized-procrustes-analysis"><i class="fa fa-check"></i><b>5.2</b> Generalized Procrustes Analysis</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-attributes"><i class="fa fa-check"></i><b>5.2.1</b> Boxplot attributes</a></li>
+<li class="chapter" data-level="5.1" data-path="dalton-blade.html"><a href="dalton-blade.html#load-packages-data-2"><i class="fa fa-check"></i><b>5.1</b> Load packages + data</a></li>
+<li class="chapter" data-level="5.2" data-path="dalton-blade.html"><a href="dalton-blade.html#generalized-procrustes-analysis-1"><i class="fa fa-check"></i><b>5.2</b> Generalized Procrustes Analysis</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="dalton-blade.html"><a href="dalton-blade.html#boxplot-attributes-1"><i class="fa fa-check"></i><b>5.2.1</b> Boxplot attributes</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis"><i class="fa fa-check"></i><b>5.3</b> Principal Components Analysis</a></li>
-<li class="chapter" data-level="5.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#define-models"><i class="fa fa-check"></i><b>5.4</b> Define models</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry"><i class="fa fa-check"></i><b>5.4.1</b> Allometry</a></li>
-<li class="chapter" data-level="5.4.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-1"><i class="fa fa-check"></i><b>5.4.2</b> Hypothesis 1</a></li>
-<li class="chapter" data-level="5.4.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-2"><i class="fa fa-check"></i><b>5.4.3</b> Hypothesis 2</a></li>
-<li class="chapter" data-level="5.4.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-3"><i class="fa fa-check"></i><b>5.4.4</b> Hypothesis 3</a></li>
-<li class="chapter" data-level="5.4.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-4"><i class="fa fa-check"></i><b>5.4.5</b> Hypothesis 4</a></li>
+<li class="chapter" data-level="5.3" data-path="dalton-blade.html"><a href="dalton-blade.html#principal-components-analysis-2"><i class="fa fa-check"></i><b>5.3</b> Principal Components Analysis</a></li>
+<li class="chapter" data-level="5.4" data-path="dalton-blade.html"><a href="dalton-blade.html#define-models-1"><i class="fa fa-check"></i><b>5.4</b> Define models</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="dalton-blade.html"><a href="dalton-blade.html#allometry-2"><i class="fa fa-check"></i><b>5.4.1</b> Allometry</a></li>
+<li class="chapter" data-level="5.4.2" data-path="dalton-blade.html"><a href="dalton-blade.html#hypothesis-1-1"><i class="fa fa-check"></i><b>5.4.2</b> Hypothesis 1</a></li>
+<li class="chapter" data-level="5.4.3" data-path="dalton-blade.html"><a href="dalton-blade.html#hypothesis-2-1"><i class="fa fa-check"></i><b>5.4.3</b> Hypothesis 2</a></li>
+<li class="chapter" data-level="5.4.4" data-path="dalton-blade.html"><a href="dalton-blade.html#hypothesis-3-1"><i class="fa fa-check"></i><b>5.4.4</b> Hypothesis 3</a></li>
+<li class="chapter" data-level="5.4.5" data-path="dalton-blade.html"><a href="dalton-blade.html#hypothesis-4-1"><i class="fa fa-check"></i><b>5.4.5</b> Hypothesis 4</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-1"><i class="fa fa-check"></i><b>5.5</b> Allometry</a></li>
+<li class="chapter" data-level="5.5" data-path="dalton-blade.html"><a href="dalton-blade.html#allometry-3"><i class="fa fa-check"></i><b>5.5</b> Allometry</a></li>
 <li class="chapter" data-level="5.6" data-path="dalton-blade.html"><a href="dalton-blade.html#test-hypothesis-1-geo-bl"><i class="fa fa-check"></i><b>5.6</b> Test Hypothesis 1 (Geo Bl)</a><ul>
-<li class="chapter" data-level="5.6.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h1"><i class="fa fa-check"></i><b>5.6.1</b> Boxplot (H1)</a></li>
-<li class="chapter" data-level="5.6.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h1"><i class="fa fa-check"></i><b>5.6.2</b> Principal Components Analysis (H1)</a></li>
-<li class="chapter" data-level="5.6.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h1"><i class="fa fa-check"></i><b>5.6.3</b> ANOVA (H1)</a></li>
-<li class="chapter" data-level="5.6.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h1"><i class="fa fa-check"></i><b>5.6.4</b> Allometry (H1)</a></li>
-<li class="chapter" data-level="5.6.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h1"><i class="fa fa-check"></i><b>5.6.5</b> Morphological disparity (H1)</a></li>
-<li class="chapter" data-level="5.6.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h1"><i class="fa fa-check"></i><b>5.6.6</b> Mean Shapes (H1)</a></li>
+<li class="chapter" data-level="5.6.1" data-path="dalton-blade.html"><a href="dalton-blade.html#boxplot-h1-1"><i class="fa fa-check"></i><b>5.6.1</b> Boxplot (H1)</a></li>
+<li class="chapter" data-level="5.6.2" data-path="dalton-blade.html"><a href="dalton-blade.html#principal-components-analysis-h1-2"><i class="fa fa-check"></i><b>5.6.2</b> Principal Components Analysis (H1)</a></li>
+<li class="chapter" data-level="5.6.3" data-path="dalton-blade.html"><a href="dalton-blade.html#anova-h1-1"><i class="fa fa-check"></i><b>5.6.3</b> ANOVA (H1)</a></li>
+<li class="chapter" data-level="5.6.4" data-path="dalton-blade.html"><a href="dalton-blade.html#allometry-h1-1"><i class="fa fa-check"></i><b>5.6.4</b> Allometry (H1)</a></li>
+<li class="chapter" data-level="5.6.5" data-path="dalton-blade.html"><a href="dalton-blade.html#morphological-disparity-h1-1"><i class="fa fa-check"></i><b>5.6.5</b> Morphological disparity (H1)</a></li>
+<li class="chapter" data-level="5.6.6" data-path="dalton-blade.html"><a href="dalton-blade.html#mean-shapes-h1-2"><i class="fa fa-check"></i><b>5.6.6</b> Mean Shapes (H1)</a></li>
 </ul></li>
 <li class="chapter" data-level="5.7" data-path="dalton-blade.html"><a href="dalton-blade.html#test-hypothesis-2-geo-bl"><i class="fa fa-check"></i><b>5.7</b> Test Hypothesis 2 (Geo Bl)</a><ul>
-<li class="chapter" data-level="5.7.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h2"><i class="fa fa-check"></i><b>5.7.1</b> Boxplot (H2)</a></li>
-<li class="chapter" data-level="5.7.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h2"><i class="fa fa-check"></i><b>5.7.2</b> Principal Components Analysis (H2)</a></li>
-<li class="chapter" data-level="5.7.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h2"><i class="fa fa-check"></i><b>5.7.3</b> ANOVA (H2)</a></li>
-<li class="chapter" data-level="5.7.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h2"><i class="fa fa-check"></i><b>5.7.4</b> Allometry (H2)</a></li>
-<li class="chapter" data-level="5.7.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h2"><i class="fa fa-check"></i><b>5.7.5</b> Morphological disparity (H2)</a></li>
-<li class="chapter" data-level="5.7.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h2"><i class="fa fa-check"></i><b>5.7.6</b> Mean Shapes (H2)</a></li>
+<li class="chapter" data-level="5.7.1" data-path="dalton-blade.html"><a href="dalton-blade.html#boxplot-h2-1"><i class="fa fa-check"></i><b>5.7.1</b> Boxplot (H2)</a></li>
+<li class="chapter" data-level="5.7.2" data-path="dalton-blade.html"><a href="dalton-blade.html#principal-components-analysis-h2-2"><i class="fa fa-check"></i><b>5.7.2</b> Principal Components Analysis (H2)</a></li>
+<li class="chapter" data-level="5.7.3" data-path="dalton-blade.html"><a href="dalton-blade.html#anova-h2-1"><i class="fa fa-check"></i><b>5.7.3</b> ANOVA (H2)</a></li>
+<li class="chapter" data-level="5.7.4" data-path="dalton-blade.html"><a href="dalton-blade.html#allometry-h2-1"><i class="fa fa-check"></i><b>5.7.4</b> Allometry (H2)</a></li>
+<li class="chapter" data-level="5.7.5" data-path="dalton-blade.html"><a href="dalton-blade.html#morphological-disparity-h2-1"><i class="fa fa-check"></i><b>5.7.5</b> Morphological disparity (H2)</a></li>
+<li class="chapter" data-level="5.7.6" data-path="dalton-blade.html"><a href="dalton-blade.html#mean-shapes-h2-2"><i class="fa fa-check"></i><b>5.7.6</b> Mean Shapes (H2)</a></li>
 </ul></li>
 <li class="chapter" data-level="5.8" data-path="dalton-blade.html"><a href="dalton-blade.html#test-hypothesis-3-techno-bl"><i class="fa fa-check"></i><b>5.8</b> Test Hypothesis 3 (Techno Bl)</a><ul>
-<li class="chapter" data-level="5.8.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h3"><i class="fa fa-check"></i><b>5.8.1</b> Boxplot (H3)</a></li>
-<li class="chapter" data-level="5.8.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h3"><i class="fa fa-check"></i><b>5.8.2</b> Principal Components Analysis (H3)</a></li>
-<li class="chapter" data-level="5.8.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h3"><i class="fa fa-check"></i><b>5.8.3</b> ANOVA (H3)</a></li>
-<li class="chapter" data-level="5.8.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h3"><i class="fa fa-check"></i><b>5.8.4</b> Allometry (H3)</a></li>
-<li class="chapter" data-level="5.8.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h3"><i class="fa fa-check"></i><b>5.8.5</b> Morphological disparity (H3)</a></li>
-<li class="chapter" data-level="5.8.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h3"><i class="fa fa-check"></i><b>5.8.6</b> Mean Shapes (H3)</a></li>
+<li class="chapter" data-level="5.8.1" data-path="dalton-blade.html"><a href="dalton-blade.html#boxplot-h3-1"><i class="fa fa-check"></i><b>5.8.1</b> Boxplot (H3)</a></li>
+<li class="chapter" data-level="5.8.2" data-path="dalton-blade.html"><a href="dalton-blade.html#principal-components-analysis-h3-2"><i class="fa fa-check"></i><b>5.8.2</b> Principal Components Analysis (H3)</a></li>
+<li class="chapter" data-level="5.8.3" data-path="dalton-blade.html"><a href="dalton-blade.html#anova-h3-1"><i class="fa fa-check"></i><b>5.8.3</b> ANOVA (H3)</a></li>
+<li class="chapter" data-level="5.8.4" data-path="dalton-blade.html"><a href="dalton-blade.html#allometry-h3-1"><i class="fa fa-check"></i><b>5.8.4</b> Allometry (H3)</a></li>
+<li class="chapter" data-level="5.8.5" data-path="dalton-blade.html"><a href="dalton-blade.html#morphological-disparity-h3-1"><i class="fa fa-check"></i><b>5.8.5</b> Morphological disparity (H3)</a></li>
+<li class="chapter" data-level="5.8.6" data-path="dalton-blade.html"><a href="dalton-blade.html#mean-shapes-h3-2"><i class="fa fa-check"></i><b>5.8.6</b> Mean Shapes (H3)</a></li>
 </ul></li>
 <li class="chapter" data-level="5.9" data-path="dalton-blade.html"><a href="dalton-blade.html#test-hypothesis-4-techno-x1"><i class="fa fa-check"></i><b>5.9</b> Test Hypothesis 4 (Techno X1)</a><ul>
-<li class="chapter" data-level="5.9.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h4"><i class="fa fa-check"></i><b>5.9.1</b> Boxplot (H4)</a></li>
-<li class="chapter" data-level="5.9.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h4"><i class="fa fa-check"></i><b>5.9.2</b> Principal Components Analysis (H4)</a></li>
-<li class="chapter" data-level="5.9.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h4"><i class="fa fa-check"></i><b>5.9.3</b> ANOVA (H4)</a></li>
-<li class="chapter" data-level="5.9.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h4"><i class="fa fa-check"></i><b>5.9.4</b> Allometry (H4)</a></li>
-<li class="chapter" data-level="5.9.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h4"><i class="fa fa-check"></i><b>5.9.5</b> Morphological disparity (H4)</a></li>
-<li class="chapter" data-level="5.9.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h4"><i class="fa fa-check"></i><b>5.9.6</b> Mean Shapes (H4)</a></li>
+<li class="chapter" data-level="5.9.1" data-path="dalton-blade.html"><a href="dalton-blade.html#boxplot-h4-1"><i class="fa fa-check"></i><b>5.9.1</b> Boxplot (H4)</a></li>
+<li class="chapter" data-level="5.9.2" data-path="dalton-blade.html"><a href="dalton-blade.html#principal-components-analysis-h4-2"><i class="fa fa-check"></i><b>5.9.2</b> Principal Components Analysis (H4)</a></li>
+<li class="chapter" data-level="5.9.3" data-path="dalton-blade.html"><a href="dalton-blade.html#anova-h4-1"><i class="fa fa-check"></i><b>5.9.3</b> ANOVA (H4)</a></li>
+<li class="chapter" data-level="5.9.4" data-path="dalton-blade.html"><a href="dalton-blade.html#allometry-h4-1"><i class="fa fa-check"></i><b>5.9.4</b> Allometry (H4)</a></li>
+<li class="chapter" data-level="5.9.5" data-path="dalton-blade.html"><a href="dalton-blade.html#morphological-disparity-h4-1"><i class="fa fa-check"></i><b>5.9.5</b> Morphological disparity (H4)</a></li>
+<li class="chapter" data-level="5.9.6" data-path="dalton-blade.html"><a href="dalton-blade.html#mean-shapes-h4-2"><i class="fa fa-check"></i><b>5.9.6</b> Mean Shapes (H4)</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="cross-section-midline.html"><a href="cross-section-midline.html"><i class="fa fa-check"></i><b>6</b> Cross-section: midline</a><ul>
-<li class="chapter" data-level="6.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#load-packages-data"><i class="fa fa-check"></i><b>6.1</b> Load packages + data</a></li>
-<li class="chapter" data-level="6.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#generalized-procrustes-analysis"><i class="fa fa-check"></i><b>6.2</b> Generalized Procrustes Analysis</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-attributes"><i class="fa fa-check"></i><b>6.2.1</b> Boxplot attributes</a></li>
+<li class="chapter" data-level="6.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#load-packages-data-3"><i class="fa fa-check"></i><b>6.1</b> Load packages + data</a></li>
+<li class="chapter" data-level="6.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#generalized-procrustes-analysis-2"><i class="fa fa-check"></i><b>6.2</b> Generalized Procrustes Analysis</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-attributes-2"><i class="fa fa-check"></i><b>6.2.1</b> Boxplot attributes</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis"><i class="fa fa-check"></i><b>6.3</b> Principal Components Analysis</a></li>
-<li class="chapter" data-level="6.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#define-models"><i class="fa fa-check"></i><b>6.4</b> Define models</a><ul>
-<li class="chapter" data-level="6.4.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry"><i class="fa fa-check"></i><b>6.4.1</b> Allometry</a></li>
-<li class="chapter" data-level="6.4.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-1"><i class="fa fa-check"></i><b>6.4.2</b> Hypothesis 1</a></li>
-<li class="chapter" data-level="6.4.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-2"><i class="fa fa-check"></i><b>6.4.3</b> Hypothesis 2</a></li>
-<li class="chapter" data-level="6.4.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-3"><i class="fa fa-check"></i><b>6.4.4</b> Hypothesis 3</a></li>
-<li class="chapter" data-level="6.4.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-4"><i class="fa fa-check"></i><b>6.4.5</b> Hypothesis 4</a></li>
+<li class="chapter" data-level="6.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-3"><i class="fa fa-check"></i><b>6.3</b> Principal Components Analysis</a></li>
+<li class="chapter" data-level="6.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#define-models-2"><i class="fa fa-check"></i><b>6.4</b> Define models</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#allometry-4"><i class="fa fa-check"></i><b>6.4.1</b> Allometry</a></li>
+<li class="chapter" data-level="6.4.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#hypothesis-1-2"><i class="fa fa-check"></i><b>6.4.2</b> Hypothesis 1</a></li>
+<li class="chapter" data-level="6.4.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#hypothesis-2-2"><i class="fa fa-check"></i><b>6.4.3</b> Hypothesis 2</a></li>
+<li class="chapter" data-level="6.4.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#hypothesis-3-2"><i class="fa fa-check"></i><b>6.4.4</b> Hypothesis 3</a></li>
+<li class="chapter" data-level="6.4.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#hypothesis-4-2"><i class="fa fa-check"></i><b>6.4.5</b> Hypothesis 4</a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-1"><i class="fa fa-check"></i><b>6.5</b> Allometry</a></li>
+<li class="chapter" data-level="6.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#allometry-5"><i class="fa fa-check"></i><b>6.5</b> Allometry</a></li>
 <li class="chapter" data-level="6.6" data-path="cross-section-midline.html"><a href="cross-section-midline.html#test-hypothesis-1-geo-x1"><i class="fa fa-check"></i><b>6.6</b> Test Hypothesis 1 (Geo X1)</a><ul>
-<li class="chapter" data-level="6.6.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h1"><i class="fa fa-check"></i><b>6.6.1</b> Boxplot (H1)</a></li>
-<li class="chapter" data-level="6.6.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h1"><i class="fa fa-check"></i><b>6.6.2</b> Principal Components Analysis (H1)</a></li>
-<li class="chapter" data-level="6.6.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h1"><i class="fa fa-check"></i><b>6.6.3</b> ANOVA (H1)</a></li>
-<li class="chapter" data-level="6.6.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h1"><i class="fa fa-check"></i><b>6.6.4</b> Allometry (H1)</a></li>
-<li class="chapter" data-level="6.6.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h1"><i class="fa fa-check"></i><b>6.6.5</b> Morphological disparity (H1)</a></li>
-<li class="chapter" data-level="6.6.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h1"><i class="fa fa-check"></i><b>6.6.6</b> Mean Shapes (H1)</a></li>
+<li class="chapter" data-level="6.6.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-h1-2"><i class="fa fa-check"></i><b>6.6.1</b> Boxplot (H1)</a></li>
+<li class="chapter" data-level="6.6.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-h1-3"><i class="fa fa-check"></i><b>6.6.2</b> Principal Components Analysis (H1)</a></li>
+<li class="chapter" data-level="6.6.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#anova-h1-2"><i class="fa fa-check"></i><b>6.6.3</b> ANOVA (H1)</a></li>
+<li class="chapter" data-level="6.6.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#allometry-h1-2"><i class="fa fa-check"></i><b>6.6.4</b> Allometry (H1)</a></li>
+<li class="chapter" data-level="6.6.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#morphological-disparity-h1-2"><i class="fa fa-check"></i><b>6.6.5</b> Morphological disparity (H1)</a></li>
+<li class="chapter" data-level="6.6.6" data-path="cross-section-midline.html"><a href="cross-section-midline.html#mean-shapes-h1-3"><i class="fa fa-check"></i><b>6.6.6</b> Mean Shapes (H1)</a></li>
 </ul></li>
 <li class="chapter" data-level="6.7" data-path="cross-section-midline.html"><a href="cross-section-midline.html#test-hypothesis-2-geo-x1"><i class="fa fa-check"></i><b>6.7</b> Test Hypothesis 2 (Geo X1)</a><ul>
-<li class="chapter" data-level="6.7.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h2"><i class="fa fa-check"></i><b>6.7.1</b> Boxplot (H2)</a></li>
-<li class="chapter" data-level="6.7.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h2"><i class="fa fa-check"></i><b>6.7.2</b> Principal Components Analysis (H2)</a></li>
-<li class="chapter" data-level="6.7.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h2"><i class="fa fa-check"></i><b>6.7.3</b> ANOVA (H2)</a></li>
-<li class="chapter" data-level="6.7.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h2"><i class="fa fa-check"></i><b>6.7.4</b> Allometry (H2)</a></li>
-<li class="chapter" data-level="6.7.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h2"><i class="fa fa-check"></i><b>6.7.5</b> Morphological disparity (H2)</a></li>
-<li class="chapter" data-level="6.7.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h2"><i class="fa fa-check"></i><b>6.7.6</b> Mean Shapes (H2)</a></li>
+<li class="chapter" data-level="6.7.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-h2-2"><i class="fa fa-check"></i><b>6.7.1</b> Boxplot (H2)</a></li>
+<li class="chapter" data-level="6.7.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-h2-3"><i class="fa fa-check"></i><b>6.7.2</b> Principal Components Analysis (H2)</a></li>
+<li class="chapter" data-level="6.7.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#anova-h2-2"><i class="fa fa-check"></i><b>6.7.3</b> ANOVA (H2)</a></li>
+<li class="chapter" data-level="6.7.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#allometry-h2-2"><i class="fa fa-check"></i><b>6.7.4</b> Allometry (H2)</a></li>
+<li class="chapter" data-level="6.7.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#morphological-disparity-h2-2"><i class="fa fa-check"></i><b>6.7.5</b> Morphological disparity (H2)</a></li>
+<li class="chapter" data-level="6.7.6" data-path="cross-section-midline.html"><a href="cross-section-midline.html#mean-shapes-h2-3"><i class="fa fa-check"></i><b>6.7.6</b> Mean Shapes (H2)</a></li>
 </ul></li>
 <li class="chapter" data-level="6.8" data-path="cross-section-midline.html"><a href="cross-section-midline.html#test-hypothesis-3-techno-x1"><i class="fa fa-check"></i><b>6.8</b> Test Hypothesis 3 (Techno X1)</a><ul>
-<li class="chapter" data-level="6.8.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h3"><i class="fa fa-check"></i><b>6.8.1</b> Boxplot (H3)</a></li>
-<li class="chapter" data-level="6.8.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h3"><i class="fa fa-check"></i><b>6.8.2</b> Principal Components Analysis (H3)</a></li>
-<li class="chapter" data-level="6.8.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h3"><i class="fa fa-check"></i><b>6.8.3</b> ANOVA (H3)</a></li>
-<li class="chapter" data-level="6.8.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h3"><i class="fa fa-check"></i><b>6.8.4</b> Allometry (H3)</a></li>
-<li class="chapter" data-level="6.8.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h3"><i class="fa fa-check"></i><b>6.8.5</b> Morphological disparity (H3)</a></li>
-<li class="chapter" data-level="6.8.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h3"><i class="fa fa-check"></i><b>6.8.6</b> Mean Shapes (H3)</a></li>
+<li class="chapter" data-level="6.8.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-h3-2"><i class="fa fa-check"></i><b>6.8.1</b> Boxplot (H3)</a></li>
+<li class="chapter" data-level="6.8.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-h3-3"><i class="fa fa-check"></i><b>6.8.2</b> Principal Components Analysis (H3)</a></li>
+<li class="chapter" data-level="6.8.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#anova-h3-2"><i class="fa fa-check"></i><b>6.8.3</b> ANOVA (H3)</a></li>
+<li class="chapter" data-level="6.8.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#allometry-h3-2"><i class="fa fa-check"></i><b>6.8.4</b> Allometry (H3)</a></li>
+<li class="chapter" data-level="6.8.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#morphological-disparity-h3-2"><i class="fa fa-check"></i><b>6.8.5</b> Morphological disparity (H3)</a></li>
+<li class="chapter" data-level="6.8.6" data-path="cross-section-midline.html"><a href="cross-section-midline.html#mean-shapes-h3-3"><i class="fa fa-check"></i><b>6.8.6</b> Mean Shapes (H3)</a></li>
 </ul></li>
-<li class="chapter" data-level="6.9" data-path="dalton-blade.html"><a href="dalton-blade.html#test-hypothesis-4-techno-x1"><i class="fa fa-check"></i><b>6.9</b> Test Hypothesis 4 (Techno X1)</a><ul>
-<li class="chapter" data-level="6.9.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h4"><i class="fa fa-check"></i><b>6.9.1</b> Boxplot (H4)</a></li>
-<li class="chapter" data-level="6.9.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h4"><i class="fa fa-check"></i><b>6.9.2</b> Principal Components Analysis (H4)</a></li>
-<li class="chapter" data-level="6.9.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h4"><i class="fa fa-check"></i><b>6.9.3</b> ANOVA (H4)</a></li>
-<li class="chapter" data-level="6.9.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h4"><i class="fa fa-check"></i><b>6.9.4</b> Allometry (H4)</a></li>
-<li class="chapter" data-level="6.9.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h4"><i class="fa fa-check"></i><b>6.9.5</b> Morphological disparity (H4)</a></li>
-<li class="chapter" data-level="6.9.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h4"><i class="fa fa-check"></i><b>6.9.6</b> Mean Shapes (H4)</a></li>
+<li class="chapter" data-level="6.9" data-path="cross-section-midline.html"><a href="cross-section-midline.html#test-hypothesis-4-techno-x1-1"><i class="fa fa-check"></i><b>6.9</b> Test Hypothesis 4 (Techno X1)</a><ul>
+<li class="chapter" data-level="6.9.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-h4-2"><i class="fa fa-check"></i><b>6.9.1</b> Boxplot (H4)</a></li>
+<li class="chapter" data-level="6.9.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-h4-3"><i class="fa fa-check"></i><b>6.9.2</b> Principal Components Analysis (H4)</a></li>
+<li class="chapter" data-level="6.9.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#anova-h4-2"><i class="fa fa-check"></i><b>6.9.3</b> ANOVA (H4)</a></li>
+<li class="chapter" data-level="6.9.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#allometry-h4-2"><i class="fa fa-check"></i><b>6.9.4</b> Allometry (H4)</a></li>
+<li class="chapter" data-level="6.9.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#morphological-disparity-h4-2"><i class="fa fa-check"></i><b>6.9.5</b> Morphological disparity (H4)</a></li>
+<li class="chapter" data-level="6.9.6" data-path="cross-section-midline.html"><a href="cross-section-midline.html#mean-shapes-h4-3"><i class="fa fa-check"></i><b>6.9.6</b> Mean Shapes (H4)</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html"><i class="fa fa-check"></i><b>7</b> Cross-section: blade/base</a><ul>
-<li class="chapter" data-level="7.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#load-packages-data"><i class="fa fa-check"></i><b>7.1</b> Load packages + data</a></li>
-<li class="chapter" data-level="7.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#generalized-procrustes-analysis"><i class="fa fa-check"></i><b>7.2</b> Generalized Procrustes Analysis</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-attributes"><i class="fa fa-check"></i><b>7.2.1</b> Boxplot attributes</a></li>
+<li class="chapter" data-level="7.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#load-packages-data-4"><i class="fa fa-check"></i><b>7.1</b> Load packages + data</a></li>
+<li class="chapter" data-level="7.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#generalized-procrustes-analysis-3"><i class="fa fa-check"></i><b>7.2</b> Generalized Procrustes Analysis</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-attributes-3"><i class="fa fa-check"></i><b>7.2.1</b> Boxplot attributes</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis"><i class="fa fa-check"></i><b>7.3</b> Principal Components Analysis</a></li>
-<li class="chapter" data-level="7.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#define-models"><i class="fa fa-check"></i><b>7.4</b> Define models</a><ul>
-<li class="chapter" data-level="7.4.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry"><i class="fa fa-check"></i><b>7.4.1</b> Allometry</a></li>
-<li class="chapter" data-level="7.4.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-1"><i class="fa fa-check"></i><b>7.4.2</b> Hypothesis 1</a></li>
-<li class="chapter" data-level="7.4.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-2"><i class="fa fa-check"></i><b>7.4.3</b> Hypothesis 2</a></li>
-<li class="chapter" data-level="7.4.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-3"><i class="fa fa-check"></i><b>7.4.4</b> Hypothesis 3</a></li>
-<li class="chapter" data-level="7.4.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-4"><i class="fa fa-check"></i><b>7.4.5</b> Hypothesis 4</a></li>
+<li class="chapter" data-level="7.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-4"><i class="fa fa-check"></i><b>7.3</b> Principal Components Analysis</a></li>
+<li class="chapter" data-level="7.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#define-models-3"><i class="fa fa-check"></i><b>7.4</b> Define models</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#allometry-6"><i class="fa fa-check"></i><b>7.4.1</b> Allometry</a></li>
+<li class="chapter" data-level="7.4.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#hypothesis-1-3"><i class="fa fa-check"></i><b>7.4.2</b> Hypothesis 1</a></li>
+<li class="chapter" data-level="7.4.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#hypothesis-2-3"><i class="fa fa-check"></i><b>7.4.3</b> Hypothesis 2</a></li>
+<li class="chapter" data-level="7.4.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#hypothesis-3-3"><i class="fa fa-check"></i><b>7.4.4</b> Hypothesis 3</a></li>
+<li class="chapter" data-level="7.4.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#hypothesis-4-3"><i class="fa fa-check"></i><b>7.4.5</b> Hypothesis 4</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-1"><i class="fa fa-check"></i><b>7.5</b> Allometry</a></li>
+<li class="chapter" data-level="7.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#allometry-7"><i class="fa fa-check"></i><b>7.5</b> Allometry</a></li>
 <li class="chapter" data-level="7.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#test-hypothesis-1-geo-x2"><i class="fa fa-check"></i><b>7.6</b> Test Hypothesis 1 (Geo X2)</a><ul>
-<li class="chapter" data-level="7.6.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h1"><i class="fa fa-check"></i><b>7.6.1</b> Boxplot (H1)</a></li>
-<li class="chapter" data-level="7.6.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h1"><i class="fa fa-check"></i><b>7.6.2</b> Principal Components Analysis (H1)</a></li>
-<li class="chapter" data-level="7.6.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h1"><i class="fa fa-check"></i><b>7.6.3</b> ANOVA (H1)</a></li>
-<li class="chapter" data-level="7.6.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h1"><i class="fa fa-check"></i><b>7.6.4</b> Allometry (H1)</a></li>
-<li class="chapter" data-level="7.6.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h1"><i class="fa fa-check"></i><b>7.6.5</b> Morphological disparity (H1)</a></li>
-<li class="chapter" data-level="7.6.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h1"><i class="fa fa-check"></i><b>7.6.6</b> Mean Shapes (H1)</a></li>
+<li class="chapter" data-level="7.6.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-h1-3"><i class="fa fa-check"></i><b>7.6.1</b> Boxplot (H1)</a></li>
+<li class="chapter" data-level="7.6.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-h1-4"><i class="fa fa-check"></i><b>7.6.2</b> Principal Components Analysis (H1)</a></li>
+<li class="chapter" data-level="7.6.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#anova-h1-3"><i class="fa fa-check"></i><b>7.6.3</b> ANOVA (H1)</a></li>
+<li class="chapter" data-level="7.6.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#allometry-h1-3"><i class="fa fa-check"></i><b>7.6.4</b> Allometry (H1)</a></li>
+<li class="chapter" data-level="7.6.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#morphological-disparity-h1-3"><i class="fa fa-check"></i><b>7.6.5</b> Morphological disparity (H1)</a></li>
+<li class="chapter" data-level="7.6.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#mean-shapes-h1-4"><i class="fa fa-check"></i><b>7.6.6</b> Mean Shapes (H1)</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#test-hypothesis-2-geo-x2"><i class="fa fa-check"></i><b>7.7</b> Test Hypothesis 2 (Geo X2)</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h2"><i class="fa fa-check"></i><b>7.7.1</b> Boxplot (H2)</a></li>
-<li class="chapter" data-level="7.7.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h2"><i class="fa fa-check"></i><b>7.7.2</b> Principal Components Analysis (H2)</a></li>
-<li class="chapter" data-level="7.7.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h2"><i class="fa fa-check"></i><b>7.7.3</b> ANOVA (H2)</a></li>
-<li class="chapter" data-level="7.7.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h2"><i class="fa fa-check"></i><b>7.7.4</b> Allometry (H2)</a></li>
-<li class="chapter" data-level="7.7.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h2"><i class="fa fa-check"></i><b>7.7.5</b> Morphological disparity (H2)</a></li>
-<li class="chapter" data-level="7.7.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h2"><i class="fa fa-check"></i><b>7.7.6</b> Mean Shapes (H2)</a></li>
+<li class="chapter" data-level="7.7.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-h2-3"><i class="fa fa-check"></i><b>7.7.1</b> Boxplot (H2)</a></li>
+<li class="chapter" data-level="7.7.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-h2-4"><i class="fa fa-check"></i><b>7.7.2</b> Principal Components Analysis (H2)</a></li>
+<li class="chapter" data-level="7.7.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#anova-h2-3"><i class="fa fa-check"></i><b>7.7.3</b> ANOVA (H2)</a></li>
+<li class="chapter" data-level="7.7.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#allometry-h2-3"><i class="fa fa-check"></i><b>7.7.4</b> Allometry (H2)</a></li>
+<li class="chapter" data-level="7.7.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#morphological-disparity-h2-3"><i class="fa fa-check"></i><b>7.7.5</b> Morphological disparity (H2)</a></li>
+<li class="chapter" data-level="7.7.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#mean-shapes-h2-4"><i class="fa fa-check"></i><b>7.7.6</b> Mean Shapes (H2)</a></li>
 </ul></li>
 <li class="chapter" data-level="7.8" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#test-hypothesis-3-techno-x2"><i class="fa fa-check"></i><b>7.8</b> Test Hypothesis 3 (Techno X2)</a><ul>
-<li class="chapter" data-level="7.8.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h3"><i class="fa fa-check"></i><b>7.8.1</b> Boxplot (H3)</a></li>
-<li class="chapter" data-level="7.8.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h3"><i class="fa fa-check"></i><b>7.8.2</b> Principal Components Analysis (H3)</a></li>
-<li class="chapter" data-level="7.8.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h3"><i class="fa fa-check"></i><b>7.8.3</b> ANOVA (H3)</a></li>
-<li class="chapter" data-level="7.8.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h3"><i class="fa fa-check"></i><b>7.8.4</b> Allometry (H3)</a></li>
-<li class="chapter" data-level="7.8.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h3"><i class="fa fa-check"></i><b>7.8.5</b> Morphological disparity (H3)</a></li>
-<li class="chapter" data-level="7.8.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h3"><i class="fa fa-check"></i><b>7.8.6</b> Mean Shapes (H3)</a></li>
+<li class="chapter" data-level="7.8.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-h3-3"><i class="fa fa-check"></i><b>7.8.1</b> Boxplot (H3)</a></li>
+<li class="chapter" data-level="7.8.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-h3-4"><i class="fa fa-check"></i><b>7.8.2</b> Principal Components Analysis (H3)</a></li>
+<li class="chapter" data-level="7.8.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#anova-h3-3"><i class="fa fa-check"></i><b>7.8.3</b> ANOVA (H3)</a></li>
+<li class="chapter" data-level="7.8.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#allometry-h3-3"><i class="fa fa-check"></i><b>7.8.4</b> Allometry (H3)</a></li>
+<li class="chapter" data-level="7.8.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#morphological-disparity-h3-3"><i class="fa fa-check"></i><b>7.8.5</b> Morphological disparity (H3)</a></li>
+<li class="chapter" data-level="7.8.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#mean-shapes-h3-4"><i class="fa fa-check"></i><b>7.8.6</b> Mean Shapes (H3)</a></li>
 </ul></li>
 <li class="chapter" data-level="7.9" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#test-hypothesis-4-techno-x2"><i class="fa fa-check"></i><b>7.9</b> Test Hypothesis 4 (Techno X2)</a><ul>
-<li class="chapter" data-level="7.9.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h4"><i class="fa fa-check"></i><b>7.9.1</b> Boxplot (H4)</a></li>
-<li class="chapter" data-level="7.9.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h4"><i class="fa fa-check"></i><b>7.9.2</b> Principal Components Analysis (H4)</a></li>
-<li class="chapter" data-level="7.9.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h4"><i class="fa fa-check"></i><b>7.9.3</b> ANOVA (H4)</a></li>
-<li class="chapter" data-level="7.9.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h4"><i class="fa fa-check"></i><b>7.9.4</b> Allometry (H4)</a></li>
-<li class="chapter" data-level="7.9.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h4"><i class="fa fa-check"></i><b>7.9.5</b> Morphological disparity (H4)</a></li>
-<li class="chapter" data-level="7.9.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h4"><i class="fa fa-check"></i><b>7.9.6</b> Mean Shapes (H4)</a></li>
+<li class="chapter" data-level="7.9.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-h4-3"><i class="fa fa-check"></i><b>7.9.1</b> Boxplot (H4)</a></li>
+<li class="chapter" data-level="7.9.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-h4-4"><i class="fa fa-check"></i><b>7.9.2</b> Principal Components Analysis (H4)</a></li>
+<li class="chapter" data-level="7.9.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#anova-h4-3"><i class="fa fa-check"></i><b>7.9.3</b> ANOVA (H4)</a></li>
+<li class="chapter" data-level="7.9.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#allometry-h4-3"><i class="fa fa-check"></i><b>7.9.4</b> Allometry (H4)</a></li>
+<li class="chapter" data-level="7.9.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#morphological-disparity-h4-3"><i class="fa fa-check"></i><b>7.9.5</b> Morphological disparity (H4)</a></li>
+<li class="chapter" data-level="7.9.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#mean-shapes-h4-4"><i class="fa fa-check"></i><b>7.9.6</b> Mean Shapes (H4)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#references"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -404,7 +406,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="dalton-blade" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Dalton blade</h1>
-<div id="load-packages-data" class="section level2">
+<div id="load-packages-data-2" class="section level2">
 <h2><span class="header-section-number">5.1</span> Load packages + data</h2>
 <div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="dalton-blade.html#cb223-1"></a><span class="co"># load packages</span></span>
 <span id="cb223-2"><a href="dalton-blade.html#cb223-2"></a></span>
@@ -430,7 +432,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb223-22"><a href="dalton-blade.html#cb223-22"></a><span class="co"># print qdata</span></span>
 <span id="cb223-23"><a href="dalton-blade.html#cb223-23"></a><span class="co">#knitr::kable(qdata, align = &quot;cccc&quot;, caption = &quot;Attributes included in qdata.&quot;)</span></span></code></pre></div>
 </div>
-<div id="generalized-procrustes-analysis" class="section level2">
+<div id="generalized-procrustes-analysis-1" class="section level2">
 <h2><span class="header-section-number">5.2</span> Generalized Procrustes Analysis</h2>
 <p>Landmark data were aligned to a global coordinate system <span class="citation">(Kendall <a href="#ref-RN11622" role="doc-biblioref">1981</a>, <a href="#ref-RN11623" role="doc-biblioref">1984</a>; Slice <a href="#ref-RN11563" role="doc-biblioref">2001</a>)</span>, achieved through generalized Procrustes superimposition <span class="citation">(Rohlf and Slice <a href="#ref-RN478" role="doc-biblioref">1990</a>)</span> performed in R 4.0.2 <span class="citation">(R Core Development Team, <a href="#ref-R" role="doc-biblioref">2020</a>)</span> using the <code>geomorph</code> library v. 3.3.1 <span class="citation">(Adams et al. <a href="#ref-RN11530" role="doc-biblioref">2017</a>; Adams and Otárola-Castillo <a href="#ref-RN1774" role="doc-biblioref">2013</a>)</span>. Procrustes superimposition translates, scales, and rotates the coordinate data to allow for comparisons among objects <span class="citation">(Gower <a href="#ref-RN11564" role="doc-biblioref">1975</a>; Rohlf and Slice <a href="#ref-RN478" role="doc-biblioref">1990</a>)</span>. The <code>geomorph</code> package uses a partial Procrustes superimposition that projects the aligned specimens into tangent space subsequent to alignment in preparation for the use of multivariate methods that assume linear space <span class="citation">(Rohlf <a href="#ref-RN1646" role="doc-biblioref">1999</a>; Slice <a href="#ref-RN11563" role="doc-biblioref">2001</a>)</span>.</p>
 <div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="dalton-blade.html#cb224-1"></a><span class="co">#select landmarks from coords for blade</span></span>
@@ -468,7 +470,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb226-3"><a href="dalton-blade.html#cb226-3"></a></span>
 <span id="cb226-4"><a href="dalton-blade.html#cb226-4"></a><span class="co"># gpa plot</span></span>
 <span id="cb226-5"><a href="dalton-blade.html#cb226-5"></a><span class="co"># knitr::include_graphics(&#39;images/gpa3d.png&#39;)</span></span></code></pre></div>
-<div id="boxplot-attributes" class="section level3">
+<div id="boxplot-attributes-1" class="section level3">
 <h3><span class="header-section-number">5.2.1</span> Boxplot attributes</h3>
 <div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="dalton-blade.html#cb227-1"></a><span class="co"># add centroid size to qdata</span></span>
 <span id="cb227-2"><a href="dalton-blade.html#cb227-2"></a>qdata<span class="op">$</span>csz &lt;-<span class="st"> </span>Y.gpa<span class="op">$</span>Csize</span>
@@ -836,7 +838,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb228-6"><a href="dalton-blade.html#cb228-6"></a>bev<span class="fl">.2</span> &lt;-<span class="st"> </span>qdata<span class="op">$</span>bev.type <span class="co"># type of beveling</span></span></code></pre></div>
 </div>
 </div>
-<div id="principal-components-analysis" class="section level2">
+<div id="principal-components-analysis-2" class="section level2">
 <h2><span class="header-section-number">5.3</span> Principal Components Analysis</h2>
 <p>Principal components analysis <span class="citation">(Jolliffe <a href="#ref-RN1746" role="doc-biblioref">2002</a>)</span> was used to visualise shape variation among the Dalton blades. The shape changes described by each principal axis are commonly visualized using thin-plate spline warping of a reference 3D mesh <span class="citation">(Klingenberg <a href="#ref-RN1731" role="doc-biblioref">2013</a>; Sherratt et al. <a href="#ref-RN479" role="doc-biblioref">2014</a>)</span>.</p>
 <div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="dalton-blade.html#cb229-1"></a><span class="co"># principal components analysis</span></span>
@@ -887,9 +889,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Proportion of Variance 1.131477e-06 6.865092e-32
 ## Cumulative Proportion  1.000000e+00 1.000000e+00</code></pre>
 </div>
-<div id="define-models" class="section level2">
+<div id="define-models-1" class="section level2">
 <h2><span class="header-section-number">5.4</span> Define models</h2>
-<div id="allometry" class="section level3">
+<div id="allometry-2" class="section level3">
 <h3><span class="header-section-number">5.4.1</span> Allometry</h3>
 <div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="dalton-blade.html#cb231-1"></a><span class="co"># general allometry</span></span>
 <span id="cb231-2"><a href="dalton-blade.html#cb231-2"></a>fit.size &lt;-<span class="st"> </span><span class="kw">procD.lm</span>(shape <span class="op">~</span><span class="st"> </span>size, </span>
@@ -897,7 +899,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb231-4"><a href="dalton-blade.html#cb231-4"></a>                     <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
 <span id="cb231-5"><a href="dalton-blade.html#cb231-5"></a>                     <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 </div>
-<div id="hypothesis-1" class="section level3">
+<div id="hypothesis-1-1" class="section level3">
 <h3><span class="header-section-number">5.4.2</span> Hypothesis 1</h3>
 <div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="dalton-blade.html#cb232-1"></a><span class="co">## Define models</span></span>
 <span id="cb232-2"><a href="dalton-blade.html#cb232-2"></a><span class="co"># allometry - common allometry, different means -&gt; heart</span></span>
@@ -921,7 +923,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb232-20"><a href="dalton-blade.html#cb232-20"></a>                            <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
 <span id="cb232-21"><a href="dalton-blade.html#cb232-21"></a>                            <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 </div>
-<div id="hypothesis-2" class="section level3">
+<div id="hypothesis-2-1" class="section level3">
 <h3><span class="header-section-number">5.4.3</span> Hypothesis 2</h3>
 <div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="dalton-blade.html#cb233-1"></a><span class="co">## Define models</span></span>
 <span id="cb233-2"><a href="dalton-blade.html#cb233-2"></a><span class="co"># allometry - common allometry, different means -&gt; hreg</span></span>
@@ -946,7 +948,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb233-21"><a href="dalton-blade.html#cb233-21"></a>                           <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
 <span id="cb233-22"><a href="dalton-blade.html#cb233-22"></a>                           <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 </div>
-<div id="hypothesis-3" class="section level3">
+<div id="hypothesis-3-1" class="section level3">
 <h3><span class="header-section-number">5.4.4</span> Hypothesis 3</h3>
 <div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="dalton-blade.html#cb234-1"></a><span class="co">## Define models</span></span>
 <span id="cb234-2"><a href="dalton-blade.html#cb234-2"></a><span class="co"># allometry - common allometry, different means -&gt; bev.1</span></span>
@@ -971,7 +973,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb234-21"><a href="dalton-blade.html#cb234-21"></a>                           <span class="dt">print.progress =</span> <span class="ot">FALSE</span>, </span>
 <span id="cb234-22"><a href="dalton-blade.html#cb234-22"></a>                           <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 </div>
-<div id="hypothesis-4" class="section level3">
+<div id="hypothesis-4-1" class="section level3">
 <h3><span class="header-section-number">5.4.5</span> Hypothesis 4</h3>
 <div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="dalton-blade.html#cb235-1"></a><span class="co">## Define models</span></span>
 <span id="cb235-2"><a href="dalton-blade.html#cb235-2"></a><span class="co"># allometry - common allometry, different means -&gt; bev.2</span></span>
@@ -997,7 +999,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb235-22"><a href="dalton-blade.html#cb235-22"></a>                           <span class="dt">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 </div>
 </div>
-<div id="allometry-1" class="section level2">
+<div id="allometry-3" class="section level2">
 <h2><span class="header-section-number">5.5</span> Allometry</h2>
 <div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="dalton-blade.html#cb236-1"></a><span class="co"># general allometry - does dalton blade shape change with size?</span></span>
 <span id="cb236-2"><a href="dalton-blade.html#cb236-2"></a><span class="kw">anova</span>(fit.size)</span></code></pre></div>
@@ -1029,7 +1031,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 (#fig:lm3d3.a1.h1.blade)Hypothesis 1 considers whether Dalton blade shapes discovered in (left) and out (right) of the Heartland differ in morphology.
 </p>
 </div>
-<div id="boxplot-h1" class="section level3">
+<div id="boxplot-h1-1" class="section level3">
 <h3><span class="header-section-number">5.6.1</span> Boxplot (H1)</h3>
 <div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="dalton-blade.html#cb239-1"></a><span class="co"># boxplot of Dalton blade centroid size by in/out heartland</span></span>
 <span id="cb239-2"><a href="dalton-blade.html#cb239-2"></a>csz.hrt &lt;-<span class="st"> </span><span class="kw">ggplot</span>(qdata, <span class="kw">aes</span>(<span class="dt">x =</span> heart, <span class="dt">y =</span> csz, <span class="dt">color =</span> heart)) <span class="op">+</span><span class="st"> </span></span>
@@ -1048,7 +1050,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 </div>
-<div id="principal-components-analysis-h1" class="section level3">
+<div id="principal-components-analysis-h1-2" class="section level3">
 <h3><span class="header-section-number">5.6.2</span> Principal Components Analysis (H1)</h3>
 <div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="dalton-blade.html#cb241-1"></a><span class="co"># set plot parameters to plot by heartland in (H) and out (N)</span></span>
 <span id="cb241-2"><a href="dalton-blade.html#cb241-2"></a>pch.gps.heart &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="kw">as.factor</span>(heart)]</span>
@@ -1065,7 +1067,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb241-13"><a href="dalton-blade.html#cb241-13"></a>                             <span class="dt">group.cols =</span> col.hull)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca1.blade-1.png" width="100%" /></p>
 </div>
-<div id="anova-h1" class="section level3">
+<div id="anova-h1-1" class="section level3">
 <h3><span class="header-section-number">5.6.3</span> ANOVA (H1)</h3>
 <div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="dalton-blade.html#cb242-1"></a><span class="co"># heart</span></span>
 <span id="cb242-2"><a href="dalton-blade.html#cb242-2"></a><span class="kw">anova</span>(fit.sz.cheart) <span class="co"># common allometry (heart)</span></span></code></pre></div>
@@ -1141,7 +1143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## Call: procD.lm(f1 = shape ~ heart, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
 </div>
-<div id="allometry-h1" class="section level3">
+<div id="allometry-h1-1" class="section level3">
 <h3><span class="header-section-number">5.6.4</span> Allometry (H1)</h3>
 <div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="dalton-blade.html#cb250-1"></a><span class="co"># regscore (Drake and Klingenberg 2008)</span></span>
 <span id="cb250-2"><a href="dalton-blade.html#cb250-2"></a></span>
@@ -1184,7 +1186,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb253-9"><a href="dalton-blade.html#cb253-9"></a>              <span class="dt">col =</span> col.gps.heart)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/u.allom.h1.blade-1.png" width="100%" /></p>
 </div>
-<div id="morphological-disparity-h1" class="section level3">
+<div id="morphological-disparity-h1-1" class="section level3">
 <h3><span class="header-section-number">5.6.5</span> Morphological disparity (H1)</h3>
 <div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="dalton-blade.html#cb254-1"></a><span class="co"># morphological disparity: does one group display greater </span></span>
 <span id="cb254-2"><a href="dalton-blade.html#cb254-2"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
@@ -1219,7 +1221,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## H 1.0000 0.8258
 ## N 0.8258 1.0000</code></pre>
 </div>
-<div id="mean-shapes-h1" class="section level3">
+<div id="mean-shapes-h1-2" class="section level3">
 <h3><span class="header-section-number">5.6.6</span> Mean Shapes (H1)</h3>
 <div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="dalton-blade.html#cb256-1"></a><span class="co"># subset landmark coordinates to produce mean shapes for hypothesis 1</span></span>
 <span id="cb256-2"><a href="dalton-blade.html#cb256-2"></a>new.coords&lt;-<span class="kw">coords.subset</span>(<span class="dt">A =</span> Y.gpa<span class="op">$</span>coords, </span>
@@ -1253,7 +1255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 (#fig:lm3d3.a1.h2.blade)Hypothesis 2 considers whether Dalton blade shapes discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology.
 </p>
 </div>
-<div id="boxplot-h2" class="section level3">
+<div id="boxplot-h2-1" class="section level3">
 <h3><span class="header-section-number">5.7.1</span> Boxplot (H2)</h3>
 <div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="dalton-blade.html#cb260-1"></a><span class="co"># boxplot of Dalton blade centroid size by heartland + regions</span></span>
 <span id="cb260-2"><a href="dalton-blade.html#cb260-2"></a>csz.hreg &lt;-<span class="st"> </span><span class="kw">ggplot</span>(qdata, <span class="kw">aes</span>(<span class="dt">x =</span> hreg, <span class="dt">y =</span> csz, <span class="dt">color =</span> hreg)) <span class="op">+</span><span class="st"> </span></span>
@@ -1272,7 +1274,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 </div>
-<div id="principal-components-analysis-h2" class="section level3">
+<div id="principal-components-analysis-h2-2" class="section level3">
 <h3><span class="header-section-number">5.7.2</span> Principal Components Analysis (H2)</h3>
 <div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="dalton-blade.html#cb262-1"></a><span class="co"># set plot parameters to plot by heartland + regions</span></span>
 <span id="cb262-2"><a href="dalton-blade.html#cb262-2"></a>pch.gps.hreg &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="kw">as.factor</span>(hreg)]</span>
@@ -1289,7 +1291,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb262-13"><a href="dalton-blade.html#cb262-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.2</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca2.blade-1.png" width="100%" /></p>
 </div>
-<div id="anova-h2" class="section level3">
+<div id="anova-h2-1" class="section level3">
 <h3><span class="header-section-number">5.7.3</span> ANOVA (H2)</h3>
 <div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="dalton-blade.html#cb263-1"></a><span class="co"># hreg</span></span>
 <span id="cb263-2"><a href="dalton-blade.html#cb263-2"></a><span class="kw">anova</span>(fit.sz.chreg) <span class="co"># common allometry (hreg)</span></span></code></pre></div>
@@ -1453,7 +1455,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## H:P  808.2796  791.2897 1.5898240 0.0458
 ## I:P 1270.8726  861.4047 2.3993940 0.0041</code></pre>
 </div>
-<div id="allometry-h2" class="section level3">
+<div id="allometry-h2-1" class="section level3">
 <h3><span class="header-section-number">5.7.4</span> Allometry (H2)</h3>
 <div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="dalton-blade.html#cb279-1"></a><span class="co"># regscore (Drake and Klingenberg 2008)</span></span>
 <span id="cb279-2"><a href="dalton-blade.html#cb279-2"></a></span>
@@ -1496,7 +1498,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb282-9"><a href="dalton-blade.html#cb282-9"></a>              <span class="dt">col =</span> col.gps.hreg)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/u.allom.h2.blade-1.png" width="100%" /></p>
 </div>
-<div id="morphological-disparity-h2" class="section level3">
+<div id="morphological-disparity-h2-1" class="section level3">
 <h3><span class="header-section-number">5.7.5</span> Morphological disparity (H2)</h3>
 <div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="dalton-blade.html#cb283-1"></a><span class="co"># morphological disparity: do any of the groups display greater </span></span>
 <span id="cb283-2"><a href="dalton-blade.html#cb283-2"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
@@ -1533,7 +1535,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## I 0.6397 1.0000 0.8284
 ## P 0.7506 0.8284 1.0000</code></pre>
 </div>
-<div id="mean-shapes-h2" class="section level3">
+<div id="mean-shapes-h2-2" class="section level3">
 <h3><span class="header-section-number">5.7.6</span> Mean Shapes (H2)</h3>
 <div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="dalton-blade.html#cb285-1"></a><span class="co"># subset landmark coordinates to produce mean shapes for hypothesis 2</span></span>
 <span id="cb285-2"><a href="dalton-blade.html#cb285-2"></a>new.coords&lt;-<span class="kw">coords.subset</span>(<span class="dt">A =</span> Y.gpa<span class="op">$</span>coords, </span>
@@ -1576,7 +1578,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 (#fig:lm3d3.a1.h3.blade)Hypothesis 3 considers whether beveled Dalton blade shapes (left) differ in morphology from those that are not beveled (right).
 </p>
 </div>
-<div id="boxplot-h3" class="section level3">
+<div id="boxplot-h3-1" class="section level3">
 <h3><span class="header-section-number">5.8.1</span> Boxplot (H3)</h3>
 <div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="dalton-blade.html#cb289-1"></a><span class="co"># boxplot of Dalton blade centroid size by beveled y/n</span></span>
 <span id="cb289-2"><a href="dalton-blade.html#cb289-2"></a>csz.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">ggplot</span>(qdata, <span class="kw">aes</span>(<span class="dt">x =</span> bev<span class="fl">.1</span>, <span class="dt">y =</span> csz, <span class="dt">color =</span> bev<span class="fl">.1</span>)) <span class="op">+</span><span class="st"> </span></span>
@@ -1595,7 +1597,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 </div>
-<div id="principal-components-analysis-h3" class="section level3">
+<div id="principal-components-analysis-h3-2" class="section level3">
 <h3><span class="header-section-number">5.8.2</span> Principal Components Analysis (H3)</h3>
 <div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="dalton-blade.html#cb291-1"></a><span class="co"># set plot parameters to plot by beveled y and n</span></span>
 <span id="cb291-2"><a href="dalton-blade.html#cb291-2"></a>pch.gps.bev<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.1</span>)]</span>
@@ -1612,7 +1614,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb291-13"><a href="dalton-blade.html#cb291-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.3</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca3.mblade-1.png" width="100%" /></p>
 </div>
-<div id="anova-h3" class="section level3">
+<div id="anova-h3-1" class="section level3">
 <h3><span class="header-section-number">5.8.3</span> ANOVA (H3)</h3>
 <div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="dalton-blade.html#cb292-1"></a><span class="co"># bev.1</span></span>
 <span id="cb292-2"><a href="dalton-blade.html#cb292-2"></a><span class="kw">anova</span>(fit.sz.cbev<span class="fl">.1</span>) <span class="co"># common allometry (bev.1)</span></span></code></pre></div>
@@ -1688,7 +1690,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## Call: procD.lm(f1 = shape ~ bev.1, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
 </div>
-<div id="allometry-h3" class="section level3">
+<div id="allometry-h3-1" class="section level3">
 <h3><span class="header-section-number">5.8.4</span> Allometry (H3)</h3>
 <div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="dalton-blade.html#cb300-1"></a><span class="co"># regscore (Drake and Klingenberg 2008)</span></span>
 <span id="cb300-2"><a href="dalton-blade.html#cb300-2"></a></span>
@@ -1731,7 +1733,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb303-9"><a href="dalton-blade.html#cb303-9"></a>              <span class="dt">col =</span> col.gps.bev<span class="fl">.1</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/u.allom.h3.blade-1.png" width="100%" /></p>
 </div>
-<div id="morphological-disparity-h3" class="section level3">
+<div id="morphological-disparity-h3-1" class="section level3">
 <h3><span class="header-section-number">5.8.5</span> Morphological disparity (H3)</h3>
 <div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="dalton-blade.html#cb304-1"></a><span class="co"># morphological disparity: does one group display greater </span></span>
 <span id="cb304-2"><a href="dalton-blade.html#cb304-2"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
@@ -1766,7 +1768,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## n 1.0000 0.5498
 ## y 0.5498 1.0000</code></pre>
 </div>
-<div id="mean-shapes-h3" class="section level3">
+<div id="mean-shapes-h3-2" class="section level3">
 <h3><span class="header-section-number">5.8.6</span> Mean Shapes (H3)</h3>
 <div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="dalton-blade.html#cb306-1"></a><span class="co"># subset landmark coordinates to produce mean shapes for hypothesis 3</span></span>
 <span id="cb306-2"><a href="dalton-blade.html#cb306-2"></a>new.coords&lt;-<span class="kw">coords.subset</span>(<span class="dt">A =</span> Y.gpa<span class="op">$</span>coords, </span>
@@ -1800,7 +1802,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 (#fig:lm3d3.a1.h4.blade)Hypothesis 4 considers whether discrete beveling practices articulate with differences in the morphology of Dalton blades.
 </p>
 </div>
-<div id="boxplot-h4" class="section level3">
+<div id="boxplot-h4-1" class="section level3">
 <h3><span class="header-section-number">5.9.1</span> Boxplot (H4)</h3>
 <div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="dalton-blade.html#cb310-1"></a><span class="co"># boxplot of Dalton blade centroid size by bevel type</span></span>
 <span id="cb310-2"><a href="dalton-blade.html#cb310-2"></a>csz.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">ggplot</span>(qdata, <span class="kw">aes</span>(<span class="dt">x =</span> bev<span class="fl">.2</span>, <span class="dt">y =</span> csz, <span class="dt">color =</span> bev<span class="fl">.2</span>)) <span class="op">+</span><span class="st"> </span></span>
@@ -1819,7 +1821,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 </div>
-<div id="principal-components-analysis-h4" class="section level3">
+<div id="principal-components-analysis-h4-2" class="section level3">
 <h3><span class="header-section-number">5.9.2</span> Principal Components Analysis (H4)</h3>
 <div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="dalton-blade.html#cb312-1"></a><span class="co"># set plot parameters to plot by bevel type</span></span>
 <span id="cb312-2"><a href="dalton-blade.html#cb312-2"></a>pch.gps.bev<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="kw">as.factor</span>(bev<span class="fl">.2</span>)]</span>
@@ -1836,7 +1838,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb312-13"><a href="dalton-blade.html#cb312-13"></a>                             <span class="dt">group.cols =</span> col.hull<span class="fl">.4</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca4.blade-1.png" width="100%" /></p>
 </div>
-<div id="anova-h4" class="section level3">
+<div id="anova-h4-1" class="section level3">
 <h3><span class="header-section-number">5.9.3</span> ANOVA (H4)</h3>
 <div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="dalton-blade.html#cb313-1"></a><span class="co"># bev.2</span></span>
 <span id="cb313-2"><a href="dalton-blade.html#cb313-2"></a><span class="kw">anova</span>(fit.sz.cbev<span class="fl">.2</span>) <span class="co"># common allometry (bev.2)</span></span></code></pre></div>
@@ -1998,7 +2000,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## alternate:unifacial.bimarginal 342.83966 2244.4769 -0.2783155 0.6497
 ## no.bevel:unifacial.bimarginal  301.56186 2244.1742 -0.3928961 0.6723</code></pre>
 </div>
-<div id="allometry-h4" class="section level3">
+<div id="allometry-h4-1" class="section level3">
 <h3><span class="header-section-number">5.9.4</span> Allometry (H4)</h3>
 <div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="dalton-blade.html#cb329-1"></a><span class="co"># regscore (Drake and Klingenberg 2008)</span></span>
 <span id="cb329-2"><a href="dalton-blade.html#cb329-2"></a></span>
@@ -2041,7 +2043,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb332-9"><a href="dalton-blade.html#cb332-9"></a>              <span class="dt">col =</span> col.gps.bev<span class="fl">.2</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/u.allom.h4.blade-1.png" width="100%" /></p>
 </div>
-<div id="morphological-disparity-h4" class="section level3">
+<div id="morphological-disparity-h4-1" class="section level3">
 <h3><span class="header-section-number">5.9.5</span> Morphological disparity (H4)</h3>
 <div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="dalton-blade.html#cb333-1"></a><span class="co"># morphological disparity: do any of the groups display greater </span></span>
 <span id="cb333-2"><a href="dalton-blade.html#cb333-2"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
@@ -2078,7 +2080,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## no.bevel                0.6941   1.0000               0.7149
 ## unifacial.bimarginal    0.8619   0.7149               1.0000</code></pre>
 </div>
-<div id="mean-shapes-h4" class="section level3">
+<div id="mean-shapes-h4-2" class="section level3">
 <h3><span class="header-section-number">5.9.6</span> Mean Shapes (H4)</h3>
 <div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="dalton-blade.html#cb335-1"></a><span class="co"># subset landmark coordinates to produce mean shapes for hypothesis 4</span></span>
 <span id="cb335-2"><a href="dalton-blade.html#cb335-2"></a>new.coords&lt;-<span class="kw">coords.subset</span>(<span class="dt">A =</span> Y.gpa<span class="op">$</span>coords, </span>
