@@ -7,7 +7,7 @@ The results of the elliptical Fourier analysis (EFA) provided useful insights th
 3. The comparison of beveled vs. not beveled bifaces yielded a significant difference, which is driven (once more) by the left/right lateral edges, and not the distal end of the base. This suggests, once more, that sLMs 12 and 13 are not needed for the analysis.
 4. The only significant difference between the bevel types was the comparison of alternate vs. no beveling. Mean shapes indicate that this difference is driven by the left/right lateral edges, and not by the morphology of the distal portion of the base. The mean shapes for unifacial bimarginal vs. no beveling are surprisingly similar in plan view, and the difference between alternate vs. unifacial bimarginal is driven---once more---by left/right lateral edges from the base to the tip of the point, and not the distal end of the base.
 
-Of those landmark and semilandmark configurations included in the draft sketches for this project, it is sLMs 12 and 13 that appear to contribute least to the formal tests of those hypotheses tested using EFA. They are, however, still included in the 3D landmarking protocol since the z-axis may provide additional useful data, particularly for analyses of bilateral asymmetry (see Chapter 5).
+Of those landmark and semilandmark configurations included in the draft sketches for this project, it is sLMs 12 and 13 that appear to contribute least to the formal tests of those hypotheses tested using EFA.
 
 ## Overview
 
