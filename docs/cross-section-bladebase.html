@@ -24,7 +24,7 @@
 <meta name="author" content="Robert Z. Selden, Jr." />
 
 
-<meta name="date" content="2020-10-23" />
+<meta name="date" content="2020-11-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -847,28 +847,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb459-3"><a href="cross-section-bladebase.html#cb459-3"></a><span class="kw">summary</span>(pca)</span></code></pre></div>
 <pre><code>## 
 ## Ordination type: Principal Component Analysis 
-## Centering by OLS mean
-## Orthogonal projection of OLS residuals
-## Number of observations: 42 
+## Centering and projection: OLS 
+## Number of observations 42 
 ## Number of vectors 24 
 ## 
 ## Importance of Components:
-##                              Comp1        Comp2        Comp3        Comp4        Comp5
-## Eigenvalues            0.002319241 0.0006211346 0.0003344804 0.0002148129 0.0001687674
-## Proportion of Variance 0.597371204 0.1599867915 0.0861527489 0.0553297598 0.0434697327
-## Cumulative Proportion  0.597371204 0.7573579951 0.8435107440 0.8988405038 0.9423102365
-##                              Comp6        Comp7        Comp8        Comp9       Comp10
-## Eigenvalues            0.000138526 5.683498e-05 1.177038e-05 7.572160e-06 5.843885e-06
-## Proportion of Variance 0.035680390 1.463909e-02 3.031718e-03 1.950375e-03 1.505220e-03
-## Cumulative Proportion  0.977990626 9.926297e-01 9.956614e-01 9.976118e-01 9.991170e-01
-##                              Comp11       Comp12       Comp13       Comp14       Comp15
-## Eigenvalues            0.0000029443 3.989946e-07 8.474179e-08 1.187012e-11 2.957848e-12
-## Proportion of Variance 0.0007583687 1.027698e-04 2.182710e-05 3.057408e-09 7.618585e-10
-## Cumulative Proportion  0.9998753993 9.999782e-01 1.000000e+00 1.000000e+00 1.000000e+00
-##                              Comp16       Comp17       Comp18       Comp19       Comp20
-## Eigenvalues            2.938764e-14 1.659112e-14 5.501584e-33 4.166252e-33 2.720968e-33
-## Proportion of Variance 7.569428e-12 4.273406e-12 1.417053e-30 1.073109e-30 7.008449e-31
-## Cumulative Proportion  1.000000e+00 1.000000e+00 1.000000e+00 1.000000e+00 1.000000e+00
+##                              Comp1        Comp2        Comp3        Comp4
+## Eigenvalues            0.002319241 0.0006211346 0.0003344804 0.0002148129
+## Proportion of Variance 0.597371204 0.1599867915 0.0861527489 0.0553297598
+## Cumulative Proportion  0.597371204 0.7573579951 0.8435107440 0.8988405038
+##                               Comp5       Comp6        Comp7        Comp8
+## Eigenvalues            0.0001687674 0.000138526 5.683498e-05 1.177038e-05
+## Proportion of Variance 0.0434697327 0.035680390 1.463909e-02 3.031718e-03
+## Cumulative Proportion  0.9423102365 0.977990626 9.926297e-01 9.956614e-01
+##                               Comp9       Comp10       Comp11       Comp12
+## Eigenvalues            7.572160e-06 5.843885e-06 0.0000029443 3.989946e-07
+## Proportion of Variance 1.950375e-03 1.505220e-03 0.0007583687 1.027698e-04
+## Cumulative Proportion  9.976118e-01 9.991170e-01 0.9998753993 9.999782e-01
+##                              Comp13       Comp14       Comp15       Comp16
+## Eigenvalues            8.474179e-08 1.187012e-11 2.957848e-12 2.938764e-14
+## Proportion of Variance 2.182710e-05 3.057408e-09 7.618585e-10 7.569428e-12
+## Cumulative Proportion  1.000000e+00 1.000000e+00 1.000000e+00 1.000000e+00
+##                              Comp17       Comp18       Comp19       Comp20
+## Eigenvalues            1.659112e-14 5.501584e-33 4.166252e-33 2.720968e-33
+## Proportion of Variance 4.273406e-12 1.417053e-30 1.073109e-30 7.008449e-31
+## Cumulative Proportion  1.000000e+00 1.000000e+00 1.000000e+00 1.000000e+00
 ##                              Comp21       Comp22       Comp23       Comp24
 ## Eigenvalues            6.966135e-34 2.226088e-34 1.364633e-34 4.503632e-35
 ## Proportion of Variance 1.794280e-31 5.733777e-32 3.514911e-32 1.160009e-32
@@ -996,10 +999,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df       SS        MS     Rsq      F     Z Pr(&gt;F)   
-## size       1 0.022942 0.0229420 0.14413 6.7359 2.785 0.0014 **
-## Residuals 40 0.136237 0.0034059 0.85587                       
-## Total     41 0.159179                                         
+##           Df       SS        MS     Rsq      F      Z Pr(&gt;F)   
+## size       1 0.022942 0.0229420 0.14413 6.7359 2.7351 0.0014 **
+## Residuals 40 0.136237 0.0034059 0.85587                        
+## Total     41 0.159179                                          
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -1065,14 +1068,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df       SS        MS     Rsq      F      Z Pr(&gt;F)   
-## size       1 0.022942 0.0229420 0.14413 7.0609 2.8442 0.0010 **
-## heart      1 0.009520 0.0095197 0.05981 2.9299 1.7896 0.0381 * 
+## size       1 0.022942 0.0229420 0.14413 7.0609 2.7912 0.0010 **
+## heart      1 0.009520 0.0095197 0.05981 2.9299 1.7516 0.0381 * 
 ## Residuals 39 0.126717 0.0032492 0.79607                        
 ## Total     41 0.159179                                          
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Call: procD.lm(f1 = shape ~ size + heart, iter = 9999, data = gdf,      print.progress = FALSE)</code></pre>
+## Call: procD.lm(f1 = shape ~ size + heart, iter = 9999, data = gdf,  
+##     print.progress = FALSE)</code></pre>
 <div class="sourceCode" id="cb474"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb474-1"><a href="cross-section-bladebase.html#cb474-1"></a><span class="co"># heart</span></span>
 <span id="cb474-2"><a href="cross-section-bladebase.html#cb474-2"></a><span class="kw">anova</span>(fit.sz.uheart) <span class="co"># unique allometry (heart)</span></span></code></pre></div>
 <pre><code>## 
@@ -1084,15 +1088,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Effect sizes (Z) based on F distributions
 ## 
 ##            Df       SS        MS     Rsq      F      Z Pr(&gt;F)   
-## size        1 0.022942 0.0229420 0.14413 7.1874 2.8577 0.0010 **
-## heart       1 0.009520 0.0095197 0.05981 2.9824 1.8140 0.0365 * 
-## size:heart  1 0.005423 0.0054228 0.03407 1.6989 1.0350 0.1548   
+## size        1 0.022942 0.0229420 0.14413 7.1874 2.8083 0.0010 **
+## heart       1 0.009520 0.0095197 0.05981 2.9824 1.7742 0.0365 * 
+## size:heart  1 0.005423 0.0054228 0.03407 1.6989 1.0330 0.1548   
 ## Residuals  38 0.121294 0.0031920 0.76200                        
 ## Total      41 0.159179                                          
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Call: procD.lm(f1 = shape ~ size * heart, iter = 9999, data = gdf,      print.progress = FALSE)</code></pre>
+## Call: procD.lm(f1 = shape ~ size * heart, iter = 9999, data = gdf,  
+##     print.progress = FALSE)</code></pre>
 <div class="sourceCode" id="cb476"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb476-1"><a href="cross-section-bladebase.html#cb476-1"></a><span class="co"># ANOVA: do dalton projectile point sizes differ by heart?</span></span>
 <span id="cb476-2"><a href="cross-section-bladebase.html#cb476-2"></a><span class="kw">anova</span>(fit.size.heart)</span></code></pre></div>
 <pre><code>## 
@@ -1104,7 +1109,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df     SS     MS     Rsq      F      Z Pr(&gt;F)
-## heart      1  29.84 29.841 0.05246 2.2147 1.0683 0.1501
+## heart      1  29.84 29.841 0.05246 2.2147 0.8971 0.1501
 ## Residuals 40 538.96 13.474 0.94754                     
 ## Total     41 568.81                                    
 ## 
@@ -1120,7 +1125,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df       SS        MS     Rsq      F       Z Pr(&gt;F)
-## heart      1 0.005397 0.0053974 0.03391 1.4039 0.78082  0.218
+## heart      1 0.005397 0.0053974 0.03391 1.4039 0.78391  0.218
 ## Residuals 40 0.153781 0.0038445 0.96609                      
 ## Total     41 0.159179                                        
 ## 
@@ -1287,8 +1292,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df       SS        MS     Rsq      F      Z Pr(&gt;F)   
-## size       1 0.022942 0.0229420 0.14413 6.9672 2.8259 0.0010 **
-## hreg       2 0.011108 0.0055541 0.06978 1.6867 1.1893 0.1214   
+## size       1 0.022942 0.0229420 0.14413 6.9672 2.7745 0.0010 **
+## hreg       2 0.011108 0.0055541 0.06978 1.6867 1.1883 0.1214   
 ## Residuals 38 0.125129 0.0032929 0.78609                        
 ## Total     41 0.159179                                          
 ## ---
@@ -1306,9 +1311,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df       SS        MS     Rsq      F      Z Pr(&gt;F)    
-## size       1 0.022942 0.0229420 0.14413 7.7929 2.9560 0.0008 ***
-## hreg       2 0.011108 0.0055541 0.06978 1.8866 1.3888 0.0823 .  
-## size:hreg  2 0.019146 0.0095729 0.12028 3.2517 2.3665 0.0086 ** 
+## size       1 0.022942 0.0229420 0.14413 7.7929 2.9046 0.0008 ***
+## hreg       2 0.011108 0.0055541 0.06978 1.8866 1.3872 0.0823 .  
+## size:hreg  2 0.019146 0.0095729 0.12028 3.2517 2.3209 0.0086 ** 
 ## Residuals 36 0.105983 0.0029440 0.66581                         
 ## Total     41 0.159179                                           
 ## ---
@@ -1326,7 +1331,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df     SS     MS     Rsq      F      Z Pr(&gt;F)  
-## hreg       2  85.77 42.883 0.15078 3.4623 1.6888 0.0438 *
+## hreg       2  85.77 42.883 0.15078 3.4623 1.3753 0.0438 *
 ## Residuals 39 483.04 12.386 0.84922                       
 ## Total     41 568.81                                      
 ## ---
@@ -1351,9 +1356,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## Pairwise distances between means, plus statistics
 ##             d UCL (95%)          Z Pr &gt; d
-## H:I 0.4825029  2.544221 -0.6106174 0.7211
-## H:P 3.7969151  3.080821  2.0052093 0.0163
-## I:P 3.3144123  3.241794  1.6325192 0.0450</code></pre>
+## H:I 0.4825029  2.544221 -0.7321789 0.7211
+## H:P 3.7969151  3.080821  2.6982489 0.0163
+## I:P 3.3144123  3.241794  1.9981531 0.0450</code></pre>
 <div class="sourceCode" id="cb501"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb501-1"><a href="cross-section-bladebase.html#cb501-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
 <span id="cb501-2"><a href="cross-section-bladebase.html#cb501-2"></a><span class="kw">summary</span>(sz.hreg, </span>
 <span id="cb501-3"><a href="cross-section-bladebase.html#cb501-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
@@ -1372,10 +1377,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 13.530265 10.177782  8.743054 
 ## 
 ## Pairwise distances between variances, plus statistics
-##            d UCL (95%)           Z Pr &gt; d
-## H:I 3.352483  11.46435 -0.21144350 0.5889
-## H:P 4.787211  13.50205 -0.01579736 0.5224
-## I:P 1.434728  14.40426 -1.15399067 0.8588</code></pre>
+##            d UCL (95%)          Z Pr &gt; d
+## H:I 3.352483  11.46435 -0.4205104 0.5889
+## H:P 4.787211  13.50205 -0.2361020 0.5224
+## I:P 1.434728  14.40426 -1.0504338 0.8588</code></pre>
 <div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="cross-section-bladebase.html#cb503-1"></a><span class="co"># ANOVA: does dalton projectile point shape differ by hreg?</span></span>
 <span id="cb503-2"><a href="cross-section-bladebase.html#cb503-2"></a><span class="kw">anova</span>(fit.shape.hreg)</span></code></pre></div>
 <pre><code>## 
@@ -1387,7 +1392,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df       SS        MS    Rsq      F       Z Pr(&gt;F)
-## hreg       2 0.010793 0.0053964 0.0678 1.4183 0.85259 0.2047
+## hreg       2 0.010793 0.0053964 0.0678 1.4183 0.85251 0.2047
 ## Residuals 39 0.148386 0.0038048 0.9322                      
 ## Total     41 0.159179                                       
 ## 
@@ -1410,9 +1415,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## Pairwise distances between means, plus statistics
 ##             d UCL (95%)          Z Pr &gt; d
-## H:I 0.4825029  2.544221 -0.6106174 0.7211
-## H:P 3.7969151  3.080821  2.0052093 0.0163
-## I:P 3.3144123  3.241794  1.6325192 0.0450</code></pre>
+## H:I 0.4825029  2.544221 -0.7321789 0.7211
+## H:P 3.7969151  3.080821  2.6982489 0.0163
+## I:P 3.3144123  3.241794  1.9981531 0.0450</code></pre>
 <div class="sourceCode" id="cb507"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb507-1"><a href="cross-section-bladebase.html#cb507-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
 <span id="cb507-2"><a href="cross-section-bladebase.html#cb507-2"></a><span class="kw">summary</span>(sz.hreg, </span>
 <span id="cb507-3"><a href="cross-section-bladebase.html#cb507-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
@@ -1431,10 +1436,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 13.530265 10.177782  8.743054 
 ## 
 ## Pairwise distances between variances, plus statistics
-##            d UCL (95%)           Z Pr &gt; d
-## H:I 3.352483  11.46435 -0.21144350 0.5889
-## H:P 4.787211  13.50205 -0.01579736 0.5224
-## I:P 1.434728  14.40426 -1.15399067 0.8588</code></pre>
+##            d UCL (95%)          Z Pr &gt; d
+## H:I 3.352483  11.46435 -0.4205104 0.5889
+## H:P 4.787211  13.50205 -0.2361020 0.5224
+## I:P 1.434728  14.40426 -1.0504338 0.8588</code></pre>
 </div>
 <div id="allometry-h2-3" class="section level3">
 <h3><span class="header-section-number">7.7.4</span> Allometry (H2)</h3>
@@ -1607,15 +1612,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df       SS        MS     Rsq      F       Z Pr(&gt;F)   
-## size       1 0.022942 0.0229420 0.14413 6.8151 2.79834 0.0015 **
-## bev.1      1 0.004949 0.0049486 0.03109 1.4700 0.82178 0.2037   
-## Residuals 39 0.131288 0.0033664 0.82478                         
-## Total     41 0.159179                                           
+##           Df       SS        MS     Rsq      F      Z Pr(&gt;F)   
+## size       1 0.022942 0.0229420 0.14413 6.8151 2.7485 0.0015 **
+## bev.1      1 0.004949 0.0049486 0.03109 1.4700 0.8270 0.2037   
+## Residuals 39 0.131288 0.0033664 0.82478                        
+## Total     41 0.159179                                          
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Call: procD.lm(f1 = shape ~ size + bev.1, iter = 9999, data = gdf,      print.progress = FALSE)</code></pre>
+## Call: procD.lm(f1 = shape ~ size + bev.1, iter = 9999, data = gdf,  
+##     print.progress = FALSE)</code></pre>
 <div class="sourceCode" id="cb524"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb524-1"><a href="cross-section-bladebase.html#cb524-1"></a><span class="co"># bev.1</span></span>
 <span id="cb524-2"><a href="cross-section-bladebase.html#cb524-2"></a><span class="kw">anova</span>(fit.sz.ubev<span class="fl">.1</span>) <span class="co"># unique allometry (bev.1)</span></span></code></pre></div>
 <pre><code>## 
@@ -1627,15 +1633,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Effect sizes (Z) based on F distributions
 ## 
 ##            Df       SS        MS     Rsq      F       Z Pr(&gt;F)   
-## size        1 0.022942 0.0229420 0.14413 6.8472 2.79685 0.0013 **
-## bev.1       1 0.004949 0.0049486 0.03109 1.4769 0.82776 0.2018   
-## size:bev.1  1 0.003967 0.0039674 0.02492 1.1841 0.55725 0.2878   
+## size        1 0.022942 0.0229420 0.14413 6.8472 2.74979 0.0013 **
+## bev.1       1 0.004949 0.0049486 0.03109 1.4769 0.83274 0.2018   
+## size:bev.1  1 0.003967 0.0039674 0.02492 1.1841 0.56367 0.2878   
 ## Residuals  38 0.127321 0.0033506 0.79986                         
 ## Total      41 0.159179                                           
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Call: procD.lm(f1 = shape ~ size * bev.1, iter = 9999, data = gdf,      print.progress = FALSE)</code></pre>
+## Call: procD.lm(f1 = shape ~ size * bev.1, iter = 9999, data = gdf,  
+##     print.progress = FALSE)</code></pre>
 <div class="sourceCode" id="cb526"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb526-1"><a href="cross-section-bladebase.html#cb526-1"></a><span class="co"># ANOVA: do dalton projectile point sizes differ by beveling?</span></span>
 <span id="cb526-2"><a href="cross-section-bladebase.html#cb526-2"></a><span class="kw">anova</span>(fit.size.bev<span class="fl">.1</span>)</span></code></pre></div>
 <pre><code>## 
@@ -1647,7 +1654,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df     SS      MS     Rsq      F        Z Pr(&gt;F)
-## bev.1      1   4.80  4.8033 0.00844 0.3407 -0.13612 0.5609
+## bev.1      1   4.80  4.8033 0.00844 0.3407 0.080762 0.5609
 ## Residuals 40 564.00 14.1000 0.99156                       
 ## Total     41 568.81                                       
 ## 
@@ -1663,7 +1670,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df       SS        MS     Rsq      F       Z Pr(&gt;F)
-## bev.1      1 0.004495 0.0044950 0.02824 1.1624 0.52924 0.2977
+## bev.1      1 0.004495 0.0044950 0.02824 1.1624 0.53658 0.2977
 ## Residuals 40 0.154684 0.0038671 0.97176                      
 ## Total     41 0.159179                                        
 ## 
@@ -1830,14 +1837,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df       SS        MS     Rsq      F       Z Pr(&gt;F)   
-## size       1 0.022942 0.0229420 0.14413 6.9012 2.81025 0.0011 **
-## bev.2      2 0.009912 0.0049560 0.06227 1.4908 0.93601 0.1800   
+## size       1 0.022942 0.0229420 0.14413 6.9012 2.76007 0.0011 **
+## bev.2      2 0.009912 0.0049560 0.06227 1.4908 0.93639 0.1800   
 ## Residuals 38 0.126325 0.0033243 0.79360                         
 ## Total     41 0.159179                                           
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Call: procD.lm(f1 = shape ~ size + bev.2, iter = 9999, data = gdf,      print.progress = FALSE)</code></pre>
+## Call: procD.lm(f1 = shape ~ size + bev.2, iter = 9999, data = gdf,  
+##     print.progress = FALSE)</code></pre>
 <div class="sourceCode" id="cb545"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb545-1"><a href="cross-section-bladebase.html#cb545-1"></a><span class="co"># bev.2</span></span>
 <span id="cb545-2"><a href="cross-section-bladebase.html#cb545-2"></a><span class="kw">anova</span>(fit.sz.ubev<span class="fl">.2</span>) <span class="co"># unique allometry (bev.2)</span></span></code></pre></div>
 <pre><code>## 
@@ -1849,15 +1857,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Effect sizes (Z) based on F distributions
 ## 
 ##            Df       SS        MS     Rsq      F       Z Pr(&gt;F)   
-## size        1 0.022942 0.0229420 0.14413 6.9903 2.80830 0.0013 **
-## bev.2       2 0.009912 0.0049560 0.06227 1.5101 0.95489 0.1757   
-## size:bev.2  2 0.008174 0.0040871 0.05135 1.2453 0.62387 0.2663   
+## size        1 0.022942 0.0229420 0.14413 6.9903 2.76336 0.0013 **
+## bev.2       2 0.009912 0.0049560 0.06227 1.5101 0.95515 0.1757   
+## size:bev.2  2 0.008174 0.0040871 0.05135 1.2453 0.61945 0.2663   
 ## Residuals  36 0.118151 0.0032820 0.74225                         
 ## Total      41 0.159179                                           
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Call: procD.lm(f1 = shape ~ size * bev.2, iter = 9999, data = gdf,      print.progress = FALSE)</code></pre>
+## Call: procD.lm(f1 = shape ~ size * bev.2, iter = 9999, data = gdf,  
+##     print.progress = FALSE)</code></pre>
 <div class="sourceCode" id="cb547"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb547-1"><a href="cross-section-bladebase.html#cb547-1"></a><span class="co"># ANOVA: does dalton projectile point size differ by bev.2?</span></span>
 <span id="cb547-2"><a href="cross-section-bladebase.html#cb547-2"></a><span class="kw">anova</span>(fit.size.bev<span class="fl">.2</span>)</span></code></pre></div>
 <pre><code>## 
@@ -1869,7 +1878,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df     SS     MS     Rsq      F      Z Pr(&gt;F)   
-## bev.2      2 131.07 65.534 0.23043 5.8387 2.5243  0.006 **
+## bev.2      2 131.07 65.534 0.23043 5.8387 1.7764  0.006 **
 ## Residuals 39 437.74 11.224 0.76957                        
 ## Total     41 568.81                                       
 ## ---
@@ -1894,9 +1903,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## Pairwise distances between means, plus statistics
 ##                                       d UCL (95%)         Z Pr &gt; d
-## alternate:no.bevel             1.492269  2.365864 0.8285869 0.2208
-## alternate:unifacial.bimarginal 6.897669  4.248232 2.5506805 0.0018
-## no.bevel:unifacial.bimarginal  5.405400  4.460976 1.9452193 0.0140</code></pre>
+## alternate:no.bevel             1.492269  2.365864 0.7269534 0.2208
+## alternate:unifacial.bimarginal 6.897669  4.248232 3.8075002 0.0018
+## no.bevel:unifacial.bimarginal  5.405400  4.460976 2.5658864 0.0140</code></pre>
 <div class="sourceCode" id="cb551"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb551-1"><a href="cross-section-bladebase.html#cb551-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
 <span id="cb551-2"><a href="cross-section-bladebase.html#cb551-2"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
 <span id="cb551-3"><a href="cross-section-bladebase.html#cb551-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
@@ -1916,9 +1925,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## Pairwise distances between variances, plus statistics
 ##                                       d UCL (95%)          Z Pr &gt; d
-## alternate:no.bevel             1.847617  10.07332 -0.6761063 0.7389
-## alternate:unifacial.bimarginal 9.674899  18.13953  0.5014939 0.3113
-## no.bevel:unifacial.bimarginal  7.827282  18.34559  0.1805717 0.4505</code></pre>
+## alternate:no.bevel             1.847617  10.07332 -0.7806756 0.7389
+## alternate:unifacial.bimarginal 9.674899  18.13953  0.3220070 0.3113
+## no.bevel:unifacial.bimarginal  7.827282  18.34559 -0.0316543 0.4505</code></pre>
 <div class="sourceCode" id="cb553"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb553-1"><a href="cross-section-bladebase.html#cb553-1"></a><span class="co"># ANOVA: does dalton projectile point shape differ by bev.2?</span></span>
 <span id="cb553-2"><a href="cross-section-bladebase.html#cb553-2"></a><span class="kw">anova</span>(fit.shape.bev<span class="fl">.2</span>)</span></code></pre></div>
 <pre><code>## 
@@ -1929,10 +1938,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df       SS        MS     Rsq      F     Z Pr(&gt;F)  
-## bev.2      2 0.020949 0.0104747 0.13161 2.9553 2.023 0.0207 *
-## Residuals 39 0.138229 0.0035443 0.86839                      
-## Total     41 0.159179                                        
+##           Df       SS        MS     Rsq      F      Z Pr(&gt;F)  
+## bev.2      2 0.020949 0.0104747 0.13161 2.9553 2.0309 0.0207 *
+## Residuals 39 0.138229 0.0035443 0.86839                       
+## Total     41 0.159179                                         
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -1955,9 +1964,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## Pairwise distances between means, plus statistics
 ##                                       d UCL (95%)         Z Pr &gt; d
-## alternate:no.bevel             1.492269  2.365864 0.8285869 0.2208
-## alternate:unifacial.bimarginal 6.897669  4.248232 2.5506805 0.0018
-## no.bevel:unifacial.bimarginal  5.405400  4.460976 1.9452193 0.0140</code></pre>
+## alternate:no.bevel             1.492269  2.365864 0.7269534 0.2208
+## alternate:unifacial.bimarginal 6.897669  4.248232 3.8075002 0.0018
+## no.bevel:unifacial.bimarginal  5.405400  4.460976 2.5658864 0.0140</code></pre>
 <div class="sourceCode" id="cb557"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb557-1"><a href="cross-section-bladebase.html#cb557-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
 <span id="cb557-2"><a href="cross-section-bladebase.html#cb557-2"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
 <span id="cb557-3"><a href="cross-section-bladebase.html#cb557-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
@@ -1977,9 +1986,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## Pairwise distances between variances, plus statistics
 ##                                       d UCL (95%)          Z Pr &gt; d
-## alternate:no.bevel             1.847617  10.07332 -0.6761063 0.7389
-## alternate:unifacial.bimarginal 9.674899  18.13953  0.5014939 0.3113
-## no.bevel:unifacial.bimarginal  7.827282  18.34559  0.1805717 0.4505</code></pre>
+## alternate:no.bevel             1.847617  10.07332 -0.7806756 0.7389
+## alternate:unifacial.bimarginal 9.674899  18.13953  0.3220070 0.3113
+## no.bevel:unifacial.bimarginal  7.827282  18.34559 -0.0316543 0.4505</code></pre>
 </div>
 <div id="allometry-h4-3" class="section level3">
 <h3><span class="header-section-number">7.9.4</span> Allometry (H4)</h3>

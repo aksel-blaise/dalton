@@ -24,7 +24,7 @@
 <meta name="author" content="Robert Z. Selden, Jr." />
 
 
-<meta name="date" content="2020-10-23" />
+<meta name="date" content="2020-11-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -754,8 +754,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb104-9"><a href="analysis-of-dalton-morphology.html#cb104-9"></a>Y.gpa</span></code></pre></div>
 <pre><code>## 
 ## Call:
-## gpagen(A = coords, PrinAxes = TRUE, ProcD = TRUE, Proj = TRUE,      print.progress = FALSE) 
-## 
+## gpagen(A = coords, PrinAxes = TRUE, ProcD = TRUE, Proj = TRUE,  
+##     print.progress = FALSE) 
 ## 
 ## 
 ## 
@@ -1204,9 +1204,8 @@ Figure 4.1: 2D plot of 3D consensus configuration.
 <span id="cb111-3"><a href="analysis-of-dalton-morphology.html#cb111-3"></a><span class="kw">summary</span>(pca)</span></code></pre></div>
 <pre><code>## 
 ## Ordination type: Principal Component Analysis 
-## Centering by OLS mean
-## Orthogonal projection of OLS residuals
-## Number of observations: 42 
+## Centering and projection: OLS 
+## Number of observations 42 
 ## Number of vectors 42 
 ## 
 ## Importance of Components:
@@ -1214,38 +1213,46 @@ Figure 4.1: 2D plot of 3D consensus configuration.
 ## Eigenvalues            0.01301294 0.002877412 0.001053469 0.0006489359 0.0003018962
 ## Proportion of Variance 0.67105137 0.148382331 0.054325282 0.0334643169 0.0155681784
 ## Cumulative Proportion  0.67105137 0.819433704 0.873758986 0.9072233030 0.9227914815
-##                               Comp6        Comp7        Comp8       Comp9       Comp10
-## Eigenvalues            0.0002815325 0.0001956168 0.0001763908 0.000130269 8.891433e-05
-## Proportion of Variance 0.0145180623 0.0100875661 0.0090961202 0.006717711 4.585133e-03
-## Cumulative Proportion  0.9373095438 0.9473971099 0.9564932301 0.963210941 9.677961e-01
-##                              Comp11       Comp12       Comp13       Comp14       Comp15
-## Eigenvalues            8.256456e-05 0.0000685454 6.264594e-05 5.712044e-05 4.822888e-05
-## Proportion of Variance 4.257688e-03 0.0035347482 3.230525e-03 2.945586e-03 2.487067e-03
-## Cumulative Proportion  9.720538e-01 0.9755885108 9.788190e-01 9.817646e-01 9.842517e-01
-##                              Comp16       Comp17       Comp18       Comp19      Comp20
-## Eigenvalues            4.352343e-05 0.0000318239 0.0000297823 2.596638e-05 0.000022095
-## Proportion of Variance 2.244416e-03 0.0016410944 0.0015358133 1.339034e-03 0.001139395
-## Cumulative Proportion  9.864961e-01 0.9881371985 0.9896730119 9.910120e-01 0.992151441
-##                             Comp21       Comp22       Comp23       Comp24       Comp25
-## Eigenvalues            0.000021292 1.922492e-05 1.491066e-05 1.311328e-05 0.0000117378
-## Proportion of Variance 0.001097986 9.913905e-04 7.689127e-04 6.762255e-04 0.0006052949
-## Cumulative Proportion  0.993249426 9.942408e-01 9.950097e-01 9.956860e-01 0.9962912500
-##                              Comp26       Comp27       Comp28       Comp29       Comp30
-## Eigenvalues            1.124143e-05 9.918169e-06 9.625160e-06 7.879781e-06 6.033002e-06
-## Proportion of Variance 5.796978e-04 5.114600e-04 4.963501e-04 4.063445e-04 3.111098e-04
-## Cumulative Proportion  9.968709e-01 9.973824e-01 9.978788e-01 9.982851e-01 9.985962e-01
-##                              Comp31       Comp32       Comp33       Comp34       Comp35
-## Eigenvalues            5.324645e-06 3.860326e-06 3.671920e-06 3.617584e-06 2.858703e-06
-## Proportion of Variance 2.745812e-04 1.990692e-04 1.893535e-04 1.865515e-04 1.474176e-04
-## Cumulative Proportion  9.988708e-01 9.990699e-01 9.992592e-01 9.994458e-01 9.995932e-01
-##                              Comp36       Comp37       Comp38       Comp39       Comp40
-## Eigenvalues            2.085702e-06 1.930735e-06 1.572256e-06 1.049641e-06 7.436116e-07
-## Proportion of Variance 1.075554e-04 9.956411e-05 8.107809e-05 5.412789e-05 3.834655e-05
-## Cumulative Proportion  9.997007e-01 9.998003e-01 9.998814e-01 9.999355e-01 9.999739e-01
-##                              Comp41       Comp42
-## Eigenvalues            5.069563e-07 2.566351e-33
-## Proportion of Variance 2.614272e-05 1.323415e-31
-## Cumulative Proportion  1.000000e+00 1.000000e+00</code></pre>
+##                               Comp6        Comp7        Comp8       Comp9
+## Eigenvalues            0.0002815325 0.0001956168 0.0001763908 0.000130269
+## Proportion of Variance 0.0145180623 0.0100875661 0.0090961202 0.006717711
+## Cumulative Proportion  0.9373095438 0.9473971099 0.9564932301 0.963210941
+##                              Comp10       Comp11       Comp12       Comp13
+## Eigenvalues            8.891433e-05 8.256456e-05 0.0000685454 6.264594e-05
+## Proportion of Variance 4.585133e-03 4.257688e-03 0.0035347482 3.230525e-03
+## Cumulative Proportion  9.677961e-01 9.720538e-01 0.9755885108 9.788190e-01
+##                              Comp14       Comp15       Comp16       Comp17
+## Eigenvalues            5.712044e-05 4.822888e-05 4.352343e-05 0.0000318239
+## Proportion of Variance 2.945586e-03 2.487067e-03 2.244416e-03 0.0016410944
+## Cumulative Proportion  9.817646e-01 9.842517e-01 9.864961e-01 0.9881371985
+##                              Comp18       Comp19      Comp20      Comp21
+## Eigenvalues            0.0000297823 2.596638e-05 0.000022095 0.000021292
+## Proportion of Variance 0.0015358133 1.339034e-03 0.001139395 0.001097986
+## Cumulative Proportion  0.9896730119 9.910120e-01 0.992151441 0.993249426
+##                              Comp22       Comp23       Comp24       Comp25
+## Eigenvalues            1.922492e-05 1.491066e-05 1.311328e-05 0.0000117378
+## Proportion of Variance 9.913905e-04 7.689127e-04 6.762255e-04 0.0006052949
+## Cumulative Proportion  9.942408e-01 9.950097e-01 9.956860e-01 0.9962912500
+##                              Comp26       Comp27       Comp28       Comp29
+## Eigenvalues            1.124143e-05 9.918169e-06 9.625160e-06 7.879781e-06
+## Proportion of Variance 5.796978e-04 5.114600e-04 4.963501e-04 4.063445e-04
+## Cumulative Proportion  9.968709e-01 9.973824e-01 9.978788e-01 9.982851e-01
+##                              Comp30       Comp31       Comp32       Comp33
+## Eigenvalues            6.033002e-06 5.324645e-06 3.860326e-06 3.671920e-06
+## Proportion of Variance 3.111098e-04 2.745812e-04 1.990692e-04 1.893535e-04
+## Cumulative Proportion  9.985962e-01 9.988708e-01 9.990699e-01 9.992592e-01
+##                              Comp34       Comp35       Comp36       Comp37
+## Eigenvalues            3.617584e-06 2.858703e-06 2.085702e-06 1.930735e-06
+## Proportion of Variance 1.865515e-04 1.474176e-04 1.075554e-04 9.956411e-05
+## Cumulative Proportion  9.994458e-01 9.995932e-01 9.997007e-01 9.998003e-01
+##                              Comp38       Comp39       Comp40       Comp41
+## Eigenvalues            1.572256e-06 1.049641e-06 7.436116e-07 5.069563e-07
+## Proportion of Variance 8.107809e-05 5.412789e-05 3.834655e-05 2.614272e-05
+## Cumulative Proportion  9.998814e-01 9.999355e-01 9.999739e-01 1.000000e+00
+##                              Comp42
+## Eigenvalues            2.566351e-33
+## Proportion of Variance 1.323415e-31
+## Cumulative Proportion  1.000000e+00</code></pre>
 </div>
 <div id="define-models" class="section level2">
 <h2><span class="header-section-number">4.4</span> Define models</h2>
@@ -1369,10 +1376,10 @@ Figure 4.1: 2D plot of 3D consensus configuration.
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df      SS      MS     Rsq      F     Z Pr(&gt;F)    
-## size       1 0.33672 0.33672 0.42352 29.386 3.767  1e-04 ***
-## Residuals 40 0.45834 0.01146 0.57648                        
-## Total     41 0.79507                                        
+##           Df      SS      MS     Rsq      F      Z Pr(&gt;F)    
+## size       1 0.33672 0.33672 0.42352 29.386 4.3527  1e-04 ***
+## Residuals 40 0.45834 0.01146 0.57648                         
+## Total     41 0.79507                                         
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -1438,14 +1445,15 @@ Figure 4.2: Boxplot of centroid size by Heartland (in/out).
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df      SS      MS     Rsq      F      Z Pr(&gt;F)    
-## size       1 0.33672 0.33672 0.42352 33.715 3.8901  1e-04 ***
-## heart      1 0.06884 0.06884 0.08659  6.893 3.0111  3e-04 ***
+## size       1 0.33672 0.33672 0.42352 33.715 4.5123  1e-04 ***
+## heart      1 0.06884 0.06884 0.08659  6.893 3.1797  3e-04 ***
 ## Residuals 39 0.38950 0.00999 0.48990                         
 ## Total     41 0.79507                                         
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Call: procD.lm(f1 = shape ~ size + heart, iter = 9999, data = gdf,      print.progress = FALSE)</code></pre>
+## Call: procD.lm(f1 = shape ~ size + heart, iter = 9999, data = gdf,  
+##     print.progress = FALSE)</code></pre>
 <div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="analysis-of-dalton-morphology.html#cb126-1"></a><span class="co"># heart</span></span>
 <span id="cb126-2"><a href="analysis-of-dalton-morphology.html#cb126-2"></a><span class="kw">anova</span>(fit.sz.uheart) <span class="co"># unique allometry (heart)</span></span></code></pre></div>
 <pre><code>## 
@@ -1457,15 +1465,16 @@ Figure 4.2: Boxplot of centroid size by Heartland (in/out).
 ## Effect sizes (Z) based on F distributions
 ## 
 ##            Df      SS      MS     Rsq       F      Z Pr(&gt;F)    
-## size        1 0.33672 0.33672 0.42352 35.0905 3.9277  1e-04 ***
-## heart       1 0.06884 0.06884 0.08659  7.1741 3.0608 0.0003 ***
-## size:heart  1 0.02486 0.02486 0.03127  2.5905 1.6670 0.0498 *  
+## size        1 0.33672 0.33672 0.42352 35.0905 4.5562  1e-04 ***
+## heart       1 0.06884 0.06884 0.08659  7.1741 3.2373 0.0003 ***
+## size:heart  1 0.02486 0.02486 0.03127  2.5905 1.7162 0.0498 *  
 ## Residuals  38 0.36464 0.00960 0.45863                          
 ## Total      41 0.79507                                          
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Call: procD.lm(f1 = shape ~ size * heart, iter = 9999, data = gdf,      print.progress = FALSE)</code></pre>
+## Call: procD.lm(f1 = shape ~ size * heart, iter = 9999, data = gdf,  
+##     print.progress = FALSE)</code></pre>
 <div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="analysis-of-dalton-morphology.html#cb128-1"></a><span class="co"># ANOVA: do dalton projectile point sizes differ by heart?</span></span>
 <span id="cb128-2"><a href="analysis-of-dalton-morphology.html#cb128-2"></a><span class="kw">anova</span>(fit.size.heart)</span></code></pre></div>
 <pre><code>## 
@@ -1477,7 +1486,7 @@ Figure 4.2: Boxplot of centroid size by Heartland (in/out).
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df    SS     MS     Rsq      F       Z Pr(&gt;F)
-## heart      1  1771 1770.6 0.03757 1.5615 0.79478 0.2297
+## heart      1  1771 1770.6 0.03757 1.5615 0.73415 0.2297
 ## Residuals 40 45358 1133.9 0.96243                      
 ## Total     41 47128                                     
 ## 
@@ -1493,7 +1502,7 @@ Figure 4.2: Boxplot of centroid size by Heartland (in/out).
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df      SS       MS     Rsq      F      Z Pr(&gt;F)   
-## heart      1 0.11769 0.117695 0.14803 6.9501 2.4893  0.002 **
+## heart      1 0.11769 0.117695 0.14803 6.9501 2.7007  0.002 **
 ## Residuals 40 0.67737 0.016934 0.85197                        
 ## Total     41 0.79507                                         
 ## ---
@@ -1662,8 +1671,8 @@ Figure 4.3: Boxplot of centroid size by Heartland region.
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df      SS      MS     Rsq       F      Z Pr(&gt;F)    
-## size       1 0.33672 0.33672 0.42352 33.5293 3.8881  1e-04 ***
-## hreg       2 0.07672 0.03836 0.09650  3.8198 2.8938 0.0012 ** 
+## size       1 0.33672 0.33672 0.42352 33.5293 4.5046  1e-04 ***
+## hreg       2 0.07672 0.03836 0.09650  3.8198 2.8682 0.0012 ** 
 ## Residuals 38 0.38162 0.01004 0.47999                          
 ## Total     41 0.79507                                          
 ## ---
@@ -1681,9 +1690,9 @@ Figure 4.3: Boxplot of centroid size by Heartland region.
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df      SS      MS     Rsq       F      Z Pr(&gt;F)    
-## size       1 0.33672 0.33672 0.42352 35.2210 3.9376  1e-04 ***
-## hreg       2 0.07672 0.03836 0.09650  4.0125 2.9859 0.0008 ***
-## size:hreg  2 0.03745 0.01872 0.04710  1.9586 1.5445 0.0647 .  
+## size       1 0.33672 0.33672 0.42352 35.2210 4.5569  1e-04 ***
+## hreg       2 0.07672 0.03836 0.09650  4.0125 2.9616 0.0008 ***
+## size:hreg  2 0.03745 0.01872 0.04710  1.9586 1.5560 0.0647 .  
 ## Residuals 36 0.34417 0.00956 0.43288                          
 ## Total     41 0.79507                                          
 ## ---
@@ -1701,7 +1710,7 @@ Figure 4.3: Boxplot of centroid size by Heartland region.
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df    SS     MS     Rsq      F      Z Pr(&gt;F)   
-## hreg       2 10444 5222.2 0.22162 5.5519 2.3751 0.0087 **
+## hreg       2 10444 5222.2 0.22162 5.5519 1.7415 0.0087 **
 ## Residuals 39 36684  940.6 0.77838                        
 ## Total     41 47128                                       
 ## ---
@@ -1726,9 +1735,9 @@ Figure 4.3: Boxplot of centroid size by Heartland region.
 ## 
 ## Pairwise distances between means, plus statistics
 ##            d UCL (95%)         Z Pr &gt; d
-## H:I 28.01020  23.05661 1.9668728 0.0144
-## H:P 13.26651  27.58305 0.4179227 0.3617
-## I:P 41.27671  28.93448 2.2869984 0.0060</code></pre>
+## H:I 28.01020  23.05661 2.6111504 0.0144
+## H:P 13.26651  27.58305 0.2118695 0.3617
+## I:P 41.27671  28.93448 3.2646816 0.0060</code></pre>
 <div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="analysis-of-dalton-morphology.html#cb153-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
 <span id="cb153-2"><a href="analysis-of-dalton-morphology.html#cb153-2"></a><span class="kw">summary</span>(sz.hreg, </span>
 <span id="cb153-3"><a href="analysis-of-dalton-morphology.html#cb153-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
@@ -1747,10 +1756,10 @@ Figure 4.3: Boxplot of centroid size by Heartland region.
 ##  765.6253  242.0404 2247.8525 
 ## 
 ## Pairwise distances between variances, plus statistics
-##             d UCL (95%)         Z Pr &gt; d
-## H:I  523.5849  964.5469 0.5432859 0.3212
-## H:P 1482.2272 1121.6150 2.1256312 0.0128
-## I:P 2005.8121 1218.3008 2.6626097 0.0006</code></pre>
+##             d UCL (95%)        Z Pr &gt; d
+## H:I  523.5849  964.5469 0.386156 0.3212
+## H:P 1482.2272 1121.6150 2.867414 0.0128
+## I:P 2005.8121 1218.3008 4.012796 0.0006</code></pre>
 <div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="analysis-of-dalton-morphology.html#cb155-1"></a><span class="co"># ANOVA: does dalton projectile point shape differ by hreg?</span></span>
 <span id="cb155-2"><a href="analysis-of-dalton-morphology.html#cb155-2"></a><span class="kw">anova</span>(fit.shape.hreg)</span></code></pre></div>
 <pre><code>## 
@@ -1761,10 +1770,10 @@ Figure 4.3: Boxplot of centroid size by Heartland region.
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df      SS       MS     Rsq      F      Z Pr(&gt;F)   
-## hreg       2 0.15606 0.078029 0.19628 4.7623 2.6135 0.0028 **
-## Residuals 39 0.63901 0.016385 0.80372                        
-## Total     41 0.79507                                         
+##           Df      SS       MS     Rsq      F     Z Pr(&gt;F)   
+## hreg       2 0.15606 0.078029 0.19628 4.7623 2.702 0.0028 **
+## Residuals 39 0.63901 0.016385 0.80372                       
+## Total     41 0.79507                                        
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -1787,9 +1796,9 @@ Figure 4.3: Boxplot of centroid size by Heartland region.
 ## 
 ## Pairwise distances between means, plus statistics
 ##            d UCL (95%)         Z Pr &gt; d
-## H:I 28.01020  23.05661 1.9668728 0.0144
-## H:P 13.26651  27.58305 0.4179227 0.3617
-## I:P 41.27671  28.93448 2.2869984 0.0060</code></pre>
+## H:I 28.01020  23.05661 2.6111504 0.0144
+## H:P 13.26651  27.58305 0.2118695 0.3617
+## I:P 41.27671  28.93448 3.2646816 0.0060</code></pre>
 <div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="analysis-of-dalton-morphology.html#cb159-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
 <span id="cb159-2"><a href="analysis-of-dalton-morphology.html#cb159-2"></a><span class="kw">summary</span>(sz.hreg, </span>
 <span id="cb159-3"><a href="analysis-of-dalton-morphology.html#cb159-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
@@ -1808,10 +1817,10 @@ Figure 4.3: Boxplot of centroid size by Heartland region.
 ##  765.6253  242.0404 2247.8525 
 ## 
 ## Pairwise distances between variances, plus statistics
-##             d UCL (95%)         Z Pr &gt; d
-## H:I  523.5849  964.5469 0.5432859 0.3212
-## H:P 1482.2272 1121.6150 2.1256312 0.0128
-## I:P 2005.8121 1218.3008 2.6626097 0.0006</code></pre>
+##             d UCL (95%)        Z Pr &gt; d
+## H:I  523.5849  964.5469 0.386156 0.3212
+## H:P 1482.2272 1121.6150 2.867414 0.0128
+## I:P 2005.8121 1218.3008 4.012796 0.0006</code></pre>
 </div>
 <div id="allometry-h2" class="section level3">
 <h3><span class="header-section-number">4.7.4</span> Allometry (H2)</h3>
@@ -1985,14 +1994,15 @@ Figure 4.4: Boxplot of centroid size by beveled.
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df      SS      MS     Rsq       F      Z Pr(&gt;F)    
-## size       1 0.33672 0.33672 0.42352 32.5740 3.8513  1e-04 ***
-## bev.1      1 0.05519 0.05519 0.06942  5.3391 2.7391 0.0012 ** 
+## size       1 0.33672 0.33672 0.42352 32.5740 4.4721  1e-04 ***
+## bev.1      1 0.05519 0.05519 0.06942  5.3391 2.8507 0.0012 ** 
 ## Residuals 39 0.40315 0.01034 0.50707                          
 ## Total     41 0.79507                                          
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Call: procD.lm(f1 = shape ~ size + bev.1, iter = 9999, data = gdf,      print.progress = FALSE)</code></pre>
+## Call: procD.lm(f1 = shape ~ size + bev.1, iter = 9999, data = gdf,  
+##     print.progress = FALSE)</code></pre>
 <div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="analysis-of-dalton-morphology.html#cb176-1"></a><span class="co"># bev.1</span></span>
 <span id="cb176-2"><a href="analysis-of-dalton-morphology.html#cb176-2"></a><span class="kw">anova</span>(fit.sz.ubev<span class="fl">.1</span>) <span class="co"># unique allometry (bev.1)</span></span></code></pre></div>
 <pre><code>## 
@@ -2004,15 +2014,16 @@ Figure 4.4: Boxplot of centroid size by beveled.
 ## Effect sizes (Z) based on F distributions
 ## 
 ##            Df      SS      MS     Rsq       F      Z Pr(&gt;F)    
-## size        1 0.33672 0.33672 0.42352 32.8422 3.8610  1e-04 ***
-## bev.1       1 0.05519 0.05519 0.06942  5.3831 2.7495 0.0009 ***
-## size:bev.1  1 0.01355 0.01355 0.01704  1.3212 0.7374 0.2387    
+## size        1 0.33672 0.33672 0.42352 32.8422 4.4787  1e-04 ***
+## bev.1       1 0.05519 0.05519 0.06942  5.3831 2.8618 0.0009 ***
+## size:bev.1  1 0.01355 0.01355 0.01704  1.3212 0.7231 0.2387    
 ## Residuals  38 0.38961 0.01025 0.49003                          
 ## Total      41 0.79507                                          
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Call: procD.lm(f1 = shape ~ size * bev.1, iter = 9999, data = gdf,      print.progress = FALSE)</code></pre>
+## Call: procD.lm(f1 = shape ~ size * bev.1, iter = 9999, data = gdf,  
+##     print.progress = FALSE)</code></pre>
 <div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="analysis-of-dalton-morphology.html#cb178-1"></a><span class="co"># ANOVA: do dalton projectile point sizes differ by beveling?</span></span>
 <span id="cb178-2"><a href="analysis-of-dalton-morphology.html#cb178-2"></a><span class="kw">anova</span>(fit.size.bev<span class="fl">.1</span>)</span></code></pre></div>
 <pre><code>## 
@@ -2023,10 +2034,10 @@ Figure 4.4: Boxplot of centroid size by beveled.
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df    SS     MS    Rsq      F      Z Pr(&gt;F)
-## bev.1      1  2908 2907.8 0.0617 2.6303 1.1986  0.118
-## Residuals 40 44220 1105.5 0.9383                     
-## Total     41 47128                                   
+##           Df    SS     MS    Rsq      F       Z Pr(&gt;F)
+## bev.1      1  2908 2907.8 0.0617 2.6303 0.98129  0.118
+## Residuals 40 44220 1105.5 0.9383                      
+## Total     41 47128                                    
 ## 
 ## Call: procD.lm(f1 = size ~ bev.1, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
 <div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="analysis-of-dalton-morphology.html#cb180-1"></a><span class="co"># ANOVA: do dalton projectile point shapes differ by beveling?</span></span>
@@ -2040,7 +2051,7 @@ Figure 4.4: Boxplot of centroid size by beveled.
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df      SS      MS     Rsq      F      Z Pr(&gt;F)   
-## bev.1      1 0.11546 0.11546 0.14522 6.7956 2.4653 0.0024 **
+## bev.1      1 0.11546 0.11546 0.14522 6.7956 2.6512 0.0024 **
 ## Residuals 40 0.67961 0.01699 0.85478                        
 ## Total     41 0.79507                                        
 ## ---
@@ -2209,14 +2220,15 @@ Figure 4.5: Boxplot of centroid size by bevel type.
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df      SS      MS     Rsq       F      Z Pr(&gt;F)    
-## size       1 0.33672 0.33672 0.42352 35.8454 3.9302  1e-04 ***
-## bev.2      2 0.10138 0.05069 0.12751  5.3961 3.5278  2e-04 ***
+## size       1 0.33672 0.33672 0.42352 35.8454 4.5817  1e-04 ***
+## bev.2      2 0.10138 0.05069 0.12751  5.3961 3.5867  2e-04 ***
 ## Residuals 38 0.35696 0.00939 0.44897                          
 ## Total     41 0.79507                                          
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Call: procD.lm(f1 = shape ~ size + bev.2, iter = 9999, data = gdf,      print.progress = FALSE)</code></pre>
+## Call: procD.lm(f1 = shape ~ size + bev.2, iter = 9999, data = gdf,  
+##     print.progress = FALSE)</code></pre>
 <div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="analysis-of-dalton-morphology.html#cb197-1"></a><span class="co"># bev.2</span></span>
 <span id="cb197-2"><a href="analysis-of-dalton-morphology.html#cb197-2"></a><span class="kw">anova</span>(fit.sz.ubev<span class="fl">.2</span>) <span class="co"># unique allometry (bev.2)</span></span></code></pre></div>
 <pre><code>## 
@@ -2228,15 +2240,16 @@ Figure 4.5: Boxplot of centroid size by bevel type.
 ## Effect sizes (Z) based on F distributions
 ## 
 ##            Df      SS      MS     Rsq       F      Z Pr(&gt;F)    
-## size        1 0.33672 0.33672 0.42352 36.1876 3.9433  1e-04 ***
-## bev.2       2 0.10138 0.05069 0.12751  5.4476 3.5406 0.0002 ***
-## size:bev.2  2 0.02198 0.01099 0.02765  1.1814 0.5708 0.2839    
+## size        1 0.33672 0.33672 0.42352 36.1876 4.5845  1e-04 ***
+## bev.2       2 0.10138 0.05069 0.12751  5.4476 3.5971 0.0002 ***
+## size:bev.2  2 0.02198 0.01099 0.02765  1.1814 0.5344 0.2839    
 ## Residuals  36 0.33498 0.00930 0.42132                          
 ## Total      41 0.79507                                          
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Call: procD.lm(f1 = shape ~ size * bev.2, iter = 9999, data = gdf,      print.progress = FALSE)</code></pre>
+## Call: procD.lm(f1 = shape ~ size * bev.2, iter = 9999, data = gdf,  
+##     print.progress = FALSE)</code></pre>
 <div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="analysis-of-dalton-morphology.html#cb199-1"></a><span class="co"># ANOVA: does dalton projectile point size differ by bev.2?</span></span>
 <span id="cb199-2"><a href="analysis-of-dalton-morphology.html#cb199-2"></a><span class="kw">anova</span>(fit.size.bev<span class="fl">.2</span>)</span></code></pre></div>
 <pre><code>## 
@@ -2247,10 +2260,10 @@ Figure 4.5: Boxplot of centroid size by bevel type.
 ## Sums of Squares and Cross-products: Type I 
 ## Effect sizes (Z) based on F distributions
 ## 
-##           Df    SS     MS     Rsq      F      Z Pr(&gt;F)
-## bev.2      2  3274 1636.9 0.06947 1.4557 0.6983 0.2364
-## Residuals 39 43854 1124.5 0.93053                     
-## Total     41 47128                                    
+##           Df    SS     MS     Rsq      F       Z Pr(&gt;F)
+## bev.2      2  3274 1636.9 0.06947 1.4557 0.70782 0.2364
+## Residuals 39 43854 1124.5 0.93053                      
+## Total     41 47128                                     
 ## 
 ## Call: procD.lm(f1 = size ~ bev.2, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
 <div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="analysis-of-dalton-morphology.html#cb201-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
@@ -2271,9 +2284,9 @@ Figure 4.5: Boxplot of centroid size by bevel type.
 ## 
 ## Pairwise distances between means, plus statistics
 ##                                       d UCL (95%)          Z Pr &gt; d
-## alternate:no.bevel             15.77919  21.73272  1.0290414 0.1636
-## alternate:unifacial.bimarginal 11.74326  39.68891 -0.1959961 0.5931
-## no.bevel:unifacial.bimarginal  27.52245  41.19255  0.9013939 0.1937</code></pre>
+## alternate:no.bevel             15.77919  21.73272  1.0179528 0.1636
+## alternate:unifacial.bimarginal 11.74326  39.68891 -0.4026692 0.5931
+## no.bevel:unifacial.bimarginal  27.52245  41.19255  0.8251948 0.1937</code></pre>
 <div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="analysis-of-dalton-morphology.html#cb203-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
 <span id="cb203-2"><a href="analysis-of-dalton-morphology.html#cb203-2"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
 <span id="cb203-3"><a href="analysis-of-dalton-morphology.html#cb203-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
@@ -2292,10 +2305,10 @@ Figure 4.5: Boxplot of centroid size by bevel type.
 ##             911.6238            1156.3579            1461.7774 
 ## 
 ## Pairwise distances between variances, plus statistics
-##                                       d UCL (95%)           Z Pr &gt; d
-## alternate:no.bevel             244.7341  1207.356 -1.09352049 0.8454
-## alternate:unifacial.bimarginal 550.1536  3788.925 -0.09949972 0.5770
-## no.bevel:unifacial.bimarginal  305.4195  3787.602 -0.62890299 0.7642</code></pre>
+##                                       d UCL (95%)          Z Pr &gt; d
+## alternate:no.bevel             244.7341  1207.356 -1.1015578 0.8454
+## alternate:unifacial.bimarginal 550.1536  3788.925 -0.3391656 0.5770
+## no.bevel:unifacial.bimarginal  305.4195  3787.602 -0.6119367 0.7642</code></pre>
 <div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="analysis-of-dalton-morphology.html#cb205-1"></a><span class="co"># ANOVA: does dalton projectile point shape differ by bev.2?</span></span>
 <span id="cb205-2"><a href="analysis-of-dalton-morphology.html#cb205-2"></a><span class="kw">anova</span>(fit.shape.bev<span class="fl">.2</span>)</span></code></pre></div>
 <pre><code>## 
@@ -2307,7 +2320,7 @@ Figure 4.5: Boxplot of centroid size by bevel type.
 ## Effect sizes (Z) based on F distributions
 ## 
 ##           Df      SS       MS     Rsq      F      Z Pr(&gt;F)   
-## bev.2      2 0.15123 0.075614 0.19021 4.5803 2.5706 0.0033 **
+## bev.2      2 0.15123 0.075614 0.19021 4.5803 2.6284 0.0033 **
 ## Residuals 39 0.64384 0.016509 0.80979                        
 ## Total     41 0.79507                                         
 ## ---
@@ -2332,9 +2345,9 @@ Figure 4.5: Boxplot of centroid size by bevel type.
 ## 
 ## Pairwise distances between means, plus statistics
 ##                                       d UCL (95%)          Z Pr &gt; d
-## alternate:no.bevel             15.77919  21.73272  1.0290414 0.1636
-## alternate:unifacial.bimarginal 11.74326  39.68891 -0.1959961 0.5931
-## no.bevel:unifacial.bimarginal  27.52245  41.19255  0.9013939 0.1937</code></pre>
+## alternate:no.bevel             15.77919  21.73272  1.0179528 0.1636
+## alternate:unifacial.bimarginal 11.74326  39.68891 -0.4026692 0.5931
+## no.bevel:unifacial.bimarginal  27.52245  41.19255  0.8251948 0.1937</code></pre>
 <div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="analysis-of-dalton-morphology.html#cb209-1"></a><span class="co"># pairwise distance between variances = standardization?</span></span>
 <span id="cb209-2"><a href="analysis-of-dalton-morphology.html#cb209-2"></a><span class="kw">summary</span>(sz.bev<span class="fl">.2</span>, </span>
 <span id="cb209-3"><a href="analysis-of-dalton-morphology.html#cb209-3"></a>        <span class="dt">confidence =</span> <span class="fl">0.95</span>, </span>
@@ -2353,10 +2366,10 @@ Figure 4.5: Boxplot of centroid size by bevel type.
 ##             911.6238            1156.3579            1461.7774 
 ## 
 ## Pairwise distances between variances, plus statistics
-##                                       d UCL (95%)           Z Pr &gt; d
-## alternate:no.bevel             244.7341  1207.356 -1.09352049 0.8454
-## alternate:unifacial.bimarginal 550.1536  3788.925 -0.09949972 0.5770
-## no.bevel:unifacial.bimarginal  305.4195  3787.602 -0.62890299 0.7642</code></pre>
+##                                       d UCL (95%)          Z Pr &gt; d
+## alternate:no.bevel             244.7341  1207.356 -1.1015578 0.8454
+## alternate:unifacial.bimarginal 550.1536  3788.925 -0.3391656 0.5770
+## no.bevel:unifacial.bimarginal  305.4195  3787.602 -0.6119367 0.7642</code></pre>
 </div>
 <div id="allometry-h4" class="section level3">
 <h3><span class="header-section-number">4.9.4</span> Allometry (H4)</h3>
