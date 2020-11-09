@@ -1,6 +1,6 @@
 # Landmarking Protocol 3d3
 
-The results of the elliptical Fourier analysis (EFA) provided useful insights that aided in developing the 3D landmarking protocol used in this study.
+The results of an exploratory elliptical Fourier analysis (EFA) provided useful insights that aided in developing the 3D landmarking protocol used in this study.
 
 1. For the in/out of Heartland hypothesis, there is a significant difference in plan view shape that is driven by the lateral edges along the left/right sides of the biface. This suggests that two of the equidistant semilandmarks employed in the landmarking configuration (sLMs 12 and 13) may not be necessary if the driver of the morphological difference that occurs in/out of the Heartland rests along the lateral edge (see section 1.7 in the previous chapter).
 2. For the Heartland regions (hreg) hypothesis, the lateral edges along the left/right sides of the biface appear to drive the morphological differences once more. In one case (Heartland vs. Northern Periphery), the difference is significant, and driven by one side of the base, but primarily by the left/right lateral edges. The only other significant difference is between the Heartland vs. Interior, with the heartland being represented by lateral edges that are generally narrower than those of the interior. The Interior vs. Northern Periphery does not differ significantly; however, the mean shapes indicate that it is basal---not blade---morphology that may differentiate those populations. This outcome also suggests that sLMs 12 and 13 may not be warranted
