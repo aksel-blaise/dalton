@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Landmarking Protocol 3d3 | Landmark 3D geometric morphometrics of Dalton projectile points</title>
   <meta name="description" content="Morphological analysis of Dalton projectile points" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Landmarking Protocol 3d3 | Landmark 3D geometric morphometrics of Dalton projectile points" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Robert Z. Selden, Jr." />
 
 
-<meta name="date" content="2020-10-19" />
+<meta name="date" content="2021-02-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="elliptical-fourier-analysis.html"/>
 <link rel="next" href="landmark-sampling-evaluation-curve-lasec.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,22 +51,20 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -85,7 +84,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -134,42 +133,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">dalton</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
 <li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>0.1</b> Acknowledgments</a></li>
 <li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#funding"><i class="fa fa-check"></i><b>0.2</b> Funding</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html"><i class="fa fa-check"></i><b>1</b> Elliptical Fourier Analysis</a><ul>
+<li class="chapter" data-level="1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html"><i class="fa fa-check"></i><b>1</b> Elliptical Fourier Analysis</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#load-packages-data"><i class="fa fa-check"></i><b>1.1</b> Load packages + data</a></li>
 <li class="chapter" data-level="1.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#generate-outlines"><i class="fa fa-check"></i><b>1.2</b> Generate outlines</a></li>
-<li class="chapter" data-level="1.3" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#pile"><i class="fa fa-check"></i><b>1.3</b> Pile</a></li>
-<li class="chapter" data-level="1.4" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#calibrate-harmonic-efa"><i class="fa fa-check"></i><b>1.4</b> Calibrate harmonic + EFA</a></li>
-<li class="chapter" data-level="1.5" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis"><i class="fa fa-check"></i><b>1.5</b> Principal Components Analysis</a></li>
-<li class="chapter" data-level="1.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#test-hypothesis-1-geo-efa"><i class="fa fa-check"></i><b>1.6</b> Test Hypothesis 1 (Geo EFA)</a><ul>
-<li class="chapter" data-level="1.6.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mosaic-h1"><i class="fa fa-check"></i><b>1.6.1</b> Mosaic (H1)</a></li>
-<li class="chapter" data-level="1.6.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h1"><i class="fa fa-check"></i><b>1.6.2</b> Principal Components Analysis (H1)</a></li>
-<li class="chapter" data-level="1.6.3" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#manova-h1"><i class="fa fa-check"></i><b>1.6.3</b> MANOVA (H1)</a></li>
-<li class="chapter" data-level="1.6.4" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h1"><i class="fa fa-check"></i><b>1.6.4</b> Mean shapes (H1)</a></li>
+<li class="chapter" data-level="1.3" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#calibrate-harmonic-efa"><i class="fa fa-check"></i><b>1.3</b> Calibrate harmonic + EFA</a></li>
+<li class="chapter" data-level="1.4" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis"><i class="fa fa-check"></i><b>1.4</b> Principal Components Analysis</a></li>
+<li class="chapter" data-level="1.5" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#test-hypothesis-1-geo-efa"><i class="fa fa-check"></i><b>1.5</b> Test Hypothesis 1 (Geo EFA)</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h1"><i class="fa fa-check"></i><b>1.5.1</b> Principal Components Analysis (H1)</a></li>
+<li class="chapter" data-level="1.5.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#manova-h1"><i class="fa fa-check"></i><b>1.5.2</b> MANOVA (H1)</a></li>
+<li class="chapter" data-level="1.5.3" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h1"><i class="fa fa-check"></i><b>1.5.3</b> Mean shapes (H1)</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#test-hypothesis-2-geo-efa"><i class="fa fa-check"></i><b>1.7</b> Test Hypothesis 2 (Geo EFA)</a><ul>
-<li class="chapter" data-level="1.7.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mosaic-h2"><i class="fa fa-check"></i><b>1.7.1</b> Mosaic (H2)</a></li>
-<li class="chapter" data-level="1.7.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h2"><i class="fa fa-check"></i><b>1.7.2</b> Principal Components Analysis (H2)</a></li>
-<li class="chapter" data-level="1.7.3" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#manova-manova_pw-h2"><i class="fa fa-check"></i><b>1.7.3</b> MANOVA + MANOVA_PW (H2)</a></li>
-<li class="chapter" data-level="1.7.4" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h2"><i class="fa fa-check"></i><b>1.7.4</b> Mean shapes (H2)</a></li>
+<li class="chapter" data-level="1.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#test-hypothesis-2-geo-efa"><i class="fa fa-check"></i><b>1.6</b> Test Hypothesis 2 (Geo EFA)</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h2"><i class="fa fa-check"></i><b>1.6.1</b> Principal Components Analysis (H2)</a></li>
+<li class="chapter" data-level="1.6.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#manova-manova_pw-h2"><i class="fa fa-check"></i><b>1.6.2</b> MANOVA + MANOVA_PW (H2)</a></li>
+<li class="chapter" data-level="1.6.3" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h2"><i class="fa fa-check"></i><b>1.6.3</b> Mean shapes (H2)</a></li>
 </ul></li>
-<li class="chapter" data-level="1.8" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#test-hypothesis-3-techno-efa"><i class="fa fa-check"></i><b>1.8</b> Test Hypothesis 3 (Techno EFA)</a><ul>
-<li class="chapter" data-level="1.8.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mosaic-h3"><i class="fa fa-check"></i><b>1.8.1</b> Mosaic (H3)</a></li>
-<li class="chapter" data-level="1.8.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h3"><i class="fa fa-check"></i><b>1.8.2</b> Principal Components Analysis (H3)</a></li>
-<li class="chapter" data-level="1.8.3" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#manova-h3"><i class="fa fa-check"></i><b>1.8.3</b> MANOVA (H3)</a></li>
-<li class="chapter" data-level="1.8.4" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h3"><i class="fa fa-check"></i><b>1.8.4</b> Mean shapes (H3)</a></li>
+<li class="chapter" data-level="1.7" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#test-hypothesis-3-techno-efa"><i class="fa fa-check"></i><b>1.7</b> Test Hypothesis 3 (Techno EFA)</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h3"><i class="fa fa-check"></i><b>1.7.1</b> Principal Components Analysis (H3)</a></li>
+<li class="chapter" data-level="1.7.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#manova-h3"><i class="fa fa-check"></i><b>1.7.2</b> MANOVA (H3)</a></li>
+<li class="chapter" data-level="1.7.3" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h3"><i class="fa fa-check"></i><b>1.7.3</b> Mean shapes (H3)</a></li>
 </ul></li>
-<li class="chapter" data-level="1.9" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#test-hypothesis-4-techno-efa"><i class="fa fa-check"></i><b>1.9</b> Test Hypothesis 4 (Techno EFA)</a><ul>
-<li class="chapter" data-level="1.9.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mosaic-h4"><i class="fa fa-check"></i><b>1.9.1</b> Mosaic (H4)</a></li>
-<li class="chapter" data-level="1.9.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h4"><i class="fa fa-check"></i><b>1.9.2</b> Principal Components Analysis (H4)</a></li>
-<li class="chapter" data-level="1.9.3" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#manova-manova_pw-h4"><i class="fa fa-check"></i><b>1.9.3</b> MANOVA + MANOVA_PW (H4)</a></li>
-<li class="chapter" data-level="1.9.4" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h4"><i class="fa fa-check"></i><b>1.9.4</b> Mean shapes (H4)</a></li>
+<li class="chapter" data-level="1.8" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#test-hypothesis-4-techno-efa"><i class="fa fa-check"></i><b>1.8</b> Test Hypothesis 4 (Techno EFA)</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h4"><i class="fa fa-check"></i><b>1.8.1</b> Principal Components Analysis (H4)</a></li>
+<li class="chapter" data-level="1.8.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#manova-manova_pw-h4"><i class="fa fa-check"></i><b>1.8.2</b> MANOVA + MANOVA_PW (H4)</a></li>
+<li class="chapter" data-level="1.8.3" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h4"><i class="fa fa-check"></i><b>1.8.3</b> Mean shapes (H4)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html"><i class="fa fa-check"></i><b>2</b> Landmarking Protocol 3d3</a><ul>
+<li class="chapter" data-level="2" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html"><i class="fa fa-check"></i><b>2</b> Landmarking Protocol 3d3</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
 <li class="chapter" data-level="2.2" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#generating-the-peripheral-plan-view-spline"><i class="fa fa-check"></i><b>2.2</b> Generating the peripheral (plan view) spline</a></li>
 <li class="chapter" data-level="2.3" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#splitting-the-spline"><i class="fa fa-check"></i><b>2.3</b> Splitting the spline</a></li>
@@ -179,13 +180,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.7" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#spline-split-at-location-of-lm-06"><i class="fa fa-check"></i><b>2.7</b> Spline split at location of LM 06</a></li>
 <li class="chapter" data-level="2.8" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#peripheral-plan-view-spline"><i class="fa fa-check"></i><b>2.8</b> Peripheral (plan view) spline</a></li>
 <li class="chapter" data-level="2.9" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#reference-vectors-and-ref.pt.0"><i class="fa fa-check"></i><b>2.9</b> Reference vectors and ref.pt.0</a></li>
-<li class="chapter" data-level="2.10" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#reference-planes-and-points"><i class="fa fa-check"></i><b>2.10</b> Reference planes and points</a><ul>
+<li class="chapter" data-level="2.10" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#reference-planes-and-points"><i class="fa fa-check"></i><b>2.10</b> Reference planes and points</a>
+<ul>
 <li class="chapter" data-level="2.10.1" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#placement-of-ref.pl.1"><i class="fa fa-check"></i><b>2.10.1</b> Placement of ref.pl.1</a></li>
 <li class="chapter" data-level="2.10.2" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#placement-of-ref.pl.2"><i class="fa fa-check"></i><b>2.10.2</b> Placement of ref.pl.2</a></li>
 <li class="chapter" data-level="2.10.3" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#placement-of-ref.pl.3"><i class="fa fa-check"></i><b>2.10.3</b> Placement of ref.pl.3</a></li>
 <li class="chapter" data-level="2.10.4" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#placement-of-ref.pl.4-and-ref.pl.5"><i class="fa fa-check"></i><b>2.10.4</b> Placement of ref.pl.4 and ref.pl.5</a></li>
 </ul></li>
-<li class="chapter" data-level="2.11" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#sectioning-the-mesh"><i class="fa fa-check"></i><b>2.11</b> Sectioning the mesh</a><ul>
+<li class="chapter" data-level="2.11" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#sectioning-the-mesh"><i class="fa fa-check"></i><b>2.11</b> Sectioning the mesh</a>
+<ul>
 <li class="chapter" data-level="2.11.1" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#sectioning-the-bladebase-intersection"><i class="fa fa-check"></i><b>2.11.1</b> Sectioning the blade/base intersection</a></li>
 <li class="chapter" data-level="2.11.2" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#sectioning-the-blade-and-base"><i class="fa fa-check"></i><b>2.11.2</b> Sectioning the blade and base</a></li>
 </ul></li>
@@ -193,16 +196,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.13" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#lm3d3-configuration-1"><i class="fa fa-check"></i><b>2.13</b> LM3d3: Configuration 1</a></li>
 <li class="chapter" data-level="2.14" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#references"><i class="fa fa-check"></i><b>2.14</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="landmark-sampling-evaluation-curve-lasec.html"><a href="landmark-sampling-evaluation-curve-lasec.html"><i class="fa fa-check"></i><b>3</b> Landmark Sampling Evaluation Curve (LaSEC)</a><ul>
+<li class="chapter" data-level="3" data-path="landmark-sampling-evaluation-curve-lasec.html"><a href="landmark-sampling-evaluation-curve-lasec.html"><i class="fa fa-check"></i><b>3</b> Landmark Sampling Evaluation Curve (LaSEC)</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="landmark-sampling-evaluation-curve-lasec.html"><a href="landmark-sampling-evaluation-curve-lasec.html#analysis-of-experimental-sample"><i class="fa fa-check"></i><b>3.1</b> Analysis of experimental sample</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html"><i class="fa fa-check"></i><b>4</b> Analysis of Dalton morphology</a><ul>
-<li class="chapter" data-level="4.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#load-packages-data"><i class="fa fa-check"></i><b>4.1</b> Load packages + data</a></li>
-<li class="chapter" data-level="4.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#generalized-procrustes-analysis"><i class="fa fa-check"></i><b>4.2</b> Generalized Procrustes Analysis</a><ul>
+<li class="chapter" data-level="4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html"><i class="fa fa-check"></i><b>4</b> Analysis of Dalton morphology</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#load-packages-data-1"><i class="fa fa-check"></i><b>4.1</b> Load packages + data</a></li>
+<li class="chapter" data-level="4.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#generalized-procrustes-analysis"><i class="fa fa-check"></i><b>4.2</b> Generalized Procrustes Analysis</a>
+<ul>
 <li class="chapter" data-level="4.2.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-attributes"><i class="fa fa-check"></i><b>4.2.1</b> Boxplot attributes</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis"><i class="fa fa-check"></i><b>4.3</b> Principal Components Analysis</a></li>
-<li class="chapter" data-level="4.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#define-models"><i class="fa fa-check"></i><b>4.4</b> Define models</a><ul>
+<li class="chapter" data-level="4.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#principal-components-analysis-1"><i class="fa fa-check"></i><b>4.3</b> Principal Components Analysis</a></li>
+<li class="chapter" data-level="4.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#define-models"><i class="fa fa-check"></i><b>4.4</b> Define models</a>
+<ul>
 <li class="chapter" data-level="4.4.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry"><i class="fa fa-check"></i><b>4.4.1</b> Allometry</a></li>
 <li class="chapter" data-level="4.4.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-1"><i class="fa fa-check"></i><b>4.4.2</b> Hypothesis 1</a></li>
 <li class="chapter" data-level="4.4.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-2"><i class="fa fa-check"></i><b>4.4.3</b> Hypothesis 2</a></li>
@@ -210,135 +217,244 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-4"><i class="fa fa-check"></i><b>4.4.5</b> Hypothesis 4</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-1"><i class="fa fa-check"></i><b>4.5</b> Allometry</a></li>
-<li class="chapter" data-level="4.6" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-1-geo-gm"><i class="fa fa-check"></i><b>4.6</b> Test Hypothesis 1 (Geo GM)</a><ul>
+<li class="chapter" data-level="4.6" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-1-geo-gm"><i class="fa fa-check"></i><b>4.6</b> Test Hypothesis 1 (Geo GM)</a>
+<ul>
 <li class="chapter" data-level="4.6.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h1"><i class="fa fa-check"></i><b>4.6.1</b> Boxplot (H1)</a></li>
-<li class="chapter" data-level="4.6.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h1"><i class="fa fa-check"></i><b>4.6.2</b> Principal Components Analysis (H1)</a></li>
+<li class="chapter" data-level="4.6.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#principal-components-analysis-h1-1"><i class="fa fa-check"></i><b>4.6.2</b> Principal Components Analysis (H1)</a></li>
 <li class="chapter" data-level="4.6.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h1"><i class="fa fa-check"></i><b>4.6.3</b> ANOVA (H1)</a></li>
 <li class="chapter" data-level="4.6.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h1"><i class="fa fa-check"></i><b>4.6.4</b> Allometry (H1)</a></li>
 <li class="chapter" data-level="4.6.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h1"><i class="fa fa-check"></i><b>4.6.5</b> Morphological disparity (H1)</a></li>
-<li class="chapter" data-level="4.6.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h1"><i class="fa fa-check"></i><b>4.6.6</b> Mean Shapes (H1)</a></li>
+<li class="chapter" data-level="4.6.6" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#mean-shapes-h1-1"><i class="fa fa-check"></i><b>4.6.6</b> Mean Shapes (H1)</a></li>
 </ul></li>
-<li class="chapter" data-level="4.7" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-2-geo-gm"><i class="fa fa-check"></i><b>4.7</b> Test Hypothesis 2 (Geo GM)</a><ul>
+<li class="chapter" data-level="4.7" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-2-geo-gm"><i class="fa fa-check"></i><b>4.7</b> Test Hypothesis 2 (Geo GM)</a>
+<ul>
 <li class="chapter" data-level="4.7.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h2"><i class="fa fa-check"></i><b>4.7.1</b> Boxplot (H2)</a></li>
-<li class="chapter" data-level="4.7.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h2"><i class="fa fa-check"></i><b>4.7.2</b> Principal Components Analysis (H2)</a></li>
+<li class="chapter" data-level="4.7.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#principal-components-analysis-h2-1"><i class="fa fa-check"></i><b>4.7.2</b> Principal Components Analysis (H2)</a></li>
 <li class="chapter" data-level="4.7.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h2"><i class="fa fa-check"></i><b>4.7.3</b> ANOVA (H2)</a></li>
 <li class="chapter" data-level="4.7.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h2"><i class="fa fa-check"></i><b>4.7.4</b> Allometry (H2)</a></li>
 <li class="chapter" data-level="4.7.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h2"><i class="fa fa-check"></i><b>4.7.5</b> Morphological disparity (H2)</a></li>
-<li class="chapter" data-level="4.7.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h2"><i class="fa fa-check"></i><b>4.7.6</b> Mean Shapes (H2)</a></li>
+<li class="chapter" data-level="4.7.6" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#mean-shapes-h2-1"><i class="fa fa-check"></i><b>4.7.6</b> Mean Shapes (H2)</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-3-techno-gm"><i class="fa fa-check"></i><b>4.8</b> Test Hypothesis 3 (Techno GM)</a><ul>
+<li class="chapter" data-level="4.8" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-3-techno-gm"><i class="fa fa-check"></i><b>4.8</b> Test Hypothesis 3 (Techno GM)</a>
+<ul>
 <li class="chapter" data-level="4.8.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h3"><i class="fa fa-check"></i><b>4.8.1</b> Boxplot (H3)</a></li>
-<li class="chapter" data-level="4.8.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h3"><i class="fa fa-check"></i><b>4.8.2</b> Principal Components Analysis (H3)</a></li>
+<li class="chapter" data-level="4.8.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#principal-components-analysis-h3-1"><i class="fa fa-check"></i><b>4.8.2</b> Principal Components Analysis (H3)</a></li>
 <li class="chapter" data-level="4.8.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h3"><i class="fa fa-check"></i><b>4.8.3</b> ANOVA (H3)</a></li>
 <li class="chapter" data-level="4.8.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h3"><i class="fa fa-check"></i><b>4.8.4</b> Allometry (H3)</a></li>
 <li class="chapter" data-level="4.8.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h3"><i class="fa fa-check"></i><b>4.8.5</b> Morphological disparity (H3)</a></li>
-<li class="chapter" data-level="4.8.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h3"><i class="fa fa-check"></i><b>4.8.6</b> Mean Shapes (H3)</a></li>
+<li class="chapter" data-level="4.8.6" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#mean-shapes-h3-1"><i class="fa fa-check"></i><b>4.8.6</b> Mean Shapes (H3)</a></li>
 </ul></li>
-<li class="chapter" data-level="4.9" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-4-techno-gm"><i class="fa fa-check"></i><b>4.9</b> Test Hypothesis 4 (Techno GM)</a><ul>
+<li class="chapter" data-level="4.9" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-4-techno-gm"><i class="fa fa-check"></i><b>4.9</b> Test Hypothesis 4 (Techno GM)</a>
+<ul>
 <li class="chapter" data-level="4.9.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h4"><i class="fa fa-check"></i><b>4.9.1</b> Boxplot (H4)</a></li>
-<li class="chapter" data-level="4.9.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h4"><i class="fa fa-check"></i><b>4.9.2</b> Principal Components Analysis (H4)</a></li>
+<li class="chapter" data-level="4.9.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#principal-components-analysis-h4-1"><i class="fa fa-check"></i><b>4.9.2</b> Principal Components Analysis (H4)</a></li>
 <li class="chapter" data-level="4.9.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h4"><i class="fa fa-check"></i><b>4.9.3</b> ANOVA (H4)</a></li>
 <li class="chapter" data-level="4.9.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h4"><i class="fa fa-check"></i><b>4.9.4</b> Allometry (H4)</a></li>
 <li class="chapter" data-level="4.9.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h4"><i class="fa fa-check"></i><b>4.9.5</b> Morphological disparity (H4)</a></li>
-<li class="chapter" data-level="4.9.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h4"><i class="fa fa-check"></i><b>4.9.6</b> Mean Shapes (H4)</a></li>
+<li class="chapter" data-level="4.9.6" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#mean-shapes-h4-1"><i class="fa fa-check"></i><b>4.9.6</b> Mean Shapes (H4)</a></li>
 </ul></li>
 <li class="chapter" data-level="4.10" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-integration"><i class="fa fa-check"></i><b>4.10</b> Morphological integration</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="cross-section-midline.html"><a href="cross-section-midline.html"><i class="fa fa-check"></i><b>5</b> Cross-section: midline</a><ul>
-<li class="chapter" data-level="5.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#load-packages-data"><i class="fa fa-check"></i><b>5.1</b> Load packages + data</a></li>
-<li class="chapter" data-level="5.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#generalized-procrustes-analysis"><i class="fa fa-check"></i><b>5.2</b> Generalized Procrustes Analysis</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-attributes"><i class="fa fa-check"></i><b>5.2.1</b> Boxplot attributes</a></li>
+<li class="chapter" data-level="5" data-path="dalton-blade.html"><a href="dalton-blade.html"><i class="fa fa-check"></i><b>5</b> Dalton blade</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="dalton-blade.html"><a href="dalton-blade.html#load-packages-data-2"><i class="fa fa-check"></i><b>5.1</b> Load packages + data</a></li>
+<li class="chapter" data-level="5.2" data-path="dalton-blade.html"><a href="dalton-blade.html#generalized-procrustes-analysis-1"><i class="fa fa-check"></i><b>5.2</b> Generalized Procrustes Analysis</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="dalton-blade.html"><a href="dalton-blade.html#boxplot-attributes-1"><i class="fa fa-check"></i><b>5.2.1</b> Boxplot attributes</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis"><i class="fa fa-check"></i><b>5.3</b> Principal Components Analysis</a></li>
-<li class="chapter" data-level="5.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#define-models"><i class="fa fa-check"></i><b>5.4</b> Define models</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry"><i class="fa fa-check"></i><b>5.4.1</b> Allometry</a></li>
-<li class="chapter" data-level="5.4.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-1"><i class="fa fa-check"></i><b>5.4.2</b> Hypothesis 1</a></li>
-<li class="chapter" data-level="5.4.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-2"><i class="fa fa-check"></i><b>5.4.3</b> Hypothesis 2</a></li>
-<li class="chapter" data-level="5.4.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-3"><i class="fa fa-check"></i><b>5.4.4</b> Hypothesis 3</a></li>
-<li class="chapter" data-level="5.4.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-4"><i class="fa fa-check"></i><b>5.4.5</b> Hypothesis 4</a></li>
+<li class="chapter" data-level="5.3" data-path="dalton-blade.html"><a href="dalton-blade.html#principal-components-analysis-2"><i class="fa fa-check"></i><b>5.3</b> Principal Components Analysis</a></li>
+<li class="chapter" data-level="5.4" data-path="dalton-blade.html"><a href="dalton-blade.html#define-models-1"><i class="fa fa-check"></i><b>5.4</b> Define models</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="dalton-blade.html"><a href="dalton-blade.html#allometry-2"><i class="fa fa-check"></i><b>5.4.1</b> Allometry</a></li>
+<li class="chapter" data-level="5.4.2" data-path="dalton-blade.html"><a href="dalton-blade.html#hypothesis-1-1"><i class="fa fa-check"></i><b>5.4.2</b> Hypothesis 1</a></li>
+<li class="chapter" data-level="5.4.3" data-path="dalton-blade.html"><a href="dalton-blade.html#hypothesis-2-1"><i class="fa fa-check"></i><b>5.4.3</b> Hypothesis 2</a></li>
+<li class="chapter" data-level="5.4.4" data-path="dalton-blade.html"><a href="dalton-blade.html#hypothesis-3-1"><i class="fa fa-check"></i><b>5.4.4</b> Hypothesis 3</a></li>
+<li class="chapter" data-level="5.4.5" data-path="dalton-blade.html"><a href="dalton-blade.html#hypothesis-4-1"><i class="fa fa-check"></i><b>5.4.5</b> Hypothesis 4</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-1"><i class="fa fa-check"></i><b>5.5</b> Allometry</a></li>
-<li class="chapter" data-level="5.6" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-1-geo-gm"><i class="fa fa-check"></i><b>5.6</b> Test Hypothesis 1 (Geo GM)</a><ul>
-<li class="chapter" data-level="5.6.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h1"><i class="fa fa-check"></i><b>5.6.1</b> Boxplot (H1)</a></li>
-<li class="chapter" data-level="5.6.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h1"><i class="fa fa-check"></i><b>5.6.2</b> Principal Components Analysis (H1)</a></li>
-<li class="chapter" data-level="5.6.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h1"><i class="fa fa-check"></i><b>5.6.3</b> ANOVA (H1)</a></li>
-<li class="chapter" data-level="5.6.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h1"><i class="fa fa-check"></i><b>5.6.4</b> Allometry (H1)</a></li>
-<li class="chapter" data-level="5.6.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h1"><i class="fa fa-check"></i><b>5.6.5</b> Morphological disparity (H1)</a></li>
-<li class="chapter" data-level="5.6.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h1"><i class="fa fa-check"></i><b>5.6.6</b> Mean Shapes (H1)</a></li>
+<li class="chapter" data-level="5.5" data-path="dalton-blade.html"><a href="dalton-blade.html#allometry-3"><i class="fa fa-check"></i><b>5.5</b> Allometry</a></li>
+<li class="chapter" data-level="5.6" data-path="dalton-blade.html"><a href="dalton-blade.html#test-hypothesis-1-geo-bl"><i class="fa fa-check"></i><b>5.6</b> Test Hypothesis 1 (Geo Bl)</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="dalton-blade.html"><a href="dalton-blade.html#boxplot-h1-1"><i class="fa fa-check"></i><b>5.6.1</b> Boxplot (H1)</a></li>
+<li class="chapter" data-level="5.6.2" data-path="dalton-blade.html"><a href="dalton-blade.html#principal-components-analysis-h1-2"><i class="fa fa-check"></i><b>5.6.2</b> Principal Components Analysis (H1)</a></li>
+<li class="chapter" data-level="5.6.3" data-path="dalton-blade.html"><a href="dalton-blade.html#anova-h1-1"><i class="fa fa-check"></i><b>5.6.3</b> ANOVA (H1)</a></li>
+<li class="chapter" data-level="5.6.4" data-path="dalton-blade.html"><a href="dalton-blade.html#allometry-h1-1"><i class="fa fa-check"></i><b>5.6.4</b> Allometry (H1)</a></li>
+<li class="chapter" data-level="5.6.5" data-path="dalton-blade.html"><a href="dalton-blade.html#morphological-disparity-h1-1"><i class="fa fa-check"></i><b>5.6.5</b> Morphological disparity (H1)</a></li>
+<li class="chapter" data-level="5.6.6" data-path="dalton-blade.html"><a href="dalton-blade.html#mean-shapes-h1-2"><i class="fa fa-check"></i><b>5.6.6</b> Mean Shapes (H1)</a></li>
 </ul></li>
-<li class="chapter" data-level="5.7" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-2-geo-gm"><i class="fa fa-check"></i><b>5.7</b> Test Hypothesis 2 (Geo GM)</a><ul>
-<li class="chapter" data-level="5.7.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h2"><i class="fa fa-check"></i><b>5.7.1</b> Boxplot (H2)</a></li>
-<li class="chapter" data-level="5.7.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h2"><i class="fa fa-check"></i><b>5.7.2</b> Principal Components Analysis (H2)</a></li>
-<li class="chapter" data-level="5.7.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h2"><i class="fa fa-check"></i><b>5.7.3</b> ANOVA (H2)</a></li>
-<li class="chapter" data-level="5.7.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h2"><i class="fa fa-check"></i><b>5.7.4</b> Allometry (H2)</a></li>
-<li class="chapter" data-level="5.7.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h2"><i class="fa fa-check"></i><b>5.7.5</b> Morphological disparity (H2)</a></li>
-<li class="chapter" data-level="5.7.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h2"><i class="fa fa-check"></i><b>5.7.6</b> Mean Shapes (H2)</a></li>
+<li class="chapter" data-level="5.7" data-path="dalton-blade.html"><a href="dalton-blade.html#test-hypothesis-2-geo-bl"><i class="fa fa-check"></i><b>5.7</b> Test Hypothesis 2 (Geo Bl)</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="dalton-blade.html"><a href="dalton-blade.html#boxplot-h2-1"><i class="fa fa-check"></i><b>5.7.1</b> Boxplot (H2)</a></li>
+<li class="chapter" data-level="5.7.2" data-path="dalton-blade.html"><a href="dalton-blade.html#principal-components-analysis-h2-2"><i class="fa fa-check"></i><b>5.7.2</b> Principal Components Analysis (H2)</a></li>
+<li class="chapter" data-level="5.7.3" data-path="dalton-blade.html"><a href="dalton-blade.html#anova-h2-1"><i class="fa fa-check"></i><b>5.7.3</b> ANOVA (H2)</a></li>
+<li class="chapter" data-level="5.7.4" data-path="dalton-blade.html"><a href="dalton-blade.html#allometry-h2-1"><i class="fa fa-check"></i><b>5.7.4</b> Allometry (H2)</a></li>
+<li class="chapter" data-level="5.7.5" data-path="dalton-blade.html"><a href="dalton-blade.html#morphological-disparity-h2-1"><i class="fa fa-check"></i><b>5.7.5</b> Morphological disparity (H2)</a></li>
+<li class="chapter" data-level="5.7.6" data-path="dalton-blade.html"><a href="dalton-blade.html#mean-shapes-h2-2"><i class="fa fa-check"></i><b>5.7.6</b> Mean Shapes (H2)</a></li>
 </ul></li>
-<li class="chapter" data-level="5.8" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-3-techno-gm"><i class="fa fa-check"></i><b>5.8</b> Test Hypothesis 3 (Techno GM)</a><ul>
-<li class="chapter" data-level="5.8.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h3"><i class="fa fa-check"></i><b>5.8.1</b> Boxplot (H3)</a></li>
-<li class="chapter" data-level="5.8.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h3"><i class="fa fa-check"></i><b>5.8.2</b> Principal Components Analysis (H3)</a></li>
-<li class="chapter" data-level="5.8.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h3"><i class="fa fa-check"></i><b>5.8.3</b> ANOVA (H3)</a></li>
-<li class="chapter" data-level="5.8.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h3"><i class="fa fa-check"></i><b>5.8.4</b> Allometry (H3)</a></li>
-<li class="chapter" data-level="5.8.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h3"><i class="fa fa-check"></i><b>5.8.5</b> Morphological disparity (H3)</a></li>
-<li class="chapter" data-level="5.8.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h3"><i class="fa fa-check"></i><b>5.8.6</b> Mean Shapes (H3)</a></li>
+<li class="chapter" data-level="5.8" data-path="dalton-blade.html"><a href="dalton-blade.html#test-hypothesis-3-techno-bl"><i class="fa fa-check"></i><b>5.8</b> Test Hypothesis 3 (Techno Bl)</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="dalton-blade.html"><a href="dalton-blade.html#boxplot-h3-1"><i class="fa fa-check"></i><b>5.8.1</b> Boxplot (H3)</a></li>
+<li class="chapter" data-level="5.8.2" data-path="dalton-blade.html"><a href="dalton-blade.html#principal-components-analysis-h3-2"><i class="fa fa-check"></i><b>5.8.2</b> Principal Components Analysis (H3)</a></li>
+<li class="chapter" data-level="5.8.3" data-path="dalton-blade.html"><a href="dalton-blade.html#anova-h3-1"><i class="fa fa-check"></i><b>5.8.3</b> ANOVA (H3)</a></li>
+<li class="chapter" data-level="5.8.4" data-path="dalton-blade.html"><a href="dalton-blade.html#allometry-h3-1"><i class="fa fa-check"></i><b>5.8.4</b> Allometry (H3)</a></li>
+<li class="chapter" data-level="5.8.5" data-path="dalton-blade.html"><a href="dalton-blade.html#morphological-disparity-h3-1"><i class="fa fa-check"></i><b>5.8.5</b> Morphological disparity (H3)</a></li>
+<li class="chapter" data-level="5.8.6" data-path="dalton-blade.html"><a href="dalton-blade.html#mean-shapes-h3-2"><i class="fa fa-check"></i><b>5.8.6</b> Mean Shapes (H3)</a></li>
 </ul></li>
-<li class="chapter" data-level="5.9" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-4-techno-gm"><i class="fa fa-check"></i><b>5.9</b> Test Hypothesis 4 (Techno GM)</a><ul>
-<li class="chapter" data-level="5.9.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h4"><i class="fa fa-check"></i><b>5.9.1</b> Boxplot (H4)</a></li>
-<li class="chapter" data-level="5.9.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h4"><i class="fa fa-check"></i><b>5.9.2</b> Principal Components Analysis (H4)</a></li>
-<li class="chapter" data-level="5.9.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h4"><i class="fa fa-check"></i><b>5.9.3</b> ANOVA (H4)</a></li>
-<li class="chapter" data-level="5.9.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h4"><i class="fa fa-check"></i><b>5.9.4</b> Allometry (H4)</a></li>
-<li class="chapter" data-level="5.9.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h4"><i class="fa fa-check"></i><b>5.9.5</b> Morphological disparity (H4)</a></li>
-<li class="chapter" data-level="5.9.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h4"><i class="fa fa-check"></i><b>5.9.6</b> Mean Shapes (H4)</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="cross-section-intersection-of-bladebase.html"><a href="cross-section-intersection-of-bladebase.html"><i class="fa fa-check"></i><b>6</b> Cross section: intersection of blade/base</a><ul>
-<li class="chapter" data-level="6.1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#load-packages-data"><i class="fa fa-check"></i><b>6.1</b> Load packages + data</a></li>
-<li class="chapter" data-level="6.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#generalized-procrustes-analysis"><i class="fa fa-check"></i><b>6.2</b> Generalized Procrustes Analysis</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-attributes"><i class="fa fa-check"></i><b>6.2.1</b> Boxplot attributes</a></li>
-</ul></li>
-<li class="chapter" data-level="6.3" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis"><i class="fa fa-check"></i><b>6.3</b> Principal Components Analysis</a></li>
-<li class="chapter" data-level="6.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#define-models"><i class="fa fa-check"></i><b>6.4</b> Define models</a><ul>
-<li class="chapter" data-level="6.4.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry"><i class="fa fa-check"></i><b>6.4.1</b> Allometry</a></li>
-<li class="chapter" data-level="6.4.2" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-1"><i class="fa fa-check"></i><b>6.4.2</b> Hypothesis 1</a></li>
-<li class="chapter" data-level="6.4.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-2"><i class="fa fa-check"></i><b>6.4.3</b> Hypothesis 2</a></li>
-<li class="chapter" data-level="6.4.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-3"><i class="fa fa-check"></i><b>6.4.4</b> Hypothesis 3</a></li>
-<li class="chapter" data-level="6.4.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#hypothesis-4"><i class="fa fa-check"></i><b>6.4.5</b> Hypothesis 4</a></li>
-</ul></li>
-<li class="chapter" data-level="6.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-1"><i class="fa fa-check"></i><b>6.5</b> Allometry</a></li>
-<li class="chapter" data-level="6.6" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-1-geo-gm"><i class="fa fa-check"></i><b>6.6</b> Test Hypothesis 1 (Geo GM)</a><ul>
-<li class="chapter" data-level="6.6.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h1"><i class="fa fa-check"></i><b>6.6.1</b> Boxplot (H1)</a></li>
-<li class="chapter" data-level="6.6.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h1"><i class="fa fa-check"></i><b>6.6.2</b> Principal Components Analysis (H1)</a></li>
-<li class="chapter" data-level="6.6.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h1"><i class="fa fa-check"></i><b>6.6.3</b> ANOVA (H1)</a></li>
-<li class="chapter" data-level="6.6.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h1"><i class="fa fa-check"></i><b>6.6.4</b> Allometry (H1)</a></li>
-<li class="chapter" data-level="6.6.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h1"><i class="fa fa-check"></i><b>6.6.5</b> Morphological disparity (H1)</a></li>
-<li class="chapter" data-level="6.6.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h1"><i class="fa fa-check"></i><b>6.6.6</b> Mean Shapes (H1)</a></li>
-</ul></li>
-<li class="chapter" data-level="6.7" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-2-geo-gm"><i class="fa fa-check"></i><b>6.7</b> Test Hypothesis 2 (Geo GM)</a><ul>
-<li class="chapter" data-level="6.7.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h2"><i class="fa fa-check"></i><b>6.7.1</b> Boxplot (H2)</a></li>
-<li class="chapter" data-level="6.7.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h2"><i class="fa fa-check"></i><b>6.7.2</b> Principal Components Analysis (H2)</a></li>
-<li class="chapter" data-level="6.7.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h2"><i class="fa fa-check"></i><b>6.7.3</b> ANOVA (H2)</a></li>
-<li class="chapter" data-level="6.7.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h2"><i class="fa fa-check"></i><b>6.7.4</b> Allometry (H2)</a></li>
-<li class="chapter" data-level="6.7.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h2"><i class="fa fa-check"></i><b>6.7.5</b> Morphological disparity (H2)</a></li>
-<li class="chapter" data-level="6.7.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h2"><i class="fa fa-check"></i><b>6.7.6</b> Mean Shapes (H2)</a></li>
-</ul></li>
-<li class="chapter" data-level="6.8" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-3-techno-gm"><i class="fa fa-check"></i><b>6.8</b> Test Hypothesis 3 (Techno GM)</a><ul>
-<li class="chapter" data-level="6.8.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h3"><i class="fa fa-check"></i><b>6.8.1</b> Boxplot (H3)</a></li>
-<li class="chapter" data-level="6.8.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h3"><i class="fa fa-check"></i><b>6.8.2</b> Principal Components Analysis (H3)</a></li>
-<li class="chapter" data-level="6.8.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h3"><i class="fa fa-check"></i><b>6.8.3</b> ANOVA (H3)</a></li>
-<li class="chapter" data-level="6.8.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h3"><i class="fa fa-check"></i><b>6.8.4</b> Allometry (H3)</a></li>
-<li class="chapter" data-level="6.8.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h3"><i class="fa fa-check"></i><b>6.8.5</b> Morphological disparity (H3)</a></li>
-<li class="chapter" data-level="6.8.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h3"><i class="fa fa-check"></i><b>6.8.6</b> Mean Shapes (H3)</a></li>
-</ul></li>
-<li class="chapter" data-level="6.9" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#test-hypothesis-4-techno-gm"><i class="fa fa-check"></i><b>6.9</b> Test Hypothesis 4 (Techno GM)</a><ul>
-<li class="chapter" data-level="6.9.1" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#boxplot-h4"><i class="fa fa-check"></i><b>6.9.1</b> Boxplot (H4)</a></li>
-<li class="chapter" data-level="6.9.2" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#principal-components-analysis-h4"><i class="fa fa-check"></i><b>6.9.2</b> Principal Components Analysis (H4)</a></li>
-<li class="chapter" data-level="6.9.3" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#anova-h4"><i class="fa fa-check"></i><b>6.9.3</b> ANOVA (H4)</a></li>
-<li class="chapter" data-level="6.9.4" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#allometry-h4"><i class="fa fa-check"></i><b>6.9.4</b> Allometry (H4)</a></li>
-<li class="chapter" data-level="6.9.5" data-path="analysis-of-dalton-morphology.html"><a href="analysis-of-dalton-morphology.html#morphological-disparity-h4"><i class="fa fa-check"></i><b>6.9.5</b> Morphological disparity (H4)</a></li>
-<li class="chapter" data-level="6.9.6" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html#mean-shapes-h4"><i class="fa fa-check"></i><b>6.9.6</b> Mean Shapes (H4)</a></li>
+<li class="chapter" data-level="5.9" data-path="dalton-blade.html"><a href="dalton-blade.html#test-hypothesis-4-techno-x1"><i class="fa fa-check"></i><b>5.9</b> Test Hypothesis 4 (Techno X1)</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="dalton-blade.html"><a href="dalton-blade.html#boxplot-h4-1"><i class="fa fa-check"></i><b>5.9.1</b> Boxplot (H4)</a></li>
+<li class="chapter" data-level="5.9.2" data-path="dalton-blade.html"><a href="dalton-blade.html#principal-components-analysis-h4-2"><i class="fa fa-check"></i><b>5.9.2</b> Principal Components Analysis (H4)</a></li>
+<li class="chapter" data-level="5.9.3" data-path="dalton-blade.html"><a href="dalton-blade.html#anova-h4-1"><i class="fa fa-check"></i><b>5.9.3</b> ANOVA (H4)</a></li>
+<li class="chapter" data-level="5.9.4" data-path="dalton-blade.html"><a href="dalton-blade.html#allometry-h4-1"><i class="fa fa-check"></i><b>5.9.4</b> Allometry (H4)</a></li>
+<li class="chapter" data-level="5.9.5" data-path="dalton-blade.html"><a href="dalton-blade.html#morphological-disparity-h4-1"><i class="fa fa-check"></i><b>5.9.5</b> Morphological disparity (H4)</a></li>
+<li class="chapter" data-level="5.9.6" data-path="dalton-blade.html"><a href="dalton-blade.html#mean-shapes-h4-2"><i class="fa fa-check"></i><b>5.9.6</b> Mean Shapes (H4)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#references"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="6" data-path="cross-section-midline.html"><a href="cross-section-midline.html"><i class="fa fa-check"></i><b>6</b> Cross-section: midline</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#load-packages-data-3"><i class="fa fa-check"></i><b>6.1</b> Load packages + data</a></li>
+<li class="chapter" data-level="6.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#generalized-procrustes-analysis-2"><i class="fa fa-check"></i><b>6.2</b> Generalized Procrustes Analysis</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-attributes-2"><i class="fa fa-check"></i><b>6.2.1</b> Boxplot attributes</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-3"><i class="fa fa-check"></i><b>6.3</b> Principal Components Analysis</a></li>
+<li class="chapter" data-level="6.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#define-models-2"><i class="fa fa-check"></i><b>6.4</b> Define models</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#allometry-4"><i class="fa fa-check"></i><b>6.4.1</b> Allometry</a></li>
+<li class="chapter" data-level="6.4.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#hypothesis-1-2"><i class="fa fa-check"></i><b>6.4.2</b> Hypothesis 1</a></li>
+<li class="chapter" data-level="6.4.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#hypothesis-2-2"><i class="fa fa-check"></i><b>6.4.3</b> Hypothesis 2</a></li>
+<li class="chapter" data-level="6.4.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#hypothesis-3-2"><i class="fa fa-check"></i><b>6.4.4</b> Hypothesis 3</a></li>
+<li class="chapter" data-level="6.4.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#hypothesis-4-2"><i class="fa fa-check"></i><b>6.4.5</b> Hypothesis 4</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#allometry-5"><i class="fa fa-check"></i><b>6.5</b> Allometry</a></li>
+<li class="chapter" data-level="6.6" data-path="cross-section-midline.html"><a href="cross-section-midline.html#test-hypothesis-1-geo-x1"><i class="fa fa-check"></i><b>6.6</b> Test Hypothesis 1 (Geo X1)</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-h1-2"><i class="fa fa-check"></i><b>6.6.1</b> Boxplot (H1)</a></li>
+<li class="chapter" data-level="6.6.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-h1-3"><i class="fa fa-check"></i><b>6.6.2</b> Principal Components Analysis (H1)</a></li>
+<li class="chapter" data-level="6.6.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#anova-h1-2"><i class="fa fa-check"></i><b>6.6.3</b> ANOVA (H1)</a></li>
+<li class="chapter" data-level="6.6.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#allometry-h1-2"><i class="fa fa-check"></i><b>6.6.4</b> Allometry (H1)</a></li>
+<li class="chapter" data-level="6.6.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#morphological-disparity-h1-2"><i class="fa fa-check"></i><b>6.6.5</b> Morphological disparity (H1)</a></li>
+<li class="chapter" data-level="6.6.6" data-path="cross-section-midline.html"><a href="cross-section-midline.html#mean-shapes-h1-3"><i class="fa fa-check"></i><b>6.6.6</b> Mean Shapes (H1)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="cross-section-midline.html"><a href="cross-section-midline.html#test-hypothesis-2-geo-x1"><i class="fa fa-check"></i><b>6.7</b> Test Hypothesis 2 (Geo X1)</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-h2-2"><i class="fa fa-check"></i><b>6.7.1</b> Boxplot (H2)</a></li>
+<li class="chapter" data-level="6.7.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-h2-3"><i class="fa fa-check"></i><b>6.7.2</b> Principal Components Analysis (H2)</a></li>
+<li class="chapter" data-level="6.7.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#anova-h2-2"><i class="fa fa-check"></i><b>6.7.3</b> ANOVA (H2)</a></li>
+<li class="chapter" data-level="6.7.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#allometry-h2-2"><i class="fa fa-check"></i><b>6.7.4</b> Allometry (H2)</a></li>
+<li class="chapter" data-level="6.7.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#morphological-disparity-h2-2"><i class="fa fa-check"></i><b>6.7.5</b> Morphological disparity (H2)</a></li>
+<li class="chapter" data-level="6.7.6" data-path="cross-section-midline.html"><a href="cross-section-midline.html#mean-shapes-h2-3"><i class="fa fa-check"></i><b>6.7.6</b> Mean Shapes (H2)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="cross-section-midline.html"><a href="cross-section-midline.html#test-hypothesis-3-techno-x1"><i class="fa fa-check"></i><b>6.8</b> Test Hypothesis 3 (Techno X1)</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-h3-2"><i class="fa fa-check"></i><b>6.8.1</b> Boxplot (H3)</a></li>
+<li class="chapter" data-level="6.8.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-h3-3"><i class="fa fa-check"></i><b>6.8.2</b> Principal Components Analysis (H3)</a></li>
+<li class="chapter" data-level="6.8.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#anova-h3-2"><i class="fa fa-check"></i><b>6.8.3</b> ANOVA (H3)</a></li>
+<li class="chapter" data-level="6.8.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#allometry-h3-2"><i class="fa fa-check"></i><b>6.8.4</b> Allometry (H3)</a></li>
+<li class="chapter" data-level="6.8.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#morphological-disparity-h3-2"><i class="fa fa-check"></i><b>6.8.5</b> Morphological disparity (H3)</a></li>
+<li class="chapter" data-level="6.8.6" data-path="cross-section-midline.html"><a href="cross-section-midline.html#mean-shapes-h3-3"><i class="fa fa-check"></i><b>6.8.6</b> Mean Shapes (H3)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.9" data-path="cross-section-midline.html"><a href="cross-section-midline.html#test-hypothesis-4-techno-x1-1"><i class="fa fa-check"></i><b>6.9</b> Test Hypothesis 4 (Techno X1)</a>
+<ul>
+<li class="chapter" data-level="6.9.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-h4-2"><i class="fa fa-check"></i><b>6.9.1</b> Boxplot (H4)</a></li>
+<li class="chapter" data-level="6.9.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-h4-3"><i class="fa fa-check"></i><b>6.9.2</b> Principal Components Analysis (H4)</a></li>
+<li class="chapter" data-level="6.9.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#anova-h4-2"><i class="fa fa-check"></i><b>6.9.3</b> ANOVA (H4)</a></li>
+<li class="chapter" data-level="6.9.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#allometry-h4-2"><i class="fa fa-check"></i><b>6.9.4</b> Allometry (H4)</a></li>
+<li class="chapter" data-level="6.9.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#morphological-disparity-h4-2"><i class="fa fa-check"></i><b>6.9.5</b> Morphological disparity (H4)</a></li>
+<li class="chapter" data-level="6.9.6" data-path="cross-section-midline.html"><a href="cross-section-midline.html#mean-shapes-h4-3"><i class="fa fa-check"></i><b>6.9.6</b> Mean Shapes (H4)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html"><i class="fa fa-check"></i><b>7</b> Cross-section: blade/base</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#load-packages-data-4"><i class="fa fa-check"></i><b>7.1</b> Load packages + data</a></li>
+<li class="chapter" data-level="7.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#generalized-procrustes-analysis-3"><i class="fa fa-check"></i><b>7.2</b> Generalized Procrustes Analysis</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-attributes-3"><i class="fa fa-check"></i><b>7.2.1</b> Boxplot attributes</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-4"><i class="fa fa-check"></i><b>7.3</b> Principal Components Analysis</a></li>
+<li class="chapter" data-level="7.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#define-models-3"><i class="fa fa-check"></i><b>7.4</b> Define models</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#allometry-6"><i class="fa fa-check"></i><b>7.4.1</b> Allometry</a></li>
+<li class="chapter" data-level="7.4.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#hypothesis-1-3"><i class="fa fa-check"></i><b>7.4.2</b> Hypothesis 1</a></li>
+<li class="chapter" data-level="7.4.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#hypothesis-2-3"><i class="fa fa-check"></i><b>7.4.3</b> Hypothesis 2</a></li>
+<li class="chapter" data-level="7.4.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#hypothesis-3-3"><i class="fa fa-check"></i><b>7.4.4</b> Hypothesis 3</a></li>
+<li class="chapter" data-level="7.4.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#hypothesis-4-3"><i class="fa fa-check"></i><b>7.4.5</b> Hypothesis 4</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#allometry-7"><i class="fa fa-check"></i><b>7.5</b> Allometry</a></li>
+<li class="chapter" data-level="7.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#test-hypothesis-1-geo-x2"><i class="fa fa-check"></i><b>7.6</b> Test Hypothesis 1 (Geo X2)</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-h1-3"><i class="fa fa-check"></i><b>7.6.1</b> Boxplot (H1)</a></li>
+<li class="chapter" data-level="7.6.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-h1-4"><i class="fa fa-check"></i><b>7.6.2</b> Principal Components Analysis (H1)</a></li>
+<li class="chapter" data-level="7.6.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#anova-h1-3"><i class="fa fa-check"></i><b>7.6.3</b> ANOVA (H1)</a></li>
+<li class="chapter" data-level="7.6.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#allometry-h1-3"><i class="fa fa-check"></i><b>7.6.4</b> Allometry (H1)</a></li>
+<li class="chapter" data-level="7.6.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#morphological-disparity-h1-3"><i class="fa fa-check"></i><b>7.6.5</b> Morphological disparity (H1)</a></li>
+<li class="chapter" data-level="7.6.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#mean-shapes-h1-4"><i class="fa fa-check"></i><b>7.6.6</b> Mean Shapes (H1)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#test-hypothesis-2-geo-x2"><i class="fa fa-check"></i><b>7.7</b> Test Hypothesis 2 (Geo X2)</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-h2-3"><i class="fa fa-check"></i><b>7.7.1</b> Boxplot (H2)</a></li>
+<li class="chapter" data-level="7.7.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-h2-4"><i class="fa fa-check"></i><b>7.7.2</b> Principal Components Analysis (H2)</a></li>
+<li class="chapter" data-level="7.7.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#anova-h2-3"><i class="fa fa-check"></i><b>7.7.3</b> ANOVA (H2)</a></li>
+<li class="chapter" data-level="7.7.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#allometry-h2-3"><i class="fa fa-check"></i><b>7.7.4</b> Allometry (H2)</a></li>
+<li class="chapter" data-level="7.7.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#morphological-disparity-h2-3"><i class="fa fa-check"></i><b>7.7.5</b> Morphological disparity (H2)</a></li>
+<li class="chapter" data-level="7.7.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#mean-shapes-h2-4"><i class="fa fa-check"></i><b>7.7.6</b> Mean Shapes (H2)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#test-hypothesis-3-techno-x2"><i class="fa fa-check"></i><b>7.8</b> Test Hypothesis 3 (Techno X2)</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-h3-3"><i class="fa fa-check"></i><b>7.8.1</b> Boxplot (H3)</a></li>
+<li class="chapter" data-level="7.8.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-h3-4"><i class="fa fa-check"></i><b>7.8.2</b> Principal Components Analysis (H3)</a></li>
+<li class="chapter" data-level="7.8.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#anova-h3-3"><i class="fa fa-check"></i><b>7.8.3</b> ANOVA (H3)</a></li>
+<li class="chapter" data-level="7.8.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#allometry-h3-3"><i class="fa fa-check"></i><b>7.8.4</b> Allometry (H3)</a></li>
+<li class="chapter" data-level="7.8.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#morphological-disparity-h3-3"><i class="fa fa-check"></i><b>7.8.5</b> Morphological disparity (H3)</a></li>
+<li class="chapter" data-level="7.8.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#mean-shapes-h3-4"><i class="fa fa-check"></i><b>7.8.6</b> Mean Shapes (H3)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#test-hypothesis-4-techno-x2"><i class="fa fa-check"></i><b>7.9</b> Test Hypothesis 4 (Techno X2)</a>
+<ul>
+<li class="chapter" data-level="7.9.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-h4-3"><i class="fa fa-check"></i><b>7.9.1</b> Boxplot (H4)</a></li>
+<li class="chapter" data-level="7.9.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-h4-4"><i class="fa fa-check"></i><b>7.9.2</b> Principal Components Analysis (H4)</a></li>
+<li class="chapter" data-level="7.9.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#anova-h4-3"><i class="fa fa-check"></i><b>7.9.3</b> ANOVA (H4)</a></li>
+<li class="chapter" data-level="7.9.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#allometry-h4-3"><i class="fa fa-check"></i><b>7.9.4</b> Allometry (H4)</a></li>
+<li class="chapter" data-level="7.9.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#morphological-disparity-h4-3"><i class="fa fa-check"></i><b>7.9.5</b> Morphological disparity (H4)</a></li>
+<li class="chapter" data-level="7.9.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#mean-shapes-h4-4"><i class="fa fa-check"></i><b>7.9.6</b> Mean Shapes (H4)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html"><i class="fa fa-check"></i><b>8</b> Symmetry and Asymmetry</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#load-packages-data-5"><i class="fa fa-check"></i><b>8.1</b> Load packages + data</a></li>
+<li class="chapter" data-level="8.2" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#generalized-procrustes-analysis-4"><i class="fa fa-check"></i><b>8.2</b> Generalized Procrustes Analysis</a></li>
+<li class="chapter" data-level="8.3" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#principal-components-analysis-5"><i class="fa fa-check"></i><b>8.3</b> Principal Components Analysis</a></li>
+<li class="chapter" data-level="8.4" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#define-models-4"><i class="fa fa-check"></i><b>8.4</b> Define models</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#hypothesis-1-4"><i class="fa fa-check"></i><b>8.4.1</b> Hypothesis 1</a></li>
+<li class="chapter" data-level="8.4.2" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#hypothesis-2-4"><i class="fa fa-check"></i><b>8.4.2</b> Hypothesis 2</a></li>
+<li class="chapter" data-level="8.4.3" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#hypothesis-3-4"><i class="fa fa-check"></i><b>8.4.3</b> Hypothesis 3</a></li>
+<li class="chapter" data-level="8.4.4" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#hypothesis-4-4"><i class="fa fa-check"></i><b>8.4.4</b> Hypothesis 4</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#test-hypothesis-1-geo-symm"><i class="fa fa-check"></i><b>8.5</b> Test Hypothesis 1 (Geo Symm)</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#principal-components-analysis-h1-5"><i class="fa fa-check"></i><b>8.5.1</b> Principal Components Analysis (H1)</a></li>
+<li class="chapter" data-level="8.5.2" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#anova"><i class="fa fa-check"></i><b>8.5.2</b> ANOVA</a></li>
+<li class="chapter" data-level="8.5.3" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#morphological-disparity"><i class="fa fa-check"></i><b>8.5.3</b> Morphological disparity</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#test-hypothesis-2-geo-symm"><i class="fa fa-check"></i><b>8.6</b> Test Hypothesis 2 (Geo Symm)</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#principal-components-analysis-h2-5"><i class="fa fa-check"></i><b>8.6.1</b> Principal Components Analysis (H2)</a></li>
+<li class="chapter" data-level="8.6.2" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#anova-1"><i class="fa fa-check"></i><b>8.6.2</b> ANOVA</a></li>
+<li class="chapter" data-level="8.6.3" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#morphological-disparity-1"><i class="fa fa-check"></i><b>8.6.3</b> Morphological disparity</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#test-hypothesis-3-techno-symm"><i class="fa fa-check"></i><b>8.7</b> Test Hypothesis 3 (Techno Symm)</a>
+<ul>
+<li class="chapter" data-level="8.7.1" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#principal-components-analysis-h3-5"><i class="fa fa-check"></i><b>8.7.1</b> Principal Components Analysis (H3)</a></li>
+<li class="chapter" data-level="8.7.2" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#anova-2"><i class="fa fa-check"></i><b>8.7.2</b> ANOVA</a></li>
+<li class="chapter" data-level="8.7.3" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#morphological-disparity-2"><i class="fa fa-check"></i><b>8.7.3</b> Morphological disparity</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#test-hypothesis-4-techno-symm"><i class="fa fa-check"></i><b>8.8</b> Test Hypothesis 4 (Techno Symm)</a>
+<ul>
+<li class="chapter" data-level="8.8.1" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#principal-components-analysis-h4-5"><i class="fa fa-check"></i><b>8.8.1</b> Principal Components Analysis (H4)</a></li>
+<li class="chapter" data-level="8.8.2" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#anova-3"><i class="fa fa-check"></i><b>8.8.2</b> ANOVA</a></li>
+<li class="chapter" data-level="8.8.3" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#morphological-disparity-3"><i class="fa fa-check"></i><b>8.8.3</b> Morphological disparity</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -359,7 +475,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="landmarking-protocol-3d3" class="section level1">
+<div id="landmarking-protocol-3d3" class="section level1" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Landmarking Protocol 3d3</h1>
 <p>The results of the elliptical Fourier analysis (EFA) provided useful insights that aided in developing the 3D landmarking protocol used in this study.</p>
 <ol style="list-style-type: decimal">
@@ -369,23 +485,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The only significant difference between the bevel types was the comparison of alternate vs. no beveling. Mean shapes indicate that this difference is driven by the left/right lateral edges, and not by the morphology of the distal portion of the base. The mean shapes for unifacial bimarginal vs. no beveling are surprisingly similar in plan view, and the difference between alternate vs. unifacial bimarginal is driven—once more—by left/right lateral edges from the base to the tip of the point, and not the distal end of the base.</li>
 </ol>
 <p>Of those landmark and semilandmark configurations included in the draft sketches for this project, it is sLMs 12 and 13 that appear to contribute least to the formal tests of those hypotheses tested using EFA. They are, however, still included in the 3D landmarking protocol since the z-axis may provide additional useful data, particularly for analyses of bilateral asymmetry (see Chapter 5).</p>
-<div id="overview" class="section level2">
+<div id="overview" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Overview</h2>
-<p>Landmarking protocol 3d3 (LM3d3) represents a substantive advancement from <a href="https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md">LM3d1</a> <span class="citation">(Selden Jr., Dockall, and Dubied <a href="#ref-RN21001" role="doc-biblioref">2020</a>)</span> and was modified from the <a href="https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html">LM3d2</a> protocol developed for the analysis of Gahagan bifaces. The principal difference between <a href="https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html">LM3d2</a> and LM3d3 is that the projectiles analysed using <a href="https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html">LM3d2</a> are lanceolate bifaces, and that landmarking protocol was not designed to capture the variation in basal morphology exhibited by stemmed (Dalton) projectile points. Like <a href="https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md">LM3d1</a> and <a href="https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html">LM3d2</a>, LM3d3 uses the topology of the 3D mesh that articulates with the prehistoric design of each projectile point to construct a suite of <code>reference geometry</code> used to apply semilandmarks in a replicable manner. The result is a landmarking protocol that provides for the improved characterisation of whole-object morphology, which can be subset to analyse variability associated with specific <em>plan</em>, <em>profile</em>, and <em>cross-section</em> components. It also provides those data points needed to investigate questions of <em>directional asymmetry</em>, differences in front/back morphology, morphological integration between blade and basal morphology, and the morphology of broken, fractured, or otherwise incomplete specimens that permeate the archaeological record.</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="landmarking-protocol-3d3.html#cb73-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/landmarks.png&#39;</span>)</span></code></pre></div>
+<p>Landmarking protocol 3d3 (LM3d3) represents a substantive advancement from <a href="https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md">LM3d1</a> <span class="citation">(<a href="references-1.html#ref-RN21001" role="doc-biblioref">Selden Jr., Dockall, and Dubied 2020</a>)</span> and was modified from the <a href="https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html">LM3d2</a> protocol developed for the analysis of Gahagan bifaces. The principal difference between <a href="https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html">LM3d2</a> and LM3d3 is that the projectiles analysed using <a href="https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html">LM3d2</a> are lanceolate bifaces, and that landmarking protocol was not designed to capture the variation in basal morphology exhibited by stemmed (Dalton) projectile points. Like <a href="https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md">LM3d1</a> and <a href="https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html">LM3d2</a>, LM3d3 uses the topology of the 3D mesh that articulates with the prehistoric design of each projectile point to construct a suite of <code>reference geometry</code> used to apply semilandmarks in a replicable manner. The result is a landmarking protocol that provides for the improved characterisation of whole-object morphology, which can be subset to analyse variability associated with specific <em>plan</em>, <em>profile</em>, and <em>cross-section</em> components. It also provides those data points needed to investigate questions of <em>directional asymmetry</em>, differences in front/back morphology, morphological integration between blade and basal morphology, and the morphology of broken, fractured, or otherwise incomplete specimens that permeate the archaeological record.</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="landmarking-protocol-3d3.html#cb64-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/landmarks.png&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/landmarks.png" alt="_**Figure 1. Coordinates of landmarks populated using the [LM3d1](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md) protocol serve as the basis for LM3d3.**_" width="100%" />
 <p class="caption">
-(#fig:lm3d3.landmark)<em><strong>Figure 1. Coordinates of landmarks populated using the <a href="https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md">LM3d1</a> protocol serve as the basis for LM3d3.</strong></em>
+(#fig:lm3d3.landmarkx)<em><strong>Figure 1. Coordinates of landmarks populated using the <a href="https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md">LM3d1</a> protocol serve as the basis for LM3d3.</strong></em>
 </p>
 </div>
 <p>Like its’ predecessors, LM3d3 was initially designed using the <a href="https://github.com/morphOptics/digit3DLand"><code>digit3DLand</code></a> package in R. When the draft protocol was completed, design of the landmarking protocol shifted to <a href="https://www.3dsystems.com/software/geomagic-design-x">Geomagic Design X</a> <em>(Build Version 2020.0.2 [Build Number: 55])</em>, where the workflow was modified to include those elements of <code>reference geometry</code> that articulate with the prehistoric design attributes of each projectile point.</p>
-<p>The goal of this effort was to increase both the precision and rigour of the study by including the Z-dimension to capture those shape characteristics associated with axial twisting, introduced by knappers through the practice of beveling (<a href="https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md">LM3d1</a>) <span class="citation">(Selden Jr., Dockall, and Dubied <a href="#ref-RN21001" role="doc-biblioref">2020</a>)</span>. The addition of cross-sections was needed to better characterise whole-object morphology, providing for the possibility of subsampling the semilandmarks to explore the contribution of specific cross-sections or profiles (<a href="https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html">LM3d2</a>). LM3d3 includes an additional cross section at the blade/base transition, allowing for tests of morphological integration. While true that some landmarking protocols can be—–and often are—–recycled as new specimens are added, this particular research programme endeavours to achieve ever-greater accuracy and precision in each analytical iteration.</p>
+<p>The goal of this effort was to increase both the precision and rigour of the study by including the Z-dimension to capture those shape characteristics associated with axial twisting, introduced by knappers through the practice of beveling (<a href="https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md">LM3d1</a>) <span class="citation">(<a href="references-1.html#ref-RN21001" role="doc-biblioref">Selden Jr., Dockall, and Dubied 2020</a>)</span>. The addition of cross-sections was needed to better characterise whole-object morphology, providing for the possibility of subsampling the semilandmarks to explore the contribution of specific cross-sections or profiles (<a href="https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html">LM3d2</a>). LM3d3 includes an additional cross section at the blade/base transition, allowing for tests of morphological integration. While true that some landmarking protocols can be—–and often are—–recycled as new specimens are added, this particular research programme endeavours to achieve ever-greater accuracy and precision in each analytical iteration.</p>
 </div>
-<div id="generating-the-peripheral-plan-view-spline" class="section level2">
+<div id="generating-the-peripheral-plan-view-spline" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Generating the peripheral (plan view) spline</h2>
 <p>This effort begins with a spline extracted from the surface geometry of the mesh using the <code>extract contour curves</code> command. In reverse-engineering, <code>extract contour curves</code> is regularly employed as the first step in building a <code>patch network</code> used to create a surface. The extracted feature curve is rendered as a spline, and follows the highest curvature contours around the periphery of the lateral and basal edges, following the highly variable sinuous edge morphology around the entirety of the projectile. The remainder of the landmarking protocol is based upon this spline, which was subsequently split at six mathematically-defined locations.</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="landmarking-protocol-3d3.html#cb74-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/extractspline.png&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="landmarking-protocol-3d3.html#cb65-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/extractspline.png&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/extractspline.png" alt="_**Figure 2. Spline extracted along the highest contours of the Dalton point.**_" width="100%" />
 <p class="caption">
@@ -393,15 +509,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 </div>
-<div id="splitting-the-spline" class="section level2">
+<div id="splitting-the-spline" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Splitting the spline</h2>
 <p><em><code>Reference geometries</code> are used in the assistance of creating other features. These include basic geometric entities, such as <code>planes</code>, <code>vectors</code>, <code>coordinates</code>, <code>points</code>, and <code>polygons</code>. A <code>reference point</code> is a virtual point and is used to mark a specific position on a model or in 3D space. A <code>reference plane</code> is a virtual plane that has a normal direction and an infinite size. A <code>reference plane</code> is not a surface body, and is used to create other features.</em></p>
-<p>The characteristic points and tangents developed for this landmarking protocol were inspired by the work of Birkhoff <span class="citation">(<a href="#ref-RN11786" role="doc-biblioref">1933</a>)</span>, which has been gainfully employed within the context of both ceramic <span class="citation">(Selden Jr. <a href="#ref-RN11801" role="doc-biblioref">2018</a><a href="#ref-RN11801" role="doc-biblioref">a</a>, <a href="#ref-RN11782" role="doc-biblioref">2018</a><a href="#ref-RN11782" role="doc-biblioref">b</a>, <a href="#ref-RN11716" role="doc-biblioref">2019</a>, <a href="#ref-RN20697" role="doc-biblioref">2021</a>)</span> and lithic analyses <span class="citation">(Selden Jr., Dockall, and Shafer <a href="#ref-RN11783" role="doc-biblioref">2018</a>; Selden Jr., Dockall, and Dubied <a href="#ref-RN21001" role="doc-biblioref">2020</a>)</span>. The first landmark (LM1) is placed at the horizontal tangent on the tip of each Dalton point. The second through fifth splits (LMs 02 - 05) occur at points of highest curvature, where LM 02 is always placed on the right side of the projectile following the application of the <code>reference vectors</code>. To place the final landmark (LM 06), a linear measurement was used to project a <code>reference point</code> equidistant between LM 02 and LM 03. The location of that point was leveraged in placing the <code>reference plane</code> used to cut the spline at the location of LM 06.</p>
+<p>The characteristic points and tangents developed for this landmarking protocol were inspired by the work of Birkhoff <span class="citation">(<a href="references-1.html#ref-RN11786" role="doc-biblioref">1933</a>)</span>, which has been gainfully employed within the context of both ceramic <span class="citation">(<a href="references-1.html#ref-RN11801" role="doc-biblioref">Selden Jr. 2018a</a>, <a href="references-1.html#ref-RN11782" role="doc-biblioref">2018b</a>, <a href="references-1.html#ref-RN11716" role="doc-biblioref">2019</a>, <a href="references-1.html#ref-RN20697" role="doc-biblioref">2021</a>)</span> and lithic analyses <span class="citation">(<a href="references-1.html#ref-RN11783" role="doc-biblioref">Selden Jr., Dockall, and Shafer 2018</a>; <a href="references-1.html#ref-RN21001" role="doc-biblioref">Selden Jr., Dockall, and Dubied 2020</a>)</span>. The first landmark (LM1) is placed at the horizontal tangent on the tip of each Dalton point. The second through fifth splits (LMs 02 - 05) occur at points of highest curvature, where LM 02 is always placed on the right side of the projectile following the application of the <code>reference vectors</code>. To place the final landmark (LM 06), a linear measurement was used to project a <code>reference point</code> equidistant between LM 02 and LM 03. The location of that point was leveraged in placing the <code>reference plane</code> used to cut the spline at the location of LM 06.</p>
 </div>
-<div id="spline-split-at-location-of-lm-01" class="section level2">
+<div id="spline-split-at-location-of-lm-01" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Spline split at location of LM 01</h2>
 <p>The <code>horizontal tangent</code> is calculated by drawing a horizontal line above the tip of the biface using the tangent as a <code>common constraint</code>, and the horizontal as the <code>independent constraint</code>. To split the 3D spline at the location of the horizontal tangent, a <code>reference point</code> was inserted at the location of the <code>tangent</code> in the sketch (light blue point; below, left), followed by a <code>reference plane</code> (in white; below, left and right) using the <code>pick point and normal axis</code> function where the <code>reference point</code> (h-tangent) was used as the <code>pick point</code>, and the <code>Right plane</code> as the <code>normal axis</code> (below, left). The spline was then cut at the location where the <code>reference plane</code> intersected with the spline (below image, right).</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="landmarking-protocol-3d3.html#cb75-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/lm1.png&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="landmarking-protocol-3d3.html#cb66-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/lm1.png&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/lm1.png" alt="_**Figure 3. Identify horizontal tangent, insert `reference point` and `reference plane` (left). Use `reference plane` to cut spline at the location of the horizontal tangent (right).**_" width="100%" />
 <p class="caption">
@@ -409,10 +525,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 </div>
-<div id="spline-split-at-locations-of-lm-02-and-lm-03" class="section level2">
+<div id="spline-split-at-locations-of-lm-02-and-lm-03" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> Spline split at locations of LM 02 and LM 03</h2>
 <p>The point of highest curvature on either side of the basal edge was calculated using the <code>curvature</code> function in the Accuracy Analyser. This function displays the curvature flow as a continuous colour plot across the area of the curve. In this instance, <em>curvature</em> is defined as the amount by which a geometric shape deviates from being flat or straight in the case of a line. Curvature is displayed in different colours according to the local radius, and calculated in only one direction (U or V) along the curve. Using this tool, the two points of highest curvature were located between the basal and lateral edges on either side of each projectile where the local radius measure was largest. The orientation of each biface was dictated by the <em>auto3dgm</em> output in <a href="https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md">LM3d1</a> and <a href="https://aksel-blaise.github.io/gahaganmorph3/landmarking-protocol.html">LM3d2</a>; however, LM3d3 enlists a novel method to determine which side of the projectile is associated with LM 02 and LM03 using <code>reference vectors</code>.</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="landmarking-protocol-3d3.html#cb76-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/splinesplit1.png&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="landmarking-protocol-3d3.html#cb67-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/splinesplit1.png&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/splinesplit1.png" alt="_**Figure 4. Identify points of hightest curvature (light blue) at left/right intersection of lateral and basal edges.**_" width="100%" />
 <p class="caption">
@@ -420,10 +536,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 </div>
-<div id="spline-split-at-locations-of-lm-04-and-lm-05" class="section level2">
+<div id="spline-split-at-locations-of-lm-04-and-lm-05" class="section level2" number="2.6">
 <h2><span class="header-section-number">2.6</span> Spline split at locations of LM 04 and LM 05</h2>
 <p>The point of highest curvature at the intersection of the blade and base was also calculated using the <code>curvature</code> function in the Accuracy Analyser. Using this tool, the two points of highest curvature were located between the blade and base on either side of each projectile where the local radius measure was largest. The orientation of each projectile was dictated by <code>reference vectors</code>, and the landmarking protocol follows the mesh orientation in that figure, where LM 04 was always placed on the right side of the basal edge, and LM 05 on the left.</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="landmarking-protocol-3d3.html#cb77-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/splinesplit2.png&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="landmarking-protocol-3d3.html#cb68-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/splinesplit2.png&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/splinesplit2.png" alt="_**Figure 5. Identify points of hightest curvature (light blue) at left/right intersection of blade and base.**_" width="100%" />
 <p class="caption">
@@ -431,10 +547,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 </div>
-<div id="spline-split-at-location-of-lm-06" class="section level2">
+<div id="spline-split-at-location-of-lm-06" class="section level2" number="2.7">
 <h2><span class="header-section-number">2.7</span> Spline split at location of LM 06</h2>
 <p>One additional landmark (LM 06) was placed at the centre of the base. The location of this landmark was identified by calculating the linear distance between LM 02 and LM 03, and projecting a <code>reference point</code> (ctrl-div; below) equidistant between the two. A <code>reference plane</code> was added using the ctrl-div as the pick point, and the <code>Right plane</code> as the <code>normal axis</code>. The spline was then split at the intersection of the <code>reference plane</code> and the basal spline.</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="landmarking-protocol-3d3.html#cb78-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/lm6.png&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="landmarking-protocol-3d3.html#cb69-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/lm6.png&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/lm6.png" alt="_**Figure 6. Calculate linear distance between LM 02 and LM 03, insert `reference plane` coplanar to Right plane equidistant between LM 02 and LM 03, and use the `reference plane` to cut the spline.**_" width="100%" />
 <p class="caption">
@@ -442,10 +558,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 </div>
-<div id="peripheral-plan-view-spline" class="section level2">
+<div id="peripheral-plan-view-spline" class="section level2" number="2.8">
 <h2><span class="header-section-number">2.8</span> Peripheral (plan view) spline</h2>
 <p>Through the preceding protocol, the initial spline was split into six discrete splines. These splines articulate with components of projectile morphology that can be compartmentalised in the analyses. The primary analytical gain achieved through this exercise is the requisite foundation needed to carry out replicable analyses of Dalton point morphology in three dimensions, further increasing the precision of the geometric morphometric analysis.</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="landmarking-protocol-3d3.html#cb79-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/splinesplit-frbl.png&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="landmarking-protocol-3d3.html#cb70-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/splinesplit-frbl.png&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/splinesplit-frbl.png" alt="_**Figure 7. Result of spline splits include six discrete splines, each articulating with a region of analytical interest. The coordinates of each spline split are known, and used to place the landmarks.**_" width="100%" />
 <p class="caption">
@@ -453,10 +569,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 </div>
-<div id="reference-vectors-and-ref.pt.0" class="section level2">
+<div id="reference-vectors-and-ref.pt.0" class="section level2" number="2.9">
 <h2><span class="header-section-number">2.9</span> Reference vectors and ref.pt.0</h2>
 <p>The fundamental components of <code>reference geometry</code> used to create LM3d3 consist of three <code>reference vectors</code>, and a single <code>reference point</code> (ref.pt.0), placed equidistant between LM 04 and LM 05. The three <code>reference vectors</code> were placed between LM 01 and ref.pt.0 (Vector 1), ref.pt.0 and LM 06 (Vector 2), and LMs 04 and 05 (Vector 3). These three <code>reference vectors</code> serve as the foundation for the suite of <code>reference geometry</code> used to place the semilandmarks.</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="landmarking-protocol-3d3.html#cb80-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/lm3d3.vectors.png&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="landmarking-protocol-3d3.html#cb71-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/lm3d3.vectors.png&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/lm3d3.vectors.png" alt="_**Figure 8. `Reference vectors` placed between LMs 01 and ref.pt.0 (left), ref.pt.0 and LM 06 (center), and between LMs 04 and 05 (right).**_" width="100%" />
 <p class="caption">
@@ -466,13 +582,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The measure of the angle between Vector 1 (blade) and Vector 2 (base) may have additional utility in lithic studies as an orthogonal metric associated with knapper skill, where greater skill is represented by an arbitrary range of angles nearest—and lesser, furthest away from—180 degrees. A second similar measure could be collected between Vectors 1 and 2 in comparison with Vector 3. Collection of these metrics from a 3D mesh in computer aided design (CAD) software adds an increased element of precision in comparison with a goniometer, and serves as an example of the added analytical value that can be extracted from this novel landmarking protocol.</p>
 <p>Prior to the addition of the <code>reference vectors</code>, the location of LMs 02 through 05 are considered arbitrary. Previous iterations of this landmarking protocol have relied upon <code>auto3dgm</code> to provide principal alignments that dictate which LMs are placed on the left/right side of the biface or projectile. In this protocol, the side of the projectile with the lowest orthogonal measure between Vector 1 and Vector 2 will be on the left, meaning that from the investigator’s view, the projectiles will curve, bend, or lean slightly—or in some cases more dramatically—to the left from base to tip.</p>
 </div>
-<div id="reference-planes-and-points" class="section level2">
+<div id="reference-planes-and-points" class="section level2" number="2.10">
 <h2><span class="header-section-number">2.10</span> Reference planes and points</h2>
 <p>Five <code>reference planes</code> provide the framework needed to populate the semilandmarks. Admittedly, the logic associated with placement may seem curious at this point; however, the utility of these <code>reference planes</code> will become clear in subsequent sections.</p>
-<div id="placement-of-ref.pl.1" class="section level3">
+<div id="placement-of-ref.pl.1" class="section level3" number="2.10.1">
 <h3><span class="header-section-number">2.10.1</span> Placement of ref.pl.1</h3>
 <p>The first <code>reference plane</code> (ref.pl.1) was placed between LM 01 and ref.pt.0, bisecting the blade of the projectile along the mid-line. The method of placement enlists a <code>reference point</code> (ref.pt.1), inserted at the intersection of the three <code>reference vectors</code>. It has the same x,y position as ref.pt.0, but the coordinates of ref.pt.1 were altered to relocate it 15 mm from the vector in the direction of the Z-axis. The <code>pick point and coplanar</code> function was used to place ref.pl.1 coplanar to the first <code>reference vector</code>, and in the direction of ref.pt.1.</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="landmarking-protocol-3d3.html#cb81-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/lm3d3.ref.pl.1.png&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="landmarking-protocol-3d3.html#cb72-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/lm3d3.ref.pl.1.png&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/lm3d3.ref.pl.1.png" alt="_**Figure 9. Placement of ref.pl.1, and temporary location of ref.pt.1 15mm from Vector 1, and equidistant between LM 01 and ref.pt.0 on the blade of the projectile.**_" width="100%" />
 <p class="caption">
@@ -480,10 +596,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 </div>
-<div id="placement-of-ref.pl.2" class="section level3">
+<div id="placement-of-ref.pl.2" class="section level3" number="2.10.2">
 <h3><span class="header-section-number">2.10.2</span> Placement of ref.pl.2</h3>
 <p>The second <code>reference plane</code> (ref.pl.2) was placed between ref.pt.0 and LM 06, bisecting the base of the projectile along the mid-line. The method of placement for ref.pl.2 follows the same protocol described in the application of ref.pl.1, and enlists the same <code>reference point</code> (ref.pt.1).</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="landmarking-protocol-3d3.html#cb82-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/lm3d3.ref.pl.2.png&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="landmarking-protocol-3d3.html#cb73-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/lm3d3.ref.pl.2.png&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/lm3d3.ref.pl.2.png" alt="_**Figure 10. Placement of ref.pl.2, and temporary location of ref.pt.2 15 mm from Vector 2, and equidistant between ref.pt.0 and LM 06 on the base of the projectile.**_" width="100%" />
 <p class="caption">
@@ -491,10 +607,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 </div>
-<div id="placement-of-ref.pl.3" class="section level3">
+<div id="placement-of-ref.pl.3" class="section level3" number="2.10.3">
 <h3><span class="header-section-number">2.10.3</span> Placement of ref.pl.3</h3>
 <p>The third <code>reference plane</code> (ref.pl.3) was placed between LMs 04 and 05, and bisects the projectile at the blade/base intersection. The method of placement for ref.pl.3 follows the same protocol described in the application of ref.pl.1, and enlists the same <code>reference point</code> (ref.pt.1), which was deleted following the placement of ref.pl.3.</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="landmarking-protocol-3d3.html#cb83-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/lm3d3.ref.pl.3.png&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="landmarking-protocol-3d3.html#cb74-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/lm3d3.ref.pl.3.png&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/lm3d3.ref.pl.3.png" alt="_**Figure 11. Placement of ref.pl.3, and temporary location of ref.pt.3 15 mm from Vector 3, and equidistant between LMs 04 and 05 at the intersection of the blade and base.**_" width="100%" />
 <p class="caption">
@@ -502,10 +618,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 </div>
-<div id="placement-of-ref.pl.4-and-ref.pl.5" class="section level3">
+<div id="placement-of-ref.pl.4-and-ref.pl.5" class="section level3" number="2.10.4">
 <h3><span class="header-section-number">2.10.4</span> Placement of ref.pl.4 and ref.pl.5</h3>
 <p>The fourth (ref.pl.4) and fifth (ref.pl.5) <code>reference planes</code> were placed using the <code>pick point and normal</code> function at the intersections of the first <code>reference vector</code> and LMs 01 and 06.</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="landmarking-protocol-3d3.html#cb84-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/lm3d3.ref.pl.4-5.png&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="landmarking-protocol-3d3.html#cb75-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/lm3d3.ref.pl.4-5.png&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/lm3d3.ref.pl.4-5.png" alt="_**Figure 12. Placement of ref.pl.4 (top) and ref.pl.5 (bottom).**_" width="100%" />
 <p class="caption">
@@ -514,13 +630,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<div id="sectioning-the-mesh" class="section level2">
+<div id="sectioning-the-mesh" class="section level2" number="2.11">
 <h2><span class="header-section-number">2.11</span> Sectioning the mesh</h2>
 <p>The <code>reference geometry</code> described above was enlisted in the following three-step method developed to produce one cross-section at the blade/base intersection, four cross-sections between the blade/base intersection and LM 01, and one cross-section between the blade/base intersection and LM 06.</p>
-<div id="sectioning-the-bladebase-intersection" class="section level3">
+<div id="sectioning-the-bladebase-intersection" class="section level3" number="2.11.1">
 <h3><span class="header-section-number">2.11.1</span> Sectioning the blade/base intersection</h3>
 <p>To section the blade/base intersection, a single section was inserted using ref.pl.2, resulting in a single cross-section that bisects the projectile between LMs 04 and 05.</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="landmarking-protocol-3d3.html#cb85-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/lm3d3.section1.png&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="landmarking-protocol-3d3.html#cb76-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/lm3d3.section1.png&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/lm3d3.section1.png" alt="_**Figure 13. Placement of the first section, bisecting the mesh along ref.pl.2.**_" width="100%" />
 <p class="caption">
@@ -528,10 +644,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 </div>
-<div id="sectioning-the-blade-and-base" class="section level3">
+<div id="sectioning-the-blade-and-base" class="section level3" number="2.11.2">
 <h3><span class="header-section-number">2.11.2</span> Sectioning the blade and base</h3>
 <p>Six equidistant sections were placed between LM 01 and ref.pt.0, and the two sections at the locations of LM 01 and ref.pt.0 were deleted. Three equidistant sections were placed between LM 06 and ref.pt.0. The sections intersecting with ref.pt.0 and LM 06 were deleted. Subsequent to placing the sections, ref.pt.0 was itself deleted.</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="landmarking-protocol-3d3.html#cb86-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/lm3d3.all.sections.png&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="landmarking-protocol-3d3.html#cb77-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/lm3d3.all.sections.png&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/lm3d3.all.sections.png" alt="_**Figure 14. Placement of the two equidistant sections between LM 06 and ref.pt.3.**_" width="100%" />
 <p class="caption">
@@ -540,11 +656,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<div id="splitting-the-sections" class="section level2">
+<div id="splitting-the-sections" class="section level2" number="2.12">
 <h2><span class="header-section-number">2.12</span> Splitting the sections</h2>
 <p>The <code>curvature</code> function was employed to split each curves at the locations of highest curvature along the lateral edge. This function was detailed above, and in the application of LMs 02, 03, 04, and 05 in <a href="https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md">LM3d1</a>.</p>
 <p>A <code>reference plane</code> (ref.pl.1) was then used to cut each of the four curves along the mid-line of the blade where it intersects with the curves. A second <code>reference plane</code> (ref.pl.2) was used to cut the single basal curve and the curve between LMs 04 and 05. Since ref.pt.0 was used to generate ref.pl.1 and ref.pl.2, either of the <code>reference planes</code> could be used to cut the curve between LMs 04 and 05.</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="landmarking-protocol-3d3.html#cb87-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/lm3d3.split.sections.png&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="landmarking-protocol-3d3.html#cb78-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/lm3d3.split.sections.png&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/lm3d3.split.sections.png" alt="_**Figure 15. Each section was split at the points of highest curvature along the lateral edges, then along the mid-line at the intersection of the curve and ref.pl.1 (for the blade), and ref.pl.2 (for the base).**_" width="100%" />
 <p class="caption">
@@ -552,19 +668,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 </div>
-<div id="lm3d3-configuration-1" class="section level2">
+<div id="lm3d3-configuration-1" class="section level2" number="2.13">
 <h2><span class="header-section-number">2.13</span> LM3d3: Configuration 1</h2>
 <p>LM3d3: Configuration 1 (LM3d3.c1) was used to assess the three hypotheses included in this pilot study. Semilandmarks 07 - 18 were applied around the lateral edges, and sLMs 12 and 13 between LMs 02, 06, and 03 using the curve constructed in <a href="https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md">LM3d1</a>. Semilandmarks 19 - 30 articulate with the mid-line between LMs 01 and 06, and sLMs 31 - 34 were placed along the curve that articulates with ref.pl.3 equidistant between the lateral edge and midline. .</p>
 <p>The result is a landmark configuration that can be subset in numerous ways (plan, profile, cross-section, front/back, left/right, blade/base, etc.), using a suite of design-based attributes to achieve maximum utility for analysts of lithic morphology.</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="landmarking-protocol-3d3.html#cb88-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/lm3d3.semi.png&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="landmarking-protocol-3d3.html#cb79-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/lm3d3.semi.png&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/lm3d3.semi.png" alt="_**Figure 16. Landmarks (blue), semilandmarks (white), curves (orange), and splits (blue) used for LM3d3.**_" width="100%" />
 <p class="caption">
 (#fig:lm3d3.semi)<em><strong>Figure 16. Landmarks (blue), semilandmarks (white), curves (orange), and splits (blue) used for LM3d3.</strong></em>
 </p>
 </div>
-<p>Based upon knowledge garnered from running <code>LaSEC</code> <span class="citation">(Watanabe <a href="#ref-RN28913" role="doc-biblioref">2018</a>)</span> on <a href="https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md">LM3d1</a>, this landmarking protocol would likely be oversampled if it included additional landmarks on the cross-sections; however, it can be adapted to include as many or as few landmarks and semilandmarks needed to address the research question.</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="landmarking-protocol-3d3.html#cb89-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;images/lm3d3.slm.png&#39;</span>)</span></code></pre></div>
+<p>Based upon knowledge garnered from running <code>LaSEC</code> <span class="citation">(<a href="references-1.html#ref-RN28913" role="doc-biblioref">Watanabe 2018</a>)</span> on <a href="https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md">LM3d1</a>, this landmarking protocol would likely be oversampled if it included additional landmarks on the cross-sections; however, it can be adapted to include as many or as few landmarks and semilandmarks needed to address the research question.</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="landmarking-protocol-3d3.html#cb80-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/lm3d3.slm.png&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/lm3d3.slm.png" alt="_**Figure 17. Landmarks (blue), semilandmarks (white), and `reference geometry` used in LM3d3.**_" width="100%" />
 <p class="caption">
@@ -572,36 +688,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 </div>
-<div id="references" class="section level2">
+<div id="references" class="section level2" number="2.14">
 <h2><span class="header-section-number">2.14</span> References</h2>
 
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-RN11786">
-<p>Birkhoff, George D. 1933. <em>Aesthetic Measure</em>. Cambridge: Harvard University Press.</p>
-</div>
-<div id="ref-RN11801">
-<p>Selden Jr., Robert Z. 2018a. “A Preliminary Study of Smithport Plain Bottle Morphology in the Southern Caddo Area.” <em>Bulletin of the Texas Archeological Society</em> 89: 63–89.</p>
-</div>
-<div id="ref-RN11782">
-<p>Selden Jr., Robert Z. 2018a. “A Preliminary Study of Smithport Plain Bottle Morphology in the Southern Caddo Area.” <em>Bulletin of the Texas Archeological Society</em> 89: 63–89.</p> 2018b. “Ceramic Morphological Organisation in the Southern Caddo Area: Quiddity of Shape for Hickory Engraved Bottles.” <em>Journal of Archaeological Science: Reports</em> 21: 884–96. <a href="https://doi.org/10.1016/j.jasrep.2018.08.045">https://doi.org/10.1016/j.jasrep.2018.08.045</a>.</p>
-</div>
-<div id="ref-RN11716">
-<p>Selden Jr., Robert Z. 2018a. “A Preliminary Study of Smithport Plain Bottle Morphology in the Southern Caddo Area.” <em>Bulletin of the Texas Archeological Society</em> 89: 63–89.</p> 2018b. “Ceramic Morphological Organisation in the Southern Caddo Area: Quiddity of Shape for Hickory Engraved Bottles.” <em>Journal of Archaeological Science: Reports</em> 21: 884–96. <a href="https://doi.org/10.1016/j.jasrep.2018.08.045">https://doi.org/10.1016/j.jasrep.2018.08.045</a>.</p> 2019. “Ceramic Morphological Organisation in the Southern Caddo Area: The Clarence H. Webb Collections.” <em>Journal of Cultural Heritage</em> 35: 41–55. <a href="https://doi.org/https://doi.org/10.1016/j.culher.2018.07.002">https://doi.org/https://doi.org/10.1016/j.culher.2018.07.002</a>.</p>
-</div>
-<div id="ref-RN20697">
-<p>Selden Jr., Robert Z. 2018a. “A Preliminary Study of Smithport Plain Bottle Morphology in the Southern Caddo Area.” <em>Bulletin of the Texas Archeological Society</em> 89: 63–89.</p> 2018b. “Ceramic Morphological Organisation in the Southern Caddo Area: Quiddity of Shape for Hickory Engraved Bottles.” <em>Journal of Archaeological Science: Reports</em> 21: 884–96. <a href="https://doi.org/10.1016/j.jasrep.2018.08.045">https://doi.org/10.1016/j.jasrep.2018.08.045</a>.</p> 2019. “Ceramic Morphological Organisation in the Southern Caddo Area: The Clarence H. Webb Collections.” <em>Journal of Cultural Heritage</em> 35: 41–55. <a href="https://doi.org/https://doi.org/10.1016/j.culher.2018.07.002">https://doi.org/https://doi.org/10.1016/j.culher.2018.07.002</a>.</p> 2021. “Louisiana Limitrophe: An Iterative Morphological Exegesis of Caddo Bottle and Biface Production.” In <em>Ancestral Caddo Ceramic Traditions</em>, edited by Duncan P. McKinnon, Jeffrey S. Girard, and Timothy K. Perttula, (in press). Baton Rouge: LSU Press.</p>
-</div>
-<div id="ref-RN21001">
-<p>Selden Jr., Robert Z., John E. Dockall, and Morgane Dubied. 2020. “A Quantitative Assessment of Intraspecific Morphological Variation in Gahagan Bifaces from the Southern Caddo Area and Central Texas.” <em>Southeastern Archaeology</em> 39 (2): 125–45. <a href="https://doi.org/10.1080/0734578x.2020.1744416">https://doi.org/10.1080/0734578x.2020.1744416</a>.</p>
-</div>
-<div id="ref-RN11783">
-<p>Selden Jr., Robert Z., John E. Dockall, and Harry J. Shafer. 2018. “Lithic Morphological Organisation: Gahagan Bifaces from the Southern Caddo Area.” <em>Digital Applications in Archaeology and Cultural Heritage</em> 10: e00080. <a href="https://doi.org/10.1016/j.daach.2018.e00080">https://doi.org/10.1016/j.daach.2018.e00080</a>.</p>
-</div>
-<div id="ref-RN28913">
-<p>Watanabe, Akinobu. 2018. “How Many Landmarks Are Enough to Characterize Shape and Size Variation?” Journal Article. <em>PLoS One</em> 13 (6): e0198341. <a href="https://doi.org/10.1371/journal.pone.0198341">https://doi.org/10.1371/journal.pone.0198341</a>.</p>
 </div>
 </div>
             </section>

@@ -1,8 +1,8 @@
 # Elliptical Fourier Analysis
 
-Prior to running the landmark 3D geometric morphometric (3DGM) analysis, an elliptical Fourier analysis (EFA) was conducted to identify differences in the plan view of Dalton projectile points. These data have utility in developing the subsequent 3D landmarking protocol (LM3d3) used for the 3DGM analysis.
+Prior to running the landmark 3D geometric morphometric (3DGM) analysis, an elliptical Fourier analysis (EFA) was conducted to identify differences in the plan view of Dalton projectile points. These data have utility in developing the subsequent 3D landmarking protocol (LM3d3) used in the 3DGM analysis.
 
-The 2D images used in the EFA were exported as screen captures from _Geomagic Design X_, and are oriented using the same (exact) alignment as the 3D dataset. Each image was masked in Photoshop to render the binary (black/white) image used for this preliminary analysis.
+The 2D images used in the EFA were exported as screen captures from _Geomagic Design X_, and are oriented using the same (exact) alignment as the 3D dataset. Each image was masked in Photoshop to render the requisite binary (black/white) image..
 
 ## Load packages + data
 
@@ -14,11 +14,10 @@ library(wesanderson)
 library(Momocs)
 
 # read images + attribute data
-jpg.list <- list.files(here("/jpeg"), full.names = TRUE)
+jpg.list <- list.files(here("./jpeg"), full.names = TRUE)
 att.data <- read.csv("qdata.csv", header = TRUE, as.is = TRUE)
 
 # attributes to factors
-att.data$heart.out <- as.factor(att.data$heart.out)
 att.data$heart.out <- as.factor(att.data$heart.out)
 att.data$heart.reg <- as.factor(att.data$heart.reg)
 att.data$bev <- as.factor(att.data$bev)
@@ -42,13 +41,6 @@ norm.outlines <- data.out %>%
   coo_rotate() %>% 
   coo_align() %>%
   coo_center()
-```
-
-## Pile
-
-```{r stack.panel, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# outline pile
-pile(norm.outlines)
 ```
 
 ## Calibrate harmonic + EFA
@@ -77,7 +69,7 @@ pca.outlines <- PCA(efa.outlines)
 # pca 
 scree_plot(pca.outlines)
 
-# mean shape + 2sd for the first 10 pcs
+# mean shape + 2sd for the first 5 pcs
 PCcontrib(pca.outlines, 
           nax = 1:5)
 ```
@@ -90,18 +82,6 @@ Hypothesis 1 assesses whether there is a difference in the symmetric shape of Da
 knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
 ```
 
-### Mosaic (H1)
-
-```{r mosaic.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# plot mosaic
-
-# in/out of heartland
-mosaic(norm.outlines, 
-       ~heart.out, 
-       asp = 1, 
-       palette = pal_qual_Dark2)
-```
-
 ### Principal Components Analysis (H1)
 
 ```{r pca.h1,, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
@@ -109,22 +89,26 @@ mosaic(norm.outlines,
 
 # heartland in/out
 plot_PCA(pca.outlines, 
-         morphospace_position = "range", 
-         ~heart.out, zoom = 1.25, 
-         palette = pal_qual_Dark2)
+         morphospace_position = "range",
+         palette = pal_qual_solarized,
+         chullfilled = TRUE,
+         ~heart.out,
+         axesnames = TRUE,
+         morphospace = TRUE,
+         eigen = TRUE,
+         center_origin = TRUE,
+         zoom = 1.25)
 
 # contribution of each pc
 boxplot(pca.outlines, 
         ~heart.out, 
         nax = 1:5, 
-        palette = pal_qual_Dark2)
+        palette = pal_qual_solarized)
 ```
 
 ### MANOVA (H1)
 
 ```{r manova.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# manova + manova_pw
-
 # do shapes differ in/out of heartland?
 MANOVA(pca.outlines, 'heart.out')
 ```
@@ -146,18 +130,6 @@ Hypothesis 2 assesses whether there is a difference in morphology for Dalton poi
 knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
 ```
 
-### Mosaic (H2)
-
-```{r mosaic.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# plot mosaic
-
-# heartland regions (heartland, interior, and northern periphery)
-mosaic(norm.outlines, 
-       ~heart.reg, 
-       asp = 1, 
-       palette = pal_qual_Dark2)
-```
-
 ### Principal Components Analysis (H2)
 
 ```{r pca.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
@@ -165,22 +137,20 @@ mosaic(norm.outlines,
 
 # heartland region
 plot_PCA(pca.outlines, 
-         morphospace_position = "range", 
-         ~heart.reg, zoom = 1.25, 
-         palette = pal_qual_Dark2)
-
-# contribution of each pc
-boxplot(pca.outlines, 
-        ~heart.reg, 
-        nax = 1:5, 
-        palette = pal_qual_Dark2)
+         morphospace_position = "range",
+         palette = pal_qual_solarized,
+         chullfilled = TRUE,
+         ~heart.reg,
+         axesnames = TRUE,
+         morphospace = TRUE,
+         eigen = TRUE,
+         center_origin = TRUE,
+         zoom = 1.25)
 ```
 
 ### MANOVA + MANOVA_PW (H2)
 
 ```{r manova.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# manova_pw
-
 # do shapes differ between heartland regions?
 MANOVA(pca.outlines, 'heart.reg')
 # which?
@@ -204,41 +174,25 @@ Hypothesis 3 assesses whether there is a discernible difference in morphology fo
 knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
 ```
 
-### Mosaic (H3)
-
-```{r mosaic.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# plot mosaic 
-
-# beveled or not
-mosaic(norm.outlines, 
-       ~bev, 
-       asp = 1, 
-       palette = pal_qual_Dark2)
-```
-
 ### Principal Components Analysis (H3)
 
 ```{r pca.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# plot pca
-
 # beveled or not
 plot_PCA(pca.outlines, 
-         morphospace_position = "range", 
-         ~bev, zoom = 1.25, 
-         palette = pal_qual_Dark2)
-
-# contribution of each pc
-boxplot(pca.outlines, 
-        ~bev, 
-        nax = 1:5, 
-        palette = pal_qual_Dark2)
+         morphospace_position = "range",
+         palette = pal_qual_solarized,
+         chullfilled = TRUE,
+         ~bev,
+         axesnames = TRUE,
+         morphospace = TRUE,
+         eigen = TRUE,
+         center_origin = TRUE,
+         zoom = 1.25)
 ```
 
 ### MANOVA (H3)
 
 ```{r manova.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# manova + manova_pw
-
 # do shapes differ if beveled?
 MANOVA(pca.outlines, 'bev')
 ```
@@ -260,39 +214,24 @@ Hypothesis 4 assesses whether there is a discernible difference in the morpholog
 knitr::include_graphics('images/dalton-vizhypothesis4-1.jpg')
 ```
 
-### Mosaic (H4)
-
-```{r mosaic.h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# plot mosaic
-
-# bevel type
-mosaic(norm.outlines, 
-       ~bev.type, 
-       asp = 1, 
-       palette = pal_qual_Dark2)
-```
-
 ### Principal Components Analysis (H4)
 
 ```{r pca.h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# bevel type
 plot_PCA(pca.outlines, 
-         morphospace_position = "range", 
-         ~bev.type, zoom = 1.25, 
-         palette = pal_qual_Dark2)
-
-# contribution of each pc
-boxplot(pca.outlines, 
-        ~bev.type, 
-        nax = 1:5, 
-        palette = pal_qual_Dark2)
+         morphospace_position = "range",
+         palette = pal_qual_solarized,
+         chullfilled = TRUE,
+         ~bev.type,
+         axesnames = TRUE,
+         morphospace = TRUE,
+         eigen = TRUE,
+         center_origin = TRUE,
+         zoom = 1.25)
 ```
 
 ### MANOVA + MANOVA_PW (H4)
 
 ```{r manova, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# manova + manova_pw
-
 # do shapes differ by bevel type?
 MANOVA(pca.outlines, 'bev.type')
 # which?
