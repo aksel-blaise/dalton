@@ -98,12 +98,6 @@ plot_PCA(pca.outlines,
          eigen = TRUE,
          center_origin = TRUE,
          zoom = 1.25)
-
-# contribution of each pc
-boxplot(pca.outlines, 
-        ~heart.out, 
-        nax = 1:5, 
-        palette = pal_qual_solarized)
 ```
 
 ### MANOVA (H1)

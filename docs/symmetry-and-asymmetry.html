@@ -477,34 +477,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="symmetry-and-asymmetry" class="section level1" number="8">
 <h1><span class="header-section-number">Chapter 8</span> Symmetry and Asymmetry</h1>
-<p>In studies of projectile morphology, an analysis of bilateral/object symmetry may yield useful insights related to <em>design intent</em>, provided we assume that the goal of the knapper was to achieve a fully-symmetrical form. Within that framework, deviation from bilateral symmetry (fluctuating asymmetry) might serve as a useful measure of <em>knapper skill</em> and/or <em>differential production</em> . Both measures have utility in comparisons of contexts and sites, to include wide-ranging spatial and temporal applications. Initially developed for a <a href="https://github.com/aksel-blaise/gahagan.asymmetry/blob/master/asymmetry.md">symmetry analysis of Gahagan bifaces</a>, the same approach can be employed for an analysis of asymmetry in Dalton projectile points.</p>
+<p>In studies of projectile morphology, an analysis of bilateral/object symmetry may yield useful insights related to <em>design intent</em>, provided we assume that the goal of the knapper was to achieve a fully-symmetrical form. Within that framework, deviation from bilateral symmetry (fluctuating asymmetry) might serve as a useful measure of <em>knapper skill</em> and/or <em>differential production</em>. Both measures have utility in comparisons of contexts and sites, to include wide-ranging spatial and temporal applications. Initially developed for a <a href="https://github.com/aksel-blaise/gahagan.asymmetry/blob/master/asymmetry.md">symmetry analysis of Gahagan bifaces</a>, the same approach can be employed for an analysis of asymmetry in Dalton projectile points.</p>
 <div id="load-packages-data-5" class="section level2" number="8.1">
 <h2><span class="header-section-number">8.1</span> Load packages + data</h2>
-<div class="sourceCode" id="cb564"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb564-1"><a href="symmetry-and-asymmetry.html#cb564-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
-<span id="cb564-2"><a href="symmetry-and-asymmetry.html#cb564-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb564-3"><a href="symmetry-and-asymmetry.html#cb564-3" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github(&quot;geomorphR/geomorph&quot;, ref = &quot;Stable&quot;, build_vignettes = TRUE)</span></span>
-<span id="cb564-4"><a href="symmetry-and-asymmetry.html#cb564-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb564-5"><a href="symmetry-and-asymmetry.html#cb564-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geomorph)</span>
-<span id="cb564-6"><a href="symmetry-and-asymmetry.html#cb564-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb564-7"><a href="symmetry-and-asymmetry.html#cb564-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wesanderson)</span>
-<span id="cb564-8"><a href="symmetry-and-asymmetry.html#cb564-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb564-9"><a href="symmetry-and-asymmetry.html#cb564-9" aria-hidden="true" tabindex="-1"></a><span class="co"># read GM data</span></span>
-<span id="cb564-10"><a href="symmetry-and-asymmetry.html#cb564-10" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;readmulti.csv.R&#39;</span>)</span>
-<span id="cb564-11"><a href="symmetry-and-asymmetry.html#cb564-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb564-12"><a href="symmetry-and-asymmetry.html#cb564-12" aria-hidden="true" tabindex="-1"></a><span class="co"># read .csv files</span></span>
-<span id="cb564-13"><a href="symmetry-and-asymmetry.html#cb564-13" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;./data&quot;</span>)</span>
-<span id="cb564-14"><a href="symmetry-and-asymmetry.html#cb564-14" aria-hidden="true" tabindex="-1"></a>filelist <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">&quot;.csv&quot;</span>)</span>
-<span id="cb564-15"><a href="symmetry-and-asymmetry.html#cb564-15" aria-hidden="true" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">readmulti.csv</span>(filelist)</span>
-<span id="cb564-16"><a href="symmetry-and-asymmetry.html#cb564-16" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;../&quot;</span>)</span>
-<span id="cb564-17"><a href="symmetry-and-asymmetry.html#cb564-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb564-18"><a href="symmetry-and-asymmetry.html#cb564-18" aria-hidden="true" tabindex="-1"></a><span class="co"># read qualitative data</span></span>
-<span id="cb564-19"><a href="symmetry-and-asymmetry.html#cb564-19" aria-hidden="true" tabindex="-1"></a>qdata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;qdata.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
-<span id="cb564-20"><a href="symmetry-and-asymmetry.html#cb564-20" aria-hidden="true" tabindex="-1"></a>qdata <span class="ot">&lt;-</span> qdata[<span class="fu">match</span>(<span class="fu">dimnames</span>(coords)[[<span class="dv">3</span>]],<span class="fu">rownames</span>(qdata)),]</span>
-<span id="cb564-21"><a href="symmetry-and-asymmetry.html#cb564-21" aria-hidden="true" tabindex="-1"></a>land.pairs<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;asymmetry1.csv&quot;</span>,<span class="at">header=</span><span class="cn">TRUE</span>)</span>
-<span id="cb564-22"><a href="symmetry-and-asymmetry.html#cb564-22" aria-hidden="true" tabindex="-1"></a>ind<span class="ot">&lt;-</span><span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(filelist))</span>
-<span id="cb564-23"><a href="symmetry-and-asymmetry.html#cb564-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb564-24"><a href="symmetry-and-asymmetry.html#cb564-24" aria-hidden="true" tabindex="-1"></a><span class="co"># print qdata</span></span>
-<span id="cb564-25"><a href="symmetry-and-asymmetry.html#cb564-25" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(qdata, <span class="at">align =</span> <span class="st">&quot;cccc&quot;</span>, <span class="at">caption =</span> <span class="st">&quot;Attributes included in qdata.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb563"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb563-1"><a href="symmetry-and-asymmetry.html#cb563-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
+<span id="cb563-2"><a href="symmetry-and-asymmetry.html#cb563-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb563-3"><a href="symmetry-and-asymmetry.html#cb563-3" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github(&quot;geomorphR/geomorph&quot;, ref = &quot;Stable&quot;, build_vignettes = TRUE)</span></span>
+<span id="cb563-4"><a href="symmetry-and-asymmetry.html#cb563-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb563-5"><a href="symmetry-and-asymmetry.html#cb563-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geomorph)</span>
+<span id="cb563-6"><a href="symmetry-and-asymmetry.html#cb563-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb563-7"><a href="symmetry-and-asymmetry.html#cb563-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wesanderson)</span>
+<span id="cb563-8"><a href="symmetry-and-asymmetry.html#cb563-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb563-9"><a href="symmetry-and-asymmetry.html#cb563-9" aria-hidden="true" tabindex="-1"></a><span class="co"># read GM data</span></span>
+<span id="cb563-10"><a href="symmetry-and-asymmetry.html#cb563-10" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;readmulti.csv.R&#39;</span>)</span>
+<span id="cb563-11"><a href="symmetry-and-asymmetry.html#cb563-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb563-12"><a href="symmetry-and-asymmetry.html#cb563-12" aria-hidden="true" tabindex="-1"></a><span class="co"># read .csv files</span></span>
+<span id="cb563-13"><a href="symmetry-and-asymmetry.html#cb563-13" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;./data&quot;</span>)</span>
+<span id="cb563-14"><a href="symmetry-and-asymmetry.html#cb563-14" aria-hidden="true" tabindex="-1"></a>filelist <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">&quot;.csv&quot;</span>)</span>
+<span id="cb563-15"><a href="symmetry-and-asymmetry.html#cb563-15" aria-hidden="true" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">readmulti.csv</span>(filelist)</span>
+<span id="cb563-16"><a href="symmetry-and-asymmetry.html#cb563-16" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;../&quot;</span>)</span>
+<span id="cb563-17"><a href="symmetry-and-asymmetry.html#cb563-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb563-18"><a href="symmetry-and-asymmetry.html#cb563-18" aria-hidden="true" tabindex="-1"></a><span class="co"># read qualitative data</span></span>
+<span id="cb563-19"><a href="symmetry-and-asymmetry.html#cb563-19" aria-hidden="true" tabindex="-1"></a>qdata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;qdata.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb563-20"><a href="symmetry-and-asymmetry.html#cb563-20" aria-hidden="true" tabindex="-1"></a>qdata <span class="ot">&lt;-</span> qdata[<span class="fu">match</span>(<span class="fu">dimnames</span>(coords)[[<span class="dv">3</span>]],<span class="fu">rownames</span>(qdata)),]</span>
+<span id="cb563-21"><a href="symmetry-and-asymmetry.html#cb563-21" aria-hidden="true" tabindex="-1"></a>land.pairs<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;asymmetry1.csv&quot;</span>,<span class="at">header=</span><span class="cn">TRUE</span>)</span>
+<span id="cb563-22"><a href="symmetry-and-asymmetry.html#cb563-22" aria-hidden="true" tabindex="-1"></a>ind<span class="ot">&lt;-</span><span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(filelist))</span>
+<span id="cb563-23"><a href="symmetry-and-asymmetry.html#cb563-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb563-24"><a href="symmetry-and-asymmetry.html#cb563-24" aria-hidden="true" tabindex="-1"></a><span class="co"># print qdata</span></span>
+<span id="cb563-25"><a href="symmetry-and-asymmetry.html#cb563-25" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(qdata, <span class="at">align =</span> <span class="st">&quot;cccc&quot;</span>, <span class="at">caption =</span> <span class="st">&quot;Attributes included in qdata.&quot;</span>)</span></code></pre></div>
 <table>
 <caption>(#tab:load.data.asymm)Attributes included in qdata.</caption>
 <thead>
@@ -816,19 +816,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="generalized-procrustes-analysis-4" class="section level2" number="8.2">
 <h2><span class="header-section-number">8.2</span> Generalized Procrustes Analysis</h2>
-<div class="sourceCode" id="cb565"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb565-1"><a href="symmetry-and-asymmetry.html#cb565-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gpa for bilateral (object) asymmetry</span></span>
-<span id="cb565-2"><a href="symmetry-and-asymmetry.html#cb565-2" aria-hidden="true" tabindex="-1"></a>res.bilat <span class="ot">&lt;-</span> <span class="fu">bilat.symmetry</span>(coords,</span>
-<span id="cb565-3"><a href="symmetry-and-asymmetry.html#cb565-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">ind =</span> ind, </span>
-<span id="cb565-4"><a href="symmetry-and-asymmetry.html#cb565-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">object.sym =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb565-5"><a href="symmetry-and-asymmetry.html#cb565-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">land.pairs =</span> land.pairs,</span>
-<span id="cb565-6"><a href="symmetry-and-asymmetry.html#cb565-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">RRPP =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb565-7"><a href="symmetry-and-asymmetry.html#cb565-7" aria-hidden="true" tabindex="-1"></a>                          <span class="at">iter =</span> <span class="dv">9999</span>,</span>
-<span id="cb565-8"><a href="symmetry-and-asymmetry.html#cb565-8" aria-hidden="true" tabindex="-1"></a>                          <span class="at">print.progress =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb565-9"><a href="symmetry-and-asymmetry.html#cb565-9" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(res.bilat)</span></code></pre></div>
+<div class="sourceCode" id="cb564"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb564-1"><a href="symmetry-and-asymmetry.html#cb564-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gpa for bilateral (object) asymmetry</span></span>
+<span id="cb564-2"><a href="symmetry-and-asymmetry.html#cb564-2" aria-hidden="true" tabindex="-1"></a>res.bilat <span class="ot">&lt;-</span> <span class="fu">bilat.symmetry</span>(coords,</span>
+<span id="cb564-3"><a href="symmetry-and-asymmetry.html#cb564-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">ind =</span> ind, </span>
+<span id="cb564-4"><a href="symmetry-and-asymmetry.html#cb564-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">object.sym =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb564-5"><a href="symmetry-and-asymmetry.html#cb564-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">land.pairs =</span> land.pairs,</span>
+<span id="cb564-6"><a href="symmetry-and-asymmetry.html#cb564-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">RRPP =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb564-7"><a href="symmetry-and-asymmetry.html#cb564-7" aria-hidden="true" tabindex="-1"></a>                          <span class="at">iter =</span> <span class="dv">9999</span>,</span>
+<span id="cb564-8"><a href="symmetry-and-asymmetry.html#cb564-8" aria-hidden="true" tabindex="-1"></a>                          <span class="at">print.progress =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb564-9"><a href="symmetry-and-asymmetry.html#cb564-9" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(res.bilat)</span></code></pre></div>
 <pre><code>## 
 ## Call:
-## bilat.symmetry(A = coords, ind = ind, object.sym = TRUE, land.pairs = land.pairs,  
-##     iter = 9999, RRPP = TRUE, print.progress = FALSE) 
+## bilat.symmetry(A = coords, ind = ind, object.sym = TRUE, land.pairs = land.pairs,      iter = 9999, RRPP = TRUE, print.progress = FALSE) 
+## 
 ## 
 ## 
 ## Symmetry (data) type: Object 
@@ -845,38 +845,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Total    83 1.54576                                            
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb567"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb567-1"><a href="symmetry-and-asymmetry.html#cb567-1" aria-hidden="true" tabindex="-1"></a><span class="co"># symmetric shape</span></span>
-<span id="cb567-2"><a href="symmetry-and-asymmetry.html#cb567-2" aria-hidden="true" tabindex="-1"></a>symm.shape <span class="ot">&lt;-</span> res.bilat<span class="sc">$</span>symm.shape[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span>
-<span id="cb567-3"><a href="symmetry-and-asymmetry.html#cb567-3" aria-hidden="true" tabindex="-1"></a>symm.shape2 <span class="ot">&lt;-</span> res.bilat<span class="sc">$</span>symm.shape[,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>,]</span>
-<span id="cb567-4"><a href="symmetry-and-asymmetry.html#cb567-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb567-5"><a href="symmetry-and-asymmetry.html#cb567-5" aria-hidden="true" tabindex="-1"></a><span class="co"># plot all specimens in 2D</span></span>
-<span id="cb567-6"><a href="symmetry-and-asymmetry.html#cb567-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plotAllSpecimens</span>(symm.shape)</span></code></pre></div>
+<div class="sourceCode" id="cb566"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb566-1"><a href="symmetry-and-asymmetry.html#cb566-1" aria-hidden="true" tabindex="-1"></a><span class="co"># symmetric shape</span></span>
+<span id="cb566-2"><a href="symmetry-and-asymmetry.html#cb566-2" aria-hidden="true" tabindex="-1"></a>symm.shape <span class="ot">&lt;-</span> res.bilat<span class="sc">$</span>symm.shape[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span>
+<span id="cb566-3"><a href="symmetry-and-asymmetry.html#cb566-3" aria-hidden="true" tabindex="-1"></a>symm.shape2 <span class="ot">&lt;-</span> res.bilat<span class="sc">$</span>symm.shape[,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>,]</span>
+<span id="cb566-4"><a href="symmetry-and-asymmetry.html#cb566-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb566-5"><a href="symmetry-and-asymmetry.html#cb566-5" aria-hidden="true" tabindex="-1"></a><span class="co"># plot all specimens in 2D</span></span>
+<span id="cb566-6"><a href="symmetry-and-asymmetry.html#cb566-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plotAllSpecimens</span>(symm.shape)</span></code></pre></div>
 <div class="figure">
 <img src="dalton.supp_files/figure-html/symm.shape-1.png" alt="Symmetric shape component plotted in 2D." width="100%" />
 <p class="caption">
 (#fig:symm.shape-1)Symmetric shape component plotted in 2D.
 </p>
 </div>
-<div class="sourceCode" id="cb568"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb568-1"><a href="symmetry-and-asymmetry.html#cb568-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotAllSpecimens</span>(symm.shape2)</span></code></pre></div>
+<div class="sourceCode" id="cb567"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb567-1"><a href="symmetry-and-asymmetry.html#cb567-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotAllSpecimens</span>(symm.shape2)</span></code></pre></div>
 <div class="figure">
 <img src="dalton.supp_files/figure-html/symm.shape-2.png" alt="Symmetric shape component plotted in 2D." width="100%" />
 <p class="caption">
 (#fig:symm.shape-2)Symmetric shape component plotted in 2D.
 </p>
 </div>
-<div class="sourceCode" id="cb569"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb569-1"><a href="symmetry-and-asymmetry.html#cb569-1" aria-hidden="true" tabindex="-1"></a><span class="co"># asymmetric shape</span></span>
-<span id="cb569-2"><a href="symmetry-and-asymmetry.html#cb569-2" aria-hidden="true" tabindex="-1"></a>asymm.shape <span class="ot">&lt;-</span> res.bilat<span class="sc">$</span>FA.component[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span>
-<span id="cb569-3"><a href="symmetry-and-asymmetry.html#cb569-3" aria-hidden="true" tabindex="-1"></a>asymm.shape2 <span class="ot">&lt;-</span> res.bilat<span class="sc">$</span>FA.component[,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>,]</span>
-<span id="cb569-4"><a href="symmetry-and-asymmetry.html#cb569-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb569-5"><a href="symmetry-and-asymmetry.html#cb569-5" aria-hidden="true" tabindex="-1"></a><span class="co"># plot all specimens in 2D</span></span>
-<span id="cb569-6"><a href="symmetry-and-asymmetry.html#cb569-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plotAllSpecimens</span>(asymm.shape)</span></code></pre></div>
+<div class="sourceCode" id="cb568"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb568-1"><a href="symmetry-and-asymmetry.html#cb568-1" aria-hidden="true" tabindex="-1"></a><span class="co"># asymmetric shape</span></span>
+<span id="cb568-2"><a href="symmetry-and-asymmetry.html#cb568-2" aria-hidden="true" tabindex="-1"></a>asymm.shape <span class="ot">&lt;-</span> res.bilat<span class="sc">$</span>FA.component[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span>
+<span id="cb568-3"><a href="symmetry-and-asymmetry.html#cb568-3" aria-hidden="true" tabindex="-1"></a>asymm.shape2 <span class="ot">&lt;-</span> res.bilat<span class="sc">$</span>FA.component[,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>,]</span>
+<span id="cb568-4"><a href="symmetry-and-asymmetry.html#cb568-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb568-5"><a href="symmetry-and-asymmetry.html#cb568-5" aria-hidden="true" tabindex="-1"></a><span class="co"># plot all specimens in 2D</span></span>
+<span id="cb568-6"><a href="symmetry-and-asymmetry.html#cb568-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plotAllSpecimens</span>(asymm.shape)</span></code></pre></div>
 <div class="figure">
 <img src="dalton.supp_files/figure-html/asymm.shape-1.png" alt="Asymmetric shape component plotted in 2D." width="100%" />
 <p class="caption">
 (#fig:asymm.shape-1)Asymmetric shape component plotted in 2D.
 </p>
 </div>
-<div class="sourceCode" id="cb570"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb570-1"><a href="symmetry-and-asymmetry.html#cb570-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotAllSpecimens</span>(asymm.shape2)</span></code></pre></div>
+<div class="sourceCode" id="cb569"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb569-1"><a href="symmetry-and-asymmetry.html#cb569-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotAllSpecimens</span>(asymm.shape2)</span></code></pre></div>
 <div class="figure">
 <img src="dalton.supp_files/figure-html/asymm.shape-2.png" alt="Asymmetric shape component plotted in 2D." width="100%" />
 <p class="caption">
@@ -886,23 +886,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="principal-components-analysis-5" class="section level2" number="8.3">
 <h2><span class="header-section-number">8.3</span> Principal Components Analysis</h2>
-<div class="sourceCode" id="cb571"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb571-1"><a href="symmetry-and-asymmetry.html#cb571-1" aria-hidden="true" tabindex="-1"></a><span class="co"># geomorph data frame</span></span>
-<span id="cb571-2"><a href="symmetry-and-asymmetry.html#cb571-2" aria-hidden="true" tabindex="-1"></a>gdf <span class="ot">&lt;-</span> <span class="fu">geomorph.data.frame</span>(<span class="at">shape =</span> res.bilat<span class="sc">$</span>symm.shape, </span>
-<span id="cb571-3"><a href="symmetry-and-asymmetry.html#cb571-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">ashape =</span> res.bilat<span class="sc">$</span>FA.component,</span>
-<span id="cb571-4"><a href="symmetry-and-asymmetry.html#cb571-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">heart =</span> qdata<span class="sc">$</span>heart.out, </span>
-<span id="cb571-5"><a href="symmetry-and-asymmetry.html#cb571-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">hreg =</span> qdata<span class="sc">$</span>heart.reg,</span>
-<span id="cb571-6"><a href="symmetry-and-asymmetry.html#cb571-6" aria-hidden="true" tabindex="-1"></a>                           <span class="at">bev.1 =</span> qdata<span class="sc">$</span>bev, </span>
-<span id="cb571-7"><a href="symmetry-and-asymmetry.html#cb571-7" aria-hidden="true" tabindex="-1"></a>                           <span class="at">bev.2 =</span> qdata<span class="sc">$</span>bev.type)</span>
-<span id="cb571-8"><a href="symmetry-and-asymmetry.html#cb571-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb571-9"><a href="symmetry-and-asymmetry.html#cb571-9" aria-hidden="true" tabindex="-1"></a><span class="co"># attributes for boxplot</span></span>
-<span id="cb571-10"><a href="symmetry-and-asymmetry.html#cb571-10" aria-hidden="true" tabindex="-1"></a>heart <span class="ot">&lt;-</span> qdata<span class="sc">$</span>heart.out <span class="co"># heartland in/out</span></span>
-<span id="cb571-11"><a href="symmetry-and-asymmetry.html#cb571-11" aria-hidden="true" tabindex="-1"></a>hreg <span class="ot">&lt;-</span> qdata<span class="sc">$</span>heart.reg <span class="co"># heartland region</span></span>
-<span id="cb571-12"><a href="symmetry-and-asymmetry.html#cb571-12" aria-hidden="true" tabindex="-1"></a>bev<span class="fl">.1</span> <span class="ot">&lt;-</span> qdata<span class="sc">$</span>bev <span class="co"># beveled yes/no</span></span>
-<span id="cb571-13"><a href="symmetry-and-asymmetry.html#cb571-13" aria-hidden="true" tabindex="-1"></a>bev<span class="fl">.2</span> <span class="ot">&lt;-</span> qdata<span class="sc">$</span>bev.type <span class="co"># type of beveling</span></span>
-<span id="cb571-14"><a href="symmetry-and-asymmetry.html#cb571-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb571-15"><a href="symmetry-and-asymmetry.html#cb571-15" aria-hidden="true" tabindex="-1"></a><span class="co"># principal components analysis (symmetric)</span></span>
-<span id="cb571-16"><a href="symmetry-and-asymmetry.html#cb571-16" aria-hidden="true" tabindex="-1"></a>pca <span class="ot">&lt;-</span> <span class="fu">gm.prcomp</span>(res.bilat<span class="sc">$</span>symm.shape)</span>
-<span id="cb571-17"><a href="symmetry-and-asymmetry.html#cb571-17" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pca)</span></code></pre></div>
+<div class="sourceCode" id="cb570"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb570-1"><a href="symmetry-and-asymmetry.html#cb570-1" aria-hidden="true" tabindex="-1"></a><span class="co"># geomorph data frame</span></span>
+<span id="cb570-2"><a href="symmetry-and-asymmetry.html#cb570-2" aria-hidden="true" tabindex="-1"></a>gdf <span class="ot">&lt;-</span> <span class="fu">geomorph.data.frame</span>(<span class="at">shape =</span> res.bilat<span class="sc">$</span>symm.shape, </span>
+<span id="cb570-3"><a href="symmetry-and-asymmetry.html#cb570-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">ashape =</span> res.bilat<span class="sc">$</span>FA.component,</span>
+<span id="cb570-4"><a href="symmetry-and-asymmetry.html#cb570-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">heart =</span> qdata<span class="sc">$</span>heart.out, </span>
+<span id="cb570-5"><a href="symmetry-and-asymmetry.html#cb570-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">hreg =</span> qdata<span class="sc">$</span>heart.reg,</span>
+<span id="cb570-6"><a href="symmetry-and-asymmetry.html#cb570-6" aria-hidden="true" tabindex="-1"></a>                           <span class="at">bev.1 =</span> qdata<span class="sc">$</span>bev, </span>
+<span id="cb570-7"><a href="symmetry-and-asymmetry.html#cb570-7" aria-hidden="true" tabindex="-1"></a>                           <span class="at">bev.2 =</span> qdata<span class="sc">$</span>bev.type)</span>
+<span id="cb570-8"><a href="symmetry-and-asymmetry.html#cb570-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb570-9"><a href="symmetry-and-asymmetry.html#cb570-9" aria-hidden="true" tabindex="-1"></a><span class="co"># attributes for boxplot</span></span>
+<span id="cb570-10"><a href="symmetry-and-asymmetry.html#cb570-10" aria-hidden="true" tabindex="-1"></a>heart <span class="ot">&lt;-</span> qdata<span class="sc">$</span>heart.out <span class="co"># heartland in/out</span></span>
+<span id="cb570-11"><a href="symmetry-and-asymmetry.html#cb570-11" aria-hidden="true" tabindex="-1"></a>hreg <span class="ot">&lt;-</span> qdata<span class="sc">$</span>heart.reg <span class="co"># heartland region</span></span>
+<span id="cb570-12"><a href="symmetry-and-asymmetry.html#cb570-12" aria-hidden="true" tabindex="-1"></a>bev<span class="fl">.1</span> <span class="ot">&lt;-</span> qdata<span class="sc">$</span>bev <span class="co"># beveled yes/no</span></span>
+<span id="cb570-13"><a href="symmetry-and-asymmetry.html#cb570-13" aria-hidden="true" tabindex="-1"></a>bev<span class="fl">.2</span> <span class="ot">&lt;-</span> qdata<span class="sc">$</span>bev.type <span class="co"># type of beveling</span></span>
+<span id="cb570-14"><a href="symmetry-and-asymmetry.html#cb570-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb570-15"><a href="symmetry-and-asymmetry.html#cb570-15" aria-hidden="true" tabindex="-1"></a><span class="co"># principal components analysis (symmetric)</span></span>
+<span id="cb570-16"><a href="symmetry-and-asymmetry.html#cb570-16" aria-hidden="true" tabindex="-1"></a>pca <span class="ot">&lt;-</span> <span class="fu">gm.prcomp</span>(res.bilat<span class="sc">$</span>symm.shape)</span>
+<span id="cb570-17"><a href="symmetry-and-asymmetry.html#cb570-17" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pca)</span></code></pre></div>
 <pre><code>## 
 ## Ordination type: Principal Component Analysis 
 ## Centering by OLS mean
@@ -940,70 +940,66 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">8.4</span> Define models</h2>
 <div id="hypothesis-1-4" class="section level3" number="8.4.1">
 <h3><span class="header-section-number">8.4.1</span> Hypothesis 1</h3>
-<div class="sourceCode" id="cb573"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb573-1"><a href="symmetry-and-asymmetry.html#cb573-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Define models</span></span>
-<span id="cb573-2"><a href="symmetry-and-asymmetry.html#cb573-2" aria-hidden="true" tabindex="-1"></a><span class="co"># symmetric shape as a function of heart</span></span>
-<span id="cb573-3"><a href="symmetry-and-asymmetry.html#cb573-3" aria-hidden="true" tabindex="-1"></a>fit.shape.heart <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> heart, </span>
-<span id="cb573-4"><a href="symmetry-and-asymmetry.html#cb573-4" aria-hidden="true" tabindex="-1"></a>                            <span class="at">data =</span> gdf, </span>
-<span id="cb573-5"><a href="symmetry-and-asymmetry.html#cb573-5" aria-hidden="true" tabindex="-1"></a>                            <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb573-6"><a href="symmetry-and-asymmetry.html#cb573-6" aria-hidden="true" tabindex="-1"></a>                            <span class="at">iter =</span> <span class="dv">9999</span>)</span>
-<span id="cb573-7"><a href="symmetry-and-asymmetry.html#cb573-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb573-8"><a href="symmetry-and-asymmetry.html#cb573-8" aria-hidden="true" tabindex="-1"></a><span class="co"># asymmetric shape as a function of heart</span></span>
-<span id="cb573-9"><a href="symmetry-and-asymmetry.html#cb573-9" aria-hidden="true" tabindex="-1"></a>fit.shape.heart.asymm <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(ashape <span class="sc">~</span> heart, </span>
-<span id="cb573-10"><a href="symmetry-and-asymmetry.html#cb573-10" aria-hidden="true" tabindex="-1"></a>                            <span class="at">data =</span> gdf, </span>
-<span id="cb573-11"><a href="symmetry-and-asymmetry.html#cb573-11" aria-hidden="true" tabindex="-1"></a>                            <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb573-12"><a href="symmetry-and-asymmetry.html#cb573-12" aria-hidden="true" tabindex="-1"></a>                            <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb572"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb572-1"><a href="symmetry-and-asymmetry.html#cb572-1" aria-hidden="true" tabindex="-1"></a><span class="co"># symmetric shape as a function of heart</span></span>
+<span id="cb572-2"><a href="symmetry-and-asymmetry.html#cb572-2" aria-hidden="true" tabindex="-1"></a>fit.shape.heart <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> heart, </span>
+<span id="cb572-3"><a href="symmetry-and-asymmetry.html#cb572-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">data =</span> gdf, </span>
+<span id="cb572-4"><a href="symmetry-and-asymmetry.html#cb572-4" aria-hidden="true" tabindex="-1"></a>                            <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb572-5"><a href="symmetry-and-asymmetry.html#cb572-5" aria-hidden="true" tabindex="-1"></a>                            <span class="at">iter =</span> <span class="dv">9999</span>)</span>
+<span id="cb572-6"><a href="symmetry-and-asymmetry.html#cb572-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb572-7"><a href="symmetry-and-asymmetry.html#cb572-7" aria-hidden="true" tabindex="-1"></a><span class="co"># asymmetric shape as a function of heart</span></span>
+<span id="cb572-8"><a href="symmetry-and-asymmetry.html#cb572-8" aria-hidden="true" tabindex="-1"></a>fit.shape.heart.asymm <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(ashape <span class="sc">~</span> heart, </span>
+<span id="cb572-9"><a href="symmetry-and-asymmetry.html#cb572-9" aria-hidden="true" tabindex="-1"></a>                            <span class="at">data =</span> gdf, </span>
+<span id="cb572-10"><a href="symmetry-and-asymmetry.html#cb572-10" aria-hidden="true" tabindex="-1"></a>                            <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb572-11"><a href="symmetry-and-asymmetry.html#cb572-11" aria-hidden="true" tabindex="-1"></a>                            <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 </div>
 <div id="hypothesis-2-4" class="section level3" number="8.4.2">
 <h3><span class="header-section-number">8.4.2</span> Hypothesis 2</h3>
-<div class="sourceCode" id="cb574"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb574-1"><a href="symmetry-and-asymmetry.html#cb574-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Define models</span></span>
-<span id="cb574-2"><a href="symmetry-and-asymmetry.html#cb574-2" aria-hidden="true" tabindex="-1"></a><span class="co"># symmetric shape as a function of hreg</span></span>
-<span id="cb574-3"><a href="symmetry-and-asymmetry.html#cb574-3" aria-hidden="true" tabindex="-1"></a>fit.shape.hreg <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> hreg, </span>
-<span id="cb574-4"><a href="symmetry-and-asymmetry.html#cb574-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
-<span id="cb574-5"><a href="symmetry-and-asymmetry.html#cb574-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb574-6"><a href="symmetry-and-asymmetry.html#cb574-6" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span>
-<span id="cb574-7"><a href="symmetry-and-asymmetry.html#cb574-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb574-8"><a href="symmetry-and-asymmetry.html#cb574-8" aria-hidden="true" tabindex="-1"></a><span class="co"># asymmetric shape as a function of hreg</span></span>
-<span id="cb574-9"><a href="symmetry-and-asymmetry.html#cb574-9" aria-hidden="true" tabindex="-1"></a>fit.shape.hreg.asymm <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(ashape <span class="sc">~</span> hreg, </span>
-<span id="cb574-10"><a href="symmetry-and-asymmetry.html#cb574-10" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
-<span id="cb574-11"><a href="symmetry-and-asymmetry.html#cb574-11" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb574-12"><a href="symmetry-and-asymmetry.html#cb574-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb573"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb573-1"><a href="symmetry-and-asymmetry.html#cb573-1" aria-hidden="true" tabindex="-1"></a><span class="co"># symmetric shape as a function of hreg</span></span>
+<span id="cb573-2"><a href="symmetry-and-asymmetry.html#cb573-2" aria-hidden="true" tabindex="-1"></a>fit.shape.hreg <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> hreg, </span>
+<span id="cb573-3"><a href="symmetry-and-asymmetry.html#cb573-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
+<span id="cb573-4"><a href="symmetry-and-asymmetry.html#cb573-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb573-5"><a href="symmetry-and-asymmetry.html#cb573-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span>
+<span id="cb573-6"><a href="symmetry-and-asymmetry.html#cb573-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb573-7"><a href="symmetry-and-asymmetry.html#cb573-7" aria-hidden="true" tabindex="-1"></a><span class="co"># asymmetric shape as a function of hreg</span></span>
+<span id="cb573-8"><a href="symmetry-and-asymmetry.html#cb573-8" aria-hidden="true" tabindex="-1"></a>fit.shape.hreg.asymm <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(ashape <span class="sc">~</span> hreg, </span>
+<span id="cb573-9"><a href="symmetry-and-asymmetry.html#cb573-9" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
+<span id="cb573-10"><a href="symmetry-and-asymmetry.html#cb573-10" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb573-11"><a href="symmetry-and-asymmetry.html#cb573-11" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 </div>
 <div id="hypothesis-3-4" class="section level3" number="8.4.3">
 <h3><span class="header-section-number">8.4.3</span> Hypothesis 3</h3>
-<div class="sourceCode" id="cb575"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb575-1"><a href="symmetry-and-asymmetry.html#cb575-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Define models</span></span>
-<span id="cb575-2"><a href="symmetry-and-asymmetry.html#cb575-2" aria-hidden="true" tabindex="-1"></a><span class="co"># symmetric shape as a function of bev.1</span></span>
-<span id="cb575-3"><a href="symmetry-and-asymmetry.html#cb575-3" aria-hidden="true" tabindex="-1"></a>fit.shape.bev<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> bev<span class="fl">.1</span>, </span>
-<span id="cb575-4"><a href="symmetry-and-asymmetry.html#cb575-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
-<span id="cb575-5"><a href="symmetry-and-asymmetry.html#cb575-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb575-6"><a href="symmetry-and-asymmetry.html#cb575-6" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span>
-<span id="cb575-7"><a href="symmetry-and-asymmetry.html#cb575-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb575-8"><a href="symmetry-and-asymmetry.html#cb575-8" aria-hidden="true" tabindex="-1"></a><span class="co"># asymmetric shape as a function of bev.1</span></span>
-<span id="cb575-9"><a href="symmetry-and-asymmetry.html#cb575-9" aria-hidden="true" tabindex="-1"></a>fit.shape.bev.<span class="fl">1.</span>asymm <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(ashape <span class="sc">~</span> bev<span class="fl">.1</span>, </span>
-<span id="cb575-10"><a href="symmetry-and-asymmetry.html#cb575-10" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
-<span id="cb575-11"><a href="symmetry-and-asymmetry.html#cb575-11" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb575-12"><a href="symmetry-and-asymmetry.html#cb575-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb574"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb574-1"><a href="symmetry-and-asymmetry.html#cb574-1" aria-hidden="true" tabindex="-1"></a><span class="co"># symmetric shape as a function of bev.1</span></span>
+<span id="cb574-2"><a href="symmetry-and-asymmetry.html#cb574-2" aria-hidden="true" tabindex="-1"></a>fit.shape.bev<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> bev<span class="fl">.1</span>, </span>
+<span id="cb574-3"><a href="symmetry-and-asymmetry.html#cb574-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
+<span id="cb574-4"><a href="symmetry-and-asymmetry.html#cb574-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb574-5"><a href="symmetry-and-asymmetry.html#cb574-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span>
+<span id="cb574-6"><a href="symmetry-and-asymmetry.html#cb574-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb574-7"><a href="symmetry-and-asymmetry.html#cb574-7" aria-hidden="true" tabindex="-1"></a><span class="co"># asymmetric shape as a function of bev.1</span></span>
+<span id="cb574-8"><a href="symmetry-and-asymmetry.html#cb574-8" aria-hidden="true" tabindex="-1"></a>fit.shape.bev.<span class="fl">1.</span>asymm <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(ashape <span class="sc">~</span> bev<span class="fl">.1</span>, </span>
+<span id="cb574-9"><a href="symmetry-and-asymmetry.html#cb574-9" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
+<span id="cb574-10"><a href="symmetry-and-asymmetry.html#cb574-10" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb574-11"><a href="symmetry-and-asymmetry.html#cb574-11" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 </div>
 <div id="hypothesis-4-4" class="section level3" number="8.4.4">
 <h3><span class="header-section-number">8.4.4</span> Hypothesis 4</h3>
-<div class="sourceCode" id="cb576"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb576-1"><a href="symmetry-and-asymmetry.html#cb576-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Define models</span></span>
-<span id="cb576-2"><a href="symmetry-and-asymmetry.html#cb576-2" aria-hidden="true" tabindex="-1"></a><span class="co"># symmetric shape as a function of bev.2</span></span>
-<span id="cb576-3"><a href="symmetry-and-asymmetry.html#cb576-3" aria-hidden="true" tabindex="-1"></a>fit.shape.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> bev<span class="fl">.2</span>, </span>
-<span id="cb576-4"><a href="symmetry-and-asymmetry.html#cb576-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
-<span id="cb576-5"><a href="symmetry-and-asymmetry.html#cb576-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb576-6"><a href="symmetry-and-asymmetry.html#cb576-6" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span>
-<span id="cb576-7"><a href="symmetry-and-asymmetry.html#cb576-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb576-8"><a href="symmetry-and-asymmetry.html#cb576-8" aria-hidden="true" tabindex="-1"></a><span class="co"># asymmetric shape as a function of bev.2</span></span>
-<span id="cb576-9"><a href="symmetry-and-asymmetry.html#cb576-9" aria-hidden="true" tabindex="-1"></a>fit.shape.bev.<span class="fl">2.</span>asymm <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(ashape <span class="sc">~</span> bev<span class="fl">.2</span>, </span>
-<span id="cb576-10"><a href="symmetry-and-asymmetry.html#cb576-10" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
-<span id="cb576-11"><a href="symmetry-and-asymmetry.html#cb576-11" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb576-12"><a href="symmetry-and-asymmetry.html#cb576-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb575"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb575-1"><a href="symmetry-and-asymmetry.html#cb575-1" aria-hidden="true" tabindex="-1"></a><span class="co"># symmetric shape as a function of bev.2</span></span>
+<span id="cb575-2"><a href="symmetry-and-asymmetry.html#cb575-2" aria-hidden="true" tabindex="-1"></a>fit.shape.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> bev<span class="fl">.2</span>, </span>
+<span id="cb575-3"><a href="symmetry-and-asymmetry.html#cb575-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
+<span id="cb575-4"><a href="symmetry-and-asymmetry.html#cb575-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb575-5"><a href="symmetry-and-asymmetry.html#cb575-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span>
+<span id="cb575-6"><a href="symmetry-and-asymmetry.html#cb575-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb575-7"><a href="symmetry-and-asymmetry.html#cb575-7" aria-hidden="true" tabindex="-1"></a><span class="co"># asymmetric shape as a function of bev.2</span></span>
+<span id="cb575-8"><a href="symmetry-and-asymmetry.html#cb575-8" aria-hidden="true" tabindex="-1"></a>fit.shape.bev.<span class="fl">2.</span>asymm <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(ashape <span class="sc">~</span> bev<span class="fl">.2</span>, </span>
+<span id="cb575-9"><a href="symmetry-and-asymmetry.html#cb575-9" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
+<span id="cb575-10"><a href="symmetry-and-asymmetry.html#cb575-10" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb575-11"><a href="symmetry-and-asymmetry.html#cb575-11" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="test-hypothesis-1-geo-symm" class="section level2" number="8.5">
 <h2><span class="header-section-number">8.5</span> Test Hypothesis 1 (Geo Symm)</h2>
 <p>Hypothesis 1 assesses whether there is a difference in the symmetric shape of Dalton points found in and out of the heartland.</p>
 <p>A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs <span class="citation">(<a href="references-1.html#ref-RN1655" role="doc-biblioref">Adams and Collyer 2015</a>; <a href="references-1.html#ref-RN11775" role="doc-biblioref">Michael L. Collyer and Adams 2018</a>)</span>, which has higher statistical power and a greater ability to identify patterns in the data should they be present <span class="citation">(<a href="references-1.html#ref-RN1719" role="doc-biblioref">Anderson and Ter Braak 2003</a>)</span>. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs <span class="citation">(<a href="references-1.html#ref-RN1749" role="doc-biblioref">Goodall 1991</a>)</span> were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions <span class="citation">(<a href="references-1.html#ref-RN1756" role="doc-biblioref">M. L. Collyer, Sekora, and Adams 2015</a>)</span>.</p>
-<div class="sourceCode" id="cb577"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb577-1"><a href="symmetry-and-asymmetry.html#cb577-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis1.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb576"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb576-1"><a href="symmetry-and-asymmetry.html#cb576-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis1.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis1.jpg" alt="Hypothesis 1 considers whether Dalton points discovered in (left) and out (right) of the Heartland differ in morphology." width="100%" />
 <p class="caption">
@@ -1012,26 +1008,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="principal-components-analysis-h1-5" class="section level3" number="8.5.1">
 <h3><span class="header-section-number">8.5.1</span> Principal Components Analysis (H1)</h3>
-<div class="sourceCode" id="cb578"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb578-1"><a href="symmetry-and-asymmetry.html#cb578-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters to plot by heartland in (H) and out (N)</span></span>
-<span id="cb578-2"><a href="symmetry-and-asymmetry.html#cb578-2" aria-hidden="true" tabindex="-1"></a>pch.gps.heart <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="fu">as.factor</span>(heart)]</span>
-<span id="cb578-3"><a href="symmetry-and-asymmetry.html#cb578-3" aria-hidden="true" tabindex="-1"></a>col.gps.heart <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(heart)]</span>
-<span id="cb578-4"><a href="symmetry-and-asymmetry.html#cb578-4" aria-hidden="true" tabindex="-1"></a>col.hull <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
-<span id="cb578-5"><a href="symmetry-and-asymmetry.html#cb578-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb578-6"><a href="symmetry-and-asymmetry.html#cb578-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by heartland in (H) and out (N)</span></span>
-<span id="cb578-7"><a href="symmetry-and-asymmetry.html#cb578-7" aria-hidden="true" tabindex="-1"></a>pc.plot1 <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
-<span id="cb578-8"><a href="symmetry-and-asymmetry.html#cb578-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb578-9"><a href="symmetry-and-asymmetry.html#cb578-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.heart,</span>
-<span id="cb578-10"><a href="symmetry-and-asymmetry.html#cb578-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.heart)</span>
-<span id="cb578-11"><a href="symmetry-and-asymmetry.html#cb578-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">shapeHulls</span>(pc.plot1, </span>
-<span id="cb578-12"><a href="symmetry-and-asymmetry.html#cb578-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">groups =</span> heart,</span>
-<span id="cb578-13"><a href="symmetry-and-asymmetry.html#cb578-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">group.cols =</span> col.hull)</span></code></pre></div>
+<div class="sourceCode" id="cb577"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb577-1"><a href="symmetry-and-asymmetry.html#cb577-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters to plot by heartland in (H) and out (N)</span></span>
+<span id="cb577-2"><a href="symmetry-and-asymmetry.html#cb577-2" aria-hidden="true" tabindex="-1"></a>pch.gps.heart <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="fu">as.factor</span>(heart)]</span>
+<span id="cb577-3"><a href="symmetry-and-asymmetry.html#cb577-3" aria-hidden="true" tabindex="-1"></a>col.gps.heart <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(heart)]</span>
+<span id="cb577-4"><a href="symmetry-and-asymmetry.html#cb577-4" aria-hidden="true" tabindex="-1"></a>col.hull <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
+<span id="cb577-5"><a href="symmetry-and-asymmetry.html#cb577-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb577-6"><a href="symmetry-and-asymmetry.html#cb577-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by heartland in (H) and out (N)</span></span>
+<span id="cb577-7"><a href="symmetry-and-asymmetry.html#cb577-7" aria-hidden="true" tabindex="-1"></a>pc.plot1 <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
+<span id="cb577-8"><a href="symmetry-and-asymmetry.html#cb577-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb577-9"><a href="symmetry-and-asymmetry.html#cb577-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.heart,</span>
+<span id="cb577-10"><a href="symmetry-and-asymmetry.html#cb577-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.heart)</span>
+<span id="cb577-11"><a href="symmetry-and-asymmetry.html#cb577-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">shapeHulls</span>(pc.plot1, </span>
+<span id="cb577-12"><a href="symmetry-and-asymmetry.html#cb577-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">groups =</span> heart,</span>
+<span id="cb577-13"><a href="symmetry-and-asymmetry.html#cb577-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">group.cols =</span> col.hull)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.symm.1-1.png" width="100%" /></p>
 </div>
 <div id="anova" class="section level3" number="8.5.2">
 <h3><span class="header-section-number">8.5.2</span> ANOVA</h3>
-<div class="sourceCode" id="cb579"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb579-1"><a href="symmetry-and-asymmetry.html#cb579-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: do symmetric dalton projectile point shapes differ by heart?</span></span>
-<span id="cb579-2"><a href="symmetry-and-asymmetry.html#cb579-2" aria-hidden="true" tabindex="-1"></a><span class="do">## (are there differences in design intent?)</span></span>
-<span id="cb579-3"><a href="symmetry-and-asymmetry.html#cb579-3" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.heart)</span></code></pre></div>
+<div class="sourceCode" id="cb578"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb578-1"><a href="symmetry-and-asymmetry.html#cb578-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: do symmetric dalton projectile point shapes differ by heart?</span></span>
+<span id="cb578-2"><a href="symmetry-and-asymmetry.html#cb578-2" aria-hidden="true" tabindex="-1"></a><span class="do">## are there differences in design intent?</span></span>
+<span id="cb578-3"><a href="symmetry-and-asymmetry.html#cb578-3" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.heart)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1051,14 +1047,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="morphological-disparity" class="section level3" number="8.5.3">
 <h3><span class="header-section-number">8.5.3</span> Morphological disparity</h3>
-<div class="sourceCode" id="cb581"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb581-1"><a href="symmetry-and-asymmetry.html#cb581-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: do any of the groups display greater asymmetric </span></span>
-<span id="cb581-2"><a href="symmetry-and-asymmetry.html#cb581-2" aria-hidden="true" tabindex="-1"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
-<span id="cb581-3"><a href="symmetry-and-asymmetry.html#cb581-3" aria-hidden="true" tabindex="-1"></a><span class="do">## (lesser/greater skill?)</span></span>
-<span id="cb581-4"><a href="symmetry-and-asymmetry.html#cb581-4" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(fit.shape.heart.asymm, </span>
-<span id="cb581-5"><a href="symmetry-and-asymmetry.html#cb581-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>heart.out, </span>
-<span id="cb581-6"><a href="symmetry-and-asymmetry.html#cb581-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
-<span id="cb581-7"><a href="symmetry-and-asymmetry.html#cb581-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb581-8"><a href="symmetry-and-asymmetry.html#cb581-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb580"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb580-1"><a href="symmetry-and-asymmetry.html#cb580-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: do any of the groups display greater asymmetric </span></span>
+<span id="cb580-2"><a href="symmetry-and-asymmetry.html#cb580-2" aria-hidden="true" tabindex="-1"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
+<span id="cb580-3"><a href="symmetry-and-asymmetry.html#cb580-3" aria-hidden="true" tabindex="-1"></a><span class="do">## lesser/greater skill?</span></span>
+<span id="cb580-4"><a href="symmetry-and-asymmetry.html#cb580-4" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(fit.shape.heart.asymm, </span>
+<span id="cb580-5"><a href="symmetry-and-asymmetry.html#cb580-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>heart.out, </span>
+<span id="cb580-6"><a href="symmetry-and-asymmetry.html#cb580-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
+<span id="cb580-7"><a href="symmetry-and-asymmetry.html#cb580-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb580-8"><a href="symmetry-and-asymmetry.html#cb580-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## morphol.disparity(f1 = fit.shape.heart.asymm, groups = qdata$heart.out,      iter = 9999, data = gdf, print.progress = FALSE) 
@@ -1089,7 +1085,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">8.6</span> Test Hypothesis 2 (Geo Symm)</h2>
 <p>Hypothesis 2 assesses whether there is a difference in morphology for Dalton points found in the heartland, the interior, and the northern periphery.</p>
 <p>A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs <span class="citation">(<a href="references-1.html#ref-RN1655" role="doc-biblioref">Adams and Collyer 2015</a>; <a href="references-1.html#ref-RN11775" role="doc-biblioref">Michael L. Collyer and Adams 2018</a>)</span>, which has higher statistical power and a greater ability to identify patterns in the data should they be present <span class="citation">(<a href="references-1.html#ref-RN1719" role="doc-biblioref">Anderson and Ter Braak 2003</a>)</span>. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs <span class="citation">(<a href="references-1.html#ref-RN1749" role="doc-biblioref">Goodall 1991</a>)</span> were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions <span class="citation">(<a href="references-1.html#ref-RN1756" role="doc-biblioref">M. L. Collyer, Sekora, and Adams 2015</a>)</span>.</p>
-<div class="sourceCode" id="cb583"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb583-1"><a href="symmetry-and-asymmetry.html#cb583-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis2.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb582"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb582-1"><a href="symmetry-and-asymmetry.html#cb582-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis2.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis2.jpg" alt="Hypothesis 2 considers whether Dalton points discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology." width="100%" />
 <p class="caption">
@@ -1098,26 +1094,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="principal-components-analysis-h2-5" class="section level3" number="8.6.1">
 <h3><span class="header-section-number">8.6.1</span> Principal Components Analysis (H2)</h3>
-<div class="sourceCode" id="cb584"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb584-1"><a href="symmetry-and-asymmetry.html#cb584-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters to plot by heartland + regions </span></span>
-<span id="cb584-2"><a href="symmetry-and-asymmetry.html#cb584-2" aria-hidden="true" tabindex="-1"></a>pch.gps.hreg <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="fu">as.factor</span>(hreg)]</span>
-<span id="cb584-3"><a href="symmetry-and-asymmetry.html#cb584-3" aria-hidden="true" tabindex="-1"></a>col.gps.hreg <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(hreg)]</span>
-<span id="cb584-4"><a href="symmetry-and-asymmetry.html#cb584-4" aria-hidden="true" tabindex="-1"></a>col.hull<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
-<span id="cb584-5"><a href="symmetry-and-asymmetry.html#cb584-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb584-6"><a href="symmetry-and-asymmetry.html#cb584-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by heartland + regions (symmetric)</span></span>
-<span id="cb584-7"><a href="symmetry-and-asymmetry.html#cb584-7" aria-hidden="true" tabindex="-1"></a>pc.plot<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
-<span id="cb584-8"><a href="symmetry-and-asymmetry.html#cb584-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb584-9"><a href="symmetry-and-asymmetry.html#cb584-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.hreg,</span>
-<span id="cb584-10"><a href="symmetry-and-asymmetry.html#cb584-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.hreg)</span>
-<span id="cb584-11"><a href="symmetry-and-asymmetry.html#cb584-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">shapeHulls</span>(pc.plot<span class="fl">.2</span>, </span>
-<span id="cb584-12"><a href="symmetry-and-asymmetry.html#cb584-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">groups =</span> hreg,</span>
-<span id="cb584-13"><a href="symmetry-and-asymmetry.html#cb584-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">group.cols =</span> col.hull<span class="fl">.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb583"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb583-1"><a href="symmetry-and-asymmetry.html#cb583-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters to plot by heartland + regions </span></span>
+<span id="cb583-2"><a href="symmetry-and-asymmetry.html#cb583-2" aria-hidden="true" tabindex="-1"></a>pch.gps.hreg <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="fu">as.factor</span>(hreg)]</span>
+<span id="cb583-3"><a href="symmetry-and-asymmetry.html#cb583-3" aria-hidden="true" tabindex="-1"></a>col.gps.hreg <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(hreg)]</span>
+<span id="cb583-4"><a href="symmetry-and-asymmetry.html#cb583-4" aria-hidden="true" tabindex="-1"></a>col.hull<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
+<span id="cb583-5"><a href="symmetry-and-asymmetry.html#cb583-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb583-6"><a href="symmetry-and-asymmetry.html#cb583-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by heartland + regions (symmetric)</span></span>
+<span id="cb583-7"><a href="symmetry-and-asymmetry.html#cb583-7" aria-hidden="true" tabindex="-1"></a>pc.plot<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
+<span id="cb583-8"><a href="symmetry-and-asymmetry.html#cb583-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb583-9"><a href="symmetry-and-asymmetry.html#cb583-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.hreg,</span>
+<span id="cb583-10"><a href="symmetry-and-asymmetry.html#cb583-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.hreg)</span>
+<span id="cb583-11"><a href="symmetry-and-asymmetry.html#cb583-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">shapeHulls</span>(pc.plot<span class="fl">.2</span>, </span>
+<span id="cb583-12"><a href="symmetry-and-asymmetry.html#cb583-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">groups =</span> hreg,</span>
+<span id="cb583-13"><a href="symmetry-and-asymmetry.html#cb583-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">group.cols =</span> col.hull<span class="fl">.2</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.symm.2-1.png" width="100%" /></p>
 </div>
 <div id="anova-1" class="section level3" number="8.6.2">
 <h3><span class="header-section-number">8.6.2</span> ANOVA</h3>
-<div class="sourceCode" id="cb585"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb585-1"><a href="symmetry-and-asymmetry.html#cb585-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: does symmetric dalton projectile point shape differ by hreg?</span></span>
-<span id="cb585-2"><a href="symmetry-and-asymmetry.html#cb585-2" aria-hidden="true" tabindex="-1"></a><span class="do">## (are there differences in design intent?)</span></span>
-<span id="cb585-3"><a href="symmetry-and-asymmetry.html#cb585-3" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.hreg)</span></code></pre></div>
+<div class="sourceCode" id="cb584"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb584-1"><a href="symmetry-and-asymmetry.html#cb584-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: does symmetric dalton projectile point shape differ by hreg?</span></span>
+<span id="cb584-2"><a href="symmetry-and-asymmetry.html#cb584-2" aria-hidden="true" tabindex="-1"></a><span class="do">## are there differences in design intent?</span></span>
+<span id="cb584-3"><a href="symmetry-and-asymmetry.html#cb584-3" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.hreg)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1134,12 +1130,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = shape ~ hreg, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb587"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb587-1"><a href="symmetry-and-asymmetry.html#cb587-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
-<span id="cb587-2"><a href="symmetry-and-asymmetry.html#cb587-2" aria-hidden="true" tabindex="-1"></a>sh.hreg <span class="ot">&lt;-</span> <span class="fu">pairwise</span>(fit.shape.hreg, </span>
-<span id="cb587-3"><a href="symmetry-and-asymmetry.html#cb587-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">groups =</span> qdata<span class="sc">$</span>heart.reg)</span>
-<span id="cb587-4"><a href="symmetry-and-asymmetry.html#cb587-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sh.hreg, </span>
-<span id="cb587-5"><a href="symmetry-and-asymmetry.html#cb587-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb587-6"><a href="symmetry-and-asymmetry.html#cb587-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb586"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb586-1"><a href="symmetry-and-asymmetry.html#cb586-1" aria-hidden="true" tabindex="-1"></a><span class="do">## pairwise comparison of LS means = which differ?</span></span>
+<span id="cb586-2"><a href="symmetry-and-asymmetry.html#cb586-2" aria-hidden="true" tabindex="-1"></a>sh.hreg <span class="ot">&lt;-</span> <span class="fu">pairwise</span>(fit.shape.hreg, </span>
+<span id="cb586-3"><a href="symmetry-and-asymmetry.html#cb586-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">groups =</span> qdata<span class="sc">$</span>heart.reg)</span>
+<span id="cb586-4"><a href="symmetry-and-asymmetry.html#cb586-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sh.hreg, </span>
+<span id="cb586-5"><a href="symmetry-and-asymmetry.html#cb586-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb586-6"><a href="symmetry-and-asymmetry.html#cb586-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -1158,14 +1154,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="morphological-disparity-1" class="section level3" number="8.6.3">
 <h3><span class="header-section-number">8.6.3</span> Morphological disparity</h3>
-<div class="sourceCode" id="cb589"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb589-1"><a href="symmetry-and-asymmetry.html#cb589-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: do any of the groups display greater asymmetric </span></span>
-<span id="cb589-2"><a href="symmetry-and-asymmetry.html#cb589-2" aria-hidden="true" tabindex="-1"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
-<span id="cb589-3"><a href="symmetry-and-asymmetry.html#cb589-3" aria-hidden="true" tabindex="-1"></a><span class="do">## (lesser/greater skill?)</span></span>
-<span id="cb589-4"><a href="symmetry-and-asymmetry.html#cb589-4" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(fit.shape.hreg.asymm, </span>
-<span id="cb589-5"><a href="symmetry-and-asymmetry.html#cb589-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>heart.reg, </span>
-<span id="cb589-6"><a href="symmetry-and-asymmetry.html#cb589-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
-<span id="cb589-7"><a href="symmetry-and-asymmetry.html#cb589-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb589-8"><a href="symmetry-and-asymmetry.html#cb589-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb588"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb588-1"><a href="symmetry-and-asymmetry.html#cb588-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: do any of the groups display greater asymmetric </span></span>
+<span id="cb588-2"><a href="symmetry-and-asymmetry.html#cb588-2" aria-hidden="true" tabindex="-1"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
+<span id="cb588-3"><a href="symmetry-and-asymmetry.html#cb588-3" aria-hidden="true" tabindex="-1"></a><span class="do">## lesser/greater skill?</span></span>
+<span id="cb588-4"><a href="symmetry-and-asymmetry.html#cb588-4" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(fit.shape.hreg.asymm, </span>
+<span id="cb588-5"><a href="symmetry-and-asymmetry.html#cb588-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>heart.reg, </span>
+<span id="cb588-6"><a href="symmetry-and-asymmetry.html#cb588-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
+<span id="cb588-7"><a href="symmetry-and-asymmetry.html#cb588-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb588-8"><a href="symmetry-and-asymmetry.html#cb588-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## morphol.disparity(f1 = fit.shape.hreg.asymm, groups = qdata$heart.reg,      iter = 9999, data = gdf, print.progress = FALSE) 
@@ -1198,7 +1194,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">8.7</span> Test Hypothesis 3 (Techno Symm)</h2>
 <p>Hypothesis 3 assesses whether there is a discernible difference in morphology for Dalton points that are beveled.</p>
 <p>A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs <span class="citation">(<a href="references-1.html#ref-RN1655" role="doc-biblioref">Adams and Collyer 2015</a>; <a href="references-1.html#ref-RN11775" role="doc-biblioref">Michael L. Collyer and Adams 2018</a>)</span>, which has higher statistical power and a greater ability to identify patterns in the data should they be present <span class="citation">(<a href="references-1.html#ref-RN1719" role="doc-biblioref">Anderson and Ter Braak 2003</a>)</span>. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs <span class="citation">(<a href="references-1.html#ref-RN1749" role="doc-biblioref">Goodall 1991</a>)</span> were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions <span class="citation">(<a href="references-1.html#ref-RN1756" role="doc-biblioref">M. L. Collyer, Sekora, and Adams 2015</a>)</span>.</p>
-<div class="sourceCode" id="cb591"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb591-1"><a href="symmetry-and-asymmetry.html#cb591-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis3.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb590"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb590-1"><a href="symmetry-and-asymmetry.html#cb590-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis3.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis3.jpg" alt="Hypothesis 3 considers whether beveled Dalton points (left) differ in morphology from those that are not beveled (right)." width="100%" />
 <p class="caption">
@@ -1207,26 +1203,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="principal-components-analysis-h3-5" class="section level3" number="8.7.1">
 <h3><span class="header-section-number">8.7.1</span> Principal Components Analysis (H3)</h3>
-<div class="sourceCode" id="cb592"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb592-1"><a href="symmetry-and-asymmetry.html#cb592-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters to plot by beveled y and n</span></span>
-<span id="cb592-2"><a href="symmetry-and-asymmetry.html#cb592-2" aria-hidden="true" tabindex="-1"></a>pch.gps.bev<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="fu">as.factor</span>(bev<span class="fl">.1</span>)]</span>
-<span id="cb592-3"><a href="symmetry-and-asymmetry.html#cb592-3" aria-hidden="true" tabindex="-1"></a>col.gps.bev<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(bev<span class="fl">.1</span>)]</span>
-<span id="cb592-4"><a href="symmetry-and-asymmetry.html#cb592-4" aria-hidden="true" tabindex="-1"></a>col.hull<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
-<span id="cb592-5"><a href="symmetry-and-asymmetry.html#cb592-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb592-6"><a href="symmetry-and-asymmetry.html#cb592-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by heartland in (H) and out (N) (symmetric)</span></span>
-<span id="cb592-7"><a href="symmetry-and-asymmetry.html#cb592-7" aria-hidden="true" tabindex="-1"></a>pc.plot3 <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
-<span id="cb592-8"><a href="symmetry-and-asymmetry.html#cb592-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb592-9"><a href="symmetry-and-asymmetry.html#cb592-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.bev<span class="fl">.1</span>,</span>
-<span id="cb592-10"><a href="symmetry-and-asymmetry.html#cb592-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.bev<span class="fl">.1</span>)</span>
-<span id="cb592-11"><a href="symmetry-and-asymmetry.html#cb592-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">shapeHulls</span>(pc.plot3, </span>
-<span id="cb592-12"><a href="symmetry-and-asymmetry.html#cb592-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">groups =</span> bev<span class="fl">.1</span>,</span>
-<span id="cb592-13"><a href="symmetry-and-asymmetry.html#cb592-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">group.cols =</span> col.hull<span class="fl">.3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb591"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb591-1"><a href="symmetry-and-asymmetry.html#cb591-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters to plot by beveled y and n</span></span>
+<span id="cb591-2"><a href="symmetry-and-asymmetry.html#cb591-2" aria-hidden="true" tabindex="-1"></a>pch.gps.bev<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="fu">as.factor</span>(bev<span class="fl">.1</span>)]</span>
+<span id="cb591-3"><a href="symmetry-and-asymmetry.html#cb591-3" aria-hidden="true" tabindex="-1"></a>col.gps.bev<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(bev<span class="fl">.1</span>)]</span>
+<span id="cb591-4"><a href="symmetry-and-asymmetry.html#cb591-4" aria-hidden="true" tabindex="-1"></a>col.hull<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
+<span id="cb591-5"><a href="symmetry-and-asymmetry.html#cb591-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb591-6"><a href="symmetry-and-asymmetry.html#cb591-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by heartland in (H) and out (N) (symmetric)</span></span>
+<span id="cb591-7"><a href="symmetry-and-asymmetry.html#cb591-7" aria-hidden="true" tabindex="-1"></a>pc.plot3 <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
+<span id="cb591-8"><a href="symmetry-and-asymmetry.html#cb591-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb591-9"><a href="symmetry-and-asymmetry.html#cb591-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.bev<span class="fl">.1</span>,</span>
+<span id="cb591-10"><a href="symmetry-and-asymmetry.html#cb591-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.bev<span class="fl">.1</span>)</span>
+<span id="cb591-11"><a href="symmetry-and-asymmetry.html#cb591-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">shapeHulls</span>(pc.plot3, </span>
+<span id="cb591-12"><a href="symmetry-and-asymmetry.html#cb591-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">groups =</span> bev<span class="fl">.1</span>,</span>
+<span id="cb591-13"><a href="symmetry-and-asymmetry.html#cb591-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">group.cols =</span> col.hull<span class="fl">.3</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.symm.3-1.png" width="100%" /></p>
 </div>
 <div id="anova-2" class="section level3" number="8.7.2">
 <h3><span class="header-section-number">8.7.2</span> ANOVA</h3>
-<div class="sourceCode" id="cb593"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb593-1"><a href="symmetry-and-asymmetry.html#cb593-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: do symmetric dalton projectile point shapes differ by beveling?</span></span>
-<span id="cb593-2"><a href="symmetry-and-asymmetry.html#cb593-2" aria-hidden="true" tabindex="-1"></a><span class="do">## (are there differences in design intent?)</span></span>
-<span id="cb593-3"><a href="symmetry-and-asymmetry.html#cb593-3" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.bev<span class="fl">.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb592"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb592-1"><a href="symmetry-and-asymmetry.html#cb592-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: do symmetric dalton projectile point shapes differ by beveling?</span></span>
+<span id="cb592-2"><a href="symmetry-and-asymmetry.html#cb592-2" aria-hidden="true" tabindex="-1"></a><span class="do">## are there differences in design intent?</span></span>
+<span id="cb592-3"><a href="symmetry-and-asymmetry.html#cb592-3" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.bev<span class="fl">.1</span>)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1246,14 +1242,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="morphological-disparity-2" class="section level3" number="8.7.3">
 <h3><span class="header-section-number">8.7.3</span> Morphological disparity</h3>
-<div class="sourceCode" id="cb595"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb595-1"><a href="symmetry-and-asymmetry.html#cb595-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: do any of the groups display greater asymmetric </span></span>
-<span id="cb595-2"><a href="symmetry-and-asymmetry.html#cb595-2" aria-hidden="true" tabindex="-1"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
-<span id="cb595-3"><a href="symmetry-and-asymmetry.html#cb595-3" aria-hidden="true" tabindex="-1"></a><span class="do">## (lesser/greater skill?)</span></span>
-<span id="cb595-4"><a href="symmetry-and-asymmetry.html#cb595-4" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(fit.shape.bev.<span class="fl">1.</span>asymm, </span>
-<span id="cb595-5"><a href="symmetry-and-asymmetry.html#cb595-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>bev, </span>
-<span id="cb595-6"><a href="symmetry-and-asymmetry.html#cb595-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
-<span id="cb595-7"><a href="symmetry-and-asymmetry.html#cb595-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb595-8"><a href="symmetry-and-asymmetry.html#cb595-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb594"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb594-1"><a href="symmetry-and-asymmetry.html#cb594-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: do any of the groups display greater asymmetric </span></span>
+<span id="cb594-2"><a href="symmetry-and-asymmetry.html#cb594-2" aria-hidden="true" tabindex="-1"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
+<span id="cb594-3"><a href="symmetry-and-asymmetry.html#cb594-3" aria-hidden="true" tabindex="-1"></a><span class="do">## lesser/greater skill?</span></span>
+<span id="cb594-4"><a href="symmetry-and-asymmetry.html#cb594-4" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(fit.shape.bev.<span class="fl">1.</span>asymm, </span>
+<span id="cb594-5"><a href="symmetry-and-asymmetry.html#cb594-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>bev, </span>
+<span id="cb594-6"><a href="symmetry-and-asymmetry.html#cb594-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
+<span id="cb594-7"><a href="symmetry-and-asymmetry.html#cb594-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb594-8"><a href="symmetry-and-asymmetry.html#cb594-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## morphol.disparity(f1 = fit.shape.bev.1.asymm, groups = qdata$bev,      iter = 9999, data = gdf, print.progress = FALSE) 
@@ -1284,7 +1280,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">8.8</span> Test Hypothesis 4 (Techno Symm)</h2>
 <p>Hypothesis 4 assesses whether there is a discernible difference in the morphology of specific beveling types associated with Dalton points.</p>
 <p>A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs <span class="citation">(<a href="references-1.html#ref-RN1655" role="doc-biblioref">Adams and Collyer 2015</a>; <a href="references-1.html#ref-RN11775" role="doc-biblioref">Michael L. Collyer and Adams 2018</a>)</span>, which has higher statistical power and a greater ability to identify patterns in the data should they be present <span class="citation">(<a href="references-1.html#ref-RN1719" role="doc-biblioref">Anderson and Ter Braak 2003</a>)</span>. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs <span class="citation">(<a href="references-1.html#ref-RN1749" role="doc-biblioref">Goodall 1991</a>)</span> were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions <span class="citation">(<a href="references-1.html#ref-RN1756" role="doc-biblioref">M. L. Collyer, Sekora, and Adams 2015</a>)</span>.</p>
-<div class="sourceCode" id="cb597"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb597-1"><a href="symmetry-and-asymmetry.html#cb597-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis4-1.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb596"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb596-1"><a href="symmetry-and-asymmetry.html#cb596-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis4-1.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis4-1.jpg" alt="Hypothesis 4 considers whether discrete beveling practices articulate with differences in the morphology of Dalton points" width="100%" />
 <p class="caption">
@@ -1293,26 +1289,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="principal-components-analysis-h4-5" class="section level3" number="8.8.1">
 <h3><span class="header-section-number">8.8.1</span> Principal Components Analysis (H4)</h3>
-<div class="sourceCode" id="cb598"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb598-1"><a href="symmetry-and-asymmetry.html#cb598-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters to plot by bevel type</span></span>
-<span id="cb598-2"><a href="symmetry-and-asymmetry.html#cb598-2" aria-hidden="true" tabindex="-1"></a>pch.gps.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="fu">as.factor</span>(bev<span class="fl">.2</span>)]</span>
-<span id="cb598-3"><a href="symmetry-and-asymmetry.html#cb598-3" aria-hidden="true" tabindex="-1"></a>col.gps.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(bev<span class="fl">.2</span>)]</span>
-<span id="cb598-4"><a href="symmetry-and-asymmetry.html#cb598-4" aria-hidden="true" tabindex="-1"></a>col.hull<span class="fl">.4</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
-<span id="cb598-5"><a href="symmetry-and-asymmetry.html#cb598-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb598-6"><a href="symmetry-and-asymmetry.html#cb598-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by bevel type (symmetric)</span></span>
-<span id="cb598-7"><a href="symmetry-and-asymmetry.html#cb598-7" aria-hidden="true" tabindex="-1"></a>pc.plot4 <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
-<span id="cb598-8"><a href="symmetry-and-asymmetry.html#cb598-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb598-9"><a href="symmetry-and-asymmetry.html#cb598-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.bev<span class="fl">.2</span>,</span>
-<span id="cb598-10"><a href="symmetry-and-asymmetry.html#cb598-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.bev<span class="fl">.2</span>)</span>
-<span id="cb598-11"><a href="symmetry-and-asymmetry.html#cb598-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">shapeHulls</span>(pc.plot4, </span>
-<span id="cb598-12"><a href="symmetry-and-asymmetry.html#cb598-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">groups =</span> bev<span class="fl">.2</span>,</span>
-<span id="cb598-13"><a href="symmetry-and-asymmetry.html#cb598-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">group.cols =</span> col.hull<span class="fl">.4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb597"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb597-1"><a href="symmetry-and-asymmetry.html#cb597-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters to plot by bevel type</span></span>
+<span id="cb597-2"><a href="symmetry-and-asymmetry.html#cb597-2" aria-hidden="true" tabindex="-1"></a>pch.gps.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="fu">as.factor</span>(bev<span class="fl">.2</span>)]</span>
+<span id="cb597-3"><a href="symmetry-and-asymmetry.html#cb597-3" aria-hidden="true" tabindex="-1"></a>col.gps.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(bev<span class="fl">.2</span>)]</span>
+<span id="cb597-4"><a href="symmetry-and-asymmetry.html#cb597-4" aria-hidden="true" tabindex="-1"></a>col.hull<span class="fl">.4</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
+<span id="cb597-5"><a href="symmetry-and-asymmetry.html#cb597-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb597-6"><a href="symmetry-and-asymmetry.html#cb597-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by bevel type (symmetric)</span></span>
+<span id="cb597-7"><a href="symmetry-and-asymmetry.html#cb597-7" aria-hidden="true" tabindex="-1"></a>pc.plot4 <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
+<span id="cb597-8"><a href="symmetry-and-asymmetry.html#cb597-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb597-9"><a href="symmetry-and-asymmetry.html#cb597-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.bev<span class="fl">.2</span>,</span>
+<span id="cb597-10"><a href="symmetry-and-asymmetry.html#cb597-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.bev<span class="fl">.2</span>)</span>
+<span id="cb597-11"><a href="symmetry-and-asymmetry.html#cb597-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">shapeHulls</span>(pc.plot4, </span>
+<span id="cb597-12"><a href="symmetry-and-asymmetry.html#cb597-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">groups =</span> bev<span class="fl">.2</span>,</span>
+<span id="cb597-13"><a href="symmetry-and-asymmetry.html#cb597-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">group.cols =</span> col.hull<span class="fl">.4</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca.symm4-1.png" width="100%" /></p>
 </div>
 <div id="anova-3" class="section level3" number="8.8.2">
 <h3><span class="header-section-number">8.8.2</span> ANOVA</h3>
-<div class="sourceCode" id="cb599"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb599-1"><a href="symmetry-and-asymmetry.html#cb599-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: does symmetric dalton projectile point shape differ by bev.2?</span></span>
-<span id="cb599-2"><a href="symmetry-and-asymmetry.html#cb599-2" aria-hidden="true" tabindex="-1"></a><span class="do">## are there differences in design intent?</span></span>
-<span id="cb599-3"><a href="symmetry-and-asymmetry.html#cb599-3" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.bev<span class="fl">.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb598"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb598-1"><a href="symmetry-and-asymmetry.html#cb598-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: does symmetric dalton projectile point shape differ by bev.2?</span></span>
+<span id="cb598-2"><a href="symmetry-and-asymmetry.html#cb598-2" aria-hidden="true" tabindex="-1"></a><span class="do">## are there differences in design intent?</span></span>
+<span id="cb598-3"><a href="symmetry-and-asymmetry.html#cb598-3" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.bev<span class="fl">.2</span>)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1329,12 +1325,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = shape ~ bev.2, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb601"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb601-1"><a href="symmetry-and-asymmetry.html#cb601-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
-<span id="cb601-2"><a href="symmetry-and-asymmetry.html#cb601-2" aria-hidden="true" tabindex="-1"></a>sh.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">pairwise</span>(fit.shape.bev<span class="fl">.2</span>, </span>
-<span id="cb601-3"><a href="symmetry-and-asymmetry.html#cb601-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">groups =</span> qdata<span class="sc">$</span>bev.type)</span>
-<span id="cb601-4"><a href="symmetry-and-asymmetry.html#cb601-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sh.bev<span class="fl">.2</span>, </span>
-<span id="cb601-5"><a href="symmetry-and-asymmetry.html#cb601-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb601-6"><a href="symmetry-and-asymmetry.html#cb601-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb600"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb600-1"><a href="symmetry-and-asymmetry.html#cb600-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
+<span id="cb600-2"><a href="symmetry-and-asymmetry.html#cb600-2" aria-hidden="true" tabindex="-1"></a>sh.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">pairwise</span>(fit.shape.bev<span class="fl">.2</span>, </span>
+<span id="cb600-3"><a href="symmetry-and-asymmetry.html#cb600-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">groups =</span> qdata<span class="sc">$</span>bev.type)</span>
+<span id="cb600-4"><a href="symmetry-and-asymmetry.html#cb600-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sh.bev<span class="fl">.2</span>, </span>
+<span id="cb600-5"><a href="symmetry-and-asymmetry.html#cb600-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb600-6"><a href="symmetry-and-asymmetry.html#cb600-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -1353,14 +1349,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="morphological-disparity-3" class="section level3" number="8.8.3">
 <h3><span class="header-section-number">8.8.3</span> Morphological disparity</h3>
-<div class="sourceCode" id="cb603"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb603-1"><a href="symmetry-and-asymmetry.html#cb603-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: do any of the groups display greater asymmetric </span></span>
-<span id="cb603-2"><a href="symmetry-and-asymmetry.html#cb603-2" aria-hidden="true" tabindex="-1"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
-<span id="cb603-3"><a href="symmetry-and-asymmetry.html#cb603-3" aria-hidden="true" tabindex="-1"></a><span class="do">## lesser/greater skill?</span></span>
-<span id="cb603-4"><a href="symmetry-and-asymmetry.html#cb603-4" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(fit.shape.bev.<span class="fl">2.</span>asymm, </span>
-<span id="cb603-5"><a href="symmetry-and-asymmetry.html#cb603-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>bev.type, </span>
-<span id="cb603-6"><a href="symmetry-and-asymmetry.html#cb603-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
-<span id="cb603-7"><a href="symmetry-and-asymmetry.html#cb603-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb603-8"><a href="symmetry-and-asymmetry.html#cb603-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb602"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb602-1"><a href="symmetry-and-asymmetry.html#cb602-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: do any of the groups display greater asymmetric </span></span>
+<span id="cb602-2"><a href="symmetry-and-asymmetry.html#cb602-2" aria-hidden="true" tabindex="-1"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
+<span id="cb602-3"><a href="symmetry-and-asymmetry.html#cb602-3" aria-hidden="true" tabindex="-1"></a><span class="do">## lesser/greater skill?</span></span>
+<span id="cb602-4"><a href="symmetry-and-asymmetry.html#cb602-4" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(fit.shape.bev.<span class="fl">2.</span>asymm, </span>
+<span id="cb602-5"><a href="symmetry-and-asymmetry.html#cb602-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>bev.type, </span>
+<span id="cb602-6"><a href="symmetry-and-asymmetry.html#cb602-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
+<span id="cb602-7"><a href="symmetry-and-asymmetry.html#cb602-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb602-8"><a href="symmetry-and-asymmetry.html#cb602-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## morphol.disparity(f1 = fit.shape.bev.2.asymm, groups = qdata$bev.type,      iter = 9999, data = gdf, print.progress = FALSE) 
@@ -1387,7 +1383,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## alternate               1.0000   0.5735               0.1473
 ## no.bevel                0.5735   1.0000               0.0835
 ## unifacial.bimarginal    0.1473   0.0835               1.0000</code></pre>
-<div class="sourceCode" id="cb605"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb605-1"><a href="symmetry-and-asymmetry.html#cb605-1" aria-hidden="true" tabindex="-1"></a><span class="co"># end of code</span></span></code></pre></div>
+<div class="sourceCode" id="cb604"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb604-1"><a href="symmetry-and-asymmetry.html#cb604-1" aria-hidden="true" tabindex="-1"></a><span class="co"># end of code</span></span></code></pre></div>
 
 </div>
 </div>
