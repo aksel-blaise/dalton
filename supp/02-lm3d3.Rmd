@@ -1,13 +1,13 @@
 # Landmarking Protocol 3d3
 
-The results of the elliptical Fourier analysis (EFA) provided useful insights that aided in developing the 3D landmarking protocol used in this study.
+The results of an exploratory elliptical Fourier analysis (EFA) provided useful insights that aided in developing the 3D landmarking protocol used in this study.
 
 1. For the in/out of Heartland hypothesis, there is a significant difference in plan view shape that is driven by the lateral edges along the left/right sides of the biface. This suggests that two of the equidistant semilandmarks employed in the landmarking configuration (sLMs 12 and 13) may not be necessary if the driver of the morphological difference that occurs in/out of the Heartland rests along the lateral edge (see section 1.7 in the previous chapter).
 2. For the Heartland regions (hreg) hypothesis, the lateral edges along the left/right sides of the biface appear to drive the morphological differences once more. In one case (Heartland vs. Northern Periphery), the difference is significant, and driven by one side of the base, but primarily by the left/right lateral edges. The only other significant difference is between the Heartland vs. Interior, with the heartland being represented by lateral edges that are generally narrower than those of the interior. The Interior vs. Northern Periphery does not differ significantly; however, the mean shapes indicate that it is basal---not blade---morphology that may differentiate those populations. This outcome also suggests that sLMs 12 and 13 may not be warranted
 3. The comparison of beveled vs. not beveled bifaces yielded a significant difference, which is driven (once more) by the left/right lateral edges, and not the distal end of the base. This suggests, once more, that sLMs 12 and 13 are not needed for the analysis.
 4. The only significant difference between the bevel types was the comparison of alternate vs. no beveling. Mean shapes indicate that this difference is driven by the left/right lateral edges, and not by the morphology of the distal portion of the base. The mean shapes for unifacial bimarginal vs. no beveling are surprisingly similar in plan view, and the difference between alternate vs. unifacial bimarginal is driven---once more---by left/right lateral edges from the base to the tip of the point, and not the distal end of the base.
 
-Of those landmark and semilandmark configurations included in the draft sketches for this project, it is sLMs 12 and 13 that appear to contribute least to the formal tests of those hypotheses tested using EFA. They are, however, still included in the 3D landmarking protocol since the z-axis may provide additional useful data, particularly for analyses of bilateral asymmetry (see Chapter 5).
+Of those landmark and semilandmark configurations included in the draft sketches for this project, it is sLMs 12 and 13 that appear to contribute least to the formal tests of those hypotheses tested using EFA; however, those sLMs may have utility in an analysis of object symmetry and fluctuating asymmetry.
 
 ## Overview
 

@@ -113,7 +113,7 @@ boxplot(pca.outlines,
 MANOVA(pca.outlines, 'heart.out')
 ```
 
-### Mean shapes (H1)
+### Mean shapes (H1) 
 
 ```{r msshape.1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Mean shapes for in (H) and out (N) of the heartland."}
 # mean shapes
