@@ -4,7 +4,7 @@
 
 ```{r load.data, echo = TRUE}
 # load packages
-
+devtools::install_github("mlcollyer/RRPP")
 devtools::install_github("geomorphR/geomorph", ref = "Stable", build_vignettes = TRUE)
 library(here)
 library(geomorph)
