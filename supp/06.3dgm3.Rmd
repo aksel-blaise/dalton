@@ -222,7 +222,7 @@ fit.shape.bev.2 <- procD.lm(shape ~ bev.2,
 anova(fit.size)
 ```
 
-## Test Hypothesis 1 (Geo Bl)
+## Test Hypothesis 1 (Geo Ba)
 
 Hypothesis 1 assesses whether there is a difference in morphology for Dalton base shapes found in and out of the heartland.
 
@@ -362,7 +362,7 @@ plotRefToTarget(mean$H,
 ##knitr::include_graphics('images/mshape.h1.jpg')
 ```
 
-## Test Hypothesis 2 (Geo Bl)
+## Test Hypothesis 2 (Geo Ba)
 
 Hypothesis 2 assesses whether there is a difference in morphology for Dalton base shapes found in the heartland, the interior, and the northern periphery.
 
@@ -535,7 +535,7 @@ plotRefToTarget(mean$I,
 ##knitr::include_graphics('images/mshape.h2.jpg')
 ```
 
-## Test Hypothesis 3 (Techno Bl)
+## Test Hypothesis 3 (Techno Ba)
 
 Hypothesis 3 assesses whether there is a discernible difference in morphology for Dalton base shapes that articulate with beveled blades.
 
@@ -675,7 +675,7 @@ plotRefToTarget(mean$y,
 ##knitr::include_graphics('images/mshape.h3.jpg')
 ```
 
-## Test Hypothesis 4 (Techno X1)
+## Test Hypothesis 4 (Techno Ba)
 
 Hypothesis 4 assesses whether there is a discernible difference in basal morphology when specific beveling types are associated with Dalton blades.
 
