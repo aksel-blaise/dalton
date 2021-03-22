@@ -1,0 +1,364 @@
+# Symmetry and Asymmetry
+
+In studies of projectile morphology, an analysis of bilateral/object symmetry may yield useful insights related to _design intent_, provided we assume that the goal of the knapper was to achieve a fully-symmetrical form. Within that framework, deviation from bilateral symmetry (fluctuating asymmetry) might serve as a useful measure of _knapper skill_ and/or _differential production_. Both measures have utility in comparisons of contexts and sites, to include wide-ranging spatial and temporal applications. Initially developed for a [symmetry analysis of Gahagan bifaces](https://github.com/aksel-blaise/gahagan.asymmetry/blob/master/asymmetry.md), the same approach can be employed for an analysis of asymmetry in Dalton projectile points.
+
+## Load packages + data
+
+```{r load.data.asymm, echo = TRUE}
+# load packages
+
+# devtools::install_github("geomorphR/geomorph", ref = "Stable", build_vignettes = TRUE)
+library(here)
+library(geomorph)
+library(tidyverse)
+library(wesanderson)
+
+# read GM data
+source('readmulti.csv.R')
+
+# read .csv files
+setwd("./data")
+filelist <- list.files(pattern = ".csv")
+coords <- readmulti.csv(filelist)
+setwd("../")
+
+# read qualitative data
+qdata <- read.csv("qdata.csv", header = TRUE, row.names = 1)
+qdata <- qdata[match(dimnames(coords)[[3]],rownames(qdata)),]
+land.pairs<-read.csv("asymmetry1.csv",header=TRUE)
+ind<-rep(1:length(filelist))
+
+# print qdata
+knitr::kable(qdata, align = "cccc", caption = "Attributes included in qdata.")
+```
+
+## Generalized Procrustes Analysis
+
+```{r assym.gpa, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# gpa for bilateral (object) asymmetry
+res.bilat <- bilat.symmetry(coords,
+                          ind = ind, 
+                          object.sym = TRUE,
+                          land.pairs = land.pairs,
+                          RRPP = TRUE,
+                          iter = 9999,
+                          print.progress = FALSE)
+summary(res.bilat)
+```
+
+```{r symm.shape, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Symmetric shape component plotted in 2D."}
+# symmetric shape
+symm.shape <- res.bilat$symm.shape[,1:2,]
+symm.shape2 <- res.bilat$symm.shape[,2:3,]
+
+# plot all specimens in 2D
+plotAllSpecimens(symm.shape)
+plotAllSpecimens(symm.shape2)
+```
+
+```{r asymm.shape, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Asymmetric shape component plotted in 2D."}
+# asymmetric shape
+asymm.shape <- res.bilat$FA.component[,1:2,]
+asymm.shape2 <- res.bilat$FA.component[,2:3,]
+
+# plot all specimens in 2D
+plotAllSpecimens(asymm.shape)
+plotAllSpecimens(asymm.shape2)
+```
+
+## Principal Components Analysis
+
+```{r pca.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# geomorph data frame
+gdf <- geomorph.data.frame(shape = res.bilat$symm.shape, 
+                           ashape = res.bilat$FA.component,
+                           heart = qdata$heart.out, 
+                           hreg = qdata$heart.reg,
+                           bev.1 = qdata$bev, 
+                           bev.2 = qdata$bev.type)
+
+# attributes for boxplot
+heart <- qdata$heart.out # heartland in/out
+hreg <- qdata$heart.reg # heartland region
+bev.1 <- qdata$bev # beveled yes/no
+bev.2 <- qdata$bev.type # type of beveling
+
+# principal components analysis (symmetric)
+pca <- gm.prcomp(res.bilat$symm.shape)
+summary(pca)
+```
+
+## Define models
+
+### Hypothesis 1
+
+```{r def.mod.1.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# symmetric shape as a function of heart
+fit.shape.heart <- procD.lm(shape ~ heart, 
+                            data = gdf, 
+                            print.progress = FALSE, 
+                            iter = 9999)
+
+# asymmetric shape as a function of heart
+fit.shape.heart.asymm <- procD.lm(ashape ~ heart, 
+                            data = gdf, 
+                            print.progress = FALSE, 
+                            iter = 9999)
+```
+
+### Hypothesis 2
+
+```{r def.mod.2.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# symmetric shape as a function of hreg
+fit.shape.hreg <- procD.lm(shape ~ hreg, 
+                           data = gdf, 
+                           print.progress = FALSE, 
+                           iter = 9999)
+
+# asymmetric shape as a function of hreg
+fit.shape.hreg.asymm <- procD.lm(ashape ~ hreg, 
+                           data = gdf, 
+                           print.progress = FALSE, 
+                           iter = 9999)
+```
+
+### Hypothesis 3
+
+```{r def.mod.3.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# symmetric shape as a function of bev.1
+fit.shape.bev.1 <- procD.lm(shape ~ bev.1, 
+                           data = gdf, 
+                           print.progress = FALSE, 
+                           iter = 9999)
+
+# asymmetric shape as a function of bev.1
+fit.shape.bev.1.asymm <- procD.lm(ashape ~ bev.1, 
+                           data = gdf, 
+                           print.progress = FALSE, 
+                           iter = 9999)
+```
+
+### Hypothesis 4
+
+```{r def.mod.4.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# symmetric shape as a function of bev.2
+fit.shape.bev.2 <- procD.lm(shape ~ bev.2, 
+                           data = gdf, 
+                           print.progress = FALSE, 
+                           iter = 9999)
+
+# asymmetric shape as a function of bev.2
+fit.shape.bev.2.asymm <- procD.lm(ashape ~ bev.2, 
+                           data = gdf, 
+                           print.progress = FALSE, 
+                           iter = 9999)
+```
+
+## Test Hypothesis 1 (Geo Symm)
+
+Hypothesis 1 assesses whether there is a difference in the symmetric shape of Dalton points found in and out of the heartland.
+
+A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
+
+```{r lm3d3.a1.h1.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 1 considers whether Dalton points discovered in (left) and out (right) of the Heartland differ in morphology."}
+knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
+```
+
+### Principal Components Analysis (H1)
+
+```{r pca.symm.1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# set plot parameters to plot by heartland in (H) and out (N)
+pch.gps.heart <- c(15,17)[as.factor(heart)]
+col.gps.heart <- wes_palette("Moonrise2")[as.factor(heart)]
+col.hull <- c("#798E87","#C27D38")
+
+# plot pca by heartland in (H) and out (N)
+pc.plot1 <- plot(pca, 
+                 asp = 1,
+                 pch = pch.gps.heart,
+                 col = col.gps.heart)
+                    shapeHulls(pc.plot1, 
+                             groups = heart,
+                             group.cols = col.hull)
+```
+
+### ANOVA
+
+```{r h1.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# ANOVA: do symmetric dalton projectile point shapes differ by heart?
+## are there differences in design intent?
+anova(fit.shape.heart)
+```
+
+### Morphological disparity
+
+```{r m-disparity, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# morphological disparity: do any of the groups display greater asymmetric 
+# shape variation among individuals relative to the other group?
+## lesser/greater skill?
+morphol.disparity(fit.shape.heart.asymm, 
+                  groups = qdata$heart.out, 
+                  data = gdf, 
+                  print.progress = FALSE, 
+                  iter = 9999)
+```
+
+## Test Hypothesis 2 (Geo Symm)
+
+Hypothesis 2 assesses whether there is a difference in morphology for Dalton points found in the heartland, the interior, and the northern periphery.
+
+A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
+
+```{r lm3d3.a1.h2.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 2 considers whether Dalton points discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology."}
+knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
+```
+
+### Principal Components Analysis (H2)
+
+```{r pca.symm.2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# set plot parameters to plot by heartland + regions 
+pch.gps.hreg <- c(15,17,18)[as.factor(hreg)]
+col.gps.hreg <- wes_palette("Moonrise2")[as.factor(hreg)]
+col.hull.2 <- c("#798E87","#CCC591","#C27D38")
+
+# plot pca by heartland + regions (symmetric)
+pc.plot.2 <- plot(pca, 
+                 asp = 1,
+                 pch = pch.gps.hreg,
+                 col = col.gps.hreg)
+                    shapeHulls(pc.plot.2, 
+                             groups = hreg,
+                             group.cols = col.hull.2)
+```
+
+### ANOVA
+
+```{r h2.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# ANOVA: does symmetric dalton projectile point shape differ by hreg?
+## are there differences in design intent?
+anova(fit.shape.hreg)
+## pairwise comparison of LS means = which differ?
+sh.hreg <- pairwise(fit.shape.hreg, 
+                    groups = qdata$heart.reg)
+summary(sh.hreg, 
+        confidence = 0.95, 
+        test.type = "dist")
+```
+
+### Morphological disparity
+
+```{r m-disparity.2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# morphological disparity: do any of the groups display greater asymmetric 
+# shape variation among individuals relative to the other group?
+## lesser/greater skill?
+morphol.disparity(fit.shape.hreg.asymm, 
+                  groups = qdata$heart.reg, 
+                  data = gdf, 
+                  print.progress = FALSE, 
+                  iter = 9999)
+```
+
+## Test Hypothesis 3 (Techno Symm)
+
+Hypothesis 3 assesses whether there is a discernible difference in morphology for Dalton points that are beveled.
+
+A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
+
+```{r lm3d3.a1.h3.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 3 considers whether beveled Dalton points (left) differ in morphology from those that are not beveled (right)."}
+knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
+```
+
+### Principal Components Analysis (H3)
+
+```{r pca.symm.3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# set plot parameters to plot by beveled y and n
+pch.gps.bev.1 <- c(15,17)[as.factor(bev.1)]
+col.gps.bev.1 <- wes_palette("Moonrise2")[as.factor(bev.1)]
+col.hull.3 <- c("#C27D38","#798E87")
+
+# plot pca by heartland in (H) and out (N) (symmetric)
+pc.plot3 <- plot(pca, 
+                 asp = 1,
+                 pch = pch.gps.bev.1,
+                 col = col.gps.bev.1)
+                    shapeHulls(pc.plot3, 
+                             groups = bev.1,
+                             group.cols = col.hull.3)
+```
+
+### ANOVA
+
+```{r h3.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# ANOVA: do symmetric dalton projectile point shapes differ by beveling?
+## are there differences in design intent?
+anova(fit.shape.bev.1)
+```
+
+### Morphological disparity
+
+```{r m-disparity.3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# morphological disparity: do any of the groups display greater asymmetric 
+# shape variation among individuals relative to the other group?
+## lesser/greater skill?
+morphol.disparity(fit.shape.bev.1.asymm, 
+                  groups = qdata$bev, 
+                  data = gdf, 
+                  print.progress = FALSE, 
+                  iter = 9999)
+```
+
+## Test Hypothesis 4 (Techno Symm)
+
+Hypothesis 4 assesses whether there is a discernible difference in the morphology of specific beveling types associated with Dalton points.
+
+A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
+
+```{r lm3d3.a1.h4.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 4 considers whether discrete beveling practices articulate with differences in the morphology of Dalton points"}
+knitr::include_graphics('images/dalton-vizhypothesis4-1.jpg')
+```
+
+### Principal Components Analysis (H4)
+
+```{r pca.symm4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# set plot parameters to plot by bevel type
+pch.gps.bev.2 <- c(15,17,18)[as.factor(bev.2)]
+col.gps.bev.2 <- wes_palette("Moonrise2")[as.factor(bev.2)]
+col.hull.4 <- c("#CCC591","#C27D38","#798E87")
+
+# plot pca by bevel type (symmetric)
+pc.plot4 <- plot(pca, 
+                 asp = 1,
+                 pch = pch.gps.bev.2,
+                 col = col.gps.bev.2)
+                    shapeHulls(pc.plot4, 
+                             groups = bev.2,
+                             group.cols = col.hull.4)
+```
+
+### ANOVA
+
+```{r h4.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# ANOVA: does symmetric dalton projectile point shape differ by bev.2?
+## are there differences in design intent?
+anova(fit.shape.bev.2)
+# pairwise comparison of LS means = which differ?
+sh.bev.2 <- pairwise(fit.shape.bev.2, 
+                    groups = qdata$bev.type)
+summary(sh.bev.2, 
+        confidence = 0.95, 
+        test.type = "dist")
+```
+
+### Morphological disparity
+
+```{r m-disparity.4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# morphological disparity: do any of the groups display greater asymmetric 
+# shape variation among individuals relative to the other group?
+## lesser/greater skill?
+morphol.disparity(fit.shape.bev.2.asymm, 
+                  groups = qdata$bev.type, 
+                  data = gdf, 
+                  print.progress = FALSE, 
+                  iter = 9999)
+# end of code
+```
