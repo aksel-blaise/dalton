@@ -24,7 +24,7 @@
 <meta name="author" content="Robert Z. Selden, Jr." />
 
 
-<meta name="date" content="2021-02-07" />
+<meta name="date" content="2021-03-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 
 <link rel="next" href="elliptical-fourier-analysis.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -137,6 +137,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>0.1</b> Acknowledgments</a></li>
 <li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#funding"><i class="fa fa-check"></i><b>0.2</b> Funding</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#colophon"><i class="fa fa-check"></i><b>0.3</b> Colophon</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="elliptical-fourier-analysis.html"><a href="elliptical-fourier-analysis.html"><i class="fa fa-check"></i><b>1</b> Elliptical Fourier Analysis</a>
 <ul>
@@ -194,7 +195,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.12" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#splitting-the-sections"><i class="fa fa-check"></i><b>2.12</b> Splitting the sections</a></li>
 <li class="chapter" data-level="2.13" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#lm3d3-configuration-1"><i class="fa fa-check"></i><b>2.13</b> LM3d3: Configuration 1</a></li>
-<li class="chapter" data-level="2.14" data-path="landmarking-protocol-3d3.html"><a href="landmarking-protocol-3d3.html#references"><i class="fa fa-check"></i><b>2.14</b> References</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="landmark-sampling-evaluation-curve-lasec.html"><a href="landmark-sampling-evaluation-curve-lasec.html"><i class="fa fa-check"></i><b>3</b> Landmark Sampling Evaluation Curve (LaSEC)</a>
 <ul>
@@ -454,7 +454,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.8.3" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#morphological-disparity-3"><i class="fa fa-check"></i><b>8.8.3</b> Morphological disparity</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -478,24 +478,99 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Landmark 3D geometric morphometrics of Dalton projectile points</h1>
 <p class="author"><em>Robert Z. Selden, Jr.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></em></p>
-<p class="date"><em>2021-02-07</em></p>
+<p class="date"><em>2021-03-22</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
 <blockquote>
-<p>Reproducibility—the ability to recompute results—and replicability–—the chances other experimenters will achieve a consistent result—are two foundational characteristics of successful scientific research <span class="citation">(<a href="references-1.html#ref-RN20918" role="doc-biblioref">Leek and Peng 2015</a>)</span>.</p>
+<p>Reproducibility—the ability to recompute results—and replicability–—the chances other experimenters will achieve a consistent result—are two foundational characteristics of successful scientific research <span class="citation">(<a href="references.html#ref-RN20918" role="doc-biblioref">Leek and Peng 2015</a>)</span>.</p>
 </blockquote>
-<p>This volume is written in <em>Markdown</em>, and all files needed to reproduce it are included in the <a href="https://github.com/aksel-blaise/dalton">GitHub repository</a>. The reproducible nature of this undertaking provides a means for others to critically assess and evaluate the various analytical components <span class="citation">(<a href="references-1.html#ref-RN20915" role="doc-biblioref">Gray and Marwick 2019</a>; <a href="references-1.html#ref-RN20916" role="doc-biblioref">Peng 2011</a>; <a href="references-1.html#ref-RN20917" role="doc-biblioref">Gandrud 2014</a>)</span>, which is a necessary requirement for the production of reliable knowledge.</p>
-<p>Reproducibility projects in <a href="https://osf.io/ezcuj/">psychology</a> and <a href="https://www.cos.io/rpcb">cancer biology</a> are impacting current research practices across all domains. Examples of reproducible research are becoming more abundant in archaeology <span class="citation">(<a href="references-1.html#ref-RN20804" role="doc-biblioref">Marwick 2016</a>; <a href="references-1.html#ref-RN21009" role="doc-biblioref">Ivanovaitė et al. 2020</a>; <a href="references-1.html#ref-RN21001" role="doc-biblioref">Selden Jr., Dockall, and Dubied 2020</a>)</span>, and the next generation of archaeologists are learning those tools and methods needed to reproduce and/or replicate research results <span class="citation">(<a href="references-1.html#ref-RN21007" role="doc-biblioref">Marwick et al. 2019</a>)</span>. Reproducible and replicable research work flows are often employed at the highest levels of humanities-based inquiries to mitigate concern or doubt regarding proper execution, and is of particular import should the results have—explicitly or implicitly—a major impact on scientific progress <span class="citation">(<a href="references-1.html#ref-RN21008" role="doc-biblioref">Peels and Bouter 2018</a>)</span>.</p>
+<p>This volume is written in <em>Markdown</em>, and all files needed to reproduce it are included in the <a href="https://github.com/aksel-blaise/dalton">GitHub repository</a>. The reproducible nature of this undertaking provides a means for others to critically assess and evaluate the various analytical components <span class="citation">(<a href="references.html#ref-RN20915" role="doc-biblioref">Gray and Marwick 2019</a>; <a href="references.html#ref-RN20916" role="doc-biblioref">Peng 2011</a>; <a href="references.html#ref-RN20917" role="doc-biblioref">Gandrud 2014</a>)</span>, which is a necessary requirement for the production of reliable knowledge.</p>
+<p>Reproducibility projects in <a href="https://osf.io/ezcuj/">psychology</a> and <a href="https://www.cos.io/rpcb">cancer biology</a> are impacting current research practices across all domains. Examples of reproducible research are becoming more abundant in archaeology <span class="citation">(<a href="references.html#ref-RN20804" role="doc-biblioref">Marwick 2016</a>; <a href="references.html#ref-RN21009" role="doc-biblioref">Ivanovaitė et al. 2020</a>; <a href="references.html#ref-RN21001" role="doc-biblioref">Selden Jr., Dockall, and Dubied 2020</a>)</span>, and the next generation of archaeologists are learning those tools and methods needed to reproduce and/or replicate research results <span class="citation">(<a href="references.html#ref-RN21007" role="doc-biblioref">Marwick et al. 2019</a>)</span>. Reproducible and replicable research work flows are often employed at the highest levels of humanities-based inquiries to mitigate concern or doubt regarding proper execution, and is of particular import should the results have—explicitly or implicitly—a major impact on scientific progress <span class="citation">(<a href="references.html#ref-RN21008" role="doc-biblioref">Peels and Bouter 2018</a>)</span>.</p>
 <p>Components of the undertaking presented in this volume are novel, and this basic research endeavour is rooted in archaeological epistemology. Sharing data is not enough, and if investigators share only data absent their analysis code, that places a substantive burden on those who may seek to build upon or replicate their work in the future. In this instance, the choice to pursue a replicable work flow occurs based on the simple fact that this work is foundational, and meant to begin a meaningful discussion related to projectile morphology.</p>
 <p>As an exploratory research endeavour, this study was not <a href="https://www.cos.io/prereg">preregistered</a>.</p>
 <div id="acknowledgments" class="section level2" number="0.1">
 <h2><span class="header-section-number">0.1</span> Acknowledgments</h2>
-<p>I extend my gratitude to Christian S. Hoggard and David K. Thulman for their thoughtful comments and constructive criticisms on the draft of the landmarking protocol developed for the study of <a href="https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md">Gahagan bifaces</a> <span class="citation">(<a href="references-1.html#ref-RN21001" role="doc-biblioref">Selden Jr., Dockall, and Dubied 2020</a>)</span>, which is extended here for an analysis of Dalton point morphology. Additional thanks to Christian S. Hoggard for fielding questions related to the EFA analysis. This iteration of the landmarking protocol was initially developed using the <a href="https://github.com/morphOptics/digit3DLand"><code>digit3DLand</code></a> package in R, and I am grateful to Morgane Dubied for her help with coding questions.</p>
+<p>I extend my gratitude to Christian S. Hoggard and David K. Thulman for their thoughtful comments and constructive criticisms on the draft of the landmarking protocol developed for the study of <a href="https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md">Gahagan bifaces</a> <span class="citation">(<a href="references.html#ref-RN21001" role="doc-biblioref">Selden Jr., Dockall, and Dubied 2020</a>)</span>, which is extended here for an analysis of Dalton point morphology. Additional thanks to Christian S. Hoggard for fielding questions related to the EFA analysis. This iteration of the landmarking protocol was initially developed using the <a href="https://github.com/morphOptics/digit3DLand"><code>digit3DLand</code></a> package in R, and I am grateful to Morgane Dubied for her help with coding questions.</p>
 </div>
 <div id="funding" class="section level2" number="0.2">
 <h2><span class="header-section-number">0.2</span> Funding</h2>
 <p>Components of this analytical work flow were developed and funded by a Preservation Technology and Training grant (P14AP00138) to the author from the National Center for Preservation Technology and Training (NCPTT), National Forests and Grasslands in Texas (15-PA-11081300-033) and the United States Forest Service (20-PA-11081300-074).</p>
+</div>
+<div id="colophon" class="section level2" number="0.3">
+<h2><span class="header-section-number">0.3</span> Colophon</h2>
+<p>This version of the analysis was generated on 2021-03-22 05:20:04 using the following computational environment and dependencies:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># what R packages and versions were used?</span></span>
+<span id="cb1-2"><a href="index.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="st">&quot;devtools&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()) devtools<span class="sc">::</span><span class="fu">session_info</span>()</span></code></pre></div>
+<pre><code>## - Session info ----------------------------------------------------------------------------------------------------------
+##  setting  value                       
+##  version  R version 4.0.4 (2021-02-15)
+##  os       Windows 10 x64              
+##  system   x86_64, mingw32             
+##  ui       RStudio                     
+##  language (EN)                        
+##  collate  English_United States.1252  
+##  ctype    English_United States.1252  
+##  tz       America/Chicago             
+##  date     2021-03-22                  
+## 
+## - Packages --------------------------------------------------------------------------------------------------------------
+##  package     * version date       lib source        
+##  assertthat    0.2.1   2019-03-21 [1] CRAN (R 4.0.2)
+##  bookdown      0.21    2020-10-13 [1] CRAN (R 4.0.3)
+##  bslib         0.2.4   2021-01-25 [1] CRAN (R 4.0.3)
+##  cachem        1.0.4   2021-02-13 [1] CRAN (R 4.0.4)
+##  callr         3.5.1   2020-10-13 [1] CRAN (R 4.0.3)
+##  cli           2.3.1   2021-02-23 [1] CRAN (R 4.0.4)
+##  crayon        1.4.1   2021-02-08 [1] CRAN (R 4.0.3)
+##  desc          1.3.0   2021-03-05 [1] CRAN (R 4.0.4)
+##  devtools      2.3.2   2020-09-18 [1] CRAN (R 4.0.2)
+##  digest        0.6.27  2020-10-24 [1] CRAN (R 4.0.3)
+##  ellipsis      0.3.1   2020-05-15 [1] CRAN (R 4.0.2)
+##  evaluate      0.14    2019-05-28 [1] CRAN (R 4.0.2)
+##  fastmap       1.1.0   2021-01-25 [1] CRAN (R 4.0.3)
+##  fs            1.5.0   2020-07-31 [1] CRAN (R 4.0.2)
+##  git2r         0.28.0  2021-01-10 [1] CRAN (R 4.0.3)
+##  glue          1.4.2   2020-08-27 [1] CRAN (R 4.0.2)
+##  here          1.0.1   2020-12-13 [1] CRAN (R 4.0.3)
+##  htmltools     0.5.1.1 2021-01-22 [1] CRAN (R 4.0.3)
+##  jquerylib     0.1.3   2020-12-17 [1] CRAN (R 4.0.3)
+##  jsonlite      1.7.2   2020-12-09 [1] CRAN (R 4.0.3)
+##  knitr         1.31    2021-01-27 [1] CRAN (R 4.0.3)
+##  lifecycle     1.0.0   2021-02-15 [1] CRAN (R 4.0.4)
+##  magrittr      2.0.1   2020-11-17 [1] CRAN (R 4.0.3)
+##  memoise       2.0.0   2021-01-26 [1] CRAN (R 4.0.3)
+##  pkgbuild      1.2.0   2020-12-15 [1] CRAN (R 4.0.3)
+##  pkgload       1.2.0   2021-02-23 [1] CRAN (R 4.0.4)
+##  prettyunits   1.1.1   2020-01-24 [1] CRAN (R 4.0.2)
+##  processx      3.4.5   2020-11-30 [1] CRAN (R 4.0.3)
+##  ps            1.6.0   2021-02-28 [1] CRAN (R 4.0.4)
+##  purrr         0.3.4   2020-04-17 [1] CRAN (R 4.0.2)
+##  R6            2.5.0   2020-10-28 [1] CRAN (R 4.0.3)
+##  remotes       2.2.0   2020-07-21 [1] CRAN (R 4.0.2)
+##  rlang         0.4.10  2020-12-30 [1] CRAN (R 4.0.3)
+##  rmarkdown     2.7     2021-02-19 [1] CRAN (R 4.0.4)
+##  rprojroot     2.0.2   2020-11-15 [1] CRAN (R 4.0.3)
+##  rstudioapi    0.13    2020-11-12 [1] CRAN (R 4.0.3)
+##  sass          0.3.1   2021-01-24 [1] CRAN (R 4.0.3)
+##  sessioninfo   1.1.1   2018-11-05 [1] CRAN (R 4.0.2)
+##  stringi       1.5.3   2020-09-09 [1] CRAN (R 4.0.2)
+##  stringr       1.4.0   2019-02-10 [1] CRAN (R 4.0.2)
+##  testthat      3.0.2   2021-02-14 [1] CRAN (R 4.0.4)
+##  tinytex       0.30    2021-03-04 [1] CRAN (R 4.0.4)
+##  usethis       2.0.1   2021-02-10 [1] CRAN (R 4.0.3)
+##  withr         2.4.1   2021-01-26 [1] CRAN (R 4.0.3)
+##  xfun          0.22    2021-03-11 [1] CRAN (R 4.0.4)
+##  yaml          2.2.1   2020-02-01 [1] CRAN (R 4.0.0)
+## 
+## [1] C:/Users/seldenjrz/Documents/R/win-library/4.0
+## [2] C:/Program Files/R/R-4.0.4/library</code></pre>
+<p>Current Git commit details are:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># where can I find this commit? </span></span>
+<span id="cb3-2"><a href="index.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="st">&quot;git2r&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>() <span class="sc">&amp;</span> git2r<span class="sc">::</span><span class="fu">in_repository</span>(<span class="at">path =</span> <span class="st">&quot;.&quot;</span>)) git2r<span class="sc">::</span><span class="fu">repository</span>(here<span class="sc">::</span><span class="fu">here</span>())  </span></code></pre></div>
+<pre><code>## Local:    master D:/github/dalton
+## Remote:   master @ origin (https://github.com/aksel-blaise/dalton)
+## Head:     [04b9b5c] 2021-02-07: &lt;f2.edits&gt;</code></pre>
 
 </div>
 </div>
