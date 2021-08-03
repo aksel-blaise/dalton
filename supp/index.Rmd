@@ -29,7 +29,6 @@ I extend my gratitude to Christian S. Hoggard and David K. Thulman for their tho
 
 ## Funding
 
-<<<<<<< HEAD
 Components of this analytical work flow were developed and funded by a Preservation Technology and Training grant (P14AP00138) to RZS from the National Center for Preservation Technology and Training (NCPTT), as well as grants from the Caddo Nation of Oklahoma, National Forests and Grasslands in Texas (15-PA-11081300-033) and the United States Forest Service (20-PA-11081300-074).
 
 ## Colophon
@@ -37,15 +36,6 @@ Components of this analytical work flow were developed and funded by a Preservat
 This version of the analysis was generated on `r Sys.time()` using the following computational environment and dependencies:
 
 ```{r colophonx, cache = FALSE}
-=======
-Components of this analytical work flow were developed and funded by a Preservation Technology and Training grant (P14AP00138) to the author from the National Center for Preservation Technology and Training (NCPTT), National Forests and Grasslands in Texas (15-PA-11081300-033) and the United States Forest Service (20-PA-11081300-074).
-
-## Colophon
-
-This version of the analysis was generated on `r Sys.time()` using the following computational environment and dependencies: 
-
-```{r colophon, cache = FALSE}
->>>>>>> 0271a4072960dc5a9a69d013629af05bb649e49e
 # what R packages and versions were used?
 if ("devtools" %in% installed.packages()) devtools::session_info()
 ```
