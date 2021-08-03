@@ -681,7 +681,7 @@ plotRefToTarget(mean$y,
 ##knitr::include_graphics('images/mshape.h3.jpg')
 ```
 
-## Test Hypothesis 4 (Techno X1)
+## Test Hypothesis 4 (Techno Bl)
 
 Hypothesis 4 assesses whether there is a discernible difference in the morphology of specific beveling types associated with Dalton blades. 
 
