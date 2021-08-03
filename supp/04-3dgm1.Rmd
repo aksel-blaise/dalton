@@ -5,7 +5,7 @@
 ```{r load.data, echo = TRUE}
 # load packages
 
-# devtools::install_github("geomorphR/geomorph", ref = "Stable", build_vignettes = TRUE)
+#devtools::install_github("geomorphR/geomorph", ref = "Stable", build_vignettes = TRUE)
 library(here)
 library(geomorph)
 library(tidyverse)
@@ -354,8 +354,8 @@ plot(mean$N)
 # comparison plots
 plotRefToTarget(mean$H, 
                 mean$N, 
-                method="vector",
-                mag=2)
+                method = "points",
+                mag = 2)
 
 ##knitr::include_graphics('images/mshape.h1.jpg')
 ```
