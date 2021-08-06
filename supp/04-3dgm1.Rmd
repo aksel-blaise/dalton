@@ -4,8 +4,8 @@
 
 ```{r load.data, echo = TRUE}
 # load packages
-devtools::install_github("mlcollyer/RRPP")
-devtools::install_github("geomorphR/geomorph", ref = "Stable", build_vignettes = TRUE)
+#devtools::install_github("mlcollyer/RRPP")
+#devtools::install_github("geomorphR/geomorph", ref = "Stable", build_vignettes = TRUE)
 
 library(here)
 library(geomorph)
@@ -97,30 +97,10 @@ summary(pca)
 
 ## Define models
 
-### Allometry
-
-```{r allom.dalton, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# general allometry
-fit.size <- procD.lm(shape ~ size, 
-                     data = gdf, 
-                     print.progress = FALSE, 
-                     iter = 9999)
-```
-
 ### Hypothesis 1
 
 ```{r def.mod.1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 ## Define models
-# allometry - common allometry, different means -> heart
-fit.sz.cheart <- procD.lm(shape ~ size + heart, 
-                        data = gdf, 
-                        print.progress = FALSE, 
-                        iter = 9999)
-# allometry - unique allometries -> heart
-fit.sz.uheart <- procD.lm(shape ~ size * heart, 
-                        data = gdf, 
-                        print.progress = FALSE, 
-                        iter = 9999)
 # size as a function of heart
 fit.size.heart <- procD.lm(size ~ heart, 
                            data = gdf, 
@@ -137,16 +117,6 @@ fit.shape.heart <- procD.lm(shape ~ heart,
 
 ```{r def.mod.2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 ## Define models
-# allometry - common allometry, different means -> hreg
-fit.sz.chreg <- procD.lm(shape ~ size + hreg, 
-                         data = gdf, 
-                         print.progress = FALSE, 
-                         iter = 9999)
-# allometry - unique allometries -> hreg
-fit.sz.uhreg <- procD.lm(shape ~ size * hreg, 
-                         data = gdf, 
-                         print.progress = FALSE, 
-                         iter = 9999)
 # size as a function of hreg
 fit.size.hreg <- procD.lm(size ~ hreg, 
                           data = gdf, 
@@ -164,16 +134,6 @@ fit.shape.hreg <- procD.lm(shape ~ hreg,
 
 ```{r def.mod.3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 ## Define models
-# allometry - common allometry, different means -> bev.1
-fit.sz.cbev.1 <- procD.lm(shape ~ size + bev.1, 
-                        data = gdf, 
-                        print.progress = FALSE, 
-                        iter = 9999)
-# allometry - unique allometries -> bev.1
-fit.sz.ubev.1 <- procD.lm(shape ~ size * bev.1, 
-                        data = gdf, 
-                        print.progress = FALSE, 
-                        iter = 9999)
 # size as a function of bev.1
 fit.size.bev.1 <- procD.lm(size ~ bev.1, 
                           data = gdf, 
@@ -191,16 +151,6 @@ fit.shape.bev.1 <- procD.lm(shape ~ bev.1,
 
 ```{r def.mod.4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 ## Define models
-# allometry - common allometry, different means -> bev.2
-fit.sz.cbev.2 <- procD.lm(shape ~ size + bev.2, 
-                        data = gdf, 
-                        print.progress = FALSE, 
-                        iter = 9999)
-# allometry - unique allometries -> bev.2
-fit.sz.ubev.2 <- procD.lm(shape ~ size * bev.2, 
-                        data = gdf, 
-                        print.progress = FALSE, 
-                        iter = 9999)
 # size as a function of bev.2
 fit.size.bev.2 <- procD.lm(size ~ bev.2, 
                           data = gdf, 
@@ -214,18 +164,11 @@ fit.shape.bev.2 <- procD.lm(shape ~ bev.2,
                            iter = 9999)
 ```
 
-## Allometry
-
-```{r allometry, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# general allometry - does dalton shape change with size?
-anova(fit.size)
-```
-
 ## Test Hypothesis 1 (Geo GM)
 
 Hypothesis 1 assesses whether there is a difference in morphology for Dalton points found in and out of the heartland.
 
-A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756].
+A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756].
 
 ```{r lm3d3.a1.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 1 considers whether Dalton points discovered in (left) and out (right) of the Heartland differ in morphology."}
 knitr::include_graphics('images/dalton-vizhypothesis1.jpg')
@@ -263,66 +206,33 @@ pc.plot1 <- plot(pca,
                              group.cols = col.hull)
 ```
 
+### Minima/maxima of PC1/2 with warp grids
+
+```{r min.max0g, echo=TRUE, out.width = "100%", dpi = 300, warning=FALSE}
+# plot x/y maxima/minima
+## x - minima
+mean.shape <- mshape(Y.gpa$coords)
+plotRefToTarget(pca$shapes$shapes.comp1$min, 
+                mean.shape)
+## x - maxima
+plotRefToTarget(pca$shapes$shapes.comp1$max, 
+                mean.shape)
+## y - minima
+plotRefToTarget(pca$shapes$shapes.comp2$min, 
+                mean.shape)
+## y - maxima
+plotRefToTarget(pca$shapes$shapes.comp2$max, 
+                mean.shape)
+```
+
 ### ANOVA (H1)
 
 ```{r h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# heart
-anova(fit.sz.cheart) # common allometry (heart)
-
-# heart
-anova(fit.sz.uheart) # unique allometry (heart)
-
 # ANOVA: do dalton projectile point sizes differ by heart?
 anova(fit.size.heart)
 
 # ANOVA: do dalton projectile point shapes differ by heart?
 anova(fit.shape.heart)
-```
-
-### Allometry (H1)
-
-```{r c.allom.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# regscore (Drake and Klingenberg 2008)
-
-# heart
-plotAllometry(fit.sz.cheart,
-              size = gdf$size,
-              logsz = TRUE,
-              method = "RegScore", 
-              pch = pch.gps.heart, 
-              col = col.gps.heart)
-
-# common allometric component (Mitteroecker 2004)
-
-# heart
-plotAllometry(fit.sz.cheart, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "CAC", 
-              pch = pch.gps.heart, 
-              col = col.gps.heart)
-
-# size-shape pca (Mitteroecker 2004)
-
-# heart
-plotAllometry(fit.sz.cheart, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "size.shape", 
-              pch = pch.gps.heart, 
-              col = col.gps.heart)
-```
-
-```{r u.allom.h1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-## predline (Adams and Nistri 2010)
-
-# heart
-plotAllometry(fit.sz.uheart, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "PredLine", 
-              pch = pch.gps.heart, 
-              col = col.gps.heart)
 ```
 
 ### Morphological disparity (H1)
@@ -365,7 +275,7 @@ plotRefToTarget(mean$H,
 
 Hypothesis 2 assesses whether there is a difference in morphology for Dalton points found in the heartland, the interior, and the northern periphery.
 
-A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
+A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
 
 ```{r lm3d3.a1.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 2 considers whether Dalton points discovered in the heartland (left), interior (center), and northern periphery (right) differ in morphology."}
 knitr::include_graphics('images/dalton-vizhypothesis2.jpg')
@@ -403,15 +313,28 @@ pc.plot2 <- plot(pca,
                              group.cols = col.hull.2)
 ```
 
+### Minima/maxima of PC1/2 with warp grids
+
+```{r min.max3g, echo=TRUE, out.width = "100%", dpi = 300, warning=FALSE}
+# plot x/y maxima/minima
+## x - minima
+mean.shape <- mshape(Y.gpa$coords)
+plotRefToTarget(pca$shapes$shapes.comp1$min, 
+                mean.shape)
+## x - maxima
+plotRefToTarget(pca$shapes$shapes.comp1$max, 
+                mean.shape)
+## y - minima
+plotRefToTarget(pca$shapes$shapes.comp2$min, 
+                mean.shape)
+## y - maxima
+plotRefToTarget(pca$shapes$shapes.comp2$max, 
+                mean.shape)
+```
+
 ### ANOVA (H2)
 
 ```{r h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# hreg
-anova(fit.sz.chreg) # common allometry (hreg)
-
-# hreg
-anova(fit.sz.uhreg) # unique allometry (hreg)
-
 # ANOVA: does dalton projectile point size differ by hreg?
 anova(fit.size.hreg)
 
@@ -422,11 +345,6 @@ summary(sz.hreg,
         confidence = 0.95, 
         test.type = "dist")
 
-# pairwise distance between variances = standardization?
-summary(sz.hreg, 
-        confidence = 0.95, 
-        test.type = "var")
-
 # ANOVA: does dalton projectile point shape differ by hreg?
 anova(fit.shape.hreg)
 
@@ -436,57 +354,6 @@ sh.hreg <- pairwise(fit.shape.hreg,
 summary(sz.hreg, 
         confidence = 0.95, 
         test.type = "dist")
-
-# pairwise distance between variances = standardization?
-summary(sz.hreg, 
-        confidence = 0.95, 
-        test.type = "var")
-```
-
-### Allometry (H2)
-
-```{r c.allom.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# regscore (Drake and Klingenberg 2008)
-
-# hreg
-plotAllometry(fit.sz.chreg, 
-              size = gdf$size,
-              logsz = TRUE,
-              method = "RegScore", 
-              pch = pch.gps.hreg, 
-              col = col.gps.hreg)
-
-# common allometric component (Mitteroecker 2004)
-
-# hreg
-plotAllometry(fit.sz.chreg, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "CAC", 
-              pch = pch.gps.hreg, 
-              col = col.gps.hreg)
-
-# size-shape pca (Mitteroecker 2004)
-
-# hreg
-plotAllometry(fit.sz.chreg, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "size.shape", 
-              pch = pch.gps.hreg, 
-              col = col.gps.hreg)
-```
-
-```{r u.allom.h2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# predline (Adams and Nistri 2010)
-
-# hreg
-plotAllometry(fit.sz.uhreg, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "PredLine", 
-              pch = pch.gps.hreg, 
-              col = col.gps.hreg)
 ```
 
 ### Morphological disparity (H2)
@@ -520,16 +387,16 @@ plot(mean$P)
 # comparison plots
 plotRefToTarget(mean$H, 
                 mean$I, 
-                method="vector",
-                mag=2)
+                method = "vector",
+                mag = 2)
 plotRefToTarget(mean$H, 
                 mean$P, 
                 method="vector",
-                mag=2)
+                mag = 2)
 plotRefToTarget(mean$I, 
                 mean$P, 
-                method="vector",
-                mag=2)
+                method = "vector",
+                mag = 2)
 
 ##knitr::include_graphics('images/mshape.h2.jpg')
 ```
@@ -538,7 +405,7 @@ plotRefToTarget(mean$I,
 
 Hypothesis 3 assesses whether there is a discernible difference in morphology for Dalton points that are beveled.
 
-A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
+A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
 
 ```{r lm3d3.a1.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 3 considers whether beveled Dalton points (left) differ in morphology from those that are not beveled (right)."}
 knitr::include_graphics('images/dalton-vizhypothesis3.jpg')
@@ -576,66 +443,33 @@ pc.plot3 <- plot(pca,
                              group.cols = col.hull.3)
 ```
 
+### Minima/maxima of PC1/2 with warp grids
+
+```{r min.maxgg, echo=TRUE, out.width = "100%", dpi = 300, warning=FALSE}
+# plot x/y maxima/minima
+## x - minima
+mean.shape <- mshape(Y.gpa$coords)
+plotRefToTarget(pca$shapes$shapes.comp1$min, 
+                mean.shape)
+## x - maxima
+plotRefToTarget(pca$shapes$shapes.comp1$max, 
+                mean.shape)
+## y - minima
+plotRefToTarget(pca$shapes$shapes.comp2$min, 
+                mean.shape)
+## y - maxima
+plotRefToTarget(pca$shapes$shapes.comp2$max, 
+                mean.shape)
+```
+
 ### ANOVA (H3)
 
 ```{r h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# bev.1
-anova(fit.sz.cbev.1) # common allometry (bev.1)
-
-# bev.1
-anova(fit.sz.ubev.1) # unique allometry (bev.1)
-
 # ANOVA: do dalton projectile point sizes differ by beveling?
 anova(fit.size.bev.1)
 
 # ANOVA: do dalton projectile point shapes differ by beveling?
 anova(fit.shape.bev.1)
-```
-
-### Allometry (H3)
-
-```{r c.allom.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# regscore (Drake and Klingenberg 2008)
-
-# bev.1
-plotAllometry(fit.sz.cbev.1, 
-              size = gdf$size,
-              logsz = TRUE,
-              method = "RegScore", 
-              pch = pch.gps.bev.1, 
-              col = col.gps.bev.1)
-
-# common allometric component (Mitteroecker 2004)
-
-# bev.1
-plotAllometry(fit.sz.cbev.1, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "CAC", 
-              pch = pch.gps.bev.1, 
-              col = col.gps.bev.1)
-
-# size-shape pca (Mitteroecker 2004)
-
-# bev.1
-plotAllometry(fit.sz.cbev.1, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "size.shape", 
-              pch = pch.gps.bev.1, 
-              col = col.gps.bev.1)
-```
-
-```{r u.allom.h3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# predline (Adams and Nistri 2010)
-
-# bev.1
-plotAllometry(fit.sz.ubev.1, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "PredLine", 
-              pch = pch.gps.bev.1, 
-              col = col.gps.bev.1)
 ```
 
 ### Morphological disparity (H3)
@@ -668,8 +502,8 @@ plot(mean$n)
 # comparison plots
 plotRefToTarget(mean$y, 
                 mean$n, 
-                method="vector",
-                mag=2)
+                method = "vector",
+                mag = 2)
 
 ##knitr::include_graphics('images/mshape.h3.jpg')
 ```
@@ -678,7 +512,7 @@ plotRefToTarget(mean$y,
 
 Hypothesis 4 assesses whether there is a discernible difference in the morphology of specific beveling types associated with Dalton points.
 
-A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape changes with size (allometry), and differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
+A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs [@RN1655;@RN11775], which has higher statistical power and a greater ability to identify patterns in the data should they be present [@RN1719]. To assess whether shape differs by group (region), Procrustes ANOVAs [@RN1749] were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions [@RN1756]. 
 
 ```{r lm3d3.a1.h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE, fig.cap="Hypothesis 4 considers whether discrete beveling practices articulate with differences in the morphology of Dalton points"}
 knitr::include_graphics('images/dalton-vizhypothesis4-1.jpg')
@@ -716,29 +550,30 @@ pc.plot4 <- plot(pca,
                              group.cols = col.hull.4)
 ```
 
+### Minima/maxima of PC1/2 with warp grids
+
+```{r min.max2g, echo=TRUE, out.width = "100%", dpi = 300, warning=FALSE}
+# plot x/y maxima/minima
+## x - minima
+mean.shape <- mshape(Y.gpa$coords)
+plotRefToTarget(pca$shapes$shapes.comp1$min, 
+                mean.shape)
+## x - maxima
+plotRefToTarget(pca$shapes$shapes.comp1$max, 
+                mean.shape)
+## y - minima
+plotRefToTarget(pca$shapes$shapes.comp2$min, 
+                mean.shape)
+## y - maxima
+plotRefToTarget(pca$shapes$shapes.comp2$max, 
+                mean.shape)
+```
+
 ### ANOVA (H4)
 
 ```{r h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# bev.2
-anova(fit.sz.cbev.2) # common allometry (bev.2)
-
-# bev.2
-anova(fit.sz.ubev.2) # unique allometry (bev.2)
-
 # ANOVA: does dalton projectile point size differ by bev.2?
 anova(fit.size.bev.2)
-
-# pairwise comparison of LS means = which differ?
-sz.bev.2 <- pairwise(fit.size.bev.2, 
-                    groups = qdata$bev.type)
-summary(sz.bev.2, 
-        confidence = 0.95, 
-        test.type = "dist")
-
-# pairwise distance between variances = standardization?
-summary(sz.bev.2, 
-        confidence = 0.95, 
-        test.type = "var")
 
 # ANOVA: does dalton projectile point shape differ by bev.2?
 anova(fit.shape.bev.2)
@@ -746,61 +581,9 @@ anova(fit.shape.bev.2)
 # pairwise comparison of LS means = which differ?
 sh.bev.2 <- pairwise(fit.shape.bev.2, 
                     groups = qdata$bev.type)
-summary(sz.bev.2, 
+summary(sh.bev.2, 
         confidence = 0.95, 
         test.type = "dist")
-
-# pairwise distance between variances = standardization?
-summary(sz.bev.2, 
-        confidence = 0.95, 
-        test.type = "var")
-```
-
-### Allometry (H4)
-
-```{r c.allom.h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# regscore (Drake and Klingenberg 2008)
-
-# bev.2
-plotAllometry(fit.sz.cbev.2, 
-              size = gdf$size,
-              logsz = TRUE,
-              method = "RegScore",  
-              pch = pch.gps.bev.2, 
-              col = col.gps.bev.2)
-
-# common allometric component (Mitteroecker 2004)
-
-# bev.2
-plotAllometry(fit.sz.cbev.2, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "CAC", 
-              pch = pch.gps.bev.2, 
-              col = col.gps.bev.2)
-
-# size-shape pca (Mitteroecker 2004)
-
-# bev.2
-plotAllometry(fit.sz.cbev.2, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "size.shape", 
-              pch = pch.gps.bev.2, 
-              col = col.gps.bev.2)
-```
-
-
-```{r u.allom.h4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-# predline (Adams and Nistri 2010)
-
-# bev.2
-plotAllometry(fit.sz.ubev.2, 
-              size = gdf$size, 
-              logsz = TRUE, 
-              method = "PredLine", 
-              pch = pch.gps.bev.2, 
-              col = col.gps.bev.2)
 ```
 
 ### Morphological disparity (H4)
@@ -834,16 +617,16 @@ plot(mean$unifacial.bimarginal)
 # comparison plots
 plotRefToTarget(mean$alternate, 
                 mean$no.bevel, 
-                method="vector",
-                mag=2)
+                method = "vector",
+                mag = 2)
 plotRefToTarget(mean$alternate, 
                 mean$unifacial.bimarginal, 
-                method="vector",
-                mag=2)
+                method = "vector",
+                mag = 2)
 plotRefToTarget(mean$no.bevel, 
                 mean$unifacial.bimarginal, 
-                method="vector",
-                mag=2)
+                method = "vector",
+                mag = 2)
 
 ##knitr::include_graphics('images/mshape.h4.jpg')
 ```
@@ -853,12 +636,12 @@ plotRefToTarget(mean$no.bevel,
 ```{r morph.integ, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # morphological integration::
 # partition blade/base landmarks
-land.gps<-c("A","B","B","B","B","B","A","A",
+land.gps <- c("A","B","B","B","B","B","A","A",
             "A","A","B","B","B","B","A","A",
             "A","A","A","A","A","A","B","B",
             "B","B","A","A","A","A","B","B",
             "B","B")
-it<-integration.test(Y.gpa$coords, 
+it <- integration.test(Y.gpa$coords, 
                      partition.gp = land.gps, 
                      iter = 9999, 
                      print.progress = FALSE)
