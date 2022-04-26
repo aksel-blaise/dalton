@@ -557,26 +557,26 @@ div.csl-indent {
 </ol>
 <div id="analysis-of-experimental-sample" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Analysis of experimental sample<a href="landmark-sampling-evaluation-curve-lasec.html#analysis-of-experimental-sample" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="landmark-sampling-evaluation-curve-lasec.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load package</span></span>
-<span id="cb73-2"><a href="landmark-sampling-evaluation-curve-lasec.html#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(&quot;akiopteryx/lambda&quot;)</span></span>
-<span id="cb73-3"><a href="landmark-sampling-evaluation-curve-lasec.html#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb73-4"><a href="landmark-sampling-evaluation-curve-lasec.html#cb73-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(LaMBDA)</span>
-<span id="cb73-5"><a href="landmark-sampling-evaluation-curve-lasec.html#cb73-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-6"><a href="landmark-sampling-evaluation-curve-lasec.html#cb73-6" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;readmulti.csv.R&#39;</span>)</span>
-<span id="cb73-7"><a href="landmark-sampling-evaluation-curve-lasec.html#cb73-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-8"><a href="landmark-sampling-evaluation-curve-lasec.html#cb73-8" aria-hidden="true" tabindex="-1"></a><span class="co"># read .csv files</span></span>
-<span id="cb73-9"><a href="landmark-sampling-evaluation-curve-lasec.html#cb73-9" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;./data&quot;</span>)</span>
-<span id="cb73-10"><a href="landmark-sampling-evaluation-curve-lasec.html#cb73-10" aria-hidden="true" tabindex="-1"></a>filelist <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">&quot;.csv&quot;</span>)</span>
-<span id="cb73-11"><a href="landmark-sampling-evaluation-curve-lasec.html#cb73-11" aria-hidden="true" tabindex="-1"></a>lmdata <span class="ot">&lt;-</span> <span class="fu">readmulti.csv</span>(filelist)</span>
-<span id="cb73-12"><a href="landmark-sampling-evaluation-curve-lasec.html#cb73-12" aria-hidden="true" tabindex="-1"></a>lmdata <span class="ot">&lt;-</span> <span class="fu">two.d.array</span>(lmdata)</span>
-<span id="cb73-13"><a href="landmark-sampling-evaluation-curve-lasec.html#cb73-13" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;../&quot;</span>)</span>
-<span id="cb73-14"><a href="landmark-sampling-evaluation-curve-lasec.html#cb73-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-15"><a href="landmark-sampling-evaluation-curve-lasec.html#cb73-15" aria-hidden="true" tabindex="-1"></a><span class="co"># analysis</span></span>
-<span id="cb73-16"><a href="landmark-sampling-evaluation-curve-lasec.html#cb73-16" aria-hidden="true" tabindex="-1"></a><span class="fu">lasec</span>(<span class="at">coord.data =</span> lmdata, </span>
-<span id="cb73-17"><a href="landmark-sampling-evaluation-curve-lasec.html#cb73-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">n.dim =</span> <span class="dv">3</span>, </span>
-<span id="cb73-18"><a href="landmark-sampling-evaluation-curve-lasec.html#cb73-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">iter =</span> <span class="dv">1000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="landmark-sampling-evaluation-curve-lasec.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load package</span></span>
+<span id="cb84-2"><a href="landmark-sampling-evaluation-curve-lasec.html#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="co">#devtools::install_github(&quot;akiopteryx/lambda&quot;)</span></span>
+<span id="cb84-3"><a href="landmark-sampling-evaluation-curve-lasec.html#cb84-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb84-4"><a href="landmark-sampling-evaluation-curve-lasec.html#cb84-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(LaMBDA)</span>
+<span id="cb84-5"><a href="landmark-sampling-evaluation-curve-lasec.html#cb84-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-6"><a href="landmark-sampling-evaluation-curve-lasec.html#cb84-6" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;readmulti.csv.R&#39;</span>)</span>
+<span id="cb84-7"><a href="landmark-sampling-evaluation-curve-lasec.html#cb84-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-8"><a href="landmark-sampling-evaluation-curve-lasec.html#cb84-8" aria-hidden="true" tabindex="-1"></a><span class="co"># read .csv files</span></span>
+<span id="cb84-9"><a href="landmark-sampling-evaluation-curve-lasec.html#cb84-9" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;./data&quot;</span>)</span>
+<span id="cb84-10"><a href="landmark-sampling-evaluation-curve-lasec.html#cb84-10" aria-hidden="true" tabindex="-1"></a>filelist <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">&quot;.csv&quot;</span>)</span>
+<span id="cb84-11"><a href="landmark-sampling-evaluation-curve-lasec.html#cb84-11" aria-hidden="true" tabindex="-1"></a>lmdata <span class="ot">&lt;-</span> <span class="fu">readmulti.csv</span>(filelist)</span>
+<span id="cb84-12"><a href="landmark-sampling-evaluation-curve-lasec.html#cb84-12" aria-hidden="true" tabindex="-1"></a>lmdata <span class="ot">&lt;-</span> <span class="fu">two.d.array</span>(lmdata)</span>
+<span id="cb84-13"><a href="landmark-sampling-evaluation-curve-lasec.html#cb84-13" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;../&quot;</span>)</span>
+<span id="cb84-14"><a href="landmark-sampling-evaluation-curve-lasec.html#cb84-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-15"><a href="landmark-sampling-evaluation-curve-lasec.html#cb84-15" aria-hidden="true" tabindex="-1"></a><span class="co"># analysis</span></span>
+<span id="cb84-16"><a href="landmark-sampling-evaluation-curve-lasec.html#cb84-16" aria-hidden="true" tabindex="-1"></a><span class="fu">lasec</span>(<span class="at">coord.data =</span> lmdata, </span>
+<span id="cb84-17"><a href="landmark-sampling-evaluation-curve-lasec.html#cb84-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">n.dim =</span> <span class="dv">3</span>, </span>
+<span id="cb84-18"><a href="landmark-sampling-evaluation-curve-lasec.html#cb84-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">iter =</span> <span class="dv">1000</span>)</span></code></pre></div>
 <p>Results demonstrate that eight landmarks are necessary to achieve a median fit value of 0.90, 12 to achieve a median fit value of 0.95, and 23 to achieve a fit value of 0.99. For centroid size, seven landmarks were needed to achieve a median fit value of 0.99.</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="landmark-sampling-evaluation-curve-lasec.html#cb74-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/lasec.png&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="landmark-sampling-evaluation-curve-lasec.html#cb85-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/lasec.png&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/lasec.png" alt="Sampling curves from performing `LaSEC` on the dataset with respect to characterising shape variation. Each gray line indicates fit values from one iteration of subsampling. Thick, dark line denotes median fit value at each number of landmarks. `LaSEC` sampling curve for shape (left), and for centroid size (right). Results produced using the code above for this 3D dataset, using 1,000 iterations. _Images converted to PNG following export._" width="4200" />
 <p class="caption">

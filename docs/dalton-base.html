@@ -547,71 +547,71 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 6</span> Dalton base<a href="dalton-base.html#dalton-base" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="load-packages-data-3" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Load packages + data<a href="dalton-base.html#load-packages-data-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="dalton-base.html#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
-<span id="cb254-2"><a href="dalton-base.html#cb254-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb254-3"><a href="dalton-base.html#cb254-3" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github(&quot;geomorphR/geomorph&quot;, ref = &quot;Stable&quot;, build_vignettes = TRUE)</span></span>
-<span id="cb254-4"><a href="dalton-base.html#cb254-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb254-5"><a href="dalton-base.html#cb254-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geomorph)</span>
-<span id="cb254-6"><a href="dalton-base.html#cb254-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb254-7"><a href="dalton-base.html#cb254-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wesanderson)</span>
-<span id="cb254-8"><a href="dalton-base.html#cb254-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb254-9"><a href="dalton-base.html#cb254-9" aria-hidden="true" tabindex="-1"></a><span class="co"># read GM data</span></span>
-<span id="cb254-10"><a href="dalton-base.html#cb254-10" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;readmulti.csv.R&#39;</span>)</span>
-<span id="cb254-11"><a href="dalton-base.html#cb254-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb254-12"><a href="dalton-base.html#cb254-12" aria-hidden="true" tabindex="-1"></a><span class="co"># read .csv files</span></span>
-<span id="cb254-13"><a href="dalton-base.html#cb254-13" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;./data&quot;</span>)</span>
-<span id="cb254-14"><a href="dalton-base.html#cb254-14" aria-hidden="true" tabindex="-1"></a>filelist <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">&quot;.csv&quot;</span>)</span>
-<span id="cb254-15"><a href="dalton-base.html#cb254-15" aria-hidden="true" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">readmulti.csv</span>(filelist)</span>
-<span id="cb254-16"><a href="dalton-base.html#cb254-16" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;../&quot;</span>)</span>
-<span id="cb254-17"><a href="dalton-base.html#cb254-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb254-18"><a href="dalton-base.html#cb254-18" aria-hidden="true" tabindex="-1"></a><span class="co"># read qualitative data</span></span>
-<span id="cb254-19"><a href="dalton-base.html#cb254-19" aria-hidden="true" tabindex="-1"></a>qdata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;qdata.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
-<span id="cb254-20"><a href="dalton-base.html#cb254-20" aria-hidden="true" tabindex="-1"></a>qdata <span class="ot">&lt;-</span> qdata[<span class="fu">match</span>(<span class="fu">dimnames</span>(coords)[[<span class="dv">3</span>]],<span class="fu">rownames</span>(qdata)),]</span>
-<span id="cb254-21"><a href="dalton-base.html#cb254-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb254-22"><a href="dalton-base.html#cb254-22" aria-hidden="true" tabindex="-1"></a><span class="co"># print qdata</span></span>
-<span id="cb254-23"><a href="dalton-base.html#cb254-23" aria-hidden="true" tabindex="-1"></a><span class="co">#knitr::kable(qdata, align = &quot;cccc&quot;, caption = &quot;Attributes included in qdata.&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="dalton-base.html#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
+<span id="cb273-2"><a href="dalton-base.html#cb273-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb273-3"><a href="dalton-base.html#cb273-3" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github(&quot;geomorphR/geomorph&quot;, ref = &quot;Stable&quot;, build_vignettes = TRUE)</span></span>
+<span id="cb273-4"><a href="dalton-base.html#cb273-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb273-5"><a href="dalton-base.html#cb273-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geomorph)</span>
+<span id="cb273-6"><a href="dalton-base.html#cb273-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb273-7"><a href="dalton-base.html#cb273-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wesanderson)</span>
+<span id="cb273-8"><a href="dalton-base.html#cb273-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb273-9"><a href="dalton-base.html#cb273-9" aria-hidden="true" tabindex="-1"></a><span class="co"># read GM data</span></span>
+<span id="cb273-10"><a href="dalton-base.html#cb273-10" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;readmulti.csv.R&#39;</span>)</span>
+<span id="cb273-11"><a href="dalton-base.html#cb273-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb273-12"><a href="dalton-base.html#cb273-12" aria-hidden="true" tabindex="-1"></a><span class="co"># read .csv files</span></span>
+<span id="cb273-13"><a href="dalton-base.html#cb273-13" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;./data&quot;</span>)</span>
+<span id="cb273-14"><a href="dalton-base.html#cb273-14" aria-hidden="true" tabindex="-1"></a>filelist <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">pattern =</span> <span class="st">&quot;.csv&quot;</span>)</span>
+<span id="cb273-15"><a href="dalton-base.html#cb273-15" aria-hidden="true" tabindex="-1"></a>coords <span class="ot">&lt;-</span> <span class="fu">readmulti.csv</span>(filelist)</span>
+<span id="cb273-16"><a href="dalton-base.html#cb273-16" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;../&quot;</span>)</span>
+<span id="cb273-17"><a href="dalton-base.html#cb273-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb273-18"><a href="dalton-base.html#cb273-18" aria-hidden="true" tabindex="-1"></a><span class="co"># read qualitative data</span></span>
+<span id="cb273-19"><a href="dalton-base.html#cb273-19" aria-hidden="true" tabindex="-1"></a>qdata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;qdata.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb273-20"><a href="dalton-base.html#cb273-20" aria-hidden="true" tabindex="-1"></a>qdata <span class="ot">&lt;-</span> qdata[<span class="fu">match</span>(<span class="fu">dimnames</span>(coords)[[<span class="dv">3</span>]],<span class="fu">rownames</span>(qdata)),]</span>
+<span id="cb273-21"><a href="dalton-base.html#cb273-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb273-22"><a href="dalton-base.html#cb273-22" aria-hidden="true" tabindex="-1"></a><span class="co"># print qdata</span></span>
+<span id="cb273-23"><a href="dalton-base.html#cb273-23" aria-hidden="true" tabindex="-1"></a><span class="co">#knitr::kable(qdata, align = &quot;cccc&quot;, caption = &quot;Attributes included in qdata.&quot;)</span></span></code></pre></div>
 </div>
 <div id="generalized-procrustes-analysis-2" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Generalized Procrustes Analysis<a href="dalton-base.html#generalized-procrustes-analysis-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Landmark data were aligned to a global coordinate system <span class="citation">(<a href="#ref-RN11622" role="doc-biblioref">Kendall 1981</a>, <a href="#ref-RN11623" role="doc-biblioref">1984</a>; <a href="#ref-RN11563" role="doc-biblioref">Slice 2001</a>)</span>, achieved through generalized Procrustes superimposition <span class="citation">(<a href="#ref-RN478" role="doc-biblioref">Rohlf and Slice 1990</a>)</span> performed in R 4.0.2 <span class="citation">(<a href="#ref-R" role="doc-biblioref">R Core Development Team, 2020</a>)</span> using the <code>geomorph</code> library v. 3.3.1 <span class="citation">(<a href="#ref-RN11530" role="doc-biblioref">Adams et al. 2017</a>; <a href="#ref-RN1774" role="doc-biblioref">Adams and Otárola-Castillo 2013</a>)</span>. Procrustes superimposition translates, scales, and rotates the coordinate data to allow for comparisons among objects <span class="citation">(<a href="#ref-RN11564" role="doc-biblioref">Gower 1975</a>; <a href="#ref-RN478" role="doc-biblioref">Rohlf and Slice 1990</a>)</span>. The <code>geomorph</code> package uses a partial Procrustes superimposition that projects the aligned specimens into tangent space subsequent to alignment in preparation for the use of multivariate methods that assume linear space <span class="citation">(<a href="#ref-RN1646" role="doc-biblioref">Rohlf 1999</a>; <a href="#ref-RN11563" role="doc-biblioref">Slice 2001</a>)</span>.</p>
-<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="dalton-base.html#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="co">#select landmarks from coords for base</span></span>
-<span id="cb255-2"><a href="dalton-base.html#cb255-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>,<span class="dv">11</span><span class="sc">:</span><span class="dv">14</span>,<span class="dv">23</span><span class="sc">:</span><span class="dv">26</span>,<span class="dv">31</span><span class="sc">:</span><span class="dv">34</span>)</span>
-<span id="cb255-3"><a href="dalton-base.html#cb255-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb255-4"><a href="dalton-base.html#cb255-4" aria-hidden="true" tabindex="-1"></a><span class="co"># new coords</span></span>
-<span id="cb255-5"><a href="dalton-base.html#cb255-5" aria-hidden="true" tabindex="-1"></a>d.base <span class="ot">&lt;-</span> coords[x,,]</span>
-<span id="cb255-6"><a href="dalton-base.html#cb255-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb255-7"><a href="dalton-base.html#cb255-7" aria-hidden="true" tabindex="-1"></a><span class="co"># gpa</span></span>
-<span id="cb255-8"><a href="dalton-base.html#cb255-8" aria-hidden="true" tabindex="-1"></a>Y.gpa <span class="ot">&lt;-</span> <span class="fu">gpagen</span>(d.base, </span>
-<span id="cb255-9"><a href="dalton-base.html#cb255-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">PrinAxes =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb255-10"><a href="dalton-base.html#cb255-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">ProcD =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb255-11"><a href="dalton-base.html#cb255-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">Proj =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb255-12"><a href="dalton-base.html#cb255-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">print.progress =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb255-13"><a href="dalton-base.html#cb255-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb255-14"><a href="dalton-base.html#cb255-14" aria-hidden="true" tabindex="-1"></a><span class="co"># plot superimposed mshape + samples in 2D</span></span>
-<span id="cb255-15"><a href="dalton-base.html#cb255-15" aria-hidden="true" tabindex="-1"></a>gpa.shape <span class="ot">&lt;-</span> Y.gpa<span class="sc">$</span>coords[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span>
-<span id="cb255-16"><a href="dalton-base.html#cb255-16" aria-hidden="true" tabindex="-1"></a><span class="fu">plotAllSpecimens</span>(gpa.shape, <span class="at">mean =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="dalton-base.html#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="co">#select landmarks from coords for base</span></span>
+<span id="cb274-2"><a href="dalton-base.html#cb274-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>,<span class="dv">11</span><span class="sc">:</span><span class="dv">14</span>,<span class="dv">23</span><span class="sc">:</span><span class="dv">26</span>,<span class="dv">31</span><span class="sc">:</span><span class="dv">34</span>)</span>
+<span id="cb274-3"><a href="dalton-base.html#cb274-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb274-4"><a href="dalton-base.html#cb274-4" aria-hidden="true" tabindex="-1"></a><span class="co"># new coords</span></span>
+<span id="cb274-5"><a href="dalton-base.html#cb274-5" aria-hidden="true" tabindex="-1"></a>d.base <span class="ot">&lt;-</span> coords[x,,]</span>
+<span id="cb274-6"><a href="dalton-base.html#cb274-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb274-7"><a href="dalton-base.html#cb274-7" aria-hidden="true" tabindex="-1"></a><span class="co"># gpa</span></span>
+<span id="cb274-8"><a href="dalton-base.html#cb274-8" aria-hidden="true" tabindex="-1"></a>Y.gpa <span class="ot">&lt;-</span> <span class="fu">gpagen</span>(d.base, </span>
+<span id="cb274-9"><a href="dalton-base.html#cb274-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">PrinAxes =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb274-10"><a href="dalton-base.html#cb274-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">ProcD =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb274-11"><a href="dalton-base.html#cb274-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">Proj =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb274-12"><a href="dalton-base.html#cb274-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">print.progress =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb274-13"><a href="dalton-base.html#cb274-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb274-14"><a href="dalton-base.html#cb274-14" aria-hidden="true" tabindex="-1"></a><span class="co"># plot superimposed mshape + samples in 2D</span></span>
+<span id="cb274-15"><a href="dalton-base.html#cb274-15" aria-hidden="true" tabindex="-1"></a>gpa.shape <span class="ot">&lt;-</span> Y.gpa<span class="sc">$</span>coords[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span>
+<span id="cb274-16"><a href="dalton-base.html#cb274-16" aria-hidden="true" tabindex="-1"></a><span class="fu">plotAllSpecimens</span>(gpa.shape, <span class="at">mean =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/gpa.base-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="dalton-base.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="co"># geomorph data frame</span></span>
-<span id="cb256-2"><a href="dalton-base.html#cb256-2" aria-hidden="true" tabindex="-1"></a>gdf <span class="ot">&lt;-</span> <span class="fu">geomorph.data.frame</span>(<span class="at">shape =</span> Y.gpa<span class="sc">$</span>coords, </span>
-<span id="cb256-3"><a href="dalton-base.html#cb256-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">size =</span> Y.gpa<span class="sc">$</span>Csize, </span>
-<span id="cb256-4"><a href="dalton-base.html#cb256-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">heart =</span> qdata<span class="sc">$</span>heart.out, </span>
-<span id="cb256-5"><a href="dalton-base.html#cb256-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">hreg =</span> qdata<span class="sc">$</span>heart.reg,</span>
-<span id="cb256-6"><a href="dalton-base.html#cb256-6" aria-hidden="true" tabindex="-1"></a>                           <span class="at">bev.1 =</span> qdata<span class="sc">$</span>bev, </span>
-<span id="cb256-7"><a href="dalton-base.html#cb256-7" aria-hidden="true" tabindex="-1"></a>                           <span class="at">bev.2 =</span> qdata<span class="sc">$</span>bev.type)</span></code></pre></div>
-<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="dalton-base.html#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="co"># render 3d gpa plot</span></span>
-<span id="cb257-2"><a href="dalton-base.html#cb257-2" aria-hidden="true" tabindex="-1"></a><span class="co">#plot(Y.gpa)</span></span>
-<span id="cb257-3"><a href="dalton-base.html#cb257-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb257-4"><a href="dalton-base.html#cb257-4" aria-hidden="true" tabindex="-1"></a><span class="co"># gpa plot</span></span>
-<span id="cb257-5"><a href="dalton-base.html#cb257-5" aria-hidden="true" tabindex="-1"></a><span class="co"># knitr::include_graphics(&#39;images/gpa3d.png&#39;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="dalton-base.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="co"># geomorph data frame</span></span>
+<span id="cb275-2"><a href="dalton-base.html#cb275-2" aria-hidden="true" tabindex="-1"></a>gdf <span class="ot">&lt;-</span> <span class="fu">geomorph.data.frame</span>(<span class="at">shape =</span> Y.gpa<span class="sc">$</span>coords, </span>
+<span id="cb275-3"><a href="dalton-base.html#cb275-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">size =</span> Y.gpa<span class="sc">$</span>Csize, </span>
+<span id="cb275-4"><a href="dalton-base.html#cb275-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">heart =</span> qdata<span class="sc">$</span>heart.out, </span>
+<span id="cb275-5"><a href="dalton-base.html#cb275-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">hreg =</span> qdata<span class="sc">$</span>heart.reg,</span>
+<span id="cb275-6"><a href="dalton-base.html#cb275-6" aria-hidden="true" tabindex="-1"></a>                           <span class="at">bev.1 =</span> qdata<span class="sc">$</span>bev, </span>
+<span id="cb275-7"><a href="dalton-base.html#cb275-7" aria-hidden="true" tabindex="-1"></a>                           <span class="at">bev.2 =</span> qdata<span class="sc">$</span>bev.type)</span></code></pre></div>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="dalton-base.html#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="co"># render 3d gpa plot</span></span>
+<span id="cb276-2"><a href="dalton-base.html#cb276-2" aria-hidden="true" tabindex="-1"></a><span class="co">#plot(Y.gpa)</span></span>
+<span id="cb276-3"><a href="dalton-base.html#cb276-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb276-4"><a href="dalton-base.html#cb276-4" aria-hidden="true" tabindex="-1"></a><span class="co"># gpa plot</span></span>
+<span id="cb276-5"><a href="dalton-base.html#cb276-5" aria-hidden="true" tabindex="-1"></a><span class="co"># knitr::include_graphics(&#39;images/gpa3d.png&#39;)</span></span></code></pre></div>
 <div id="boxplot-attributes-2" class="section level3 hasAnchor" number="6.2.1">
 <h3><span class="header-section-number">6.2.1</span> Boxplot attributes<a href="dalton-base.html#boxplot-attributes-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="dalton-base.html#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add centroid size to qdata</span></span>
-<span id="cb258-2"><a href="dalton-base.html#cb258-2" aria-hidden="true" tabindex="-1"></a>qdata<span class="sc">$</span>csz <span class="ot">&lt;-</span> Y.gpa<span class="sc">$</span>Csize</span>
-<span id="cb258-3"><a href="dalton-base.html#cb258-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb258-4"><a href="dalton-base.html#cb258-4" aria-hidden="true" tabindex="-1"></a><span class="co"># print updated qdata with centroid size</span></span>
-<span id="cb258-5"><a href="dalton-base.html#cb258-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(qdata, </span>
-<span id="cb258-6"><a href="dalton-base.html#cb258-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">align =</span> <span class="st">&quot;ccccc&quot;</span>, </span>
-<span id="cb258-7"><a href="dalton-base.html#cb258-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Modified attributes included in qdata.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="dalton-base.html#cb277-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add centroid size to qdata</span></span>
+<span id="cb277-2"><a href="dalton-base.html#cb277-2" aria-hidden="true" tabindex="-1"></a>qdata<span class="sc">$</span>csz <span class="ot">&lt;-</span> Y.gpa<span class="sc">$</span>Csize</span>
+<span id="cb277-3"><a href="dalton-base.html#cb277-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb277-4"><a href="dalton-base.html#cb277-4" aria-hidden="true" tabindex="-1"></a><span class="co"># print updated qdata with centroid size</span></span>
+<span id="cb277-5"><a href="dalton-base.html#cb277-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(qdata, </span>
+<span id="cb277-6"><a href="dalton-base.html#cb277-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">align =</span> <span class="st">&quot;ccccc&quot;</span>, </span>
+<span id="cb277-7"><a href="dalton-base.html#cb277-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Modified attributes included in qdata.&quot;</span>)</span></code></pre></div>
 <table>
 <caption>(#tab:box.attr.base)Modified attributes included in qdata.</caption>
 <thead>
@@ -963,20 +963,20 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="dalton-base.html#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="co"># attributes for boxplots</span></span>
-<span id="cb259-2"><a href="dalton-base.html#cb259-2" aria-hidden="true" tabindex="-1"></a>csz <span class="ot">&lt;-</span> qdata<span class="sc">$</span>csz <span class="co"># centroid size</span></span>
-<span id="cb259-3"><a href="dalton-base.html#cb259-3" aria-hidden="true" tabindex="-1"></a>heart <span class="ot">&lt;-</span> qdata<span class="sc">$</span>heart.out <span class="co"># heartland in/out</span></span>
-<span id="cb259-4"><a href="dalton-base.html#cb259-4" aria-hidden="true" tabindex="-1"></a>hreg <span class="ot">&lt;-</span> qdata<span class="sc">$</span>heart.reg <span class="co"># heartland region</span></span>
-<span id="cb259-5"><a href="dalton-base.html#cb259-5" aria-hidden="true" tabindex="-1"></a>bev<span class="fl">.1</span> <span class="ot">&lt;-</span> qdata<span class="sc">$</span>bev <span class="co"># beveled yes/no</span></span>
-<span id="cb259-6"><a href="dalton-base.html#cb259-6" aria-hidden="true" tabindex="-1"></a>bev<span class="fl">.2</span> <span class="ot">&lt;-</span> qdata<span class="sc">$</span>bev.type <span class="co"># type of beveling</span></span></code></pre></div>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="dalton-base.html#cb278-1" aria-hidden="true" tabindex="-1"></a><span class="co"># attributes for boxplots</span></span>
+<span id="cb278-2"><a href="dalton-base.html#cb278-2" aria-hidden="true" tabindex="-1"></a>csz <span class="ot">&lt;-</span> qdata<span class="sc">$</span>csz <span class="co"># centroid size</span></span>
+<span id="cb278-3"><a href="dalton-base.html#cb278-3" aria-hidden="true" tabindex="-1"></a>heart <span class="ot">&lt;-</span> qdata<span class="sc">$</span>heart.out <span class="co"># heartland in/out</span></span>
+<span id="cb278-4"><a href="dalton-base.html#cb278-4" aria-hidden="true" tabindex="-1"></a>hreg <span class="ot">&lt;-</span> qdata<span class="sc">$</span>heart.reg <span class="co"># heartland region</span></span>
+<span id="cb278-5"><a href="dalton-base.html#cb278-5" aria-hidden="true" tabindex="-1"></a>bev<span class="fl">.1</span> <span class="ot">&lt;-</span> qdata<span class="sc">$</span>bev <span class="co"># beveled yes/no</span></span>
+<span id="cb278-6"><a href="dalton-base.html#cb278-6" aria-hidden="true" tabindex="-1"></a>bev<span class="fl">.2</span> <span class="ot">&lt;-</span> qdata<span class="sc">$</span>bev.type <span class="co"># type of beveling</span></span></code></pre></div>
 </div>
 </div>
 <div id="principal-components-analysis-3" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> Principal Components Analysis<a href="dalton-base.html#principal-components-analysis-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Principal components analysis <span class="citation">(<a href="#ref-RN1746" role="doc-biblioref">Jolliffe 2002</a>)</span> was used to visualise shape variation among the Dalton bases. The shape changes described by each principal axis are commonly visualized using thin-plate spline warping of a reference 3D mesh <span class="citation">(<a href="#ref-RN1731" role="doc-biblioref">Klingenberg 2013</a>; <a href="#ref-RN479" role="doc-biblioref">Sherratt et al. 2014</a>)</span>.</p>
-<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="dalton-base.html#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="co"># principal components analysis</span></span>
-<span id="cb260-2"><a href="dalton-base.html#cb260-2" aria-hidden="true" tabindex="-1"></a>pca<span class="ot">&lt;-</span><span class="fu">gm.prcomp</span>(Y.gpa<span class="sc">$</span>coords)</span>
-<span id="cb260-3"><a href="dalton-base.html#cb260-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pca)</span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="dalton-base.html#cb279-1" aria-hidden="true" tabindex="-1"></a><span class="co"># principal components analysis</span></span>
+<span id="cb279-2"><a href="dalton-base.html#cb279-2" aria-hidden="true" tabindex="-1"></a>pca<span class="ot">&lt;-</span><span class="fu">gm.prcomp</span>(Y.gpa<span class="sc">$</span>coords)</span>
+<span id="cb279-3"><a href="dalton-base.html#cb279-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pca)</span></code></pre></div>
 <pre><code>## 
 ## Ordination type: Principal Component Analysis 
 ## Centering by OLS mean
@@ -1022,69 +1022,69 @@ div.csl-indent {
 <h2><span class="header-section-number">6.4</span> Define models<a href="dalton-base.html#define-models-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="hypothesis-1-2" class="section level3 hasAnchor" number="6.4.1">
 <h3><span class="header-section-number">6.4.1</span> Hypothesis 1<a href="dalton-base.html#hypothesis-1-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="dalton-base.html#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Define models</span></span>
-<span id="cb262-2"><a href="dalton-base.html#cb262-2" aria-hidden="true" tabindex="-1"></a><span class="co"># size as a function of heart</span></span>
-<span id="cb262-3"><a href="dalton-base.html#cb262-3" aria-hidden="true" tabindex="-1"></a>fit.size.heart <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(size <span class="sc">~</span> heart, </span>
-<span id="cb262-4"><a href="dalton-base.html#cb262-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
-<span id="cb262-5"><a href="dalton-base.html#cb262-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb262-6"><a href="dalton-base.html#cb262-6" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span>
-<span id="cb262-7"><a href="dalton-base.html#cb262-7" aria-hidden="true" tabindex="-1"></a><span class="co"># shape as a function of heart</span></span>
-<span id="cb262-8"><a href="dalton-base.html#cb262-8" aria-hidden="true" tabindex="-1"></a>fit.shape.heart <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> heart, </span>
-<span id="cb262-9"><a href="dalton-base.html#cb262-9" aria-hidden="true" tabindex="-1"></a>                            <span class="at">data =</span> gdf, </span>
-<span id="cb262-10"><a href="dalton-base.html#cb262-10" aria-hidden="true" tabindex="-1"></a>                            <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb262-11"><a href="dalton-base.html#cb262-11" aria-hidden="true" tabindex="-1"></a>                            <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="dalton-base.html#cb281-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Define models</span></span>
+<span id="cb281-2"><a href="dalton-base.html#cb281-2" aria-hidden="true" tabindex="-1"></a><span class="co"># size as a function of heart</span></span>
+<span id="cb281-3"><a href="dalton-base.html#cb281-3" aria-hidden="true" tabindex="-1"></a>fit.size.heart <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(size <span class="sc">~</span> heart, </span>
+<span id="cb281-4"><a href="dalton-base.html#cb281-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
+<span id="cb281-5"><a href="dalton-base.html#cb281-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb281-6"><a href="dalton-base.html#cb281-6" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span>
+<span id="cb281-7"><a href="dalton-base.html#cb281-7" aria-hidden="true" tabindex="-1"></a><span class="co"># shape as a function of heart</span></span>
+<span id="cb281-8"><a href="dalton-base.html#cb281-8" aria-hidden="true" tabindex="-1"></a>fit.shape.heart <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> heart, </span>
+<span id="cb281-9"><a href="dalton-base.html#cb281-9" aria-hidden="true" tabindex="-1"></a>                            <span class="at">data =</span> gdf, </span>
+<span id="cb281-10"><a href="dalton-base.html#cb281-10" aria-hidden="true" tabindex="-1"></a>                            <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb281-11"><a href="dalton-base.html#cb281-11" aria-hidden="true" tabindex="-1"></a>                            <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 </div>
 <div id="hypothesis-2-2" class="section level3 hasAnchor" number="6.4.2">
 <h3><span class="header-section-number">6.4.2</span> Hypothesis 2<a href="dalton-base.html#hypothesis-2-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="dalton-base.html#cb263-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Define models</span></span>
-<span id="cb263-2"><a href="dalton-base.html#cb263-2" aria-hidden="true" tabindex="-1"></a><span class="co"># size as a function of hreg</span></span>
-<span id="cb263-3"><a href="dalton-base.html#cb263-3" aria-hidden="true" tabindex="-1"></a>fit.size.hreg <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(size <span class="sc">~</span> hreg, </span>
-<span id="cb263-4"><a href="dalton-base.html#cb263-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">data =</span> gdf, </span>
-<span id="cb263-5"><a href="dalton-base.html#cb263-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb263-6"><a href="dalton-base.html#cb263-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">iter =</span> <span class="dv">9999</span>)</span>
-<span id="cb263-7"><a href="dalton-base.html#cb263-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb263-8"><a href="dalton-base.html#cb263-8" aria-hidden="true" tabindex="-1"></a><span class="co"># shape as a function of hreg</span></span>
-<span id="cb263-9"><a href="dalton-base.html#cb263-9" aria-hidden="true" tabindex="-1"></a>fit.shape.hreg <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> hreg, </span>
-<span id="cb263-10"><a href="dalton-base.html#cb263-10" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
-<span id="cb263-11"><a href="dalton-base.html#cb263-11" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb263-12"><a href="dalton-base.html#cb263-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="dalton-base.html#cb282-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Define models</span></span>
+<span id="cb282-2"><a href="dalton-base.html#cb282-2" aria-hidden="true" tabindex="-1"></a><span class="co"># size as a function of hreg</span></span>
+<span id="cb282-3"><a href="dalton-base.html#cb282-3" aria-hidden="true" tabindex="-1"></a>fit.size.hreg <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(size <span class="sc">~</span> hreg, </span>
+<span id="cb282-4"><a href="dalton-base.html#cb282-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">data =</span> gdf, </span>
+<span id="cb282-5"><a href="dalton-base.html#cb282-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb282-6"><a href="dalton-base.html#cb282-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">iter =</span> <span class="dv">9999</span>)</span>
+<span id="cb282-7"><a href="dalton-base.html#cb282-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb282-8"><a href="dalton-base.html#cb282-8" aria-hidden="true" tabindex="-1"></a><span class="co"># shape as a function of hreg</span></span>
+<span id="cb282-9"><a href="dalton-base.html#cb282-9" aria-hidden="true" tabindex="-1"></a>fit.shape.hreg <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> hreg, </span>
+<span id="cb282-10"><a href="dalton-base.html#cb282-10" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
+<span id="cb282-11"><a href="dalton-base.html#cb282-11" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb282-12"><a href="dalton-base.html#cb282-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 </div>
 <div id="hypothesis-3-2" class="section level3 hasAnchor" number="6.4.3">
 <h3><span class="header-section-number">6.4.3</span> Hypothesis 3<a href="dalton-base.html#hypothesis-3-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="dalton-base.html#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Define models</span></span>
-<span id="cb264-2"><a href="dalton-base.html#cb264-2" aria-hidden="true" tabindex="-1"></a><span class="co"># size as a function of bev.1</span></span>
-<span id="cb264-3"><a href="dalton-base.html#cb264-3" aria-hidden="true" tabindex="-1"></a>fit.size.bev<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(size <span class="sc">~</span> bev<span class="fl">.1</span>, </span>
-<span id="cb264-4"><a href="dalton-base.html#cb264-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">data =</span> gdf, </span>
-<span id="cb264-5"><a href="dalton-base.html#cb264-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb264-6"><a href="dalton-base.html#cb264-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">iter =</span> <span class="dv">9999</span>)</span>
-<span id="cb264-7"><a href="dalton-base.html#cb264-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb264-8"><a href="dalton-base.html#cb264-8" aria-hidden="true" tabindex="-1"></a><span class="co"># shape as a function of bev.1</span></span>
-<span id="cb264-9"><a href="dalton-base.html#cb264-9" aria-hidden="true" tabindex="-1"></a>fit.shape.bev<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> bev<span class="fl">.1</span>, </span>
-<span id="cb264-10"><a href="dalton-base.html#cb264-10" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
-<span id="cb264-11"><a href="dalton-base.html#cb264-11" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb264-12"><a href="dalton-base.html#cb264-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="dalton-base.html#cb283-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Define models</span></span>
+<span id="cb283-2"><a href="dalton-base.html#cb283-2" aria-hidden="true" tabindex="-1"></a><span class="co"># size as a function of bev.1</span></span>
+<span id="cb283-3"><a href="dalton-base.html#cb283-3" aria-hidden="true" tabindex="-1"></a>fit.size.bev<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(size <span class="sc">~</span> bev<span class="fl">.1</span>, </span>
+<span id="cb283-4"><a href="dalton-base.html#cb283-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">data =</span> gdf, </span>
+<span id="cb283-5"><a href="dalton-base.html#cb283-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb283-6"><a href="dalton-base.html#cb283-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">iter =</span> <span class="dv">9999</span>)</span>
+<span id="cb283-7"><a href="dalton-base.html#cb283-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb283-8"><a href="dalton-base.html#cb283-8" aria-hidden="true" tabindex="-1"></a><span class="co"># shape as a function of bev.1</span></span>
+<span id="cb283-9"><a href="dalton-base.html#cb283-9" aria-hidden="true" tabindex="-1"></a>fit.shape.bev<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> bev<span class="fl">.1</span>, </span>
+<span id="cb283-10"><a href="dalton-base.html#cb283-10" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
+<span id="cb283-11"><a href="dalton-base.html#cb283-11" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb283-12"><a href="dalton-base.html#cb283-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 </div>
 <div id="hypothesis-4-2" class="section level3 hasAnchor" number="6.4.4">
 <h3><span class="header-section-number">6.4.4</span> Hypothesis 4<a href="dalton-base.html#hypothesis-4-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="dalton-base.html#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Define models</span></span>
-<span id="cb265-2"><a href="dalton-base.html#cb265-2" aria-hidden="true" tabindex="-1"></a><span class="co"># size as a function of bev.2</span></span>
-<span id="cb265-3"><a href="dalton-base.html#cb265-3" aria-hidden="true" tabindex="-1"></a>fit.size.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(size <span class="sc">~</span> bev<span class="fl">.2</span>, </span>
-<span id="cb265-4"><a href="dalton-base.html#cb265-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">data =</span> gdf, </span>
-<span id="cb265-5"><a href="dalton-base.html#cb265-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb265-6"><a href="dalton-base.html#cb265-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">iter =</span> <span class="dv">9999</span>)</span>
-<span id="cb265-7"><a href="dalton-base.html#cb265-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb265-8"><a href="dalton-base.html#cb265-8" aria-hidden="true" tabindex="-1"></a><span class="co"># shape as a function of bev.2</span></span>
-<span id="cb265-9"><a href="dalton-base.html#cb265-9" aria-hidden="true" tabindex="-1"></a>fit.shape.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> bev<span class="fl">.2</span>, </span>
-<span id="cb265-10"><a href="dalton-base.html#cb265-10" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
-<span id="cb265-11"><a href="dalton-base.html#cb265-11" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb265-12"><a href="dalton-base.html#cb265-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="dalton-base.html#cb284-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Define models</span></span>
+<span id="cb284-2"><a href="dalton-base.html#cb284-2" aria-hidden="true" tabindex="-1"></a><span class="co"># size as a function of bev.2</span></span>
+<span id="cb284-3"><a href="dalton-base.html#cb284-3" aria-hidden="true" tabindex="-1"></a>fit.size.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(size <span class="sc">~</span> bev<span class="fl">.2</span>, </span>
+<span id="cb284-4"><a href="dalton-base.html#cb284-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">data =</span> gdf, </span>
+<span id="cb284-5"><a href="dalton-base.html#cb284-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb284-6"><a href="dalton-base.html#cb284-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">iter =</span> <span class="dv">9999</span>)</span>
+<span id="cb284-7"><a href="dalton-base.html#cb284-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb284-8"><a href="dalton-base.html#cb284-8" aria-hidden="true" tabindex="-1"></a><span class="co"># shape as a function of bev.2</span></span>
+<span id="cb284-9"><a href="dalton-base.html#cb284-9" aria-hidden="true" tabindex="-1"></a>fit.shape.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">procD.lm</span>(shape <span class="sc">~</span> bev<span class="fl">.2</span>, </span>
+<span id="cb284-10"><a href="dalton-base.html#cb284-10" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> gdf, </span>
+<span id="cb284-11"><a href="dalton-base.html#cb284-11" aria-hidden="true" tabindex="-1"></a>                           <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb284-12"><a href="dalton-base.html#cb284-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="test-hypothesis-1-geo-ba" class="section level2 hasAnchor" number="6.5">
 <h2><span class="header-section-number">6.5</span> Test Hypothesis 1 (Geo Ba)<a href="dalton-base.html#test-hypothesis-1-geo-ba" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Hypothesis 1 assesses whether there is a difference in morphology for Dalton base shapes found in and out of the heartland.</p>
 <p>A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs <span class="citation">(<a href="#ref-RN1655" role="doc-biblioref">Adams and Collyer 2015</a>; <a href="#ref-RN11775" role="doc-biblioref">Michael L. Collyer and Adams 2018</a>)</span>, which has higher statistical power and a greater ability to identify patterns in the data should they be present <span class="citation">(<a href="#ref-RN1719" role="doc-biblioref">Anderson and Ter Braak 2003</a>)</span>. To assess whether shape differs by group (region), Procrustes ANOVAs <span class="citation">(<a href="#ref-RN1749" role="doc-biblioref">Goodall 1991</a>)</span> were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions <span class="citation">(<a href="#ref-RN1756" role="doc-biblioref">M. L. Collyer, Sekora, and Adams 2015</a>)</span>.</p>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="dalton-base.html#cb266-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis1.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="dalton-base.html#cb285-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis1.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis1.jpg" alt="Hypothesis 1 considers whether Dalton point shapes discovered in (left) and out (right) of the Heartland differ in basal morphology." width="100%" />
 <p class="caption">
@@ -1093,15 +1093,15 @@ div.csl-indent {
 </div>
 <div id="boxplot-h1-2" class="section level3 hasAnchor" number="6.5.1">
 <h3><span class="header-section-number">6.5.1</span> Boxplot (H1)<a href="dalton-base.html#boxplot-h1-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="dalton-base.html#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of Dalton base centroid size by in/out heartland</span></span>
-<span id="cb267-2"><a href="dalton-base.html#cb267-2" aria-hidden="true" tabindex="-1"></a>csz.hrt <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(qdata, <span class="fu">aes</span>(<span class="at">x =</span> heart, <span class="at">y =</span> csz, <span class="at">color =</span> heart)) <span class="sc">+</span> </span>
-<span id="cb267-3"><a href="dalton-base.html#cb267-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb267-4"><a href="dalton-base.html#cb267-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb267-5"><a href="dalton-base.html#cb267-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb267-6"><a href="dalton-base.html#cb267-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
-<span id="cb267-7"><a href="dalton-base.html#cb267-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;In Heartland?&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Centroid Size - Base&#39;</span>)</span>
-<span id="cb267-8"><a href="dalton-base.html#cb267-8" aria-hidden="true" tabindex="-1"></a><span class="co"># render plot</span></span>
-<span id="cb267-9"><a href="dalton-base.html#cb267-9" aria-hidden="true" tabindex="-1"></a>csz.hrt</span></code></pre></div>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="dalton-base.html#cb286-1" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of Dalton base centroid size by in/out heartland</span></span>
+<span id="cb286-2"><a href="dalton-base.html#cb286-2" aria-hidden="true" tabindex="-1"></a>csz.hrt <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(qdata, <span class="fu">aes</span>(<span class="at">x =</span> heart, <span class="at">y =</span> csz, <span class="at">color =</span> heart)) <span class="sc">+</span> </span>
+<span id="cb286-3"><a href="dalton-base.html#cb286-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb286-4"><a href="dalton-base.html#cb286-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb286-5"><a href="dalton-base.html#cb286-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb286-6"><a href="dalton-base.html#cb286-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
+<span id="cb286-7"><a href="dalton-base.html#cb286-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;In Heartland?&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Centroid Size - Base&#39;</span>)</span>
+<span id="cb286-8"><a href="dalton-base.html#cb286-8" aria-hidden="true" tabindex="-1"></a><span class="co"># render plot</span></span>
+<span id="cb286-9"><a href="dalton-base.html#cb286-9" aria-hidden="true" tabindex="-1"></a>csz.hrt</span></code></pre></div>
 <pre><code>## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.</code></pre>
 <div class="figure">
 <img src="dalton.supp_files/figure-html/box1.base-1.png" alt="Boxplot of centroid size by Heartland (in/out)." width="100%" />
@@ -1112,46 +1112,46 @@ div.csl-indent {
 </div>
 <div id="principal-components-analysis-h1-3" class="section level3 hasAnchor" number="6.5.2">
 <h3><span class="header-section-number">6.5.2</span> Principal Components Analysis (H1)<a href="dalton-base.html#principal-components-analysis-h1-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="dalton-base.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters to plot by heartland in (H) and out (N)</span></span>
-<span id="cb269-2"><a href="dalton-base.html#cb269-2" aria-hidden="true" tabindex="-1"></a>pch.gps.heart <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="fu">as.factor</span>(heart)]</span>
-<span id="cb269-3"><a href="dalton-base.html#cb269-3" aria-hidden="true" tabindex="-1"></a>col.gps.heart <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(heart)]</span>
-<span id="cb269-4"><a href="dalton-base.html#cb269-4" aria-hidden="true" tabindex="-1"></a>col.hull <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
-<span id="cb269-5"><a href="dalton-base.html#cb269-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb269-6"><a href="dalton-base.html#cb269-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by heartland in (H) and out (N)</span></span>
-<span id="cb269-7"><a href="dalton-base.html#cb269-7" aria-hidden="true" tabindex="-1"></a>pc.plot1 <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
-<span id="cb269-8"><a href="dalton-base.html#cb269-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb269-9"><a href="dalton-base.html#cb269-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.heart,</span>
-<span id="cb269-10"><a href="dalton-base.html#cb269-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.heart)</span>
-<span id="cb269-11"><a href="dalton-base.html#cb269-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">shapeHulls</span>(pc.plot1, </span>
-<span id="cb269-12"><a href="dalton-base.html#cb269-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">groups =</span> heart,</span>
-<span id="cb269-13"><a href="dalton-base.html#cb269-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">group.cols =</span> col.hull)</span></code></pre></div>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="dalton-base.html#cb288-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters to plot by heartland in (H) and out (N)</span></span>
+<span id="cb288-2"><a href="dalton-base.html#cb288-2" aria-hidden="true" tabindex="-1"></a>pch.gps.heart <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="fu">as.factor</span>(heart)]</span>
+<span id="cb288-3"><a href="dalton-base.html#cb288-3" aria-hidden="true" tabindex="-1"></a>col.gps.heart <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(heart)]</span>
+<span id="cb288-4"><a href="dalton-base.html#cb288-4" aria-hidden="true" tabindex="-1"></a>col.hull <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
+<span id="cb288-5"><a href="dalton-base.html#cb288-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb288-6"><a href="dalton-base.html#cb288-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by heartland in (H) and out (N)</span></span>
+<span id="cb288-7"><a href="dalton-base.html#cb288-7" aria-hidden="true" tabindex="-1"></a>pc.plot1 <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
+<span id="cb288-8"><a href="dalton-base.html#cb288-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb288-9"><a href="dalton-base.html#cb288-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.heart,</span>
+<span id="cb288-10"><a href="dalton-base.html#cb288-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.heart)</span>
+<span id="cb288-11"><a href="dalton-base.html#cb288-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">shapeHulls</span>(pc.plot1, </span>
+<span id="cb288-12"><a href="dalton-base.html#cb288-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">groups =</span> heart,</span>
+<span id="cb288-13"><a href="dalton-base.html#cb288-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">group.cols =</span> col.hull)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca1.base-1.png" width="100%" /></p>
 </div>
 <div id="minimamaxima-of-pc12-with-warp-grids-8" class="section level3 hasAnchor" number="6.5.3">
 <h3><span class="header-section-number">6.5.3</span> Minima/maxima of PC1/2 with warp grids<a href="dalton-base.html#minimamaxima-of-pc12-with-warp-grids-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="dalton-base.html#cb270-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot x/y maxima/minima</span></span>
-<span id="cb270-2"><a href="dalton-base.html#cb270-2" aria-hidden="true" tabindex="-1"></a><span class="do">## x - minima</span></span>
-<span id="cb270-3"><a href="dalton-base.html#cb270-3" aria-hidden="true" tabindex="-1"></a>mean.shape <span class="ot">&lt;-</span> <span class="fu">mshape</span>(Y.gpa<span class="sc">$</span>coords)</span>
-<span id="cb270-4"><a href="dalton-base.html#cb270-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>min, </span>
-<span id="cb270-5"><a href="dalton-base.html#cb270-5" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="dalton-base.html#cb289-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot x/y maxima/minima</span></span>
+<span id="cb289-2"><a href="dalton-base.html#cb289-2" aria-hidden="true" tabindex="-1"></a><span class="do">## x - minima</span></span>
+<span id="cb289-3"><a href="dalton-base.html#cb289-3" aria-hidden="true" tabindex="-1"></a>mean.shape <span class="ot">&lt;-</span> <span class="fu">mshape</span>(Y.gpa<span class="sc">$</span>coords)</span>
+<span id="cb289-4"><a href="dalton-base.html#cb289-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>min, </span>
+<span id="cb289-5"><a href="dalton-base.html#cb289-5" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/min.max0wff-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="dalton-base.html#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="do">## x - maxima</span></span>
-<span id="cb271-2"><a href="dalton-base.html#cb271-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>max, </span>
-<span id="cb271-3"><a href="dalton-base.html#cb271-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="dalton-base.html#cb290-1" aria-hidden="true" tabindex="-1"></a><span class="do">## x - maxima</span></span>
+<span id="cb290-2"><a href="dalton-base.html#cb290-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>max, </span>
+<span id="cb290-3"><a href="dalton-base.html#cb290-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/min.max0wff-2.png" width="100%" /></p>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="dalton-base.html#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="do">## y - minima</span></span>
-<span id="cb272-2"><a href="dalton-base.html#cb272-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>min, </span>
-<span id="cb272-3"><a href="dalton-base.html#cb272-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="dalton-base.html#cb291-1" aria-hidden="true" tabindex="-1"></a><span class="do">## y - minima</span></span>
+<span id="cb291-2"><a href="dalton-base.html#cb291-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>min, </span>
+<span id="cb291-3"><a href="dalton-base.html#cb291-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/min.max0wff-3.png" width="100%" /></p>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="dalton-base.html#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="do">## y - maxima</span></span>
-<span id="cb273-2"><a href="dalton-base.html#cb273-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>max, </span>
-<span id="cb273-3"><a href="dalton-base.html#cb273-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="dalton-base.html#cb292-1" aria-hidden="true" tabindex="-1"></a><span class="do">## y - maxima</span></span>
+<span id="cb292-2"><a href="dalton-base.html#cb292-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>max, </span>
+<span id="cb292-3"><a href="dalton-base.html#cb292-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/min.max0wff-4.png" width="100%" /></p>
 </div>
 <div id="anova-h1-2" class="section level3 hasAnchor" number="6.5.4">
 <h3><span class="header-section-number">6.5.4</span> ANOVA (H1)<a href="dalton-base.html#anova-h1-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="dalton-base.html#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: do dalton base sizes differ by heart?</span></span>
-<span id="cb274-2"><a href="dalton-base.html#cb274-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.size.heart)</span></code></pre></div>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="dalton-base.html#cb293-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: do dalton base sizes differ by heart?</span></span>
+<span id="cb293-2"><a href="dalton-base.html#cb293-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.size.heart)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1166,8 +1166,8 @@ div.csl-indent {
 ## Total     41 1526.87                                     
 ## 
 ## Call: procD.lm(f1 = size ~ heart, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="dalton-base.html#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: do dalton base shapes differ by heart?</span></span>
-<span id="cb276-2"><a href="dalton-base.html#cb276-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.heart)</span></code></pre></div>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="dalton-base.html#cb295-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: do dalton base shapes differ by heart?</span></span>
+<span id="cb295-2"><a href="dalton-base.html#cb295-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.heart)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1187,13 +1187,13 @@ div.csl-indent {
 </div>
 <div id="morphological-disparity-h1-2" class="section level3 hasAnchor" number="6.5.5">
 <h3><span class="header-section-number">6.5.5</span> Morphological disparity (H1)<a href="dalton-base.html#morphological-disparity-h1-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="dalton-base.html#cb278-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: does one group display greater </span></span>
-<span id="cb278-2"><a href="dalton-base.html#cb278-2" aria-hidden="true" tabindex="-1"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
-<span id="cb278-3"><a href="dalton-base.html#cb278-3" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(shape <span class="sc">~</span> heart, </span>
-<span id="cb278-4"><a href="dalton-base.html#cb278-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>heart.out, </span>
-<span id="cb278-5"><a href="dalton-base.html#cb278-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
-<span id="cb278-6"><a href="dalton-base.html#cb278-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb278-7"><a href="dalton-base.html#cb278-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="dalton-base.html#cb297-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: does one group display greater </span></span>
+<span id="cb297-2"><a href="dalton-base.html#cb297-2" aria-hidden="true" tabindex="-1"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
+<span id="cb297-3"><a href="dalton-base.html#cb297-3" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(shape <span class="sc">~</span> heart, </span>
+<span id="cb297-4"><a href="dalton-base.html#cb297-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>heart.out, </span>
+<span id="cb297-5"><a href="dalton-base.html#cb297-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
+<span id="cb297-6"><a href="dalton-base.html#cb297-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb297-7"><a href="dalton-base.html#cb297-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## morphol.disparity(f1 = shape ~ heart, groups = qdata$heart.out,  
@@ -1222,32 +1222,32 @@ div.csl-indent {
 </div>
 <div id="mean-shapes-h1-3" class="section level3 hasAnchor" number="6.5.6">
 <h3><span class="header-section-number">6.5.6</span> Mean Shapes (H1)<a href="dalton-base.html#mean-shapes-h1-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="dalton-base.html#cb280-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset landmark coordinates to produce mean shapes for hypothesis 1</span></span>
-<span id="cb280-2"><a href="dalton-base.html#cb280-2" aria-hidden="true" tabindex="-1"></a>new.coords<span class="ot">&lt;-</span><span class="fu">coords.subset</span>(<span class="at">A =</span> Y.gpa<span class="sc">$</span>coords, </span>
-<span id="cb280-3"><a href="dalton-base.html#cb280-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">group =</span> qdata<span class="sc">$</span>heart.out)</span>
-<span id="cb280-4"><a href="dalton-base.html#cb280-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(new.coords)</span></code></pre></div>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="dalton-base.html#cb299-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset landmark coordinates to produce mean shapes for hypothesis 1</span></span>
+<span id="cb299-2"><a href="dalton-base.html#cb299-2" aria-hidden="true" tabindex="-1"></a>new.coords<span class="ot">&lt;-</span><span class="fu">coords.subset</span>(<span class="at">A =</span> Y.gpa<span class="sc">$</span>coords, </span>
+<span id="cb299-3"><a href="dalton-base.html#cb299-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">group =</span> qdata<span class="sc">$</span>heart.out)</span>
+<span id="cb299-4"><a href="dalton-base.html#cb299-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(new.coords)</span></code></pre></div>
 <pre><code>## [1] &quot;H&quot; &quot;N&quot;</code></pre>
-<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="dalton-base.html#cb282-1" aria-hidden="true" tabindex="-1"></a><span class="co"># group shape means</span></span>
-<span id="cb282-2"><a href="dalton-base.html#cb282-2" aria-hidden="true" tabindex="-1"></a>mean <span class="ot">&lt;-</span> <span class="fu">lapply</span>(new.coords, mshape)</span>
-<span id="cb282-3"><a href="dalton-base.html#cb282-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb282-4"><a href="dalton-base.html#cb282-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot mean shapes</span></span>
-<span id="cb282-5"><a href="dalton-base.html#cb282-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>H)</span>
-<span id="cb282-6"><a href="dalton-base.html#cb282-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>N)</span>
-<span id="cb282-7"><a href="dalton-base.html#cb282-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb282-8"><a href="dalton-base.html#cb282-8" aria-hidden="true" tabindex="-1"></a><span class="co"># comparison plots</span></span>
-<span id="cb282-9"><a href="dalton-base.html#cb282-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>H, </span>
-<span id="cb282-10"><a href="dalton-base.html#cb282-10" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>N, </span>
-<span id="cb282-11"><a href="dalton-base.html#cb282-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">method=</span><span class="st">&quot;vector&quot;</span>,</span>
-<span id="cb282-12"><a href="dalton-base.html#cb282-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag=</span><span class="dv">2</span>)</span>
-<span id="cb282-13"><a href="dalton-base.html#cb282-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb282-14"><a href="dalton-base.html#cb282-14" aria-hidden="true" tabindex="-1"></a><span class="do">##knitr::include_graphics(&#39;images/mshape.h1.jpg&#39;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="dalton-base.html#cb301-1" aria-hidden="true" tabindex="-1"></a><span class="co"># group shape means</span></span>
+<span id="cb301-2"><a href="dalton-base.html#cb301-2" aria-hidden="true" tabindex="-1"></a>mean <span class="ot">&lt;-</span> <span class="fu">lapply</span>(new.coords, mshape)</span>
+<span id="cb301-3"><a href="dalton-base.html#cb301-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb301-4"><a href="dalton-base.html#cb301-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot mean shapes</span></span>
+<span id="cb301-5"><a href="dalton-base.html#cb301-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>H)</span>
+<span id="cb301-6"><a href="dalton-base.html#cb301-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>N)</span>
+<span id="cb301-7"><a href="dalton-base.html#cb301-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb301-8"><a href="dalton-base.html#cb301-8" aria-hidden="true" tabindex="-1"></a><span class="co"># comparison plots</span></span>
+<span id="cb301-9"><a href="dalton-base.html#cb301-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>H, </span>
+<span id="cb301-10"><a href="dalton-base.html#cb301-10" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>N, </span>
+<span id="cb301-11"><a href="dalton-base.html#cb301-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">method=</span><span class="st">&quot;vector&quot;</span>,</span>
+<span id="cb301-12"><a href="dalton-base.html#cb301-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag=</span><span class="dv">2</span>)</span>
+<span id="cb301-13"><a href="dalton-base.html#cb301-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb301-14"><a href="dalton-base.html#cb301-14" aria-hidden="true" tabindex="-1"></a><span class="do">##knitr::include_graphics(&#39;images/mshape.h1.jpg&#39;)</span></span></code></pre></div>
 </div>
 </div>
 <div id="test-hypothesis-2-geo-ba" class="section level2 hasAnchor" number="6.6">
 <h2><span class="header-section-number">6.6</span> Test Hypothesis 2 (Geo Ba)<a href="dalton-base.html#test-hypothesis-2-geo-ba" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Hypothesis 2 assesses whether there is a difference in morphology for Dalton base shapes found in the heartland, the interior, and the northern periphery.</p>
 <p>A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs <span class="citation">(<a href="#ref-RN1655" role="doc-biblioref">Adams and Collyer 2015</a>; <a href="#ref-RN11775" role="doc-biblioref">Michael L. Collyer and Adams 2018</a>)</span>, which has higher statistical power and a greater ability to identify patterns in the data should they be present <span class="citation">(<a href="#ref-RN1719" role="doc-biblioref">Anderson and Ter Braak 2003</a>)</span>. To assess whether shape differs by group (region), Procrustes ANOVAs <span class="citation">(<a href="#ref-RN1749" role="doc-biblioref">Goodall 1991</a>)</span> were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions <span class="citation">(<a href="#ref-RN1756" role="doc-biblioref">M. L. Collyer, Sekora, and Adams 2015</a>)</span>.</p>
-<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="dalton-base.html#cb283-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis2.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="dalton-base.html#cb302-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis2.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis2.jpg" alt="Hypothesis 2 considers whether Dalton point shapes discovered in the heartland (left), interior (center), and northern periphery (right) differ in basal morphology." width="100%" />
 <p class="caption">
@@ -1256,15 +1256,15 @@ div.csl-indent {
 </div>
 <div id="boxplot-h2-2" class="section level3 hasAnchor" number="6.6.1">
 <h3><span class="header-section-number">6.6.1</span> Boxplot (H2)<a href="dalton-base.html#boxplot-h2-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="dalton-base.html#cb284-1" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of Dalton base centroid size by heartland + regions</span></span>
-<span id="cb284-2"><a href="dalton-base.html#cb284-2" aria-hidden="true" tabindex="-1"></a>csz.hreg <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(qdata, <span class="fu">aes</span>(<span class="at">x =</span> hreg, <span class="at">y =</span> csz, <span class="at">color =</span> hreg)) <span class="sc">+</span> </span>
-<span id="cb284-3"><a href="dalton-base.html#cb284-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb284-4"><a href="dalton-base.html#cb284-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb284-5"><a href="dalton-base.html#cb284-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb284-6"><a href="dalton-base.html#cb284-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
-<span id="cb284-7"><a href="dalton-base.html#cb284-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Heartland Region&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Centroid Size - Base&#39;</span>)</span>
-<span id="cb284-8"><a href="dalton-base.html#cb284-8" aria-hidden="true" tabindex="-1"></a><span class="co"># render plot</span></span>
-<span id="cb284-9"><a href="dalton-base.html#cb284-9" aria-hidden="true" tabindex="-1"></a>csz.hreg</span></code></pre></div>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="dalton-base.html#cb303-1" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of Dalton base centroid size by heartland + regions</span></span>
+<span id="cb303-2"><a href="dalton-base.html#cb303-2" aria-hidden="true" tabindex="-1"></a>csz.hreg <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(qdata, <span class="fu">aes</span>(<span class="at">x =</span> hreg, <span class="at">y =</span> csz, <span class="at">color =</span> hreg)) <span class="sc">+</span> </span>
+<span id="cb303-3"><a href="dalton-base.html#cb303-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb303-4"><a href="dalton-base.html#cb303-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb303-5"><a href="dalton-base.html#cb303-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb303-6"><a href="dalton-base.html#cb303-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
+<span id="cb303-7"><a href="dalton-base.html#cb303-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Heartland Region&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Centroid Size - Base&#39;</span>)</span>
+<span id="cb303-8"><a href="dalton-base.html#cb303-8" aria-hidden="true" tabindex="-1"></a><span class="co"># render plot</span></span>
+<span id="cb303-9"><a href="dalton-base.html#cb303-9" aria-hidden="true" tabindex="-1"></a>csz.hreg</span></code></pre></div>
 <pre><code>## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.</code></pre>
 <div class="figure">
 <img src="dalton.supp_files/figure-html/box2.base-1.png" alt="Boxplot of centroid size by Heartland region." width="100%" />
@@ -1275,46 +1275,46 @@ div.csl-indent {
 </div>
 <div id="principal-components-analysis-h2-3" class="section level3 hasAnchor" number="6.6.2">
 <h3><span class="header-section-number">6.6.2</span> Principal Components Analysis (H2)<a href="dalton-base.html#principal-components-analysis-h2-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="dalton-base.html#cb286-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters to plot by heartland + regions</span></span>
-<span id="cb286-2"><a href="dalton-base.html#cb286-2" aria-hidden="true" tabindex="-1"></a>pch.gps.hreg <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="fu">as.factor</span>(hreg)]</span>
-<span id="cb286-3"><a href="dalton-base.html#cb286-3" aria-hidden="true" tabindex="-1"></a>col.gps.hreg <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(hreg)]</span>
-<span id="cb286-4"><a href="dalton-base.html#cb286-4" aria-hidden="true" tabindex="-1"></a>col.hull<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
-<span id="cb286-5"><a href="dalton-base.html#cb286-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb286-6"><a href="dalton-base.html#cb286-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by heartland + regions</span></span>
-<span id="cb286-7"><a href="dalton-base.html#cb286-7" aria-hidden="true" tabindex="-1"></a>pc.plot2 <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
-<span id="cb286-8"><a href="dalton-base.html#cb286-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb286-9"><a href="dalton-base.html#cb286-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.hreg,</span>
-<span id="cb286-10"><a href="dalton-base.html#cb286-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.hreg)</span>
-<span id="cb286-11"><a href="dalton-base.html#cb286-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">shapeHulls</span>(pc.plot2, </span>
-<span id="cb286-12"><a href="dalton-base.html#cb286-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">groups =</span> hreg,</span>
-<span id="cb286-13"><a href="dalton-base.html#cb286-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">group.cols =</span> col.hull<span class="fl">.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="dalton-base.html#cb305-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters to plot by heartland + regions</span></span>
+<span id="cb305-2"><a href="dalton-base.html#cb305-2" aria-hidden="true" tabindex="-1"></a>pch.gps.hreg <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="fu">as.factor</span>(hreg)]</span>
+<span id="cb305-3"><a href="dalton-base.html#cb305-3" aria-hidden="true" tabindex="-1"></a>col.gps.hreg <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(hreg)]</span>
+<span id="cb305-4"><a href="dalton-base.html#cb305-4" aria-hidden="true" tabindex="-1"></a>col.hull<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#798E87&quot;</span>,<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>)</span>
+<span id="cb305-5"><a href="dalton-base.html#cb305-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb305-6"><a href="dalton-base.html#cb305-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by heartland + regions</span></span>
+<span id="cb305-7"><a href="dalton-base.html#cb305-7" aria-hidden="true" tabindex="-1"></a>pc.plot2 <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
+<span id="cb305-8"><a href="dalton-base.html#cb305-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb305-9"><a href="dalton-base.html#cb305-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.hreg,</span>
+<span id="cb305-10"><a href="dalton-base.html#cb305-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.hreg)</span>
+<span id="cb305-11"><a href="dalton-base.html#cb305-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">shapeHulls</span>(pc.plot2, </span>
+<span id="cb305-12"><a href="dalton-base.html#cb305-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">groups =</span> hreg,</span>
+<span id="cb305-13"><a href="dalton-base.html#cb305-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">group.cols =</span> col.hull<span class="fl">.2</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca2.base-1.png" width="100%" /></p>
 </div>
 <div id="minimamaxima-of-pc12-with-warp-grids-9" class="section level3 hasAnchor" number="6.6.3">
 <h3><span class="header-section-number">6.6.3</span> Minima/maxima of PC1/2 with warp grids<a href="dalton-base.html#minimamaxima-of-pc12-with-warp-grids-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="dalton-base.html#cb287-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot x/y maxima/minima</span></span>
-<span id="cb287-2"><a href="dalton-base.html#cb287-2" aria-hidden="true" tabindex="-1"></a><span class="do">## x - minima</span></span>
-<span id="cb287-3"><a href="dalton-base.html#cb287-3" aria-hidden="true" tabindex="-1"></a>mean.shape <span class="ot">&lt;-</span> <span class="fu">mshape</span>(Y.gpa<span class="sc">$</span>coords)</span>
-<span id="cb287-4"><a href="dalton-base.html#cb287-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>min, </span>
-<span id="cb287-5"><a href="dalton-base.html#cb287-5" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="dalton-base.html#cb306-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot x/y maxima/minima</span></span>
+<span id="cb306-2"><a href="dalton-base.html#cb306-2" aria-hidden="true" tabindex="-1"></a><span class="do">## x - minima</span></span>
+<span id="cb306-3"><a href="dalton-base.html#cb306-3" aria-hidden="true" tabindex="-1"></a>mean.shape <span class="ot">&lt;-</span> <span class="fu">mshape</span>(Y.gpa<span class="sc">$</span>coords)</span>
+<span id="cb306-4"><a href="dalton-base.html#cb306-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>min, </span>
+<span id="cb306-5"><a href="dalton-base.html#cb306-5" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/min.max0xff-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="dalton-base.html#cb288-1" aria-hidden="true" tabindex="-1"></a><span class="do">## x - maxima</span></span>
-<span id="cb288-2"><a href="dalton-base.html#cb288-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>max, </span>
-<span id="cb288-3"><a href="dalton-base.html#cb288-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="dalton-base.html#cb307-1" aria-hidden="true" tabindex="-1"></a><span class="do">## x - maxima</span></span>
+<span id="cb307-2"><a href="dalton-base.html#cb307-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>max, </span>
+<span id="cb307-3"><a href="dalton-base.html#cb307-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/min.max0xff-2.png" width="100%" /></p>
-<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="dalton-base.html#cb289-1" aria-hidden="true" tabindex="-1"></a><span class="do">## y - minima</span></span>
-<span id="cb289-2"><a href="dalton-base.html#cb289-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>min, </span>
-<span id="cb289-3"><a href="dalton-base.html#cb289-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="dalton-base.html#cb308-1" aria-hidden="true" tabindex="-1"></a><span class="do">## y - minima</span></span>
+<span id="cb308-2"><a href="dalton-base.html#cb308-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>min, </span>
+<span id="cb308-3"><a href="dalton-base.html#cb308-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/min.max0xff-3.png" width="100%" /></p>
-<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="dalton-base.html#cb290-1" aria-hidden="true" tabindex="-1"></a><span class="do">## y - maxima</span></span>
-<span id="cb290-2"><a href="dalton-base.html#cb290-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>max, </span>
-<span id="cb290-3"><a href="dalton-base.html#cb290-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="dalton-base.html#cb309-1" aria-hidden="true" tabindex="-1"></a><span class="do">## y - maxima</span></span>
+<span id="cb309-2"><a href="dalton-base.html#cb309-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>max, </span>
+<span id="cb309-3"><a href="dalton-base.html#cb309-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/min.max0xff-4.png" width="100%" /></p>
 </div>
 <div id="anova-h2-2" class="section level3 hasAnchor" number="6.6.4">
 <h3><span class="header-section-number">6.6.4</span> ANOVA (H2)<a href="dalton-base.html#anova-h2-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="dalton-base.html#cb291-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: does dalton base size differ by hreg?</span></span>
-<span id="cb291-2"><a href="dalton-base.html#cb291-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.size.hreg)</span></code></pre></div>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="dalton-base.html#cb310-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: does dalton base size differ by hreg?</span></span>
+<span id="cb310-2"><a href="dalton-base.html#cb310-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.size.hreg)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1331,12 +1331,12 @@ div.csl-indent {
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = size ~ hreg, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="dalton-base.html#cb293-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
-<span id="cb293-2"><a href="dalton-base.html#cb293-2" aria-hidden="true" tabindex="-1"></a>sz.hreg <span class="ot">&lt;-</span> <span class="fu">pairwise</span>(fit.size.hreg, </span>
-<span id="cb293-3"><a href="dalton-base.html#cb293-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">groups =</span> qdata<span class="sc">$</span>heart.reg)</span>
-<span id="cb293-4"><a href="dalton-base.html#cb293-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sz.hreg, </span>
-<span id="cb293-5"><a href="dalton-base.html#cb293-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb293-6"><a href="dalton-base.html#cb293-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="dalton-base.html#cb312-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
+<span id="cb312-2"><a href="dalton-base.html#cb312-2" aria-hidden="true" tabindex="-1"></a>sz.hreg <span class="ot">&lt;-</span> <span class="fu">pairwise</span>(fit.size.hreg, </span>
+<span id="cb312-3"><a href="dalton-base.html#cb312-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">groups =</span> qdata<span class="sc">$</span>heart.reg)</span>
+<span id="cb312-4"><a href="dalton-base.html#cb312-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sz.hreg, </span>
+<span id="cb312-5"><a href="dalton-base.html#cb312-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb312-6"><a href="dalton-base.html#cb312-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -1352,8 +1352,8 @@ div.csl-indent {
 ## H:I 0.8876434  4.152061 -0.5128493 0.6895
 ## H:P 5.4212433  5.046690  1.7160770 0.0353
 ## I:P 6.3088867  5.284399  1.9241594 0.0178</code></pre>
-<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="dalton-base.html#cb295-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: does dalton base shape differ by hreg?</span></span>
-<span id="cb295-2"><a href="dalton-base.html#cb295-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.hreg)</span></code></pre></div>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="dalton-base.html#cb314-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: does dalton base shape differ by hreg?</span></span>
+<span id="cb314-2"><a href="dalton-base.html#cb314-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.hreg)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1370,12 +1370,12 @@ div.csl-indent {
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = shape ~ hreg, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="dalton-base.html#cb297-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
-<span id="cb297-2"><a href="dalton-base.html#cb297-2" aria-hidden="true" tabindex="-1"></a>sh.hreg <span class="ot">&lt;-</span> <span class="fu">pairwise</span>(fit.shape.hreg, </span>
-<span id="cb297-3"><a href="dalton-base.html#cb297-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">groups =</span> qdata<span class="sc">$</span>heart.reg)</span>
-<span id="cb297-4"><a href="dalton-base.html#cb297-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sz.hreg, </span>
-<span id="cb297-5"><a href="dalton-base.html#cb297-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb297-6"><a href="dalton-base.html#cb297-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="dalton-base.html#cb316-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
+<span id="cb316-2"><a href="dalton-base.html#cb316-2" aria-hidden="true" tabindex="-1"></a>sh.hreg <span class="ot">&lt;-</span> <span class="fu">pairwise</span>(fit.shape.hreg, </span>
+<span id="cb316-3"><a href="dalton-base.html#cb316-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">groups =</span> qdata<span class="sc">$</span>heart.reg)</span>
+<span id="cb316-4"><a href="dalton-base.html#cb316-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sz.hreg, </span>
+<span id="cb316-5"><a href="dalton-base.html#cb316-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb316-6"><a href="dalton-base.html#cb316-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -1394,13 +1394,13 @@ div.csl-indent {
 </div>
 <div id="morphological-disparity-h2-2" class="section level3 hasAnchor" number="6.6.5">
 <h3><span class="header-section-number">6.6.5</span> Morphological disparity (H2)<a href="dalton-base.html#morphological-disparity-h2-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="dalton-base.html#cb299-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: do any of the groups display greater </span></span>
-<span id="cb299-2"><a href="dalton-base.html#cb299-2" aria-hidden="true" tabindex="-1"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
-<span id="cb299-3"><a href="dalton-base.html#cb299-3" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(shape <span class="sc">~</span> hreg, </span>
-<span id="cb299-4"><a href="dalton-base.html#cb299-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>heart.reg, </span>
-<span id="cb299-5"><a href="dalton-base.html#cb299-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
-<span id="cb299-6"><a href="dalton-base.html#cb299-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb299-7"><a href="dalton-base.html#cb299-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="dalton-base.html#cb318-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: do any of the groups display greater </span></span>
+<span id="cb318-2"><a href="dalton-base.html#cb318-2" aria-hidden="true" tabindex="-1"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
+<span id="cb318-3"><a href="dalton-base.html#cb318-3" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(shape <span class="sc">~</span> hreg, </span>
+<span id="cb318-4"><a href="dalton-base.html#cb318-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>heart.reg, </span>
+<span id="cb318-5"><a href="dalton-base.html#cb318-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
+<span id="cb318-6"><a href="dalton-base.html#cb318-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb318-7"><a href="dalton-base.html#cb318-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## morphol.disparity(f1 = shape ~ hreg, groups = qdata$heart.reg,  
@@ -1431,41 +1431,41 @@ div.csl-indent {
 </div>
 <div id="mean-shapes-h2-3" class="section level3 hasAnchor" number="6.6.6">
 <h3><span class="header-section-number">6.6.6</span> Mean Shapes (H2)<a href="dalton-base.html#mean-shapes-h2-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="dalton-base.html#cb301-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset landmark coordinates to produce mean shapes for hypothesis 2</span></span>
-<span id="cb301-2"><a href="dalton-base.html#cb301-2" aria-hidden="true" tabindex="-1"></a>new.coords<span class="ot">&lt;-</span><span class="fu">coords.subset</span>(<span class="at">A =</span> Y.gpa<span class="sc">$</span>coords, </span>
-<span id="cb301-3"><a href="dalton-base.html#cb301-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">group =</span> qdata<span class="sc">$</span>heart.reg)</span>
-<span id="cb301-4"><a href="dalton-base.html#cb301-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(new.coords)</span></code></pre></div>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="dalton-base.html#cb320-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset landmark coordinates to produce mean shapes for hypothesis 2</span></span>
+<span id="cb320-2"><a href="dalton-base.html#cb320-2" aria-hidden="true" tabindex="-1"></a>new.coords<span class="ot">&lt;-</span><span class="fu">coords.subset</span>(<span class="at">A =</span> Y.gpa<span class="sc">$</span>coords, </span>
+<span id="cb320-3"><a href="dalton-base.html#cb320-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">group =</span> qdata<span class="sc">$</span>heart.reg)</span>
+<span id="cb320-4"><a href="dalton-base.html#cb320-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(new.coords)</span></code></pre></div>
 <pre><code>## [1] &quot;H&quot; &quot;I&quot; &quot;P&quot;</code></pre>
-<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="dalton-base.html#cb303-1" aria-hidden="true" tabindex="-1"></a><span class="co"># group shape means</span></span>
-<span id="cb303-2"><a href="dalton-base.html#cb303-2" aria-hidden="true" tabindex="-1"></a>mean <span class="ot">&lt;-</span> <span class="fu">lapply</span>(new.coords, mshape)</span>
-<span id="cb303-3"><a href="dalton-base.html#cb303-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb303-4"><a href="dalton-base.html#cb303-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot mean shapes</span></span>
-<span id="cb303-5"><a href="dalton-base.html#cb303-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>H)</span>
-<span id="cb303-6"><a href="dalton-base.html#cb303-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>I)</span>
-<span id="cb303-7"><a href="dalton-base.html#cb303-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>P)</span>
-<span id="cb303-8"><a href="dalton-base.html#cb303-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb303-9"><a href="dalton-base.html#cb303-9" aria-hidden="true" tabindex="-1"></a><span class="co"># comparison plots</span></span>
-<span id="cb303-10"><a href="dalton-base.html#cb303-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>H, </span>
-<span id="cb303-11"><a href="dalton-base.html#cb303-11" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>I, </span>
-<span id="cb303-12"><a href="dalton-base.html#cb303-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;vector&quot;</span>,</span>
-<span id="cb303-13"><a href="dalton-base.html#cb303-13" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag =</span> <span class="dv">2</span>)</span>
-<span id="cb303-14"><a href="dalton-base.html#cb303-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>H, </span>
-<span id="cb303-15"><a href="dalton-base.html#cb303-15" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>P, </span>
-<span id="cb303-16"><a href="dalton-base.html#cb303-16" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;vector&quot;</span>,</span>
-<span id="cb303-17"><a href="dalton-base.html#cb303-17" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag =</span> <span class="dv">2</span>)</span>
-<span id="cb303-18"><a href="dalton-base.html#cb303-18" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>I, </span>
-<span id="cb303-19"><a href="dalton-base.html#cb303-19" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>P, </span>
-<span id="cb303-20"><a href="dalton-base.html#cb303-20" aria-hidden="true" tabindex="-1"></a>                <span class="at">method=</span> <span class="st">&quot;vector&quot;</span>,</span>
-<span id="cb303-21"><a href="dalton-base.html#cb303-21" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag =</span> <span class="dv">2</span>)</span>
-<span id="cb303-22"><a href="dalton-base.html#cb303-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb303-23"><a href="dalton-base.html#cb303-23" aria-hidden="true" tabindex="-1"></a><span class="do">##knitr::include_graphics(&#39;images/mshape.h2.jpg&#39;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="dalton-base.html#cb322-1" aria-hidden="true" tabindex="-1"></a><span class="co"># group shape means</span></span>
+<span id="cb322-2"><a href="dalton-base.html#cb322-2" aria-hidden="true" tabindex="-1"></a>mean <span class="ot">&lt;-</span> <span class="fu">lapply</span>(new.coords, mshape)</span>
+<span id="cb322-3"><a href="dalton-base.html#cb322-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb322-4"><a href="dalton-base.html#cb322-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot mean shapes</span></span>
+<span id="cb322-5"><a href="dalton-base.html#cb322-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>H)</span>
+<span id="cb322-6"><a href="dalton-base.html#cb322-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>I)</span>
+<span id="cb322-7"><a href="dalton-base.html#cb322-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>P)</span>
+<span id="cb322-8"><a href="dalton-base.html#cb322-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb322-9"><a href="dalton-base.html#cb322-9" aria-hidden="true" tabindex="-1"></a><span class="co"># comparison plots</span></span>
+<span id="cb322-10"><a href="dalton-base.html#cb322-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>H, </span>
+<span id="cb322-11"><a href="dalton-base.html#cb322-11" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>I, </span>
+<span id="cb322-12"><a href="dalton-base.html#cb322-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;vector&quot;</span>,</span>
+<span id="cb322-13"><a href="dalton-base.html#cb322-13" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag =</span> <span class="dv">2</span>)</span>
+<span id="cb322-14"><a href="dalton-base.html#cb322-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>H, </span>
+<span id="cb322-15"><a href="dalton-base.html#cb322-15" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>P, </span>
+<span id="cb322-16"><a href="dalton-base.html#cb322-16" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;vector&quot;</span>,</span>
+<span id="cb322-17"><a href="dalton-base.html#cb322-17" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag =</span> <span class="dv">2</span>)</span>
+<span id="cb322-18"><a href="dalton-base.html#cb322-18" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>I, </span>
+<span id="cb322-19"><a href="dalton-base.html#cb322-19" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>P, </span>
+<span id="cb322-20"><a href="dalton-base.html#cb322-20" aria-hidden="true" tabindex="-1"></a>                <span class="at">method=</span> <span class="st">&quot;vector&quot;</span>,</span>
+<span id="cb322-21"><a href="dalton-base.html#cb322-21" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag =</span> <span class="dv">2</span>)</span>
+<span id="cb322-22"><a href="dalton-base.html#cb322-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb322-23"><a href="dalton-base.html#cb322-23" aria-hidden="true" tabindex="-1"></a><span class="do">##knitr::include_graphics(&#39;images/mshape.h2.jpg&#39;)</span></span></code></pre></div>
 </div>
 </div>
 <div id="test-hypothesis-3-techno-ba" class="section level2 hasAnchor" number="6.7">
 <h2><span class="header-section-number">6.7</span> Test Hypothesis 3 (Techno Ba)<a href="dalton-base.html#test-hypothesis-3-techno-ba" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Hypothesis 3 assesses whether there is a discernible difference in morphology for Dalton base shapes that articulate with beveled blades.</p>
 <p>A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs <span class="citation">(<a href="#ref-RN1655" role="doc-biblioref">Adams and Collyer 2015</a>; <a href="#ref-RN11775" role="doc-biblioref">Michael L. Collyer and Adams 2018</a>)</span>, which has higher statistical power and a greater ability to identify patterns in the data should they be present <span class="citation">(<a href="#ref-RN1719" role="doc-biblioref">Anderson and Ter Braak 2003</a>)</span>. To assess whether shape differs by group (region), Procrustes ANOVAs <span class="citation">(<a href="#ref-RN1749" role="doc-biblioref">Goodall 1991</a>)</span> were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions <span class="citation">(<a href="#ref-RN1756" role="doc-biblioref">M. L. Collyer, Sekora, and Adams 2015</a>)</span>.</p>
-<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="dalton-base.html#cb304-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis3.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="dalton-base.html#cb323-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis3.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis3.jpg" alt="Hypothesis 3 considers whether the bases of beveled Dalton points (left) differ in morphology from those that are not beveled (right)." width="100%" />
 <p class="caption">
@@ -1474,15 +1474,15 @@ div.csl-indent {
 </div>
 <div id="boxplot-h3-2" class="section level3 hasAnchor" number="6.7.1">
 <h3><span class="header-section-number">6.7.1</span> Boxplot (H3)<a href="dalton-base.html#boxplot-h3-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="dalton-base.html#cb305-1" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of Dalton base centroid size by beveled y/n</span></span>
-<span id="cb305-2"><a href="dalton-base.html#cb305-2" aria-hidden="true" tabindex="-1"></a>csz.bev<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(qdata, <span class="fu">aes</span>(<span class="at">x =</span> bev<span class="fl">.1</span>, <span class="at">y =</span> csz, <span class="at">color =</span> bev<span class="fl">.1</span>)) <span class="sc">+</span> </span>
-<span id="cb305-3"><a href="dalton-base.html#cb305-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb305-4"><a href="dalton-base.html#cb305-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb305-5"><a href="dalton-base.html#cb305-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb305-6"><a href="dalton-base.html#cb305-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
-<span id="cb305-7"><a href="dalton-base.html#cb305-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Beveled?&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Centroid Size - Base&#39;</span>)</span>
-<span id="cb305-8"><a href="dalton-base.html#cb305-8" aria-hidden="true" tabindex="-1"></a><span class="co"># render plot</span></span>
-<span id="cb305-9"><a href="dalton-base.html#cb305-9" aria-hidden="true" tabindex="-1"></a>csz.bev<span class="fl">.1</span></span></code></pre></div>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="dalton-base.html#cb324-1" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of Dalton base centroid size by beveled y/n</span></span>
+<span id="cb324-2"><a href="dalton-base.html#cb324-2" aria-hidden="true" tabindex="-1"></a>csz.bev<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(qdata, <span class="fu">aes</span>(<span class="at">x =</span> bev<span class="fl">.1</span>, <span class="at">y =</span> csz, <span class="at">color =</span> bev<span class="fl">.1</span>)) <span class="sc">+</span> </span>
+<span id="cb324-3"><a href="dalton-base.html#cb324-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb324-4"><a href="dalton-base.html#cb324-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb324-5"><a href="dalton-base.html#cb324-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb324-6"><a href="dalton-base.html#cb324-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
+<span id="cb324-7"><a href="dalton-base.html#cb324-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Beveled?&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Centroid Size - Base&#39;</span>)</span>
+<span id="cb324-8"><a href="dalton-base.html#cb324-8" aria-hidden="true" tabindex="-1"></a><span class="co"># render plot</span></span>
+<span id="cb324-9"><a href="dalton-base.html#cb324-9" aria-hidden="true" tabindex="-1"></a>csz.bev<span class="fl">.1</span></span></code></pre></div>
 <pre><code>## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.</code></pre>
 <div class="figure">
 <img src="dalton.supp_files/figure-html/box3.base-1.png" alt="Boxplot of centroid size by beveled." width="100%" />
@@ -1493,46 +1493,46 @@ div.csl-indent {
 </div>
 <div id="principal-components-analysis-h3-3" class="section level3 hasAnchor" number="6.7.2">
 <h3><span class="header-section-number">6.7.2</span> Principal Components Analysis (H3)<a href="dalton-base.html#principal-components-analysis-h3-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="dalton-base.html#cb307-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters to plot by beveled y and n</span></span>
-<span id="cb307-2"><a href="dalton-base.html#cb307-2" aria-hidden="true" tabindex="-1"></a>pch.gps.bev<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="fu">as.factor</span>(bev<span class="fl">.1</span>)]</span>
-<span id="cb307-3"><a href="dalton-base.html#cb307-3" aria-hidden="true" tabindex="-1"></a>col.gps.bev<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(bev<span class="fl">.1</span>)]</span>
-<span id="cb307-4"><a href="dalton-base.html#cb307-4" aria-hidden="true" tabindex="-1"></a>col.hull<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
-<span id="cb307-5"><a href="dalton-base.html#cb307-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb307-6"><a href="dalton-base.html#cb307-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by heartland in (H) and out (N)</span></span>
-<span id="cb307-7"><a href="dalton-base.html#cb307-7" aria-hidden="true" tabindex="-1"></a>pc.plot3 <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
-<span id="cb307-8"><a href="dalton-base.html#cb307-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb307-9"><a href="dalton-base.html#cb307-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.bev<span class="fl">.1</span>,</span>
-<span id="cb307-10"><a href="dalton-base.html#cb307-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.bev<span class="fl">.1</span>)</span>
-<span id="cb307-11"><a href="dalton-base.html#cb307-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">shapeHulls</span>(pc.plot3, </span>
-<span id="cb307-12"><a href="dalton-base.html#cb307-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">groups =</span> bev<span class="fl">.1</span>,</span>
-<span id="cb307-13"><a href="dalton-base.html#cb307-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">group.cols =</span> col.hull<span class="fl">.3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="dalton-base.html#cb326-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters to plot by beveled y and n</span></span>
+<span id="cb326-2"><a href="dalton-base.html#cb326-2" aria-hidden="true" tabindex="-1"></a>pch.gps.bev<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>)[<span class="fu">as.factor</span>(bev<span class="fl">.1</span>)]</span>
+<span id="cb326-3"><a href="dalton-base.html#cb326-3" aria-hidden="true" tabindex="-1"></a>col.gps.bev<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(bev<span class="fl">.1</span>)]</span>
+<span id="cb326-4"><a href="dalton-base.html#cb326-4" aria-hidden="true" tabindex="-1"></a>col.hull<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
+<span id="cb326-5"><a href="dalton-base.html#cb326-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb326-6"><a href="dalton-base.html#cb326-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by heartland in (H) and out (N)</span></span>
+<span id="cb326-7"><a href="dalton-base.html#cb326-7" aria-hidden="true" tabindex="-1"></a>pc.plot3 <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
+<span id="cb326-8"><a href="dalton-base.html#cb326-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb326-9"><a href="dalton-base.html#cb326-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.bev<span class="fl">.1</span>,</span>
+<span id="cb326-10"><a href="dalton-base.html#cb326-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.bev<span class="fl">.1</span>)</span>
+<span id="cb326-11"><a href="dalton-base.html#cb326-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">shapeHulls</span>(pc.plot3, </span>
+<span id="cb326-12"><a href="dalton-base.html#cb326-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">groups =</span> bev<span class="fl">.1</span>,</span>
+<span id="cb326-13"><a href="dalton-base.html#cb326-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">group.cols =</span> col.hull<span class="fl">.3</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca3.mbase-1.png" width="100%" /></p>
 </div>
 <div id="minimamaxima-of-pc12-with-warp-grids-10" class="section level3 hasAnchor" number="6.7.3">
 <h3><span class="header-section-number">6.7.3</span> Minima/maxima of PC1/2 with warp grids<a href="dalton-base.html#minimamaxima-of-pc12-with-warp-grids-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="dalton-base.html#cb308-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot x/y maxima/minima</span></span>
-<span id="cb308-2"><a href="dalton-base.html#cb308-2" aria-hidden="true" tabindex="-1"></a><span class="do">## x - minima</span></span>
-<span id="cb308-3"><a href="dalton-base.html#cb308-3" aria-hidden="true" tabindex="-1"></a>mean.shape <span class="ot">&lt;-</span> <span class="fu">mshape</span>(Y.gpa<span class="sc">$</span>coords)</span>
-<span id="cb308-4"><a href="dalton-base.html#cb308-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>min, </span>
-<span id="cb308-5"><a href="dalton-base.html#cb308-5" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="dalton-base.html#cb327-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot x/y maxima/minima</span></span>
+<span id="cb327-2"><a href="dalton-base.html#cb327-2" aria-hidden="true" tabindex="-1"></a><span class="do">## x - minima</span></span>
+<span id="cb327-3"><a href="dalton-base.html#cb327-3" aria-hidden="true" tabindex="-1"></a>mean.shape <span class="ot">&lt;-</span> <span class="fu">mshape</span>(Y.gpa<span class="sc">$</span>coords)</span>
+<span id="cb327-4"><a href="dalton-base.html#cb327-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>min, </span>
+<span id="cb327-5"><a href="dalton-base.html#cb327-5" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/min.max0ff-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="dalton-base.html#cb309-1" aria-hidden="true" tabindex="-1"></a><span class="do">## x - maxima</span></span>
-<span id="cb309-2"><a href="dalton-base.html#cb309-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>max, </span>
-<span id="cb309-3"><a href="dalton-base.html#cb309-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="dalton-base.html#cb328-1" aria-hidden="true" tabindex="-1"></a><span class="do">## x - maxima</span></span>
+<span id="cb328-2"><a href="dalton-base.html#cb328-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>max, </span>
+<span id="cb328-3"><a href="dalton-base.html#cb328-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/min.max0ff-2.png" width="100%" /></p>
-<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="dalton-base.html#cb310-1" aria-hidden="true" tabindex="-1"></a><span class="do">## y - minima</span></span>
-<span id="cb310-2"><a href="dalton-base.html#cb310-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>min, </span>
-<span id="cb310-3"><a href="dalton-base.html#cb310-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="dalton-base.html#cb329-1" aria-hidden="true" tabindex="-1"></a><span class="do">## y - minima</span></span>
+<span id="cb329-2"><a href="dalton-base.html#cb329-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>min, </span>
+<span id="cb329-3"><a href="dalton-base.html#cb329-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/min.max0ff-3.png" width="100%" /></p>
-<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="dalton-base.html#cb311-1" aria-hidden="true" tabindex="-1"></a><span class="do">## y - maxima</span></span>
-<span id="cb311-2"><a href="dalton-base.html#cb311-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>max, </span>
-<span id="cb311-3"><a href="dalton-base.html#cb311-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="dalton-base.html#cb330-1" aria-hidden="true" tabindex="-1"></a><span class="do">## y - maxima</span></span>
+<span id="cb330-2"><a href="dalton-base.html#cb330-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>max, </span>
+<span id="cb330-3"><a href="dalton-base.html#cb330-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/min.max0ff-4.png" width="100%" /></p>
 </div>
 <div id="anova-h3-2" class="section level3 hasAnchor" number="6.7.4">
 <h3><span class="header-section-number">6.7.4</span> ANOVA (H3)<a href="dalton-base.html#anova-h3-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="dalton-base.html#cb312-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: do dalton base sizes differ by beveling?</span></span>
-<span id="cb312-2"><a href="dalton-base.html#cb312-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.size.bev<span class="fl">.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="dalton-base.html#cb331-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: do dalton base sizes differ by beveling?</span></span>
+<span id="cb331-2"><a href="dalton-base.html#cb331-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.size.bev<span class="fl">.1</span>)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1547,8 +1547,8 @@ div.csl-indent {
 ## Total     41 1526.87                                    
 ## 
 ## Call: procD.lm(f1 = size ~ bev.1, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="dalton-base.html#cb314-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: do dalton base shapes differ by beveling?</span></span>
-<span id="cb314-2"><a href="dalton-base.html#cb314-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.bev<span class="fl">.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="dalton-base.html#cb333-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: do dalton base shapes differ by beveling?</span></span>
+<span id="cb333-2"><a href="dalton-base.html#cb333-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.bev<span class="fl">.1</span>)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1568,13 +1568,13 @@ div.csl-indent {
 </div>
 <div id="morphological-disparity-h3-2" class="section level3 hasAnchor" number="6.7.5">
 <h3><span class="header-section-number">6.7.5</span> Morphological disparity (H3)<a href="dalton-base.html#morphological-disparity-h3-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="dalton-base.html#cb316-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: does one group display greater </span></span>
-<span id="cb316-2"><a href="dalton-base.html#cb316-2" aria-hidden="true" tabindex="-1"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
-<span id="cb316-3"><a href="dalton-base.html#cb316-3" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(shape <span class="sc">~</span> bev<span class="fl">.1</span>, </span>
-<span id="cb316-4"><a href="dalton-base.html#cb316-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>bev, </span>
-<span id="cb316-5"><a href="dalton-base.html#cb316-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
-<span id="cb316-6"><a href="dalton-base.html#cb316-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb316-7"><a href="dalton-base.html#cb316-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="dalton-base.html#cb335-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: does one group display greater </span></span>
+<span id="cb335-2"><a href="dalton-base.html#cb335-2" aria-hidden="true" tabindex="-1"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
+<span id="cb335-3"><a href="dalton-base.html#cb335-3" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(shape <span class="sc">~</span> bev<span class="fl">.1</span>, </span>
+<span id="cb335-4"><a href="dalton-base.html#cb335-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>bev, </span>
+<span id="cb335-5"><a href="dalton-base.html#cb335-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
+<span id="cb335-6"><a href="dalton-base.html#cb335-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb335-7"><a href="dalton-base.html#cb335-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## morphol.disparity(f1 = shape ~ bev.1, groups = qdata$bev, iter = 9999,  
@@ -1603,32 +1603,32 @@ div.csl-indent {
 </div>
 <div id="mean-shapes-h3-3" class="section level3 hasAnchor" number="6.7.6">
 <h3><span class="header-section-number">6.7.6</span> Mean Shapes (H3)<a href="dalton-base.html#mean-shapes-h3-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="dalton-base.html#cb318-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset landmark coordinates to produce mean shapes for hypothesis 3</span></span>
-<span id="cb318-2"><a href="dalton-base.html#cb318-2" aria-hidden="true" tabindex="-1"></a>new.coords<span class="ot">&lt;-</span><span class="fu">coords.subset</span>(<span class="at">A =</span> Y.gpa<span class="sc">$</span>coords, </span>
-<span id="cb318-3"><a href="dalton-base.html#cb318-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">group =</span> qdata<span class="sc">$</span>bev)</span>
-<span id="cb318-4"><a href="dalton-base.html#cb318-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(new.coords)</span></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="dalton-base.html#cb337-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset landmark coordinates to produce mean shapes for hypothesis 3</span></span>
+<span id="cb337-2"><a href="dalton-base.html#cb337-2" aria-hidden="true" tabindex="-1"></a>new.coords<span class="ot">&lt;-</span><span class="fu">coords.subset</span>(<span class="at">A =</span> Y.gpa<span class="sc">$</span>coords, </span>
+<span id="cb337-3"><a href="dalton-base.html#cb337-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">group =</span> qdata<span class="sc">$</span>bev)</span>
+<span id="cb337-4"><a href="dalton-base.html#cb337-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(new.coords)</span></code></pre></div>
 <pre><code>## [1] &quot;n&quot; &quot;y&quot;</code></pre>
-<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="dalton-base.html#cb320-1" aria-hidden="true" tabindex="-1"></a><span class="co"># group shape means</span></span>
-<span id="cb320-2"><a href="dalton-base.html#cb320-2" aria-hidden="true" tabindex="-1"></a>mean <span class="ot">&lt;-</span> <span class="fu">lapply</span>(new.coords, mshape)</span>
-<span id="cb320-3"><a href="dalton-base.html#cb320-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb320-4"><a href="dalton-base.html#cb320-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot mean shapes</span></span>
-<span id="cb320-5"><a href="dalton-base.html#cb320-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>y)</span>
-<span id="cb320-6"><a href="dalton-base.html#cb320-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>n)</span>
-<span id="cb320-7"><a href="dalton-base.html#cb320-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb320-8"><a href="dalton-base.html#cb320-8" aria-hidden="true" tabindex="-1"></a><span class="co"># comparison plots</span></span>
-<span id="cb320-9"><a href="dalton-base.html#cb320-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>y, </span>
-<span id="cb320-10"><a href="dalton-base.html#cb320-10" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>n, </span>
-<span id="cb320-11"><a href="dalton-base.html#cb320-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;vector&quot;</span>,</span>
-<span id="cb320-12"><a href="dalton-base.html#cb320-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag =</span> <span class="dv">2</span>)</span>
-<span id="cb320-13"><a href="dalton-base.html#cb320-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb320-14"><a href="dalton-base.html#cb320-14" aria-hidden="true" tabindex="-1"></a><span class="do">##knitr::include_graphics(&#39;images/mshape.h3.jpg&#39;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="dalton-base.html#cb339-1" aria-hidden="true" tabindex="-1"></a><span class="co"># group shape means</span></span>
+<span id="cb339-2"><a href="dalton-base.html#cb339-2" aria-hidden="true" tabindex="-1"></a>mean <span class="ot">&lt;-</span> <span class="fu">lapply</span>(new.coords, mshape)</span>
+<span id="cb339-3"><a href="dalton-base.html#cb339-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb339-4"><a href="dalton-base.html#cb339-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot mean shapes</span></span>
+<span id="cb339-5"><a href="dalton-base.html#cb339-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>y)</span>
+<span id="cb339-6"><a href="dalton-base.html#cb339-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>n)</span>
+<span id="cb339-7"><a href="dalton-base.html#cb339-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb339-8"><a href="dalton-base.html#cb339-8" aria-hidden="true" tabindex="-1"></a><span class="co"># comparison plots</span></span>
+<span id="cb339-9"><a href="dalton-base.html#cb339-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>y, </span>
+<span id="cb339-10"><a href="dalton-base.html#cb339-10" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>n, </span>
+<span id="cb339-11"><a href="dalton-base.html#cb339-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;vector&quot;</span>,</span>
+<span id="cb339-12"><a href="dalton-base.html#cb339-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag =</span> <span class="dv">2</span>)</span>
+<span id="cb339-13"><a href="dalton-base.html#cb339-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb339-14"><a href="dalton-base.html#cb339-14" aria-hidden="true" tabindex="-1"></a><span class="do">##knitr::include_graphics(&#39;images/mshape.h3.jpg&#39;)</span></span></code></pre></div>
 </div>
 </div>
 <div id="test-hypothesis-4-techno-ba" class="section level2 hasAnchor" number="6.8">
 <h2><span class="header-section-number">6.8</span> Test Hypothesis 4 (Techno Ba)<a href="dalton-base.html#test-hypothesis-4-techno-ba" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Hypothesis 4 assesses whether there is a discernible difference in basal morphology when specific beveling types are associated with Dalton blades.</p>
 <p>A residual randomization permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs <span class="citation">(<a href="#ref-RN1655" role="doc-biblioref">Adams and Collyer 2015</a>; <a href="#ref-RN11775" role="doc-biblioref">Michael L. Collyer and Adams 2018</a>)</span>, which has higher statistical power and a greater ability to identify patterns in the data should they be present <span class="citation">(<a href="#ref-RN1719" role="doc-biblioref">Anderson and Ter Braak 2003</a>)</span>. To assess whether shape differs by group (region), Procrustes ANOVAs <span class="citation">(<a href="#ref-RN1749" role="doc-biblioref">Goodall 1991</a>)</span> were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions <span class="citation">(<a href="#ref-RN1756" role="doc-biblioref">M. L. Collyer, Sekora, and Adams 2015</a>)</span>.</p>
-<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="dalton-base.html#cb321-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis4-1.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="dalton-base.html#cb340-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&#39;images/dalton-vizhypothesis4-1.jpg&#39;</span>)</span></code></pre></div>
 <div class="figure">
 <img src="images/dalton-vizhypothesis4-1.jpg" alt="Hypothesis 4 considers whether discrete beveling practices articulate with differences in the morphology of Dalton bases." width="100%" />
 <p class="caption">
@@ -1637,15 +1637,15 @@ div.csl-indent {
 </div>
 <div id="boxplot-h4-2" class="section level3 hasAnchor" number="6.8.1">
 <h3><span class="header-section-number">6.8.1</span> Boxplot (H4)<a href="dalton-base.html#boxplot-h4-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="dalton-base.html#cb322-1" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of Dalton base centroid size by bevel type</span></span>
-<span id="cb322-2"><a href="dalton-base.html#cb322-2" aria-hidden="true" tabindex="-1"></a>csz.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(qdata, <span class="fu">aes</span>(<span class="at">x =</span> bev<span class="fl">.2</span>, <span class="at">y =</span> csz, <span class="at">color =</span> bev<span class="fl">.2</span>)) <span class="sc">+</span> </span>
-<span id="cb322-3"><a href="dalton-base.html#cb322-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb322-4"><a href="dalton-base.html#cb322-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb322-5"><a href="dalton-base.html#cb322-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb322-6"><a href="dalton-base.html#cb322-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
-<span id="cb322-7"><a href="dalton-base.html#cb322-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Bevel Type&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Centroid Size - Base&#39;</span>)</span>
-<span id="cb322-8"><a href="dalton-base.html#cb322-8" aria-hidden="true" tabindex="-1"></a><span class="co"># render plot</span></span>
-<span id="cb322-9"><a href="dalton-base.html#cb322-9" aria-hidden="true" tabindex="-1"></a>csz.bev<span class="fl">.2</span></span></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="dalton-base.html#cb341-1" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot of Dalton base centroid size by bevel type</span></span>
+<span id="cb341-2"><a href="dalton-base.html#cb341-2" aria-hidden="true" tabindex="-1"></a>csz.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(qdata, <span class="fu">aes</span>(<span class="at">x =</span> bev<span class="fl">.2</span>, <span class="at">y =</span> csz, <span class="at">color =</span> bev<span class="fl">.2</span>)) <span class="sc">+</span> </span>
+<span id="cb341-3"><a href="dalton-base.html#cb341-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb341-4"><a href="dalton-base.html#cb341-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="at">dotsize =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb341-5"><a href="dalton-base.html#cb341-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb341-6"><a href="dalton-base.html#cb341-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
+<span id="cb341-7"><a href="dalton-base.html#cb341-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Bevel Type&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Centroid Size - Base&#39;</span>)</span>
+<span id="cb341-8"><a href="dalton-base.html#cb341-8" aria-hidden="true" tabindex="-1"></a><span class="co"># render plot</span></span>
+<span id="cb341-9"><a href="dalton-base.html#cb341-9" aria-hidden="true" tabindex="-1"></a>csz.bev<span class="fl">.2</span></span></code></pre></div>
 <pre><code>## Bin width defaults to 1/30 of the range of the data. Pick better value with `binwidth`.</code></pre>
 <div class="figure">
 <img src="dalton.supp_files/figure-html/box4.base-1.png" alt="Boxplot of centroid size by bevel type." width="100%" />
@@ -1656,46 +1656,46 @@ div.csl-indent {
 </div>
 <div id="principal-components-analysis-h4-3" class="section level3 hasAnchor" number="6.8.2">
 <h3><span class="header-section-number">6.8.2</span> Principal Components Analysis (H4)<a href="dalton-base.html#principal-components-analysis-h4-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="dalton-base.html#cb324-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters to plot by bevel type</span></span>
-<span id="cb324-2"><a href="dalton-base.html#cb324-2" aria-hidden="true" tabindex="-1"></a>pch.gps.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="fu">as.factor</span>(bev<span class="fl">.2</span>)]</span>
-<span id="cb324-3"><a href="dalton-base.html#cb324-3" aria-hidden="true" tabindex="-1"></a>col.gps.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(bev<span class="fl">.2</span>)]</span>
-<span id="cb324-4"><a href="dalton-base.html#cb324-4" aria-hidden="true" tabindex="-1"></a>col.hull<span class="fl">.4</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
-<span id="cb324-5"><a href="dalton-base.html#cb324-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb324-6"><a href="dalton-base.html#cb324-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by bevel type</span></span>
-<span id="cb324-7"><a href="dalton-base.html#cb324-7" aria-hidden="true" tabindex="-1"></a>pc.plot4 <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
-<span id="cb324-8"><a href="dalton-base.html#cb324-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
-<span id="cb324-9"><a href="dalton-base.html#cb324-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.bev<span class="fl">.2</span>,</span>
-<span id="cb324-10"><a href="dalton-base.html#cb324-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.bev<span class="fl">.2</span>)</span>
-<span id="cb324-11"><a href="dalton-base.html#cb324-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">shapeHulls</span>(pc.plot4, </span>
-<span id="cb324-12"><a href="dalton-base.html#cb324-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">groups =</span> bev<span class="fl">.2</span>,</span>
-<span id="cb324-13"><a href="dalton-base.html#cb324-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">group.cols =</span> col.hull<span class="fl">.4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="dalton-base.html#cb343-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set plot parameters to plot by bevel type</span></span>
+<span id="cb343-2"><a href="dalton-base.html#cb343-2" aria-hidden="true" tabindex="-1"></a>pch.gps.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>)[<span class="fu">as.factor</span>(bev<span class="fl">.2</span>)]</span>
+<span id="cb343-3"><a href="dalton-base.html#cb343-3" aria-hidden="true" tabindex="-1"></a>col.gps.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">wes_palette</span>(<span class="st">&quot;Moonrise2&quot;</span>)[<span class="fu">as.factor</span>(bev<span class="fl">.2</span>)]</span>
+<span id="cb343-4"><a href="dalton-base.html#cb343-4" aria-hidden="true" tabindex="-1"></a>col.hull<span class="fl">.4</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#CCC591&quot;</span>,<span class="st">&quot;#C27D38&quot;</span>,<span class="st">&quot;#798E87&quot;</span>)</span>
+<span id="cb343-5"><a href="dalton-base.html#cb343-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb343-6"><a href="dalton-base.html#cb343-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot pca by bevel type</span></span>
+<span id="cb343-7"><a href="dalton-base.html#cb343-7" aria-hidden="true" tabindex="-1"></a>pc.plot4 <span class="ot">&lt;-</span> <span class="fu">plot</span>(pca, </span>
+<span id="cb343-8"><a href="dalton-base.html#cb343-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">asp =</span> <span class="dv">1</span>,</span>
+<span id="cb343-9"><a href="dalton-base.html#cb343-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> pch.gps.bev<span class="fl">.2</span>,</span>
+<span id="cb343-10"><a href="dalton-base.html#cb343-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col =</span> col.gps.bev<span class="fl">.2</span>)</span>
+<span id="cb343-11"><a href="dalton-base.html#cb343-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">shapeHulls</span>(pc.plot4, </span>
+<span id="cb343-12"><a href="dalton-base.html#cb343-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">groups =</span> bev<span class="fl">.2</span>,</span>
+<span id="cb343-13"><a href="dalton-base.html#cb343-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">group.cols =</span> col.hull<span class="fl">.4</span>)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/pca4.base-1.png" width="100%" /></p>
 </div>
 <div id="minimamaxima-of-pc12-with-warp-grids-11" class="section level3 hasAnchor" number="6.8.3">
 <h3><span class="header-section-number">6.8.3</span> Minima/maxima of PC1/2 with warp grids<a href="dalton-base.html#minimamaxima-of-pc12-with-warp-grids-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="dalton-base.html#cb325-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot x/y maxima/minima</span></span>
-<span id="cb325-2"><a href="dalton-base.html#cb325-2" aria-hidden="true" tabindex="-1"></a><span class="do">## x - minima</span></span>
-<span id="cb325-3"><a href="dalton-base.html#cb325-3" aria-hidden="true" tabindex="-1"></a>mean.shape <span class="ot">&lt;-</span> <span class="fu">mshape</span>(Y.gpa<span class="sc">$</span>coords)</span>
-<span id="cb325-4"><a href="dalton-base.html#cb325-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>min, </span>
-<span id="cb325-5"><a href="dalton-base.html#cb325-5" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="dalton-base.html#cb344-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot x/y maxima/minima</span></span>
+<span id="cb344-2"><a href="dalton-base.html#cb344-2" aria-hidden="true" tabindex="-1"></a><span class="do">## x - minima</span></span>
+<span id="cb344-3"><a href="dalton-base.html#cb344-3" aria-hidden="true" tabindex="-1"></a>mean.shape <span class="ot">&lt;-</span> <span class="fu">mshape</span>(Y.gpa<span class="sc">$</span>coords)</span>
+<span id="cb344-4"><a href="dalton-base.html#cb344-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>min, </span>
+<span id="cb344-5"><a href="dalton-base.html#cb344-5" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/min.max0zzff-1.png" width="100%" /></p>
-<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="dalton-base.html#cb326-1" aria-hidden="true" tabindex="-1"></a><span class="do">## x - maxima</span></span>
-<span id="cb326-2"><a href="dalton-base.html#cb326-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>max, </span>
-<span id="cb326-3"><a href="dalton-base.html#cb326-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="dalton-base.html#cb345-1" aria-hidden="true" tabindex="-1"></a><span class="do">## x - maxima</span></span>
+<span id="cb345-2"><a href="dalton-base.html#cb345-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp1<span class="sc">$</span>max, </span>
+<span id="cb345-3"><a href="dalton-base.html#cb345-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/min.max0zzff-2.png" width="100%" /></p>
-<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="dalton-base.html#cb327-1" aria-hidden="true" tabindex="-1"></a><span class="do">## y - minima</span></span>
-<span id="cb327-2"><a href="dalton-base.html#cb327-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>min, </span>
-<span id="cb327-3"><a href="dalton-base.html#cb327-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="dalton-base.html#cb346-1" aria-hidden="true" tabindex="-1"></a><span class="do">## y - minima</span></span>
+<span id="cb346-2"><a href="dalton-base.html#cb346-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>min, </span>
+<span id="cb346-3"><a href="dalton-base.html#cb346-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/min.max0zzff-3.png" width="100%" /></p>
-<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="dalton-base.html#cb328-1" aria-hidden="true" tabindex="-1"></a><span class="do">## y - maxima</span></span>
-<span id="cb328-2"><a href="dalton-base.html#cb328-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>max, </span>
-<span id="cb328-3"><a href="dalton-base.html#cb328-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="dalton-base.html#cb347-1" aria-hidden="true" tabindex="-1"></a><span class="do">## y - maxima</span></span>
+<span id="cb347-2"><a href="dalton-base.html#cb347-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(pca<span class="sc">$</span>shapes<span class="sc">$</span>shapes.comp2<span class="sc">$</span>max, </span>
+<span id="cb347-3"><a href="dalton-base.html#cb347-3" aria-hidden="true" tabindex="-1"></a>                mean.shape)</span></code></pre></div>
 <p><img src="dalton.supp_files/figure-html/min.max0zzff-4.png" width="100%" /></p>
 </div>
 <div id="anova-h4-2" class="section level3 hasAnchor" number="6.8.4">
 <h3><span class="header-section-number">6.8.4</span> ANOVA (H4)<a href="dalton-base.html#anova-h4-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="dalton-base.html#cb329-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: does dalton base size differ by bev.2?</span></span>
-<span id="cb329-2"><a href="dalton-base.html#cb329-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.size.bev<span class="fl">.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="dalton-base.html#cb348-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: does dalton base size differ by bev.2?</span></span>
+<span id="cb348-2"><a href="dalton-base.html#cb348-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.size.bev<span class="fl">.2</span>)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1710,12 +1710,12 @@ div.csl-indent {
 ## Total     41 1526.87                                     
 ## 
 ## Call: procD.lm(f1 = size ~ bev.2, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="dalton-base.html#cb331-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
-<span id="cb331-2"><a href="dalton-base.html#cb331-2" aria-hidden="true" tabindex="-1"></a>sz.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">pairwise</span>(fit.size.bev<span class="fl">.2</span>, </span>
-<span id="cb331-3"><a href="dalton-base.html#cb331-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">groups =</span> qdata<span class="sc">$</span>bev.type)</span>
-<span id="cb331-4"><a href="dalton-base.html#cb331-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sz.bev<span class="fl">.2</span>, </span>
-<span id="cb331-5"><a href="dalton-base.html#cb331-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb331-6"><a href="dalton-base.html#cb331-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="dalton-base.html#cb350-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
+<span id="cb350-2"><a href="dalton-base.html#cb350-2" aria-hidden="true" tabindex="-1"></a>sz.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">pairwise</span>(fit.size.bev<span class="fl">.2</span>, </span>
+<span id="cb350-3"><a href="dalton-base.html#cb350-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">groups =</span> qdata<span class="sc">$</span>bev.type)</span>
+<span id="cb350-4"><a href="dalton-base.html#cb350-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sz.bev<span class="fl">.2</span>, </span>
+<span id="cb350-5"><a href="dalton-base.html#cb350-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb350-6"><a href="dalton-base.html#cb350-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -1731,8 +1731,8 @@ div.csl-indent {
 ## alternate:no.bevel             0.9423515  3.848402 -0.3786609 0.6433
 ## alternate:unifacial.bimarginal 6.5566479  7.279708  1.3874130 0.0781
 ## no.bevel:unifacial.bimarginal  5.6142964  7.438416  1.1040823 0.1366</code></pre>
-<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="dalton-base.html#cb333-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: does dalton base shape differ by bev.2?</span></span>
-<span id="cb333-2"><a href="dalton-base.html#cb333-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.bev<span class="fl">.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="dalton-base.html#cb352-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA: does dalton base shape differ by bev.2?</span></span>
+<span id="cb352-2"><a href="dalton-base.html#cb352-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.shape.bev<span class="fl">.2</span>)</span></code></pre></div>
 <pre><code>## 
 ## Analysis of Variance, using Residual Randomization
 ## Permutation procedure: Randomization of null model residuals 
@@ -1749,12 +1749,12 @@ div.csl-indent {
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Call: procD.lm(f1 = shape ~ bev.2, iter = 9999, data = gdf, print.progress = FALSE)</code></pre>
-<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="dalton-base.html#cb335-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
-<span id="cb335-2"><a href="dalton-base.html#cb335-2" aria-hidden="true" tabindex="-1"></a>sh.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">pairwise</span>(fit.shape.bev<span class="fl">.2</span>, </span>
-<span id="cb335-3"><a href="dalton-base.html#cb335-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">groups =</span> qdata<span class="sc">$</span>bev.type)</span>
-<span id="cb335-4"><a href="dalton-base.html#cb335-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sz.bev<span class="fl">.2</span>, </span>
-<span id="cb335-5"><a href="dalton-base.html#cb335-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">confidence =</span> <span class="fl">0.95</span>, </span>
-<span id="cb335-6"><a href="dalton-base.html#cb335-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="dalton-base.html#cb354-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pairwise comparison of LS means = which differ?</span></span>
+<span id="cb354-2"><a href="dalton-base.html#cb354-2" aria-hidden="true" tabindex="-1"></a>sh.bev<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">pairwise</span>(fit.shape.bev<span class="fl">.2</span>, </span>
+<span id="cb354-3"><a href="dalton-base.html#cb354-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">groups =</span> qdata<span class="sc">$</span>bev.type)</span>
+<span id="cb354-4"><a href="dalton-base.html#cb354-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sz.bev<span class="fl">.2</span>, </span>
+<span id="cb354-5"><a href="dalton-base.html#cb354-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">confidence =</span> <span class="fl">0.95</span>, </span>
+<span id="cb354-6"><a href="dalton-base.html#cb354-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">test.type =</span> <span class="st">&quot;dist&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Pairwise comparisons
 ## 
@@ -1773,13 +1773,13 @@ div.csl-indent {
 </div>
 <div id="morphological-disparity-h4-2" class="section level3 hasAnchor" number="6.8.5">
 <h3><span class="header-section-number">6.8.5</span> Morphological disparity (H4)<a href="dalton-base.html#morphological-disparity-h4-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="dalton-base.html#cb337-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: do any of the groups display greater </span></span>
-<span id="cb337-2"><a href="dalton-base.html#cb337-2" aria-hidden="true" tabindex="-1"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
-<span id="cb337-3"><a href="dalton-base.html#cb337-3" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(shape <span class="sc">~</span> bev<span class="fl">.2</span>, </span>
-<span id="cb337-4"><a href="dalton-base.html#cb337-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>bev.type, </span>
-<span id="cb337-5"><a href="dalton-base.html#cb337-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
-<span id="cb337-6"><a href="dalton-base.html#cb337-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb337-7"><a href="dalton-base.html#cb337-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="dalton-base.html#cb356-1" aria-hidden="true" tabindex="-1"></a><span class="co"># morphological disparity: do any of the groups display greater </span></span>
+<span id="cb356-2"><a href="dalton-base.html#cb356-2" aria-hidden="true" tabindex="-1"></a><span class="co"># shape variation among individuals relative to the other group?</span></span>
+<span id="cb356-3"><a href="dalton-base.html#cb356-3" aria-hidden="true" tabindex="-1"></a><span class="fu">morphol.disparity</span>(shape <span class="sc">~</span> bev<span class="fl">.2</span>, </span>
+<span id="cb356-4"><a href="dalton-base.html#cb356-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">groups =</span> qdata<span class="sc">$</span>bev.type, </span>
+<span id="cb356-5"><a href="dalton-base.html#cb356-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> gdf, </span>
+<span id="cb356-6"><a href="dalton-base.html#cb356-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">print.progress =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb356-7"><a href="dalton-base.html#cb356-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">iter =</span> <span class="dv">9999</span>)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## morphol.disparity(f1 = shape ~ bev.2, groups = qdata$bev.type,  
@@ -1810,34 +1810,34 @@ div.csl-indent {
 </div>
 <div id="mean-shapes-h4-3" class="section level3 hasAnchor" number="6.8.6">
 <h3><span class="header-section-number">6.8.6</span> Mean Shapes (H4)<a href="dalton-base.html#mean-shapes-h4-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="dalton-base.html#cb339-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset landmark coordinates to produce mean shapes for hypothesis 4</span></span>
-<span id="cb339-2"><a href="dalton-base.html#cb339-2" aria-hidden="true" tabindex="-1"></a>new.coords<span class="ot">&lt;-</span><span class="fu">coords.subset</span>(<span class="at">A =</span> Y.gpa<span class="sc">$</span>coords, </span>
-<span id="cb339-3"><a href="dalton-base.html#cb339-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">group =</span> qdata<span class="sc">$</span>bev.type)</span>
-<span id="cb339-4"><a href="dalton-base.html#cb339-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(new.coords)</span></code></pre></div>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="dalton-base.html#cb358-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset landmark coordinates to produce mean shapes for hypothesis 4</span></span>
+<span id="cb358-2"><a href="dalton-base.html#cb358-2" aria-hidden="true" tabindex="-1"></a>new.coords<span class="ot">&lt;-</span><span class="fu">coords.subset</span>(<span class="at">A =</span> Y.gpa<span class="sc">$</span>coords, </span>
+<span id="cb358-3"><a href="dalton-base.html#cb358-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">group =</span> qdata<span class="sc">$</span>bev.type)</span>
+<span id="cb358-4"><a href="dalton-base.html#cb358-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(new.coords)</span></code></pre></div>
 <pre><code>## [1] &quot;alternate&quot;            &quot;no.bevel&quot;             &quot;unifacial.bimarginal&quot;</code></pre>
-<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="dalton-base.html#cb341-1" aria-hidden="true" tabindex="-1"></a><span class="co"># group shape means</span></span>
-<span id="cb341-2"><a href="dalton-base.html#cb341-2" aria-hidden="true" tabindex="-1"></a>mean <span class="ot">&lt;-</span> <span class="fu">lapply</span>(new.coords, mshape)</span>
-<span id="cb341-3"><a href="dalton-base.html#cb341-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb341-4"><a href="dalton-base.html#cb341-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot mean shapes</span></span>
-<span id="cb341-5"><a href="dalton-base.html#cb341-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>alternate)</span>
-<span id="cb341-6"><a href="dalton-base.html#cb341-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>no.bevel)</span>
-<span id="cb341-7"><a href="dalton-base.html#cb341-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>unifacial.bimarginal)</span>
-<span id="cb341-8"><a href="dalton-base.html#cb341-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb341-9"><a href="dalton-base.html#cb341-9" aria-hidden="true" tabindex="-1"></a><span class="co"># comparison plots</span></span>
-<span id="cb341-10"><a href="dalton-base.html#cb341-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>alternate, </span>
-<span id="cb341-11"><a href="dalton-base.html#cb341-11" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>no.bevel, </span>
-<span id="cb341-12"><a href="dalton-base.html#cb341-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;vector&quot;</span>,</span>
-<span id="cb341-13"><a href="dalton-base.html#cb341-13" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag =</span> <span class="dv">2</span>)</span>
-<span id="cb341-14"><a href="dalton-base.html#cb341-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>alternate, </span>
-<span id="cb341-15"><a href="dalton-base.html#cb341-15" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>unifacial.bimarginal, </span>
-<span id="cb341-16"><a href="dalton-base.html#cb341-16" aria-hidden="true" tabindex="-1"></a>                <span class="at">method=</span><span class="st">&quot;vector&quot;</span>,</span>
-<span id="cb341-17"><a href="dalton-base.html#cb341-17" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag =</span> <span class="dv">2</span>)</span>
-<span id="cb341-18"><a href="dalton-base.html#cb341-18" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>no.bevel, </span>
-<span id="cb341-19"><a href="dalton-base.html#cb341-19" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>unifacial.bimarginal, </span>
-<span id="cb341-20"><a href="dalton-base.html#cb341-20" aria-hidden="true" tabindex="-1"></a>                <span class="at">method=</span><span class="st">&quot;vector&quot;</span>,</span>
-<span id="cb341-21"><a href="dalton-base.html#cb341-21" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag =</span> <span class="dv">2</span>)</span>
-<span id="cb341-22"><a href="dalton-base.html#cb341-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb341-23"><a href="dalton-base.html#cb341-23" aria-hidden="true" tabindex="-1"></a><span class="do">##knitr::include_graphics(&#39;images/mshape.h4.jpg&#39;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="dalton-base.html#cb360-1" aria-hidden="true" tabindex="-1"></a><span class="co"># group shape means</span></span>
+<span id="cb360-2"><a href="dalton-base.html#cb360-2" aria-hidden="true" tabindex="-1"></a>mean <span class="ot">&lt;-</span> <span class="fu">lapply</span>(new.coords, mshape)</span>
+<span id="cb360-3"><a href="dalton-base.html#cb360-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb360-4"><a href="dalton-base.html#cb360-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot mean shapes</span></span>
+<span id="cb360-5"><a href="dalton-base.html#cb360-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>alternate)</span>
+<span id="cb360-6"><a href="dalton-base.html#cb360-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>no.bevel)</span>
+<span id="cb360-7"><a href="dalton-base.html#cb360-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean<span class="sc">$</span>unifacial.bimarginal)</span>
+<span id="cb360-8"><a href="dalton-base.html#cb360-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb360-9"><a href="dalton-base.html#cb360-9" aria-hidden="true" tabindex="-1"></a><span class="co"># comparison plots</span></span>
+<span id="cb360-10"><a href="dalton-base.html#cb360-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>alternate, </span>
+<span id="cb360-11"><a href="dalton-base.html#cb360-11" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>no.bevel, </span>
+<span id="cb360-12"><a href="dalton-base.html#cb360-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">method =</span> <span class="st">&quot;vector&quot;</span>,</span>
+<span id="cb360-13"><a href="dalton-base.html#cb360-13" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag =</span> <span class="dv">2</span>)</span>
+<span id="cb360-14"><a href="dalton-base.html#cb360-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>alternate, </span>
+<span id="cb360-15"><a href="dalton-base.html#cb360-15" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>unifacial.bimarginal, </span>
+<span id="cb360-16"><a href="dalton-base.html#cb360-16" aria-hidden="true" tabindex="-1"></a>                <span class="at">method=</span><span class="st">&quot;vector&quot;</span>,</span>
+<span id="cb360-17"><a href="dalton-base.html#cb360-17" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag =</span> <span class="dv">2</span>)</span>
+<span id="cb360-18"><a href="dalton-base.html#cb360-18" aria-hidden="true" tabindex="-1"></a><span class="fu">plotRefToTarget</span>(mean<span class="sc">$</span>no.bevel, </span>
+<span id="cb360-19"><a href="dalton-base.html#cb360-19" aria-hidden="true" tabindex="-1"></a>                mean<span class="sc">$</span>unifacial.bimarginal, </span>
+<span id="cb360-20"><a href="dalton-base.html#cb360-20" aria-hidden="true" tabindex="-1"></a>                <span class="at">method=</span><span class="st">&quot;vector&quot;</span>,</span>
+<span id="cb360-21"><a href="dalton-base.html#cb360-21" aria-hidden="true" tabindex="-1"></a>                <span class="at">mag =</span> <span class="dv">2</span>)</span>
+<span id="cb360-22"><a href="dalton-base.html#cb360-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb360-23"><a href="dalton-base.html#cb360-23" aria-hidden="true" tabindex="-1"></a><span class="do">##knitr::include_graphics(&#39;images/mshape.h4.jpg&#39;)</span></span></code></pre></div>
 
 </div>
 </div>
