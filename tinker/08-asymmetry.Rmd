@@ -1,6 +1,6 @@
 # Symmetry and Asymmetry
 
-In studies of projectile morphology, an analysis of bilateral/object symmetry can yield useful insights related to _design intent_, provided we assume that the goal of the knapper was to achieve a fully-symmetrical form. Within that framework,  deviation from bilateral symmetry (fluctuating asymmetry) can serve as a useful measure of _knapper skill_ and/or _differential production_ . Both measures have utility in comparisons of contexts and sites, to include wide-ranging spatial and temporal applications. Initially developed for a [symmetry analysis of Gahagan bifaces](https://github.com/aksel-blaise/gahagan.asymmetry/blob/master/asymmetry.md), the same approach can be employed for an analysis of symmetry in Dalton projectile points.
+In studies of projectile morphology, an analysis of bilateral/object symmetry may yield useful insights related to _design intent_, provided we assume that the goal of the knapper was to achieve a fully-symmetrical form. Within that framework, deviation from bilateral symmetry (fluctuating asymmetry) might serve as a useful measure of _knapper skill_ and/or _differential production_. Both measures have utility in comparisons of contexts and sites, to include wide-ranging spatial and temporal applications. Initially developed for a [symmetry analysis of Gahagan bifaces](https://github.com/aksel-blaise/gahagan.asymmetry/blob/master/asymmetry.md), the same approach can be employed for an analysis of asymmetry in Dalton projectile points.
 
 ## Load packages + data
 
@@ -25,11 +25,8 @@ setwd("../")
 # read qualitative data
 qdata <- read.csv("qdata.csv", header = TRUE, row.names = 1)
 qdata <- qdata[match(dimnames(coords)[[3]],rownames(qdata)),]
-land.pairs<-read.csv("asymmetry1.csv",header=TRUE)
-ind<-rep(1:length(filelist))
-
-# print qdata
-knitr::kable(qdata, align = "cccc", caption = "Attributes included in qdata.")
+land.pairs <- read.csv("asymmetry1.csv", header = TRUE)
+ind <- rep(1:length(filelist))
 ```
 
 ## Generalized Procrustes Analysis
@@ -77,7 +74,7 @@ gdf <- geomorph.data.frame(shape = res.bilat$symm.shape,
                            bev.1 = qdata$bev, 
                            bev.2 = qdata$bev.type)
 
-# attributes for boxplots
+# attributes for boxplot
 heart <- qdata$heart.out # heartland in/out
 hreg <- qdata$heart.reg # heartland region
 bev.1 <- qdata$bev # beveled yes/no
@@ -93,7 +90,6 @@ summary(pca)
 ### Hypothesis 1
 
 ```{r def.mod.1.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-## Define models
 # symmetric shape as a function of heart
 fit.shape.heart <- procD.lm(shape ~ heart, 
                             data = gdf, 
@@ -110,7 +106,6 @@ fit.shape.heart.asymm <- procD.lm(ashape ~ heart,
 ### Hypothesis 2
 
 ```{r def.mod.2.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-## Define models
 # symmetric shape as a function of hreg
 fit.shape.hreg <- procD.lm(shape ~ hreg, 
                            data = gdf, 
@@ -127,7 +122,6 @@ fit.shape.hreg.asymm <- procD.lm(ashape ~ hreg,
 ### Hypothesis 3
 
 ```{r def.mod.3.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-## Define models
 # symmetric shape as a function of bev.1
 fit.shape.bev.1 <- procD.lm(shape ~ bev.1, 
                            data = gdf, 
@@ -144,7 +138,6 @@ fit.shape.bev.1.asymm <- procD.lm(ashape ~ bev.1,
 ### Hypothesis 4
 
 ```{r def.mod.4.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
-## Define models
 # symmetric shape as a function of bev.2
 fit.shape.bev.2 <- procD.lm(shape ~ bev.2, 
                            data = gdf, 
@@ -190,7 +183,7 @@ pc.plot1 <- plot(pca,
 
 ```{r h1.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # ANOVA: do symmetric dalton projectile point shapes differ by heart?
-## (are there differences in design intent?)
+## are there differences in design intent?
 anova(fit.shape.heart)
 ```
 
@@ -199,7 +192,7 @@ anova(fit.shape.heart)
 ```{r m-disparity, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # morphological disparity: do any of the groups display greater asymmetric 
 # shape variation among individuals relative to the other group?
-## (lesser/greater skill?)
+## lesser/greater skill?
 morphol.disparity(fit.shape.heart.asymm, 
                   groups = qdata$heart.out, 
                   data = gdf, 
@@ -239,9 +232,9 @@ pc.plot.2 <- plot(pca,
 
 ```{r h2.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # ANOVA: does symmetric dalton projectile point shape differ by hreg?
-## (are there differences in design intent?)
+## are there differences in design intent?
 anova(fit.shape.hreg)
-# pairwise comparison of LS means = which differ?
+## pairwise comparison of LS means = which differ?
 sh.hreg <- pairwise(fit.shape.hreg, 
                     groups = qdata$heart.reg)
 summary(sh.hreg, 
@@ -254,7 +247,7 @@ summary(sh.hreg,
 ```{r m-disparity.2, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # morphological disparity: do any of the groups display greater asymmetric 
 # shape variation among individuals relative to the other group?
-## (lesser/greater skill?)
+## lesser/greater skill?
 morphol.disparity(fit.shape.hreg.asymm, 
                   groups = qdata$heart.reg, 
                   data = gdf, 
@@ -294,7 +287,7 @@ pc.plot3 <- plot(pca,
 
 ```{r h3.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # ANOVA: do symmetric dalton projectile point shapes differ by beveling?
-## (are there differences in design intent?)
+## are there differences in design intent?
 anova(fit.shape.bev.1)
 ```
 
@@ -303,7 +296,7 @@ anova(fit.shape.bev.1)
 ```{r m-disparity.3, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # morphological disparity: do any of the groups display greater asymmetric 
 # shape variation among individuals relative to the other group?
-## (lesser/greater skill?)
+## lesser/greater skill?
 morphol.disparity(fit.shape.bev.1.asymm, 
                   groups = qdata$bev, 
                   data = gdf, 
@@ -343,7 +336,7 @@ pc.plot4 <- plot(pca,
 
 ```{r h4.asymm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # ANOVA: does symmetric dalton projectile point shape differ by bev.2?
-## (are there differences in design intent?)
+## are there differences in design intent?
 anova(fit.shape.bev.2)
 # pairwise comparison of LS means = which differ?
 sh.bev.2 <- pairwise(fit.shape.bev.2, 
@@ -358,7 +351,7 @@ summary(sh.bev.2,
 ```{r m-disparity.4, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
 # morphological disparity: do any of the groups display greater asymmetric 
 # shape variation among individuals relative to the other group?
-## (lesser/greater skill?)
+## lesser/greater skill?
 morphol.disparity(fit.shape.bev.2.asymm, 
                   groups = qdata$bev.type, 
                   data = gdf, 

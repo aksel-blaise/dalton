@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Landmark 3D geometric morphometrics of Dalton projectile points</title>
   <meta name="description" content="Morphological analysis of Dalton projectile points" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Landmark 3D geometric morphometrics of Dalton projectile points" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Morphological analysis of Dalton projectile points" />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Robert Z. Selden, Jr." />
 
 
-<meta name="date" content="2021-08-05" />
+<meta name="date" content="2022-04-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 
 <link rel="next" href="elliptical-fourier-analysis.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,9 +49,9 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -143,7 +142,7 @@ div.csl-indent {
 }
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
 </head>
 
 <body>
@@ -156,7 +155,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">dalton</a></li>
+<li><a href="./">dalton.1</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
@@ -383,107 +382,144 @@ div.csl-indent {
 <li class="chapter" data-level="6.8.6" data-path="dalton-base.html"><a href="dalton-base.html#mean-shapes-h4-3"><i class="fa fa-check"></i><b>6.8.6</b> Mean Shapes (H4)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="cross-section-midline.html"><a href="cross-section-midline.html"><i class="fa fa-check"></i><b>7</b> Cross-section: midline</a>
+<li class="chapter" data-level="7" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html"><i class="fa fa-check"></i><b>7</b> Symmetry and Asymmetry</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#load-packages-data-4"><i class="fa fa-check"></i><b>7.1</b> Load packages + data</a></li>
-<li class="chapter" data-level="7.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#generalized-procrustes-analysis-3"><i class="fa fa-check"></i><b>7.2</b> Generalized Procrustes Analysis</a>
+<li class="chapter" data-level="7.1" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#load-packages-data-4"><i class="fa fa-check"></i><b>7.1</b> Load packages + data</a></li>
+<li class="chapter" data-level="7.2" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#generalized-procrustes-analysis-3"><i class="fa fa-check"></i><b>7.2</b> Generalized Procrustes Analysis</a></li>
+<li class="chapter" data-level="7.3" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#principal-components-analysis-4"><i class="fa fa-check"></i><b>7.3</b> Principal Components Analysis</a></li>
+<li class="chapter" data-level="7.4" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#define-models-3"><i class="fa fa-check"></i><b>7.4</b> Define models</a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-attributes-3"><i class="fa fa-check"></i><b>7.2.1</b> Boxplot attributes</a></li>
+<li class="chapter" data-level="7.4.1" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#hypothesis-1-3"><i class="fa fa-check"></i><b>7.4.1</b> Hypothesis 1</a></li>
+<li class="chapter" data-level="7.4.2" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#hypothesis-2-3"><i class="fa fa-check"></i><b>7.4.2</b> Hypothesis 2</a></li>
+<li class="chapter" data-level="7.4.3" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#hypothesis-3-3"><i class="fa fa-check"></i><b>7.4.3</b> Hypothesis 3</a></li>
+<li class="chapter" data-level="7.4.4" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#hypothesis-4-3"><i class="fa fa-check"></i><b>7.4.4</b> Hypothesis 4</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-4"><i class="fa fa-check"></i><b>7.3</b> Principal Components Analysis</a></li>
-<li class="chapter" data-level="7.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#define-models-3"><i class="fa fa-check"></i><b>7.4</b> Define models</a>
+<li class="chapter" data-level="7.5" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#test-hypothesis-1-geo-symm"><i class="fa fa-check"></i><b>7.5</b> Test Hypothesis 1 (Geo Symm)</a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#hypothesis-1-3"><i class="fa fa-check"></i><b>7.4.1</b> Hypothesis 1</a></li>
-<li class="chapter" data-level="7.4.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#hypothesis-2-3"><i class="fa fa-check"></i><b>7.4.2</b> Hypothesis 2</a></li>
-<li class="chapter" data-level="7.4.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#hypothesis-3-3"><i class="fa fa-check"></i><b>7.4.3</b> Hypothesis 3</a></li>
-<li class="chapter" data-level="7.4.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#hypothesis-4-3"><i class="fa fa-check"></i><b>7.4.4</b> Hypothesis 4</a></li>
+<li class="chapter" data-level="7.5.1" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#principal-components-analysis-h1-4"><i class="fa fa-check"></i><b>7.5.1</b> Principal Components Analysis (H1)</a></li>
+<li class="chapter" data-level="7.5.2" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#anova"><i class="fa fa-check"></i><b>7.5.2</b> ANOVA</a></li>
+<li class="chapter" data-level="7.5.3" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#morphological-disparity"><i class="fa fa-check"></i><b>7.5.3</b> Morphological disparity</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#test-hypothesis-1-geo-x1"><i class="fa fa-check"></i><b>7.5</b> Test Hypothesis 1 (Geo X1)</a>
+<li class="chapter" data-level="7.6" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#test-hypothesis-2-geo-symm"><i class="fa fa-check"></i><b>7.6</b> Test Hypothesis 2 (Geo Symm)</a>
 <ul>
-<li class="chapter" data-level="7.5.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-h1-3"><i class="fa fa-check"></i><b>7.5.1</b> Boxplot (H1)</a></li>
-<li class="chapter" data-level="7.5.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-h1-4"><i class="fa fa-check"></i><b>7.5.2</b> Principal Components Analysis (H1)</a></li>
-<li class="chapter" data-level="7.5.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#minimamaxima-of-pc12-with-warp-grids-12"><i class="fa fa-check"></i><b>7.5.3</b> Minima/maxima of PC1/2 with warp grids</a></li>
-<li class="chapter" data-level="7.5.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#anova-h1-3"><i class="fa fa-check"></i><b>7.5.4</b> ANOVA (H1)</a></li>
-<li class="chapter" data-level="7.5.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#morphological-disparity-h1-3"><i class="fa fa-check"></i><b>7.5.5</b> Morphological disparity (H1)</a></li>
-<li class="chapter" data-level="7.5.6" data-path="cross-section-midline.html"><a href="cross-section-midline.html#mean-shapes-h1-4"><i class="fa fa-check"></i><b>7.5.6</b> Mean Shapes (H1)</a></li>
+<li class="chapter" data-level="7.6.1" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#principal-components-analysis-h2-4"><i class="fa fa-check"></i><b>7.6.1</b> Principal Components Analysis (H2)</a></li>
+<li class="chapter" data-level="7.6.2" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#anova-1"><i class="fa fa-check"></i><b>7.6.2</b> ANOVA</a></li>
+<li class="chapter" data-level="7.6.3" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#morphological-disparity-1"><i class="fa fa-check"></i><b>7.6.3</b> Morphological disparity</a></li>
 </ul></li>
-<li class="chapter" data-level="7.6" data-path="cross-section-midline.html"><a href="cross-section-midline.html#test-hypothesis-2-geo-x1"><i class="fa fa-check"></i><b>7.6</b> Test Hypothesis 2 (Geo X1)</a>
+<li class="chapter" data-level="7.7" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#test-hypothesis-3-techno-symm"><i class="fa fa-check"></i><b>7.7</b> Test Hypothesis 3 (Techno Symm)</a>
 <ul>
-<li class="chapter" data-level="7.6.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-h2-3"><i class="fa fa-check"></i><b>7.6.1</b> Boxplot (H2)</a></li>
-<li class="chapter" data-level="7.6.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-h2-4"><i class="fa fa-check"></i><b>7.6.2</b> Principal Components Analysis (H2)</a></li>
-<li class="chapter" data-level="7.6.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#minimamaxima-of-pc12-with-warp-grids-13"><i class="fa fa-check"></i><b>7.6.3</b> Minima/maxima of PC1/2 with warp grids</a></li>
-<li class="chapter" data-level="7.6.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#morphological-disparity-h2-3"><i class="fa fa-check"></i><b>7.6.4</b> Morphological disparity (H2)</a></li>
-<li class="chapter" data-level="7.6.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#mean-shapes-h2-4"><i class="fa fa-check"></i><b>7.6.5</b> Mean Shapes (H2)</a></li>
+<li class="chapter" data-level="7.7.1" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#principal-components-analysis-h3-4"><i class="fa fa-check"></i><b>7.7.1</b> Principal Components Analysis (H3)</a></li>
+<li class="chapter" data-level="7.7.2" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#anova-2"><i class="fa fa-check"></i><b>7.7.2</b> ANOVA</a></li>
+<li class="chapter" data-level="7.7.3" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#morphological-disparity-2"><i class="fa fa-check"></i><b>7.7.3</b> Morphological disparity</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="cross-section-midline.html"><a href="cross-section-midline.html#test-hypothesis-3-techno-x1"><i class="fa fa-check"></i><b>7.7</b> Test Hypothesis 3 (Techno X1)</a>
+<li class="chapter" data-level="7.8" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#test-hypothesis-4-techno-symm"><i class="fa fa-check"></i><b>7.8</b> Test Hypothesis 4 (Techno Symm)</a>
 <ul>
-<li class="chapter" data-level="7.7.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-h3-3"><i class="fa fa-check"></i><b>7.7.1</b> Boxplot (H3)</a></li>
-<li class="chapter" data-level="7.7.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-h3-4"><i class="fa fa-check"></i><b>7.7.2</b> Principal Components Analysis (H3)</a></li>
-<li class="chapter" data-level="7.7.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#minimamaxima-of-pc12-with-warp-grids-14"><i class="fa fa-check"></i><b>7.7.3</b> Minima/maxima of PC1/2 with warp grids</a></li>
-<li class="chapter" data-level="7.7.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#anova-h3-3"><i class="fa fa-check"></i><b>7.7.4</b> ANOVA (H3)</a></li>
-<li class="chapter" data-level="7.7.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#morphological-disparity-h3-3"><i class="fa fa-check"></i><b>7.7.5</b> Morphological disparity (H3)</a></li>
-<li class="chapter" data-level="7.7.6" data-path="cross-section-midline.html"><a href="cross-section-midline.html#mean-shapes-h3-4"><i class="fa fa-check"></i><b>7.7.6</b> Mean Shapes (H3)</a></li>
-</ul></li>
-<li class="chapter" data-level="7.8" data-path="cross-section-midline.html"><a href="cross-section-midline.html#test-hypothesis-4-techno-x1"><i class="fa fa-check"></i><b>7.8</b> Test Hypothesis 4 (Techno X1)</a>
-<ul>
-<li class="chapter" data-level="7.8.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-h4-3"><i class="fa fa-check"></i><b>7.8.1</b> Boxplot (H4)</a></li>
-<li class="chapter" data-level="7.8.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-h4-4"><i class="fa fa-check"></i><b>7.8.2</b> Principal Components Analysis (H4)</a></li>
-<li class="chapter" data-level="7.8.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#minimamaxima-of-pc12-with-warp-grids-15"><i class="fa fa-check"></i><b>7.8.3</b> Minima/maxima of PC1/2 with warp grids</a></li>
-<li class="chapter" data-level="7.8.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#anova-h4-3"><i class="fa fa-check"></i><b>7.8.4</b> ANOVA (H4)</a></li>
-<li class="chapter" data-level="7.8.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#morphological-disparity-h4-3"><i class="fa fa-check"></i><b>7.8.5</b> Morphological disparity (H4)</a></li>
-<li class="chapter" data-level="7.8.6" data-path="cross-section-midline.html"><a href="cross-section-midline.html#mean-shapes-h4-4"><i class="fa fa-check"></i><b>7.8.6</b> Mean Shapes (H4)</a></li>
+<li class="chapter" data-level="7.8.1" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#principal-components-analysis-h4-4"><i class="fa fa-check"></i><b>7.8.1</b> Principal Components Analysis (H4)</a></li>
+<li class="chapter" data-level="7.8.2" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#anova-3"><i class="fa fa-check"></i><b>7.8.2</b> ANOVA</a></li>
+<li class="chapter" data-level="7.8.3" data-path="symmetry-and-asymmetry.html"><a href="symmetry-and-asymmetry.html#morphological-disparity-3"><i class="fa fa-check"></i><b>7.8.3</b> Morphological disparity</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html"><i class="fa fa-check"></i><b>8</b> Cross-section: blade/base</a>
+<li class="chapter" data-level="8" data-path="cross-section-midline.html"><a href="cross-section-midline.html"><i class="fa fa-check"></i><b>8</b> Cross-section: midline</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#load-packages-data-5"><i class="fa fa-check"></i><b>8.1</b> Load packages + data</a></li>
-<li class="chapter" data-level="8.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#generalized-procrustes-analysis-4"><i class="fa fa-check"></i><b>8.2</b> Generalized Procrustes Analysis</a>
+<li class="chapter" data-level="8.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#load-packages-data-5"><i class="fa fa-check"></i><b>8.1</b> Load packages + data</a></li>
+<li class="chapter" data-level="8.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#generalized-procrustes-analysis-4"><i class="fa fa-check"></i><b>8.2</b> Generalized Procrustes Analysis</a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-attributes-4"><i class="fa fa-check"></i><b>8.2.1</b> Boxplot attributes</a></li>
+<li class="chapter" data-level="8.2.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-attributes-3"><i class="fa fa-check"></i><b>8.2.1</b> Boxplot attributes</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-5"><i class="fa fa-check"></i><b>8.3</b> Principal Components Analysis</a></li>
-<li class="chapter" data-level="8.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#define-models-4"><i class="fa fa-check"></i><b>8.4</b> Define models</a>
+<li class="chapter" data-level="8.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-5"><i class="fa fa-check"></i><b>8.3</b> Principal Components Analysis</a></li>
+<li class="chapter" data-level="8.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#define-models-4"><i class="fa fa-check"></i><b>8.4</b> Define models</a>
 <ul>
-<li class="chapter" data-level="8.4.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#hypothesis-1-4"><i class="fa fa-check"></i><b>8.4.1</b> Hypothesis 1</a></li>
-<li class="chapter" data-level="8.4.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#hypothesis-2-4"><i class="fa fa-check"></i><b>8.4.2</b> Hypothesis 2</a></li>
-<li class="chapter" data-level="8.4.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#hypothesis-3-4"><i class="fa fa-check"></i><b>8.4.3</b> Hypothesis 3</a></li>
-<li class="chapter" data-level="8.4.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#hypothesis-4-4"><i class="fa fa-check"></i><b>8.4.4</b> Hypothesis 4</a></li>
+<li class="chapter" data-level="8.4.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#hypothesis-1-4"><i class="fa fa-check"></i><b>8.4.1</b> Hypothesis 1</a></li>
+<li class="chapter" data-level="8.4.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#hypothesis-2-4"><i class="fa fa-check"></i><b>8.4.2</b> Hypothesis 2</a></li>
+<li class="chapter" data-level="8.4.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#hypothesis-3-4"><i class="fa fa-check"></i><b>8.4.3</b> Hypothesis 3</a></li>
+<li class="chapter" data-level="8.4.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#hypothesis-4-4"><i class="fa fa-check"></i><b>8.4.4</b> Hypothesis 4</a></li>
 </ul></li>
-<li class="chapter" data-level="8.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#test-hypothesis-1-geo-x2"><i class="fa fa-check"></i><b>8.5</b> Test Hypothesis 1 (Geo X2)</a>
+<li class="chapter" data-level="8.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#test-hypothesis-1-geo-x1"><i class="fa fa-check"></i><b>8.5</b> Test Hypothesis 1 (Geo X1)</a>
 <ul>
-<li class="chapter" data-level="8.5.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-h1-4"><i class="fa fa-check"></i><b>8.5.1</b> Boxplot (H1)</a></li>
-<li class="chapter" data-level="8.5.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-h1-5"><i class="fa fa-check"></i><b>8.5.2</b> Principal Components Analysis (H1)</a></li>
-<li class="chapter" data-level="8.5.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#minimamaxima-of-pc12-with-warp-grids-16"><i class="fa fa-check"></i><b>8.5.3</b> Minima/maxima of PC1/2 with warp grids</a></li>
-<li class="chapter" data-level="8.5.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#anova-h1-4"><i class="fa fa-check"></i><b>8.5.4</b> ANOVA (H1)</a></li>
-<li class="chapter" data-level="8.5.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#morphological-disparity-h1-4"><i class="fa fa-check"></i><b>8.5.5</b> Morphological disparity (H1)</a></li>
-<li class="chapter" data-level="8.5.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#mean-shapes-h1-5"><i class="fa fa-check"></i><b>8.5.6</b> Mean Shapes (H1)</a></li>
+<li class="chapter" data-level="8.5.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-h1-3"><i class="fa fa-check"></i><b>8.5.1</b> Boxplot (H1)</a></li>
+<li class="chapter" data-level="8.5.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-h1-5"><i class="fa fa-check"></i><b>8.5.2</b> Principal Components Analysis (H1)</a></li>
+<li class="chapter" data-level="8.5.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#minimamaxima-of-pc12-with-warp-grids-12"><i class="fa fa-check"></i><b>8.5.3</b> Minima/maxima of PC1/2 with warp grids</a></li>
+<li class="chapter" data-level="8.5.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#anova-h1-3"><i class="fa fa-check"></i><b>8.5.4</b> ANOVA (H1)</a></li>
+<li class="chapter" data-level="8.5.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#morphological-disparity-h1-3"><i class="fa fa-check"></i><b>8.5.5</b> Morphological disparity (H1)</a></li>
+<li class="chapter" data-level="8.5.6" data-path="cross-section-midline.html"><a href="cross-section-midline.html#mean-shapes-h1-4"><i class="fa fa-check"></i><b>8.5.6</b> Mean Shapes (H1)</a></li>
 </ul></li>
-<li class="chapter" data-level="8.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#test-hypothesis-2-geo-x2"><i class="fa fa-check"></i><b>8.6</b> Test Hypothesis 2 (Geo X2)</a>
+<li class="chapter" data-level="8.6" data-path="cross-section-midline.html"><a href="cross-section-midline.html#test-hypothesis-2-geo-x1"><i class="fa fa-check"></i><b>8.6</b> Test Hypothesis 2 (Geo X1)</a>
 <ul>
-<li class="chapter" data-level="8.6.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-h2-4"><i class="fa fa-check"></i><b>8.6.1</b> Boxplot (H2)</a></li>
-<li class="chapter" data-level="8.6.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-h2-5"><i class="fa fa-check"></i><b>8.6.2</b> Principal Components Analysis (H2)</a></li>
-<li class="chapter" data-level="8.6.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#minimamaxima-of-pc12-with-warp-grids-17"><i class="fa fa-check"></i><b>8.6.3</b> Minima/maxima of PC1/2 with warp grids</a></li>
-<li class="chapter" data-level="8.6.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#anova-h2-3"><i class="fa fa-check"></i><b>8.6.4</b> ANOVA (H2)</a></li>
-<li class="chapter" data-level="8.6.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#morphological-disparity-h2-4"><i class="fa fa-check"></i><b>8.6.5</b> Morphological disparity (H2)</a></li>
-<li class="chapter" data-level="8.6.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#mean-shapes-h2-5"><i class="fa fa-check"></i><b>8.6.6</b> Mean Shapes (H2)</a></li>
+<li class="chapter" data-level="8.6.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-h2-3"><i class="fa fa-check"></i><b>8.6.1</b> Boxplot (H2)</a></li>
+<li class="chapter" data-level="8.6.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-h2-5"><i class="fa fa-check"></i><b>8.6.2</b> Principal Components Analysis (H2)</a></li>
+<li class="chapter" data-level="8.6.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#minimamaxima-of-pc12-with-warp-grids-13"><i class="fa fa-check"></i><b>8.6.3</b> Minima/maxima of PC1/2 with warp grids</a></li>
+<li class="chapter" data-level="8.6.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#morphological-disparity-h2-3"><i class="fa fa-check"></i><b>8.6.4</b> Morphological disparity (H2)</a></li>
+<li class="chapter" data-level="8.6.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#mean-shapes-h2-4"><i class="fa fa-check"></i><b>8.6.5</b> Mean Shapes (H2)</a></li>
 </ul></li>
-<li class="chapter" data-level="8.7" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#test-hypothesis-3-techno-x2"><i class="fa fa-check"></i><b>8.7</b> Test Hypothesis 3 (Techno X2)</a>
+<li class="chapter" data-level="8.7" data-path="cross-section-midline.html"><a href="cross-section-midline.html#test-hypothesis-3-techno-x1"><i class="fa fa-check"></i><b>8.7</b> Test Hypothesis 3 (Techno X1)</a>
 <ul>
-<li class="chapter" data-level="8.7.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-h3-4"><i class="fa fa-check"></i><b>8.7.1</b> Boxplot (H3)</a></li>
-<li class="chapter" data-level="8.7.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-h3-5"><i class="fa fa-check"></i><b>8.7.2</b> Principal Components Analysis (H3)</a></li>
-<li class="chapter" data-level="8.7.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#minimamaxima-of-pc12-with-warp-grids-18"><i class="fa fa-check"></i><b>8.7.3</b> Minima/maxima of PC1/2 with warp grids</a></li>
-<li class="chapter" data-level="8.7.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#anova-h3-4"><i class="fa fa-check"></i><b>8.7.4</b> ANOVA (H3)</a></li>
-<li class="chapter" data-level="8.7.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#morphological-disparity-h3-4"><i class="fa fa-check"></i><b>8.7.5</b> Morphological disparity (H3)</a></li>
-<li class="chapter" data-level="8.7.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#mean-shapes-h3-5"><i class="fa fa-check"></i><b>8.7.6</b> Mean Shapes (H3)</a></li>
+<li class="chapter" data-level="8.7.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-h3-3"><i class="fa fa-check"></i><b>8.7.1</b> Boxplot (H3)</a></li>
+<li class="chapter" data-level="8.7.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-h3-5"><i class="fa fa-check"></i><b>8.7.2</b> Principal Components Analysis (H3)</a></li>
+<li class="chapter" data-level="8.7.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#minimamaxima-of-pc12-with-warp-grids-14"><i class="fa fa-check"></i><b>8.7.3</b> Minima/maxima of PC1/2 with warp grids</a></li>
+<li class="chapter" data-level="8.7.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#anova-h3-3"><i class="fa fa-check"></i><b>8.7.4</b> ANOVA (H3)</a></li>
+<li class="chapter" data-level="8.7.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#morphological-disparity-h3-3"><i class="fa fa-check"></i><b>8.7.5</b> Morphological disparity (H3)</a></li>
+<li class="chapter" data-level="8.7.6" data-path="cross-section-midline.html"><a href="cross-section-midline.html#mean-shapes-h3-4"><i class="fa fa-check"></i><b>8.7.6</b> Mean Shapes (H3)</a></li>
 </ul></li>
-<li class="chapter" data-level="8.8" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#test-hypothesis-4-techno-x2"><i class="fa fa-check"></i><b>8.8</b> Test Hypothesis 4 (Techno X2)</a>
+<li class="chapter" data-level="8.8" data-path="cross-section-midline.html"><a href="cross-section-midline.html#test-hypothesis-4-techno-x1"><i class="fa fa-check"></i><b>8.8</b> Test Hypothesis 4 (Techno X1)</a>
 <ul>
-<li class="chapter" data-level="8.8.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-h4-4"><i class="fa fa-check"></i><b>8.8.1</b> Boxplot (H4)</a></li>
-<li class="chapter" data-level="8.8.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-h4-5"><i class="fa fa-check"></i><b>8.8.2</b> Principal Components Analysis (H4)</a></li>
-<li class="chapter" data-level="8.8.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#minimamaxima-of-pc12-with-warp-grids-19"><i class="fa fa-check"></i><b>8.8.3</b> Minima/maxima of PC1/2 with warp grids</a></li>
-<li class="chapter" data-level="8.8.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#anova-h4-4"><i class="fa fa-check"></i><b>8.8.4</b> ANOVA (H4)</a></li>
-<li class="chapter" data-level="8.8.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#morphological-disparity-h4-4"><i class="fa fa-check"></i><b>8.8.5</b> Morphological disparity (H4)</a></li>
-<li class="chapter" data-level="8.8.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#mean-shapes-h4-5"><i class="fa fa-check"></i><b>8.8.6</b> Mean Shapes (H4)</a></li>
+<li class="chapter" data-level="8.8.1" data-path="cross-section-midline.html"><a href="cross-section-midline.html#boxplot-h4-3"><i class="fa fa-check"></i><b>8.8.1</b> Boxplot (H4)</a></li>
+<li class="chapter" data-level="8.8.2" data-path="cross-section-midline.html"><a href="cross-section-midline.html#principal-components-analysis-h4-5"><i class="fa fa-check"></i><b>8.8.2</b> Principal Components Analysis (H4)</a></li>
+<li class="chapter" data-level="8.8.3" data-path="cross-section-midline.html"><a href="cross-section-midline.html#minimamaxima-of-pc12-with-warp-grids-15"><i class="fa fa-check"></i><b>8.8.3</b> Minima/maxima of PC1/2 with warp grids</a></li>
+<li class="chapter" data-level="8.8.4" data-path="cross-section-midline.html"><a href="cross-section-midline.html#anova-h4-3"><i class="fa fa-check"></i><b>8.8.4</b> ANOVA (H4)</a></li>
+<li class="chapter" data-level="8.8.5" data-path="cross-section-midline.html"><a href="cross-section-midline.html#morphological-disparity-h4-3"><i class="fa fa-check"></i><b>8.8.5</b> Morphological disparity (H4)</a></li>
+<li class="chapter" data-level="8.8.6" data-path="cross-section-midline.html"><a href="cross-section-midline.html#mean-shapes-h4-4"><i class="fa fa-check"></i><b>8.8.6</b> Mean Shapes (H4)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html"><i class="fa fa-check"></i><b>9</b> Cross-section: blade/base</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#load-packages-data-6"><i class="fa fa-check"></i><b>9.1</b> Load packages + data</a></li>
+<li class="chapter" data-level="9.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#generalized-procrustes-analysis-5"><i class="fa fa-check"></i><b>9.2</b> Generalized Procrustes Analysis</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-attributes-4"><i class="fa fa-check"></i><b>9.2.1</b> Boxplot attributes</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-6"><i class="fa fa-check"></i><b>9.3</b> Principal Components Analysis</a></li>
+<li class="chapter" data-level="9.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#define-models-5"><i class="fa fa-check"></i><b>9.4</b> Define models</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#hypothesis-1-5"><i class="fa fa-check"></i><b>9.4.1</b> Hypothesis 1</a></li>
+<li class="chapter" data-level="9.4.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#hypothesis-2-5"><i class="fa fa-check"></i><b>9.4.2</b> Hypothesis 2</a></li>
+<li class="chapter" data-level="9.4.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#hypothesis-3-5"><i class="fa fa-check"></i><b>9.4.3</b> Hypothesis 3</a></li>
+<li class="chapter" data-level="9.4.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#hypothesis-4-5"><i class="fa fa-check"></i><b>9.4.4</b> Hypothesis 4</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#test-hypothesis-1-geo-x2"><i class="fa fa-check"></i><b>9.5</b> Test Hypothesis 1 (Geo X2)</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-h1-4"><i class="fa fa-check"></i><b>9.5.1</b> Boxplot (H1)</a></li>
+<li class="chapter" data-level="9.5.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-h1-6"><i class="fa fa-check"></i><b>9.5.2</b> Principal Components Analysis (H1)</a></li>
+<li class="chapter" data-level="9.5.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#minimamaxima-of-pc12-with-warp-grids-16"><i class="fa fa-check"></i><b>9.5.3</b> Minima/maxima of PC1/2 with warp grids</a></li>
+<li class="chapter" data-level="9.5.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#anova-h1-4"><i class="fa fa-check"></i><b>9.5.4</b> ANOVA (H1)</a></li>
+<li class="chapter" data-level="9.5.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#morphological-disparity-h1-4"><i class="fa fa-check"></i><b>9.5.5</b> Morphological disparity (H1)</a></li>
+<li class="chapter" data-level="9.5.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#mean-shapes-h1-5"><i class="fa fa-check"></i><b>9.5.6</b> Mean Shapes (H1)</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#test-hypothesis-2-geo-x2"><i class="fa fa-check"></i><b>9.6</b> Test Hypothesis 2 (Geo X2)</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-h2-4"><i class="fa fa-check"></i><b>9.6.1</b> Boxplot (H2)</a></li>
+<li class="chapter" data-level="9.6.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-h2-6"><i class="fa fa-check"></i><b>9.6.2</b> Principal Components Analysis (H2)</a></li>
+<li class="chapter" data-level="9.6.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#minimamaxima-of-pc12-with-warp-grids-17"><i class="fa fa-check"></i><b>9.6.3</b> Minima/maxima of PC1/2 with warp grids</a></li>
+<li class="chapter" data-level="9.6.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#anova-h2-3"><i class="fa fa-check"></i><b>9.6.4</b> ANOVA (H2)</a></li>
+<li class="chapter" data-level="9.6.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#morphological-disparity-h2-4"><i class="fa fa-check"></i><b>9.6.5</b> Morphological disparity (H2)</a></li>
+<li class="chapter" data-level="9.6.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#mean-shapes-h2-5"><i class="fa fa-check"></i><b>9.6.6</b> Mean Shapes (H2)</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#test-hypothesis-3-techno-x2"><i class="fa fa-check"></i><b>9.7</b> Test Hypothesis 3 (Techno X2)</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-h3-4"><i class="fa fa-check"></i><b>9.7.1</b> Boxplot (H3)</a></li>
+<li class="chapter" data-level="9.7.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-h3-6"><i class="fa fa-check"></i><b>9.7.2</b> Principal Components Analysis (H3)</a></li>
+<li class="chapter" data-level="9.7.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#minimamaxima-of-pc12-with-warp-grids-18"><i class="fa fa-check"></i><b>9.7.3</b> Minima/maxima of PC1/2 with warp grids</a></li>
+<li class="chapter" data-level="9.7.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#anova-h3-4"><i class="fa fa-check"></i><b>9.7.4</b> ANOVA (H3)</a></li>
+<li class="chapter" data-level="9.7.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#morphological-disparity-h3-4"><i class="fa fa-check"></i><b>9.7.5</b> Morphological disparity (H3)</a></li>
+<li class="chapter" data-level="9.7.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#mean-shapes-h3-5"><i class="fa fa-check"></i><b>9.7.6</b> Mean Shapes (H3)</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#test-hypothesis-4-techno-x2"><i class="fa fa-check"></i><b>9.8</b> Test Hypothesis 4 (Techno X2)</a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#boxplot-h4-4"><i class="fa fa-check"></i><b>9.8.1</b> Boxplot (H4)</a></li>
+<li class="chapter" data-level="9.8.2" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#principal-components-analysis-h4-6"><i class="fa fa-check"></i><b>9.8.2</b> Principal Components Analysis (H4)</a></li>
+<li class="chapter" data-level="9.8.3" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#minimamaxima-of-pc12-with-warp-grids-19"><i class="fa fa-check"></i><b>9.8.3</b> Minima/maxima of PC1/2 with warp grids</a></li>
+<li class="chapter" data-level="9.8.4" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#anova-h4-4"><i class="fa fa-check"></i><b>9.8.4</b> ANOVA (H4)</a></li>
+<li class="chapter" data-level="9.8.5" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#morphological-disparity-h4-4"><i class="fa fa-check"></i><b>9.8.5</b> Morphological disparity (H4)</a></li>
+<li class="chapter" data-level="9.8.6" data-path="cross-section-bladebase.html"><a href="cross-section-bladebase.html#mean-shapes-h4-5"><i class="fa fa-check"></i><b>9.8.6</b> Mean Shapes (H4)</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -510,10 +546,10 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">Landmark 3D geometric morphometrics of Dalton projectile points</h1>
 <p class="author"><em>Robert Z. Selden, Jr.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2021-08-05</em></p>
+<p class="date"><em>2022-04-26</em></p>
 </div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
+<div id="preface" class="section level1 unnumbered hasAnchor">
+<h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <blockquote>
 <p>Reproducibility—the ability to recompute results—and replicability–—the chances other experimenters will achieve a consistent result—are two foundational characteristics of successful scientific research <span class="citation">(<a href="#ref-RN20918" role="doc-biblioref">Leek and Peng 2015</a>)</span>.</p>
 </blockquote>
@@ -521,144 +557,93 @@ div.csl-indent {
 <p>Reproducibility projects in <a href="https://osf.io/ezcuj/">psychology</a> and <a href="https://www.cos.io/rpcb">cancer biology</a> are impacting current research practices across all domains. Examples of reproducible research are becoming more abundant in archaeology <span class="citation">(<a href="#ref-RN20804" role="doc-biblioref">Marwick 2016</a>; <a href="#ref-RN21009" role="doc-biblioref">Ivanovaitė et al. 2020</a>; <a href="#ref-RN21001" role="doc-biblioref">Selden Jr., Dockall, and Dubied 2020</a>)</span>, and the next generation of archaeologists are learning those tools and methods needed to reproduce and/or replicate research results <span class="citation">(<a href="#ref-RN21007" role="doc-biblioref">Marwick et al. 2019</a>)</span>. Reproducible and replicable research work flows are often employed at the highest levels of humanities-based inquiries to mitigate concern or doubt regarding proper execution, and is of particular import should the results have—explicitly or implicitly—a major impact on scientific progress <span class="citation">(<a href="#ref-RN21008" role="doc-biblioref">Peels and Bouter 2018</a>)</span>.</p>
 <p>Components of the undertaking presented in this volume are novel, and this basic research endeavour is rooted in archaeological epistemology. Sharing data is not enough, and if investigators share only data absent their analysis code, that places a substantive burden on those who may seek to build upon or replicate their work in the future. In this instance, the choice to pursue a replicable work flow occurs based on the simple fact that this work is foundational, and meant to begin a meaningful discussion related to projectile morphology.</p>
 <p>As an exploratory research endeavour, this study was not <a href="https://www.cos.io/prereg">preregistered</a>.</p>
-<div id="acknowledgments" class="section level2" number="0.1">
-<h2><span class="header-section-number">0.1</span> Acknowledgments</h2>
+<div id="acknowledgments" class="section level2 hasAnchor" number="0.1">
+<h2><span class="header-section-number">0.1</span> Acknowledgments<a href="index.html#acknowledgments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>I extend my gratitude to Christian S. Hoggard and David K. Thulman for their thoughtful comments and constructive criticisms on the draft of the landmarking protocol developed for the study of <a href="https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md">Gahagan bifaces</a> <span class="citation">(<a href="#ref-RN21001" role="doc-biblioref">Selden Jr., Dockall, and Dubied 2020</a>)</span>, which is extended here for an analysis of Dalton point morphology. Additional thanks to Christian S. Hoggard for fielding questions related to the EFA analysis. This iteration of the landmarking protocol was initially developed using the <a href="https://github.com/morphOptics/digit3DLand"><code>digit3DLand</code></a> package in R, and I am grateful to Morgane Dubied for her help with coding questions.</p>
 </div>
-<div id="funding" class="section level2" number="0.2">
-<h2><span class="header-section-number">0.2</span> Funding</h2>
+<div id="funding" class="section level2 hasAnchor" number="0.2">
+<h2><span class="header-section-number">0.2</span> Funding<a href="index.html#funding" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Components of this analytical work flow were developed and funded by a Preservation Technology and Training grant (P14AP00138) to RZS from the National Center for Preservation Technology and Training (NCPTT), as well as grants from the Caddo Nation of Oklahoma, National Forests and Grasslands in Texas (15-PA-11081300-033) and the United States Forest Service (20-PA-11081300-074).</p>
 </div>
-<div id="colophon" class="section level2" number="0.3">
-<h2><span class="header-section-number">0.3</span> Colophon</h2>
-<p>This version of the analysis was generated on 2021-08-05 19:05:11 using the following computational environment and dependencies:</p>
+<div id="colophon" class="section level2 hasAnchor" number="0.3">
+<h2><span class="header-section-number">0.3</span> Colophon<a href="index.html#colophon" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This version of the analysis was generated on 2022-04-26 04:36:51 using the following computational environment and dependencies:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># what R packages and versions were used?</span></span>
 <span id="cb1-2"><a href="index.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="st">&quot;devtools&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()) devtools<span class="sc">::</span><span class="fu">session_info</span>()</span></code></pre></div>
-<pre><code>## - Session info -------------------------------------------------------------------------------------
-##  setting  value                       
-##  version  R version 4.1.0 (2021-05-18)
-##  os       Windows 10 x64              
-##  system   x86_64, mingw32             
-##  ui       RStudio                     
-##  language (EN)                        
-##  collate  English_United States.1252  
-##  ctype    English_United States.1252  
-##  tz       America/Chicago             
-##  date     2021-08-05                  
+<pre><code>## - Session info --------------------------------------------------------------------------------
+##  setting  value
+##  version  R version 4.1.3 (2022-03-10)
+##  os       Windows 10 x64 (build 19044)
+##  system   x86_64, mingw32
+##  ui       RStudio
+##  language (EN)
+##  collate  English_United States.1252
+##  ctype    English_United States.1252
+##  tz       America/Chicago
+##  date     2022-04-26
+##  rstudio  2021.09.0+351 Ghost Orchid (desktop)
+##  pandoc   2.14.0.3 @ C:/Program Files/RStudio/bin/pandoc/ (via rmarkdown)
 ## 
-## - Packages -----------------------------------------------------------------------------------------
-##  package      * version  date       lib source                      
-##  ape            5.5      2021-04-25 [1] CRAN (R 4.1.0)              
-##  assertthat     0.2.1    2019-03-21 [1] CRAN (R 4.1.0)              
-##  backports      1.2.1    2020-12-09 [1] CRAN (R 4.1.0)              
-##  bookdown       0.22     2021-04-22 [1] CRAN (R 4.1.0)              
-##  broom          0.7.9    2021-07-27 [1] CRAN (R 4.1.0)              
-##  bslib          0.2.5.1  2021-05-18 [1] CRAN (R 4.1.0)              
-##  cachem         1.0.5    2021-05-15 [1] CRAN (R 4.1.0)              
-##  callr          3.7.0    2021-04-20 [1] CRAN (R 4.1.0)              
-##  cellranger     1.1.0    2016-07-27 [1] CRAN (R 4.1.0)              
-##  cli            3.0.1    2021-07-17 [1] CRAN (R 4.1.0)              
-##  colorspace     2.0-2    2021-06-24 [1] CRAN (R 4.1.0)              
-##  crayon         1.4.1    2021-02-08 [1] CRAN (R 4.1.0)              
-##  crosstalk      1.1.1    2021-01-12 [1] CRAN (R 4.1.0)              
-##  curl           4.3.2    2021-06-23 [1] CRAN (R 4.1.0)              
-##  DBI            1.1.1    2021-01-15 [1] CRAN (R 4.1.0)              
-##  dbplyr         2.1.1    2021-04-06 [1] CRAN (R 4.1.0)              
-##  desc           1.3.0    2021-03-05 [1] CRAN (R 4.1.0)              
-##  devtools       2.4.2    2021-06-07 [1] CRAN (R 4.1.0)              
-##  digest         0.6.27   2020-10-24 [1] CRAN (R 4.1.0)              
-##  dplyr        * 1.0.7    2021-06-18 [1] CRAN (R 4.1.0)              
-##  ellipsis       0.3.2    2021-04-29 [1] CRAN (R 4.1.0)              
-##  evaluate       0.14     2019-05-28 [1] CRAN (R 4.1.0)              
-##  fansi          0.5.0    2021-05-25 [1] CRAN (R 4.1.0)              
-##  farver         2.1.0    2021-02-28 [1] CRAN (R 4.1.0)              
-##  fastmap        1.1.0    2021-01-25 [1] CRAN (R 4.1.0)              
-##  forcats      * 0.5.1    2021-01-27 [1] CRAN (R 4.1.0)              
-##  fs             1.5.0    2020-07-31 [1] CRAN (R 4.1.0)              
-##  generics       0.1.0    2020-10-31 [1] CRAN (R 4.1.0)              
-##  geomorph     * 4.0.0    2021-04-02 [1] CRAN (R 4.1.0)              
-##  ggplot2      * 3.3.5    2021-06-25 [1] CRAN (R 4.1.0)              
-##  git2r          0.28.0   2021-01-10 [1] CRAN (R 4.1.0)              
-##  glue           1.4.2    2020-08-27 [1] CRAN (R 4.1.0)              
-##  gtable         0.3.0    2019-03-25 [1] CRAN (R 4.1.0)              
-##  haven          2.4.3    2021-08-04 [1] CRAN (R 4.1.0)              
-##  here         * 1.0.1    2020-12-13 [1] CRAN (R 4.1.0)              
-##  highr          0.9      2021-04-16 [1] CRAN (R 4.1.0)              
-##  hms            1.1.0    2021-05-17 [1] CRAN (R 4.1.0)              
-##  htmltools      0.5.1.1  2021-01-22 [1] CRAN (R 4.1.0)              
-##  htmlwidgets    1.5.3    2020-12-10 [1] CRAN (R 4.1.0)              
-##  httr           1.4.2    2020-07-20 [1] CRAN (R 4.1.0)              
-##  jpeg           0.1-9    2021-07-24 [1] CRAN (R 4.1.0)              
-##  jquerylib      0.1.4    2021-04-26 [1] CRAN (R 4.1.0)              
-##  jsonlite       1.7.2    2020-12-09 [1] CRAN (R 4.1.0)              
-##  knitr          1.33     2021-04-24 [1] CRAN (R 4.1.0)              
-##  labeling       0.4.2    2020-10-20 [1] CRAN (R 4.1.0)              
-##  lattice        0.20-44  2021-05-02 [2] CRAN (R 4.1.0)              
-##  lifecycle      1.0.0    2021-02-15 [1] CRAN (R 4.1.0)              
-##  lubridate      1.7.10   2021-02-26 [1] CRAN (R 4.1.0)              
-##  magrittr       2.0.1    2020-11-17 [1] CRAN (R 4.1.0)              
-##  Matrix       * 1.3-3    2021-05-04 [2] CRAN (R 4.1.0)              
-##  memoise        2.0.0    2021-01-26 [1] CRAN (R 4.1.0)              
-##  modelr         0.1.8    2020-05-19 [1] CRAN (R 4.1.0)              
-##  Momocs       * 1.3.3    2021-08-05 [1] Github (MomX/Momocs@e7ba9b8)
-##  munsell        0.5.0    2018-06-12 [1] CRAN (R 4.1.0)              
-##  nlme           3.1-152  2021-02-04 [2] CRAN (R 4.1.0)              
-##  pillar         1.6.2    2021-07-29 [1] CRAN (R 4.1.0)              
-##  pkgbuild       1.2.0    2020-12-15 [1] CRAN (R 4.1.0)              
-##  pkgconfig      2.0.3    2019-09-22 [1] CRAN (R 4.1.0)              
-##  pkgload        1.2.1    2021-04-06 [1] CRAN (R 4.1.0)              
-##  png            0.1-7    2013-12-03 [1] CRAN (R 4.1.0)              
-##  prettyunits    1.1.1    2020-01-24 [1] CRAN (R 4.1.0)              
-##  processx       3.5.2    2021-04-30 [1] CRAN (R 4.1.0)              
-##  progress       1.2.2    2019-05-16 [1] CRAN (R 4.1.0)              
-##  ps             1.6.0    2021-02-28 [1] CRAN (R 4.1.0)              
-##  purrr        * 0.3.4    2020-04-17 [1] CRAN (R 4.1.0)              
-##  R6             2.5.0    2020-10-28 [1] CRAN (R 4.1.0)              
-##  RColorBrewer   1.1-2    2014-12-07 [1] CRAN (R 4.1.0)              
-##  Rcpp           1.0.7    2021-07-07 [1] CRAN (R 4.1.0)              
-##  readr        * 2.0.0    2021-07-20 [1] CRAN (R 4.1.0)              
-##  readxl         1.3.1    2019-03-13 [1] CRAN (R 4.1.0)              
-##  remotes        2.4.0    2021-06-02 [1] CRAN (R 4.1.0)              
-##  reprex         2.0.1    2021-08-05 [1] CRAN (R 4.1.0)              
-##  rgl          * 0.107.10 2021-07-22 [1] CRAN (R 4.1.0)              
-##  rlang          0.4.11   2021-04-30 [1] CRAN (R 4.1.0)              
-##  rmarkdown      2.9      2021-06-15 [1] CRAN (R 4.1.0)              
-##  rprojroot      2.0.2    2020-11-15 [1] CRAN (R 4.1.0)              
-##  RRPP         * 1.0.0    2021-03-30 [1] CRAN (R 4.1.0)              
-##  rstudioapi     0.13     2020-11-12 [1] CRAN (R 4.1.0)              
-##  rvest          1.0.1    2021-07-26 [1] CRAN (R 4.1.0)              
-##  sass           0.4.0    2021-05-12 [1] CRAN (R 4.1.0)              
-##  scales         1.1.1    2020-05-11 [1] CRAN (R 4.1.0)              
-##  sessioninfo    1.1.1    2018-11-05 [1] CRAN (R 4.1.0)              
-##  stringi        1.7.3    2021-07-16 [1] CRAN (R 4.1.0)              
-##  stringr      * 1.4.0    2019-02-10 [1] CRAN (R 4.1.0)              
-##  testthat       3.0.4    2021-07-01 [1] CRAN (R 4.1.0)              
-##  tibble       * 3.1.3    2021-07-23 [1] CRAN (R 4.1.0)              
-##  tidyr        * 1.1.3    2021-03-03 [1] CRAN (R 4.1.0)              
-##  tidyselect     1.1.1    2021-04-30 [1] CRAN (R 4.1.0)              
-##  tidyverse    * 1.3.1    2021-04-15 [1] CRAN (R 4.1.0)              
-##  tzdb           0.1.2    2021-07-20 [1] CRAN (R 4.1.0)              
-##  usethis        2.0.1    2021-02-10 [1] CRAN (R 4.1.0)              
-##  utf8           1.2.2    2021-07-24 [1] CRAN (R 4.1.0)              
-##  vctrs          0.3.8    2021-04-29 [1] CRAN (R 4.1.0)              
-##  wesanderson  * 0.3.6    2018-04-20 [1] CRAN (R 4.1.0)              
-##  withr          2.4.2    2021-04-18 [1] CRAN (R 4.1.0)              
-##  xfun           0.24     2021-06-15 [1] CRAN (R 4.1.0)              
-##  xml2           1.3.2    2020-04-23 [1] CRAN (R 4.1.0)              
-##  yaml           2.2.1    2020-02-01 [1] CRAN (R 4.1.0)              
+## - Packages ------------------------------------------------------------------------------------
+##  package     * version date (UTC) lib source
+##  bookdown      0.26    2022-04-15 [1] CRAN (R 4.1.3)
+##  brio          1.1.3   2021-11-30 [1] CRAN (R 4.1.2)
+##  bslib         0.3.1   2021-10-06 [1] CRAN (R 4.1.1)
+##  cachem        1.0.6   2021-08-19 [1] CRAN (R 4.1.1)
+##  callr         3.7.0   2021-04-20 [1] CRAN (R 4.1.0)
+##  cli           3.3.0   2022-04-25 [1] CRAN (R 4.1.3)
+##  crayon        1.5.1   2022-03-26 [1] CRAN (R 4.1.3)
+##  desc          1.4.1   2022-03-06 [1] CRAN (R 4.1.2)
+##  devtools      2.4.3   2021-11-30 [1] CRAN (R 4.1.2)
+##  digest        0.6.29  2021-12-01 [1] CRAN (R 4.1.2)
+##  ellipsis      0.3.2   2021-04-29 [1] CRAN (R 4.1.0)
+##  evaluate      0.15    2022-02-18 [1] CRAN (R 4.1.2)
+##  fastmap       1.1.0   2021-01-25 [1] CRAN (R 4.1.0)
+##  fs            1.5.2   2021-12-08 [1] CRAN (R 4.1.2)
+##  glue          1.6.2   2022-02-24 [1] CRAN (R 4.1.2)
+##  htmltools     0.5.2   2021-08-25 [1] CRAN (R 4.1.1)
+##  jquerylib     0.1.4   2021-04-26 [1] CRAN (R 4.1.0)
+##  jsonlite      1.8.0   2022-02-22 [1] CRAN (R 4.1.2)
+##  knitr         1.38    2022-03-25 [1] CRAN (R 4.1.3)
+##  lifecycle     1.0.1   2021-09-24 [1] CRAN (R 4.1.1)
+##  magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.1.3)
+##  memoise       2.0.1   2021-11-26 [1] CRAN (R 4.1.2)
+##  pkgbuild      1.3.1   2021-12-20 [1] CRAN (R 4.1.2)
+##  pkgload       1.2.4   2021-11-30 [1] CRAN (R 4.1.2)
+##  prettyunits   1.1.1   2020-01-24 [1] CRAN (R 4.1.0)
+##  processx      3.5.3   2022-03-25 [1] CRAN (R 4.1.3)
+##  ps            1.7.0   2022-04-23 [1] CRAN (R 4.1.3)
+##  purrr         0.3.4   2020-04-17 [1] CRAN (R 4.1.0)
+##  R6            2.5.1   2021-08-19 [1] CRAN (R 4.1.1)
+##  remotes       2.4.2   2021-11-30 [1] CRAN (R 4.1.2)
+##  rlang         1.0.2   2022-03-04 [1] CRAN (R 4.1.3)
+##  rmarkdown     2.14    2022-04-25 [1] CRAN (R 4.1.3)
+##  rprojroot     2.0.3   2022-04-02 [1] CRAN (R 4.1.3)
+##  rstudioapi    0.13    2020-11-12 [1] CRAN (R 4.1.0)
+##  sass          0.4.1   2022-03-23 [1] CRAN (R 4.1.3)
+##  sessioninfo   1.2.2   2021-12-06 [1] CRAN (R 4.1.2)
+##  stringi       1.7.6   2021-11-29 [1] CRAN (R 4.1.2)
+##  stringr       1.4.0   2019-02-10 [1] CRAN (R 4.1.0)
+##  testthat      3.1.3   2022-03-29 [1] CRAN (R 4.1.3)
+##  usethis       2.1.5   2021-12-09 [1] CRAN (R 4.1.2)
+##  withr         2.5.0   2022-03-03 [1] CRAN (R 4.1.2)
+##  xfun          0.30    2022-03-02 [1] CRAN (R 4.1.3)
+##  yaml          2.3.5   2022-02-21 [1] CRAN (R 4.1.2)
 ## 
-## [1] C:/Users/selde/Documents/R/win-library/4.1
-## [2] C:/Program Files/R/R-4.1.0/library</code></pre>
+##  [1] C:/Users/seldenjrz/Documents/R/win-library/4.1
+##  [2] C:/Program Files/R/R-4.1.3/library
+## 
+## -----------------------------------------------------------------------------------------------</code></pre>
 <p>Current Git commit details are:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># where can I find this commit? </span></span>
 <span id="cb3-2"><a href="index.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="st">&quot;git2r&quot;</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>() <span class="sc">&amp;</span> git2r<span class="sc">::</span><span class="fu">in_repository</span>(<span class="at">path =</span> <span class="st">&quot;.&quot;</span>)) git2r<span class="sc">::</span><span class="fu">repository</span>(here<span class="sc">::</span><span class="fu">here</span>())  </span></code></pre></div>
-<pre><code>## Local:    master C:/Users/selde/Desktop/github/dalton
+<pre><code>## Local:    master D:/github/dalton
 ## Remote:   master @ origin (https://github.com/aksel-blaise/dalton)
-## Head:     [5547f5b] 2021-08-03: &lt;revo index&gt;</code></pre>
+## Head:     [2361169] 2021-08-06: &lt;neg allom&gt;</code></pre>
 
 </div>
 </div>
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-RN20917" class="csl-entry">
 Gandrud, Christopher. 2014. <em>Reproducible Research with r and RStudio</em>. The r Series. London: CRC Press.
@@ -704,7 +689,6 @@ Selden Jr., Robert Z., John E. Dockall, and Morgane Dubied. 2020. <span>“A Qua
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -727,7 +711,7 @@ gitbook.start({
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
-"theme": "white",
+"theme": "sepia",
 "family": "sans",
 "size": 2
 },
@@ -744,6 +728,10 @@ gitbook.start({
 "text": null
 },
 "download": ["dalton.supp.pdf", "dalton.supp.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
